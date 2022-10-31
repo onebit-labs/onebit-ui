@@ -1,7 +1,6 @@
-import { Fragment } from 'react'
-import type { NextPage, GetStaticProps } from 'next'
-
 import UI from 'UI/dev'
+
+import type { NextPage, GetStaticProps } from 'next'
 import { withStaticTranslations } from 'app/i18n/hoc'
 
 export const getStaticProps: GetStaticProps = withStaticTranslations((props) => ({ props }), {
@@ -9,11 +8,7 @@ export const getStaticProps: GetStaticProps = withStaticTranslations((props) => 
 })
 
 const Page: NextPage = () => {
-  return (
-    <Fragment>
-      <UI />
-    </Fragment>
-  )
+  return <UI />
 }
 
 export default __DEV__ ? Page : (): any => null

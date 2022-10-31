@@ -18,6 +18,14 @@ export const CloseIconButton: FCC<IconButtonProps> = (props) => {
   )
 }
 
+export const DialogCloseIconButton: FCC<IconButtonProps> = styled(CloseIconButton)(({ theme }) => ({
+  position: 'absolute',
+  color: theme.palette.text.disabled,
+  right: theme.spacing(2),
+  top: theme.spacing(2),
+  zIndex: 1,
+}))
+
 export const ToastifyCloseIconButton: FCC<IconButtonProps> = styled(CloseIconButton)(({ theme }) => ({
   color: theme.palette.text.disabled,
 }))

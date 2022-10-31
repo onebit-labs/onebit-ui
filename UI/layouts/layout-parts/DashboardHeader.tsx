@@ -3,6 +3,9 @@ import { AppBar, Box, styled, Toolbar, useMediaQuery } from '@mui/material'
 import type { FC } from 'react'
 
 import LanguageMenu from 'app/i18n/components/LanguageMenu'
+import ChainButton from 'lib/protocol/components/wallet/ChainButton'
+import ConnectButton from 'lib/protocol/components/wallet/ConnectButton'
+import ThemeButton from 'app/theme/components/ThemeButton'
 
 // ------------------------------------------------
 type DashboardHeaderProps = {
@@ -56,6 +59,9 @@ const DashboardHeader: FC<React.PropsWithChildren<DashboardHeaderProps>> = (prop
         )}
 
         <Box flexGrow={1} ml={1} />
+        <ChainButton />
+        <ConnectButton />
+        <ThemeButton />
         <LanguageMenu />
       </StyledToolBar>
     </DashboardHeaderRoot>

@@ -23,7 +23,7 @@ const createInitialState = (): SliceState => ({
 })
 
 export const {
-  actions: { setMode },
+  actions: { setMode, toggleMode },
   reducer,
 } = createSlice({
   name: path,
@@ -33,6 +33,11 @@ export const {
       if (state.data.mode === action.payload) return
       state.data.mode = action.payload
       setItem(THEME_MODE_KEY, action.payload)
+    },
+    toggleMode(state) {
+      const mode = state.data.mode === 'dark' ? 'light' : 'dark'
+      state.data.mode = mode
+      setItem(THEME_MODE_KEY, mode)
     },
   },
 })
