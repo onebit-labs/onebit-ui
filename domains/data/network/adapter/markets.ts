@@ -7,12 +7,14 @@ const getMarketInfo = (id: MarketId) => {
     case 'Onebit-USDT-1':
       return {
         portfolioName: 'Onebit主观1号',
+        series: 'USDT主观',
         symbol: 'USDT',
         description: 'description 主观1号',
       }
     case 'Onebit-USDT-2':
       return {
         portfolioName: 'Onebit跟单1号',
+        series: 'USDT跟单',
         symbol: 'USDT',
         description: 'description 跟单1号',
       }

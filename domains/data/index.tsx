@@ -4,13 +4,16 @@ import NetworkProvider, { createNetworkContext } from './network'
 import ERC20Provider, { createERC20Context } from './erc20'
 import LendingPoolProvider, { createLendingPoolContext } from './lendingPool'
 import PortfolioProvider, { createPortfolioContext } from './portfolio'
+import OnebitAPIProvider, { createOnebitAPIContext } from './onebit-api'
 
 const Provider: FCC = ({ children }) => {
   return (
     <NetworkProvider>
       <ERC20Provider>
         <LendingPoolProvider>
-          <PortfolioProvider>{children}</PortfolioProvider>
+          <OnebitAPIProvider>
+            <PortfolioProvider>{children}</PortfolioProvider>
+          </OnebitAPIProvider>
         </LendingPoolProvider>
       </ERC20Provider>
     </NetworkProvider>
@@ -23,3 +26,4 @@ export const useNetwork = createNetworkContext()
 export const useERC20 = createERC20Context()
 export const useLendingPool = createLendingPoolContext()
 export const usePortfolio = createPortfolioContext()
+export const useOnebitAPI = createOnebitAPIContext()

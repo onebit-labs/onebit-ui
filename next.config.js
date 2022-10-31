@@ -46,9 +46,15 @@ const nextConfig = {
 
     return config
   },
+
   async rewrites() {
     return {
-      fallback: [],
+      fallback: [
+        {
+          source: '/onebit-api/:path*',
+          destination: 'https://broker.onebit.com/api/:path*',
+        },
+      ],
     }
   },
 }
