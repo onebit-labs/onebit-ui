@@ -1,16 +1,17 @@
 import type { FC } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import type { LanguageMenuItemProps } from './types'
 import MenuItem from '@mui/material/MenuItem'
 import ListItemText from '@mui/material/ListItemText'
+import { useRouter } from 'next/router'
 
 const LanguageMenuItem: FC<LanguageMenuItemProps> = ({
   language: { name, flag, code, value },
   url,
   currentLanguageCode,
-}) => (
-  <Link href={url} locale={code} passHref>
+}) => {
+  const router = useRouter()
+  return (
     <MenuItem
       selected={currentLanguageCode === code}
       sx={{
@@ -20,11 +21,14 @@ const LanguageMenuItem: FC<LanguageMenuItemProps> = ({
           height: 20,
         },
       }}
+      onClick={() => {
+        router.push(url, undefined, { locale: code })
+      }}
     >
       <ListItemText>{value}</ListItemText>
-      <div className="country-flag">{flag && <Image src={flag} alt={name} />}</div>
+      <div className="country-flag">{flag && <Image src={flag} alt={name} width={20} height={20} />}</div>
     </MenuItem>
-  </Link>
-)
+  )
+}
 
 export default LanguageMenuItem

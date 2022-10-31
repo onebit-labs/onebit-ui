@@ -1,4 +1,4 @@
-import { Box, useTheme } from '@mui/material'
+import { useTheme } from '@mui/material'
 import FlexBox from 'components/flexbox/FlexBox'
 import { H1, Paragraph } from 'components/Typography'
 import type { FC } from 'react'
@@ -11,9 +11,7 @@ const ErrorPage: FC = () => {
 
   return (
     <FlexBox p={4} height="100%" alignItems="center" flexDirection="column" justifyContent="center">
-      <Box maxWidth={350}>
-        <Image src={ErrorPageImage} width="100%" alt="Error 404" />
-      </Box>
+      <Image src={ErrorPageImage} alt="Error 404" width={350} />
       <H1 fontSize={64} fontWeight={700} color="primary.main" mt={3}>
         Ooops... 404!
       </H1>

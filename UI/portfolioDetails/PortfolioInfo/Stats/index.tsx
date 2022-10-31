@@ -31,7 +31,7 @@ const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, curr
       title: 'assetsUnderManagement',
       icon: (
         <div>
-          <Image src={Money} alt="Money" width="40px" height="40px" />
+          <Image src={Money} alt="Money" width={40} height={40} />
         </div>
       ),
     },
@@ -41,7 +41,7 @@ const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, curr
           title: 'estimatedAPY',
           icon: (
             <div>
-              <Image src={Revenue} alt="Revenue" width="40px" height="40px" />
+              <Image src={Revenue} alt="Revenue" width={40} height={40} />
             </div>
           ),
         }
@@ -50,7 +50,7 @@ const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, curr
           title: 'currentAPY',
           icon: (
             <div>
-              <Image src={Revenue} alt="Revenue" width="40px" height="40px" />
+              <Image src={Revenue} alt="Revenue" width={40} height={40} />
             </div>
           ),
         },
@@ -59,7 +59,7 @@ const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, curr
       title: 'depositors',
       icon: (
         <div>
-          <Image src={User} alt="User" width="40px" height="40px" />
+          <Image src={User} alt="User" width={40} height={40} />
         </div>
       ),
     },
