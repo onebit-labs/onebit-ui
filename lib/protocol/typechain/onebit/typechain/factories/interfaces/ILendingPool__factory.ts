@@ -128,7 +128,7 @@ const _abi = [
   },
   {
     anonymous: false,
-    inputs: [],
+    inputs: [] as any,
     name: 'Paused',
     type: 'event',
   },
@@ -177,7 +177,7 @@ const _abi = [
   },
   {
     anonymous: false,
-    inputs: [],
+    inputs: [] as any,
     name: 'Unpaused',
     type: 'event',
   },
@@ -244,12 +244,12 @@ const _abi = [
       },
     ],
     name: 'depositFund',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'getAddressesProvider',
     outputs: [
       {
@@ -262,7 +262,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'getConfiguration',
     outputs: [
       {
@@ -282,7 +282,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'getReserveData',
     outputs: [
       {
@@ -369,7 +369,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'getReserveNormalizedIncome',
     outputs: [
       {
@@ -395,12 +395,12 @@ const _abi = [
       },
     ],
     name: 'initReserve',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'paused',
     outputs: [
       {
@@ -421,7 +421,7 @@ const _abi = [
       },
     ],
     name: 'setConfiguration',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -434,7 +434,7 @@ const _abi = [
       },
     ],
     name: 'setPause',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -447,7 +447,7 @@ const _abi = [
       },
     ],
     name: 'updateFuncAddress',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },

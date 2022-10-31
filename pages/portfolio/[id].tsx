@@ -3,6 +3,7 @@ import UI from 'UI/portfolioDetails'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 import type { FC } from 'react'
 import { withStaticTranslations } from 'app/i18n/hoc'
+import { marktetIds } from 'lib/protocol/market'
 
 export const getStaticProps: GetStaticProps = withStaticTranslations(
   (props) => {
@@ -17,9 +18,20 @@ export const getStaticProps: GetStaticProps = withStaticTranslations(
     namespaces: ['portfolioDetails'],
   }
 )
-export const getStaticPaths: GetStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = ({ locales }) => {
+  const paths = [] as any
+
+  locales.forEach((locale) => {
+    marktetIds.forEach((id) => {
+      paths.push({
+        params: { id },
+        locale,
+      })
+    })
+  })
+
   return {
-    paths: [],
+    paths,
     fallback: 'blocking',
   }
 }

@@ -29,3 +29,4 @@ const MARKETS: Record<number, AddressData> = {
 
 export const defaultMarket = MARKETS[ChainId.goerli]
 export const getAddress = (chainId: ChainId) => MARKETS[chainId] || defaultMarket
+export const marktetIds = Object.keys(defaultMarket.markets)

@@ -8,7 +8,7 @@ import type { Errors, ErrorsInterface } from '../../../libraries/helpers/Errors'
 
 const _abi = [
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'BORROW_ALLOWANCE_NOT_ENOUGH',
     outputs: [
       {
@@ -21,7 +21,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'CALLER_NOT_POOL_ADMIN',
     outputs: [
       {
@@ -34,7 +34,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'CT_CALLER_MUST_BE_CLAIM_ADMIN',
     outputs: [
       {
@@ -47,7 +47,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'CT_CALLER_MUST_BE_LENDING_POOL',
     outputs: [
       {
@@ -60,7 +60,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'CT_CANNOT_GIVE_ALLOWANCE_TO_HIMSELF',
     outputs: [
       {
@@ -73,7 +73,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'CT_INVALID_BURN_AMOUNT',
     outputs: [
       {
@@ -86,7 +86,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'CT_INVALID_MINT_AMOUNT',
     outputs: [
       {
@@ -99,7 +99,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'CT_TOKEN_CAN_NOT_BE_SELF',
     outputs: [
       {
@@ -112,7 +112,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'CT_TOKEN_CAN_NOT_BE_UNDERLYING',
     outputs: [
       {
@@ -125,7 +125,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'CT_TRANSFER_AMOUNT_NOT_GT_0',
     outputs: [
       {
@@ -138,7 +138,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LPAPR_INVALID_ADDRESSES_PROVIDER_ID',
     outputs: [
       {
@@ -151,7 +151,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LPAPR_PROVIDER_NOT_REGISTERED',
     outputs: [
       {
@@ -164,7 +164,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LPCM_NO_ERRORS',
     outputs: [
       {
@@ -177,7 +177,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LPC_CALLER_NOT_EMERGENCY_ADMIN',
     outputs: [
       {
@@ -190,7 +190,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LPC_INVALID_ADDRESSES_PROVIDER_ID',
     outputs: [
       {
@@ -203,7 +203,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LPC_INVALID_CONFIGURATION',
     outputs: [
       {
@@ -216,7 +216,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LPC_INVALID_OTOKEN_POOL_ADDRESS',
     outputs: [
       {
@@ -229,7 +229,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LPC_RESERVE_LIQUIDITY_NOT_0',
     outputs: [
       {
@@ -242,7 +242,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LP_CALLER_MUST_BE_AN_OTOKEN',
     outputs: [
       {
@@ -255,7 +255,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LP_CALLER_NOT_LENDING_POOL_CONFIGURATOR',
     outputs: [
       {
@@ -268,7 +268,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LP_CALLER_NOT_POOL_OPERATOR',
     outputs: [
       {
@@ -281,7 +281,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LP_INCONSISTENT_PROTOCOL_ACTUAL_BALANCE',
     outputs: [
       {
@@ -294,7 +294,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LP_IS_PAUSED',
     outputs: [
       {
@@ -307,7 +307,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LP_NOT_CONTRACT',
     outputs: [
       {
@@ -320,7 +320,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LP_NO_MORE_RESERVES_ALLOWED',
     outputs: [
       {
@@ -333,7 +333,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'LP_REENTRANCY_NOT_ALLOWED',
     outputs: [
       {
@@ -346,7 +346,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'MATH_ADDITION_OVERFLOW',
     outputs: [
       {
@@ -359,7 +359,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'MATH_DIVISION_BY_ZERO',
     outputs: [
       {
@@ -372,7 +372,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'MATH_MULTIPLICATION_OVERFLOW',
     outputs: [
       {
@@ -385,7 +385,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'RC_INVALID_DECIMALS',
     outputs: [
       {
@@ -398,7 +398,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'RL_LIQUIDITY_INDEX_OVERFLOW',
     outputs: [
       {
@@ -411,7 +411,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'RL_LIQUIDITY_RATE_OVERFLOW',
     outputs: [
       {
@@ -424,7 +424,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'RL_RESERVE_ALREADY_INITIALIZED',
     outputs: [
       {
@@ -437,7 +437,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'SDT_BURN_EXCEEDS_BALANCE',
     outputs: [
       {
@@ -450,7 +450,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'UL_INVALID_INDEX',
     outputs: [
       {
@@ -463,7 +463,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'VL_CURRENT_AVAILABLE_LIQUIDITY_NOT_ENOUGH',
     outputs: [
       {
@@ -476,7 +476,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'VL_INVALID_AMOUNT',
     outputs: [
       {
@@ -489,7 +489,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'VL_INVALID_FUND_ADDRESS',
     outputs: [
       {
@@ -502,7 +502,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'VL_INVALID_TIMESTAMP',
     outputs: [
       {
@@ -515,7 +515,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'VL_NOT_ENOUGH_AVAILABLE_USER_BALANCE',
     outputs: [
       {
@@ -528,7 +528,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'VL_NOT_FINISHED',
     outputs: [
       {
@@ -541,7 +541,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'VL_NOT_IN_LOCK_PERIOD',
     outputs: [
       {
@@ -554,7 +554,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'VL_NOT_IN_PURCHASE_OR_REDEMPTION_PERIOD',
     outputs: [
       {
@@ -567,7 +567,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'VL_NO_ACTIVE_RESERVE',
     outputs: [
       {
@@ -580,7 +580,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'VL_PURCHASE_UPPER_LIMIT',
     outputs: [
       {
@@ -593,7 +593,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'VL_RESERVE_FROZEN',
     outputs: [
       {
@@ -606,7 +606,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'VL_TRANSFER_NOT_ALLOWED',
     outputs: [
       {
@@ -619,7 +619,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'VL_UNDERLYING_BALANCE_NOT_GREATER_THAN_0',
     outputs: [
       {

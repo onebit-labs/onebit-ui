@@ -152,7 +152,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'getEmergencyAdmin',
     outputs: [
       {
@@ -165,7 +165,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'getLendingPool',
     outputs: [
       {
@@ -178,7 +178,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'getLendingPoolConfigurator',
     outputs: [
       {
@@ -191,7 +191,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'getMarketId',
     outputs: [
       {
@@ -204,7 +204,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'getPoolAdmin',
     outputs: [
       {
@@ -217,7 +217,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'getPoolOperator',
     outputs: [
       {
@@ -243,7 +243,7 @@ const _abi = [
       },
     ],
     name: 'setAddress',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -261,7 +261,7 @@ const _abi = [
       },
     ],
     name: 'setAddressAsProxy',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -274,7 +274,7 @@ const _abi = [
       },
     ],
     name: 'setEmergencyAdmin',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -287,7 +287,7 @@ const _abi = [
       },
     ],
     name: 'setLendingPoolConfiguratorImpl',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -300,7 +300,7 @@ const _abi = [
       },
     ],
     name: 'setLendingPoolImpl',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -313,7 +313,7 @@ const _abi = [
       },
     ],
     name: 'setMarketId',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -326,7 +326,7 @@ const _abi = [
       },
     ],
     name: 'setPoolAdmin',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -339,7 +339,7 @@ const _abi = [
       },
     ],
     name: 'setPoolOperator',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },

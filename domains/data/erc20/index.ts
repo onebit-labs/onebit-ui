@@ -16,7 +16,7 @@ const useERC20Service = () => {
     balanceOf,
     isApproved,
     oracle,
-    totalSupply
+    totalSupply,
   }
 }
 const { Provider: ERC20Provider, createUseContext } = createContext(useERC20Service)

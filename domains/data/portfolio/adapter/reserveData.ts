@@ -29,7 +29,12 @@ export const getReserveData = (reserveDataSource: Record<string, ReserveDataSour
       ...getBigNumber(reserveDataSource[key], ['purchaseUpperLimit'], 18),
       ...getBigNumber(reserveDataSource[key], ['liquidityIndex', 'currentLiquidityRate', 'previousLiquidityIndex'], 27),
       ...getBigNumber(reserveDataSource[key], ['managementFeeRate', 'performanceFeeRate'], 4),
-      ...getTimestamp(reserveDataSource[key], ['lastUpdateTimestamp', 'purchaseBeginTimestamp', 'purchaseEndTimestamp', 'redemptionBeginTimestamp']),
+      ...getTimestamp(reserveDataSource[key], [
+        'lastUpdateTimestamp',
+        'purchaseBeginTimestamp',
+        'purchaseEndTimestamp',
+        'redemptionBeginTimestamp',
+      ]),
     }
   })
 

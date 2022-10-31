@@ -8,7 +8,7 @@ import type { OToken, OTokenInterface } from '../OToken'
 
 const _abi = [
   {
-    inputs: [],
+    inputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'constructor',
   },
@@ -193,7 +193,7 @@ const _abi = [
     type: 'event',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'DOMAIN_SEPARATOR',
     outputs: [
       {
@@ -206,7 +206,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'EIP712_REVISION',
     outputs: [
       {
@@ -219,7 +219,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'OTOKEN_REVISION',
     outputs: [
       {
@@ -232,7 +232,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'PERMIT_TYPEHASH',
     outputs: [
       {
@@ -245,7 +245,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'POOL',
     outputs: [
       {
@@ -258,7 +258,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'UNDERLYING_ASSET_ADDRESS',
     outputs: [
       {
@@ -380,12 +380,12 @@ const _abi = [
       },
     ],
     name: 'burn',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'decimals',
     outputs: [
       {
@@ -503,7 +503,7 @@ const _abi = [
       },
     ],
     name: 'initialize',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -537,7 +537,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'name',
     outputs: [
       {
@@ -588,7 +588,7 @@ const _abi = [
       },
     ],
     name: 'permit',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -612,7 +612,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'scaledTotalSupply',
     outputs: [
       {
@@ -625,7 +625,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'symbol',
     outputs: [
       {
@@ -638,7 +638,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'totalSupply',
     outputs: [
       {

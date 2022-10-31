@@ -112,14 +112,14 @@ const _abi = [
     type: 'event',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'acceptOwnership',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'accessController',
     outputs: [
       {
@@ -132,7 +132,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'aggregator',
     outputs: [
       {
@@ -153,12 +153,12 @@ const _abi = [
       },
     ],
     name: 'confirmAggregator',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'decimals',
     outputs: [
       {
@@ -171,7 +171,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'description',
     outputs: [
       {
@@ -261,7 +261,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'latestAnswer',
     outputs: [
       {
@@ -274,7 +274,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'latestRound',
     outputs: [
       {
@@ -287,7 +287,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'latestRoundData',
     outputs: [
       {
@@ -320,7 +320,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'latestTimestamp',
     outputs: [
       {
@@ -333,7 +333,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'owner',
     outputs: [
       {
@@ -365,7 +365,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'phaseId',
     outputs: [
       {
@@ -386,12 +386,12 @@ const _abi = [
       },
     ],
     name: 'proposeAggregator',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'proposedAggregator',
     outputs: [
       {
@@ -443,7 +443,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'proposedLatestRoundData',
     outputs: [
       {
@@ -484,7 +484,7 @@ const _abi = [
       },
     ],
     name: 'setController',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -497,12 +497,12 @@ const _abi = [
       },
     ],
     name: 'transferOwnership',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'version',
     outputs: [
       {

@@ -188,7 +188,7 @@ const _abi = [
     type: 'event',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'UNDERLYING_ASSET_ADDRESS',
     outputs: [
       {
@@ -291,7 +291,7 @@ const _abi = [
       },
     ],
     name: 'burn',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -353,7 +353,7 @@ const _abi = [
       },
     ],
     name: 'initialize',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -406,7 +406,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'scaledTotalSupply',
     outputs: [
       {
@@ -419,7 +419,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'totalSupply',
     outputs: [
       {

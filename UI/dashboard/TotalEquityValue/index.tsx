@@ -32,7 +32,7 @@ const Change24h = styled(Stack)`
 `
 const Right = styled('div')``
 
-const TotalEquityValue: FC= () => {
+const TotalEquityValue: FC = () => {
   const { t } = useTranslation('dashboard')
 
   const chart = useChart()

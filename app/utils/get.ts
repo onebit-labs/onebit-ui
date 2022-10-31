@@ -32,7 +32,9 @@ export const getAddress = <T, K extends keyof T>(obj: T, keys: K[]) => {
 
 export const getTimestamp = <T, K extends keyof T>(obj: T, keys: K[], decimals = 3) => {
   return keys.reduce((o, k) => {
-    o[k] = valueToBigNumber(obj[k] as any).multipliedBy(Math.pow(10, decimals)).toNumber()
+    o[k] = valueToBigNumber(obj[k] as any)
+      .multipliedBy(Math.pow(10, decimals))
+      .toNumber()
     return o
   }, {} as Record<K, number>)
 }

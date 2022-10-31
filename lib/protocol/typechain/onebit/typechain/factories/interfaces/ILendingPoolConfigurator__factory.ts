@@ -31,13 +31,13 @@ const _abi = [
   },
   {
     anonymous: false,
-    inputs: [],
+    inputs: [] as any,
     name: 'ReserveActivated',
     type: 'event',
   },
   {
     anonymous: false,
-    inputs: [],
+    inputs: [] as any,
     name: 'ReserveDeactivated',
     type: 'event',
   },
@@ -62,7 +62,7 @@ const _abi = [
   },
   {
     anonymous: false,
-    inputs: [],
+    inputs: [] as any,
     name: 'ReserveFrozen',
     type: 'event',
   },
@@ -87,7 +87,7 @@ const _abi = [
   },
   {
     anonymous: false,
-    inputs: [],
+    inputs: [] as any,
     name: 'ReserveUnfrozen',
     type: 'event',
   },

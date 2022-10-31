@@ -75,7 +75,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'getAddressesProvidersList',
     outputs: [
       {
@@ -88,7 +88,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'owner',
     outputs: [
       {
@@ -114,14 +114,14 @@ const _abi = [
       },
     ],
     name: 'registerAddressesProvider',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'renounceOwnership',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -134,7 +134,7 @@ const _abi = [
       },
     ],
     name: 'transferOwnership',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -147,7 +147,7 @@ const _abi = [
       },
     ],
     name: 'unregisterAddressesProvider',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },

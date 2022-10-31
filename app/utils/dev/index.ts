@@ -30,8 +30,9 @@ const getStringObj = (obj: any) => {
   }
 }
 
-export const log = __DEV__
-  ? (key: string, obj: any) => {
-      console.log(key, getStringObj(obj))
-    }
-  : noop
+export const log =
+  __DEV__ && !__SERVER__
+    ? (key: string, obj: any) => {
+        console.log(key, getStringObj(obj))
+      }
+    : noop

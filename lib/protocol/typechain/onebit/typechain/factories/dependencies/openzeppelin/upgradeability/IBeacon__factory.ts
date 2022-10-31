@@ -8,7 +8,7 @@ import type { IBeacon, IBeaconInterface } from '../../../../dependencies/openzep
 
 const _abi = [
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'implementation',
     outputs: [
       {

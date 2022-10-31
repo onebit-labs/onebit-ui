@@ -56,7 +56,7 @@ const _abi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [] as any,
     name: 'getAddressesProvidersList',
     outputs: [
       {
@@ -82,7 +82,7 @@ const _abi = [
       },
     ],
     name: 'registerAddressesProvider',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -95,7 +95,7 @@ const _abi = [
       },
     ],
     name: 'unregisterAddressesProvider',
-    outputs: [],
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },

@@ -44,7 +44,7 @@ const useERC20TotalSupplyEffect = () => {
   const query = useMemo(
     () => ({
       tokens: oTokenAddresses,
-      erc20Service
+      erc20Service,
     }),
     [erc20Service, oTokenAddresses]
   )
@@ -73,7 +73,8 @@ const useERC20oracleEffect = () => {
   }, [markets])
   const query = useMemo(
     () => ({
-      chainlinkService, symbols
+      chainlinkService,
+      symbols,
     }),
     [chainlinkService, symbols]
   )
