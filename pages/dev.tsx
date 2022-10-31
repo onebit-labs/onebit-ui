@@ -1,7 +1,12 @@
 import { Fragment } from 'react'
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 
 import UI from 'UI/dev'
+import { withStaticTranslations } from 'app/i18n/hoc'
+
+export const getStaticProps: GetStaticProps = withStaticTranslations((props) => ({ props }), {
+  namespaces: [],
+})
 
 const Page: NextPage = () => {
   return (

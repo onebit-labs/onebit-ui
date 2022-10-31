@@ -1,7 +1,7 @@
 [
   "/404",
   "/api",
-  "/api/protocol/console",
+  "/api/i18n/generate",
   "/api/protocol/generate",
   "/dev",
   "/"

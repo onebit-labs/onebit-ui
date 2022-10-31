@@ -4,7 +4,9 @@ import type { MyAppProps } from 'app'
 import App from 'app'
 import store from 'store'
 import DomainsProvider from 'domains'
+
 import CacheProvider from 'app/emotion'
+import { appWithTranslation, useI18nHMR } from 'app/i18n'
 
 import 'lib/toastify/styles.css'
 import 'simplebar-react/dist/simplebar.min.css'
@@ -12,6 +14,7 @@ import 'rc-image/assets/index.css'
 import 'styles/global.css'
 
 function MainApp(props: MyAppProps): JSX.Element {
+  useI18nHMR()
   return (
     <CacheProvider emotionServerCache={props.emotionCache}>
       <StoreProvider store={store}>
@@ -28,4 +31,4 @@ function MainApp(props: MyAppProps): JSX.Element {
   )
 }
 
-export default MainApp
+export default appWithTranslation(MainApp)
