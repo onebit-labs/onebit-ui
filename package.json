@@ -9,7 +9,9 @@
     "lint:ts": "tsc --noEmit --incremental",
     "fix:prettier": "node ./scripts/prettier.js",
     "fix:eslint": "eslint --fix .",
-    "fix": "yarn fix:eslint && yarn fix:prettier"
+    "fix": "yarn fix:eslint && yarn fix:prettier",
+    "typechain": "yarn typechain:chainlink",
+    "typechain:chainlink": "typechain --target ethers-v5 --out-dir lib/protocol/typechain/chainlink/typechain './lib/protocol/typechain/chainlink/chainlink.json'"
   },
   "private": true,
   "sideEffects": false,
@@ -21,6 +23,10 @@
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.9",
     "@reduxjs/toolkit": "^1.8.6",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "@web3-react/walletconnect-connector": "^6.2.13",
+    "ethers": "^5.7.1",
     "formik": "^2.2.9",
     "next": "^12.3.1",
     "rc-image": "^5.9.0",
@@ -33,6 +39,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@typechain/ethers-v5": "^10.1.0",
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
@@ -45,6 +52,7 @@
     "eslint-config-next": "^12.3.1",
     "globby": "^11.0.0",
     "prettier": "^2.7.0",
+    "typechain": "^8.1.0",
     "typescript": "^4.8.0"
   }
 }

@@ -1,4 +1,8 @@
 [
   "/404",
+  "/api",
+  "/api/protocol/console",
+  "/api/protocol/generate",
+  "/dev",
   "/"
 ]
