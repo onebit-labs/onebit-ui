@@ -21,15 +21,18 @@ import Card from '@mui/material/Card'
 import { usePortfolioDetails } from 'domains/data'
 import { useMemo } from 'react'
 import NumberDisplay from 'lib/math/components/NumberDisplay'
+import { useDialogs } from 'UI/dialogs'
 
 const StyledCard = styled(Card)(() => ({
   position: 'relative',
 }))
 
 const PortfolioInfo: FCC = ({ children }) => {
+  const { deposit, withdraw } = useDialogs()
   const { portfolio } = usePortfolioDetails()
   const data = useMemo(() => portfolio, [portfolio])
   const {
+    id,
     status,
     portfolioName,
     symbol,
@@ -53,10 +56,24 @@ const PortfolioInfo: FCC = ({ children }) => {
                 <H3>{portfolioName}</H3>
               </Stack>
               <Stack spacing={2} direction="row">
-                <Button variant="contained" disabled={!isOpen} startIcon={<FileDownloadOutlinedIcon />}>
+                <Button
+                  variant="contained"
+                  disabled={!isOpen}
+                  startIcon={<FileDownloadOutlinedIcon />}
+                  onClick={() => {
+                    deposit.open(id)
+                  }}
+                >
                   {t('common:wallet.btn.deposit')}
                 </Button>
-                <Button variant="contained" disabled={!isOpen} startIcon={<FileUploadOutlinedIcon />}>
+                <Button
+                  variant="contained"
+                  disabled={!isOpen}
+                  startIcon={<FileUploadOutlinedIcon />}
+                  onClick={() => {
+                    withdraw.open(id)
+                  }}
+                >
                   {t('common:wallet.btn.withdraw')}
                 </Button>
               </Stack>

@@ -21,6 +21,14 @@ const getMarketInfo = (id: MarketId) => {
   }
 }
 
+export type ContractsAddress = {
+  LendingPoolAddressesProvider: string
+  LendingPool: string
+  LendingPoolConfigurator: string
+  OToken: string
+  symbol: string
+}
+
 export const getMarkets = (address: AddressData) => {
   return Object.keys(address.markets).map((key) => {
     const id: MarketId = key as any
@@ -31,7 +39,7 @@ export const getMarkets = (address: AddressData) => {
       address: {
         ...address.markets[id],
         symbol: address[info.symbol as 'USDT'],
-      },
+      } as ContractsAddress,
     }
   })
 }

@@ -9,6 +9,7 @@ import type { ReserveData } from '../adapter/reserveData'
 const useLendingPoolEffect = () => {
   const { networkAccount } = useWallet()
   const {
+    address,
     markets,
     contracts: { erc20Service },
   } = useNetwork()
@@ -16,14 +17,14 @@ const useLendingPoolEffect = () => {
     erc20: { balanceOf: balanceOfPolling },
   } = useControllers()
 
-  const oTokenAddresses = useMemo(() => markets.map((market) => market.address.OToken) || [], [markets])
+  const tokens = useMemo(() => markets.map((market) => market.address.OToken).concat([address.USDT]) || [], [address.USDT, markets])
   const query = useMemo(
     () => ({
       erc20Service,
       user: networkAccount,
-      tokens: oTokenAddresses,
+      tokens,
     }),
-    [erc20Service, networkAccount, oTokenAddresses]
+    [erc20Service, networkAccount, tokens]
   )
 
   useEffect(() => {

@@ -46,7 +46,7 @@ export class LendingPoolService extends BaseService<LendingPool> {
     const txs: EthereumTransactionTypeExtended[] = []
     const { isApproved, approve, decimalsOf } = erc20Service
     const reserveDecimals = await decimalsOf(reserve)
-    const convertedAmount = normalize(amount, reserveDecimals).toFixed(0)
+    const convertedAmount = normalize(amount, -reserveDecimals).toFixed(0)
 
     const approved = await isApproved({
       token: reserve,
@@ -66,7 +66,6 @@ export class LendingPoolService extends BaseService<LendingPool> {
     }
 
     const lendingPool = this.getContractInstance(pool)
-
     const txCallback = this.generateTxCallback({
       rawTxMethod: async () => lendingPool.populateTransaction.deposit(convertedAmount, user, '0'),
       from: user,

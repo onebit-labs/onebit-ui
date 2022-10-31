@@ -16,6 +16,7 @@ import type { UserReserveData } from './adapter/userReserveData'
 import { useReserveData } from './application/reserveData'
 import { useUserReserveData } from './application/userReserveData'
 import { useOnebitAPIData } from './application/onebitAPI'
+import type { ContractsAddress } from '../network/adapter/markets'
 
 
 export type Portfolio = Partial<ReserveData & UserReserveData> & {
@@ -37,6 +38,8 @@ export type Portfolio = Partial<ReserveData & UserReserveData> & {
 
   portfolioDaily: Record<'x' | 'y', number>[]
   seriesDaily: Record<'x' | 'y', number>[]
+
+  address: ContractsAddress
 }
 
 const usePortfolioService = () => {
@@ -54,6 +57,7 @@ const usePortfolioService = () => {
 
       return {
         id,
+        address,
         ...info,
         ...reserve,
         ...userReserveData[pool],
