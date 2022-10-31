@@ -4,7 +4,7 @@ import type { GetStaticProps, NextPage } from 'next'
 import { withStaticTranslations } from 'app/i18n/hoc'
 
 export const getStaticProps: GetStaticProps = withStaticTranslations((props) => ({ props }), {
-  namespaces: [],
+  namespaces: ['dashboard'],
 })
 
 const Page: NextPage = () => {

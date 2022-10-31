@@ -2,6 +2,7 @@ import type { CSSProperties } from '@mui/styled-engine'
 import type { FC } from 'react'
 import { Fragment, useState } from 'react'
 import GlobalStyles from '@mui/material/GlobalStyles'
+import Box from '@mui/material/Box'
 
 import LayoutBodyWrapper from '../layout-parts/LayoutBodyWrapper'
 import DashboardHeader from '../layout-parts/DashboardHeader'
@@ -33,7 +34,9 @@ const DashboardLayout: FC<React.PropsWithChildren<unknown>> = ({ children }) => 
       <LayoutBodyWrapper sx={customStyle}>
         <DashboardHeader setShowSideBar={handleCompactToggle} setShowMobileSideBar={handleMobileDrawerToggle} />
 
-        {children}
+        <Box pt={2} pb={4}>
+          {children}
+        </Box>
       </LayoutBodyWrapper>
     </Fragment>
   )
