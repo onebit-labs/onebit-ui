@@ -12,7 +12,7 @@ const Projects: FC<ProjectsProps> = ({ data }) => {
   return (
     <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
       {data.map((item, index) => (
-        <Grid item lg={4} xs={12} key={index} onClick={() => router.push(`/portfolio/${item.id}`)}>
+        <Grid item lg={4} xs={12} key={index} onClick={() => router.push(`/portfolio/${encodeURIComponent(item.id)}`)}>
           <ProjectCard {...item} />
         </Grid>
       ))}

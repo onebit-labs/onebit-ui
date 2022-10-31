@@ -1,10 +1,7 @@
-import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { styled } from '@mui/material/styles'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import ToggleButton from '@mui/material/ToggleButton'
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 
 import RiseOrFall from 'components/math/RiseOrFall'
 import NumberDisplay from 'components/math/NumberDisplay'

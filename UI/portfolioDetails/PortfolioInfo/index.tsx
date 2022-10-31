@@ -60,10 +60,10 @@ const PortfolioInfo: FC = () => {
             </Stack>
             <Stack spacing={2} direction="row">
               <Button variant="contained" startIcon={<FileDownloadOutlinedIcon />}>
-                {t('actions.deposit')}
+                {t('common:wallet.btn.deposit')}
               </Button>
               <Button variant="contained" startIcon={<FileUploadOutlinedIcon />}>
-                {t('actions.withdraw')}
+                {t('common:wallet.btn.withdraw')}
               </Button>
             </Stack>
           </FlexBetween>

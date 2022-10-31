@@ -10,6 +10,7 @@ export const getStaticProps: GetStaticProps = withStaticTranslations(
     const { id } = props.params
     return {
       props: {
+        ...props,
         id: typeof id === 'string' ? id : id[0],
       },
     }

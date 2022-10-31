@@ -43,7 +43,7 @@ export const useTable = (): BasicTableProps => {
           },
         ] as TableColumnsProps[]
       ).map((column) => {
-        column.label = t('overview.historicalPerformance' + column.dataKey)
+        column.label = t('depositors.' + column.dataKey)
         return column
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps

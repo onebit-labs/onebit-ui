@@ -28,7 +28,7 @@ const RiseOrFall: FC<RiseOrFallProps> = ({ value, displayIcon, percentValue, ...
   const symbol = useMemo(() => bn.gt(0) && <span>+</span>, [bn])
 
   return (
-    <Typography {...props} color={color} justifyContent="center" alignItems="center" display="flex">
+    <Typography component="div" {...props} color={color} justifyContent="center" alignItems="center" display="flex">
       {isZero ? (
         <span>0%</span>
       ) : (

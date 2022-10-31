@@ -17,7 +17,7 @@ const StatsCard: FC<React.PropsWithChildren<StatsCardProps>> = ({ card }) => {
       {icon}
       <Stack spacing={1}>
         <H3>{price}</H3>
-        <H5 color="text.secondary">{t(`stats.${title}`)}</H5>
+        <H5 color="text.secondary">{t(`info.stats.${title}`)}</H5>
       </Stack>
     </Stack>
   )

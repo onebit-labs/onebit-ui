@@ -5,8 +5,6 @@ const locale = {
       disconnected: 'Disconnect',
       deposit: 'Deposit',
       withdraw: 'Withdraw',
-      borrow: 'Borrow',
-      repay: 'Repay',
       details: 'Details',
       approve: 'Approve',
     },

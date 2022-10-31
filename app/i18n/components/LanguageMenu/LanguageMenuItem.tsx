@@ -22,7 +22,7 @@ const LanguageMenuItem: FC<LanguageMenuItemProps> = ({
         },
       }}
       onClick={() => {
-        router.push(url, undefined, { locale: code })
+        router.replace(url, undefined, { locale: code })
       }}
     >
       <ListItemText>{value}</ListItemText>

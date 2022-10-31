@@ -3,6 +3,7 @@ const locale = {
   dashboard: 'Dashboard',
   explorePortfolios: 'Explore Portfolios',
   transactionHistory: 'Transaction History',
+  portfolioDetails: 'Portfolio Details',
 }
 
 export default locale

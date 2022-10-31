@@ -9,12 +9,14 @@ const locale = {
     status: 'Status',
     term: 'Term',
     lockUpPeriod: 'Lock-Up Period',
+    days: 'Days',
     standard: 'Standard',
     yourEquity: 'Your Equity',
     PNL: 'PNL',
     stats: {
       assetsUnderManagement: 'Assets Under Management',
       currentAPY: 'Current APY',
+      estimatedAPY: 'Estimated APY',
       depositors: 'Depositors',
     },
   },
@@ -59,6 +61,7 @@ const locale = {
     },
   },
   policies: {
+    title: 'Policies',
     openPeriod: 'Open Period',
     lockUpPeriod: 'Lock-Up Period',
     fundraisingCap: 'Fundraising Cap',
