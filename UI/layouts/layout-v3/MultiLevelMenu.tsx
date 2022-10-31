@@ -80,6 +80,9 @@ const iconStyle = (active: any) => ({
   fontSize: 18,
   marginRight: '4px',
   color: active ? 'primary.main' : 'text.secondary',
+  '.secondary': {
+    color: active ? 'primary.400' : 'text.disabled',
+  },
 })
 
 interface MultiLevelMenuProps {
