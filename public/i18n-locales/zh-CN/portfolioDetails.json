@@ -9,12 +9,14 @@
     "status": "地位",
     "term": "学期",
     "lockUpPeriod": "锁定期",
+    "days": "天",
     "standard": "标准",
     "yourEquity": "您的权益",
     "PNL": "盈亏",
     "stats": {
       "assetsUnderManagement": "管理资产",
       "currentAPY": "当前APY",
+      "estimatedAPY": "预计APY",
       "depositors": "储户"
     }
   },
@@ -57,6 +59,7 @@
     }
   },
   "policies": {
+    "title": "政策",
     "openPeriod": "开放期",
     "lockUpPeriod": "锁定期",
     "fundraisingCap": "筹款上限",
