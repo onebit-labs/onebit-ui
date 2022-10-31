@@ -6,20 +6,51 @@ import ChainErrorIcon from '@mui/icons-material/PowerOffTwoTone'
 import ChainIcon from '../ChainIcon'
 
 import { useChainButton } from './useChainButton'
+import { useTheme } from '@mui/material/styles'
 
 export const ChainButton: FC = () => {
   const { t } = useTranslation()
   const { network, open } = useChainButton()
+  const theme = useTheme()
 
   const content = useMemo(() => {
     if (!network)
       return (
-        <Button key="chain-btn" variant="transOutlined" color="error" startIcon={<ChainErrorIcon />} onClick={open}>
+        <Button 
+          key="chain-btn" 
+          variant="outlined" 
+          color="error" 
+          startIcon={<ChainErrorIcon />} 
+          onClick={open}
+          sx={{
+            borderRadius: 30,
+            border: `1px solid ${theme.palette.error.main}`,
+            "&:hover": { 
+              backgroundColor: theme.palette.error.light,
+              border: `1px solid ${theme.palette.error.main}`,
+            },
+            color: theme.palette.error.main,
+          }}
+          >
           {t(`wallet.error.ChainUnknownError`)}
         </Button>
       )
     return (
-      <Button key="chain-btn" variant="transOutlined" startIcon={<ChainIcon chainName={network.name} />} onClick={open}>
+      <Button 
+        key="chain-btn" 
+        variant="outlined" 
+        startIcon={<ChainIcon chainName={network.name} />}
+        onClick={open}
+        sx={{
+          borderRadius: 30,
+          border: `1px solid ${theme.palette.divider}`,
+          "&:hover": { 
+            backgroundColor: theme.palette.action.hover,
+            border: `1px solid ${theme.palette.divider}`,
+          },
+          color: theme.palette.text.secondary,
+        }}
+        >
         {network.fullName}
       </Button>
     )

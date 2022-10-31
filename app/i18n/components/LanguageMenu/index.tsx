@@ -2,8 +2,9 @@ import type { FC } from 'react'
 import { useState, Fragment, useMemo, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Menu from '@mui/material/Menu'
-import Button from '@mui/material/Button'
-import LanguageIcon from '@mui/icons-material/Language'
+import IconButton from '@mui/material/IconButton'
+import Image from 'next/image'
+import Box from '@mui/material/Box'
 
 import languages from 'app/i18n/generated/languages'
 
@@ -55,20 +56,22 @@ const LanguageMenu: FC<LanguageMenuProps> = () => {
 
   return (
     <Fragment>
-      <Button
-        sx={{
-          color: 'primary.contrastText',
-          textTransform: 'uppercase',
-        }}
+      <IconButton
         id="language-button"
         aria-controls="language-menu"
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        startIcon={<LanguageIcon />}
+        sx={{
+          width: 40,
+          height: 40,
+          marginRight: 1,
+        }}
       >
-        {currentLanguage.code}
-      </Button>
+        <Box sx={{ '& img': { borderRadius: 30 }}}>
+          <Image src={flags[currentLanguage.code]} alt={currentLanguage.name} width={20} height={20}/>
+        </Box>
+      </IconButton>
       <Menu
         id="language-menu"
         anchorEl={anchorEl}

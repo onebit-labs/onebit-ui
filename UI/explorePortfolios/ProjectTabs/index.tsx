@@ -58,7 +58,7 @@ const ProjectTabs: FC = () => {
   }, [portfolioData, t, value])
 
   const Header: FCC = useCallback(
-    ({ children }) => <SearchHeader placeholder="Find Portifolios">{children}</SearchHeader>,
+    ({ children }) => <SearchHeader placeholder="Find Portfolios">{children}</SearchHeader>,
     []
   )
 

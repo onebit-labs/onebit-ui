@@ -19,10 +19,7 @@ const ThemeButton: FC = () => {
       return (
         <IconButton
           sx={{
-            color: 'primary.contrastText',
-            '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.08)',
-            },
+            color: '#FFC675',
           }}
           onClick={onClick}
         >
@@ -31,7 +28,7 @@ const ThemeButton: FC = () => {
       )
     case 'dark':
       return (
-        <IconButton sx={{ color: 'primary.contrastText' }} onClick={onClick}>
+        <IconButton sx={{ color: '#FFC675' }} onClick={onClick}>
           <LightModeIcon />
         </IconButton>
       )

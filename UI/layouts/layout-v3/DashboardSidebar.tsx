@@ -84,8 +84,8 @@ const DashboardSidebar: FC<React.PropsWithChildren<DashboardSidebarProps>> = (pr
         {/* LOGO */}
         <FlexBox>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={LogoImage.src} alt="logo" width={18} />
-          <StyledLogo compact={COMPACT}>Onebit</StyledLogo>
+          <img src={LogoImage.src} alt="logo" width={100} />
+          {/* <StyledLogo compact={COMPACT}>Onebit</StyledLogo> */}
         </FlexBox>
         <Box mx={'auto'}></Box>
 

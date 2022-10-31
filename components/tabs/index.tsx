@@ -18,7 +18,7 @@ const StyledTabList = styled(TabList)(({ theme }) => ({
   },
   [theme.breakpoints.up('sm')]: {
     '& .MuiTabs-flexContainer': {
-      minWidth: 400,
+      minWidth: 300,
       justifyContent: 'space-between',
     },
   },

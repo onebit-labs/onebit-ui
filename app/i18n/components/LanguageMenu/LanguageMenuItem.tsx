@@ -20,13 +20,17 @@ const LanguageMenuItem: FC<LanguageMenuItemProps> = ({
           width: 20,
           height: 20,
         },
+        '.country-flag img': {
+          borderRadius: 30,
+        },
+        width: 150,
       }}
       onClick={() => {
         router.replace(url, undefined, { locale: code })
       }}
     >
       <ListItemText>{value}</ListItemText>
-      <div className="country-flag">{flag && <Image src={flag} alt={name} width={20} height={20} />}</div>
+      <div className="country-flag">{flag && <Image src={flag} alt={name} width={20} height={20}/>}</div>
     </MenuItem>
   )
 }

@@ -73,10 +73,10 @@ const DashboardHeader: FC<React.PropsWithChildren<DashboardHeaderProps>> = (prop
         </Box>
 
         <Box flexGrow={1} ml={1} />
-        <ChainButton />
-        <ConnectButton />
         <ThemeButton />
         <LanguageMenu />
+        <ChainButton />
+        <ConnectButton />
       </StyledToolBar>
     </DashboardHeaderRoot>
   )

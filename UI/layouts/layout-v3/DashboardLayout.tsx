@@ -8,6 +8,7 @@ import NProgress from 'lib/nprogress/components/NProgress'
 import LayoutBodyWrapper from '../layout-parts/LayoutBodyWrapper'
 import DashboardHeader from '../layout-parts/DashboardHeader'
 import DashboardSidebar from './DashboardSidebar'
+import { useTheme } from '@mui/material/styles'
 
 const DashboardLayout: FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const [sidebarCompact, setSidebarCompact] = useState(false)
@@ -21,10 +22,11 @@ const DashboardLayout: FC<React.PropsWithChildren<unknown>> = ({ children }) => 
     width: `calc(100% - ${sidebarCompact ? '86px' : '280px'})`,
     marginLeft: sidebarCompact ? '86px' : '280px',
   }
+  const theme = useTheme()
 
   return (
     <Fragment>
-      <GlobalStyles styles={{ body: { background: 'rgb(243, 244, 249)' } }} />
+      <GlobalStyles styles={{ body: { background: theme.palette.background.default } }} />
       <DashboardSidebar
         sidebarCompact={sidebarCompact}
         showMobileSideBar={showMobileSideBar}
