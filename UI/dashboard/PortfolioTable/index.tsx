@@ -8,7 +8,7 @@ import { useTable } from './useTable'
 
 const ROOT = styled(Paper)``
 
-const PortfolioTable: FC = () => {
+const HistoricalPerformance: FC = () => {
   const table = useTable()
 
   return (
@@ -22,4 +22,4 @@ const PortfolioTable: FC = () => {
   )
 }
 
-export default PortfolioTable
+export default HistoricalPerformance
