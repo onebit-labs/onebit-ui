@@ -56,7 +56,16 @@ const locale = {
     },
     exit: {
       title: 'Exit Fee',
-    }
+    },
+  },
+  policies: {
+    openPeriod: 'Open Period',
+    lockUpPeriod: 'Lock-Up Period',
+    fundraisingCap: 'Fundraising Cap',
+    minimumDeposit: 'Minimum Deposit',
+    reInvestment: 'Re-investment',
+    description:
+      'A management fee is a periodic payment that is paid by depositors to the Porfolio Manager. The fee is calculated as a percentage of assets under management and is independent of Vault returns.',
   },
 }
 
