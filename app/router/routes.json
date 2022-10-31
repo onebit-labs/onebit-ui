@@ -6,5 +6,6 @@
   "/dashboard",
   "/dev",
   "/",
+  "/portfolio/[id]",
   "/transaction-history"
 ]

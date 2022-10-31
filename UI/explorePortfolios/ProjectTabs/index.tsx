@@ -16,6 +16,7 @@ const ProjectTabs: FC = () => {
     const reg = new RegExp(value)
     const data = [
       {
+        id: 'Onebit-USDT-1',
         portfolioName: 'Onebit主观1号',
         symbol: 'USDT',
         lockTime: 90,
@@ -25,9 +26,10 @@ const ProjectTabs: FC = () => {
         purchaseUpperLimit: 500000,
         totalSupply: 12345,
         estimatedAPY: 0.1212,
-        deposits: 15,
+        depositors: 15,
       },
       {
+        id: 'Onebit-USDT-2',
         portfolioName: 'Onebit跟单1号',
         symbol: 'USDT',
         lockTime: 90,
@@ -37,15 +39,13 @@ const ProjectTabs: FC = () => {
         purchaseUpperLimit: 100000,
         totalSupply: 12345,
         currentAPY: 0.1512,
-        deposits: 15,
+        depositors: 15,
       },
     ].filter((i) => !value || reg.test(i.portfolioName))
 
     const returnValue: TabsProps['tabs'] = [
       {
-        title: {
-          label: 'all',
-        },
+        title: 'all',
         children: {
           component: Projects,
           props: {
@@ -54,9 +54,7 @@ const ProjectTabs: FC = () => {
         },
       },
       {
-        title: {
-          label: 'open',
-        },
+        title: 'open',
         children: {
           component: Projects,
           props: {
@@ -65,9 +63,7 @@ const ProjectTabs: FC = () => {
         },
       },
       {
-        title: {
-          label: 'lockedUp',
-        },
+        title: 'lockedUp',
         children: {
           component: Projects,
           props: {
@@ -77,7 +73,7 @@ const ProjectTabs: FC = () => {
       },
     ]
     return returnValue.map((i) => {
-      i.title.label = t(`tabs.${i.title.label}`)
+      i.title = t(`tabs.${i.title}`)
       return i
     })
   }, [t, value])

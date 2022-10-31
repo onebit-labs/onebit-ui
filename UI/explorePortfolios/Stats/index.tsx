@@ -40,7 +40,7 @@ const Stats: FC = () => {
     },
     {
       price: 321,
-      title: 'deposits',
+      title: 'depositors',
       icon: (
         <div>
           <Image src={User} alt="User" />

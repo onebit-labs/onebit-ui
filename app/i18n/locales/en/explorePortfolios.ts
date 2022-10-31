@@ -3,7 +3,7 @@ const locale = {
     assetsUnderManagement: 'Assets Under Management',
     totalProfitSinceInception: 'Total Profit Since Inception',
     portfolios: 'Portfolios',
-    deposits: 'Deposits',
+    depositors: 'Depositors',
   },
   tabs: {
     placeholder: 'Find Portifolios',
@@ -11,19 +11,19 @@ const locale = {
     open: 'Open',
     lockedUp: 'Locked-Up',
   },
+  actions: {
+    deposit: 'Deposit',
+    withdraw: 'Withdraw',
+  },
   projectCard: {
     lockUpPeriod: 'Lock-Up Period',
     days: 'Days',
     netValue: 'Net Value',
     past7D: 'Past 7D',
-    fundraisingProgress: {
-      title: 'Fundraising Progress',
-      max: 'Max',
-    },
     AUM: 'AUM',
     estimatedAPY: 'Estimated APY',
     currentAPY: 'Current APY',
-    deposits: 'Deposits',
+    depositors: 'Depositors',
   },
 }
 

@@ -11,15 +11,15 @@ type FundraisingProgressProps = {
 }
 
 const FundraisingProgress: FC<FundraisingProgressProps> = ({ totalSupply, purchaseUpperLimit, symbol }) => {
-  const { t } = useTranslation('explorePortfolios')
+  const { t } = useTranslation()
   const value = totalSupply / purchaseUpperLimit
   return (
     <Stack spacing={1}>
-      <H4>{t('projectCard.fundraisingProgress.title')}</H4>
+      <H4>{t('project.fundraisingProgress.title')}</H4>
       <LinearProgress variant="determinate" value={value * 100} />
       <H4 display="flex" justifyContent="space-between">
         <NumberDisplay value={value} options="percent" />
-        <span>{`${t('projectCard.fundraisingProgress.max')} ${purchaseUpperLimit} ${symbol}`}</span>
+        <span>{`${t('project.fundraisingProgress.max')} ${purchaseUpperLimit} ${symbol}`}</span>
       </H4>
     </Stack>
   )

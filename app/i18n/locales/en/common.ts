@@ -42,6 +42,10 @@ const locale = {
       open: 'Open',
       lockedUp: 'Locked-Up',
     },
+    fundraisingProgress: {
+      title: 'Fundraising Progress',
+      max: 'Max',
+    },
   },
 }
 

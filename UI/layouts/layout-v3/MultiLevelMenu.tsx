@@ -106,6 +106,7 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
   //   RECURSIVE FUNCTION TO RENDER MULTI LEVEL MENU
   const renderLevels = (data: any[]) => {
     return data
+      .filter((i) => !i.hide)
       .filter((i) => account || !i.needAccount)
       .map((item, index) => {
         const name = t(item.name)

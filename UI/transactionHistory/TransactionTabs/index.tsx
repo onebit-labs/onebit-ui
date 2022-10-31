@@ -18,9 +18,7 @@ const TransactionTabs: FC = () => {
 
     const returnValue: TabsProps['tabs'] = [
       {
-        title: {
-          label: 'all',
-        },
+        title: 'all',
         children: {
           component: Transactions,
           props: {
@@ -29,9 +27,7 @@ const TransactionTabs: FC = () => {
         },
       },
       {
-        title: {
-          label: 'deposit',
-        },
+        title: 'deposit',
         children: {
           component: Transactions,
           props: {
@@ -40,9 +36,7 @@ const TransactionTabs: FC = () => {
         },
       },
       {
-        title: {
-          label: 'withdrawal',
-        },
+        title: 'withdrawal',
         children: {
           component: Transactions,
           props: {
@@ -52,7 +46,7 @@ const TransactionTabs: FC = () => {
       },
     ]
     return returnValue.map((i) => {
-      i.title.label = t(`tabs.${i.title.label}`)
+      i.title = t(`tabs.${i.title}`)
       return i
     })
   }, [t, value])

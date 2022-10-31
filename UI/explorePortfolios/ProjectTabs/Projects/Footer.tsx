@@ -9,12 +9,12 @@ type FooterProps = {
   totalSupply: number
   estimatedAPY: number
   currentAPY: number
-  deposits: number
+  depositors: number
   symbol: string
   isOpen: boolean
 }
 
-const Footer: FC<FooterProps> = ({ totalSupply, symbol, estimatedAPY, deposits, currentAPY, isOpen }) => {
+const Footer: FC<FooterProps> = ({ totalSupply, symbol, estimatedAPY, depositors, currentAPY, isOpen }) => {
   const { t } = useTranslation('explorePortfolios')
   return (
     <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
@@ -43,9 +43,9 @@ const Footer: FC<FooterProps> = ({ totalSupply, symbol, estimatedAPY, deposits, 
         </Grid>
       )}
       <Grid item lg={4} xs={12}>
-        <Small>{t('projectCard.deposits')}</Small>
+        <Small>{t('projectCard.depositors')}</Small>
         <H5>
-          <NumberDisplay value={deposits} options="number" />
+          <NumberDisplay value={depositors} options="number" />
         </H5>
       </Grid>
     </Grid>

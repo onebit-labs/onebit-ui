@@ -11,8 +11,11 @@ import { valueToBigNumber } from 'app/utils/math'
 
 import NumberDisplay from './NumberDisplay'
 
-type RiseOrFallProps = { value: any; displayIcon: boolean } & TypographyTypeMap<{}, 'span'>['props']
-const RiseOrFall: FC<RiseOrFallProps> = ({ value, displayIcon, ...props }) => {
+type RiseOrFallProps = { value: any; percentValue?: any; displayIcon?: boolean } & TypographyTypeMap<
+  {},
+  'span'
+>['props']
+const RiseOrFall: FC<RiseOrFallProps> = ({ value, displayIcon, percentValue, ...props }) => {
   const theme = useTheme()
   const bn = useMemo(() => valueToBigNumber(value), [value])
   const isZero = useMemo(() => bn.isNaN() || bn.isZero(), [bn])
@@ -22,23 +25,48 @@ const RiseOrFall: FC<RiseOrFallProps> = ({ value, displayIcon, ...props }) => {
     return theme.palette.error.main
   }, [bn, isZero, theme.palette.error.main, theme.palette.success.main, theme.palette.text.primary])
 
+  const symbol = useMemo(() => bn.gt(0) && <span>+</span>, [bn])
+
   return (
     <Typography {...props} color={color} justifyContent="center" alignItems="center" display="flex">
       {isZero ? (
         <span>0%</span>
       ) : (
         <Stack spacing={1} direction="row">
-          {displayIcon && bn.gt(0) ? <ArrowCircleUpTwoToneIcon /> : <ArrowCircleDownTwoToneIcon />}
-          <span>
-            {bn.gt(0) && <span>+</span>}
-            <NumberDisplay
-              value={value}
-              options="percent"
-              numberFormatOptions={{
-                maximumFractionDigits: 2,
-              }}
-            />
-          </span>
+          {displayIcon && (bn.gt(0) ? <ArrowCircleUpTwoToneIcon /> : <ArrowCircleDownTwoToneIcon />)}
+          {percentValue ? (
+            <span>
+              {symbol}
+              <NumberDisplay
+                value={value}
+                options="number"
+                numberFormatOptions={{
+                  maximumFractionDigits: 2,
+                }}
+              />
+              <span>(</span>
+              {symbol}
+              <NumberDisplay
+                value={percentValue}
+                options="percent"
+                numberFormatOptions={{
+                  maximumFractionDigits: 2,
+                }}
+              />
+              <span>)</span>
+            </span>
+          ) : (
+            <span>
+              {symbol}
+              <NumberDisplay
+                value={value}
+                options="percent"
+                numberFormatOptions={{
+                  maximumFractionDigits: 2,
+                }}
+              />
+            </span>
+          )}
         </Stack>
       )}
     </Typography>

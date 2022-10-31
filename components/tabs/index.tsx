@@ -1,58 +1,38 @@
+import { TabContext, TabList, TabPanel } from '@mui/lab'
+
 import type { ReactNode, SyntheticEvent } from 'react'
-import { Fragment, useState } from 'react'
-import { styled, useTheme } from '@mui/material/styles'
-import Stack from '@mui/material/Stack'
-import MuiTabs from '@mui/material/Tabs'
-import MuiTab from '@mui/material/Tab'
-import Box from '@mui/material/Box'
-import { Paragraph } from 'components/Typography'
+import { useState } from 'react'
+import { styled } from '@mui/material/styles'
 import type { FCC } from 'app/types'
 import Grid from '@mui/material/Grid'
+import Card from '@mui/material/Card'
+import FlexBetween from 'components/flexbox/FlexBetween'
+import Tab from '@mui/material/Tab'
 
-const applyProps = (index: number) => {
-  return {
-    id: `tab-${index}`,
-    'aria-controls': `tabpanel-${index}`,
-  }
-}
-interface TabPanelProps {
-  children?: React.ReactNode
-  index: number
-  value: number
-}
-const TabPanel: FCC<TabPanelProps> = (props) => {
-  const { children, value, index } = props
-  return (
-    <Box
-      sx={{
-        display: value != index ? 'none' : 'block',
-        paddingTop: 2,
-      }}
-    >
-      {children}
-    </Box>
-  )
-}
-
-const Tab = styled(MuiTab)(({ theme }) => ({
-  color: theme.palette.text.secondary,
+const StyledCard = styled(Card)(() => ({
+  position: 'relative',
 }))
-
-type TabTitleProps = {
-  label: string
-  icon?: ReactNode
-}
-const TabTitle: FCC<TabTitleProps> = ({ icon, label }) => {
-  return (
-    <Stack spacing={1} direction="row">
-      {icon}
-      <Paragraph lineHeight="24px">{label}</Paragraph>
-    </Stack>
-  )
-}
+const StyledTabList = styled(TabList)(({ theme }) => ({
+  [theme.breakpoints.down(780)]: {
+    width: '100%',
+    marginBottom: 20,
+    '& .MuiTabs-flexContainer': { justifyContent: 'space-between' },
+  },
+  [theme.breakpoints.up('sm')]: {
+    '& .MuiTabs-flexContainer': {
+      minWidth: 400,
+      justifyContent: 'space-between',
+    },
+  },
+}))
+const StyledTab = styled(Tab)(({ theme }) => ({
+  fontSize: 13,
+  color: theme.palette.text.primary,
+}))
+const StyledTabPanel = styled(TabPanel)(() => ({ padding: 0 }))
 
 type TabItem = {
-  title: TabTitleProps
+  title: string
   children: {
     component: any
     props?: any
@@ -60,53 +40,38 @@ type TabItem = {
 }
 export type TabsProps = {
   tabs: TabItem[]
+  header?: ReactNode
+  sx?: any
 }
-const Tabs: FCC<TabsProps> = ({ tabs }) => {
-  const theme = useTheme()
-  const [value, setValue] = useState(0)
-  const handleChange = (event: SyntheticEvent, newValue: number) => {
+const Tabs: FCC<TabsProps> = ({ tabs, header, sx }) => {
+  const [value, setValue] = useState('0')
+  const handleChange = (event: SyntheticEvent, newValue: string) => {
     setValue(newValue)
   }
   return (
-    <Fragment>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <MuiTabs
-          sx={{
-            '.MuiTabs-indicator': {
-              height: 3,
-              background: theme.palette.primary.main,
-            },
-          }}
-          variant="scrollable"
-          allowScrollButtonsMobile
-          value={value}
-          onChange={handleChange}
-        >
-          {tabs.map(({ title }, index) => {
-            return (
-              <Tab
-                sx={{ width: { xs: 'auto', sm: '23%' } }}
-                key={title.label}
-                label={<TabTitle {...title} />}
-                {...applyProps(index)}
-              />
-            )
-          })}
-        </MuiTabs>
-      </Box>
-
+    <TabContext value={value}>
+      <StyledCard>
+        {header}
+        <FlexBetween flexWrap="wrap" padding="0 2rem">
+          <StyledTabList onChange={handleChange} sx={sx}>
+            {tabs.map(({ title }, index) => {
+              return <StyledTab key={title} label={title} value={index.toString()} />
+            })}
+          </StyledTabList>
+        </FlexBetween>
+      </StyledCard>
       <Grid container pt={2}>
         <Grid item xs={12}>
           {tabs.map(({ title, children }, index) => {
             return (
-              <TabPanel key={title.label} value={value} index={index}>
+              <StyledTabPanel key={title} value={index.toString()}>
                 <children.component {...(children.props || {})} />
-              </TabPanel>
+              </StyledTabPanel>
             )
           })}
         </Grid>
       </Grid>
-    </Fragment>
+    </TabContext>
   )
 }
 

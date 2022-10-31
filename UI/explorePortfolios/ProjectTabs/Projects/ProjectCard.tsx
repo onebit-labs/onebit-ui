@@ -5,8 +5,8 @@ import type { FC } from 'react'
 import dynamic from 'next/dynamic'
 import TokenIcon from 'lib/protocol/components/TokenIcon'
 import TimePeriod from 'components/date/TimePeriod'
+import FundraisingProgress from 'components/project/FundraisingProgress'
 
-import FundraisingProgress from './FundraisingProgress'
 import Footer from './Footer'
 import ProjectStatus from 'components/project/status'
 
@@ -24,6 +24,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 }))
 
 type ProjectCardProps = {
+  id: string
   portfolioName: string
   symbol: string
   lockTime: number
@@ -35,7 +36,11 @@ type ProjectCardProps = {
   totalSupply: number
   estimatedAPY: number
   currentAPY: number
-  deposits: number
+  depositors: number
+  description: string
+  yourEquity: number
+  PNL: number
+  previousPNL: number
 }
 
 const ProjectCard: FC<React.PropsWithChildren<ProjectCardProps>> = (props) => {
