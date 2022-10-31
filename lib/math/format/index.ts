@@ -4,6 +4,7 @@ import { toBN } from '../BN'
 import type { BNValue } from '../types'
 
 import { abbreviate } from './abbreviate'
+import { toFixed } from './toFixed'
 
 const createUSDFormatOptions = () => ({
   style: 'currency',
@@ -53,6 +54,7 @@ export const useNumberFormat = () => {
       format: numberFormat,
       options: numberFormatOptions,
       abbreviate,
+      toFixed,
     }),
     [numberFormat]
   )
