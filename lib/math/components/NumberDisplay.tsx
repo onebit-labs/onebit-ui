@@ -1,8 +1,8 @@
-import { useNumberFormat } from 'lib/math/hooks/useNumberFormat'
 import type { FC } from 'react'
 import { useMemo } from 'react'
 import { toBN } from 'lib/math'
 import type { BNValue } from 'lib/math/types'
+import { useMath } from 'domains/utils'
 
 type NumberDisplayProps = {
   value: BNValue
@@ -11,7 +11,7 @@ type NumberDisplayProps = {
 }
 
 const NumberDisplay: FC<NumberDisplayProps> = ({ value, options, numberFormatOptions }) => {
-  const NF = useNumberFormat()
+  const { NF } = useMath()
 
   const data = useMemo(() => {
     const d = toBN(value)
