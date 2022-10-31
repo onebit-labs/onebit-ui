@@ -31,11 +31,14 @@ export const createUseRequestController = <SliceState extends RequestSliceState,
     const status = useSelector(selectStatus)
     const dispatch = useAppDispatch()
     const statusRef = useLatest(status)
-    const setStatus = useCallback((status: REQUEST_STATUS) => {
-      dispatch(setStatusAction(status))
-      statusRef.current = status
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [dispatch])
+    const setStatus = useCallback(
+      (status: REQUEST_STATUS) => {
+        dispatch(setStatusAction(status))
+        statusRef.current = status
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      },
+      [dispatch]
+    )
     const getStatus = useCallback(() => {
       return statusRef.current
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -43,7 +46,7 @@ export const createUseRequestController = <SliceState extends RequestSliceState,
 
     return {
       setStatus,
-      getStatus
+      getStatus,
     }
   }
 

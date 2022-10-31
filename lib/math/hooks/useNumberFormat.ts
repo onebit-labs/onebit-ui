@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react'
 import { useRouter } from 'next/router'
-import BigNumber from 'bignumber.js'
+import type { BNValue } from '../types'
+import { toBN } from '..'
 
 /**
  * Number Format
@@ -10,9 +11,9 @@ export const useNumberFormat = () => {
   const router = useRouter()
 
   const numberFormat = useCallback(
-    (value: BigNumber.Value, options: Intl.NumberFormatOptions = {}) => {
+    (value: BNValue, options: Intl.NumberFormatOptions = {}) => {
       const numberFormat = new Intl.NumberFormat(router.locale, options)
-      const bn = new BigNumber(value)
+      const bn = toBN(value)
       return bn.isNaN() ? '-' : numberFormat.format(bn.toNumber())
     },
     [router.locale]

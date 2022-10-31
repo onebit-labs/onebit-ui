@@ -7,7 +7,7 @@ import Revenue from './icons/revenue.svg'
 import User from './icons/user.svg'
 
 import StatsCard from './StatsCard'
-import NumberDisplay from 'components/math/NumberDisplay'
+import NumberDisplay from 'lib/math/components/NumberDisplay'
 
 type StatsProps = {
   symbol: string

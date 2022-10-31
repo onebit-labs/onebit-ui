@@ -1,10 +1,9 @@
 import { safeGet } from 'app/utils/get'
-import { valueToBigNumber } from 'app/utils/math'
-import type { BigNumber } from 'bignumber.js'
+import { toBN } from 'lib/math'
 import type { ReserveData } from './reserveData'
 
 export type UserReserveData = {
-  balanceOf: BigNumber
+  balanceOf: BN
 }
 
 type UserReserveDataProps = {
@@ -16,7 +15,7 @@ export const getUserReserveData = ({ reserveData, balanceOf }: UserReserveDataPr
   Object.keys(reserveData || {}).forEach((key) => {
     const balanceOfValue = safeGet(() => balanceOf[reserveData[key].oTokenAddress] || 0)
     returnValue[key] = {
-      balanceOf: valueToBigNumber(balanceOfValue),
+      balanceOf: toBN(balanceOfValue),
     }
   })
 

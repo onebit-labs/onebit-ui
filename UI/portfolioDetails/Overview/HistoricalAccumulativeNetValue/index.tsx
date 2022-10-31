@@ -5,8 +5,8 @@ import Typography from '@mui/material/Typography'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 
-import RiseOrFall from 'components/math/RiseOrFall'
-import NumberDisplay from 'components/math/NumberDisplay'
+import RiseOrFall from 'lib/math/components/RiseOrFall'
+import NumberDisplay from 'lib/math/components/NumberDisplay'
 
 import Chart from './Chart'
 import { useChart } from './useChart'

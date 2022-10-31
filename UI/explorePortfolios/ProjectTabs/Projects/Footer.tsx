@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
-import NumberDisplay from 'components/math/NumberDisplay'
+import NumberDisplay from 'lib/math/components/NumberDisplay'
 import { H5, Small } from 'components/Typography'
 import { useTranslation } from 'next-i18next'
 import type { FC } from 'react'

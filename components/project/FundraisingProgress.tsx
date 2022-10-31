@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import { LinearProgress, Stack } from '@mui/material'
 import { H4 } from 'components/Typography'
 import { useTranslation } from 'next-i18next'
-import NumberDisplay from 'components/math/NumberDisplay'
+import NumberDisplay from 'lib/math/components/NumberDisplay'
 
 type FundraisingProgressProps = {
   purchaseUpperLimit: number

@@ -1,4 +1,4 @@
-import { BigNumber as BN } from '@ethersproject/bignumber'
+import { BigNumber as EthersBN } from '@ethersproject/bignumber'
 import { useWeb3React } from '@web3-react/core'
 import type { providers, BigNumber } from 'ethers'
 import { useCallback } from 'react'
@@ -23,7 +23,7 @@ export const useSendTransaction = () => {
       const signer = web3Provider.getSigner(from)
       return signer.sendTransaction({
         ...txData,
-        value: txData.value ? BN.from(txData.value) : undefined,
+        value: txData.value ? EthersBN.from(txData.value) : undefined,
       })
     },
     [web3Provider]

@@ -7,7 +7,7 @@ import ArrowCircleUpTwoToneIcon from '@mui/icons-material/ArrowCircleUpTwoTone'
 import ArrowCircleDownTwoToneIcon from '@mui/icons-material/ArrowCircleDownTwoTone'
 import { Typography } from '@mui/material'
 
-import { valueToBigNumber } from 'app/utils/math'
+import { toBN } from 'lib/math'
 
 import NumberDisplay from './NumberDisplay'
 
@@ -17,7 +17,7 @@ type RiseOrFallProps = { value: any; percentValue?: any; displayIcon?: boolean }
 >['props']
 const RiseOrFall: FC<RiseOrFallProps> = ({ value, displayIcon, percentValue, ...props }) => {
   const theme = useTheme()
-  const bn = useMemo(() => valueToBigNumber(value), [value])
+  const bn = useMemo(() => toBN(value), [value])
   const isZero = useMemo(() => bn.isNaN() || bn.isZero(), [bn])
   const color = useMemo(() => {
     if (isZero) return theme.palette.text.primary

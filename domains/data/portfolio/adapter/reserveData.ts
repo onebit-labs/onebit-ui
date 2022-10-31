@@ -1,20 +1,19 @@
 import type { ReserveDataSource } from 'domains/data/lendingPool/store/reserveData/adapter/getReserveDataSource'
-import type { BigNumber } from 'bignumber.js'
 import { getBigNumber, getTimestamp } from 'app/utils/get'
 
 export type ReserveData = {
-  liquidityIndex: BigNumber
-  currentLiquidityRate: BigNumber
-  previousLiquidityIndex: BigNumber
-  purchaseUpperLimit: BigNumber
+  liquidityIndex: BN
+  currentLiquidityRate: BN
+  previousLiquidityIndex: BN
+  purchaseUpperLimit: BN
 
   lastUpdateTimestamp: number
   purchaseBeginTimestamp: number
   purchaseEndTimestamp: number
   redemptionBeginTimestamp: number
 
-  managementFeeRate: BigNumber
-  performanceFeeRate: BigNumber
+  managementFeeRate: BN
+  performanceFeeRate: BN
 
   oTokenAddress: string
   fundAddress: string

@@ -2,7 +2,7 @@ import type { MouseEvent } from 'react'
 import { useState, useMemo, useRef } from 'react'
 import { useTheme } from '@mui/material/styles'
 
-import { valueToBigNumber } from 'app/utils/math'
+import { toBN } from 'lib/math'
 import { safeGet } from 'app/utils/get'
 
 import type { NetValueChartProps } from './types'
@@ -42,7 +42,7 @@ export const useChart = () => {
   const change24 = useMemo(() => {
     return (
       safeGet(() =>
-        valueToBigNumber(data[data.length - 1].y)
+        toBN(data[data.length - 1].y)
           .div(data[data.length - 2].y)
           .minus(1)
       ) || 0

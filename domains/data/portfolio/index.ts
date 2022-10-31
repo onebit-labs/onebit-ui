@@ -11,7 +11,7 @@ import type { UserReserveData } from './adapter/userReserveData'
 
 import { useReserveData } from './application/reserveData'
 import { useUserReserveData } from './application/userReserveData'
-import { valueToBigNumber } from 'app/utils/math'
+import { toBN } from 'lib/math'
 import { safeGet } from 'app/utils/get'
 
 export type Portfolio = Partial<ReserveData & UserReserveData> & {
@@ -50,15 +50,15 @@ const usePortfolioService = () => {
         ...userReserveData[pool],
         status: getPortfolioStatus(reserve),
         lockTime: getPortfolioLockTime(reserve),
-        oracle: valueToBigNumber(safeGet(() => oracle[info.symbol]) || 0),
-        totalSupply: valueToBigNumber(safeGet(() => totalSupply[address.OToken]) || 0),
+        oracle: toBN(safeGet(() => oracle[info.symbol]) || 0),
+        totalSupply: toBN(safeGet(() => totalSupply[address.OToken]) || 0),
 
-        estimatedAPY: valueToBigNumber(0),
-        currentAPY: valueToBigNumber(0),
-        depositors: valueToBigNumber(0),
-        yourEquity: valueToBigNumber(0),
-        PNL: valueToBigNumber(0),
-        previousPNL: valueToBigNumber(0),
+        estimatedAPY: toBN(0),
+        currentAPY: toBN(0),
+        depositors: toBN(0),
+        yourEquity: toBN(0),
+        PNL: toBN(0),
+        previousPNL: toBN(0),
       } as Portfolio
     })
     log('[portfolio] [portfolioData]', returnValue)

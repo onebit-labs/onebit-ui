@@ -12,8 +12,8 @@ import Grid from '@mui/material/Grid'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 
-import RiseOrFall from 'components/math/RiseOrFall'
-import NumberDisplay from 'components/math/NumberDisplay'
+import RiseOrFall from 'lib/math/components/RiseOrFall'
+import NumberDisplay from 'lib/math/components/NumberDisplay'
 
 import Chart from './Chart'
 import { useChart } from './useChart'

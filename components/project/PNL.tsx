@@ -1,4 +1,4 @@
-import RiseOrFall from 'components/math/RiseOrFall'
+import RiseOrFall from 'lib/math/components/RiseOrFall'
 import type { FC } from 'react'
 
 type PNLProps = {

@@ -3,8 +3,8 @@ import { styled } from '@mui/material/styles'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 
-import RiseOrFall from 'components/math/RiseOrFall'
-import NumberDisplay from 'components/math/NumberDisplay'
+import RiseOrFall from 'lib/math/components/RiseOrFall'
+import NumberDisplay from 'lib/math/components/NumberDisplay'
 
 import Chart from './Chart'
 import { useChart } from './useChart'

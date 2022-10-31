@@ -1,4 +1,4 @@
-import { normalizeBN, valueToBigNumber } from './math'
+import { normalize, toBN } from 'lib/math'
 import type BigNumber from 'bignumber.js'
 
 export const safeGet = <T>(cb: () => T): T => {
@@ -18,7 +18,7 @@ export const getString = <T, K extends keyof T>(obj: T, keys: K[]) => {
 
 export const getBigNumber = <T, K extends keyof T>(obj: T, keys: K[], decimals: number) => {
   return keys.reduce((o, k) => {
-    o[k] = normalizeBN(obj[k] as any, decimals)
+    o[k] = normalize(obj[k] as any, decimals)
     return o
   }, {} as Record<K, BigNumber>)
 }
@@ -32,7 +32,7 @@ export const getAddress = <T, K extends keyof T>(obj: T, keys: K[]) => {
 
 export const getTimestamp = <T, K extends keyof T>(obj: T, keys: K[], decimals = 3) => {
   return keys.reduce((o, k) => {
-    o[k] = valueToBigNumber(obj[k] as any)
+    o[k] = toBN(obj[k] as any)
       .multipliedBy(Math.pow(10, decimals))
       .toNumber()
     return o

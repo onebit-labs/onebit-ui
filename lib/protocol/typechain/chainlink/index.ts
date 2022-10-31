@@ -1,4 +1,4 @@
-import { normalizeBN } from 'app/utils/math'
+import { normalize } from 'lib/math'
 import type { providers } from 'ethers'
 import type BigNumber from 'bignumber.js'
 
@@ -26,10 +26,10 @@ export class ChainlinkService extends BaseService<Chainlink> {
       const chainlink: Chainlink = this.getContractInstance(token)
       const decimals = await chainlink.decimals()
       const { answer } = await chainlink.latestRoundData()
-      return normalizeBN(answer, decimals)
+      return normalize(answer, decimals)
     } catch (error) {
       console.error('[getAnswer]', error)
-      return normalizeBN(100015153, 8)
+      return normalize(100015153, 8)
     }
   }
 }
