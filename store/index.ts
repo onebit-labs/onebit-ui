@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import theme from 'app/theme/store'
 import erc20 from 'domains/data/erc20/store'
 import lendingPool from 'domains/data/lendingPool/store'
+import nprogress from 'lib/nprogress/store/nprogress'
 
 export function makeStore() {
   return configureStore({
@@ -13,6 +14,7 @@ export function makeStore() {
       theme,
       erc20,
       lendingPool,
+      nprogress
     },
   })
 }

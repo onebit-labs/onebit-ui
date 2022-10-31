@@ -8,10 +8,9 @@ import ActiveLayout from 'UI/layouts'
 import ThemeProvider from './theme'
 import type { FCC } from './types'
 
-// import { useRouteChange } from './router'
-
+import { useRouteChange } from 'lib/nprogress/router'
 export function useAppService() {
-  // useRouteChange()
+  useRouteChange()
 }
 
 export const { Context, Provider: APP, createUseContext } = createContext(useAppService)

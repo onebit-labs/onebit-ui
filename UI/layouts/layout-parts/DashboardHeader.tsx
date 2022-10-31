@@ -12,7 +12,6 @@ import { H3 } from 'components/Typography'
 import { navigations } from '../layout-parts/navigation'
 import { useTranslation } from 'next-i18next'
 import { safeGet } from 'app/utils/get'
-
 // ------------------------------------------------
 type DashboardHeaderProps = {
   setShowSideBar: () => void
