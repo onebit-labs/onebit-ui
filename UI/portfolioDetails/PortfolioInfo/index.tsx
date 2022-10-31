@@ -18,32 +18,17 @@ import Stats from './Stats'
 import FlexBetween from 'components/flexbox/FlexBetween'
 
 import Card from '@mui/material/Card'
+import { usePortfolioDetails } from 'domains/data'
+import { useMemo } from 'react'
+import NumberDisplay from 'lib/math/components/NumberDisplay'
 
 const StyledCard = styled(Card)(() => ({
   position: 'relative',
 }))
 
-const data = {
-  id: 'Onebit-USDT-1',
-  portfolioName: 'Onebit主观1号',
-  symbol: 'USDT',
-  lockTime: 90,
-  purchaseBeginTimestamp: 1666860043779,
-  purchaseEndTimestamp: 1666946540015,
-  status: 'open',
-  purchaseUpperLimit: 500000,
-  totalSupply: 12345,
-  estimatedAPY: 0.1212,
-  currentAPY: 0.1202,
-  depositors: 15,
-  description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscingLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut labore et dolore magna aliqua. elit, sed do eiusmod tempor ut labore et dolore, magna aliqua. sed do eiusmod tempor ut labore.',
-  yourEquity: 35.12,
-  PNL: 1.1233,
-  previousPNL: 1.11,
-}
-
 const PortfolioInfo: FCC = ({ children }) => {
+  const { portfolio } = usePortfolioDetails()
+  const data = useMemo(() => portfolio, [portfolio])
   const {
     status,
     portfolioName,
@@ -55,6 +40,7 @@ const PortfolioInfo: FCC = ({ children }) => {
     yourEquity,
   } = data
   const { t } = useTranslation('portfolioDetails')
+  const isOpen = status === 'open'
 
   return (
     <StyledCard>
@@ -67,10 +53,10 @@ const PortfolioInfo: FCC = ({ children }) => {
                 <H3>{portfolioName}</H3>
               </Stack>
               <Stack spacing={2} direction="row">
-                <Button variant="contained" startIcon={<FileDownloadOutlinedIcon />}>
+                <Button variant="contained" disabled={!isOpen} startIcon={<FileDownloadOutlinedIcon />}>
                   {t('common:wallet.btn.deposit')}
                 </Button>
-                <Button variant="contained" startIcon={<FileUploadOutlinedIcon />}>
+                <Button variant="contained" disabled={!isOpen} startIcon={<FileUploadOutlinedIcon />}>
                   {t('common:wallet.btn.withdraw')}
                 </Button>
               </Stack>
@@ -94,7 +80,7 @@ const PortfolioInfo: FCC = ({ children }) => {
               <H5 color="text.secondary">
                 <span>{t('info.yourEquity')}: </span>
                 <Span color="text.primary">
-                  {yourEquity} {symbol}
+                  <NumberDisplay value={yourEquity} options="number" /> {symbol}
                 </Span>
               </H5>
               <H5 color="text.secondary">

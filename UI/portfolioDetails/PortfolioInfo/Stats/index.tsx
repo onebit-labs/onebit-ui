@@ -8,15 +8,9 @@ import User from './icons/user.svg'
 
 import StatsCard from './StatsCard'
 import NumberDisplay from 'lib/math/components/NumberDisplay'
+import type { Portfolio } from 'domains/data/portfolio'
 
-type StatsProps = {
-  symbol: string
-  status: string
-  totalSupply: number
-  currentAPY: number
-  estimatedAPY: number
-  depositors: number
-}
+type StatsProps = Portfolio
 
 const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, currentAPY, depositors }) => {
   const isOpen = status === 'open'

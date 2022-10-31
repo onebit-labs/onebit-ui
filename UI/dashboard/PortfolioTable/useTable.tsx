@@ -92,8 +92,8 @@ export const useTable = (): BasicTableProps => {
     columns,
     data: [
       {
-        id: '1234',
-        portfolioName: '123',
+        id: 'Onebit-USDT-2',
+        portfolioName: 'Onebit跟单1号',
         lockedUntil: '1234',
         netValue: 1.2,
         yourEquity: '123',
@@ -101,8 +101,8 @@ export const useTable = (): BasicTableProps => {
         status: 'open',
       },
       {
-        id: '123554',
-        portfolioName: '11123',
+        id: 'Onebit-USDT-1',
+        portfolioName: 'Onebit主观1号',
         lockedUntil: '1234',
         netValue: 1.2,
         yourEquity: '123',

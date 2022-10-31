@@ -21,7 +21,6 @@ const Right = styled(Stack)``
 
 const NetValue = () => {
   const { t } = useTranslation('portfolioDetails')
-
   const chart = useChart()
 
   return (

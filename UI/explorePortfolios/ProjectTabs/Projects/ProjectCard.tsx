@@ -3,16 +3,14 @@ import { useTranslation } from 'next-i18next'
 import { Stack, Card, styled, CardContent, Box } from '@mui/material'
 import { H3, H5 } from 'components/Typography'
 import type { Portfolio } from 'domains/data/portfolio'
-import dynamic from 'next/dynamic'
 import TokenIcon from 'lib/protocol/components/TokenIcon'
 import TimePeriod from 'components/date/TimePeriod'
 import FlexBetween from 'components/flexbox/FlexBetween'
 import ProjectStatus from 'components/project/status'
 import FundraisingProgress from 'components/project/FundraisingProgress'
 
+import NetValue from './NetValue'
 import Footer from './Footer'
-
-const NetValue = dynamic(() => import('./NetValue'), { ssr: false })
 
 const StyledCard = styled(Card)(({ theme }) => ({
   alignItems: 'center',

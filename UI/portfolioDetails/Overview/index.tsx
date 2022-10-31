@@ -1,10 +1,9 @@
 import Stack from '@mui/material/Stack'
-import dynamic from 'next/dynamic'
 import type { FC } from 'react'
 
 import HistoricalPerformance from './HistoricalPerformance'
-const NetValue = dynamic(() => import('./NetValue'), { ssr: false })
-const HistoricalAccumulativeNetValue = dynamic(() => import('./HistoricalAccumulativeNetValue'), { ssr: false })
+import NetValue from './NetValue'
+import HistoricalAccumulativeNetValue from './HistoricalAccumulativeNetValue'
 
 const Overview: FC = () => {
   return (

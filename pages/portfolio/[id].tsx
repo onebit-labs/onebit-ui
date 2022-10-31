@@ -4,6 +4,7 @@ import type { GetStaticPaths, GetStaticProps } from 'next'
 import type { FC } from 'react'
 import { withStaticTranslations } from 'app/i18n/hoc'
 import { marktetIds } from 'lib/protocol/market'
+import { usePagePropsEffect } from 'domains/data/portfolioDetails/application/portfolioId'
 
 export const getStaticProps: GetStaticProps = withStaticTranslations(
   (props) => {
@@ -37,8 +38,8 @@ export const getStaticPaths: GetStaticPaths = ({ locales }) => {
   }
 }
 
-const Page: FC<{ id: string }> = (props) => {
-  console.log(props)
+const Page: FC = (props) => {
+  usePagePropsEffect(props)
   return <UI />
 }
 
