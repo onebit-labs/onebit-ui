@@ -1,6 +1,7 @@
 import { Grid } from '@mui/material'
 import type { FC } from 'react'
 import Image from 'next/image'
+import NumberDisplay from 'lib/math/components/NumberDisplay'
 
 import File from './icons/file.svg'
 import Money from './icons/money.svg'
@@ -12,7 +13,7 @@ import StatsCard from './StatsCard'
 const Stats: FC = () => {
   const cardList = [
     {
-      price: 574,
+      price: <NumberDisplay value={571234.3123} options="USD" abbreviate={{}} />,
       title: 'assetsUnderManagement',
       icon: (
         <div>
@@ -21,7 +22,7 @@ const Stats: FC = () => {
       ),
     },
     {
-      price: 521,
+      price: <NumberDisplay value={12900.3123} options="USD" abbreviate={{}} />,
       title: 'totalProfitSinceInception',
       icon: (
         <div>
@@ -30,7 +31,7 @@ const Stats: FC = () => {
       ),
     },
     {
-      price: 684,
+      price: <NumberDisplay value={6} options="number" />,
       title: 'portfolios',
       icon: (
         <div>
@@ -39,7 +40,7 @@ const Stats: FC = () => {
       ),
     },
     {
-      price: 321,
+      price: <NumberDisplay value={321} options="number" />,
       title: 'depositors',
       icon: (
         <div>

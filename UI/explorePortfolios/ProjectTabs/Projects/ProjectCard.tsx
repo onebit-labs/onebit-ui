@@ -1,19 +1,19 @@
 import { useTranslation } from 'next-i18next'
-import { Stack, Card, styled, CardContent, Grid } from '@mui/material'
+import { Stack, Card, styled, CardContent, Box } from '@mui/material'
 import { H3, H5 } from 'components/Typography'
 import type { FC } from 'react'
 import dynamic from 'next/dynamic'
 import TokenIcon from 'lib/protocol/components/TokenIcon'
 import TimePeriod from 'components/date/TimePeriod'
+import FlexBetween from 'components/flexbox/FlexBetween'
+import ProjectStatus from 'components/project/status'
 import FundraisingProgress from 'components/project/FundraisingProgress'
 
 import Footer from './Footer'
-import ProjectStatus from 'components/project/status'
 
 const NetValue = dynamic(() => import('./NetValue'), { ssr: false })
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  display: 'flex',
   alignItems: 'center',
   height: '100%',
   [theme.breakpoints.down('sm')]: {
@@ -58,21 +58,25 @@ const ProjectCard: FC<React.PropsWithChildren<ProjectCardProps>> = (props) => {
               <H3>{portfolioName}</H3>
             </Stack>
 
-            <Grid container spacing={2}>
-              <Grid item lg={6} xs={12}>
+            <FlexBetween>
+              <Stack spacing={1}>
                 <H5>{`${t('projectCard.lockUpPeriod')}: ${lockTime} ${t('projectCard.days')}`}</H5>
                 <H5 color="text.secondary">
                   <TimePeriod start={purchaseBeginTimestamp} end={purchaseEndTimestamp} />
                 </H5>
-              </Grid>
-              <Grid item lg={6} xs={12}>
-                <ProjectStatus status={status} />
-              </Grid>
-            </Grid>
+              </Stack>
+              <ProjectStatus status={status} />
+            </FlexBetween>
           </Stack>
+          {isOpen ? (
+            <Box sx={{ padding: '40px 0' }}>
+              <FundraisingProgress {...props} />{' '}
+            </Box>
+          ) : (
+            <NetValue />
+          )}
+          <Footer {...props} isOpen={isOpen} />
         </Stack>
-        {isOpen ? <FundraisingProgress {...props} /> : <NetValue />}
-        <Footer {...props} isOpen={isOpen} />
       </CardContent>
     </StyledCard>
   )

@@ -10,6 +10,7 @@ import Chart from './Chart'
 import { useChart } from './useChart'
 import { H5 } from 'components/Typography'
 import Grid from '@mui/material/Grid'
+import { Box } from '@mui/material'
 
 const Left = styled(Stack)``
 const Change24h = styled(Stack)``
@@ -21,12 +22,18 @@ const NetValue = () => {
   const chart = useChart()
 
   return (
-    <>
+    <Box>
       <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
         <Grid item xs={6}>
           <Left spacing={1}>
             <Typography variant="h5">
-              <NumberDisplay value={chart.currentFloorPrice} options="USD" />
+              <NumberDisplay
+                value={chart.currentFloorPrice}
+                options="number"
+                numberFormatOptions={{
+                  maximumFractionDigits: 4,
+                }}
+              />
             </Typography>
             <H5 color="text.secondary">{t('projectCard.netValue')}</H5>
           </Left>
@@ -47,7 +54,7 @@ const NetValue = () => {
         </Grid>
       </Grid>
       <Chart {...chart.props} />
-    </>
+    </Box>
   )
 }
 

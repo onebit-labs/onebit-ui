@@ -51,83 +51,83 @@ export const useChart = () => {
 
   const props = useMemo(
     () =>
-      ({
-        height: 86,
-        data: {
-          datasets: [
-            {
-              label: 'test',
-              data,
-              backgroundColor: (context) => {
-                const chart = context.chart
-                const { ctx, chartArea } = chart
-                if (!chartArea) return null
-                const chartWidth = chartArea.right - chartArea.left
-                const chartHeight = chartArea.bottom - chartArea.top
-                if (!chartWidth) return null
-                const { width, height } = lineChart.current
-                let { gradient } = lineChart.current
-                if (width !== chartWidth || height !== chartHeight) {
-                  gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top)
-                  gradient.addColorStop(0, 'rgb(249, 68, 50, 0)')
-                  gradient.addColorStop(0.5, 'rgba(249, 68, 50, 0.5)')
-                  gradient.addColorStop(1, 'rgba(249, 68, 50, 1)')
-                  lineChart.current = {
-                    width: chartWidth,
-                    height: chartHeight,
-                    gradient,
-                  }
+    ({
+      height: 86,
+      data: {
+        datasets: [
+          {
+            label: 'test',
+            data,
+            backgroundColor: (context) => {
+              const chart = context.chart
+              const { ctx, chartArea } = chart
+              if (!chartArea) return null
+              const chartWidth = chartArea.right - chartArea.left
+              const chartHeight = chartArea.bottom - chartArea.top
+              if (!chartWidth) return null
+              const { width, height } = lineChart.current
+              let { gradient } = lineChart.current
+              if (width !== chartWidth || height !== chartHeight) {
+                gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top)
+                gradient.addColorStop(0, 'rgb(249, 68, 50, 0)')
+                gradient.addColorStop(0.5, 'rgba(249, 68, 50, 0.5)')
+                gradient.addColorStop(1, 'rgba(249, 68, 50, 1)')
+                lineChart.current = {
+                  width: chartWidth,
+                  height: chartHeight,
+                  gradient,
                 }
-                return gradient
-              },
-              fill: 'start',
-              borderColor: theme.palette.primary.main,
+              }
+              return gradient
             },
-          ],
+            fill: 'start',
+            borderColor: theme.palette.primary.main,
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          legend: {
+            display: false,
+          },
+          tooltip: {
+            callbacks: {
+              label: (context) => {
+                return ` ${context.parsed.y} ETH`
+              },
+              title: (context) => {
+                return `${context[0].label.split(',').slice(0, -1)}`
+              },
+            },
+          },
         },
-        options: {
-          plugins: {
-            legend: {
+        scales: {
+          x: {
+            type: 'time',
+            time: {
+              unit: 'day',
+            },
+            ticks: {
               display: false,
             },
-            tooltip: {
-              callbacks: {
-                label: (context) => {
-                  return ` ${context.parsed.y} ETH`
-                },
-                title: (context) => {
-                  return `${context[0].label.split(',').slice(0, -1)}`
-                },
-              },
+            grid: {
+              display: false,
             },
           },
-          scales: {
-            x: {
-              type: 'time',
-              time: {
-                unit: 'day',
-              },
-              ticks: {
-                display: false,
-              },
-              grid: {
-                display: false,
-              },
+          y: {
+            position: 'right',
+            grid: {
+              display: false,
             },
-            y: {
-              position: 'right',
-              grid: {
-                display: false,
-              },
-              ticks: {
-                display: false,
-              },
+            ticks: {
+              display: false,
             },
           },
         },
-      } as NetValueChartProps),
+      },
+    } as NetValueChartProps),
     [data, theme.palette.primary.main]
   )
 
-  return { props, dayButton, change24, currentFloorPrice: 1234 }
+  return { props, dayButton, change24, currentFloorPrice: 1.0123 }
 }
