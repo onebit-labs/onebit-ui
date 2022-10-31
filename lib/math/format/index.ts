@@ -1,7 +1,9 @@
 import { useRouter } from 'next/router'
 import { useCallback, useMemo } from 'react'
-import { toBN } from './BN'
-import type { BNValue } from './types'
+import { toBN } from '../BN'
+import type { BNValue } from '../types'
+
+import { abbreviate } from './abbreviate'
 
 const createUSDFormatOptions = () => ({
   style: 'currency',
@@ -50,6 +52,7 @@ export const useNumberFormat = () => {
     () => ({
       format: numberFormat,
       options: numberFormatOptions,
+      abbreviate,
     }),
     [numberFormat]
   )
