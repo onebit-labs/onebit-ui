@@ -56,7 +56,7 @@ const PortfolioDetails: FC = () => {
         <Grid item xs={12}>
           <Tabs
             tabs={tabs}
-            header={<PortfolioInfo />}
+            Header={PortfolioInfo}
             sx={{
               [theme.breakpoints.up('sm')]: {
                 flex: 1,

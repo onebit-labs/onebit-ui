@@ -1,7 +1,11 @@
-import type { FC } from 'react'
+import type { FCC } from 'app/types'
 import { useTranslation } from 'next-i18next'
 import Stack from '@mui/material/Stack'
 import CardContent from '@mui/material/CardContent'
+import { styled } from '@mui/material/styles'
+import Button from '@mui/material/Button'
+import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
+import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined'
 
 import TimePeriod from 'components/date/TimePeriod'
 import ProjectStatus from 'components/project/status'
@@ -12,9 +16,12 @@ import PNL from 'components/project/PNL'
 
 import Stats from './Stats'
 import FlexBetween from 'components/flexbox/FlexBetween'
-import Button from '@mui/material/Button'
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
-import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined'
+
+import Card from '@mui/material/Card'
+
+const StyledCard = styled(Card)(() => ({
+  position: 'relative',
+}))
 
 const data = {
   id: 'Onebit-USDT-1',
@@ -36,7 +43,7 @@ const data = {
   previousPNL: 1.11,
 }
 
-const PortfolioInfo: FC = () => {
+const PortfolioInfo: FCC = ({ children }) => {
   const {
     status,
     portfolioName,
@@ -50,59 +57,62 @@ const PortfolioInfo: FC = () => {
   const { t } = useTranslation('portfolioDetails')
 
   return (
-    <CardContent>
-      <Stack spacing={2}>
-        <Stack spacing={1}>
-          <FlexBetween>
-            <Stack spacing={1} direction="row">
-              <TokenIcon symbol={symbol} sx={{ width: 24, height: 24 }} />
-              <H3>{portfolioName}</H3>
-            </Stack>
-            <Stack spacing={2} direction="row">
-              <Button variant="contained" startIcon={<FileDownloadOutlinedIcon />}>
-                {t('common:wallet.btn.deposit')}
-              </Button>
-              <Button variant="contained" startIcon={<FileUploadOutlinedIcon />}>
-                {t('common:wallet.btn.withdraw')}
-              </Button>
-            </Stack>
-          </FlexBetween>
-
-          <Stack spacing={2} direction="row" alignItems="center">
-            <H5 color="text.secondary">
-              <span>{t('info.status')}: </span>
-              <ProjectStatus status={status} />
-            </H5>
-            <H5 color="text.secondary">
-              <span>{t('info.term')}: </span>
-              <TimePeriod start={purchaseBeginTimestamp} end={purchaseEndTimestamp} />
-            </H5>
-            <H5 color="text.secondary">{`${t('info.lockUpPeriod')}: ${lockTime} ${t('info.days')}`}</H5>
-            <H5 color="text.secondary">
-              {t('info.standard')}: {symbol}
-            </H5>
-          </Stack>
-          <Stack spacing={2} direction="row" alignItems="center">
-            <H5 color="text.secondary">
-              <span>{t('info.yourEquity')}: </span>
-              <Span color="text.primary">
-                {yourEquity} {symbol}
-              </Span>
-            </H5>
-            <H5 color="text.secondary">
-              <Stack spacing={1} direction="row" alignItems="center">
-                <span>{t('info.PNL')}:</span>
-                <PNL {...data} />
-                {/* display="flex" justifyContent="center" alignItems="center" */}
+    <StyledCard>
+      <CardContent>
+        <Stack spacing={2}>
+          <Stack spacing={1}>
+            <FlexBetween>
+              <Stack spacing={1} direction="row">
+                <TokenIcon symbol={symbol} sx={{ width: 24, height: 24 }} />
+                <H3>{portfolioName}</H3>
               </Stack>
-            </H5>
+              <Stack spacing={2} direction="row">
+                <Button variant="contained" startIcon={<FileDownloadOutlinedIcon />}>
+                  {t('common:wallet.btn.deposit')}
+                </Button>
+                <Button variant="contained" startIcon={<FileUploadOutlinedIcon />}>
+                  {t('common:wallet.btn.withdraw')}
+                </Button>
+              </Stack>
+            </FlexBetween>
+
+            <Stack spacing={2} direction="row" alignItems="center">
+              <H5 color="text.secondary">
+                <span>{t('info.status')}: </span>
+                <ProjectStatus status={status} />
+              </H5>
+              <H5 color="text.secondary">
+                <span>{t('info.term')}: </span>
+                <TimePeriod start={purchaseBeginTimestamp} end={purchaseEndTimestamp} />
+              </H5>
+              <H5 color="text.secondary">{`${t('info.lockUpPeriod')}: ${lockTime} ${t('info.days')}`}</H5>
+              <H5 color="text.secondary">
+                {t('info.standard')}: {symbol}
+              </H5>
+            </Stack>
+            <Stack spacing={2} direction="row" alignItems="center">
+              <H5 color="text.secondary">
+                <span>{t('info.yourEquity')}: </span>
+                <Span color="text.primary">
+                  {yourEquity} {symbol}
+                </Span>
+              </H5>
+              <H5 color="text.secondary">
+                <Stack spacing={1} direction="row" alignItems="center">
+                  <span>{t('info.PNL')}:</span>
+                  <PNL {...data} />
+                  {/* display="flex" justifyContent="center" alignItems="center" */}
+                </Stack>
+              </H5>
+            </Stack>
           </Stack>
+          {description && <Paragraph color="text.secondary">{description}</Paragraph>}
+          <FundraisingProgress {...data} />
+          <Stats {...data} />
         </Stack>
-        {description && <Paragraph color="text.secondary">{description}</Paragraph>}
-        <FundraisingProgress {...data} />
-        <Stats {...data} />
-      </Stack>
-    </CardContent>
+      </CardContent>
+      {children}
+    </StyledCard>
   )
 }
 

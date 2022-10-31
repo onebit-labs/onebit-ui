@@ -1,17 +1,15 @@
 import { TabContext, TabList, TabPanel } from '@mui/lab'
 
-import type { ReactNode, SyntheticEvent } from 'react'
+import type { SyntheticEvent } from 'react'
+import { useMemo } from 'react'
 import { useState } from 'react'
 import { styled } from '@mui/material/styles'
 import type { FCC } from 'app/types'
 import Grid from '@mui/material/Grid'
-import Card from '@mui/material/Card'
+
 import FlexBetween from 'components/flexbox/FlexBetween'
 import Tab from '@mui/material/Tab'
 
-const StyledCard = styled(Card)(() => ({
-  position: 'relative',
-}))
 const StyledTabList = styled(TabList)(({ theme }) => ({
   [theme.breakpoints.down(780)]: {
     width: '100%',
@@ -40,26 +38,30 @@ type TabItem = {
 }
 export type TabsProps = {
   tabs: TabItem[]
-  header?: ReactNode
+  Header?: FCC
   sx?: any
 }
-const Tabs: FCC<TabsProps> = ({ tabs, header, sx }) => {
+const Tabs: FCC<TabsProps> = ({ tabs, Header, sx }) => {
   const [value, setValue] = useState('0')
   const handleChange = (event: SyntheticEvent, newValue: string) => {
     setValue(newValue)
   }
+  const tabList = useMemo(
+    () => (
+      <FlexBetween flexWrap="wrap" padding="0 2rem">
+        <StyledTabList onChange={handleChange} sx={sx}>
+          {tabs.map(({ title }, index) => {
+            return <StyledTab key={title} label={title} value={index.toString()} />
+          })}
+        </StyledTabList>
+      </FlexBetween>
+    ),
+    [sx, tabs]
+  )
+
   return (
     <TabContext value={value}>
-      <StyledCard>
-        {header}
-        <FlexBetween flexWrap="wrap" padding="0 2rem">
-          <StyledTabList onChange={handleChange} sx={sx}>
-            {tabs.map(({ title }, index) => {
-              return <StyledTab key={title} label={title} value={index.toString()} />
-            })}
-          </StyledTabList>
-        </FlexBetween>
-      </StyledCard>
+      {Header ? <Header>{tabList}</Header> : tabList}
       <Grid container pt={2}>
         <Grid item xs={12}>
           {tabs.map(({ title, children }, index) => {

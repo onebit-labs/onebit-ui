@@ -1,53 +1,75 @@
-import type { InputBaseProps } from '@mui/material'
-import { InputBase, styled } from '@mui/material'
-import type { CSSProperties } from '@mui/styled-engine'
+import type { ForwardRefRenderFunction } from 'react'
+import { useRef, forwardRef } from 'react'
+import Paper from '@mui/material/Paper'
+import type { InputBaseProps } from '@mui/material/InputBase'
+import InputBase from '@mui/material/InputBase'
+import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
-import type { FC } from 'react'
+import CloseIcon from '@mui/icons-material/Close'
+import CircularProgress from '@mui/material/CircularProgress'
+import { useTheme } from '@mui/material/styles'
 
-// styled component
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  height: 45,
-  fontSize: 12,
-  width: '100%',
-  maxWidth: 350,
-  fontWeight: 600,
-  padding: '0 1rem',
-  borderRadius: '8px',
-  color: theme.palette.text.primary,
-  backgroundColor: theme.palette.background.paper,
-  border: `1px solid ${theme.palette.action.disabled}`,
-  [theme.breakpoints.down(500)]: { maxWidth: '100%' },
-  '::placeholder': { color: theme.palette.text.disabled },
-}))
-const StyledNoBorderInputBase = styled(StyledInputBase)(() => ({
-  border: 'none',
-}))
+import { inputSetValue } from 'app/utils/dom/input'
+import { safeGet } from 'app/utils/get'
 
-// ------------------------------------------------------------
-type SearchInputProps = {
-  icon_style?: CSSProperties
-  disable_border?: boolean
+export type SearchInputProps = InputBaseProps & {
+  loading?: boolean
 }
-// ------------------------------------------------------------
-
-const SearchInput: FC<React.PropsWithChildren<SearchInputProps & InputBaseProps>> = ({
-  icon_style = {},
-  disable_border,
-  ...props
-}) => {
-  const startAdornment = (
-    <SearchIcon
+const SearchInput: ForwardRefRenderFunction<HTMLFormElement, SearchInputProps> = ({ loading, ...props }, ref) => {
+  const inputRef = useRef<HTMLInputElement>()
+  const theme = useTheme()
+  return (
+    <Paper
+      component="form"
+      ref={ref}
+      elevation={3}
       sx={{
-        fontSize: 18,
-        marginRight: 1,
-        color: 'text.disabled',
-        ...icon_style,
+        p: '2px 4px',
+        display: 'flex',
+        alignItems: 'center',
+        width: { xs: 1, sm: 280 },
+        borderRadius: '12px',
+        border: 'solid 1px transparent',
+        '&:hover': {
+          borderColor: theme.palette.primary.main,
+        },
       }}
-    />
+    >
+      <IconButton
+        sx={{ p: '10px' }}
+        aria-label="search"
+        onClick={() => {
+          const input = safeGet(() => inputRef.current)
+          if (input) input.focus()
+        }}
+      >
+        {loading ? <CircularProgress size={24} /> : <SearchIcon />}
+      </IconButton>
+      <InputBase
+        inputRef={inputRef}
+        sx={{ ml: 1, flex: 1 }}
+        {...props}
+        onKeyDown={(e) => {
+          if (e.code === 'Enter') {
+            e.preventDefault()
+          }
+        }}
+      />
+      {props.value && (
+        <IconButton
+          type="button"
+          sx={{ p: '10px' }}
+          aria-label="search"
+          onClick={() => {
+            const input = safeGet(() => inputRef.current)
+            if (input) inputSetValue(input, '')
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+      )}
+    </Paper>
   )
-
-  const Input = disable_border ? StyledNoBorderInputBase : StyledInputBase
-  return <Input startAdornment={startAdornment} {...props} />
 }
 
-export default SearchInput
+export default forwardRef(SearchInput)
