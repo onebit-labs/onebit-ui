@@ -82,7 +82,7 @@ const iconStyle = (active: any) => ({
 })
 
 interface MultiLevelMenuProps {
-  sidebarCompact: boolean
+  sidebarCompact: any
 }
 
 const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props) => {
@@ -101,7 +101,7 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
     return data.map((item: any, index: any) => {
       if (item.type === 'label')
         return (
-          <ListLabel key={index} compact={sidebarCompact}>
+          <ListLabel key={index} compact={sidebarCompact ? 1 : 0}>
             {item.label}
           </ListLabel>
         )
@@ -124,13 +124,13 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
                 }
               })()}
 
-              <StyledText compact={sidebarCompact} active={activeRoute(item.path)}>
+              <StyledText compact={sidebarCompact ? 1 : 0} active={activeRoute(item.path)}>
                 {item.name}
               </StyledText>
 
               <Box mx="auto" />
 
-              {item.badge && <BadgeValue compact={sidebarCompact}>{item.badge.value}</BadgeValue>}
+              {item.badge && <BadgeValue compact={sidebarCompact ? 1 : 0}>{item.badge.value}</BadgeValue>}
             </NavItemButton>
           </ExternalLink>
         )
@@ -149,13 +149,13 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
                 <BulletIcon active={activeRoute(item.path)} />
               )}
 
-              <StyledText compact={sidebarCompact} active={activeRoute(item.path)}>
+              <StyledText compact={sidebarCompact ? 1 : 0} active={activeRoute(item.path)}>
                 {item.name}
               </StyledText>
 
               <Box mx="auto" />
 
-              {item.badge && <BadgeValue compact={sidebarCompact}>{item.badge.value}</BadgeValue>}
+              {item.badge && <BadgeValue compact={sidebarCompact ? 1 : 0}>{item.badge.value}</BadgeValue>}
             </NavItemButton>
           </Box>
         )

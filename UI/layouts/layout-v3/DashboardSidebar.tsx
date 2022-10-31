@@ -76,7 +76,7 @@ const DashboardSidebar: FC<React.PropsWithChildren<DashboardSidebarProps>> = (pr
 
   return (
     <SidebarWrapper
-      compact={sidebarCompact}
+      compact={sidebarCompact ? 1 : 0}
       onMouseEnter={() => setOnHover(true)}
       onMouseLeave={() => sidebarCompact && setOnHover(false)}
     >
@@ -110,7 +110,7 @@ const DashboardSidebar: FC<React.PropsWithChildren<DashboardSidebarProps>> = (pr
         }}
       >
         <NavWrapper>
-          <MultiLevelMenu sidebarCompact={!!COMPACT} />
+          <MultiLevelMenu sidebarCompact={COMPACT} />
         </NavWrapper>
       </Scrollbar>
     </SidebarWrapper>

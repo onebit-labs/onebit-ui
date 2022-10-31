@@ -9,7 +9,7 @@ import MultiLevelMenu from './MultiLevelMenu'
 
 const TOP_HEADER_AREA = 70
 
-const NavWrapper = styled(Box)<{ compact: any }>(() => ({
+const NavWrapper = styled(Box)(() => ({
   paddingLeft: 16,
   paddingRight: 16,
   height: '100%',
@@ -28,7 +28,7 @@ interface MobileSidebarProps {
 }
 
 const MobileSidebar: FC<React.PropsWithChildren<MobileSidebarProps>> = (props) => {
-  const { sidebarCompact, showMobileSideBar, setShowMobileSideBar } = props
+  const { showMobileSideBar, setShowMobileSideBar } = props
 
   return (
     <LayoutDrawer open={showMobileSideBar} onClose={setShowMobileSideBar}>
@@ -47,7 +47,7 @@ const MobileSidebar: FC<React.PropsWithChildren<MobileSidebarProps>> = (props) =
           maxHeight: `calc(100vh - ${TOP_HEADER_AREA}px)`,
         }}
       >
-        <NavWrapper compact={sidebarCompact}>
+        <NavWrapper>
           <MultiLevelMenu sidebarCompact={false} />
         </NavWrapper>
       </Scrollbar>
