@@ -1,7 +1,8 @@
+import type { FC } from 'react'
 import { useTranslation } from 'next-i18next'
 import { Stack, Card, styled, CardContent, Box } from '@mui/material'
 import { H3, H5 } from 'components/Typography'
-import type { FC } from 'react'
+import type { Portfolio } from 'domains/data/portfolio'
 import dynamic from 'next/dynamic'
 import TokenIcon from 'lib/protocol/components/TokenIcon'
 import TimePeriod from 'components/date/TimePeriod'
@@ -23,24 +24,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   },
 }))
 
-type ProjectCardProps = {
-  id: string
-  portfolioName: string
-  symbol: string
-  lockTime: number
-  purchaseBeginTimestamp: number
-  purchaseEndTimestamp: number
-  status: string
-  purchaseUpperLimit: number
-  totalSupply: number
-  estimatedAPY: number
-  currentAPY: number
-  depositors: number
-  description: string
-  yourEquity: number
-  PNL: number
-  previousPNL: number
-}
+type ProjectCardProps = Portfolio
 
 const ProjectCard: FC<React.PropsWithChildren<ProjectCardProps>> = (props) => {
   const { status, portfolioName, symbol, purchaseBeginTimestamp, purchaseEndTimestamp, lockTime } = props
@@ -73,7 +57,7 @@ const ProjectCard: FC<React.PropsWithChildren<ProjectCardProps>> = (props) => {
               <FundraisingProgress {...props} />{' '}
             </Box>
           ) : (
-            <NetValue />
+            <NetValue {...props} />
           )}
           <Footer {...props} isOpen={isOpen} />
         </Stack>

@@ -11,15 +11,18 @@ import { useChart } from './useChart'
 import { H5 } from 'components/Typography'
 import Grid from '@mui/material/Grid'
 import { Box } from '@mui/material'
+import type { Portfolio } from 'domains/data/portfolio'
+import type { FC } from 'react'
 
 const Left = styled(Stack)``
 const Change24h = styled(Stack)``
 const Right = styled(Stack)``
 
-const NetValue = () => {
+type NetValueProps = Portfolio
+const NetValue: FC<NetValueProps> = (props) => {
   const { t } = useTranslation('explorePortfolios')
 
-  const chart = useChart()
+  const chart = useChart(props)
 
   return (
     <Box>

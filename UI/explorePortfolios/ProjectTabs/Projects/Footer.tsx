@@ -5,13 +5,9 @@ import { H5, Small } from 'components/Typography'
 import { useTranslation } from 'next-i18next'
 import type { FC } from 'react'
 import { Box } from '@mui/material'
+import type { Portfolio } from 'domains/data/portfolio'
 
-type FooterProps = {
-  totalSupply: number
-  estimatedAPY: number
-  currentAPY: number
-  depositors: number
-  symbol: string
+type FooterProps = Portfolio & {
   isOpen: boolean
 }
 

@@ -6,6 +6,7 @@ import { toBN } from 'lib/math'
 import { safeGet } from 'app/utils/get'
 
 import type { NetValueChartProps } from './types'
+import type { Portfolio } from 'domains/data/portfolio'
 
 const DayButtonList = [7, 14, 30, 90]
 const useDayButton = () => {
@@ -20,24 +21,18 @@ const useDayButton = () => {
   }
 }
 
-export const useChart = () => {
+type ChartProps = Portfolio
+export const useChart = (portfolio: ChartProps) => {
   const lineChart = useRef({ width: 0, height: 0, gradient: undefined })
   const theme = useTheme()
-  // const { nft } = useContractNFT()
-  // const { oracleRecords } = useThegraph()
   const dayButton = useDayButton()
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const data: any = [
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 7, y: 1 },
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 6, y: 2 },
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 5, y: 3 },
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 4, y: 4 },
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 3, y: 5 },
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 2, y: 6 },
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 1, y: 7 },
-    { x: 1666844009432, y: 8 },
-  ]
+  const data = useMemo(() => {
+    if (portfolio.portfolioDaily.length <= 7) return portfolio.portfolioDaily
+    return portfolio.portfolioDaily.slice(portfolio.portfolioDaily.length - 7, portfolio.portfolioDaily.length)
+  }, [portfolio.portfolioDaily])
+
+  const currentFloorPrice = useMemo(() => safeGet(() => data[data.length - 1].y) || 0, [data])
 
   const change24 = useMemo(() => {
     return (
@@ -56,7 +51,7 @@ export const useChart = () => {
       data: {
         datasets: [
           {
-            label: 'test',
+            label: 'Net Value',
             data,
             backgroundColor: (context) => {
               const chart = context.chart
@@ -92,9 +87,6 @@ export const useChart = () => {
           },
           tooltip: {
             callbacks: {
-              label: (context) => {
-                return ` ${context.parsed.y} ETH`
-              },
               title: (context) => {
                 return `${context[0].label.split(',').slice(0, -1)}`
               },
@@ -129,5 +121,5 @@ export const useChart = () => {
     [data, theme.palette.primary.main]
   )
 
-  return { props, dayButton, change24, currentFloorPrice: 1.0123 }
+  return { props, dayButton, change24, currentFloorPrice }
 }

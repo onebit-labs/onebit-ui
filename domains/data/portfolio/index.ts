@@ -1,7 +1,6 @@
 import { createContext } from 'app/utils/createContext'
 import { log } from 'app/utils/dev'
 import { useMemo } from 'react'
-import type Bignumber from 'bignumber.js'
 
 import { toBN } from 'lib/math'
 import { safeGet } from 'app/utils/get'
@@ -24,16 +23,17 @@ export type Portfolio = Partial<ReserveData & UserReserveData> & {
   portfolioName: string
   symbol: string
   description: string
-  oracle?: Bignumber
+  oracle?: BN
+  totalSupply?: BN
   status: PortfolioStatus
   lockTime: number
 
-  estimatedAPY: Bignumber
-  currentAPY: Bignumber
-  depositors: Bignumber
-  yourEquity: Bignumber
-  PNL: Bignumber
-  previousPNL: Bignumber
+  estimatedAPY: BN
+  currentAPY: BN
+  depositors: BN
+  yourEquity: BN
+  PNL: BN
+  previousPNL: BN
 
   portfolioDaily: Record<'x' | 'y', number>[]
   seriesDaily: Record<'x' | 'y', number>[]
