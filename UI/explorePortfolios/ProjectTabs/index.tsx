@@ -1,10 +1,14 @@
 import Grid from '@mui/material/Grid'
+import type { FCC } from 'app/types'
 import type { TabsProps } from 'components/tabs'
 import Tabs from 'components/tabs'
+import SearchHeader from 'components/tabs/SearchHeader'
+import { withSearchHeaderProvider } from 'components/tabs/SearchHeader/hoc'
+import { useSearchHeader } from 'components/tabs/SearchHeader/Provider'
 import { usePortfolio } from 'domains/data'
 import { useTranslation } from 'next-i18next'
 import type { FC } from 'react'
-import { useState } from 'react'
+import { useCallback } from 'react'
 import { useMemo } from 'react'
 
 import Projects from './Projects'
@@ -12,7 +16,7 @@ import Projects from './Projects'
 const ProjectTabs: FC = () => {
   const { portfolioData } = usePortfolio()
   const { t } = useTranslation('explorePortfolios')
-  const [value, setValue] = useState('')
+  const { value } = useSearchHeader()
 
   const tabs = useMemo(() => {
     const reg = new RegExp(value)
@@ -53,13 +57,18 @@ const ProjectTabs: FC = () => {
     })
   }, [portfolioData, t, value])
 
+  const Header: FCC = useCallback(
+    ({ children }) => <SearchHeader placeholder="Find Portifolios">{children}</SearchHeader>,
+    []
+  )
+
   return (
     <Grid container pt={4}>
       <Grid item xs={12}>
-        <Tabs tabs={tabs} />
+        <Tabs tabs={tabs} Header={Header} />
       </Grid>
     </Grid>
   )
 }
 
-export default ProjectTabs
+export default withSearchHeaderProvider(ProjectTabs)
