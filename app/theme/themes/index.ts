@@ -205,6 +205,13 @@ export const getTheme = (options: ThemeOptions) => {
           },
         },
       },
+      MuiTableCell: {
+        styleOverrides: {
+          root: {
+            borderBottom: 'unset',
+          },
+        },
+      }
     },
   })
 }

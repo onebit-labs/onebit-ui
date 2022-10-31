@@ -13,6 +13,8 @@ import TableRow from '@mui/material/TableRow'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import Grid from '@mui/material/Grid'
+import Stack from '@mui/material/Stack'
+import Card from '@mui/material/Card'
 
 import type { BasicTableProps } from './types'
 import { getCellData } from './utils'
@@ -69,12 +71,7 @@ const CollapsibleRow: FC<CollapsibleRowProps> = (props) => {
 
   return (
     <Fragment>
-      <TableRow
-        className={clsx(['ReactVirtualized__Table__row'], {
-          'end-row': data.length - 1 === rowIndex,
-        })}
-        onClick={() => setOpen(!open)}
-      >
+      <TableRow className={clsx(['ReactVirtualized__Table__row'])} onClick={() => setOpen(!open)}>
         <td
           className="ReactVirtualized__Table__rowColumn"
           role="gridcell"
@@ -165,15 +162,16 @@ const MobileTable: FC<BasicTableProps> = (props) => {
       body:
         data &&
         data.map((row, rowIndex) => (
-          <CollapsibleRow
-            key={rowIndex}
-            {...{
-              data,
-              row,
-              rowIndex,
-              columns,
-            }}
-          />
+          <Card key={rowIndex}>
+            <CollapsibleRow
+              {...{
+                data,
+                row,
+                rowIndex,
+                columns,
+              }}
+            />
+          </Card>
         )),
     }
   }, [columns, data])
@@ -184,7 +182,9 @@ const MobileTable: FC<BasicTableProps> = (props) => {
         <TableHead>
           <TableRow className="ReactVirtualized__Table__headerRow">{table.head}</TableRow>
         </TableHead>
-        <TableBody>{table.body}</TableBody>
+        <Stack component={TableBody} spacing={2}>
+          {table.body}
+        </Stack>
       </Table>
     </ROOT>
   )
@@ -203,10 +203,6 @@ export const ROOT = styled('div')`
     display: flex;
   }
   .ReactVirtualized__Table__rowColumn {
-    .MuiTableCell-root {
-      border-bottom: unset;
-    }
-
     &.secondary {
       align-items: center;
       position: relative;
@@ -245,11 +241,6 @@ export const ROOT = styled('div')`
   .ReactVirtualized__Table__row {
     display: flex;
     will-change: transform;
-    &.end-row {
-      .MuiTableCell-root {
-        border-bottom: unset;
-      }
-    }
   }
 `
 

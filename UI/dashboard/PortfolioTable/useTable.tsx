@@ -7,17 +7,23 @@ import Button from '@mui/material/Button'
 import TableCell from '@mui/material/TableCell'
 import { cellRenderer, headerRenderer } from 'components/table/renderer'
 import type { TableColumnsProps, BasicTableProps } from 'components/table/BasicTable/types'
+import { useRouter } from 'next/router'
 
 export const useTable = (): BasicTableProps => {
   const { t } = useTranslation('dashboard')
+  const router = useRouter()
 
   const ActionCellRenderer: TableCellRenderer = useCallback(
     ({ rowData }) => {
       return (
         <TableCell component="div">
           <Stack spacing={1} direction="row">
-            <Button variant="outlined" size="small" onClick={() => {}}>
-              {t('common:wallet.btn.deposit')}
+            <Button
+              variant="contained"
+              size="small"
+              onClick={() => router.push(`/portfolio/${encodeURIComponent(rowData.id)}`)}
+            >
+              {t('common:wallet.btn.details')}
             </Button>
           </Stack>
         </TableCell>
@@ -33,43 +39,43 @@ export const useTable = (): BasicTableProps => {
         [
           {
             dataKey: 'portfolioName',
-            width: 210,
+            width: 200,
             headerRenderer,
             cellRenderer,
           },
           {
             dataKey: 'lockedUntil',
-            width: 150,
+            width: 200,
             headerRenderer,
             cellRenderer,
           },
           {
             dataKey: 'netValue',
-            width: 150,
+            width: 200,
             headerRenderer,
             cellRenderer,
           },
           {
             dataKey: 'yourEquity',
-            width: 150,
+            width: 200,
             headerRenderer,
             cellRenderer,
           },
           {
             dataKey: 'PNL',
-            width: 150,
+            width: 200,
             headerRenderer,
             cellRenderer,
           },
           {
             dataKey: 'status',
-            width: 150,
+            width: 200,
             headerRenderer,
             cellRenderer,
           },
           {
             dataKey: 'action',
-            width: 120,
+            width: 200,
             headerRenderer,
             cellRenderer: ActionCellRenderer,
           },
@@ -84,6 +90,25 @@ export const useTable = (): BasicTableProps => {
 
   return {
     columns,
-    data: [],
+    data: [
+      {
+        id: '1234',
+        portfolioName: '123',
+        lockedUntil: '1234',
+        netValue: 1.2,
+        yourEquity: '123',
+        PNL: '0.12',
+        status: 'open',
+      },
+      {
+        id: '123554',
+        portfolioName: '11123',
+        lockedUntil: '1234',
+        netValue: 1.2,
+        yourEquity: '123',
+        PNL: '0.12',
+        status: 'open',
+      },
+    ],
   }
 }

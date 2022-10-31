@@ -5,6 +5,7 @@ import type { BNValue } from 'lib/math/types'
 import { useMath } from 'domains/utils'
 import type { AbbreviateOptions } from '../format/abbreviate'
 import { getAbbreviateData } from '../format/abbreviate'
+import { safeGet } from 'app/utils/get'
 
 type NumberDisplayProps = {
   value: BNValue
@@ -19,14 +20,15 @@ const NumberDisplay: FC<NumberDisplayProps> = ({ value, options, abbreviate, num
   const data = useMemo(() => {
     const v = toBN(value)
     if (!v || v.isNaN() || v.eq(0)) return '-'
-    const getFormatValue = (value: BN, props: Intl.NumberFormatOptions = {}) =>
-      NF.format(
+    const getFormatValue = (value: BNValue, props: Intl.NumberFormatOptions = {}) => {
+      return NF.format(
         value,
         NF.options(options, {
           ...props,
           ...numberFormatOptions,
         })
       )
+    }
 
     if (abbreviate) {
       const {
@@ -35,7 +37,10 @@ const NumberDisplay: FC<NumberDisplayProps> = ({ value, options, abbreviate, num
         options: { maximumFractionDigits },
         suffix,
       } = getAbbreviateData(v, abbreviate)
-      return getFormatValue(scaledValue.multipliedBy(sign ? 1 : -1), { maximumFractionDigits }) + suffix
+      return `${getFormatValue(
+        safeGet(() => scaledValue.multipliedBy(sign ? 1 : -1) || 0),
+        { maximumFractionDigits }
+      )}${suffix || ''}`
     }
 
     return getFormatValue(v)

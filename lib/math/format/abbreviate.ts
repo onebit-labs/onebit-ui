@@ -16,7 +16,7 @@ const defaultOptions = {
 
 export function abbreviate(value: BNValue, options?: AbbreviateOptions) {
   const bn = toBN(value)
-  if (bn.isNaN) return '-'
+  if (bn.isNaN()) return '-'
   const {
     sign,
     options: { maximumFractionDigits },
@@ -28,7 +28,7 @@ export function abbreviate(value: BNValue, options?: AbbreviateOptions) {
 
 export function getAbbreviateData(value: BNValue, options?: AbbreviateOptions) {
   const bn = toBN(value)
-  if (bn.isNaN) return {} as undefined
+  if (bn.isNaN()) return { options: {} } as undefined
   const props = Object.assign({}, defaultOptions, options)
 
   const sign = bn.s >= 0
@@ -36,7 +36,7 @@ export function getAbbreviateData(value: BNValue, options?: AbbreviateOptions) {
 
   const tier = Math.floor(num.e / 3)
   const suffix = props.symbols[tier]
-  if (!suffix) throw new RangeError()
+  if (tier >= props.symbols.length) throw new RangeError()
 
   return {
     sign,

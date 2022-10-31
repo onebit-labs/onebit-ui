@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material'
 import NumberDisplay from 'lib/math/components/NumberDisplay'
+import RiseOrFall from 'lib/math/components/RiseOrFall'
 import type { FC } from 'react'
 
 import StatsCard from './StatsCard'
@@ -12,17 +13,19 @@ const Stats: FC = () => {
     },
     {
       price: (
-        <NumberDisplay
-          value={98762.123}
-          options="USD"
-          abbreviate={{}}
-          numberFormatOptions={{ signDisplay: 'always' }}
-        />
+        <RiseOrFall value={98762.123}>
+          <NumberDisplay
+            value={98762.123}
+            options="USD"
+            abbreviate={{}}
+            numberFormatOptions={{ signDisplay: 'always' }}
+          />
+        </RiseOrFall>
       ),
       title: 'totalPNL',
     },
     {
-      price: <NumberDisplay value={0.3123} options="number" />,
+      price: <NumberDisplay value={4} options="number" />,
       title: 'totalPortfolioDeposited',
     },
     {

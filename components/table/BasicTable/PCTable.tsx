@@ -9,6 +9,8 @@ import TableRow from '@mui/material/TableRow'
 
 import type { BasicTableProps } from './types'
 import { getCellData } from './utils'
+import Stack from '@mui/material/Stack'
+import Card from '@mui/material/Card'
 
 const PCTable: FC<BasicTableProps> = (props) => {
   const { columns, data } = props
@@ -32,42 +34,41 @@ const PCTable: FC<BasicTableProps> = (props) => {
       body:
         data &&
         data.map((row, rowIndex) => (
-          <TableRow
-            key={rowIndex}
-            className={clsx(['ReactVirtualized__Table__row'], {
-              'end-row': data.length - 1 === rowIndex,
-            })}
-            onClick={(e) =>
-              onRowClick &&
-              onRowClick({
-                rowData: row,
-                index: rowIndex,
-                event: e,
-              })
-            }
-          >
-            {columns.map((column, columnIndex) => (
-              <td
-                key={rowIndex + column.dataKey}
-                className="ReactVirtualized__Table__rowColumn"
-                role="gridcell"
-                style={{
-                  overflow: 'hidden',
-                  flex: `0 1 ${column.width}px`,
-                }}
-              >
-                {column.cellRenderer({
-                  cellData: getCellData(row, column),
-                  columnData: column,
-                  columnIndex,
-                  dataKey: column.dataKey,
-                  isScrolling: false,
+          <Card key={rowIndex}>
+            <TableRow
+              className={clsx(['ReactVirtualized__Table__row'])}
+              onClick={(e) =>
+                onRowClick &&
+                onRowClick({
                   rowData: row,
-                  rowIndex,
-                })}
-              </td>
-            ))}
-          </TableRow>
+                  index: rowIndex,
+                  event: e,
+                })
+              }
+            >
+              {columns.map((column, columnIndex) => (
+                <td
+                  key={rowIndex + column.dataKey}
+                  className="ReactVirtualized__Table__rowColumn"
+                  role="gridcell"
+                  style={{
+                    overflow: 'hidden',
+                    flex: `0 1 ${column.width}px`,
+                  }}
+                >
+                  {column.cellRenderer({
+                    cellData: getCellData(row, column),
+                    columnData: column,
+                    columnIndex,
+                    dataKey: column.dataKey,
+                    isScrolling: false,
+                    rowData: row,
+                    rowIndex,
+                  })}
+                </td>
+              ))}
+            </TableRow>
+          </Card>
         )),
     }
   }, [columns, data, onRowClick])
@@ -78,7 +79,9 @@ const PCTable: FC<BasicTableProps> = (props) => {
         <TableHead>
           <TableRow className="ReactVirtualized__Table__headerRow">{table.head}</TableRow>
         </TableHead>
-        <TableBody>{table.body}</TableBody>
+        <Stack component={TableBody} spacing={2}>
+          {table.body}
+        </Stack>
       </Table>
     </ROOT>
   )
@@ -114,11 +117,6 @@ export const ROOT = styled('div')`
       ${({ theme }) => ({
         backgroundColor: theme.palette.secondary[400],
       })}
-    }
-    &.end-row {
-      .MuiTableCell-root {
-        border-bottom: unset;
-      }
     }
   }
 `
