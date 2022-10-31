@@ -1,11 +1,12 @@
+import { normalizeBN } from 'app/utils/math'
 import type { providers } from 'ethers'
 import { BigNumber } from 'ethers'
 import BaseService from '../commons/BaseService'
 import type { EthereumTransactionTypeExtended, tEthereumAddress, transactionType } from '../commons/types'
 import { eEthereumTxType } from '../commons/types'
 import { API_ETH_MOCK_ADDRESS, valueToWei, SUPER_BIG_ALLOWANCE_NUMBER } from '../commons/utils'
-import type { IERC20Detailed } from './typechain/IERC20Detailed'
-import { IERC20Detailed__factory } from './typechain/IERC20Detailed__factory'
+import type { ERC20 } from './typechain/IERC20Detailed'
+import { ERC20__factory } from './typechain/IERC20Detailed__factory'
 
 export interface IERC20ServiceInterface {
   decimalsOf: (token: tEthereumAddress) => Promise<number>
@@ -27,14 +28,14 @@ export type TokenMetadataType = {
   decimals: number
   address: string
 }
-export class ERC20Service extends BaseService<IERC20Detailed> implements IERC20ServiceInterface {
+export class ERC20Service extends BaseService<ERC20> implements IERC20ServiceInterface {
   provider: any
   readonly tokenDecimals: Record<string, number>
 
   readonly tokenMetadata: Record<string, TokenMetadataType>
 
   constructor(provider: providers.Provider) {
-    super(provider, IERC20Detailed__factory)
+    super(provider, ERC20__factory)
     this.provider = provider
     this.tokenDecimals = {}
     this.tokenMetadata = {}
@@ -46,7 +47,7 @@ export class ERC20Service extends BaseService<IERC20Detailed> implements IERC20S
   }
 
   public approve({ user, token, spender, amount }: ApproveType): EthereumTransactionTypeExtended {
-    const erc20Contract: IERC20Detailed = this.getContractInstance(token)
+    const erc20Contract: ERC20 = this.getContractInstance(token)
 
     const txCallback: () => Promise<transactionType> = this.generateTxCallback({
       rawTxMethod: async () => erc20Contract.populateTransaction.approve(spender, amount),
@@ -63,7 +64,7 @@ export class ERC20Service extends BaseService<IERC20Detailed> implements IERC20S
   public async isApproved({ user, token, spender, amount }: ApproveType): Promise<boolean> {
     if (token.toLowerCase() === API_ETH_MOCK_ADDRESS) return true
     const decimals = await this.decimalsOf(token)
-    const erc20Contract: IERC20Detailed = this.getContractInstance(token)
+    const erc20Contract: ERC20 = this.getContractInstance(token)
     const allowance: BigNumber = await erc20Contract.allowance(user, spender)
     const amountBNWithDecimals: BigNumber =
       amount === '-1' ? BigNumber.from(SUPER_BIG_ALLOWANCE_NUMBER) : BigNumber.from(valueToWei(amount, decimals))
@@ -101,7 +102,7 @@ export class ERC20Service extends BaseService<IERC20Detailed> implements IERC20S
     }
 
     if (!this.tokenMetadata[token]) {
-      const { name: nameGetter, symbol: symbolGetter }: IERC20Detailed = this.getContractInstance(token)
+      const { name: nameGetter, symbol: symbolGetter }: ERC20 = this.getContractInstance(token)
 
       const [name, symbol, decimals]: [string, string, number] = await Promise.all([
         nameGetter(),
@@ -118,5 +119,12 @@ export class ERC20Service extends BaseService<IERC20Detailed> implements IERC20S
     }
 
     return this.tokenMetadata[token]
+  }
+
+  public async balanceOf(token: tEthereumAddress, user: tEthereumAddress) {
+    const decimals = await this.decimalsOf(token)
+    const erc20Contract: ERC20 = this.getContractInstance(token)
+    const balance = await erc20Contract.balanceOf(user)
+    return normalizeBN(balance, decimals)
   }
 }

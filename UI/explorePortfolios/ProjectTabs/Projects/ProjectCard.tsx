@@ -31,7 +31,6 @@ type ProjectCardProps = {
   purchaseBeginTimestamp: number
   purchaseEndTimestamp: number
   status: string
-  progress: number
   purchaseUpperLimit: number
   totalSupply: number
   estimatedAPY: number

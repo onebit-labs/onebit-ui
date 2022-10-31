@@ -2,7 +2,7 @@ import goerli from 'lib/protocol/generate/goerli.json'
 
 import { ChainId } from '../chain/types'
 
-export type MarketData = {
+export type AddressData = {
   chainId: ChainId
 } & typeof goerli
 
@@ -12,7 +12,7 @@ const list: Record<ChainId, typeof goerli> = {
   },
 } as any
 
-const getMarketsData = (chainId: ChainId): MarketData => {
+const getMarketsData = (chainId: ChainId): AddressData => {
   const generateInfo = list[chainId]
   if (!generateInfo) throw new Error(`[getMarketsData] error. chainId => ${chainId}`)
 
@@ -22,9 +22,10 @@ const getMarketsData = (chainId: ChainId): MarketData => {
   }
 }
 
-export const MARKETS: Record<number, MarketData> = {
+const MARKETS: Record<number, AddressData> = {
   // [ChainId.ethereum]: getMarketsData(ChainId.ethereum),
   [ChainId.goerli]: getMarketsData(ChainId.goerli),
 }
+
 export const defaultMarket = MARKETS[ChainId.goerli]
-export const getMarket = (chainId: ChainId) => MARKETS[chainId] || defaultMarket
+export const getAddress = (chainId: ChainId) => MARKETS[chainId] || defaultMarket

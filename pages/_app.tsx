@@ -1,8 +1,8 @@
+import store from 'store'
 import Head from 'next/head'
 import { Provider as StoreProvider } from 'react-redux'
 import type { MyAppProps } from 'app'
 import App from 'app'
-import store from 'store'
 import DomainsProvider from 'domains'
 
 import CacheProvider from 'app/emotion'

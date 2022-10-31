@@ -1,13 +1,11 @@
 import { createContext } from 'app/utils/createContext'
 
-// import { useUserController } from 'domains/data/user/application/controllers'
+import { useERC20Controller } from 'domains/data/erc20/application/controllers'
 
 export const useControllersService = () => {
-  // const user = useUserController()
+  const erc20 = useERC20Controller()
 
-  return {
-    // user,
-  }
+  return { erc20 }
 }
 
 const { Provider: ControllersProvider, createUseContext } = createContext(useControllersService)

@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-import { H3, H4, H5, Paragraph } from 'components/Typography'
+import { H3, H4, Paragraph } from 'components/Typography'
 import { useTranslation } from 'next-i18next'
 import Stack from '@mui/material/Stack'
 

@@ -1,7 +1,7 @@
 import type { NetworkConfig } from './types'
 import { ChainId } from '../chain/types'
 
-export const infuraId = '1fe83aa589cd4ae3adfcbb2d7d411d4a'
+export const infuraId = 'dea011a2bebb451ba3602b02994145c1'
 
 export const networks: Record<ChainId, NetworkConfig> = {
   [ChainId.goerli]: {
