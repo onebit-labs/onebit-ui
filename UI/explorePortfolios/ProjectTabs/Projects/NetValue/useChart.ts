@@ -5,7 +5,7 @@ import { useTheme } from '@mui/material/styles'
 import { valueToBigNumber } from 'app/utils/math'
 import { safeGet } from 'app/utils/get'
 
-import type { TotalEquityValueChartProps } from './types'
+import type { NetValueChartProps } from './types'
 
 const DayButtonList = [7, 14, 30, 90]
 const useDayButton = () => {
@@ -52,7 +52,7 @@ export const useChart = () => {
   const props = useMemo(
     () =>
       ({
-        height: 60,
+        height: 86,
         data: {
           datasets: [
             {
@@ -117,16 +117,16 @@ export const useChart = () => {
             y: {
               position: 'right',
               grid: {
-                display: true,
+                display: false,
               },
               ticks: {
-                color: theme.palette.text.secondary,
+                display: false,
               },
             },
           },
         },
-      } as TotalEquityValueChartProps),
-    [data, theme.palette.primary.main, theme.palette.text.secondary]
+      } as NetValueChartProps),
+    [data, theme.palette.primary.main]
   )
 
   return { props, dayButton, change24, currentFloorPrice: 1234 }

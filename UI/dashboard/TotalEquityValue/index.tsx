@@ -16,7 +16,6 @@ import RiseOrFall from 'components/math/RiseOrFall'
 import NumberDisplay from 'components/math/NumberDisplay'
 
 import Chart from './Chart'
-import type { FloorPriceTrendsProps } from './types'
 import { useChart } from './useChart'
 
 const Title = styled('div')``
@@ -33,7 +32,7 @@ const Change24h = styled(Stack)`
 `
 const Right = styled('div')``
 
-const FloorPriceTrends: FC<FloorPriceTrendsProps> = () => {
+const TotalEquityValue: FC= () => {
   const { t } = useTranslation('dashboard')
 
   const chart = useChart()
@@ -47,7 +46,7 @@ const FloorPriceTrends: FC<FloorPriceTrendsProps> = () => {
           <NumberDisplay value={chart.currentFloorPrice} options="USD" />
         </Typography>
         <Change24h spacing={1} direction="row">
-          <RiseOrFall variant="subtitle1" value={chart.change24} />
+          <RiseOrFall variant="subtitle1" value={chart.change24} displayIcon />
           <Typography variant="subtitle1" color="text.secondary">
             <span>{t('totalEquityValue.change24h')}</span>
           </Typography>
@@ -101,4 +100,4 @@ const FloorPriceTrends: FC<FloorPriceTrendsProps> = () => {
   )
 }
 
-export default FloorPriceTrends
+export default TotalEquityValue

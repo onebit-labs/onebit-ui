@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles'
 import { getAssetInfo } from './assets-list'
 
 export interface TokenIconProps {
-  tokenSymbol: string
+  symbol: string
   sx?: SxProps<Theme>
 }
 
@@ -14,15 +14,11 @@ const TokenAvatar = styled(Avatar)`
   }
 `
 
-export function TokenIcon({ tokenSymbol, sx }: TokenIconProps) {
-  if (!tokenSymbol) return null
+const TokenIcon = ({ symbol, sx }: TokenIconProps) => {
+  if (!symbol) return null
+  const asset = getAssetInfo(symbol)
 
-  const asset = getAssetInfo(tokenSymbol)
-
-  return <TokenAvatar sx={sx} alt={tokenSymbol} src={asset.icon.src} />
+  return <TokenAvatar sx={sx} alt={symbol} src={asset.icon.src} />
 }
 
-export interface NFTIconProps {
-  NFT_ID: string
-  sx?: SxProps<Theme>
-}
+export default TokenIcon

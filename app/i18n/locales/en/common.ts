@@ -37,6 +37,12 @@ const locale = {
       error: 'Unsupported network',
     },
   },
+  project: {
+    status: {
+      open: 'Open',
+      lockedUp: 'Locked-Up',
+    },
+  },
 }
 
 export default locale
