@@ -12,30 +12,20 @@ import type {
   PopulatedTransaction,
   Signer,
   utils,
-} from "ethers";
-import type {
-  FunctionFragment,
-  Result,
-  EventFragment,
-} from "@ethersproject/abi";
-import type { Listener, Provider } from "@ethersproject/providers";
-import type {
-  TypedEventFilter,
-  TypedEvent,
-  TypedListener,
-  OnEvent,
-  PromiseOrValue,
-} from "../common";
+} from 'ethers'
+import type { FunctionFragment, Result, EventFragment } from '@ethersproject/abi'
+import type { Listener, Provider } from '@ethersproject/providers'
+import type { TypedEventFilter, TypedEvent, TypedListener, OnEvent, PromiseOrValue } from '../common'
 
 export interface IInitializableOTokenInterface extends utils.Interface {
   functions: {
-    "initialize(address,address,uint8,string,string,bytes)": FunctionFragment;
-  };
+    'initialize(address,address,uint8,string,string,bytes)': FunctionFragment
+  }
 
-  getFunction(nameOrSignatureOrTopic: "initialize"): FunctionFragment;
+  getFunction(nameOrSignatureOrTopic: 'initialize'): FunctionFragment
 
   encodeFunctionData(
-    functionFragment: "initialize",
+    functionFragment: 'initialize',
     values: [
       PromiseOrValue<string>,
       PromiseOrValue<string>,
@@ -44,57 +34,50 @@ export interface IInitializableOTokenInterface extends utils.Interface {
       PromiseOrValue<string>,
       PromiseOrValue<BytesLike>
     ]
-  ): string;
+  ): string
 
-  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'initialize', data: BytesLike): Result
 
   events: {
-    "Initialized(address,address,uint8,string,string,bytes)": EventFragment;
-  };
+    'Initialized(address,address,uint8,string,string,bytes)': EventFragment
+  }
 
-  getEvent(nameOrSignatureOrTopic: "Initialized"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Initialized'): EventFragment
 }
 
 export interface InitializedEventObject {
-  underlyingAsset: string;
-  pool: string;
-  oTokenDecimals: number;
-  oTokenName: string;
-  oTokenSymbol: string;
-  params: string;
+  underlyingAsset: string
+  pool: string
+  oTokenDecimals: number
+  oTokenName: string
+  oTokenSymbol: string
+  params: string
 }
-export type InitializedEvent = TypedEvent<
-  [string, string, number, string, string, string],
-  InitializedEventObject
->;
+export type InitializedEvent = TypedEvent<[string, string, number, string, string, string], InitializedEventObject>
 
-export type InitializedEventFilter = TypedEventFilter<InitializedEvent>;
+export type InitializedEventFilter = TypedEventFilter<InitializedEvent>
 
 export interface IInitializableOToken extends BaseContract {
-  connect(signerOrProvider: Signer | Provider | string): this;
-  attach(addressOrName: string): this;
-  deployed(): Promise<this>;
+  connect(signerOrProvider: Signer | Provider | string): this
+  attach(addressOrName: string): this
+  deployed(): Promise<this>
 
-  interface: IInitializableOTokenInterface;
+  interface: IInitializableOTokenInterface
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
     fromBlockOrBlockhash?: string | number | undefined,
     toBlock?: string | number | undefined
-  ): Promise<Array<TEvent>>;
+  ): Promise<Array<TEvent>>
 
-  listeners<TEvent extends TypedEvent>(
-    eventFilter?: TypedEventFilter<TEvent>
-  ): Array<TypedListener<TEvent>>;
-  listeners(eventName?: string): Array<Listener>;
-  removeAllListeners<TEvent extends TypedEvent>(
-    eventFilter: TypedEventFilter<TEvent>
-  ): this;
-  removeAllListeners(eventName?: string): this;
-  off: OnEvent<this>;
-  on: OnEvent<this>;
-  once: OnEvent<this>;
-  removeListener: OnEvent<this>;
+  listeners<TEvent extends TypedEvent>(eventFilter?: TypedEventFilter<TEvent>): Array<TypedListener<TEvent>>
+  listeners(eventName?: string): Array<Listener>
+  removeAllListeners<TEvent extends TypedEvent>(eventFilter: TypedEventFilter<TEvent>): this
+  removeAllListeners(eventName?: string): this
+  off: OnEvent<this>
+  on: OnEvent<this>
+  once: OnEvent<this>
+  removeListener: OnEvent<this>
 
   functions: {
     initialize(
@@ -105,8 +88,8 @@ export interface IInitializableOToken extends BaseContract {
       oTokenSymbol: PromiseOrValue<string>,
       params: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
-  };
+    ): Promise<ContractTransaction>
+  }
 
   initialize(
     pool: PromiseOrValue<string>,
@@ -116,7 +99,7 @@ export interface IInitializableOToken extends BaseContract {
     oTokenSymbol: PromiseOrValue<string>,
     params: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   callStatic: {
     initialize(
@@ -127,18 +110,18 @@ export interface IInitializableOToken extends BaseContract {
       oTokenSymbol: PromiseOrValue<string>,
       params: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
-    ): Promise<void>;
-  };
+    ): Promise<void>
+  }
 
   filters: {
-    "Initialized(address,address,uint8,string,string,bytes)"(
+    'Initialized(address,address,uint8,string,string,bytes)'(
       underlyingAsset?: PromiseOrValue<string> | null,
       pool?: PromiseOrValue<string> | null,
       oTokenDecimals?: null,
       oTokenName?: null,
       oTokenSymbol?: null,
       params?: null
-    ): InitializedEventFilter;
+    ): InitializedEventFilter
     Initialized(
       underlyingAsset?: PromiseOrValue<string> | null,
       pool?: PromiseOrValue<string> | null,
@@ -146,8 +129,8 @@ export interface IInitializableOToken extends BaseContract {
       oTokenName?: null,
       oTokenSymbol?: null,
       params?: null
-    ): InitializedEventFilter;
-  };
+    ): InitializedEventFilter
+  }
 
   estimateGas: {
     initialize(
@@ -158,8 +141,8 @@ export interface IInitializableOToken extends BaseContract {
       oTokenSymbol: PromiseOrValue<string>,
       params: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
-  };
+    ): Promise<BigNumber>
+  }
 
   populateTransaction: {
     initialize(
@@ -170,6 +153,6 @@ export interface IInitializableOToken extends BaseContract {
       oTokenSymbol: PromiseOrValue<string>,
       params: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
-  };
+    ): Promise<PopulatedTransaction>
+  }
 }

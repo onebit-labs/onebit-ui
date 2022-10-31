@@ -4,6 +4,7 @@ import type { FC } from 'react'
 import { useRouter } from 'next/router'
 import { navigations } from '../layout-parts/navigation'
 import SidebarAccordion from './SidebarAccordion'
+import { useTranslation } from 'next-i18next'
 
 const NavItemButton = styled(ButtonBase)<{ active: any }>(({ theme, active }) => ({
   height: 44,
@@ -89,6 +90,7 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
   const { sidebarCompact } = props
 
   const router = useRouter()
+  const { t } = useTranslation('router')
   const { pathname } = router
 
   // handle active current page
@@ -99,10 +101,11 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
   //   RECURSIVE FUNCTION TO RENDER MULTI LEVEL MENU
   const renderLevels = (data: any) => {
     return data.map((item: any, index: any) => {
+      const name = t(item.name)
       if (item.type === 'label')
         return (
           <ListLabel key={index} compact={sidebarCompact ? 1 : 0}>
-            {item.label}
+            {t(item.label)}
           </ListLabel>
         )
 
@@ -115,7 +118,7 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
       } else if (item.type === 'extLink') {
         return (
           <ExternalLink key={index} href={item.path} rel="noopener noreferrer" target="_blank">
-            <NavItemButton key={item.name} name="child" active={0}>
+            <NavItemButton key={name} name="child" active={0}>
               {(() => {
                 if (item.icon) {
                   return <item.icon sx={iconStyle(0)} />
@@ -125,7 +128,7 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
               })()}
 
               <StyledText compact={sidebarCompact ? 1 : 0} active={activeRoute(item.path)}>
-                {item.name}
+                {name}
               </StyledText>
 
               <Box mx="auto" />
@@ -138,7 +141,7 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
         return (
           <Box key={index}>
             <NavItemButton
-              key={item.name}
+              key={name}
               className="navItem"
               active={activeRoute(item.path)}
               onClick={() => handleNavigation(item.path)}
@@ -150,7 +153,7 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
               )}
 
               <StyledText compact={sidebarCompact ? 1 : 0} active={activeRoute(item.path)}>
-                {item.name}
+                {name}
               </StyledText>
 
               <Box mx="auto" />

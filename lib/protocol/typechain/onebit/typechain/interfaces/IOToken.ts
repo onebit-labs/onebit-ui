@@ -12,88 +12,61 @@ import type {
   PopulatedTransaction,
   Signer,
   utils,
-} from "ethers";
-import type {
-  FunctionFragment,
-  Result,
-  EventFragment,
-} from "@ethersproject/abi";
-import type { Listener, Provider } from "@ethersproject/providers";
-import type {
-  TypedEventFilter,
-  TypedEvent,
-  TypedListener,
-  OnEvent,
-  PromiseOrValue,
-} from "../common";
+} from 'ethers'
+import type { FunctionFragment, Result, EventFragment } from '@ethersproject/abi'
+import type { Listener, Provider } from '@ethersproject/providers'
+import type { TypedEventFilter, TypedEvent, TypedListener, OnEvent, PromiseOrValue } from '../common'
 
 export interface IOTokenInterface extends utils.Interface {
   functions: {
-    "UNDERLYING_ASSET_ADDRESS()": FunctionFragment;
-    "allowance(address,address)": FunctionFragment;
-    "approve(address,uint256)": FunctionFragment;
-    "balanceOf(address)": FunctionFragment;
-    "burn(address,address,uint256,uint256)": FunctionFragment;
-    "getScaledUserBalanceAndSupply(address)": FunctionFragment;
-    "initialize(address,address,uint8,string,string,bytes)": FunctionFragment;
-    "mint(address,uint256,uint256)": FunctionFragment;
-    "scaledBalanceOf(address)": FunctionFragment;
-    "scaledTotalSupply()": FunctionFragment;
-    "totalSupply()": FunctionFragment;
-    "transfer(address,uint256)": FunctionFragment;
-    "transferFrom(address,address,uint256)": FunctionFragment;
-    "transferUnderlyingTo(address,uint256)": FunctionFragment;
-  };
+    'UNDERLYING_ASSET_ADDRESS()': FunctionFragment
+    'allowance(address,address)': FunctionFragment
+    'approve(address,uint256)': FunctionFragment
+    'balanceOf(address)': FunctionFragment
+    'burn(address,address,uint256,uint256)': FunctionFragment
+    'getScaledUserBalanceAndSupply(address)': FunctionFragment
+    'initialize(address,address,uint8,string,string,bytes)': FunctionFragment
+    'mint(address,uint256,uint256)': FunctionFragment
+    'scaledBalanceOf(address)': FunctionFragment
+    'scaledTotalSupply()': FunctionFragment
+    'totalSupply()': FunctionFragment
+    'transfer(address,uint256)': FunctionFragment
+    'transferFrom(address,address,uint256)': FunctionFragment
+    'transferUnderlyingTo(address,uint256)': FunctionFragment
+  }
 
   getFunction(
     nameOrSignatureOrTopic:
-      | "UNDERLYING_ASSET_ADDRESS"
-      | "allowance"
-      | "approve"
-      | "balanceOf"
-      | "burn"
-      | "getScaledUserBalanceAndSupply"
-      | "initialize"
-      | "mint"
-      | "scaledBalanceOf"
-      | "scaledTotalSupply"
-      | "totalSupply"
-      | "transfer"
-      | "transferFrom"
-      | "transferUnderlyingTo"
-  ): FunctionFragment;
+      | 'UNDERLYING_ASSET_ADDRESS'
+      | 'allowance'
+      | 'approve'
+      | 'balanceOf'
+      | 'burn'
+      | 'getScaledUserBalanceAndSupply'
+      | 'initialize'
+      | 'mint'
+      | 'scaledBalanceOf'
+      | 'scaledTotalSupply'
+      | 'totalSupply'
+      | 'transfer'
+      | 'transferFrom'
+      | 'transferUnderlyingTo'
+  ): FunctionFragment
 
+  encodeFunctionData(functionFragment: 'UNDERLYING_ASSET_ADDRESS', values?: undefined): string
+  encodeFunctionData(functionFragment: 'allowance', values: [PromiseOrValue<string>, PromiseOrValue<string>]): string
   encodeFunctionData(
-    functionFragment: "UNDERLYING_ASSET_ADDRESS",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "allowance",
-    values: [PromiseOrValue<string>, PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "approve",
+    functionFragment: 'approve',
     values: [PromiseOrValue<string>, PromiseOrValue<BigNumberish>]
-  ): string;
+  ): string
+  encodeFunctionData(functionFragment: 'balanceOf', values: [PromiseOrValue<string>]): string
   encodeFunctionData(
-    functionFragment: "balanceOf",
-    values: [PromiseOrValue<string>]
-  ): string;
+    functionFragment: 'burn',
+    values: [PromiseOrValue<string>, PromiseOrValue<string>, PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+  ): string
+  encodeFunctionData(functionFragment: 'getScaledUserBalanceAndSupply', values: [PromiseOrValue<string>]): string
   encodeFunctionData(
-    functionFragment: "burn",
-    values: [
-      PromiseOrValue<string>,
-      PromiseOrValue<string>,
-      PromiseOrValue<BigNumberish>,
-      PromiseOrValue<BigNumberish>
-    ]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getScaledUserBalanceAndSupply",
-    values: [PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "initialize",
+    functionFragment: 'initialize',
     values: [
       PromiseOrValue<string>,
       PromiseOrValue<string>,
@@ -102,219 +75,156 @@ export interface IOTokenInterface extends utils.Interface {
       PromiseOrValue<string>,
       PromiseOrValue<BytesLike>
     ]
-  ): string;
+  ): string
   encodeFunctionData(
-    functionFragment: "mint",
-    values: [
-      PromiseOrValue<string>,
-      PromiseOrValue<BigNumberish>,
-      PromiseOrValue<BigNumberish>
-    ]
-  ): string;
+    functionFragment: 'mint',
+    values: [PromiseOrValue<string>, PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+  ): string
+  encodeFunctionData(functionFragment: 'scaledBalanceOf', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'scaledTotalSupply', values?: undefined): string
+  encodeFunctionData(functionFragment: 'totalSupply', values?: undefined): string
   encodeFunctionData(
-    functionFragment: "scaledBalanceOf",
-    values: [PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "scaledTotalSupply",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "totalSupply",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "transfer",
+    functionFragment: 'transfer',
     values: [PromiseOrValue<string>, PromiseOrValue<BigNumberish>]
-  ): string;
+  ): string
   encodeFunctionData(
-    functionFragment: "transferFrom",
-    values: [
-      PromiseOrValue<string>,
-      PromiseOrValue<string>,
-      PromiseOrValue<BigNumberish>
-    ]
-  ): string;
+    functionFragment: 'transferFrom',
+    values: [PromiseOrValue<string>, PromiseOrValue<string>, PromiseOrValue<BigNumberish>]
+  ): string
   encodeFunctionData(
-    functionFragment: "transferUnderlyingTo",
+    functionFragment: 'transferUnderlyingTo',
     values: [PromiseOrValue<string>, PromiseOrValue<BigNumberish>]
-  ): string;
+  ): string
 
-  decodeFunctionResult(
-    functionFragment: "UNDERLYING_ASSET_ADDRESS",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "allowance", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "approve", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "balanceOf", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "burn", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "getScaledUserBalanceAndSupply",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "scaledBalanceOf",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "scaledTotalSupply",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "totalSupply",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "transfer", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "transferFrom",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "transferUnderlyingTo",
-    data: BytesLike
-  ): Result;
+  decodeFunctionResult(functionFragment: 'UNDERLYING_ASSET_ADDRESS', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'allowance', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'approve', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'balanceOf', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'burn', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'getScaledUserBalanceAndSupply', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'initialize', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'mint', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'scaledBalanceOf', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'scaledTotalSupply', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'totalSupply', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'transfer', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'transferFrom', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'transferUnderlyingTo', data: BytesLike): Result
 
   events: {
-    "Approval(address,address,uint256)": EventFragment;
-    "BalanceTransfer(address,address,uint256,uint256)": EventFragment;
-    "Burn(address,address,uint256,uint256)": EventFragment;
-    "Initialized(address,address,uint8,string,string,bytes)": EventFragment;
-    "Mint(address,uint256,uint256)": EventFragment;
-    "Transfer(address,address,uint256)": EventFragment;
-  };
+    'Approval(address,address,uint256)': EventFragment
+    'BalanceTransfer(address,address,uint256,uint256)': EventFragment
+    'Burn(address,address,uint256,uint256)': EventFragment
+    'Initialized(address,address,uint8,string,string,bytes)': EventFragment
+    'Mint(address,uint256,uint256)': EventFragment
+    'Transfer(address,address,uint256)': EventFragment
+  }
 
-  getEvent(nameOrSignatureOrTopic: "Approval"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "BalanceTransfer"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Burn"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Initialized"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Mint"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Transfer"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Approval'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'BalanceTransfer'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'Burn'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'Initialized'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'Mint'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'Transfer'): EventFragment
 }
 
 export interface ApprovalEventObject {
-  owner: string;
-  spender: string;
-  value: BigNumber;
+  owner: string
+  spender: string
+  value: BigNumber
 }
-export type ApprovalEvent = TypedEvent<
-  [string, string, BigNumber],
-  ApprovalEventObject
->;
+export type ApprovalEvent = TypedEvent<[string, string, BigNumber], ApprovalEventObject>
 
-export type ApprovalEventFilter = TypedEventFilter<ApprovalEvent>;
+export type ApprovalEventFilter = TypedEventFilter<ApprovalEvent>
 
 export interface BalanceTransferEventObject {
-  from: string;
-  to: string;
-  value: BigNumber;
-  index: BigNumber;
+  from: string
+  to: string
+  value: BigNumber
+  index: BigNumber
 }
-export type BalanceTransferEvent = TypedEvent<
-  [string, string, BigNumber, BigNumber],
-  BalanceTransferEventObject
->;
+export type BalanceTransferEvent = TypedEvent<[string, string, BigNumber, BigNumber], BalanceTransferEventObject>
 
-export type BalanceTransferEventFilter = TypedEventFilter<BalanceTransferEvent>;
+export type BalanceTransferEventFilter = TypedEventFilter<BalanceTransferEvent>
 
 export interface BurnEventObject {
-  from: string;
-  target: string;
-  value: BigNumber;
-  index: BigNumber;
+  from: string
+  target: string
+  value: BigNumber
+  index: BigNumber
 }
-export type BurnEvent = TypedEvent<
-  [string, string, BigNumber, BigNumber],
-  BurnEventObject
->;
+export type BurnEvent = TypedEvent<[string, string, BigNumber, BigNumber], BurnEventObject>
 
-export type BurnEventFilter = TypedEventFilter<BurnEvent>;
+export type BurnEventFilter = TypedEventFilter<BurnEvent>
 
 export interface InitializedEventObject {
-  underlyingAsset: string;
-  pool: string;
-  oTokenDecimals: number;
-  oTokenName: string;
-  oTokenSymbol: string;
-  params: string;
+  underlyingAsset: string
+  pool: string
+  oTokenDecimals: number
+  oTokenName: string
+  oTokenSymbol: string
+  params: string
 }
-export type InitializedEvent = TypedEvent<
-  [string, string, number, string, string, string],
-  InitializedEventObject
->;
+export type InitializedEvent = TypedEvent<[string, string, number, string, string, string], InitializedEventObject>
 
-export type InitializedEventFilter = TypedEventFilter<InitializedEvent>;
+export type InitializedEventFilter = TypedEventFilter<InitializedEvent>
 
 export interface MintEventObject {
-  from: string;
-  value: BigNumber;
-  index: BigNumber;
+  from: string
+  value: BigNumber
+  index: BigNumber
 }
-export type MintEvent = TypedEvent<
-  [string, BigNumber, BigNumber],
-  MintEventObject
->;
+export type MintEvent = TypedEvent<[string, BigNumber, BigNumber], MintEventObject>
 
-export type MintEventFilter = TypedEventFilter<MintEvent>;
+export type MintEventFilter = TypedEventFilter<MintEvent>
 
 export interface TransferEventObject {
-  from: string;
-  to: string;
-  value: BigNumber;
+  from: string
+  to: string
+  value: BigNumber
 }
-export type TransferEvent = TypedEvent<
-  [string, string, BigNumber],
-  TransferEventObject
->;
+export type TransferEvent = TypedEvent<[string, string, BigNumber], TransferEventObject>
 
-export type TransferEventFilter = TypedEventFilter<TransferEvent>;
+export type TransferEventFilter = TypedEventFilter<TransferEvent>
 
 export interface IOToken extends BaseContract {
-  connect(signerOrProvider: Signer | Provider | string): this;
-  attach(addressOrName: string): this;
-  deployed(): Promise<this>;
+  connect(signerOrProvider: Signer | Provider | string): this
+  attach(addressOrName: string): this
+  deployed(): Promise<this>
 
-  interface: IOTokenInterface;
+  interface: IOTokenInterface
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
     fromBlockOrBlockhash?: string | number | undefined,
     toBlock?: string | number | undefined
-  ): Promise<Array<TEvent>>;
+  ): Promise<Array<TEvent>>
 
-  listeners<TEvent extends TypedEvent>(
-    eventFilter?: TypedEventFilter<TEvent>
-  ): Array<TypedListener<TEvent>>;
-  listeners(eventName?: string): Array<Listener>;
-  removeAllListeners<TEvent extends TypedEvent>(
-    eventFilter: TypedEventFilter<TEvent>
-  ): this;
-  removeAllListeners(eventName?: string): this;
-  off: OnEvent<this>;
-  on: OnEvent<this>;
-  once: OnEvent<this>;
-  removeListener: OnEvent<this>;
+  listeners<TEvent extends TypedEvent>(eventFilter?: TypedEventFilter<TEvent>): Array<TypedListener<TEvent>>
+  listeners(eventName?: string): Array<Listener>
+  removeAllListeners<TEvent extends TypedEvent>(eventFilter: TypedEventFilter<TEvent>): this
+  removeAllListeners(eventName?: string): this
+  off: OnEvent<this>
+  on: OnEvent<this>
+  once: OnEvent<this>
+  removeListener: OnEvent<this>
 
   functions: {
-    UNDERLYING_ASSET_ADDRESS(overrides?: CallOverrides): Promise<[string]>;
+    UNDERLYING_ASSET_ADDRESS(overrides?: CallOverrides): Promise<[string]>
 
     allowance(
       owner: PromiseOrValue<string>,
       spender: PromiseOrValue<string>,
       overrides?: CallOverrides
-    ): Promise<[BigNumber]>;
+    ): Promise<[BigNumber]>
 
     approve(
       spender: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
-    balanceOf(
-      account: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<[BigNumber]>;
+    balanceOf(account: PromiseOrValue<string>, overrides?: CallOverrides): Promise<[BigNumber]>
 
     burn(
       user: PromiseOrValue<string>,
@@ -322,12 +232,12 @@ export interface IOToken extends BaseContract {
       amount: PromiseOrValue<BigNumberish>,
       index: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
     getScaledUserBalanceAndSupply(
       user: PromiseOrValue<string>,
       overrides?: CallOverrides
-    ): Promise<[BigNumber, BigNumber]>;
+    ): Promise<[BigNumber, BigNumber]>
 
     initialize(
       pool: PromiseOrValue<string>,
@@ -337,62 +247,56 @@ export interface IOToken extends BaseContract {
       oTokenSymbol: PromiseOrValue<string>,
       params: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
     mint(
       user: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       index: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
-    scaledBalanceOf(
-      user: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<[BigNumber]>;
+    scaledBalanceOf(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<[BigNumber]>
 
-    scaledTotalSupply(overrides?: CallOverrides): Promise<[BigNumber]>;
+    scaledTotalSupply(overrides?: CallOverrides): Promise<[BigNumber]>
 
-    totalSupply(overrides?: CallOverrides): Promise<[BigNumber]>;
+    totalSupply(overrides?: CallOverrides): Promise<[BigNumber]>
 
     transfer(
       recipient: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
     transferFrom(
       sender: PromiseOrValue<string>,
       recipient: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
     transferUnderlyingTo(
       user: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
-  };
+    ): Promise<ContractTransaction>
+  }
 
-  UNDERLYING_ASSET_ADDRESS(overrides?: CallOverrides): Promise<string>;
+  UNDERLYING_ASSET_ADDRESS(overrides?: CallOverrides): Promise<string>
 
   allowance(
     owner: PromiseOrValue<string>,
     spender: PromiseOrValue<string>,
     overrides?: CallOverrides
-  ): Promise<BigNumber>;
+  ): Promise<BigNumber>
 
   approve(
     spender: PromiseOrValue<string>,
     amount: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
-  balanceOf(
-    account: PromiseOrValue<string>,
-    overrides?: CallOverrides
-  ): Promise<BigNumber>;
+  balanceOf(account: PromiseOrValue<string>, overrides?: CallOverrides): Promise<BigNumber>
 
   burn(
     user: PromiseOrValue<string>,
@@ -400,12 +304,12 @@ export interface IOToken extends BaseContract {
     amount: PromiseOrValue<BigNumberish>,
     index: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   getScaledUserBalanceAndSupply(
     user: PromiseOrValue<string>,
     overrides?: CallOverrides
-  ): Promise<[BigNumber, BigNumber]>;
+  ): Promise<[BigNumber, BigNumber]>
 
   initialize(
     pool: PromiseOrValue<string>,
@@ -415,62 +319,56 @@ export interface IOToken extends BaseContract {
     oTokenSymbol: PromiseOrValue<string>,
     params: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   mint(
     user: PromiseOrValue<string>,
     amount: PromiseOrValue<BigNumberish>,
     index: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
-  scaledBalanceOf(
-    user: PromiseOrValue<string>,
-    overrides?: CallOverrides
-  ): Promise<BigNumber>;
+  scaledBalanceOf(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<BigNumber>
 
-  scaledTotalSupply(overrides?: CallOverrides): Promise<BigNumber>;
+  scaledTotalSupply(overrides?: CallOverrides): Promise<BigNumber>
 
-  totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
+  totalSupply(overrides?: CallOverrides): Promise<BigNumber>
 
   transfer(
     recipient: PromiseOrValue<string>,
     amount: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   transferFrom(
     sender: PromiseOrValue<string>,
     recipient: PromiseOrValue<string>,
     amount: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   transferUnderlyingTo(
     user: PromiseOrValue<string>,
     amount: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   callStatic: {
-    UNDERLYING_ASSET_ADDRESS(overrides?: CallOverrides): Promise<string>;
+    UNDERLYING_ASSET_ADDRESS(overrides?: CallOverrides): Promise<string>
 
     allowance(
       owner: PromiseOrValue<string>,
       spender: PromiseOrValue<string>,
       overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
     approve(
       spender: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<boolean>;
+    ): Promise<boolean>
 
-    balanceOf(
-      account: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    balanceOf(account: PromiseOrValue<string>, overrides?: CallOverrides): Promise<BigNumber>
 
     burn(
       user: PromiseOrValue<string>,
@@ -478,12 +376,12 @@ export interface IOToken extends BaseContract {
       amount: PromiseOrValue<BigNumberish>,
       index: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<void>;
+    ): Promise<void>
 
     getScaledUserBalanceAndSupply(
       user: PromiseOrValue<string>,
       overrides?: CallOverrides
-    ): Promise<[BigNumber, BigNumber]>;
+    ): Promise<[BigNumber, BigNumber]>
 
     initialize(
       pool: PromiseOrValue<string>,
@@ -493,90 +391,87 @@ export interface IOToken extends BaseContract {
       oTokenSymbol: PromiseOrValue<string>,
       params: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
-    ): Promise<void>;
+    ): Promise<void>
 
     mint(
       user: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       index: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<boolean>;
+    ): Promise<boolean>
 
-    scaledBalanceOf(
-      user: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    scaledBalanceOf(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<BigNumber>
 
-    scaledTotalSupply(overrides?: CallOverrides): Promise<BigNumber>;
+    scaledTotalSupply(overrides?: CallOverrides): Promise<BigNumber>
 
-    totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
+    totalSupply(overrides?: CallOverrides): Promise<BigNumber>
 
     transfer(
       recipient: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<boolean>;
+    ): Promise<boolean>
 
     transferFrom(
       sender: PromiseOrValue<string>,
       recipient: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<boolean>;
+    ): Promise<boolean>
 
     transferUnderlyingTo(
       user: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<BigNumber>;
-  };
+    ): Promise<BigNumber>
+  }
 
   filters: {
-    "Approval(address,address,uint256)"(
+    'Approval(address,address,uint256)'(
       owner?: PromiseOrValue<string> | null,
       spender?: PromiseOrValue<string> | null,
       value?: null
-    ): ApprovalEventFilter;
+    ): ApprovalEventFilter
     Approval(
       owner?: PromiseOrValue<string> | null,
       spender?: PromiseOrValue<string> | null,
       value?: null
-    ): ApprovalEventFilter;
+    ): ApprovalEventFilter
 
-    "BalanceTransfer(address,address,uint256,uint256)"(
+    'BalanceTransfer(address,address,uint256,uint256)'(
       from?: PromiseOrValue<string> | null,
       to?: PromiseOrValue<string> | null,
       value?: null,
       index?: null
-    ): BalanceTransferEventFilter;
+    ): BalanceTransferEventFilter
     BalanceTransfer(
       from?: PromiseOrValue<string> | null,
       to?: PromiseOrValue<string> | null,
       value?: null,
       index?: null
-    ): BalanceTransferEventFilter;
+    ): BalanceTransferEventFilter
 
-    "Burn(address,address,uint256,uint256)"(
+    'Burn(address,address,uint256,uint256)'(
       from?: PromiseOrValue<string> | null,
       target?: PromiseOrValue<string> | null,
       value?: null,
       index?: null
-    ): BurnEventFilter;
+    ): BurnEventFilter
     Burn(
       from?: PromiseOrValue<string> | null,
       target?: PromiseOrValue<string> | null,
       value?: null,
       index?: null
-    ): BurnEventFilter;
+    ): BurnEventFilter
 
-    "Initialized(address,address,uint8,string,string,bytes)"(
+    'Initialized(address,address,uint8,string,string,bytes)'(
       underlyingAsset?: PromiseOrValue<string> | null,
       pool?: PromiseOrValue<string> | null,
       oTokenDecimals?: null,
       oTokenName?: null,
       oTokenSymbol?: null,
       params?: null
-    ): InitializedEventFilter;
+    ): InitializedEventFilter
     Initialized(
       underlyingAsset?: PromiseOrValue<string> | null,
       pool?: PromiseOrValue<string> | null,
@@ -584,50 +479,39 @@ export interface IOToken extends BaseContract {
       oTokenName?: null,
       oTokenSymbol?: null,
       params?: null
-    ): InitializedEventFilter;
+    ): InitializedEventFilter
 
-    "Mint(address,uint256,uint256)"(
-      from?: PromiseOrValue<string> | null,
-      value?: null,
-      index?: null
-    ): MintEventFilter;
-    Mint(
-      from?: PromiseOrValue<string> | null,
-      value?: null,
-      index?: null
-    ): MintEventFilter;
+    'Mint(address,uint256,uint256)'(from?: PromiseOrValue<string> | null, value?: null, index?: null): MintEventFilter
+    Mint(from?: PromiseOrValue<string> | null, value?: null, index?: null): MintEventFilter
 
-    "Transfer(address,address,uint256)"(
+    'Transfer(address,address,uint256)'(
       from?: PromiseOrValue<string> | null,
       to?: PromiseOrValue<string> | null,
       value?: null
-    ): TransferEventFilter;
+    ): TransferEventFilter
     Transfer(
       from?: PromiseOrValue<string> | null,
       to?: PromiseOrValue<string> | null,
       value?: null
-    ): TransferEventFilter;
-  };
+    ): TransferEventFilter
+  }
 
   estimateGas: {
-    UNDERLYING_ASSET_ADDRESS(overrides?: CallOverrides): Promise<BigNumber>;
+    UNDERLYING_ASSET_ADDRESS(overrides?: CallOverrides): Promise<BigNumber>
 
     allowance(
       owner: PromiseOrValue<string>,
       spender: PromiseOrValue<string>,
       overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
     approve(
       spender: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
-    balanceOf(
-      account: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    balanceOf(account: PromiseOrValue<string>, overrides?: CallOverrides): Promise<BigNumber>
 
     burn(
       user: PromiseOrValue<string>,
@@ -635,12 +519,9 @@ export interface IOToken extends BaseContract {
       amount: PromiseOrValue<BigNumberish>,
       index: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
-    getScaledUserBalanceAndSupply(
-      user: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    getScaledUserBalanceAndSupply(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<BigNumber>
 
     initialize(
       pool: PromiseOrValue<string>,
@@ -650,65 +531,57 @@ export interface IOToken extends BaseContract {
       oTokenSymbol: PromiseOrValue<string>,
       params: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
     mint(
       user: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       index: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
-    scaledBalanceOf(
-      user: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    scaledBalanceOf(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<BigNumber>
 
-    scaledTotalSupply(overrides?: CallOverrides): Promise<BigNumber>;
+    scaledTotalSupply(overrides?: CallOverrides): Promise<BigNumber>
 
-    totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
+    totalSupply(overrides?: CallOverrides): Promise<BigNumber>
 
     transfer(
       recipient: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
     transferFrom(
       sender: PromiseOrValue<string>,
       recipient: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
     transferUnderlyingTo(
       user: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
-  };
+    ): Promise<BigNumber>
+  }
 
   populateTransaction: {
-    UNDERLYING_ASSET_ADDRESS(
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
+    UNDERLYING_ASSET_ADDRESS(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     allowance(
       owner: PromiseOrValue<string>,
       spender: PromiseOrValue<string>,
       overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     approve(
       spender: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
-    balanceOf(
-      account: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
+    balanceOf(account: PromiseOrValue<string>, overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     burn(
       user: PromiseOrValue<string>,
@@ -716,12 +589,12 @@ export interface IOToken extends BaseContract {
       amount: PromiseOrValue<BigNumberish>,
       index: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     getScaledUserBalanceAndSupply(
       user: PromiseOrValue<string>,
       overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     initialize(
       pool: PromiseOrValue<string>,
@@ -731,41 +604,38 @@ export interface IOToken extends BaseContract {
       oTokenSymbol: PromiseOrValue<string>,
       params: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     mint(
       user: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       index: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
-    scaledBalanceOf(
-      user: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
+    scaledBalanceOf(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    scaledTotalSupply(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    scaledTotalSupply(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    totalSupply(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    totalSupply(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     transfer(
       recipient: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     transferFrom(
       sender: PromiseOrValue<string>,
       recipient: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     transferUnderlyingTo(
       user: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
-  };
+    ): Promise<PopulatedTransaction>
+  }
 }

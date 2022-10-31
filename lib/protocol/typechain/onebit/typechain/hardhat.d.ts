@@ -2,347 +2,269 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { ethers } from "ethers";
-import {
-  FactoryOptions,
-  HardhatEthersHelpers as HardhatEthersHelpersBase,
-} from "@nomiclabs/hardhat-ethers/types";
+import { ethers } from 'ethers'
+import { FactoryOptions, HardhatEthersHelpers as HardhatEthersHelpersBase } from '@nomiclabs/hardhat-ethers/types'
 
-import * as Contracts from ".";
+import * as Contracts from '.'
 
-declare module "hardhat/types/runtime" {
+declare module 'hardhat/types/runtime' {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
-      name: "ERC20",
+      name: 'ERC20',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ERC20__factory>;
+    ): Promise<Contracts.ERC20__factory>
     getContractFactory(
-      name: "IAccessControl",
+      name: 'IAccessControl',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IAccessControl__factory>;
+    ): Promise<Contracts.IAccessControl__factory>
     getContractFactory(
-      name: "IERC20",
+      name: 'IERC20',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IERC20__factory>;
+    ): Promise<Contracts.IERC20__factory>
     getContractFactory(
-      name: "IERC20Metadata",
+      name: 'IERC20Metadata',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IERC20Metadata__factory>;
+    ): Promise<Contracts.IERC20Metadata__factory>
     getContractFactory(
-      name: "Ownable",
+      name: 'Ownable',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Ownable__factory>;
+    ): Promise<Contracts.Ownable__factory>
     getContractFactory(
-      name: "Pausable",
+      name: 'Pausable',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Pausable__factory>;
+    ): Promise<Contracts.Pausable__factory>
     getContractFactory(
-      name: "AdminUpgradeabilityProxy",
+      name: 'AdminUpgradeabilityProxy',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.AdminUpgradeabilityProxy__factory>;
+    ): Promise<Contracts.AdminUpgradeabilityProxy__factory>
     getContractFactory(
-      name: "BaseAdminUpgradeabilityProxy",
+      name: 'BaseAdminUpgradeabilityProxy',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.BaseAdminUpgradeabilityProxy__factory>;
+    ): Promise<Contracts.BaseAdminUpgradeabilityProxy__factory>
     getContractFactory(
-      name: "BaseUpgradeabilityProxy",
+      name: 'BaseUpgradeabilityProxy',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.BaseUpgradeabilityProxy__factory>;
+    ): Promise<Contracts.BaseUpgradeabilityProxy__factory>
     getContractFactory(
-      name: "ERC1967Proxy",
+      name: 'ERC1967Proxy',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ERC1967Proxy__factory>;
+    ): Promise<Contracts.ERC1967Proxy__factory>
     getContractFactory(
-      name: "ERC1967Upgrade",
+      name: 'ERC1967Upgrade',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ERC1967Upgrade__factory>;
+    ): Promise<Contracts.ERC1967Upgrade__factory>
     getContractFactory(
-      name: "IBeacon",
+      name: 'IBeacon',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IBeacon__factory>;
+    ): Promise<Contracts.IBeacon__factory>
     getContractFactory(
-      name: "InitializableAdminUpgradeabilityProxy",
+      name: 'InitializableAdminUpgradeabilityProxy',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.InitializableAdminUpgradeabilityProxy__factory>;
+    ): Promise<Contracts.InitializableAdminUpgradeabilityProxy__factory>
     getContractFactory(
-      name: "InitializableUpgradeabilityProxy",
+      name: 'InitializableUpgradeabilityProxy',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.InitializableUpgradeabilityProxy__factory>;
+    ): Promise<Contracts.InitializableUpgradeabilityProxy__factory>
     getContractFactory(
-      name: "Proxy",
+      name: 'Proxy',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Proxy__factory>;
+    ): Promise<Contracts.Proxy__factory>
     getContractFactory(
-      name: "ProxyAdmin",
+      name: 'ProxyAdmin',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ProxyAdmin__factory>;
+    ): Promise<Contracts.ProxyAdmin__factory>
     getContractFactory(
-      name: "TransparentUpgradeableProxy",
+      name: 'TransparentUpgradeableProxy',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.TransparentUpgradeableProxy__factory>;
+    ): Promise<Contracts.TransparentUpgradeableProxy__factory>
     getContractFactory(
-      name: "UpgradeabilityProxy",
+      name: 'UpgradeabilityProxy',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.UpgradeabilityProxy__factory>;
+    ): Promise<Contracts.UpgradeabilityProxy__factory>
     getContractFactory(
-      name: "IncentivizedERC20",
+      name: 'IncentivizedERC20',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IncentivizedERC20__factory>;
+    ): Promise<Contracts.IncentivizedERC20__factory>
     getContractFactory(
-      name: "IInitializableOToken",
+      name: 'IInitializableOToken',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IInitializableOToken__factory>;
+    ): Promise<Contracts.IInitializableOToken__factory>
     getContractFactory(
-      name: "ILendingPool",
+      name: 'ILendingPool',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ILendingPool__factory>;
+    ): Promise<Contracts.ILendingPool__factory>
     getContractFactory(
-      name: "ILendingPoolAddressesProvider",
+      name: 'ILendingPoolAddressesProvider',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ILendingPoolAddressesProvider__factory>;
+    ): Promise<Contracts.ILendingPoolAddressesProvider__factory>
     getContractFactory(
-      name: "ILendingPoolAddressesProviderRegistry",
+      name: 'ILendingPoolAddressesProviderRegistry',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ILendingPoolAddressesProviderRegistry__factory>;
+    ): Promise<Contracts.ILendingPoolAddressesProviderRegistry__factory>
     getContractFactory(
-      name: "ILendingPoolConfigurator",
+      name: 'ILendingPoolConfigurator',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ILendingPoolConfigurator__factory>;
+    ): Promise<Contracts.ILendingPoolConfigurator__factory>
     getContractFactory(
-      name: "IOToken",
+      name: 'IOToken',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IOToken__factory>;
+    ): Promise<Contracts.IOToken__factory>
     getContractFactory(
-      name: "IScaledBalanceToken",
+      name: 'IScaledBalanceToken',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IScaledBalanceToken__factory>;
+    ): Promise<Contracts.IScaledBalanceToken__factory>
     getContractFactory(
-      name: "LendingPool",
+      name: 'LendingPool',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.LendingPool__factory>;
+    ): Promise<Contracts.LendingPool__factory>
     getContractFactory(
-      name: "LendingPoolAddressesProvider",
+      name: 'LendingPoolAddressesProvider',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.LendingPoolAddressesProvider__factory>;
+    ): Promise<Contracts.LendingPoolAddressesProvider__factory>
     getContractFactory(
-      name: "LendingPoolAddressesProviderRegistry",
+      name: 'LendingPoolAddressesProviderRegistry',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.LendingPoolAddressesProviderRegistry__factory>;
+    ): Promise<Contracts.LendingPoolAddressesProviderRegistry__factory>
     getContractFactory(
-      name: "LendingPoolConfigurator",
+      name: 'LendingPoolConfigurator',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.LendingPoolConfigurator__factory>;
+    ): Promise<Contracts.LendingPoolConfigurator__factory>
     getContractFactory(
-      name: "BaseImmutableAdminUpgradeabilityProxy",
+      name: 'BaseImmutableAdminUpgradeabilityProxy',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.BaseImmutableAdminUpgradeabilityProxy__factory>;
+    ): Promise<Contracts.BaseImmutableAdminUpgradeabilityProxy__factory>
     getContractFactory(
-      name: "InitializableImmutableAdminUpgradeabilityProxy",
+      name: 'InitializableImmutableAdminUpgradeabilityProxy',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.InitializableImmutableAdminUpgradeabilityProxy__factory>;
+    ): Promise<Contracts.InitializableImmutableAdminUpgradeabilityProxy__factory>
     getContractFactory(
-      name: "Errors",
+      name: 'Errors',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Errors__factory>;
+    ): Promise<Contracts.Errors__factory>
     getContractFactory(
-      name: "MintableERC20",
+      name: 'MintableERC20',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.MintableERC20__factory>;
+    ): Promise<Contracts.MintableERC20__factory>
     getContractFactory(
-      name: "OToken",
+      name: 'OToken',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.OToken__factory>;
+    ): Promise<Contracts.OToken__factory>
 
+    getContractAt(name: 'ERC20', address: string, signer?: ethers.Signer): Promise<Contracts.ERC20>
+    getContractAt(name: 'IAccessControl', address: string, signer?: ethers.Signer): Promise<Contracts.IAccessControl>
+    getContractAt(name: 'IERC20', address: string, signer?: ethers.Signer): Promise<Contracts.IERC20>
+    getContractAt(name: 'IERC20Metadata', address: string, signer?: ethers.Signer): Promise<Contracts.IERC20Metadata>
+    getContractAt(name: 'Ownable', address: string, signer?: ethers.Signer): Promise<Contracts.Ownable>
+    getContractAt(name: 'Pausable', address: string, signer?: ethers.Signer): Promise<Contracts.Pausable>
     getContractAt(
-      name: "ERC20",
+      name: 'AdminUpgradeabilityProxy',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.ERC20>;
+    ): Promise<Contracts.AdminUpgradeabilityProxy>
     getContractAt(
-      name: "IAccessControl",
+      name: 'BaseAdminUpgradeabilityProxy',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.IAccessControl>;
+    ): Promise<Contracts.BaseAdminUpgradeabilityProxy>
     getContractAt(
-      name: "IERC20",
+      name: 'BaseUpgradeabilityProxy',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.IERC20>;
+    ): Promise<Contracts.BaseUpgradeabilityProxy>
+    getContractAt(name: 'ERC1967Proxy', address: string, signer?: ethers.Signer): Promise<Contracts.ERC1967Proxy>
+    getContractAt(name: 'ERC1967Upgrade', address: string, signer?: ethers.Signer): Promise<Contracts.ERC1967Upgrade>
+    getContractAt(name: 'IBeacon', address: string, signer?: ethers.Signer): Promise<Contracts.IBeacon>
     getContractAt(
-      name: "IERC20Metadata",
+      name: 'InitializableAdminUpgradeabilityProxy',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.IERC20Metadata>;
+    ): Promise<Contracts.InitializableAdminUpgradeabilityProxy>
     getContractAt(
-      name: "Ownable",
+      name: 'InitializableUpgradeabilityProxy',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.Ownable>;
+    ): Promise<Contracts.InitializableUpgradeabilityProxy>
+    getContractAt(name: 'Proxy', address: string, signer?: ethers.Signer): Promise<Contracts.Proxy>
+    getContractAt(name: 'ProxyAdmin', address: string, signer?: ethers.Signer): Promise<Contracts.ProxyAdmin>
     getContractAt(
-      name: "Pausable",
+      name: 'TransparentUpgradeableProxy',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.Pausable>;
+    ): Promise<Contracts.TransparentUpgradeableProxy>
     getContractAt(
-      name: "AdminUpgradeabilityProxy",
+      name: 'UpgradeabilityProxy',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.AdminUpgradeabilityProxy>;
+    ): Promise<Contracts.UpgradeabilityProxy>
     getContractAt(
-      name: "BaseAdminUpgradeabilityProxy",
+      name: 'IncentivizedERC20',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.BaseAdminUpgradeabilityProxy>;
+    ): Promise<Contracts.IncentivizedERC20>
     getContractAt(
-      name: "BaseUpgradeabilityProxy",
+      name: 'IInitializableOToken',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.BaseUpgradeabilityProxy>;
+    ): Promise<Contracts.IInitializableOToken>
+    getContractAt(name: 'ILendingPool', address: string, signer?: ethers.Signer): Promise<Contracts.ILendingPool>
     getContractAt(
-      name: "ERC1967Proxy",
+      name: 'ILendingPoolAddressesProvider',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.ERC1967Proxy>;
+    ): Promise<Contracts.ILendingPoolAddressesProvider>
     getContractAt(
-      name: "ERC1967Upgrade",
+      name: 'ILendingPoolAddressesProviderRegistry',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.ERC1967Upgrade>;
+    ): Promise<Contracts.ILendingPoolAddressesProviderRegistry>
     getContractAt(
-      name: "IBeacon",
+      name: 'ILendingPoolConfigurator',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.IBeacon>;
+    ): Promise<Contracts.ILendingPoolConfigurator>
+    getContractAt(name: 'IOToken', address: string, signer?: ethers.Signer): Promise<Contracts.IOToken>
     getContractAt(
-      name: "InitializableAdminUpgradeabilityProxy",
+      name: 'IScaledBalanceToken',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.InitializableAdminUpgradeabilityProxy>;
+    ): Promise<Contracts.IScaledBalanceToken>
+    getContractAt(name: 'LendingPool', address: string, signer?: ethers.Signer): Promise<Contracts.LendingPool>
     getContractAt(
-      name: "InitializableUpgradeabilityProxy",
+      name: 'LendingPoolAddressesProvider',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.InitializableUpgradeabilityProxy>;
+    ): Promise<Contracts.LendingPoolAddressesProvider>
     getContractAt(
-      name: "Proxy",
+      name: 'LendingPoolAddressesProviderRegistry',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.Proxy>;
+    ): Promise<Contracts.LendingPoolAddressesProviderRegistry>
     getContractAt(
-      name: "ProxyAdmin",
+      name: 'LendingPoolConfigurator',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.ProxyAdmin>;
+    ): Promise<Contracts.LendingPoolConfigurator>
     getContractAt(
-      name: "TransparentUpgradeableProxy",
+      name: 'BaseImmutableAdminUpgradeabilityProxy',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.TransparentUpgradeableProxy>;
+    ): Promise<Contracts.BaseImmutableAdminUpgradeabilityProxy>
     getContractAt(
-      name: "UpgradeabilityProxy",
+      name: 'InitializableImmutableAdminUpgradeabilityProxy',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.UpgradeabilityProxy>;
-    getContractAt(
-      name: "IncentivizedERC20",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IncentivizedERC20>;
-    getContractAt(
-      name: "IInitializableOToken",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IInitializableOToken>;
-    getContractAt(
-      name: "ILendingPool",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ILendingPool>;
-    getContractAt(
-      name: "ILendingPoolAddressesProvider",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ILendingPoolAddressesProvider>;
-    getContractAt(
-      name: "ILendingPoolAddressesProviderRegistry",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ILendingPoolAddressesProviderRegistry>;
-    getContractAt(
-      name: "ILendingPoolConfigurator",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ILendingPoolConfigurator>;
-    getContractAt(
-      name: "IOToken",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IOToken>;
-    getContractAt(
-      name: "IScaledBalanceToken",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IScaledBalanceToken>;
-    getContractAt(
-      name: "LendingPool",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.LendingPool>;
-    getContractAt(
-      name: "LendingPoolAddressesProvider",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.LendingPoolAddressesProvider>;
-    getContractAt(
-      name: "LendingPoolAddressesProviderRegistry",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.LendingPoolAddressesProviderRegistry>;
-    getContractAt(
-      name: "LendingPoolConfigurator",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.LendingPoolConfigurator>;
-    getContractAt(
-      name: "BaseImmutableAdminUpgradeabilityProxy",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.BaseImmutableAdminUpgradeabilityProxy>;
-    getContractAt(
-      name: "InitializableImmutableAdminUpgradeabilityProxy",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.InitializableImmutableAdminUpgradeabilityProxy>;
-    getContractAt(
-      name: "Errors",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Errors>;
-    getContractAt(
-      name: "MintableERC20",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.MintableERC20>;
-    getContractAt(
-      name: "OToken",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.OToken>;
+    ): Promise<Contracts.InitializableImmutableAdminUpgradeabilityProxy>
+    getContractAt(name: 'Errors', address: string, signer?: ethers.Signer): Promise<Contracts.Errors>
+    getContractAt(name: 'MintableERC20', address: string, signer?: ethers.Signer): Promise<Contracts.MintableERC20>
+    getContractAt(name: 'OToken', address: string, signer?: ethers.Signer): Promise<Contracts.OToken>
 
     // default types
-    getContractFactory(
-      name: string,
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<ethers.ContractFactory>;
+    getContractFactory(name: string, signerOrOptions?: ethers.Signer | FactoryOptions): Promise<ethers.ContractFactory>
     getContractFactory(
       abi: any[],
       bytecode: ethers.utils.BytesLike,
       signer?: ethers.Signer
-    ): Promise<ethers.ContractFactory>;
-    getContractAt(
-      nameOrAbi: string | any[],
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<ethers.Contract>;
+    ): Promise<ethers.ContractFactory>
+    getContractAt(nameOrAbi: string | any[], address: string, signer?: ethers.Signer): Promise<ethers.Contract>
   }
 }

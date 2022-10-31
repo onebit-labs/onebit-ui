@@ -2,12 +2,12 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import type { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers'
+import type { Provider } from '@ethersproject/providers'
 import type {
   ILendingPoolConfigurator,
   ILendingPoolConfiguratorInterface,
-} from "../../interfaces/ILendingPoolConfigurator";
+} from '../../interfaces/ILendingPoolConfigurator'
 
 const _abi = [
   {
@@ -15,97 +15,90 @@ const _abi = [
     inputs: [
       {
         indexed: true,
-        internalType: "address",
-        name: "proxy",
-        type: "address",
+        internalType: 'address',
+        name: 'proxy',
+        type: 'address',
       },
       {
         indexed: true,
-        internalType: "address",
-        name: "implementation",
-        type: "address",
+        internalType: 'address',
+        name: 'implementation',
+        type: 'address',
       },
     ],
-    name: "OTokenUpgraded",
-    type: "event",
+    name: 'OTokenUpgraded',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [],
-    name: "ReserveActivated",
-    type: "event",
+    name: 'ReserveActivated',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [],
-    name: "ReserveDeactivated",
-    type: "event",
+    name: 'ReserveDeactivated',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: true,
-        internalType: "address",
-        name: "asset",
-        type: "address",
+        internalType: 'address',
+        name: 'asset',
+        type: 'address',
       },
       {
         indexed: false,
-        internalType: "uint256",
-        name: "decimals",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'decimals',
+        type: 'uint256',
       },
     ],
-    name: "ReserveDecimalsChanged",
-    type: "event",
+    name: 'ReserveDecimalsChanged',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [],
-    name: "ReserveFrozen",
-    type: "event",
+    name: 'ReserveFrozen',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: true,
-        internalType: "address",
-        name: "asset",
-        type: "address",
+        internalType: 'address',
+        name: 'asset',
+        type: 'address',
       },
       {
         indexed: true,
-        internalType: "address",
-        name: "oToken",
-        type: "address",
+        internalType: 'address',
+        name: 'oToken',
+        type: 'address',
       },
     ],
-    name: "ReserveInitialized",
-    type: "event",
+    name: 'ReserveInitialized',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [],
-    name: "ReserveUnfrozen",
-    type: "event",
+    name: 'ReserveUnfrozen',
+    type: 'event',
   },
-];
+]
 
 export class ILendingPoolConfigurator__factory {
-  static readonly abi = _abi;
+  static readonly abi = _abi
   static createInterface(): ILendingPoolConfiguratorInterface {
-    return new utils.Interface(_abi) as ILendingPoolConfiguratorInterface;
+    return new utils.Interface(_abi) as ILendingPoolConfiguratorInterface
   }
-  static connect(
-    address: string,
-    signerOrProvider: Signer | Provider
-  ): ILendingPoolConfigurator {
-    return new Contract(
-      address,
-      _abi,
-      signerOrProvider
-    ) as ILendingPoolConfigurator;
+  static connect(address: string, signerOrProvider: Signer | Provider): ILendingPoolConfigurator {
+    return new Contract(address, _abi, signerOrProvider) as ILendingPoolConfigurator
   }
 }

@@ -11,771 +11,565 @@ import type {
   PopulatedTransaction,
   Signer,
   utils,
-} from "ethers";
-import type {
-  FunctionFragment,
-  Result,
-  EventFragment,
-} from "@ethersproject/abi";
-import type { Listener, Provider } from "@ethersproject/providers";
-import type {
-  TypedEventFilter,
-  TypedEvent,
-  TypedListener,
-  OnEvent,
-  PromiseOrValue,
-} from "./common";
+} from 'ethers'
+import type { FunctionFragment, Result, EventFragment } from '@ethersproject/abi'
+import type { Listener, Provider } from '@ethersproject/providers'
+import type { TypedEventFilter, TypedEvent, TypedListener, OnEvent, PromiseOrValue } from './common'
 
 export interface LendingPoolAddressesProviderInterface extends utils.Interface {
   functions: {
-    "getAddress(bytes32)": FunctionFragment;
-    "getEmergencyAdmin()": FunctionFragment;
-    "getLendingPool()": FunctionFragment;
-    "getLendingPoolConfigurator()": FunctionFragment;
-    "getMarketId()": FunctionFragment;
-    "getPoolAdmin()": FunctionFragment;
-    "getPoolOperator()": FunctionFragment;
-    "owner()": FunctionFragment;
-    "renounceOwnership()": FunctionFragment;
-    "setAddress(bytes32,address)": FunctionFragment;
-    "setAddressAsProxy(bytes32,address)": FunctionFragment;
-    "setEmergencyAdmin(address)": FunctionFragment;
-    "setLendingPoolConfiguratorImpl(address)": FunctionFragment;
-    "setLendingPoolImpl(address)": FunctionFragment;
-    "setMarketId(string)": FunctionFragment;
-    "setPoolAdmin(address)": FunctionFragment;
-    "setPoolOperator(address)": FunctionFragment;
-    "transferOwnership(address)": FunctionFragment;
-  };
+    'getAddress(bytes32)': FunctionFragment
+    'getEmergencyAdmin()': FunctionFragment
+    'getLendingPool()': FunctionFragment
+    'getLendingPoolConfigurator()': FunctionFragment
+    'getMarketId()': FunctionFragment
+    'getPoolAdmin()': FunctionFragment
+    'getPoolOperator()': FunctionFragment
+    'owner()': FunctionFragment
+    'renounceOwnership()': FunctionFragment
+    'setAddress(bytes32,address)': FunctionFragment
+    'setAddressAsProxy(bytes32,address)': FunctionFragment
+    'setEmergencyAdmin(address)': FunctionFragment
+    'setLendingPoolConfiguratorImpl(address)': FunctionFragment
+    'setLendingPoolImpl(address)': FunctionFragment
+    'setMarketId(string)': FunctionFragment
+    'setPoolAdmin(address)': FunctionFragment
+    'setPoolOperator(address)': FunctionFragment
+    'transferOwnership(address)': FunctionFragment
+  }
 
   getFunction(
     nameOrSignatureOrTopic:
-      | "getAddress"
-      | "getEmergencyAdmin"
-      | "getLendingPool"
-      | "getLendingPoolConfigurator"
-      | "getMarketId"
-      | "getPoolAdmin"
-      | "getPoolOperator"
-      | "owner"
-      | "renounceOwnership"
-      | "setAddress"
-      | "setAddressAsProxy"
-      | "setEmergencyAdmin"
-      | "setLendingPoolConfiguratorImpl"
-      | "setLendingPoolImpl"
-      | "setMarketId"
-      | "setPoolAdmin"
-      | "setPoolOperator"
-      | "transferOwnership"
-  ): FunctionFragment;
+      | 'getAddress'
+      | 'getEmergencyAdmin'
+      | 'getLendingPool'
+      | 'getLendingPoolConfigurator'
+      | 'getMarketId'
+      | 'getPoolAdmin'
+      | 'getPoolOperator'
+      | 'owner'
+      | 'renounceOwnership'
+      | 'setAddress'
+      | 'setAddressAsProxy'
+      | 'setEmergencyAdmin'
+      | 'setLendingPoolConfiguratorImpl'
+      | 'setLendingPoolImpl'
+      | 'setMarketId'
+      | 'setPoolAdmin'
+      | 'setPoolOperator'
+      | 'transferOwnership'
+  ): FunctionFragment
 
+  encodeFunctionData(functionFragment: 'getAddress', values: [PromiseOrValue<BytesLike>]): string
+  encodeFunctionData(functionFragment: 'getEmergencyAdmin', values?: undefined): string
+  encodeFunctionData(functionFragment: 'getLendingPool', values?: undefined): string
+  encodeFunctionData(functionFragment: 'getLendingPoolConfigurator', values?: undefined): string
+  encodeFunctionData(functionFragment: 'getMarketId', values?: undefined): string
+  encodeFunctionData(functionFragment: 'getPoolAdmin', values?: undefined): string
+  encodeFunctionData(functionFragment: 'getPoolOperator', values?: undefined): string
+  encodeFunctionData(functionFragment: 'owner', values?: undefined): string
+  encodeFunctionData(functionFragment: 'renounceOwnership', values?: undefined): string
   encodeFunctionData(
-    functionFragment: "getAddress",
-    values: [PromiseOrValue<BytesLike>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getEmergencyAdmin",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getLendingPool",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getLendingPoolConfigurator",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getMarketId",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getPoolAdmin",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getPoolOperator",
-    values?: undefined
-  ): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
-  encodeFunctionData(
-    functionFragment: "renounceOwnership",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "setAddress",
+    functionFragment: 'setAddress',
     values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
-  ): string;
+  ): string
   encodeFunctionData(
-    functionFragment: "setAddressAsProxy",
+    functionFragment: 'setAddressAsProxy',
     values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "setEmergencyAdmin",
-    values: [PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "setLendingPoolConfiguratorImpl",
-    values: [PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "setLendingPoolImpl",
-    values: [PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "setMarketId",
-    values: [PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "setPoolAdmin",
-    values: [PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "setPoolOperator",
-    values: [PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "transferOwnership",
-    values: [PromiseOrValue<string>]
-  ): string;
+  ): string
+  encodeFunctionData(functionFragment: 'setEmergencyAdmin', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'setLendingPoolConfiguratorImpl', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'setLendingPoolImpl', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'setMarketId', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'setPoolAdmin', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'setPoolOperator', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'transferOwnership', values: [PromiseOrValue<string>]): string
 
-  decodeFunctionResult(functionFragment: "getAddress", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "getEmergencyAdmin",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "getLendingPool",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "getLendingPoolConfigurator",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "getMarketId",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "getPoolAdmin",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "getPoolOperator",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "renounceOwnership",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "setAddress", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "setAddressAsProxy",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "setEmergencyAdmin",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "setLendingPoolConfiguratorImpl",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "setLendingPoolImpl",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "setMarketId",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "setPoolAdmin",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "setPoolOperator",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "transferOwnership",
-    data: BytesLike
-  ): Result;
+  decodeFunctionResult(functionFragment: 'getAddress', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'getEmergencyAdmin', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'getLendingPool', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'getLendingPoolConfigurator', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'getMarketId', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'getPoolAdmin', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'getPoolOperator', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'renounceOwnership', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setAddress', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setAddressAsProxy', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setEmergencyAdmin', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setLendingPoolConfiguratorImpl', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setLendingPoolImpl', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setMarketId', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setPoolAdmin', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setPoolOperator', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'transferOwnership', data: BytesLike): Result
 
   events: {
-    "AddressSet(bytes32,address,bool)": EventFragment;
-    "ConfigurationAdminUpdated(address)": EventFragment;
-    "EmergencyAdminUpdated(address)": EventFragment;
-    "LendingPoolConfiguratorUpdated(address)": EventFragment;
-    "LendingPoolUpdated(address)": EventFragment;
-    "MarketIdSet(string)": EventFragment;
-    "OwnershipTransferred(address,address)": EventFragment;
-    "PoolOperatorUpdated(address)": EventFragment;
-    "ProxyCreated(bytes32,address)": EventFragment;
-  };
+    'AddressSet(bytes32,address,bool)': EventFragment
+    'ConfigurationAdminUpdated(address)': EventFragment
+    'EmergencyAdminUpdated(address)': EventFragment
+    'LendingPoolConfiguratorUpdated(address)': EventFragment
+    'LendingPoolUpdated(address)': EventFragment
+    'MarketIdSet(string)': EventFragment
+    'OwnershipTransferred(address,address)': EventFragment
+    'PoolOperatorUpdated(address)': EventFragment
+    'ProxyCreated(bytes32,address)': EventFragment
+  }
 
-  getEvent(nameOrSignatureOrTopic: "AddressSet"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ConfigurationAdminUpdated"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "EmergencyAdminUpdated"): EventFragment;
-  getEvent(
-    nameOrSignatureOrTopic: "LendingPoolConfiguratorUpdated"
-  ): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "LendingPoolUpdated"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "MarketIdSet"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "OwnershipTransferred"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "PoolOperatorUpdated"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ProxyCreated"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'AddressSet'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'ConfigurationAdminUpdated'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'EmergencyAdminUpdated'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'LendingPoolConfiguratorUpdated'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'LendingPoolUpdated'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'MarketIdSet'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'OwnershipTransferred'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'PoolOperatorUpdated'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'ProxyCreated'): EventFragment
 }
 
 export interface AddressSetEventObject {
-  id: string;
-  newAddress: string;
-  hasProxy: boolean;
+  id: string
+  newAddress: string
+  hasProxy: boolean
 }
-export type AddressSetEvent = TypedEvent<
-  [string, string, boolean],
-  AddressSetEventObject
->;
+export type AddressSetEvent = TypedEvent<[string, string, boolean], AddressSetEventObject>
 
-export type AddressSetEventFilter = TypedEventFilter<AddressSetEvent>;
+export type AddressSetEventFilter = TypedEventFilter<AddressSetEvent>
 
 export interface ConfigurationAdminUpdatedEventObject {
-  newAddress: string;
+  newAddress: string
 }
-export type ConfigurationAdminUpdatedEvent = TypedEvent<
-  [string],
-  ConfigurationAdminUpdatedEventObject
->;
+export type ConfigurationAdminUpdatedEvent = TypedEvent<[string], ConfigurationAdminUpdatedEventObject>
 
-export type ConfigurationAdminUpdatedEventFilter =
-  TypedEventFilter<ConfigurationAdminUpdatedEvent>;
+export type ConfigurationAdminUpdatedEventFilter = TypedEventFilter<ConfigurationAdminUpdatedEvent>
 
 export interface EmergencyAdminUpdatedEventObject {
-  newAddress: string;
+  newAddress: string
 }
-export type EmergencyAdminUpdatedEvent = TypedEvent<
-  [string],
-  EmergencyAdminUpdatedEventObject
->;
+export type EmergencyAdminUpdatedEvent = TypedEvent<[string], EmergencyAdminUpdatedEventObject>
 
-export type EmergencyAdminUpdatedEventFilter =
-  TypedEventFilter<EmergencyAdminUpdatedEvent>;
+export type EmergencyAdminUpdatedEventFilter = TypedEventFilter<EmergencyAdminUpdatedEvent>
 
 export interface LendingPoolConfiguratorUpdatedEventObject {
-  newAddress: string;
+  newAddress: string
 }
-export type LendingPoolConfiguratorUpdatedEvent = TypedEvent<
-  [string],
-  LendingPoolConfiguratorUpdatedEventObject
->;
+export type LendingPoolConfiguratorUpdatedEvent = TypedEvent<[string], LendingPoolConfiguratorUpdatedEventObject>
 
-export type LendingPoolConfiguratorUpdatedEventFilter =
-  TypedEventFilter<LendingPoolConfiguratorUpdatedEvent>;
+export type LendingPoolConfiguratorUpdatedEventFilter = TypedEventFilter<LendingPoolConfiguratorUpdatedEvent>
 
 export interface LendingPoolUpdatedEventObject {
-  newAddress: string;
+  newAddress: string
 }
-export type LendingPoolUpdatedEvent = TypedEvent<
-  [string],
-  LendingPoolUpdatedEventObject
->;
+export type LendingPoolUpdatedEvent = TypedEvent<[string], LendingPoolUpdatedEventObject>
 
-export type LendingPoolUpdatedEventFilter =
-  TypedEventFilter<LendingPoolUpdatedEvent>;
+export type LendingPoolUpdatedEventFilter = TypedEventFilter<LendingPoolUpdatedEvent>
 
 export interface MarketIdSetEventObject {
-  newMarketId: string;
+  newMarketId: string
 }
-export type MarketIdSetEvent = TypedEvent<[string], MarketIdSetEventObject>;
+export type MarketIdSetEvent = TypedEvent<[string], MarketIdSetEventObject>
 
-export type MarketIdSetEventFilter = TypedEventFilter<MarketIdSetEvent>;
+export type MarketIdSetEventFilter = TypedEventFilter<MarketIdSetEvent>
 
 export interface OwnershipTransferredEventObject {
-  previousOwner: string;
-  newOwner: string;
+  previousOwner: string
+  newOwner: string
 }
-export type OwnershipTransferredEvent = TypedEvent<
-  [string, string],
-  OwnershipTransferredEventObject
->;
+export type OwnershipTransferredEvent = TypedEvent<[string, string], OwnershipTransferredEventObject>
 
-export type OwnershipTransferredEventFilter =
-  TypedEventFilter<OwnershipTransferredEvent>;
+export type OwnershipTransferredEventFilter = TypedEventFilter<OwnershipTransferredEvent>
 
 export interface PoolOperatorUpdatedEventObject {
-  newAddress: string;
+  newAddress: string
 }
-export type PoolOperatorUpdatedEvent = TypedEvent<
-  [string],
-  PoolOperatorUpdatedEventObject
->;
+export type PoolOperatorUpdatedEvent = TypedEvent<[string], PoolOperatorUpdatedEventObject>
 
-export type PoolOperatorUpdatedEventFilter =
-  TypedEventFilter<PoolOperatorUpdatedEvent>;
+export type PoolOperatorUpdatedEventFilter = TypedEventFilter<PoolOperatorUpdatedEvent>
 
 export interface ProxyCreatedEventObject {
-  id: string;
-  newAddress: string;
+  id: string
+  newAddress: string
 }
-export type ProxyCreatedEvent = TypedEvent<
-  [string, string],
-  ProxyCreatedEventObject
->;
+export type ProxyCreatedEvent = TypedEvent<[string, string], ProxyCreatedEventObject>
 
-export type ProxyCreatedEventFilter = TypedEventFilter<ProxyCreatedEvent>;
+export type ProxyCreatedEventFilter = TypedEventFilter<ProxyCreatedEvent>
 
 export interface LendingPoolAddressesProvider extends BaseContract {
-  connect(signerOrProvider: Signer | Provider | string): this;
-  attach(addressOrName: string): this;
-  deployed(): Promise<this>;
+  connect(signerOrProvider: Signer | Provider | string): this
+  attach(addressOrName: string): this
+  deployed(): Promise<this>
 
-  interface: LendingPoolAddressesProviderInterface;
+  interface: LendingPoolAddressesProviderInterface
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
     fromBlockOrBlockhash?: string | number | undefined,
     toBlock?: string | number | undefined
-  ): Promise<Array<TEvent>>;
+  ): Promise<Array<TEvent>>
 
-  listeners<TEvent extends TypedEvent>(
-    eventFilter?: TypedEventFilter<TEvent>
-  ): Array<TypedListener<TEvent>>;
-  listeners(eventName?: string): Array<Listener>;
-  removeAllListeners<TEvent extends TypedEvent>(
-    eventFilter: TypedEventFilter<TEvent>
-  ): this;
-  removeAllListeners(eventName?: string): this;
-  off: OnEvent<this>;
-  on: OnEvent<this>;
-  once: OnEvent<this>;
-  removeListener: OnEvent<this>;
+  listeners<TEvent extends TypedEvent>(eventFilter?: TypedEventFilter<TEvent>): Array<TypedListener<TEvent>>
+  listeners(eventName?: string): Array<Listener>
+  removeAllListeners<TEvent extends TypedEvent>(eventFilter: TypedEventFilter<TEvent>): this
+  removeAllListeners(eventName?: string): this
+  off: OnEvent<this>
+  on: OnEvent<this>
+  once: OnEvent<this>
+  removeListener: OnEvent<this>
 
   functions: {
-    getAddress(
-      id: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<[string]>;
+    getAddress(id: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<[string]>
 
-    getEmergencyAdmin(overrides?: CallOverrides): Promise<[string]>;
+    getEmergencyAdmin(overrides?: CallOverrides): Promise<[string]>
 
-    getLendingPool(overrides?: CallOverrides): Promise<[string]>;
+    getLendingPool(overrides?: CallOverrides): Promise<[string]>
 
-    getLendingPoolConfigurator(overrides?: CallOverrides): Promise<[string]>;
+    getLendingPoolConfigurator(overrides?: CallOverrides): Promise<[string]>
 
-    getMarketId(overrides?: CallOverrides): Promise<[string]>;
+    getMarketId(overrides?: CallOverrides): Promise<[string]>
 
-    getPoolAdmin(overrides?: CallOverrides): Promise<[string]>;
+    getPoolAdmin(overrides?: CallOverrides): Promise<[string]>
 
-    getPoolOperator(overrides?: CallOverrides): Promise<[string]>;
+    getPoolOperator(overrides?: CallOverrides): Promise<[string]>
 
-    owner(overrides?: CallOverrides): Promise<[string]>;
+    owner(overrides?: CallOverrides): Promise<[string]>
 
-    renounceOwnership(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    renounceOwnership(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
 
     setAddress(
       id: PromiseOrValue<BytesLike>,
       newAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
     setAddressAsProxy(
       id: PromiseOrValue<BytesLike>,
       implementationAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
     setEmergencyAdmin(
       emergencyAdmin: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
     setLendingPoolConfiguratorImpl(
       configurator: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
     setLendingPoolImpl(
       pool: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
     setMarketId(
       marketId: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
     setPoolAdmin(
       admin: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
     setPoolOperator(
       operator: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    ): Promise<ContractTransaction>
 
     transferOwnership(
       newOwner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
-  };
+    ): Promise<ContractTransaction>
+  }
 
-  getAddress(
-    id: PromiseOrValue<BytesLike>,
-    overrides?: CallOverrides
-  ): Promise<string>;
+  getAddress(id: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<string>
 
-  getEmergencyAdmin(overrides?: CallOverrides): Promise<string>;
+  getEmergencyAdmin(overrides?: CallOverrides): Promise<string>
 
-  getLendingPool(overrides?: CallOverrides): Promise<string>;
+  getLendingPool(overrides?: CallOverrides): Promise<string>
 
-  getLendingPoolConfigurator(overrides?: CallOverrides): Promise<string>;
+  getLendingPoolConfigurator(overrides?: CallOverrides): Promise<string>
 
-  getMarketId(overrides?: CallOverrides): Promise<string>;
+  getMarketId(overrides?: CallOverrides): Promise<string>
 
-  getPoolAdmin(overrides?: CallOverrides): Promise<string>;
+  getPoolAdmin(overrides?: CallOverrides): Promise<string>
 
-  getPoolOperator(overrides?: CallOverrides): Promise<string>;
+  getPoolOperator(overrides?: CallOverrides): Promise<string>
 
-  owner(overrides?: CallOverrides): Promise<string>;
+  owner(overrides?: CallOverrides): Promise<string>
 
-  renounceOwnership(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  renounceOwnership(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
 
   setAddress(
     id: PromiseOrValue<BytesLike>,
     newAddress: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   setAddressAsProxy(
     id: PromiseOrValue<BytesLike>,
     implementationAddress: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   setEmergencyAdmin(
     emergencyAdmin: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   setLendingPoolConfiguratorImpl(
     configurator: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   setLendingPoolImpl(
     pool: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   setMarketId(
     marketId: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   setPoolAdmin(
     admin: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   setPoolOperator(
     operator: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   transferOwnership(
     newOwner: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  ): Promise<ContractTransaction>
 
   callStatic: {
-    getAddress(
-      id: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<string>;
+    getAddress(id: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<string>
 
-    getEmergencyAdmin(overrides?: CallOverrides): Promise<string>;
+    getEmergencyAdmin(overrides?: CallOverrides): Promise<string>
 
-    getLendingPool(overrides?: CallOverrides): Promise<string>;
+    getLendingPool(overrides?: CallOverrides): Promise<string>
 
-    getLendingPoolConfigurator(overrides?: CallOverrides): Promise<string>;
+    getLendingPoolConfigurator(overrides?: CallOverrides): Promise<string>
 
-    getMarketId(overrides?: CallOverrides): Promise<string>;
+    getMarketId(overrides?: CallOverrides): Promise<string>
 
-    getPoolAdmin(overrides?: CallOverrides): Promise<string>;
+    getPoolAdmin(overrides?: CallOverrides): Promise<string>
 
-    getPoolOperator(overrides?: CallOverrides): Promise<string>;
+    getPoolOperator(overrides?: CallOverrides): Promise<string>
 
-    owner(overrides?: CallOverrides): Promise<string>;
+    owner(overrides?: CallOverrides): Promise<string>
 
-    renounceOwnership(overrides?: CallOverrides): Promise<void>;
+    renounceOwnership(overrides?: CallOverrides): Promise<void>
 
     setAddress(
       id: PromiseOrValue<BytesLike>,
       newAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
-    ): Promise<void>;
+    ): Promise<void>
 
     setAddressAsProxy(
       id: PromiseOrValue<BytesLike>,
       implementationAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
-    ): Promise<void>;
+    ): Promise<void>
 
-    setEmergencyAdmin(
-      emergencyAdmin: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<void>;
+    setEmergencyAdmin(emergencyAdmin: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
 
-    setLendingPoolConfiguratorImpl(
-      configurator: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<void>;
+    setLendingPoolConfiguratorImpl(configurator: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
 
-    setLendingPoolImpl(
-      pool: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<void>;
+    setLendingPoolImpl(pool: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
 
-    setMarketId(
-      marketId: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<void>;
+    setMarketId(marketId: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
 
-    setPoolAdmin(
-      admin: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<void>;
+    setPoolAdmin(admin: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
 
-    setPoolOperator(
-      operator: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<void>;
+    setPoolOperator(operator: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
 
-    transferOwnership(
-      newOwner: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<void>;
-  };
+    transferOwnership(newOwner: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
+  }
 
   filters: {
-    "AddressSet(bytes32,address,bool)"(
+    'AddressSet(bytes32,address,bool)'(
       id?: null,
       newAddress?: PromiseOrValue<string> | null,
       hasProxy?: null
-    ): AddressSetEventFilter;
-    AddressSet(
-      id?: null,
-      newAddress?: PromiseOrValue<string> | null,
-      hasProxy?: null
-    ): AddressSetEventFilter;
+    ): AddressSetEventFilter
+    AddressSet(id?: null, newAddress?: PromiseOrValue<string> | null, hasProxy?: null): AddressSetEventFilter
 
-    "ConfigurationAdminUpdated(address)"(
+    'ConfigurationAdminUpdated(address)'(
       newAddress?: PromiseOrValue<string> | null
-    ): ConfigurationAdminUpdatedEventFilter;
-    ConfigurationAdminUpdated(
-      newAddress?: PromiseOrValue<string> | null
-    ): ConfigurationAdminUpdatedEventFilter;
+    ): ConfigurationAdminUpdatedEventFilter
+    ConfigurationAdminUpdated(newAddress?: PromiseOrValue<string> | null): ConfigurationAdminUpdatedEventFilter
 
-    "EmergencyAdminUpdated(address)"(
-      newAddress?: PromiseOrValue<string> | null
-    ): EmergencyAdminUpdatedEventFilter;
-    EmergencyAdminUpdated(
-      newAddress?: PromiseOrValue<string> | null
-    ): EmergencyAdminUpdatedEventFilter;
+    'EmergencyAdminUpdated(address)'(newAddress?: PromiseOrValue<string> | null): EmergencyAdminUpdatedEventFilter
+    EmergencyAdminUpdated(newAddress?: PromiseOrValue<string> | null): EmergencyAdminUpdatedEventFilter
 
-    "LendingPoolConfiguratorUpdated(address)"(
+    'LendingPoolConfiguratorUpdated(address)'(
       newAddress?: PromiseOrValue<string> | null
-    ): LendingPoolConfiguratorUpdatedEventFilter;
+    ): LendingPoolConfiguratorUpdatedEventFilter
     LendingPoolConfiguratorUpdated(
       newAddress?: PromiseOrValue<string> | null
-    ): LendingPoolConfiguratorUpdatedEventFilter;
+    ): LendingPoolConfiguratorUpdatedEventFilter
 
-    "LendingPoolUpdated(address)"(
-      newAddress?: PromiseOrValue<string> | null
-    ): LendingPoolUpdatedEventFilter;
-    LendingPoolUpdated(
-      newAddress?: PromiseOrValue<string> | null
-    ): LendingPoolUpdatedEventFilter;
+    'LendingPoolUpdated(address)'(newAddress?: PromiseOrValue<string> | null): LendingPoolUpdatedEventFilter
+    LendingPoolUpdated(newAddress?: PromiseOrValue<string> | null): LendingPoolUpdatedEventFilter
 
-    "MarketIdSet(string)"(newMarketId?: null): MarketIdSetEventFilter;
-    MarketIdSet(newMarketId?: null): MarketIdSetEventFilter;
+    'MarketIdSet(string)'(newMarketId?: null): MarketIdSetEventFilter
+    MarketIdSet(newMarketId?: null): MarketIdSetEventFilter
 
-    "OwnershipTransferred(address,address)"(
+    'OwnershipTransferred(address,address)'(
       previousOwner?: PromiseOrValue<string> | null,
       newOwner?: PromiseOrValue<string> | null
-    ): OwnershipTransferredEventFilter;
+    ): OwnershipTransferredEventFilter
     OwnershipTransferred(
       previousOwner?: PromiseOrValue<string> | null,
       newOwner?: PromiseOrValue<string> | null
-    ): OwnershipTransferredEventFilter;
+    ): OwnershipTransferredEventFilter
 
-    "PoolOperatorUpdated(address)"(
-      newAddress?: PromiseOrValue<string> | null
-    ): PoolOperatorUpdatedEventFilter;
-    PoolOperatorUpdated(
-      newAddress?: PromiseOrValue<string> | null
-    ): PoolOperatorUpdatedEventFilter;
+    'PoolOperatorUpdated(address)'(newAddress?: PromiseOrValue<string> | null): PoolOperatorUpdatedEventFilter
+    PoolOperatorUpdated(newAddress?: PromiseOrValue<string> | null): PoolOperatorUpdatedEventFilter
 
-    "ProxyCreated(bytes32,address)"(
-      id?: null,
-      newAddress?: PromiseOrValue<string> | null
-    ): ProxyCreatedEventFilter;
-    ProxyCreated(
-      id?: null,
-      newAddress?: PromiseOrValue<string> | null
-    ): ProxyCreatedEventFilter;
-  };
+    'ProxyCreated(bytes32,address)'(id?: null, newAddress?: PromiseOrValue<string> | null): ProxyCreatedEventFilter
+    ProxyCreated(id?: null, newAddress?: PromiseOrValue<string> | null): ProxyCreatedEventFilter
+  }
 
   estimateGas: {
-    getAddress(
-      id: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    getAddress(id: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<BigNumber>
 
-    getEmergencyAdmin(overrides?: CallOverrides): Promise<BigNumber>;
+    getEmergencyAdmin(overrides?: CallOverrides): Promise<BigNumber>
 
-    getLendingPool(overrides?: CallOverrides): Promise<BigNumber>;
+    getLendingPool(overrides?: CallOverrides): Promise<BigNumber>
 
-    getLendingPoolConfigurator(overrides?: CallOverrides): Promise<BigNumber>;
+    getLendingPoolConfigurator(overrides?: CallOverrides): Promise<BigNumber>
 
-    getMarketId(overrides?: CallOverrides): Promise<BigNumber>;
+    getMarketId(overrides?: CallOverrides): Promise<BigNumber>
 
-    getPoolAdmin(overrides?: CallOverrides): Promise<BigNumber>;
+    getPoolAdmin(overrides?: CallOverrides): Promise<BigNumber>
 
-    getPoolOperator(overrides?: CallOverrides): Promise<BigNumber>;
+    getPoolOperator(overrides?: CallOverrides): Promise<BigNumber>
 
-    owner(overrides?: CallOverrides): Promise<BigNumber>;
+    owner(overrides?: CallOverrides): Promise<BigNumber>
 
-    renounceOwnership(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    renounceOwnership(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>
 
     setAddress(
       id: PromiseOrValue<BytesLike>,
       newAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
     setAddressAsProxy(
       id: PromiseOrValue<BytesLike>,
       implementationAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
     setEmergencyAdmin(
       emergencyAdmin: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
     setLendingPoolConfiguratorImpl(
       configurator: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
     setLendingPoolImpl(
       pool: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
     setMarketId(
       marketId: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
     setPoolAdmin(
       admin: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
     setPoolOperator(
       operator: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    ): Promise<BigNumber>
 
     transferOwnership(
       newOwner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
-  };
+    ): Promise<BigNumber>
+  }
 
   populateTransaction: {
-    getAddress(
-      id: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
+    getAddress(id: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    getEmergencyAdmin(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    getEmergencyAdmin(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    getLendingPool(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    getLendingPool(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    getLendingPoolConfigurator(
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
+    getLendingPoolConfigurator(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    getMarketId(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    getMarketId(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    getPoolAdmin(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    getPoolAdmin(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    getPoolOperator(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    getPoolOperator(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    owner(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    renounceOwnership(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    renounceOwnership(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>
 
     setAddress(
       id: PromiseOrValue<BytesLike>,
       newAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     setAddressAsProxy(
       id: PromiseOrValue<BytesLike>,
       implementationAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     setEmergencyAdmin(
       emergencyAdmin: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     setLendingPoolConfiguratorImpl(
       configurator: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     setLendingPoolImpl(
       pool: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     setMarketId(
       marketId: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     setPoolAdmin(
       admin: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     setPoolOperator(
       operator: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    ): Promise<PopulatedTransaction>
 
     transferOwnership(
       newOwner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
-  };
+    ): Promise<PopulatedTransaction>
+  }
 }

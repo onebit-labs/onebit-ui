@@ -1,4 +1,8 @@
+import duotone from 'icons/duotone'
+
 export const navigations = [
-  { type: 'label', label: '用户管理' },
-  { name: '用户列表', path: '/app/users/client', icon: '' },
+  { type: 'label', label: 'menu' },
+  { name: 'explorePortfolios', path: '/', icon: duotone.ElementHub },
+  { name: 'dashboard', path: '/dashboard', icon: duotone.Dashboard },
+  { name: 'transactionHistory', path: '/transaction-history', icon: duotone.ElementHub },
 ]
