@@ -1,6 +1,7 @@
 const path = require('path')
 const { i18n } = require('./next-i18next.config')
 const { withRoutes } = require('./scripts/next-router-config.js')
+const i18nWebpack = require('./app/i18n/dev/hmr/webpack.js')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -22,6 +23,7 @@ const nextConfig = {
     dirs: ['app', 'domains', 'store', 'lib', 'pages', 'UI'],
   },
   webpack: (config, context) => {
+    i18nWebpack(config, context)
     const { buildId, dev, isServer, defaultLoaders, webpack } = context
     // Important: return the modified config
     const alias = config.resolve.alias

@@ -1,4 +1,3 @@
-import React from 'react'
 import NotFound from 'UI/views/NotFound'
 
 import type { GetStaticProps } from 'next'

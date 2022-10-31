@@ -12,7 +12,7 @@ const locale = {
     },
     disconnected: {
       title: 'Connect Wallet',
-      subTitle: 'To start using Vinci',
+      subTitle: 'To start using Onebit',
     },
     connected: {
       title: 'Connected',
@@ -24,12 +24,12 @@ const locale = {
     },
     error: {
       title: 'Connect Wallet',
-      subTitle: 'To start using Vinci',
+      subTitle: 'To start using Onebit',
       ChainUnknownError: 'Switch Network',
     },
     tips: {
       accept: 'By connecting, I accept ',
-      term: 'Vinci’s Terms of Service',
+      term: 'Onebit’s Terms of Service',
     },
     chain: {
       title: 'Select Your Network',
