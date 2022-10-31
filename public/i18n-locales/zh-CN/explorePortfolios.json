@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "assetsUnderManagement": "管理资产",
+    "totalProfitSinceInception": "自成立以来的总利润",
+    "portfolios": "投资组合",
+    "depositors": "储户"
+  },
+  "tabs": {
+    "placeholder": "查找作品集",
+    "all": "全部",
+    "open": "打开",
+    "lockedUp": "锁上"
+  },
+  "actions": {
+    "deposit": "订金",
+    "withdraw": "提取"
+  },
+  "projectCard": {
+    "lockUpPeriod": "锁定期",
+    "days": "天",
+    "netValue": "净值",
+    "past7D": "过去 7D",
+    "AUM": "资产管理规模",
+    "estimatedAPY": "预计APY",
+    "currentAPY": "当前APY",
+    "depositors": "储户"
+  }
+}

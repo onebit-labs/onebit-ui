@@ -1,40 +1,50 @@
 {
   "wallet": {
     "btn": {
-      "cancel": "Cancel",
-      "disconnected": "Disconnect",
-      "deposit": "Deposit",
-      "withdraw": "Withdraw",
-      "borrow": "Borrow",
-      "repay": "Repay",
-      "details": "Details",
-      "approve": "Approve"
+      "cancel": "取消",
+      "disconnected": "断开",
+      "deposit": "订金",
+      "withdraw": "提取",
+      "borrow": "借",
+      "repay": "偿还",
+      "details": "细节",
+      "approve": "批准"
     },
     "disconnected": {
-      "title": "Connect Wallet",
-      "subTitle": "To start using Onebit"
+      "title": "连接钱包",
+      "subTitle": "开始使用 Onebit"
     },
     "connected": {
-      "title": "Connected",
-      "subTitle": "Connected with"
+      "title": "连接的",
+      "subTitle": "与"
     },
     "connecting": {
-      "title": "Unlock Wallet",
-      "subTitle": "You may need to click the extension."
+      "title": "解锁钱包",
+      "subTitle": "您可能需要单击扩展程序。"
     },
     "error": {
-      "title": "Connect Wallet",
-      "subTitle": "To start using Onebit",
-      "ChainUnknownError": "Switch Network"
+      "title": "连接钱包",
+      "subTitle": "开始使用 Onebit",
+      "ChainUnknownError": "交换网络"
     },
     "tips": {
-      "accept": "By connecting, I accept ",
-      "term": "Onebit’s Terms of Service"
+      "accept": "通过连接，我接受",
+      "term": "Onebit 的服务条款"
     },
     "chain": {
-      "title": "Select Your Network",
-      "subTitle": "Your current network: ",
-      "error": "Unsupported network"
+      "title": "选择您的网络",
+      "subTitle": "您当前的网络：",
+      "error": "不支持的网络"
+    }
+  },
+  "project": {
+    "status": {
+      "open": "打开",
+      "lockedUp": "锁上"
+    },
+    "fundraisingProgress": {
+      "title": "筹款进度",
+      "max": "最大限度"
     }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "totalEquityValue": "总股本价值",
+    "totalPNL": "总盈亏",
+    "totalPortfolioDeposited": "存入的总投资组合",
+    "APY": "APY"
+  },
+  "totalEquityValue": {
+    "title": "总股本价值",
+    "change24h": "过去的一维"
+  },
+  "portfolioTable": {
+    "portfolioName": "投资组合名称",
+    "lockedUntil": "锁定到",
+    "netValue": "净值",
+    "yourEquity": "您的权益",
+    "PNL": "盈亏",
+    "status": "地位",
+    "action": "行动"
+  }
+}

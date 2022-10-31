@@ -1,0 +1,74 @@
+{
+  "tabs": {
+    "overview": "概述",
+    "fees": "费用",
+    "policies": "政策",
+    "depositors": "储户"
+  },
+  "info": {
+    "status": "地位",
+    "term": "学期",
+    "lockUpPeriod": "锁定期",
+    "standard": "标准",
+    "yourEquity": "您的权益",
+    "PNL": "盈亏",
+    "stats": {
+      "assetsUnderManagement": "管理资产",
+      "currentAPY": "当前APY",
+      "depositors": "储户"
+    }
+  },
+  "overview": {
+    "netValue": {
+      "title": "当前净值",
+      "change24h": "过去的一维"
+    },
+    "historicalAccumulativeNetValue": {
+      "title": "历史累计净值",
+      "change24h": "过去的一维"
+    },
+    "historicalPerformance": {
+      "title": "历史表现",
+      "term": "学期",
+      "lockUpPeriod": "锁定期",
+      "AUM": "资产管理规模",
+      "depositors": "储户",
+      "finalNetValue": "最终净值",
+      "return": "返回",
+      "APY": "APY"
+    }
+  },
+  "fees": {
+    "title": "费用",
+    "management": {
+      "title": "管理费",
+      "tip": "如果累计回报超过 20%，则为 2%",
+      "description": "管理费是存款人向投资组合经理支付的定期付款。费用按管理资产的百分比计算，独立于保险库回报。"
+    },
+    "perfomance": {
+      "title": "演出费",
+      "description": "绩效费是存款人从预定时期内取得的正回报中支付给投资组合经理的基于百分比的费用。预定义的时期称为结晶期（通常为一年或一个季度）。回报以面值资产为基准。"
+    },
+    "entrance": {
+      "title": "入场费"
+    },
+    "exit": {
+      "title": "退出费"
+    }
+  },
+  "policies": {
+    "openPeriod": "开放期",
+    "lockUpPeriod": "锁定期",
+    "fundraisingCap": "筹款上限",
+    "minimumDeposit": "最低存款",
+    "reInvestment": "再投资",
+    "description": "管理费是存款人向投资组合经理支付的定期付款。费用按管理资产的百分比计算，独立于保险库回报。"
+  },
+  "depositors": {
+    "title": "历史表现",
+    "depositors": "储户",
+    "since": "自从",
+    "equity": "公平",
+    "percentage": "百分比"
+  }
+}

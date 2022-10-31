@@ -1,4 +1,12 @@
 module.exports = {
-  ns: ['common'],
+  ns: [
+    'common',
+    'router',
+    'dashboard',
+    'explorePortfolios',
+    'portfolioDetails',
+    'portfolioDetails',
+    'transactionHistory',
+  ],
   defaultNS: 'common',
 }

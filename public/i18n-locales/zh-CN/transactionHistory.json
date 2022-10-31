@@ -1,0 +1,17 @@
+{
+  "search": {
+    "name": "按名称搜索"
+  },
+  "tabs": {
+    "all": "全部",
+    "deposit": "订金",
+    "withdrawal": "退出"
+  },
+  "transactions": {
+    "txId": "发送标识符",
+    "type": "类型",
+    "portfolio": "文件夹",
+    "amount": "数量",
+    "date": "日期"
+  }
+}
