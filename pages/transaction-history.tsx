@@ -1,4 +1,4 @@
-import UI from 'UI/explorePortfolios'
+import UI from 'UI/transactionHistory'
 
 import type { GetStaticProps, NextPage } from 'next'
 import { withStaticTranslations } from 'app/i18n/hoc'
