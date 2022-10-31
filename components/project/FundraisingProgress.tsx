@@ -3,6 +3,7 @@ import { LinearProgress, Stack } from '@mui/material'
 import { H4 } from 'components/Typography'
 import { useTranslation } from 'next-i18next'
 import NumberDisplay from 'lib/math/components/NumberDisplay'
+import { useMath } from 'domains/utils'
 
 type FundraisingProgressProps = {
   purchaseUpperLimit: number
@@ -12,6 +13,7 @@ type FundraisingProgressProps = {
 
 const FundraisingProgress: FC<FundraisingProgressProps> = ({ totalSupply, purchaseUpperLimit, symbol }) => {
   const { t } = useTranslation()
+  const { NF } = useMath()
   const value = totalSupply / purchaseUpperLimit
   return (
     <Stack spacing={1}>
@@ -19,7 +21,7 @@ const FundraisingProgress: FC<FundraisingProgressProps> = ({ totalSupply, purcha
       <LinearProgress variant="determinate" value={value * 100} />
       <H4 display="flex" justifyContent="space-between">
         <NumberDisplay value={value} options="percent" />
-        <span>{`${t('project.fundraisingProgress.max')} ${purchaseUpperLimit} ${symbol}`}</span>
+        <span>{`${t('project.fundraisingProgress.max')} ${NF.abbreviate(purchaseUpperLimit)} ${symbol}`}</span>
       </H4>
     </Stack>
   )
