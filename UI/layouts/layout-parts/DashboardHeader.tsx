@@ -1,11 +1,17 @@
 import type { Theme } from '@mui/material'
 import { AppBar, Box, styled, Toolbar, useMediaQuery } from '@mui/material'
 import type { FC } from 'react'
+import { useMemo } from 'react'
+import { useRouter } from 'next/router'
 
 import LanguageMenu from 'app/i18n/components/LanguageMenu'
 import ChainButton from 'lib/protocol/components/wallet/ChainButton'
 import ConnectButton from 'lib/protocol/components/wallet/ConnectButton'
 import ThemeButton from 'app/theme/components/ThemeButton'
+import { H3 } from 'components/Typography'
+import { navigations } from '../layout-parts/navigation'
+import { useTranslation } from 'next-i18next'
+import { safeGet } from 'app/utils/get'
 
 // ------------------------------------------------
 type DashboardHeaderProps = {
@@ -46,6 +52,12 @@ const ToggleIcon = styled(Box)<{ width?: number }>(({ theme, width }) => ({
 const DashboardHeader: FC<React.PropsWithChildren<DashboardHeaderProps>> = (props) => {
   const { setShowMobileSideBar } = props
   const downMd = useMediaQuery((theme: Theme) => theme.breakpoints.down(1200))
+  const router = useRouter()
+  const { t } = useTranslation('router')
+  const title = useMemo(
+    () => safeGet(() => t(navigations.find((i) => i.path === router.pathname).name)) || '',
+    [router.pathname, t]
+  )
 
   return (
     <DashboardHeaderRoot position="sticky">
@@ -57,6 +69,9 @@ const DashboardHeader: FC<React.PropsWithChildren<DashboardHeaderProps>> = (prop
             <ToggleIcon width={9} />
           </Box>
         )}
+        <Box>
+          <H3>{title}</H3>
+        </Box>
 
         <Box flexGrow={1} ml={1} />
         <ChainButton />

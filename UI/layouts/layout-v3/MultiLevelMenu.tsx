@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { navigations } from '../layout-parts/navigation'
 import SidebarAccordion from './SidebarAccordion'
 import { useTranslation } from 'next-i18next'
+import { useWallet } from 'domains'
 
 const NavItemButton = styled(ButtonBase)<{ active: any }>(({ theme, active }) => ({
   height: 44,
@@ -95,6 +96,7 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
   const router = useRouter()
   const { t } = useTranslation('router')
   const { pathname } = router
+  const { account } = useWallet()
 
   // handle active current page
   const activeRoute = (path: string) => (pathname === path ? 1 : 0)
@@ -102,71 +104,73 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
   const handleNavigation = (path: string) => router.push(path)
 
   //   RECURSIVE FUNCTION TO RENDER MULTI LEVEL MENU
-  const renderLevels = (data: any) => {
-    return data.map((item: any, index: any) => {
-      const name = t(item.name)
-      if (item.type === 'label')
-        return (
-          <ListLabel key={index} compact={sidebarCompact ? 1 : 0}>
-            {t(item.label)}
-          </ListLabel>
-        )
+  const renderLevels = (data: any[]) => {
+    return data
+      .filter((i) => account || !i.needAccount)
+      .map((item, index) => {
+        const name = t(item.name)
+        if (item.type === 'label')
+          return (
+            <ListLabel key={index} compact={sidebarCompact ? 1 : 0}>
+              {t(item.label)}
+            </ListLabel>
+          )
 
-      if (item.children) {
-        return (
-          <SidebarAccordion key={index} item={item} sidebarCompact={sidebarCompact}>
-            {renderLevels(item.children)}
-          </SidebarAccordion>
-        )
-      } else if (item.type === 'extLink') {
-        return (
-          <ExternalLink key={index} href={item.path} rel="noopener noreferrer" target="_blank">
-            <NavItemButton key={name} name="child" active={0}>
-              {(() => {
-                if (item.icon) {
-                  return <item.icon sx={iconStyle(0)} />
-                } else {
-                  return <span className="item-icon icon-text">{item.iconText}</span>
-                }
-              })()}
+        if (item.children) {
+          return (
+            <SidebarAccordion key={index} item={item} sidebarCompact={sidebarCompact}>
+              {renderLevels(item.children)}
+            </SidebarAccordion>
+          )
+        } else if (item.type === 'extLink') {
+          return (
+            <ExternalLink key={index} href={item.path} rel="noopener noreferrer" target="_blank">
+              <NavItemButton key={name} name="child" active={0}>
+                {(() => {
+                  if (item.icon) {
+                    return <item.icon sx={iconStyle(0)} />
+                  } else {
+                    return <span className="item-icon icon-text">{item.iconText}</span>
+                  }
+                })()}
 
-              <StyledText compact={sidebarCompact ? 1 : 0} active={activeRoute(item.path)}>
-                {name}
-              </StyledText>
+                <StyledText compact={sidebarCompact ? 1 : 0} active={activeRoute(item.path)}>
+                  {name}
+                </StyledText>
 
-              <Box mx="auto" />
+                <Box mx="auto" />
 
-              {item.badge && <BadgeValue compact={sidebarCompact ? 1 : 0}>{item.badge.value}</BadgeValue>}
-            </NavItemButton>
-          </ExternalLink>
-        )
-      } else {
-        return (
-          <Box key={index}>
-            <NavItemButton
-              key={name}
-              className="navItem"
-              active={activeRoute(item.path)}
-              onClick={() => handleNavigation(item.path)}
-            >
-              {item?.icon ? (
-                <item.icon sx={iconStyle(activeRoute(item.path))} />
-              ) : (
-                <BulletIcon active={activeRoute(item.path)} />
-              )}
+                {item.badge && <BadgeValue compact={sidebarCompact ? 1 : 0}>{item.badge.value}</BadgeValue>}
+              </NavItemButton>
+            </ExternalLink>
+          )
+        } else {
+          return (
+            <Box key={index}>
+              <NavItemButton
+                key={name}
+                className="navItem"
+                active={activeRoute(item.path)}
+                onClick={() => handleNavigation(item.path)}
+              >
+                {item?.icon ? (
+                  <item.icon sx={iconStyle(activeRoute(item.path))} />
+                ) : (
+                  <BulletIcon active={activeRoute(item.path)} />
+                )}
 
-              <StyledText compact={sidebarCompact ? 1 : 0} active={activeRoute(item.path)}>
-                {name}
-              </StyledText>
+                <StyledText compact={sidebarCompact ? 1 : 0} active={activeRoute(item.path)}>
+                  {name}
+                </StyledText>
 
-              <Box mx="auto" />
+                <Box mx="auto" />
 
-              {item.badge && <BadgeValue compact={sidebarCompact ? 1 : 0}>{item.badge.value}</BadgeValue>}
-            </NavItemButton>
-          </Box>
-        )
-      }
-    })
+                {item.badge && <BadgeValue compact={sidebarCompact ? 1 : 0}>{item.badge.value}</BadgeValue>}
+              </NavItemButton>
+            </Box>
+          )
+        }
+      })
   }
 
   return <>{renderLevels(navigations)}</>
