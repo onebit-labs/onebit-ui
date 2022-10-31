@@ -35,7 +35,13 @@ const NetValue = () => {
                 <NumberDisplay value={chart.currentFloorPrice} options="number" />
               </Typography>
               <Change24h spacing={1} direction="row" alignItems="center">
-                <RiseOrFall variant="subtitle1" value={chart.change24} displayIcon />
+                <RiseOrFall variant="subtitle1" value={chart.change24} displayIcon>
+                  <NumberDisplay
+                    value={chart.change24}
+                    options="percent"
+                    numberFormatOptions={{ signDisplay: 'always' }}
+                  />
+                </RiseOrFall>
                 <H5 color="text.secondary">{t('overview.netValue.change24h')}</H5>
               </Change24h>
             </Stack>

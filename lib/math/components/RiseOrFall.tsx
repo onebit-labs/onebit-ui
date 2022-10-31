@@ -1,5 +1,5 @@
-import type { FC } from 'react'
 import { useMemo } from 'react'
+import type { FCC } from 'app/types'
 import { useTheme } from '@mui/material/styles'
 import type { TypographyTypeMap } from '@mui/material'
 import { Stack } from '@mui/material'
@@ -9,13 +9,8 @@ import { Typography } from '@mui/material'
 
 import { toBN } from 'lib/math'
 
-import NumberDisplay from './NumberDisplay'
-
-type RiseOrFallProps = { value: any; percentValue?: any; displayIcon?: boolean } & TypographyTypeMap<
-  {},
-  'span'
->['props']
-const RiseOrFall: FC<RiseOrFallProps> = ({ value, displayIcon, percentValue, ...props }) => {
+type RiseOrFallProps = { value: any; displayIcon?: boolean } & TypographyTypeMap<{}, 'div'>['props']
+const RiseOrFall: FCC<RiseOrFallProps> = ({ value, displayIcon, children, ...props }) => {
   const theme = useTheme()
   const bn = useMemo(() => toBN(value), [value])
   const isZero = useMemo(() => bn.isNaN() || bn.isZero(), [bn])
@@ -25,50 +20,17 @@ const RiseOrFall: FC<RiseOrFallProps> = ({ value, displayIcon, percentValue, ...
     return theme.palette.error.main
   }, [bn, isZero, theme.palette.error.main, theme.palette.success.main, theme.palette.text.primary])
 
-  const symbol = useMemo(() => bn.gt(0) && <span>+</span>, [bn])
+  const icon = useMemo(() => {
+    if (!bn.s || !displayIcon) return null
+    return bn.s > 0 ? <ArrowCircleUpTwoToneIcon /> : <ArrowCircleDownTwoToneIcon />
+  }, [bn, displayIcon])
 
   return (
-    <Typography component="div" {...props} color={color} justifyContent="center" alignItems="center" display="flex">
-      {isZero ? (
-        <span>0%</span>
-      ) : (
-        <Stack spacing={1} direction="row">
-          {displayIcon && (bn.gt(0) ? <ArrowCircleUpTwoToneIcon /> : <ArrowCircleDownTwoToneIcon />)}
-          {percentValue ? (
-            <span>
-              {symbol}
-              <NumberDisplay
-                value={value}
-                options="number"
-                numberFormatOptions={{
-                  maximumFractionDigits: 2,
-                }}
-              />
-              <span>(</span>
-              {symbol}
-              <NumberDisplay
-                value={percentValue}
-                options="percent"
-                numberFormatOptions={{
-                  maximumFractionDigits: 2,
-                }}
-              />
-              <span>)</span>
-            </span>
-          ) : (
-            <span>
-              {symbol}
-              <NumberDisplay
-                value={value}
-                options="percent"
-                numberFormatOptions={{
-                  maximumFractionDigits: 2,
-                }}
-              />
-            </span>
-          )}
-        </Stack>
-      )}
+    <Typography component="div" {...props} color={color}>
+      <Stack spacing={1} direction="row" alignItems="center">
+        {icon}
+        {children}
+      </Stack>
     </Typography>
   )
 }

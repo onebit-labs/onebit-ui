@@ -34,7 +34,13 @@ const NetValue = () => {
         <Grid item xs={6}>
           <Right spacing={1}>
             <Change24h spacing={1} direction="row">
-              <RiseOrFall variant="subtitle1" value={chart.change24} displayIcon />
+              <RiseOrFall variant="subtitle1" value={chart.change24} displayIcon>
+                <NumberDisplay
+                  value={chart.change24}
+                  options="percent"
+                  numberFormatOptions={{ signDisplay: 'always' }}
+                />
+              </RiseOrFall>
             </Change24h>
             <H5 color="text.secondary">{t('projectCard.past7D')}</H5>
           </Right>

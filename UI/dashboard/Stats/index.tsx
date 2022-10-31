@@ -1,4 +1,5 @@
 import { Grid } from '@mui/material'
+import NumberDisplay from 'lib/math/components/NumberDisplay'
 import type { FC } from 'react'
 
 import StatsCard from './StatsCard'
@@ -6,19 +7,26 @@ import StatsCard from './StatsCard'
 const Stats: FC = () => {
   const cardList = [
     {
-      price: 574,
+      price: <NumberDisplay value={571234.3123} options="USD" abbreviate={{}} />,
       title: 'totalEquityValue',
     },
     {
-      price: 521,
+      price: (
+        <NumberDisplay
+          value={98762.123}
+          options="USD"
+          abbreviate={{}}
+          numberFormatOptions={{ signDisplay: 'always' }}
+        />
+      ),
       title: 'totalPNL',
     },
     {
-      price: 684,
+      price: <NumberDisplay value={0.3123} options="number" />,
       title: 'totalPortfolioDeposited',
     },
     {
-      price: 321,
+      price: <NumberDisplay value={0.3123} options="percent" />,
       title: 'APY',
     },
   ]

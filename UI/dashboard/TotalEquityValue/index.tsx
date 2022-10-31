@@ -46,7 +46,9 @@ const TotalEquityValue: FC = () => {
           <NumberDisplay value={chart.currentFloorPrice} options="USD" />
         </Typography>
         <Change24h spacing={1} direction="row">
-          <RiseOrFall variant="subtitle1" value={chart.change24} displayIcon />
+          <RiseOrFall variant="subtitle1" value={chart.change24} displayIcon>
+            <NumberDisplay value={chart.change24} options="percent" numberFormatOptions={{ signDisplay: 'always' }} />
+          </RiseOrFall>
           <Typography variant="subtitle1" color="text.secondary">
             <span>{t('totalEquityValue.change24h')}</span>
           </Typography>
