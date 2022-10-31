@@ -1,4 +1,3 @@
-import type BigNumber from 'bignumber.js'
 import type { ChainlinkService } from 'lib/protocol/typechain/chainlink'
 
 import { getChainlinkAddress } from './chainlinkAddress'
@@ -10,13 +9,13 @@ export type Props = {
 export const request = (props: Props) => {
   const { chainlinkService, symbols } = props
   const promises: Array<Promise<void>> = []
-  const returnValue: Record<string, BigNumber> = {}
+  const returnValue: Record<string, string> = {}
 
   symbols.forEach((symbol) => {
     const token = getChainlinkAddress(symbol)
     promises.push(
       chainlinkService.getAnswer({ token }).then((value) => {
-        returnValue[symbol] = value
+        returnValue[symbol] = value.toString()
       })
     )
   })

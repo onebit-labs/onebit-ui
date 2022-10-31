@@ -127,4 +127,11 @@ export class ERC20Service extends BaseService<ERC20> implements IERC20ServiceInt
     const balance = await erc20Contract.balanceOf(user)
     return normalizeBN(balance, decimals)
   }
+
+  public async totalSupply(token: tEthereumAddress) {
+    const decimals = await this.decimalsOf(token)
+    const erc20Contract: ERC20 = this.getContractInstance(token)
+    const balance = await erc20Contract.totalSupply()
+    return normalizeBN(balance, decimals)
+  }
 }

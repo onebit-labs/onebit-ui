@@ -6,10 +6,7 @@ import { log } from 'app/utils/dev'
 import { getUserReserveData } from '../adapter/userReserveData'
 import type { ReserveData } from '../adapter/reserveData'
 
-type UserReserveDataProps = {
-  reserveData: Record<string, ReserveData>
-}
-export const useUserReserveData = ({ reserveData }: UserReserveDataProps) => {
+const useLendingPoolEffect = () => {
   const { networkAccount } = useWallet()
   const {
     markets,
@@ -37,6 +34,16 @@ export const useUserReserveData = ({ reserveData }: UserReserveDataProps) => {
     }
   }, [query, balanceOfPolling])
 
+  return {
+    networkAccount,
+  }
+}
+
+type UserReserveDataProps = {
+  reserveData: Record<string, ReserveData>
+}
+export const useUserReserveData = ({ reserveData }: UserReserveDataProps) => {
+  const { networkAccount } = useLendingPoolEffect()
   const { balanceOf } = useERC20()
   const userReserveData = useMemo(() => {
     if (!networkAccount) return {} as undefined
