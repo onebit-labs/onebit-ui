@@ -1,13 +1,20 @@
 import { createContext } from 'app/utils/createContext'
-import { useMemo } from 'react'
-import { getMarkets } from './adapter/markets'
-import { useAddress } from './application/address'
+import { useAppSelector } from 'store'
+
+import { select as balanceOfSelect } from './store/balanceOf'
+import { select as isApprovedSelect } from './store/isApproved'
+import { select as oracleSelect } from './store/oracle'
 
 const useERC20Service = () => {
-  const address = useAddress()
-  const markets = useMemo(() => getMarkets(address), [address])
+  const balanceOf = useAppSelector(balanceOfSelect.selectData)
+  const isApproved = useAppSelector(isApprovedSelect.selectData)
+  const oracle = useAppSelector(oracleSelect.selectData)
 
-  return { address, markets }
+  return {
+    balanceOf,
+    isApproved,
+    oracle,
+  }
 }
 const { Provider: ERC20Provider, createUseContext } = createContext(useERC20Service)
 export const createERC20Context = createUseContext

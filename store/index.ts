@@ -5,12 +5,14 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import theme from 'app/theme/store'
 import erc20 from 'domains/data/erc20/store'
+import lendingPool from 'domains/data/lendingPool/store'
 
 export function makeStore() {
   return configureStore({
     reducer: {
       theme,
       erc20,
+      lendingPool,
     },
   })
 }
