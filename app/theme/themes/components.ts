@@ -69,7 +69,7 @@ const components = (theme: Theme): any => {
           color: "inherit",
           boxShadow: "none",
           padding: "0.6rem 1.5rem",
-          fontSize: 12,
+          fontSize: 13,
           fontWeight: 600,
           minWidth: 84,
           "&.Mui-disabled": {
@@ -210,7 +210,7 @@ const components = (theme: Theme): any => {
     MuiTableCell: {
       styleOverrides: {
         root: {
-          fontSize: 13,
+          fontSize: 14,
           fontWeight: 500,
           borderBottom: 0,
           "&:first-of-type": { paddingLeft: 0 },
@@ -223,7 +223,7 @@ const components = (theme: Theme): any => {
         root: {
           color: text.secondary,
           textTransform: "none",
-          fontSize: 12,
+          fontSize: 14,
           fontWeight: 500,
           padding: 0,
           minWidth: "auto",

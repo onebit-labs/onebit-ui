@@ -1,12 +1,14 @@
 import { Chip } from '@mui/material'
 import type { FC } from 'react'
 import { useMemo } from 'react'
+import { useTranslation } from 'next-i18next'
 
 type ProjectStatusProps = {
   status: string
 }
 
 const ProjectStatus: FC<ProjectStatusProps> = ({ status }) => {
+  const { t } = useTranslation('explorePortfolios')
   const color = useMemo(() => {
     switch (status) {
       case 'open':
@@ -15,7 +17,7 @@ const ProjectStatus: FC<ProjectStatusProps> = ({ status }) => {
         return 'error'
     }
   }, [status])
-  return <Chip color={color} label={status} sx={{ height: 26 }} />
+  return <Chip color={color} label={t(`tabs.${status}`)} sx={{ height: 24, color: 'white', fontWeight: 600, fontSize: 12 }} />
 }
 
 export default ProjectStatus

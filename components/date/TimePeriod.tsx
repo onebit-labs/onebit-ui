@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 import { format } from 'date-fns'
 import { safeGet } from 'app/utils/get'
-import { Span } from 'components/Typography'
+import { Small } from 'components/Typography'
 import type { BoxProps } from '@mui/material/Box'
 
 const FORMAT_STRING = 'MM/dd/yyyy'
@@ -14,9 +14,9 @@ type TimePeriodProps = {
 } & BoxProps
 const TimePeriod: FC<TimePeriodProps> = ({ start, end, ...props }) => {
   return (
-    <Span {...props}>
+    <Small {...props}>
       {displayDate(start)} - {displayDate(end)}
-    </Span>
+    </Small>
   )
 }
 

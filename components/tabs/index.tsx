@@ -24,7 +24,7 @@ const StyledTabList = styled(TabList)(({ theme }) => ({
   },
 }))
 const StyledTab = styled(Tab)(({ theme }) => ({
-  fontSize: 13,
+  fontSize: 14,
   color: theme.palette.text.primary,
 }))
 const StyledTabPanel = styled(TabPanel)(() => ({ padding: 0 }))
@@ -62,7 +62,7 @@ const Tabs: FCC<TabsProps> = ({ tabs, Header, sx }) => {
   return (
     <TabContext value={value}>
       {Header ? <Header>{tabList}</Header> : tabList}
-      <Grid container pt={2}>
+      <Grid container pt={4}>
         <Grid item xs={12}>
           {tabs.map(({ title, children }, index) => {
             return (

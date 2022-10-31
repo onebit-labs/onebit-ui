@@ -3,8 +3,8 @@ import type { FCC } from 'app/types'
 import { useTheme } from '@mui/material/styles'
 import type { TypographyTypeMap } from '@mui/material'
 import { Stack } from '@mui/material'
-import ArrowCircleUpTwoToneIcon from '@mui/icons-material/ArrowCircleUpTwoTone'
-import ArrowCircleDownTwoToneIcon from '@mui/icons-material/ArrowCircleDownTwoTone'
+import ArrowUpward from '@mui/icons-material/ArrowUpward'
+import ArrowDownward from '@mui/icons-material/ArrowDownward'
 import { Typography } from '@mui/material'
 
 import { toBN } from 'lib/math'
@@ -22,7 +22,7 @@ const RiseOrFall: FCC<RiseOrFallProps> = ({ value, displayIcon, children, ...pro
 
   const icon = useMemo(() => {
     if (!bn.s || !displayIcon) return null
-    return bn.s > 0 ? <ArrowCircleUpTwoToneIcon /> : <ArrowCircleDownTwoToneIcon />
+    return bn.s > 0 ? <ArrowUpward /> : <ArrowDownward />
   }, [bn, displayIcon])
 
   return (

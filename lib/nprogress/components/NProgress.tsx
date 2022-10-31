@@ -24,6 +24,7 @@ const NProgress: FC = () => {
         sx={{
           height: 2,
           '.MuiLinearProgress-bar': { height: 2 },
+          zIndex: 20000,
         }}
       />
     </ROOT>

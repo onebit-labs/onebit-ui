@@ -173,7 +173,7 @@ export const Tiny: React.FC<BoxProps & Props> = (props) => {
   return (
     <StyledBox
       component="p"
-      fontSize={13}
+      fontSize={12}
       fontWeight={500}
       lineHeight={1.65}
       ellipsis={ellipsis}

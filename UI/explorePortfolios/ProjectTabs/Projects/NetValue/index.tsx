@@ -8,15 +8,20 @@ import NumberDisplay from 'lib/math/components/NumberDisplay'
 
 import Chart from './Chart'
 import { useChart } from './useChart'
-import { H5 } from 'components/Typography'
+import { Tiny } from 'components/Typography'
 import Grid from '@mui/material/Grid'
 import { Box } from '@mui/material'
 import type { Portfolio } from 'domains/data/portfolio'
 import type { FC } from 'react'
 
 const Left = styled(Stack)``
-const Change24h = styled(Stack)``
-const Right = styled(Stack)``
+const Change7d = styled(Stack)`
+  display: flex;
+  justify-content: end;
+`
+const Right = styled(Stack)`
+  text-align: right;
+`
 
 type NetValueProps = Portfolio
 const NetValue: FC<NetValueProps> = (props) => {
@@ -26,33 +31,33 @@ const NetValue: FC<NetValueProps> = (props) => {
 
   return (
     <Box>
-      <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
+      <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} alignItems="end">
         <Grid item xs={6}>
           <Left spacing={1}>
-            <Typography variant="h5">
+            <Typography variant="h5" fontWeight='600'>
               <NumberDisplay
-                value={chart.currentFloorPrice}
+                value={chart.currentNetValue}
                 options="number"
                 numberFormatOptions={{
                   maximumFractionDigits: 4,
                 }}
               />
             </Typography>
-            <H5 color="text.secondary">{t('projectCard.netValue')}</H5>
+            <Tiny color="text.secondary">{t('projectCard.netValue')}</Tiny>
           </Left>
         </Grid>
         <Grid item xs={6}>
           <Right spacing={1}>
-            <Change24h spacing={1} direction="row">
-              <RiseOrFall variant="subtitle1" value={chart.change24} displayIcon>
+            <Change7d spacing={1} direction="row">
+              <RiseOrFall variant="body2" value={chart.change24} displayIcon>
                 <NumberDisplay
-                  value={chart.change24}
+                  value={chart.change7d}
                   options="percent"
                   numberFormatOptions={{ signDisplay: 'always' }}
                 />
               </RiseOrFall>
-            </Change24h>
-            <H5 color="text.secondary">{t('projectCard.past7D')}</H5>
+            </Change7d>
+            <Tiny color="text.secondary">{t('projectCard.past7D')}</Tiny>
           </Right>
         </Grid>
       </Grid>

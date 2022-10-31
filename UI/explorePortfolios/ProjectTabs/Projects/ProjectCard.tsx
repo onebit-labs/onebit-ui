@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 import { useTranslation } from 'next-i18next'
 import { Stack, Card, styled, CardContent, Box } from '@mui/material'
-import { H3, H5 } from 'components/Typography'
+import { H3, Small } from 'components/Typography'
 import type { Portfolio } from 'domains/data/portfolio'
 import TokenIcon from 'lib/protocol/components/TokenIcon'
 import TimePeriod from 'components/date/TimePeriod'
@@ -15,11 +15,15 @@ import Footer from './Footer'
 const StyledCard = styled(Card)(({ theme }) => ({
   alignItems: 'center',
   height: '100%',
+  cursor: 'pointer',
   [theme.breakpoints.down('sm')]: {
     padding: '1.5rem',
     flexDirection: 'column',
     justifyContent: 'center',
   },
+  '&:hover': {
+    backgroundColor: theme.palette.action.hover,
+  }
 }))
 
 type ProjectCardProps = Portfolio
@@ -35,17 +39,15 @@ const ProjectCard: FC<React.PropsWithChildren<ProjectCardProps>> = (props) => {
       <CardContent>
         <Stack spacing={2}>
           <Stack spacing={1}>
-            <Stack spacing={1} direction="row">
+            <Stack spacing={1} direction="row" alignItems="center">
               <TokenIcon symbol={symbol} sx={{ width: 24, height: 24 }} />
               <H3>{portfolioName}</H3>
             </Stack>
 
-            <FlexBetween>
+            <FlexBetween alignItems="start">
               <Stack spacing={1}>
-                <H5>{`${t('projectCard.lockUpPeriod')}: ${lockTime} ${t('projectCard.days')}`}</H5>
-                <H5 color="text.secondary">
-                  <TimePeriod start={purchaseBeginTimestamp} end={purchaseEndTimestamp} />
-                </H5>
+                <Small>{`${t('projectCard.lockUpPeriod')}: ${lockTime} ${t('projectCard.days')}`}</Small>
+                <TimePeriod start={purchaseBeginTimestamp} end={purchaseEndTimestamp} color='text.secondary'/>
               </Stack>
               <ProjectStatus status={status} />
             </FlexBetween>

@@ -27,6 +27,7 @@ const DashboardLayout: FC<React.PropsWithChildren<unknown>> = ({ children }) => 
   return (
     <Fragment>
       <GlobalStyles styles={{ body: { background: theme.palette.background.default } }} />
+      <NProgress />
       <DashboardSidebar
         sidebarCompact={sidebarCompact}
         showMobileSideBar={showMobileSideBar}
@@ -38,7 +39,6 @@ const DashboardLayout: FC<React.PropsWithChildren<unknown>> = ({ children }) => 
         <DashboardHeader setShowSideBar={handleCompactToggle} setShowMobileSideBar={handleMobileDrawerToggle} />
 
         <Box pt={2} pb={4} position="relative">
-          <NProgress />
           {children}
         </Box>
       </LayoutBodyWrapper>

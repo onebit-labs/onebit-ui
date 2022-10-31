@@ -48,7 +48,7 @@ const StyledText = styled(Span)<{ compact: any; active: any }>(({ theme, compact
   whiteSpace: 'nowrap',
   paddingLeft: '0.8rem',
   transition: 'all 0.15s ease',
-  fontSize: '13px',
+  fontSize: '14px',
   fontWeight: 500,
   color: active ? theme.palette.primary.main : theme.palette.text.secondary,
   ...(compact && { opacity: 0, width: 0 }),

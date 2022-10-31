@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import { LinearProgress, Stack } from '@mui/material'
-import { H4 } from 'components/Typography'
+import { H5 } from 'components/Typography'
 import { useTranslation } from 'next-i18next'
 import NumberDisplay from 'lib/math/components/NumberDisplay'
 import { useMath } from 'domains/utils'
@@ -16,12 +16,12 @@ const FundraisingProgress: FC<FundraisingProgressProps> = ({ totalSupply, purcha
   const value = safeGet(() => totalSupply.div(purchaseUpperLimit)) || toBN(0)
   return (
     <Stack spacing={1}>
-      <H4>{t('project.fundraisingProgress.title')}</H4>
-      <LinearProgress variant="determinate" value={value.multipliedBy(100).toNumber()} />
-      <H4 display="flex" justifyContent="space-between">
+      <H5>{t('project.fundraisingProgress.title')}</H5>
+      <LinearProgress variant="determinate" value={Math.min(value.multipliedBy(100).toNumber(), 100)} sx={{ height: 5 }}/>
+      <H5 display="flex" justifyContent="space-between">
         <NumberDisplay value={value} options="percent" />
         <span>{`${t('project.fundraisingProgress.max')} ${NF.abbreviate(purchaseUpperLimit)} ${symbol}`}</span>
-      </H4>
+      </H5>
     </Stack>
   )
 }
