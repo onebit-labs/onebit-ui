@@ -24,21 +24,39 @@ export const createUseRequestController = <SliceState extends RequestSliceState,
   const {
     request,
     select: { selectStatus },
-    actions: { setStatus },
+    actions: { setStatus: setStatusAction },
   } = props
 
-  const usePolling = () => {
+  const useStatus = () => {
     const status = useSelector(selectStatus)
     const dispatch = useAppDispatch()
-    const abortFnRef = useRef<() => void>()
     const statusRef = useLatest(status)
+    const setStatus = useCallback((status: REQUEST_STATUS) => {
+      dispatch(setStatusAction(status))
+      statusRef.current = status
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [dispatch])
+    const getStatus = useCallback(() => {
+      return statusRef.current
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    return {
+      setStatus,
+      getStatus
+    }
+  }
+
+  const usePolling = () => {
+    const dispatch = useAppDispatch()
+    const { setStatus, getStatus } = useStatus()
+    const abortFnRef = useRef<() => void>()
     const timerRef = useRef<ReturnType<typeof setTimeout>>()
     const run = useCallback(
       (props: ThunkArg, ms = 5000) => {
-        const status = statusRef.current
-        if (status !== REQUEST_STATUS.ready) return
+        const status = getStatus()
+        if (status !== REQUEST_STATUS.ready) return Promise.reject({ name: 'RunningError', message: 'Running' })
 
-        dispatch(setStatus(REQUEST_STATUS.polling))
         const fn = () => {
           const promise = dispatch(request(props))
           abortFnRef.current = () => promise.abort()
@@ -49,23 +67,25 @@ export const createUseRequestController = <SliceState extends RequestSliceState,
         }
 
         fn()
+
+        return Promise.resolve()
       },
       // eslint-disable-next-line react-hooks/exhaustive-deps
       [dispatch]
     )
 
     const stop = useCallback(() => {
-      const status = statusRef.current
+      const status = getStatus()
       if (status !== REQUEST_STATUS.polling) return
 
-      dispatch(setStatus(REQUEST_STATUS.ready))
+      setStatus(REQUEST_STATUS.ready)
       if (abortFnRef.current) abortFnRef.current()
       clearTimeout(timerRef.current)
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch])
 
     const restart = useCallback((props: ThunkArg) => {
-      const status = statusRef.current
+      const status = getStatus()
       if (status !== REQUEST_STATUS.polling) return
       stop()
       run(props)
@@ -83,16 +103,15 @@ export const createUseRequestController = <SliceState extends RequestSliceState,
   }
 
   const useSingle = () => {
-    const status = useSelector(selectStatus)
+    const { setStatus, getStatus } = useStatus()
     const dispatch = useAppDispatch()
     const abortFnRef = useRef<() => void>()
-    const statusRef = useLatest(status)
 
     const run = useCallback(
       (props: ThunkArg) => {
-        const status = statusRef.current
+        const status = getStatus()
         if (status !== REQUEST_STATUS.ready) return Promise.reject({ name: 'RunningError', message: 'Running' })
-        dispatch(setStatus(REQUEST_STATUS.single))
+        setStatus(REQUEST_STATUS.single)
         const promise = dispatch(request(props))
         abortFnRef.current = () => promise.abort()
         return promise
@@ -101,7 +120,7 @@ export const createUseRequestController = <SliceState extends RequestSliceState,
             return safeGet(() => action.payload.data || action.payload)
           })
           .finally(() => {
-            dispatch(setStatus(REQUEST_STATUS.ready))
+            setStatus(REQUEST_STATUS.ready)
           })
       },
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -109,10 +128,10 @@ export const createUseRequestController = <SliceState extends RequestSliceState,
     )
 
     const stop = useCallback(() => {
-      const status = statusRef.current
+      const status = getStatus()
       if (status !== REQUEST_STATUS.single) return
 
-      dispatch(setStatus(REQUEST_STATUS.ready))
+      setStatus(REQUEST_STATUS.ready)
       if (abortFnRef.current) abortFnRef.current()
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch])
