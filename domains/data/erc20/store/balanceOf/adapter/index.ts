@@ -1,4 +1,3 @@
-import type BigNumber from 'bignumber.js'
 import type { ERC20Service } from 'lib/protocol/typechain/erc20'
 
 export type Props = {
@@ -9,12 +8,12 @@ export type Props = {
 export const request = (props: Props) => {
   const { erc20Service, user, tokens } = props
   const promises: Array<Promise<void>> = []
-  const returnValue: Record<string, BigNumber> = {}
+  const returnValue: Record<string, string> = {}
 
   tokens.forEach((token) => {
     promises.push(
       erc20Service.balanceOf(token, user).then((value) => {
-        returnValue[token] = value
+        returnValue[token] = value.toString()
       })
     )
   })

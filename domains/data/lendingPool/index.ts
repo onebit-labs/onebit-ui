@@ -4,10 +4,10 @@ import { useAppSelector } from 'store'
 import { select as reserveDataSelect } from './store/reserveData'
 
 const useLendingPoolService = () => {
-  const reserveData = useAppSelector(reserveDataSelect.selectData)
+  const reserveDataSource = useAppSelector(reserveDataSelect.selectData)
 
   return {
-    reserveData,
+    reserveDataSource,
   }
 }
 const { Provider: LendingPoolProvider, createUseContext } = createContext(useLendingPoolService)
