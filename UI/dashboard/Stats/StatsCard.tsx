@@ -1,5 +1,5 @@
 import { Stack, Card, styled, CardContent } from '@mui/material'
-import { H3, H5 } from 'components/Typography'
+import { H2, H5 } from 'components/Typography'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -28,7 +28,7 @@ const StatsCard: FC<React.PropsWithChildren<StatsCardProps>> = ({ card }) => {
       <CardContent>
         <Stack spacing={1}>
           <H5 color="text.secondary">{t(`stats.${title}`)}</H5>
-          <H3>{price}</H3>
+          <H2>{price}</H2>
         </Stack>
       </CardContent>
     </StyledCard>

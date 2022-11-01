@@ -94,8 +94,7 @@ export const useChart = () => {
               if (width !== chartWidth || height !== chartHeight) {
                 gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top)
                 gradient.addColorStop(0, alpha(lineColor, 0))
-                gradient.addColorStop(0.5, alpha(lineColor, 0.5))
-                gradient.addColorStop(1, alpha(lineColor, 1))
+                gradient.addColorStop(1, alpha(lineColor, 0.12))
                 lineChart.current = {
                   width: chartWidth,
                   height: chartHeight,

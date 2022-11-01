@@ -51,27 +51,7 @@ export const useChart = () => {
     )
   }, [data])
 
-  const changeAllTime = useMemo(() => {
-    return (
-      safeGet(() =>
-        toBN(data[data.length - 1].y)
-          .div(data[0].y)
-          .minus(1)
-      ) || 0
-    )
-  }, [data])
-
-  const lineColor = useMemo(() => { 
-    if (changeAllTime == 0) {
-      return theme.palette.grey[500]
-    }
-    else if (changeAllTime.gt(0)) {
-      return theme.palette.success.main
-    }
-    else {
-      return theme.palette.error.main
-    }
-  }, [changeAllTime, theme.palette.error.main, theme.palette.success.main, theme.palette.grey])
+  const lineColor = theme.palette.primary.main
 
   const props = useMemo(
     () =>
@@ -94,8 +74,7 @@ export const useChart = () => {
               if (width !== chartWidth || height !== chartHeight) {
                 gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top)
                 gradient.addColorStop(0, alpha(lineColor, 0))
-                gradient.addColorStop(0.5, alpha(lineColor, 0.5))
-                gradient.addColorStop(1, alpha(lineColor, 1))
+                gradient.addColorStop(1, alpha(lineColor, 0.12))
                 lineChart.current = {
                   width: chartWidth,
                   height: chartHeight,
