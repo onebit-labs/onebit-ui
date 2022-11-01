@@ -113,11 +113,19 @@ export const ROOT = styled('div')`
   .ReactVirtualized__Table__row {
     display: flex;
     will-change: transform;
+    padding: 20px;
     &:hover {
       ${({ theme }) => ({
-        backgroundColor: theme.palette.secondary[400],
+        backgroundColor: theme.palette.action.hover,
       })}
     }
+  }
+
+  .ReactVirtualized__Table__headerColumn div {
+    ${({ theme }) => ({
+      color: theme.palette.text.secondary,
+      fontSize: 13,
+    })}
   }
 `
 

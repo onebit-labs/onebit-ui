@@ -4,8 +4,10 @@ import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import FormControl from '@mui/material/FormControl'
 import FormHelperText from '@mui/material/FormHelperText'
+import { useTheme } from '@mui/material/styles'
 
 export function NumberInput({ value, onChange, disabled, onBlur, error, onMax }: any) {
+  const theme = useTheme()
   return (
     <FormControl error={error} variant="standard">
       <Paper
@@ -23,7 +25,7 @@ export function NumberInput({ value, onChange, disabled, onBlur, error, onMax }:
           inputProps={{ 'aria-label': 'input number', pattern: '^[0-9]*[.,]?[0-9]*$' }}
         />
         <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-        <Button disabled={disabled} onClick={onMax}>
+        <Button disabled={disabled} onClick={onMax} sx={{ color: theme.palette.primary.main }}>
           Max
         </Button>
       </Paper>

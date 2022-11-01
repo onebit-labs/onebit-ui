@@ -22,6 +22,7 @@ export const useTable = (): BasicTableProps => {
               variant="contained"
               size="small"
               onClick={() => router.push(`/portfolio/${encodeURIComponent(rowData.id)}`)}
+              sx={{ padding: '5px' }}
             >
               {t('common:wallet.btn.details')}
             </Button>

@@ -1,7 +1,7 @@
 import type { MouseEvent } from 'react'
 import { useState, useMemo, useRef } from 'react'
 import { format } from 'date-fns'
-import { useTheme } from '@mui/material/styles'
+import { useTheme, alpha } from '@mui/material/styles'
 
 import { useMath } from 'domains/utils'
 import { toBN } from 'lib/math'
@@ -52,6 +52,28 @@ export const useChart = () => {
     )
   }, [data])
 
+  const changeAllTime = useMemo(() => {
+    return (
+      safeGet(() =>
+        toBN(data[data.length - 1].y)
+          .div(data[0].y)
+          .minus(1)
+      ) || 0
+    )
+  }, [data])
+
+  const lineColor = useMemo(() => { 
+    if (changeAllTime == 0) {
+      return theme.palette.grey[500]
+    }
+    else if (changeAllTime.gt(0)) {
+      return theme.palette.success.main
+    }
+    else {
+      return theme.palette.error.main
+    }
+  }, [changeAllTime, theme.palette.error.main, theme.palette.success.main, theme.palette.grey])
+
   const props = useMemo(
     () =>
     ({
@@ -72,9 +94,9 @@ export const useChart = () => {
               let { gradient } = lineChart.current
               if (width !== chartWidth || height !== chartHeight) {
                 gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top)
-                gradient.addColorStop(0, 'rgb(249, 68, 50, 0)')
-                gradient.addColorStop(0.5, 'rgba(249, 68, 50, 0.5)')
-                gradient.addColorStop(1, 'rgba(249, 68, 50, 1)')
+                gradient.addColorStop(0, alpha(lineColor, 0))
+                gradient.addColorStop(0.5, alpha(lineColor, 0.5))
+                gradient.addColorStop(1, alpha(lineColor, 1))
                 lineChart.current = {
                   width: chartWidth,
                   height: chartHeight,
@@ -84,7 +106,8 @@ export const useChart = () => {
               return gradient
             },
             fill: 'start',
-            borderColor: theme.palette.primary.main,
+            borderColor: lineColor,
+            pointBackgroundColor: lineColor,
           },
         ],
       },
@@ -129,8 +152,8 @@ export const useChart = () => {
         },
       },
     } as TotalEquityValueChartProps),
-    [NF, data, theme.palette.primary.main, theme.palette.text.secondary]
+    [NF, data, lineColor, theme.palette.text.secondary]
   )
 
-  return { props, dayButton, change24, currentFloorPrice: 1234 }
+  return { props, dayButton, change24, currentTotalEquity: 1234 }
 }

@@ -42,8 +42,8 @@ const Policies: FC = () => {
           <Stack spacing={1}>
             <Paragraph color="text.primary">{t('policies.reInvestment')}</Paragraph>
             <H4>Auto</H4>
+            <Paragraph color="text.secondary">{t('policies.description')}</Paragraph>
           </Stack>
-          <Paragraph color="text.secondary">{t('policies.description')}</Paragraph>
         </Stack>
       </CardContent>
     </Card>

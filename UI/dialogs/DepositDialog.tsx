@@ -6,7 +6,7 @@ import { useMemo } from 'react'
 import { useDialogs } from '.'
 import { ROOT } from 'styles/dialog'
 import FlexBetween from 'components/flexbox/FlexBetween'
-import { H4, H5, Paragraph } from 'components/Typography'
+import { H5, Paragraph } from 'components/Typography'
 import { useNetwork, usePortfolio } from 'domains/data'
 import NumberDisplay from 'lib/math/components/NumberDisplay'
 import { NumberInput } from 'lib/math/components/NumberInput'
@@ -61,7 +61,7 @@ const DepositDialog: FC = () => {
       <ROOT>
         <Stack spacing={2}>
           <FlexBetween>
-            <H4>Amount</H4>
+            <H5>Amount</H5>
             <Paragraph color="text.secondary">
               Wallet Balance: <NumberDisplay value={walletBalance} options="number" /> USDT
             </Paragraph>

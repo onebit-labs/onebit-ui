@@ -11,14 +11,6 @@ export const themes = {
 
 export type Themes = keyof typeof themes
 
-declare module '@mui/material/Button/Button' {
-  interface ButtonPropsVariantOverrides {
-    linear: true
-    linearOutlined: true
-    transOutlined: true
-  }
-}
-
 declare module '@mui/material/styles/createPalette' {
   interface TypeBackground {
     paper: string

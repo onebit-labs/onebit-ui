@@ -25,10 +25,10 @@ const Fees: FC = () => {
                   numberFormatOptions={{ minimumFractionDigits: 0 }}
                 />
               </H4>
+              <Paragraph color="text.secondary">{t('fees.management.description')}</Paragraph>
               {/* <Paragraph color="text.secondary">{t('fees.management.tip')}</Paragraph> */}
             </Stack>
 
-            <Paragraph color="text.secondary">{t('fees.management.description')}</Paragraph>
           </Stack>
           <Stack spacing={2}>
             <Stack spacing={1}>
@@ -40,9 +40,8 @@ const Fees: FC = () => {
                   numberFormatOptions={{ minimumFractionDigits: 0 }}
                 />
               </H4>
+              <Paragraph color="text.secondary">{t('fees.perfomance.description')}</Paragraph>
             </Stack>
-
-            <Paragraph color="text.secondary">{t('fees.perfomance.description')}</Paragraph>
           </Stack>
           <Stack spacing={1}>
             <Paragraph color="text.primary">{t('fees.entrance.title')}</Paragraph>
