@@ -6,7 +6,10 @@ import Scrollbar from 'components/ScrollBar'
 import type { FC } from 'react'
 import { useState } from 'react'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import LogoImage from 'public/logo.svg'
+import LogoImageSquare from 'public/logo-square.svg'
+import Image from 'next/image'
 
 import MultiLevelMenu from './MultiLevelMenu'
 import MobileSidebar from './MobileSidebar'
@@ -23,13 +26,21 @@ const SidebarWrapper = styled(Box)<{ compact: any }>(({ theme, compact }) => ({
   '&:hover': compact && { width: 280 },
 }))
 
+const StyledLogo = styled(Image)(() => ({
+  borderRadius: 30,
+}));
+
 const NavWrapper = styled(Box)(() => ({
   paddingLeft: 16,
   paddingRight: 16,
   height: '100%',
 }))
 
-const StyledArrow = styled(KeyboardArrowLeftIcon)(() => ({
+const StyledArrowLeft = styled(KeyboardArrowLeftIcon)(() => ({
+  display: 'block',
+}))
+
+const StyledArrowRight = styled(KeyboardArrowRightIcon)(() => ({
   display: 'block',
 }))
 
@@ -72,13 +83,13 @@ const DashboardSidebar: FC<React.PropsWithChildren<DashboardSidebarProps>> = (pr
       onMouseEnter={() => setOnHover(true)}
       onMouseLeave={() => sidebarCompact && setOnHover(false)}
     >
-      <FlexBetween pt={3} pr={2} pl={4} pb={1} height={TOP_HEADER_AREA}>
+      <FlexBetween pt={3} pr={2} pl={3} pb={1} height={TOP_HEADER_AREA}>
         {/* LOGO */}
         <FlexBox>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={LogoImage.src} alt="logo" width={100} />
-          {/* <StyledLogo compact={COMPACT}>Onebit</StyledLogo> */}
-        </FlexBox>
+          {!!COMPACT && <StyledLogo src={LogoImageSquare.src} alt="Onebit logo" width={40} height={40} />}
+          {!COMPACT && <Image src={LogoImage.src} alt="Onebit logo" width={100} height={100} />}
+          </FlexBox>
         <Box mx={'auto'}></Box>
 
         {/* SIDEBAR COLLAPSE BUTTON */}
@@ -88,7 +99,7 @@ const DashboardSidebar: FC<React.PropsWithChildren<DashboardSidebarProps>> = (pr
             display: COMPACT ? 'none' : 'block',
           }}
         >
-          <StyledArrow />
+          {sidebarCompact ? <StyledArrowRight /> : <StyledArrowLeft />}
         </StyledIconButton>
       </FlexBetween>
 
