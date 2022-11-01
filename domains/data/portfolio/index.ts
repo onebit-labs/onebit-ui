@@ -16,10 +16,16 @@ import type { UserReserveData } from './adapter/userReserveData'
 import { useReserveData } from './application/reserveData'
 import { useUserReserveData } from './application/userReserveData'
 import { useOnebitAPIData } from './application/onebitAPI'
+import { useOnebitGraphData } from './application/onebitGraph'
 import type { ContractsAddress } from '../network/adapter/markets'
+import type { LendingPoolGraph, PortfolioTermGraph } from './adapter/onebitGraph'
+import { getPortfolioTermGraph } from './adapter/onebitGraph'
+import { getLendingPoolGraph } from './adapter/onebitGraph'
 
 
-export type Portfolio = Partial<ReserveData & UserReserveData> & {
+export type Portfolio = Partial<ReserveData & UserReserveData & LendingPoolGraph & {
+  portfolioTerm: PortfolioTermGraph[]
+}> & {
   id: string
   portfolioName: string
   symbol: string
@@ -48,19 +54,20 @@ const usePortfolioService = () => {
   const { markets } = useNetwork()
   const { oracle, totalSupply } = useERC20()
   const { seriesDaily, portfolioDaily } = useOnebitAPIData()
+  const onebitGraphData = useOnebitGraphData()
 
   const portfolioData = useMemo(() => {
     const returnValue = markets.map((market) => {
       const { id, info, address } = market
-      const pool = address.LendingPool
-      const reserve = reserveData[pool]
+      const lendingPoolAddress = address.LendingPool
+      const reserve = reserveData[lendingPoolAddress]
 
       return {
         id,
         address,
         ...info,
         ...reserve,
-        ...userReserveData[pool],
+        ...userReserveData[lendingPoolAddress],
         status: getPortfolioStatus(reserve),
         lockTime: getPortfolioLockTime(reserve),
         oracle: toBN(safeGet(() => oracle[info.symbol]) || 0),
@@ -68,18 +75,20 @@ const usePortfolioService = () => {
 
         estimatedAPY: toBN(0),
         currentAPY: toBN(0),
-        depositors: toBN(0),
         yourEquity: toBN(0),
         PNL: toBN(0),
         previousPNL: toBN(0),
 
         portfolioDaily: safeGet(() => portfolioDaily[info.portfolioName]) || [],
         seriesDaily: safeGet(() => seriesDaily[info.portfolioName]) || [],
+
+        ...getLendingPoolGraph(lendingPoolAddress, onebitGraphData),
+        ...getPortfolioTermGraph(lendingPoolAddress, onebitGraphData),
       } as Portfolio
     })
     log('[portfolio] [portfolioData]', returnValue)
     return returnValue
-  }, [markets, oracle, portfolioDaily, reserveData, seriesDaily, totalSupply, userReserveData])
+  }, [markets, onebitGraphData, oracle, portfolioDaily, reserveData, seriesDaily, totalSupply, userReserveData])
 
   return {
     reserveData,

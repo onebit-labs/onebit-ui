@@ -30,7 +30,7 @@ export const getAddress = <T, K extends keyof T>(obj: T, keys: K[]) => {
   }, {} as Record<K, string>)
 }
 
-export const getTimestamp = <T, K extends keyof T>(obj: T, keys: K[], decimals = 3) => {
+export const getNumber = <T, K extends keyof T>(obj: T, keys: K[], decimals = 3) => {
   return keys.reduce((o, k) => {
     o[k] = toBN(obj[k] as any)
       .multipliedBy(Math.pow(10, decimals))

@@ -1,5 +1,5 @@
 import type { ReserveDataSource } from 'domains/data/lendingPool/store/reserveData/adapter/getReserveDataSource'
-import { getBigNumber, getTimestamp } from 'app/utils/get'
+import { getBigNumber, getNumber } from 'app/utils/get'
 
 export type ReserveData = {
   liquidityIndex: BN
@@ -28,7 +28,7 @@ export const getReserveData = (reserveDataSource: Record<string, ReserveDataSour
       ...getBigNumber(reserveDataSource[key], ['purchaseUpperLimit'], 18),
       ...getBigNumber(reserveDataSource[key], ['liquidityIndex', 'currentLiquidityRate', 'previousLiquidityIndex'], 27),
       ...getBigNumber(reserveDataSource[key], ['managementFeeRate', 'performanceFeeRate'], 4),
-      ...getTimestamp(reserveDataSource[key], [
+      ...getNumber(reserveDataSource[key], [
         'lastUpdateTimestamp',
         'purchaseBeginTimestamp',
         'purchaseEndTimestamp',
