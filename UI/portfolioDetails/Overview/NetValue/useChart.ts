@@ -80,6 +80,7 @@ export const useChart = () => {
             {
               label: 'Net Value',
               data,
+              cubicInterpolationMode: 'monotone',
               backgroundColor: (context) => {
                 const chart = context.chart
                 const { ctx, chartArea } = chart

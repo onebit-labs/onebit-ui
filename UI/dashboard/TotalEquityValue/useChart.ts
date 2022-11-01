@@ -63,6 +63,7 @@ export const useChart = () => {
             {
               label: 'test',
               data,
+              cubicInterpolationMode: 'monotone',
               backgroundColor: (context) => {
                 const chart = context.chart
                 const { ctx, chartArea } = chart
