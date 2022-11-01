@@ -10,7 +10,7 @@ const useOnebitAPIService = () => {
 
   return {
     seriesDaily,
-    portfolioDaily
+    portfolioDaily,
   }
 }
 const { Provider: OnebitAPIProvider, createUseContext } = createContext(useOnebitAPIService)

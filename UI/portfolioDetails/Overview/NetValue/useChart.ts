@@ -61,95 +61,93 @@ export const useChart = () => {
     )
   }, [data])
 
-  const lineColor = useMemo(() => { 
+  const lineColor = useMemo(() => {
     if (changeAllTime == 0) {
       return theme.palette.grey[500]
-    }
-    else if (changeAllTime.gt(0)) {
+    } else if (changeAllTime.gt(0)) {
       return theme.palette.success.main
-    }
-    else {
+    } else {
       return theme.palette.error.main
     }
   }, [changeAllTime, theme.palette.error.main, theme.palette.success.main, theme.palette.grey])
 
   const props = useMemo(
     () =>
-    ({
-      height: 86,
-      data: {
-        datasets: [
-          {
-            label: 'Net Value',
-            data,
-            backgroundColor: (context) => {
-              const chart = context.chart
-              const { ctx, chartArea } = chart
-              if (!chartArea) return null
-              const chartWidth = chartArea.right - chartArea.left
-              const chartHeight = chartArea.bottom - chartArea.top
-              if (!chartWidth) return null
-              const { width, height } = lineChart.current
-              let { gradient } = lineChart.current
-              if (width !== chartWidth || height !== chartHeight) {
-                gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top)
-                gradient.addColorStop(0, alpha(lineColor, 0))
-                gradient.addColorStop(1, alpha(lineColor, 0.12))
-                lineChart.current = {
-                  width: chartWidth,
-                  height: chartHeight,
-                  gradient,
+      ({
+        height: 86,
+        data: {
+          datasets: [
+            {
+              label: 'Net Value',
+              data,
+              backgroundColor: (context) => {
+                const chart = context.chart
+                const { ctx, chartArea } = chart
+                if (!chartArea) return null
+                const chartWidth = chartArea.right - chartArea.left
+                const chartHeight = chartArea.bottom - chartArea.top
+                if (!chartWidth) return null
+                const { width, height } = lineChart.current
+                let { gradient } = lineChart.current
+                if (width !== chartWidth || height !== chartHeight) {
+                  gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top)
+                  gradient.addColorStop(0, alpha(lineColor, 0))
+                  gradient.addColorStop(1, alpha(lineColor, 0.12))
+                  lineChart.current = {
+                    width: chartWidth,
+                    height: chartHeight,
+                    gradient,
+                  }
                 }
-              }
-              return gradient
-            },
-            fill: 'start',
-            borderColor: lineColor,
-            pointBackgroundColor: lineColor,
-          },
-        ],
-      },
-      options: {
-        plugins: {
-          legend: {
-            display: false,
-          },
-          tooltip: {
-            callbacks: {
-              title: (context) => {
-                return `${context[0].label.split(',').slice(0, -1)}`
+                return gradient
               },
-              label: (context) => {
-                return NF.format(context.parsed.y, NF.options('number', { maximumFractionDigits: 7 }))
-              },
+              fill: 'start',
+              borderColor: lineColor,
+              pointBackgroundColor: lineColor,
             },
-          },
+          ],
         },
-        scales: {
-          x: {
-            type: 'time',
-            time: {
-              unit: 'day',
-            },
-            ticks: {
-              callback: (value) => format(new Date(value), 'd MMM')
-            },
-            grid: {
+        options: {
+          plugins: {
+            legend: {
               display: false,
             },
-          },
-          y: {
-            grid: {
-              display: true,
+            tooltip: {
+              callbacks: {
+                title: (context) => {
+                  return `${context[0].label.split(',').slice(0, -1)}`
+                },
+                label: (context) => {
+                  return NF.format(context.parsed.y, NF.options('number', { maximumFractionDigits: 7 }))
+                },
+              },
             },
-            ticks: {
-              color: theme.palette.text.secondary,
-              callback: (value) => NF.format(value, NF.options('number', { maximumFractionDigits: 3 }))
+          },
+          scales: {
+            x: {
+              type: 'time',
+              time: {
+                unit: 'day',
+              },
+              ticks: {
+                callback: (value) => format(new Date(value), 'd MMM'),
+              },
+              grid: {
+                display: false,
+              },
+            },
+            y: {
+              grid: {
+                display: true,
+              },
+              ticks: {
+                color: theme.palette.text.secondary,
+                callback: (value) => NF.format(value, NF.options('number', { maximumFractionDigits: 3 })),
+              },
             },
           },
         },
-      },
-    } as NetValueChartProps),
+      } as NetValueChartProps),
     [NF, data, lineColor, theme.palette.text.secondary]
   )
 

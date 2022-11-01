@@ -13,7 +13,7 @@ const useOnebitGraphService = () => {
   return {
     lendingPool,
     portfolioTerm,
-    transaction
+    transaction,
   }
 }
 const { Provider: OnebitGraphProvider, createUseContext } = createContext(useOnebitGraphService)

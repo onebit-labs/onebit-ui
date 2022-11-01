@@ -1,6 +1,6 @@
 import type { ThemeOptions } from '@mui/material/styles'
 import { getShadows } from './utils'
-import { lightPalette, darkPalette } from "./colors"
+import { lightPalette, darkPalette } from './colors'
 
 export const lightThemeOptions: ThemeOptions = {
   palette: {
@@ -14,8 +14,6 @@ export const lightThemeOptions: ThemeOptions = {
   },
   shadows: getShadows('#9e9e9e'),
 }
-
-
 
 export const darkThemeOptions: ThemeOptions = {
   palette: {

@@ -18,7 +18,7 @@ export function makeStore() {
       lendingPool,
       onebitAPI,
       onebitGraph,
-      nprogress
+      nprogress,
     },
   })
 }

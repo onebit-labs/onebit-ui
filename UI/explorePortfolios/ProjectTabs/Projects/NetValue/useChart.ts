@@ -54,95 +54,93 @@ export const useChart = (portfolio: ChartProps) => {
     )
   }, [data])
 
-  const lineColor = useMemo(() => { 
+  const lineColor = useMemo(() => {
     if (change7d == 0) {
       return theme.palette.grey[500]
-    }
-    else if (change7d.gt(0)) {
+    } else if (change7d.gt(0)) {
       return theme.palette.success.main
-    }
-    else {
+    } else {
       return theme.palette.error.main
     }
   }, [change7d, theme.palette.error.main, theme.palette.success.main, theme.palette.grey])
 
   const props = useMemo(
     () =>
-    ({
-      height: 86,
-      data: {
-        datasets: [
-          {
-            label: 'Net Value',
-            data,
-            backgroundColor: (context) => {
-              const chart = context.chart
-              const { ctx, chartArea } = chart
-              if (!chartArea) return null
-              const chartWidth = chartArea.right - chartArea.left
-              const chartHeight = chartArea.bottom - chartArea.top
-              if (!chartWidth) return null
-              const { width, height } = lineChart.current
-              let { gradient } = lineChart.current
-              if (width !== chartWidth || height !== chartHeight) {
-                gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top)
-                gradient.addColorStop(0, alpha(lineColor, 0))
-                gradient.addColorStop(1, alpha(lineColor, 0.12))
-                lineChart.current = {
-                  width: chartWidth,
-                  height: chartHeight,
-                  gradient,
+      ({
+        height: 86,
+        data: {
+          datasets: [
+            {
+              label: 'Net Value',
+              data,
+              backgroundColor: (context) => {
+                const chart = context.chart
+                const { ctx, chartArea } = chart
+                if (!chartArea) return null
+                const chartWidth = chartArea.right - chartArea.left
+                const chartHeight = chartArea.bottom - chartArea.top
+                if (!chartWidth) return null
+                const { width, height } = lineChart.current
+                let { gradient } = lineChart.current
+                if (width !== chartWidth || height !== chartHeight) {
+                  gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top)
+                  gradient.addColorStop(0, alpha(lineColor, 0))
+                  gradient.addColorStop(1, alpha(lineColor, 0.12))
+                  lineChart.current = {
+                    width: chartWidth,
+                    height: chartHeight,
+                    gradient,
+                  }
                 }
-              }
-              return gradient
+                return gradient
+              },
+              fill: 'start',
+              borderColor: lineColor,
+              borderWidth: 2,
+              pointBorderWidth: 0,
+              pointBackgroundColor: 'transparent',
             },
-            fill: 'start',
-            borderColor: lineColor,
-            borderWidth: 2,
-            pointBorderWidth: 0,
-            pointBackgroundColor: 'transparent',
+          ],
+        },
+        options: {
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              callbacks: {
+                title: (context) => {
+                  return `${context[0].label.split(',').slice(0, -1)}`
+                },
+              },
+            },
           },
-        ],
-      },
-      options: {
-        plugins: {
-          legend: {
-            display: false,
-          },
-          tooltip: {
-            callbacks: {
-              title: (context) => {
-                return `${context[0].label.split(',').slice(0, -1)}`
+          scales: {
+            x: {
+              type: 'time',
+              time: {
+                unit: 'day',
+              },
+              display: false,
+              ticks: {
+                display: false,
+              },
+              grid: {
+                display: false,
+              },
+            },
+            y: {
+              display: false,
+              grid: {
+                display: false,
+              },
+              ticks: {
+                display: false,
               },
             },
           },
         },
-        scales: {
-          x: {
-            type: 'time',
-            time: {
-              unit: 'day',
-            },
-            display: false,
-            ticks: {
-              display: false,
-            },
-            grid: {
-              display: false,
-            },
-          },
-          y: {
-            display: false,
-            grid: {
-              display: false,
-            },
-            ticks: {
-              display: false,
-            },
-          },
-        },
-      },
-    } as NetValueChartProps),
+      } as NetValueChartProps),
     [data, lineColor]
   )
 

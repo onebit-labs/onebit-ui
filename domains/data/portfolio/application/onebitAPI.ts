@@ -8,15 +8,13 @@ const end = Math.floor(Date.now() / 1000)
 const start = end - 60 * 60 * 24 * 90
 
 const usePortfolioDailyEffect = () => {
+  const { markets } = useNetwork()
   const {
-    markets,
-  } = useNetwork()
-  const {
-    onebitAPI: { portfolioDaily: portfolioDailySingle }
+    onebitAPI: { portfolioDaily: portfolioDailySingle },
   } = useControllers()
 
   const portfolios = useMemo(() => {
-    return markets.map(market => market.info.portfolioName)
+    return markets.map((market) => market.info.portfolioName)
   }, [markets])
   const query = useMemo(
     () => ({
@@ -36,15 +34,13 @@ const usePortfolioDailyEffect = () => {
   }, [query, portfolioDailySingle])
 }
 const useSeriesDailyEffect = () => {
+  const { markets } = useNetwork()
   const {
-    markets,
-  } = useNetwork()
-  const {
-    onebitAPI: { seriesDaily: seriesDailySingle }
+    onebitAPI: { seriesDaily: seriesDailySingle },
   } = useControllers()
 
   const portfolios = useMemo(() => {
-    return markets.map(market => market.info.portfolioName)
+    return markets.map((market) => market.info.portfolioName)
   }, [markets])
   const query = useMemo(
     () => ({
@@ -72,7 +68,7 @@ export const useOnebitAPIData = () => {
   const returnValue = useMemo(() => {
     const returnValue = {
       seriesDaily,
-      portfolioDaily
+      portfolioDaily,
     }
     log('[portfolio] [OnebitAPIData]', returnValue)
     return returnValue

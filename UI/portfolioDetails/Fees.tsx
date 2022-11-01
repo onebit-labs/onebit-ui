@@ -28,7 +28,6 @@ const Fees: FC = () => {
               <Paragraph color="text.secondary">{t('fees.management.description')}</Paragraph>
               {/* <Paragraph color="text.secondary">{t('fees.management.tip')}</Paragraph> */}
             </Stack>
-
           </Stack>
           <Stack spacing={2}>
             <Stack spacing={1}>

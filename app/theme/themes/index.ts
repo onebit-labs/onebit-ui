@@ -49,7 +49,7 @@ declare module '@mui/material/styles' {
 
 export const getTheme = (options: ThemeOptions) => {
   const theme = createTheme(options)
-  
+
   return createTheme(options, {
     zIndex: {
       appBar: 1200,

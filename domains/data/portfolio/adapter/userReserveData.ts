@@ -18,7 +18,7 @@ export const getUserReserveData = ({ reserveData, balanceOf }: UserReserveDataPr
     const walletBalance = safeGet(() => balanceOf['0xe3666662730808c69b235f1f6dd8d32315c1769b'] || 0)
     returnValue[key] = {
       balanceOf: toBN(balanceOfValue),
-      walletBalance: toBN(walletBalance)
+      walletBalance: toBN(walletBalance),
     }
   })
 

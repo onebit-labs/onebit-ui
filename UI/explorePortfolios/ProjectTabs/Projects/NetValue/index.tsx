@@ -34,7 +34,7 @@ const NetValue: FC<NetValueProps> = (props) => {
       <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} alignItems="end">
         <Grid item xs={6}>
           <Left spacing={1}>
-            <Typography variant="h5" fontWeight='600'>
+            <Typography variant="h5" fontWeight="600">
               <NumberDisplay
                 value={chart.currentNetValue}
                 options="number"

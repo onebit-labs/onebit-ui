@@ -9,7 +9,12 @@ const BackButton: FC = () => {
   const router = useRouter()
   const theme = useTheme()
   return (
-    <Button sx={{ color: theme.palette.text.secondary }} variant='white' startIcon={<ArrowBack />} onClick={() => router.back()}>
+    <Button
+      sx={{ color: theme.palette.text.secondary }}
+      variant="white"
+      startIcon={<ArrowBack />}
+      onClick={() => router.back()}
+    >
       Back
     </Button>
   )

@@ -2,9 +2,9 @@
 import type { Shadows } from '@mui/material/styles/shadows'
 import { alpha } from '@mui/material/styles'
 export const getShadows = (rgb: string): Shadows => {
-  const shadowColor1 = alpha(rgb, 0.03);
-  const shadowColor2 = alpha(rgb, 0.04);
-  const shadowColor3 = alpha(rgb, 0.08);
+  const shadowColor1 = alpha(rgb, 0.03)
+  const shadowColor2 = alpha(rgb, 0.04)
+  const shadowColor3 = alpha(rgb, 0.08)
 
   return [
     `none`,

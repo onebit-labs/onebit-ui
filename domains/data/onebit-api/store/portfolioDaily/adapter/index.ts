@@ -10,14 +10,21 @@ export const request = (props: Props) => {
 
   portfolios.forEach((portfolio) => {
     promises.push(
-      fetch(`/onebit-api/portfolio_daily?req_id=8b20dd8819bc7569f4994b1080646713&portfolio=${encodeURIComponent(portfolio)}&start=${start}&end=${end}`, {
-        "body": null,
-        "method": "GET",
-        "mode": "cors",
-        "credentials": "omit"
-      }).then(data => data.json()).then(({ data }) => {
-        returnValue[portfolio] = data.map(({ ts, nav }: any) => ({ x: ts * 1000, y: nav }))
-      })
+      fetch(
+        `/onebit-api/portfolio_daily?req_id=8b20dd8819bc7569f4994b1080646713&portfolio=${encodeURIComponent(
+          portfolio
+        )}&start=${start}&end=${end}`,
+        {
+          body: null,
+          method: 'GET',
+          mode: 'cors',
+          credentials: 'omit',
+        }
+      )
+        .then((data) => data.json())
+        .then(({ data }) => {
+          returnValue[portfolio] = data.map(({ ts, nav }: any) => ({ x: ts * 1000, y: nav }))
+        })
     )
   })
 

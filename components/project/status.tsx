@@ -17,7 +17,13 @@ const ProjectStatus: FC<ProjectStatusProps> = ({ status }) => {
         return 'error'
     }
   }, [status])
-  return <Chip color={color} label={t(`project.status.${status}`)} sx={{ height: 24, color: 'white', fontWeight: 600, fontSize: 12 }} />
+  return (
+    <Chip
+      color={color}
+      label={t(`project.status.${status}`)}
+      sx={{ height: 24, color: 'white', fontWeight: 600, fontSize: 12 }}
+    />
+  )
 }
 
 export default ProjectStatus

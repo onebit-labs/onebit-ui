@@ -17,7 +17,10 @@ const useLendingPoolEffect = () => {
     erc20: { balanceOf: balanceOfPolling },
   } = useControllers()
 
-  const tokens = useMemo(() => markets.map((market) => market.address.OToken).concat([address.USDT]) || [], [address.USDT, markets])
+  const tokens = useMemo(
+    () => markets.map((market) => market.address.OToken).concat([address.USDT]) || [],
+    [address.USDT, markets]
+  )
   const query = useMemo(
     () => ({
       erc20Service,

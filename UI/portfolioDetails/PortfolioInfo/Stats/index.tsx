@@ -23,31 +23,23 @@ const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, curr
         </div>
       ),
       title: 'assetsUnderManagement',
-      icon: (
-        <Image src={Money} alt="Money" width={40} height={40} />
-      ),
+      icon: <Image src={Money} alt="Money" width={40} height={40} />,
     },
     isOpen
       ? {
           price: <NumberDisplay value={estimatedAPY} options="percent" />,
           title: 'estimatedAPY',
-          icon: (
-            <Image src={Revenue} alt="Revenue" width={40} height={40} />
-          ),
+          icon: <Image src={Revenue} alt="Revenue" width={40} height={40} />,
         }
       : {
           price: <NumberDisplay value={currentAPY} options="percent" />,
           title: 'currentAPY',
-          icon: (
-            <Image src={Revenue} alt="Revenue" width={40} height={40} />
-          ),
+          icon: <Image src={Revenue} alt="Revenue" width={40} height={40} />,
         },
     {
       price: <NumberDisplay value={depositors} options="number" />,
       title: 'depositors',
-      icon: (
-        <Image src={User} alt="User" width={40} height={40} />
-      ),
+      icon: <Image src={User} alt="User" width={40} height={40} />,
     },
   ]
 

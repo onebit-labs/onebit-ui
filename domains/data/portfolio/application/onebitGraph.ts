@@ -6,7 +6,7 @@ import { log } from 'app/utils/dev'
 
 const useGraphInitEffect = () => {
   const {
-    onebitGraph: { lendingPool: portfolioDailySingle, portfolioTerm: portfolioTermSingle }
+    onebitGraph: { lendingPool: portfolioDailySingle, portfolioTerm: portfolioTermSingle },
   } = useControllers()
 
   useEffect(() => {
@@ -51,7 +51,7 @@ export const useOnebitGraphData = () => {
     const returnValue = {
       lendingPool,
       portfolioTerm,
-      transaction
+      transaction,
     }
     log('[portfolio] [OnebitGraphData]', returnValue)
     return returnValue

@@ -1,4 +1,3 @@
-
 import type { SendTransaction } from 'lib/protocol/hooks/sendTransaction'
 import type { EthereumTransactionTypeExtended } from 'lib/protocol/typechain/commons/types'
 import { toast } from 'lib/toastify'
@@ -49,12 +48,12 @@ export const transaction = (props: {
       const approval = () =>
         approveTxData
           ? approveTxData
-            .tx()
-            .then(sendTransaction)
-            .then((txResponse) => {
-              console.log('[txResponse]', txResponse)
-              return txResponse.wait()
-            })
+              .tx()
+              .then(sendTransaction)
+              .then((txResponse) => {
+                console.log('[txResponse]', txResponse)
+                return txResponse.wait()
+              })
           : Promise.resolve()
 
       const approveAndTransaction = () => {

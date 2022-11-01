@@ -12,7 +12,7 @@ const useIdDialog = () => {
 
   return {
     id,
-    ...dialog
+    ...dialog,
   }
 }
 

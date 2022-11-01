@@ -23,10 +23,13 @@ import { getTransactionGraph } from './adapter/onebitGraph'
 import { getPortfolioTermGraph } from './adapter/onebitGraph'
 import { getLendingPoolGraph } from './adapter/onebitGraph'
 
-
-export type Portfolio = Partial<ReserveData & UserReserveData & LendingPoolGraph & {
-  portfolioTerm: PortfolioTermGraph[]
-}> & {
+export type Portfolio = Partial<
+  ReserveData &
+    UserReserveData &
+    LendingPoolGraph & {
+      portfolioTerm: PortfolioTermGraph[]
+    }
+> & {
   id: string
   portfolioName: string
   symbol: string
@@ -98,16 +101,24 @@ const usePortfolioService = () => {
     })
     log('[portfolio] [portfolioData]', returnValue)
     return returnValue
-  }, [erc20Data.oracle, erc20Data.totalSupply, markets, onebitGraphData, portfolioDaily, reserveData, seriesDaily, userReserveData])
+  }, [
+    erc20Data.oracle,
+    erc20Data.totalSupply,
+    markets,
+    onebitGraphData,
+    portfolioDaily,
+    reserveData,
+    seriesDaily,
+    userReserveData,
+  ])
 
   const portfolioUserData = useMemo(() => {
     const transactions = getTransactionGraph(onebitGraphData, portfolioData)
     const returnValue = {
-      transactions
+      transactions,
     }
     log('[portfolio] [portfolioUserData]', returnValue)
     return returnValue
-
   }, [onebitGraphData, portfolioData])
 
   return {

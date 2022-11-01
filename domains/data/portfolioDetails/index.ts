@@ -11,14 +11,14 @@ const usePortfolioDetailsService = () => {
   const portfolio = useMemo(() => {
     const id = portfolioId.value
     if (!id || !portfolioData.length) return {} as undefined
-    const returnValue = portfolioData.find(i => i.id === id) || {} as undefined
+    const returnValue = portfolioData.find((i) => i.id === id) || ({} as undefined)
     log('[portfolio] [portfolioDetails]', returnValue)
     return returnValue
   }, [portfolioData, portfolioId.value])
 
   return {
     portfolioId,
-    portfolio
+    portfolio,
   }
 }
 const { Provider: PortfolioDetailsProvider, createUseContext } = createContext(usePortfolioDetailsService)

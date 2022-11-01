@@ -17,7 +17,11 @@ const FundraisingProgress: FC<FundraisingProgressProps> = ({ totalSupply, purcha
   return (
     <Stack spacing={1}>
       <H5>{t('project.fundraisingProgress.title')}</H5>
-      <LinearProgress variant="determinate" value={Math.min(value.multipliedBy(100).toNumber(), 100)} sx={{ height: 5 }}/>
+      <LinearProgress
+        variant="determinate"
+        value={Math.min(value.multipliedBy(100).toNumber(), 100)}
+        sx={{ height: 5 }}
+      />
       <H5 display="flex" justifyContent="space-between">
         <NumberDisplay value={value} options="percent" />
         <span>{`${t('project.fundraisingProgress.max')} ${NF.abbreviate(purchaseUpperLimit)} ${symbol}`}</span>

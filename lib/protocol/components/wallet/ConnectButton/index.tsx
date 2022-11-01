@@ -30,18 +30,18 @@ const WalletConnected: FC = () => {
   const { open } = useConnectButton()
   const theme = useTheme()
   return (
-    <Button 
-      key="wallet-btn" 
-      variant="linear" 
+    <Button
+      key="wallet-btn"
+      variant="linear"
       onClick={open}
       sx={{
         marginLeft: 1,
         borderRadius: 30,
         border: `1px solid ${theme.palette.divider}`,
-        "&:hover": { backgroundColor: theme.palette.action.hover },
+        '&:hover': { backgroundColor: theme.palette.action.hover },
         color: theme.palette.text.secondary,
       }}
-      >
+    >
       <Account />
     </Button>
   )

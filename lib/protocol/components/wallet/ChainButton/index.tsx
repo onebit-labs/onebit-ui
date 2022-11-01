@@ -16,41 +16,41 @@ export const ChainButton: FC = () => {
   const content = useMemo(() => {
     if (!network)
       return (
-        <Button 
-          key="chain-btn" 
-          variant="outlined" 
-          color="error" 
-          startIcon={<ChainErrorIcon />} 
+        <Button
+          key="chain-btn"
+          variant="outlined"
+          color="error"
+          startIcon={<ChainErrorIcon />}
           onClick={open}
           sx={{
             borderRadius: 30,
             border: `1px solid ${theme.palette.error.main}`,
-            "&:hover": { 
+            '&:hover': {
               backgroundColor: theme.palette.error.light,
               border: `1px solid ${theme.palette.error.main}`,
             },
             color: theme.palette.error.main,
           }}
-          >
+        >
           {t(`wallet.error.ChainUnknownError`)}
         </Button>
       )
     return (
-      <Button 
-        key="chain-btn" 
-        variant="outlined" 
+      <Button
+        key="chain-btn"
+        variant="outlined"
         startIcon={<ChainIcon chainName={network.name} />}
         onClick={open}
         sx={{
           borderRadius: 30,
           border: `1px solid ${theme.palette.divider}`,
-          "&:hover": { 
+          '&:hover': {
             backgroundColor: theme.palette.action.hover,
             border: `1px solid ${theme.palette.divider}`,
           },
           color: theme.palette.text.secondary,
         }}
-        >
+      >
         {network.fullName}
       </Button>
     )

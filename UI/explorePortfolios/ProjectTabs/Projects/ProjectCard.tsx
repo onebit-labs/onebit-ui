@@ -23,7 +23,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   },
   '&:hover': {
     backgroundColor: theme.palette.action.hover,
-  }
+  },
 }))
 
 type ProjectCardProps = Portfolio
@@ -47,7 +47,7 @@ const ProjectCard: FC<React.PropsWithChildren<ProjectCardProps>> = (props) => {
             <FlexBetween alignItems="start">
               <Stack spacing={1}>
                 <Small>{`${t('projectCard.lockUpPeriod')}: ${lockTime} ${t('projectCard.days')}`}</Small>
-                <TimePeriod start={purchaseBeginTimestamp} end={purchaseEndTimestamp} color='text.secondary'/>
+                <TimePeriod start={purchaseBeginTimestamp} end={purchaseEndTimestamp} color="text.secondary" />
               </Stack>
               <ProjectStatus status={status} />
             </FlexBetween>

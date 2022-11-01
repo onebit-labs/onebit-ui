@@ -11,13 +11,13 @@ export type LendingPoolGraph = {
 }
 export const getLendingPoolGraph = (lendingPoolAddress: string, { lendingPool }: OnebitGraphData) => {
   if (!lendingPool) return {} as undefined
-  const data = lendingPool.find(i => i.id === lendingPoolAddress)
+  const data = lendingPool.find((i) => i.id === lendingPoolAddress)
   if (!data) return {} as undefined
   const { term, depositors } = data
   return {
     term,
     depositors: toBN(depositors.length),
-    depositorList: depositors
+    depositorList: depositors,
   }
 }
 
@@ -38,14 +38,10 @@ export type PortfolioTermGraph = {
 }
 export const getPortfolioTermGraph = (lendingPoolAddress: string, { portfolioTerm }: OnebitGraphData) => {
   if (!portfolioTerm) return { portfolioTerm: [] } as undefined
-  const data = portfolioTerm.filter(i => i.lendingPool === lendingPoolAddress)
+  const data = portfolioTerm.filter((i) => i.lendingPool === lendingPoolAddress)
   if (!data) return { portfolioTerm: [] } as undefined
-  const returnValue = data.map(portfolioTerm => {
-    const timestamps = getNumber(portfolioTerm, [
-      'purchaseBeginTimestamp',
-      'purchaseEndTimestamp',
-      'createTimestamp',
-    ])
+  const returnValue = data.map((portfolioTerm) => {
+    const timestamps = getNumber(portfolioTerm, ['purchaseBeginTimestamp', 'purchaseEndTimestamp', 'createTimestamp'])
     const returnValue: PortfolioTermGraph = {
       ...portfolioTerm,
       ...timestamps,
@@ -54,7 +50,7 @@ export const getPortfolioTermGraph = (lendingPoolAddress: string, { portfolioTer
       ...getBigNumber(portfolioTerm, ['managementFeeRate', 'performanceFeeRate'], 4),
       lockTime: getPortfolioLockTime(timestamps),
       liquidityIndex: toBN(0),
-      depositors: 0
+      depositors: 0,
     }
 
     return returnValue
@@ -72,7 +68,6 @@ export const getPortfolioTermGraph = (lendingPoolAddress: string, { portfolioTer
 
   return { portfolioTerm: returnValue }
 }
-
 
 export type TransactionGraph = {
   id: string
@@ -92,17 +87,15 @@ const getTransactionType = (type: number) => {
 }
 export const getTransactionGraph = ({ transaction }: OnebitGraphData, portfolioData: Portfolio[]) => {
   if (!transaction) return [] as undefined
-  const returnValue = transaction.map(t => {
-    const portfolio = portfolioData.find(p => p.address.LendingPool === t.lendingPool)
-    const timestamps = getNumber(t, [
-      'createTimestamp',
-    ])
+  const returnValue = transaction.map((t) => {
+    const portfolio = portfolioData.find((p) => p.address.LendingPool === t.lendingPool)
+    const timestamps = getNumber(t, ['createTimestamp'])
     const returnValue: TransactionGraph = {
       ...t,
       ...timestamps,
       ...getBigNumber(t, ['amount'], 18),
       type: getTransactionType(t.type),
-      portfolio
+      portfolio,
     }
     return returnValue
   })

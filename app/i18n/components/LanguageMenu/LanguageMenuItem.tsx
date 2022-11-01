@@ -30,7 +30,7 @@ const LanguageMenuItem: FC<LanguageMenuItemProps> = ({
       }}
     >
       <ListItemText>{value}</ListItemText>
-      <div className="country-flag">{flag && <Image src={flag} alt={name} width={20} height={20}/>}</div>
+      <div className="country-flag">{flag && <Image src={flag} alt={name} width={20} height={20} />}</div>
     </MenuItem>
   )
 }
