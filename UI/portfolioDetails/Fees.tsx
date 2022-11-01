@@ -17,7 +17,7 @@ const Fees: FC = () => {
           <H3>{t('fees.title')}</H3>
           <Stack spacing={2}>
             <Stack spacing={1}>
-              <Paragraph color="text.secondary">{t('fees.management.title')}</Paragraph>
+              <Paragraph color="text.primary">{t('fees.management.title')}</Paragraph>
               <H4>
                 <NumberDisplay
                   value={portfolio.managementFeeRate}
@@ -25,14 +25,14 @@ const Fees: FC = () => {
                   numberFormatOptions={{ minimumFractionDigits: 0 }}
                 />
               </H4>
-              <Paragraph color="text.secondary">{t('fees.management.tip')}</Paragraph>
+              {/* <Paragraph color="text.secondary">{t('fees.management.tip')}</Paragraph> */}
             </Stack>
 
             <Paragraph color="text.secondary">{t('fees.management.description')}</Paragraph>
           </Stack>
           <Stack spacing={2}>
             <Stack spacing={1}>
-              <Paragraph color="text.secondary">{t('fees.perfomance.title')}</Paragraph>
+              <Paragraph color="text.primary">{t('fees.perfomance.title')}</Paragraph>
               <H4>
                 <NumberDisplay
                   value={portfolio.performanceFeeRate}
@@ -45,11 +45,11 @@ const Fees: FC = () => {
             <Paragraph color="text.secondary">{t('fees.perfomance.description')}</Paragraph>
           </Stack>
           <Stack spacing={1}>
-            <Paragraph color="text.secondary">{t('fees.entrance.title')}</Paragraph>
+            <Paragraph color="text.primary">{t('fees.entrance.title')}</Paragraph>
             <H4>None</H4>
           </Stack>
           <Stack spacing={1}>
-            <Paragraph color="text.secondary">{t('fees.exit.title')}</Paragraph>
+            <Paragraph color="text.primary">{t('fees.exit.title')}</Paragraph>
             <H4>None</H4>
           </Stack>
         </Stack>

@@ -46,12 +46,12 @@ const locale = {
       title: 'Management Fee',
       tip: '2% if accumulative return is over 20%',
       description:
-        'A management fee is a periodic payment that is paid by depositors to the Porfolio Manager. The fee is calculated as a percentage of assets under management and is independent of Vault returns.',
+        'A management fee is a periodic payment that is paid by depositors to the Porfolio Manager. The fee is calculated as an annualized percentage of assets under management and is independent of Vault returns.',
     },
     perfomance: {
       title: 'Perfomance Fee',
       description:
-        'A performance fee is a percentage-based fee depositors pay to the Portfolio Manager out of the positive returns made over a pre-defined period. The pre-defined period is referred to as a Crystallisation period (typically a year or a quarter). The returns are benchmarked against the denomination asset. ',
+        'A performance fee is an annualized percentage-based fee depositors pay to the Portfolio Manager out of the positive returns made over a pre-defined period. The pre-defined period is referred to as a Locked-up period (typically a year or a quarter). The returns are benchmarked against the denomination asset. ',
     },
     entrance: {
       title: 'Entrance Fee',
@@ -68,7 +68,7 @@ const locale = {
     minimumDeposit: 'Minimum Deposit',
     reInvestment: 'Re-investment',
     description:
-      'A management fee is a periodic payment that is paid by depositors to the Porfolio Manager. The fee is calculated as a percentage of assets under management and is independent of Vault returns.',
+      'If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the portfolio for the next period.',
   },
   depositors: {
     title: 'Historical Performance',

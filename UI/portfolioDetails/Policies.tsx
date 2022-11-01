@@ -24,26 +24,26 @@ const Policies: FC = () => {
             <TimePeriod color="text.secondary" start={data.purchaseBeginTimestamp} end={data.purchaseEndTimestamp} />
           </Stack> */}
           <Stack spacing={1}>
-            <Paragraph color="text.secondary">{t('policies.lockUpPeriod')}</Paragraph>
+            <Paragraph color="text.primary">{t('policies.lockUpPeriod')}</Paragraph>
             <H4>{portfolio.lockTime} Day</H4>
             <TimePeriod color="text.secondary" start={data.purchaseBeginTimestamp} end={data.purchaseEndTimestamp} />
           </Stack>
           <Stack spacing={1}>
-            <Paragraph color="text.secondary">{t('policies.fundraisingCap')}</Paragraph>
+            <Paragraph color="text.primary">{t('policies.fundraisingCap')}</Paragraph>
             <H4>
               <NumberDisplay value={portfolio.purchaseUpperLimit} abbreviate={{}} />
               <span> {portfolio.symbol}</span>
             </H4>
           </Stack>
-          <Stack spacing={1}>
+          {/* <Stack spacing={1}>
             <Paragraph color="text.secondary">{t('policies.minimumDeposit')}</Paragraph>
             <H4>100 USDT</H4>
-          </Stack>
+          </Stack> */}
           <Stack spacing={1}>
-            <Paragraph color="text.secondary">{t('policies.reInvestment')}</Paragraph>
+            <Paragraph color="text.primary">{t('policies.reInvestment')}</Paragraph>
             <H4>Auto</H4>
           </Stack>
-          <Paragraph>{t('policies.description')}</Paragraph>
+          <Paragraph color="text.secondary">{t('policies.description')}</Paragraph>
         </Stack>
       </CardContent>
     </Card>

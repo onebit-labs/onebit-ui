@@ -1,5 +1,5 @@
 import { Stack } from '@mui/material'
-import { H3, H5 } from 'components/Typography'
+import { H3, Tiny } from 'components/Typography'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -13,11 +13,11 @@ const StatsCard: FC<React.PropsWithChildren<StatsCardProps>> = ({ card }) => {
   const { t } = useTranslation('portfolioDetails')
 
   return (
-    <Stack spacing={2} direction="row">
+    <Stack spacing={2} direction="row" alignItems="center">
       {icon}
-      <Stack spacing={1}>
+      <Stack>
         <H3>{price}</H3>
-        <H5 color="text.secondary">{t(`info.stats.${title}`)}</H5>
+        <Tiny color="text.secondary">{t(`info.stats.${title}`)}</Tiny>
       </Stack>
     </Stack>
   )

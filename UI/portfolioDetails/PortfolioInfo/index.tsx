@@ -9,7 +9,7 @@ import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined'
 
 import TimePeriod from 'components/date/TimePeriod'
 import ProjectStatus from 'components/project/status'
-import { H3, H5, Span, Paragraph } from 'components/Typography'
+import { H2, H5, Span, Paragraph } from 'components/Typography'
 import TokenIcon from 'lib/protocol/components/TokenIcon'
 import FundraisingProgress from 'components/project/FundraisingProgress'
 import PNL from 'components/project/PNL'
@@ -48,12 +48,12 @@ const PortfolioInfo: FCC = ({ children }) => {
   return (
     <StyledCard>
       <CardContent>
-        <Stack spacing={2}>
-          <Stack spacing={1}>
+        <Stack spacing={3}>
+          <Stack spacing={2}>
             <FlexBetween>
-              <Stack spacing={1} direction="row">
+              <Stack spacing={1} direction="row" alignItems="center">
                 <TokenIcon symbol={symbol} sx={{ width: 24, height: 24 }} />
-                <H3>{portfolioName}</H3>
+                <H2>{portfolioName}</H2>
               </Stack>
               <Stack spacing={2} direction="row">
                 <Button
@@ -79,19 +79,19 @@ const PortfolioInfo: FCC = ({ children }) => {
               </Stack>
             </FlexBetween>
 
-            <Stack spacing={2} direction="row" alignItems="center">
-              <H5 color="text.secondary">
+            <Stack spacing={6} direction="row" alignItems="center">
+              <Span color="text.secondary">
                 <span>{t('info.status')}: </span>
                 <ProjectStatus status={status} />
-              </H5>
-              <H5 color="text.secondary">
+              </Span>
+              <Span color="text.secondary">
                 <span>{t('info.term')}: </span>
                 <TimePeriod start={purchaseBeginTimestamp} end={purchaseEndTimestamp} />
-              </H5>
-              <H5 color="text.secondary">{`${t('info.lockUpPeriod')}: ${lockTime} ${t('info.days')}`}</H5>
-              <H5 color="text.secondary">
+              </Span>
+              <Span color="text.secondary">{`${t('info.lockUpPeriod')}: ${lockTime} ${t('info.days')}`}</Span>
+              <Span color="text.secondary">
                 {t('info.standard')}: {symbol}
-              </H5>
+              </Span>
             </Stack>
             <Stack spacing={2} direction="row" alignItems="center">
               <H5 color="text.secondary">

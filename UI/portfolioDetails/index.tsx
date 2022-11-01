@@ -66,7 +66,7 @@ const PortfolioDetails: FC = () => {
                   display: 'flex',
                 },
                 '.MuiButtonBase-root': {
-                  minWidth: 200,
+                  minWidth: 150,
                 },
               },
             }}

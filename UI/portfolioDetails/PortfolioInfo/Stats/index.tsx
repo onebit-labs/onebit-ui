@@ -24,9 +24,7 @@ const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, curr
       ),
       title: 'assetsUnderManagement',
       icon: (
-        <div>
-          <Image src={Money} alt="Money" width={40} height={40} />
-        </div>
+        <Image src={Money} alt="Money" width={40} height={40} />
       ),
     },
     isOpen
@@ -34,27 +32,21 @@ const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, curr
           price: <NumberDisplay value={estimatedAPY} options="percent" />,
           title: 'estimatedAPY',
           icon: (
-            <div>
-              <Image src={Revenue} alt="Revenue" width={40} height={40} />
-            </div>
+            <Image src={Revenue} alt="Revenue" width={40} height={40} />
           ),
         }
       : {
           price: <NumberDisplay value={currentAPY} options="percent" />,
           title: 'currentAPY',
           icon: (
-            <div>
-              <Image src={Revenue} alt="Revenue" width={40} height={40} />
-            </div>
+            <Image src={Revenue} alt="Revenue" width={40} height={40} />
           ),
         },
     {
       price: <NumberDisplay value={depositors} options="number" />,
       title: 'depositors',
       icon: (
-        <div>
-          <Image src={User} alt="User" width={40} height={40} />
-        </div>
+        <Image src={User} alt="User" width={40} height={40} />
       ),
     },
   ]
