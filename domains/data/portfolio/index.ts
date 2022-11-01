@@ -18,7 +18,8 @@ import { useUserReserveData } from './application/userReserveData'
 import { useOnebitAPIData } from './application/onebitAPI'
 import { useOnebitGraphData } from './application/onebitGraph'
 import type { ContractsAddress } from '../network/adapter/markets'
-import type { LendingPoolGraph, PortfolioTermGraph } from './adapter/onebitGraph'
+import type { LendingPoolGraph, PortfolioTermGraph, TransactionGraph } from './adapter/onebitGraph'
+import { getTransactionGraph } from './adapter/onebitGraph'
 import { getPortfolioTermGraph } from './adapter/onebitGraph'
 import { getLendingPoolGraph } from './adapter/onebitGraph'
 
@@ -47,6 +48,10 @@ export type Portfolio = Partial<ReserveData & UserReserveData & LendingPoolGraph
   seriesDaily: Record<'x' | 'y', number>[]
 
   address: ContractsAddress
+}
+
+export type UserPortfolio = {
+  transactions: TransactionGraph[]
 }
 
 const usePortfolioService = () => {
@@ -95,10 +100,19 @@ const usePortfolioService = () => {
     return returnValue
   }, [erc20Data.oracle, erc20Data.totalSupply, markets, onebitGraphData, portfolioDaily, reserveData, seriesDaily, userReserveData])
 
+  const portfolioUserData = useMemo(() => {
+    const transactions = getTransactionGraph(onebitGraphData, portfolioData)
+    const returnValue = {
+      transactions
+    }
+    log('[portfolio] [portfolioData]', returnValue)
+    return returnValue
+
+  }, [onebitGraphData, portfolioData])
+
   return {
-    reserveData,
-    userReserveData,
     portfolioData,
+    portfolioUserData,
   }
 }
 const { Provider: PortfolioProvider, createUseContext } = createContext(usePortfolioService)

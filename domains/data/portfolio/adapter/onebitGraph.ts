@@ -1,5 +1,6 @@
 import { getBigNumber, getNumber } from 'app/utils/get'
 import { toBN } from 'lib/math'
+import type { Portfolio } from '..'
 import type { OnebitGraphData } from '../application/onebitGraph'
 import { getPortfolioLockTime } from './lockTime'
 
@@ -70,4 +71,41 @@ export const getPortfolioTermGraph = (lendingPoolAddress: string, { portfolioTer
   }
 
   return { portfolioTerm: returnValue }
+}
+
+
+export type TransactionGraph = {
+  id: string
+  createTimestamp: number
+  amount: BN
+  lendingPool: string
+  type: 'deposit' | 'withdrawal'
+  portfolio: Portfolio
+}
+const getTransactionType = (type: number) => {
+  switch (type) {
+    case 1:
+      return 'deposit'
+    case 2:
+      return 'withdrawal'
+  }
+}
+export const getTransactionGraph = ({ transaction }: OnebitGraphData, portfolioData: Portfolio[]) => {
+  if (!transaction) return [] as undefined
+  const returnValue = transaction.map(t => {
+    const portfolio = portfolioData.find(p => p.address.LendingPool === t.lendingPool)
+    const timestamps = getNumber(t, [
+      'createTimestamp',
+    ])
+    const returnValue: TransactionGraph = {
+      ...t,
+      ...timestamps,
+      ...getBigNumber(t, ['amount'], 18),
+      type: getTransactionType(t.type),
+      portfolio
+    }
+    return returnValue
+  })
+
+  return returnValue
 }

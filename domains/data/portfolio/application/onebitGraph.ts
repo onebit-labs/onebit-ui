@@ -1,4 +1,4 @@
-import { useControllers } from 'domains'
+import { useControllers, useWallet } from 'domains'
 import { useOnebitGraph } from 'domains/data'
 import { useEffect, useMemo } from 'react'
 
@@ -20,17 +20,42 @@ const useGraphInitEffect = () => {
   }, [portfolioDailySingle, portfolioTermSingle])
 }
 
+const useTransactionEffect = () => {
+  const { networkAccount } = useWallet()
+  const {
+    onebitGraph: { transaction: transactionSingle },
+  } = useControllers()
+
+  const query = useMemo(
+    () => ({
+      account: networkAccount,
+    }),
+    [networkAccount]
+  )
+
+  useEffect(() => {
+    if (!query.account || !transactionSingle) return
+    transactionSingle.run(query)
+    return () => {
+      transactionSingle.stop()
+    }
+  }, [query, transactionSingle])
+}
+
 export const useOnebitGraphData = () => {
   useGraphInitEffect()
-  const { lendingPool, portfolioTerm } = useOnebitGraph()
+  useTransactionEffect()
+  const { lendingPool, portfolioTerm, transaction } = useOnebitGraph()
 
   const returnValue = useMemo(() => {
     const returnValue = {
-      lendingPool, portfolioTerm
+      lendingPool,
+      portfolioTerm,
+      transaction
     }
     log('[portfolio] [OnebitGraphData]', returnValue)
     return returnValue
-  }, [lendingPool, portfolioTerm])
+  }, [lendingPool, portfolioTerm, transaction])
 
   return returnValue
 }
