@@ -54,7 +54,16 @@ export const ChainButton: FC = () => {
         {network.fullName}
       </Button>
     )
-  }, [network, open, t])
+  }, [
+    network,
+    open,
+    t,
+    theme.palette.action.hover,
+    theme.palette.divider,
+    theme.palette.error.light,
+    theme.palette.error.main,
+    theme.palette.text.secondary,
+  ])
 
   return content || null
 }

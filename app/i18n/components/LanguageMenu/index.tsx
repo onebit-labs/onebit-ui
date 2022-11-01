@@ -68,9 +68,11 @@ const LanguageMenu: FC<LanguageMenuProps> = () => {
           marginRight: 1,
         }}
       >
-        <Box sx={{ '& img': { borderRadius: 30 } }}>
-          <Image src={flags[currentLanguage.code]} alt={currentLanguage.name} width={20} height={20} />
-        </Box>
+        {flags[currentLanguage.code] && (
+          <Box sx={{ '& img': { borderRadius: 30 } }}>
+            <Image src={flags[currentLanguage.code]} alt={currentLanguage.name} width={20} height={20} />
+          </Box>
+        )}
       </IconButton>
       <Menu
         id="language-menu"

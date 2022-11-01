@@ -35,8 +35,8 @@ export const createUseRequestController = <SliceState extends RequestSliceState,
       (status: REQUEST_STATUS) => {
         dispatch(setStatusAction(status))
         statusRef.current = status
-        // eslint-disable-next-line react-hooks/exhaustive-deps
       },
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       [dispatch]
     )
     const getStatus = useCallback(() => {

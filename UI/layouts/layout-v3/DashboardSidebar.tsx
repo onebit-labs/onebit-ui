@@ -29,14 +29,6 @@ const NavWrapper = styled(Box)(() => ({
   height: '100%',
 }))
 
-const StyledLogo = styled(Box)<{ compact: any }>(({ compact }) => ({
-  paddingLeft: 8,
-  fontWeight: 700,
-  fontSize: 20,
-  whiteSpace: 'nowrap',
-  ...(compact && { opacity: 0, width: 0 }),
-}))
-
 const StyledArrow = styled(KeyboardArrowLeftIcon)(() => ({
   display: 'block',
 }))

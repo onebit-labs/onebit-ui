@@ -6,8 +6,6 @@ import ButtonExample from './Button'
 import TextButtonsExample from './TextButton'
 import ContainedButtonsExample from './ContainedButtons'
 import OutlinedButtonExample from './OutlinedButton'
-import LinearButtonExample from './LinearButton'
-import LinearOutlinedButtonExample from './LinearButtonOutlined'
 import CheckboxesExample from './Checkboxes'
 import FabExample from './FAB'
 import RadioExample from './RadioGroup'
@@ -94,18 +92,6 @@ export default [
     id: 'OutlinedButtons',
     title: 'Outlined Buttons',
     component: <OutlinedButtonExample />,
-    docs: 'https://mui.com/components/buttons/',
-  },
-  {
-    id: 'LinearButton',
-    title: 'Linear Buttons',
-    component: <LinearButtonExample />,
-    docs: 'https://mui.com/components/buttons/',
-  },
-  {
-    id: 'LinearOutlinedButton',
-    title: 'Linear Outlined Buttons',
-    component: <LinearOutlinedButtonExample />,
     docs: 'https://mui.com/components/buttons/',
   },
   {

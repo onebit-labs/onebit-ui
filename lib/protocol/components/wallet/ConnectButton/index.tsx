@@ -32,8 +32,8 @@ const WalletConnected: FC = () => {
   return (
     <Button
       key="wallet-btn"
-      variant="linear"
       onClick={open}
+      variant="outlined"
       sx={{
         marginLeft: 1,
         borderRadius: 30,

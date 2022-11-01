@@ -12,6 +12,8 @@ import { getCellData } from './utils'
 import Stack from '@mui/material/Stack'
 import Card from '@mui/material/Card'
 
+const Tr: typeof Card = (props: any) => <Card component="tr" {...props} />
+
 const PCTable: FC<BasicTableProps> = (props) => {
   const { columns, data } = props
   const { onRowClick } = props.tableProps || {}
@@ -34,41 +36,41 @@ const PCTable: FC<BasicTableProps> = (props) => {
       body:
         data &&
         data.map((row, rowIndex) => (
-          <Card key={rowIndex}>
-            <TableRow
-              className={clsx(['ReactVirtualized__Table__row'])}
-              onClick={(e) =>
-                onRowClick &&
-                onRowClick({
+          <TableRow
+            key={rowIndex}
+            component={Tr}
+            className={clsx(['ReactVirtualized__Table__row'])}
+            onClick={(e) =>
+              onRowClick &&
+              onRowClick({
+                rowData: row,
+                index: rowIndex,
+                event: e,
+              })
+            }
+          >
+            {columns.map((column, columnIndex) => (
+              <td
+                key={rowIndex + column.dataKey}
+                className="ReactVirtualized__Table__rowColumn"
+                role="gridcell"
+                style={{
+                  overflow: 'hidden',
+                  flex: `0 1 ${column.width}px`,
+                }}
+              >
+                {column.cellRenderer({
+                  cellData: getCellData(row, column),
+                  columnData: column,
+                  columnIndex,
+                  dataKey: column.dataKey,
+                  isScrolling: false,
                   rowData: row,
-                  index: rowIndex,
-                  event: e,
-                })
-              }
-            >
-              {columns.map((column, columnIndex) => (
-                <td
-                  key={rowIndex + column.dataKey}
-                  className="ReactVirtualized__Table__rowColumn"
-                  role="gridcell"
-                  style={{
-                    overflow: 'hidden',
-                    flex: `0 1 ${column.width}px`,
-                  }}
-                >
-                  {column.cellRenderer({
-                    cellData: getCellData(row, column),
-                    columnData: column,
-                    columnIndex,
-                    dataKey: column.dataKey,
-                    isScrolling: false,
-                    rowData: row,
-                    rowIndex,
-                  })}
-                </td>
-              ))}
-            </TableRow>
-          </Card>
+                  rowIndex,
+                })}
+              </td>
+            ))}
+          </TableRow>
         )),
     }
   }, [columns, data, onRowClick])

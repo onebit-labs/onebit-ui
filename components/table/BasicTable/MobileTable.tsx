@@ -6,7 +6,6 @@ import Box from '@mui/material/Box'
 import Collapse from '@mui/material/Collapse'
 import IconButton from '@mui/material/IconButton'
 import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
@@ -34,7 +33,7 @@ const CollapsibleHead: FC<CollapsibleHeadProps> = (props) => {
 
   return (
     <Fragment>
-      <td
+      <Box
         className="ReactVirtualized__Table__headerColumn"
         role="columnheader"
         style={{
@@ -45,9 +44,9 @@ const CollapsibleHead: FC<CollapsibleHeadProps> = (props) => {
         <TableCell align="center" component="div" variant="head">
           &nbsp;
         </TableCell>
-      </td>
+      </Box>
       {columnsPrimary.map((column) => (
-        <td
+        <Box
           key={column.dataKey}
           className="ReactVirtualized__Table__headerColumn"
           role="columnheader"
@@ -57,7 +56,7 @@ const CollapsibleHead: FC<CollapsibleHeadProps> = (props) => {
           }}
         >
           {column.headerRenderer(column)}
-        </td>
+        </Box>
       ))}
     </Fragment>
   )
@@ -70,9 +69,9 @@ const CollapsibleRow: FC<CollapsibleRowProps> = (props) => {
   const columnsSecondary = columns.slice(columnsPrimaryNumber)
 
   return (
-    <Fragment>
-      <TableRow className={clsx(['ReactVirtualized__Table__row'])} onClick={() => setOpen(!open)}>
-        <td
+    <Card>
+      <TableRow component="div" className={clsx(['ReactVirtualized__Table__row'])} onClick={() => setOpen(!open)}>
+        <Box
           className="ReactVirtualized__Table__rowColumn"
           role="gridcell"
           style={{
@@ -85,9 +84,9 @@ const CollapsibleRow: FC<CollapsibleRowProps> = (props) => {
               {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
             </IconButton>
           </TableCell>
-        </td>
+        </Box>
         {columnsPrimary.map((column, columnIndex) => (
-          <td
+          <Box
             key={rowIndex + column.dataKey}
             className="ReactVirtualized__Table__rowColumn"
             role="gridcell"
@@ -105,12 +104,11 @@ const CollapsibleRow: FC<CollapsibleRowProps> = (props) => {
               rowData: row,
               rowIndex,
             })}
-          </td>
+          </Box>
         ))}
       </TableRow>
-      <TableRow className="ReactVirtualized__Table__row">
+      <TableRow component="div" className="ReactVirtualized__Table__row">
         <Box
-          component="td"
           role="gridcell"
           sx={[
             {
@@ -149,7 +147,7 @@ const CollapsibleRow: FC<CollapsibleRowProps> = (props) => {
           </Collapse>
         </Box>
       </TableRow>
-    </Fragment>
+    </Card>
   )
 }
 
@@ -162,29 +160,28 @@ const MobileTable: FC<BasicTableProps> = (props) => {
       body:
         data &&
         data.map((row, rowIndex) => (
-          <Card key={rowIndex}>
-            <CollapsibleRow
-              {...{
-                data,
-                row,
-                rowIndex,
-                columns,
-              }}
-            />
-          </Card>
+          <CollapsibleRow
+            key={rowIndex}
+            {...{
+              data,
+              row,
+              rowIndex,
+              columns,
+            }}
+          />
         )),
     }
   }, [columns, data])
 
   return (
     <ROOT className="table basic-table">
-      <Table>
-        <TableHead>
-          <TableRow className="ReactVirtualized__Table__headerRow">{table.head}</TableRow>
+      <Table component={Box}>
+        <TableHead component={Box}>
+          <TableRow component={Box} className="ReactVirtualized__Table__headerRow">
+            {table.head}
+          </TableRow>
         </TableHead>
-        <Stack component={TableBody} spacing={2}>
-          {table.body}
-        </Stack>
+        <Stack spacing={2}>{table.body}</Stack>
       </Table>
     </ROOT>
   )

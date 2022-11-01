@@ -62,28 +62,6 @@ export default function BasicButtons() {
             Large
           </Button>
         </div>
-        <div>
-          <Button variant="linear" size="small">
-            Small
-          </Button>
-          <Button variant="linear" size="medium">
-            Medium
-          </Button>
-          <Button variant="linear" size="large">
-            Large
-          </Button>
-        </div>
-        <div>
-          <Button variant="linearOutlined" size="small">
-            Small
-          </Button>
-          <Button variant="linearOutlined" size="medium">
-            Medium
-          </Button>
-          <Button variant="linearOutlined" size="large">
-            Large
-          </Button>
-        </div>
       </Box>
     </Stack>
   )

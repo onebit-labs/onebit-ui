@@ -1,5 +1,5 @@
 import type { FCC } from 'app/types'
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 
 import { createContext } from 'app/utils/createContext'
 import { useWalletBase } from 'lib/wallet'
@@ -14,9 +14,15 @@ const useWalletService = () => {
   const connectDialog = useConnectDialog()
   const wallet = useWalletBase()
 
-  const { account, network } = wallet
+  const { account, network, status, connect } = wallet
 
   const networkAccount = useMemo(() => (!network ? null : account), [account, network])
+
+  useEffect(() => {
+    if (status === 'connected' && !account) {
+      connect()
+    }
+  }, [account, connect, status])
 
   return { ...wallet, networkAccount, connectDialog, chainDialog }
 }
