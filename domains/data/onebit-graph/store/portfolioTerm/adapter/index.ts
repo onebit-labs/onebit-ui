@@ -9,7 +9,26 @@ export const request = () => {
       "sec-fetch-mode": "cors",
       "sec-fetch-site": "same-site"
     },
-    "body": "{\"query\":\"{portfolioTerms(first: 1000) {id lendingPool value term createTimestamp purchaseBeginTimestamp purchaseEndTimestamp previousLiquidityIndex managementFeeRate performanceFeeRate}}\",\"variables\":null}",
+    "body": JSON.stringify({
+      query: `{
+  portfolioTerms(
+    first: 1000
+    orderBy: createTimestamp
+    orderDirection: asc
+  ) {
+    id
+    lendingPool
+    value
+    term
+    createTimestamp
+    purchaseBeginTimestamp
+    purchaseEndTimestamp
+    previousLiquidityIndex
+    managementFeeRate
+    performanceFeeRate
+    previousDepositors
+  }
+}`}),
     "method": "POST",
     "mode": "cors",
     "credentials": "omit"
@@ -26,4 +45,5 @@ export type SliceState = Array<{
   previousLiquidityIndex: BN
   managementFeeRate: number
   performanceFeeRate: number
+  previousDepositors: number
 }>

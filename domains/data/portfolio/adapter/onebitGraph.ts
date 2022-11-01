@@ -23,12 +23,14 @@ export const getLendingPoolGraph = (lendingPoolAddress: string, { lendingPool }:
 export type PortfolioTermGraph = {
   id: string
   createTimestamp: number
-  managementFeeRate: number
-  performanceFeeRate: number
+  managementFeeRate: BN
+  performanceFeeRate: BN
   purchaseBeginTimestamp: number
   purchaseEndTimestamp: number
   lockTime: number
   term: number
+  depositors: number
+  previousDepositors: number
   liquidityIndex: BN
   previousLiquidityIndex: BN
   value: BN
@@ -48,9 +50,10 @@ export const getPortfolioTermGraph = (lendingPoolAddress: string, { portfolioTer
       ...timestamps,
       ...getBigNumber(portfolioTerm, ['value'], 18),
       ...getBigNumber(portfolioTerm, ['previousLiquidityIndex'], 27),
-      ...getNumber(portfolioTerm, ['managementFeeRate', 'performanceFeeRate'], 4),
+      ...getBigNumber(portfolioTerm, ['managementFeeRate', 'performanceFeeRate'], 4),
       lockTime: getPortfolioLockTime(timestamps),
-      liquidityIndex: toBN(0)
+      liquidityIndex: toBN(0),
+      depositors: 0
     }
 
     return returnValue
@@ -62,6 +65,7 @@ export const getPortfolioTermGraph = (lendingPoolAddress: string, { portfolioTer
       const portfolioTerm = returnValue[index]
       const nextPortfolioTerm = returnValue[index + 1]
       portfolioTerm.liquidityIndex = nextPortfolioTerm.previousLiquidityIndex
+      portfolioTerm.depositors = nextPortfolioTerm.previousDepositors
     }
   }
 
