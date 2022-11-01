@@ -32,6 +32,7 @@ export type Portfolio = Partial<ReserveData & UserReserveData & LendingPoolGraph
   description: string
   oracle?: BN
   totalSupply?: BN
+  totalSupplyInUSD?: BN
   status: PortfolioStatus
   lockTime: number
 
@@ -52,7 +53,7 @@ const usePortfolioService = () => {
   const { reserveData } = useReserveData()
   const { userReserveData } = useUserReserveData({ reserveData })
   const { markets } = useNetwork()
-  const { oracle, totalSupply } = useERC20()
+  const erc20Data = useERC20()
   const { seriesDaily, portfolioDaily } = useOnebitAPIData()
   const onebitGraphData = useOnebitGraphData()
 
@@ -60,7 +61,10 @@ const usePortfolioService = () => {
     const returnValue = markets.map((market) => {
       const { id, info, address } = market
       const lendingPoolAddress = address.LendingPool
+      const oracle = toBN(safeGet(() => erc20Data.oracle[info.symbol]) || 0)
       const reserve = reserveData[lendingPoolAddress]
+
+      const totalSupply = toBN(safeGet(() => erc20Data.totalSupply[address.OToken]) || 0)
 
       return {
         id,
@@ -70,8 +74,9 @@ const usePortfolioService = () => {
         ...userReserveData[lendingPoolAddress],
         status: getPortfolioStatus(reserve),
         lockTime: getPortfolioLockTime(reserve),
-        oracle: toBN(safeGet(() => oracle[info.symbol]) || 0),
-        totalSupply: toBN(safeGet(() => totalSupply[address.OToken]) || 0),
+        oracle,
+        totalSupply,
+        totalSupplyInUSD: totalSupply.multipliedBy(oracle),
 
         estimatedAPY: toBN(0),
         currentAPY: toBN(0),
@@ -88,7 +93,7 @@ const usePortfolioService = () => {
     })
     log('[portfolio] [portfolioData]', returnValue)
     return returnValue
-  }, [markets, onebitGraphData, oracle, portfolioDaily, reserveData, seriesDaily, totalSupply, userReserveData])
+  }, [erc20Data.oracle, erc20Data.totalSupply, markets, onebitGraphData, portfolioDaily, reserveData, seriesDaily, userReserveData])
 
   return {
     reserveData,
