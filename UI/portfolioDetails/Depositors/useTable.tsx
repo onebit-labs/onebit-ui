@@ -3,41 +3,43 @@ import { useTranslation } from 'react-i18next'
 
 import { cellRenderer, headerRenderer } from 'components/table/renderer'
 import type { TableColumnsProps, BasicTableProps } from 'components/table/BasicTable/types'
+import { usePortfolioDetails } from 'domains/data'
+import { depositorsCellRenderer } from './renderer'
 
 export const useTable = (): BasicTableProps => {
   const { t } = useTranslation('portfolioDetails')
+  const { portfolio } = usePortfolioDetails()
+  const data = useMemo(() => {
+    return portfolio.depositorList.map((account) => ({
+      depositors: account,
+    }))
+  }, [portfolio.depositorList])
 
   const columns = useMemo(
     () =>
       (
         [
           {
-            dataKey: 'title',
-            width: 250,
-            headerRenderer,
-            cellRenderer,
-          },
-          {
             dataKey: 'depositors',
-            width: 250,
+            width: 450,
             headerRenderer,
-            cellRenderer,
+            cellRenderer: depositorsCellRenderer,
           },
           {
             dataKey: 'since',
-            width: 250,
+            width: 450,
             headerRenderer,
             cellRenderer,
           },
           {
             dataKey: 'equity',
-            width: 250,
+            width: 450,
             headerRenderer,
             cellRenderer,
           },
           {
             dataKey: 'percentage',
-            width: 250,
+            width: 450,
             headerRenderer,
             cellRenderer,
           },
@@ -52,6 +54,6 @@ export const useTable = (): BasicTableProps => {
 
   return {
     columns,
-    data: [],
+    data,
   }
 }

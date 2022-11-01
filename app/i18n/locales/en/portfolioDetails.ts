@@ -71,7 +71,6 @@ const locale = {
       'If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the portfolio for the next period.',
   },
   depositors: {
-    title: 'Historical Performance',
     depositors: 'Depositors',
     since: 'Since',
     equity: 'Equity',

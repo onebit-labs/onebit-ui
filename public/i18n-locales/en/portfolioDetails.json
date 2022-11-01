@@ -68,7 +68,6 @@
     "description": "A management fee is a periodic payment that is paid by depositors to the Porfolio Manager. The fee is calculated as a percentage of assets under management and is independent of Vault returns."
   },
   "depositors": {
-    "title": "Historical Performance",
     "depositors": "Depositors",
     "since": "Since",
     "equity": "Equity",
