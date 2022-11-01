@@ -13,7 +13,7 @@ const Stats: FC = () => {
     },
     {
       price: (
-        <RiseOrFall value={98762.123}>
+        <RiseOrFall value={98762.123} sx={{ fontSize: 24, fontWeight: 600 }}>
           <NumberDisplay
             value={98762.123}
             options="USD"
