@@ -105,7 +105,7 @@ const usePortfolioService = () => {
     const returnValue = {
       transactions
     }
-    log('[portfolio] [portfolioData]', returnValue)
+    log('[portfolio] [portfolioUserData]', returnValue)
     return returnValue
 
   }, [onebitGraphData, portfolioData])

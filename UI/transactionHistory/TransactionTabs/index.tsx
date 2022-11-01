@@ -5,6 +5,7 @@ import Tabs from 'components/tabs'
 import SearchHeader from 'components/tabs/SearchHeader'
 import { withSearchHeaderProvider } from 'components/tabs/SearchHeader/hoc'
 import { useSearchHeader } from 'components/tabs/SearchHeader/Provider'
+import { usePortfolio } from 'domains/data'
 import { useTranslation } from 'next-i18next'
 import type { FC } from 'react'
 import { useCallback } from 'react'
@@ -15,32 +16,13 @@ import Transactions from './Transactions'
 const TransactionTabs: FC = () => {
   const { t } = useTranslation('transactionHistory')
   const searchHeader = useSearchHeader()
+  const { portfolioUserData } = usePortfolio()
 
   const tabs = useMemo(() => {
     const reg = new RegExp(searchHeader.value)
-    const data = [
-      {
-        txId: '0xec5d20887706f3db4efa86949000a53f96f6c3b1',
-        type: 'deposit',
-        portfolio: 'Onebit主观1号',
-        amount: 1234531,
-        date: 'May 10, 2022 12:00:12',
-      },
-      {
-        txId: '0xe30F0A4d3346abCa7B61df08d6275e5F79C027a6',
-        type: 'withdrawal',
-        portfolio: 'Onebit跟单1号',
-        amount: 32145,
-        date: 'May 10, 2022 12:00:12',
-      },
-      {
-        txId: '0xe30F0A4d3346abCa7B61df08d6275e5F79C027a6',
-        type: 'deposit',
-        portfolio: 'Onebit主观1号',
-        amount: 32145,
-        date: 'May 10, 2022 12:00:12',
-      },
-    ].filter((i) => !searchHeader.value || reg.test(i.portfolio))
+    const data = portfolioUserData.transactions.filter(
+      (i) => !searchHeader.value || reg.test(i.portfolio.portfolioName)
+    )
 
     const returnValue: TabsProps['tabs'] = [
       {
@@ -75,7 +57,7 @@ const TransactionTabs: FC = () => {
       i.title = t(`tabs.${i.title}`)
       return i
     })
-  }, [t, searchHeader.value])
+  }, [searchHeader.value, portfolioUserData.transactions, t])
 
   const Header: FCC = useCallback(
     ({ children }) => <SearchHeader placeholder="Search by portfolio">{children}</SearchHeader>,
