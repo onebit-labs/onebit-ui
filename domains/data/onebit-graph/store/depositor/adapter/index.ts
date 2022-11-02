@@ -1,7 +1,7 @@
 type Props = {
   account: string
 }
-export const request = (props: Props) => {
+export const request = (props: Props): Promise<SliceState> => {
   return fetch('/onebit-thegraph', {
     headers: {
       accept: '*/*',

@@ -11,11 +11,11 @@ export type Depositor = {
 }
 export const getDepositor = (sliceState: SliceState) => {
   if (!sliceState) return []
-  return sliceState.map(i => {
+  return sliceState.map((i) => {
     return {
       ...i,
       ...getAddress(i, ['lendingPool', 'account']),
-      ...getNumber(i, ['createTimestamp', 'lastUpdateTimestamp'])
+      ...getNumber(i, ['createTimestamp', 'lastUpdateTimestamp']),
     } as Depositor
   })
 }

@@ -1,4 +1,5 @@
 import type { FC } from 'react'
+import { useEffect, useState } from 'react'
 import { useMemo } from 'react'
 import clsx from 'clsx'
 import { styled } from '@mui/material/styles'
@@ -13,9 +14,59 @@ import Stack from '@mui/material/Stack'
 import Card from '@mui/material/Card'
 
 const Tr: typeof Card = (props: any) => <Card component="tr" {...props} />
+const DataFetcher: FC<{
+  rowIndex: any
+  onRowClick: any
+  row: any
+  columns: any[]
+  dataFetcher: (data: any) => Promise<any>
+}> = ({ rowIndex, onRowClick, dataFetcher, row, columns }) => {
+  const [rowData, setRowData] = useState(row)
+  useEffect(() => {
+    if (!dataFetcher) return
+    dataFetcher(row).then((data) => setRowData(data))
+  }, [dataFetcher, row])
+
+  return (
+    <TableRow
+      component={Tr}
+      className={clsx(['ReactVirtualized__Table__row'])}
+      onClick={(e) =>
+        onRowClick &&
+        onRowClick({
+          rowData,
+          index: rowIndex,
+          event: e,
+        })
+      }
+    >
+      {columns.map((column, columnIndex) => (
+        <td
+          key={rowIndex + column.dataKey}
+          className="ReactVirtualized__Table__rowColumn"
+          role="gridcell"
+          style={{
+            overflow: 'hidden',
+            flex: `0 1 ${column.width}px`,
+          }}
+        >
+          {column.cellRenderer({
+            cellData: getCellData(rowData, column),
+            columnData: column,
+            columnIndex,
+            dataKey: column.dataKey,
+            isScrolling: false,
+            rowData,
+            rowIndex,
+          })}
+        </td>
+      ))}
+    </TableRow>
+  )
+}
 
 const PCTable: FC<BasicTableProps> = (props) => {
-  const { columns, data } = props
+  const { columns, data, dataFetcher } = props
   const { onRowClick } = props.tableProps || {}
 
   const table = useMemo(() => {
@@ -36,44 +87,10 @@ const PCTable: FC<BasicTableProps> = (props) => {
       body:
         data &&
         data.map((row, rowIndex) => (
-          <TableRow
-            key={rowIndex}
-            component={Tr}
-            className={clsx(['ReactVirtualized__Table__row'])}
-            onClick={(e) =>
-              onRowClick &&
-              onRowClick({
-                rowData: row,
-                index: rowIndex,
-                event: e,
-              })
-            }
-          >
-            {columns.map((column, columnIndex) => (
-              <td
-                key={rowIndex + column.dataKey}
-                className="ReactVirtualized__Table__rowColumn"
-                role="gridcell"
-                style={{
-                  overflow: 'hidden',
-                  flex: `0 1 ${column.width}px`,
-                }}
-              >
-                {column.cellRenderer({
-                  cellData: getCellData(row, column),
-                  columnData: column,
-                  columnIndex,
-                  dataKey: column.dataKey,
-                  isScrolling: false,
-                  rowData: row,
-                  rowIndex,
-                })}
-              </td>
-            ))}
-          </TableRow>
+          <DataFetcher key={rowIndex} {...{ rowIndex, onRowClick, dataFetcher, row, columns }} />
         )),
     }
-  }, [columns, data, onRowClick])
+  }, [columns, data, dataFetcher, onRowClick])
 
   return (
     <ROOT className="table basic-table">

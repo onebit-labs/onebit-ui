@@ -22,7 +22,15 @@ export const useControllersService = () => {
     onebitGraph.depositor.restart()
     onebitGraph.lendingPool.run()
     onebitGraph.portfolioTerm.run()
-  }, [erc20.balanceOf, erc20.totalSupply, lendingPool.reserveData, onebitGraph.depositor, onebitGraph.lendingPool, onebitGraph.portfolioTerm, onebitGraph.transaction])
+  }, [
+    erc20.balanceOf,
+    erc20.totalSupply,
+    lendingPool.reserveData,
+    onebitGraph.depositor,
+    onebitGraph.lendingPool,
+    onebitGraph.portfolioTerm,
+    onebitGraph.transaction,
+  ])
 
   return { erc20, lendingPool, pageProcess, onebitAPI, onebitGraph, updateData }
 }

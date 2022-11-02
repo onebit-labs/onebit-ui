@@ -5,6 +5,7 @@ export interface BasicTableProps<D = any> {
   rowHeight?: number
   headerHeight?: number
   data: Array<D>
+  dataFetcher?: (data: D) => Promise<any>
   tableProps?: Partial<TableProps>
   pagination?: {
     count: number

@@ -1,5 +1,4 @@
 import TableCell from '@mui/material/TableCell'
-import type { TransactionGraph } from 'domains/data/portfolio/adapter/onebitGraph'
 import LinkToAddress from 'components/button/LinkToAddress'
 import IconButton from '@mui/material/IconButton'
 import InventoryRoundedIcon from '@mui/icons-material/InventoryRounded'
@@ -7,6 +6,8 @@ import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded'
 import { toast } from 'lib/toastify'
 import { writeText } from 'app/utils/dom/clipboard'
 import { useState } from 'react'
+import { format } from 'date-fns'
+import { safeGet } from 'app/utils/get'
 
 type TableCellProps = {
   cellData?: any
@@ -15,7 +16,7 @@ type TableCellProps = {
   dataKey: string
   isScrolling: boolean
   parent?: any
-  rowData: TransactionGraph
+  rowData: any
   rowIndex: number
 }
 const Depositors = ({ cellData }: any) => {
@@ -44,4 +45,11 @@ const Depositors = ({ cellData }: any) => {
 }
 export const depositorsCellRenderer = ({ cellData }: TableCellProps) => {
   return <Depositors cellData={cellData} />
+}
+export const sinceCellRenderer = ({ rowData: { since } }: TableCellProps) => {
+  return (
+    <TableCell align="center" component="div">
+      {safeGet(() => format(since, 'MMM dd,yyyy HH:mm:ss')) || '-'}
+    </TableCell>
+  )
 }

@@ -41,7 +41,12 @@ export const getPortfolioTermGraph = (lendingPoolAddress: string, { portfolioTer
   const data = portfolioTerm.filter((i) => i.lendingPool === lendingPoolAddress)
   if (!data) return { portfolioTerm: [] } as undefined
   const returnValue = data.map((portfolioTerm) => {
-    const timestamps = getNumber(portfolioTerm, ['redemptionBeginTimestamp', 'purchaseBeginTimestamp', 'purchaseEndTimestamp', 'createTimestamp'])
+    const timestamps = getNumber(portfolioTerm, [
+      'redemptionBeginTimestamp',
+      'purchaseBeginTimestamp',
+      'purchaseEndTimestamp',
+      'createTimestamp',
+    ])
     const returnValue: PortfolioTermGraph = {
       ...portfolioTerm,
       ...timestamps,
@@ -86,10 +91,13 @@ const getTransactionType = (type: number) => {
       return 'withdrawal'
   }
 }
-export const getUserGraph = ({ transaction, depositors: depositorsGraph }: OnebitGraphData, portfolioData: Portfolio[]) => {
+export const getUserGraph = (
+  { transaction, depositors: depositorsGraph }: OnebitGraphData,
+  portfolioData: Portfolio[]
+) => {
   if (!transaction) return [] as undefined
   const transactions = transaction.map((t) => {
-    const portfolio = portfolioData.find((p) => p.address.LendingPool === t.lendingPool) || {} as undefined
+    const portfolio = portfolioData.find((p) => p.address.LendingPool === t.lendingPool) || ({} as undefined)
     const { symbol } = portfolio
     const timestamps = getNumber(t, ['createTimestamp'])
     const returnValue: TransactionGraph = {
@@ -98,24 +106,23 @@ export const getUserGraph = ({ transaction, depositors: depositorsGraph }: Onebi
       ...getBigNumber(t, ['amount'], 18),
       type: getTransactionType(t.type),
       portfolio,
-      symbol
+      symbol,
     }
     return returnValue
   })
   const depositors = depositorsGraph.map((depositor) => {
-    const portfolio = portfolioData.find((p) => p.address.LendingPool === depositor.lendingPool) || {} as undefined
+    const portfolio = portfolioData.find((p) => p.address.LendingPool === depositor.lendingPool) || ({} as undefined)
     const { id } = portfolio
     const returnValue = {
       ...depositor,
       ...getBigNumber(depositor, ['balanceOf'], 18),
-      id
+      id,
     }
     return returnValue
   })
 
-
   return {
     transactions,
-    depositors
+    depositors,
   }
 }

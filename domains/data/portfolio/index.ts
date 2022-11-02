@@ -19,7 +19,7 @@ import { useOnebitAPIData } from './application/onebitAPI'
 import { useOnebitGraphData } from './application/onebitGraph'
 import type { ContractsAddress } from '../network/adapter/markets'
 import type { LendingPoolGraph, PortfolioTermGraph, TransactionGraph } from './adapter/onebitGraph'
-import { getTransactionGraph } from './adapter/onebitGraph'
+import { getUserGraph } from './adapter/onebitGraph'
 import { getPortfolioTermGraph } from './adapter/onebitGraph'
 import { getLendingPoolGraph } from './adapter/onebitGraph'
 
@@ -113,7 +113,8 @@ const usePortfolioService = () => {
   ])
 
   const portfolioUserData = useMemo(() => {
-    const transactions = getTransactionGraph(onebitGraphData, portfolioData)
+    const { transactions, depositors } = getUserGraph(onebitGraphData, portfolioData)
+    const dashboard = {}
     const returnValue = {
       transactions,
     }

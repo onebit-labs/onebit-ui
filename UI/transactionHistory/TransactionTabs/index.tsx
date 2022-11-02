@@ -20,6 +20,7 @@ const TransactionTabs: FC = () => {
 
   const tabs = useMemo(() => {
     const reg = new RegExp(searchHeader.value)
+    if (!portfolioUserData.transactions) return []
     const data = portfolioUserData.transactions.filter(
       (i) => !searchHeader.value || reg.test(i.portfolio.portfolioName)
     )

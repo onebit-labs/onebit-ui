@@ -29,12 +29,12 @@ export const lockUpPeriodCellRenderer = ({
     </TableCell>
   )
 }
-export const symbolCellRenderer = ({ cellData, rowData: { symbol } }: TableCellProps) => {
+export const symbolCellRenderer = ({ cellData, rowData }: TableCellProps) => {
   return (
     <TableCell align="center" component="div">
       <Stack spacing={0.5} direction="row">
         <NumberDisplay value={cellData} abbreviate={{ maximumFractionDigits: 3 }} />
-        <span> {symbol}</span>
+        <span> {rowData.symbol}</span>
       </Stack>
     </TableCell>
   )
@@ -44,6 +44,14 @@ export const numberCellRenderer = ({ cellData }: TableCellProps) => {
   return (
     <TableCell align="center" component="div">
       <NumberDisplay value={cellData} options="number" />
+    </TableCell>
+  )
+}
+
+export const percentCellRenderer = ({ cellData }: TableCellProps) => {
+  return (
+    <TableCell align="center" component="div">
+      <NumberDisplay value={cellData} options="percent" />
     </TableCell>
   )
 }
