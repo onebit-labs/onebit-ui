@@ -51,6 +51,7 @@ const ToggleIcon = styled(Box)<{ width?: number }>(({ theme, width }) => ({
 const DashboardHeader: FC<React.PropsWithChildren<DashboardHeaderProps>> = (props) => {
   const { setShowMobileSideBar } = props
   const downMd = useMediaQuery((theme: Theme) => theme.breakpoints.down(1200))
+  const downSm = useMediaQuery((theme: Theme) => theme.breakpoints.down(600))
   const router = useRouter()
   const { t } = useTranslation('router')
   const title = useMemo(
@@ -68,9 +69,9 @@ const DashboardHeader: FC<React.PropsWithChildren<DashboardHeaderProps>> = (prop
             <ToggleIcon width={9} />
           </Box>
         )}
-        <Box>
+        {!downSm && <Box marginLeft={{ xs: 1, lg: 0 }}>
           <H3>{title}</H3>
-        </Box>
+        </Box>}
 
         <Box flexGrow={1} ml={1} />
         <ThemeButton />

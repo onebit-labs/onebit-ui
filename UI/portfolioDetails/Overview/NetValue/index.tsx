@@ -26,7 +26,7 @@ const NetValue = () => {
   return (
     <Card>
       <CardContent>
-        <FlexBetween marginBottom={3}>
+        <FlexBetween marginBottom={3} flexDirection={{ xs: 'column', sm: 'row' }}>
           <Left spacing={1}>
             <H3>{t('overview.netValue.title')}</H3>
             <Stack spacing={2} direction="row" alignItems="center">

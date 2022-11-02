@@ -15,12 +15,6 @@ const NavWrapper = styled(Box)(() => ({
   height: '100%',
 }))
 
-const StyledLogo = styled(Box)(() => ({
-  paddingLeft: 8,
-  fontWeight: 700,
-  fontSize: 20,
-}))
-
 interface MobileSidebarProps {
   sidebarCompact: boolean
   showMobileSideBar: boolean
@@ -34,8 +28,7 @@ const MobileSidebar: FC<React.PropsWithChildren<MobileSidebarProps>> = (props) =
     <LayoutDrawer open={showMobileSideBar} onClose={setShowMobileSideBar}>
       <Box p={2} maxHeight={TOP_HEADER_AREA}>
         <FlexBox ml={1.5}>
-          <Image src={LogoImage} alt="logo" width={18} height={30} />
-          <StyledLogo>Onebit</StyledLogo>
+          <Image src={LogoImage} alt="logo" width={100} />
         </FlexBox>
       </Box>
 

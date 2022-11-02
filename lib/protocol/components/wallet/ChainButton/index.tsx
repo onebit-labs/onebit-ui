@@ -1,4 +1,5 @@
 import type { FC } from 'react'
+import type { Theme } from '@mui/material'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import Button from '@mui/material/Button'
@@ -7,11 +8,13 @@ import ChainIcon from '../ChainIcon'
 
 import { useChainButton } from './useChainButton'
 import { useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
 export const ChainButton: FC = () => {
   const { t } = useTranslation()
   const { network, open } = useChainButton()
   const theme = useTheme()
+  const downSm = useMediaQuery((theme: Theme) => theme.breakpoints.down(600))
 
   const content = useMemo(() => {
     if (!network)
@@ -32,7 +35,7 @@ export const ChainButton: FC = () => {
             color: theme.palette.error.main,
           }}
         >
-          {t(`wallet.error.ChainUnknownError`)}
+          {!downSm && t(`wallet.error.ChainUnknownError`)}
         </Button>
       )
     return (
@@ -63,6 +66,7 @@ export const ChainButton: FC = () => {
     theme.palette.error.light,
     theme.palette.error.main,
     theme.palette.text.secondary,
+    downSm
   ])
 
   return content || null

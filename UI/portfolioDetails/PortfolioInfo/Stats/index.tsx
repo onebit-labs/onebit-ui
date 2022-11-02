@@ -47,7 +47,7 @@ const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, curr
     <div>
       <Grid container spacing={2}>
         {cardList.map((card, index) => (
-          <Grid item lg={4} xs={6} key={index}>
+          <Grid item lg={4} sm={6} xs={12} key={index}>
             <StatsCard card={card} />
           </Grid>
         ))}

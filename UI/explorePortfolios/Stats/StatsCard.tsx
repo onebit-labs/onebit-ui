@@ -24,7 +24,7 @@ const StatsCard: FC<React.PropsWithChildren<StatsCardProps>> = ({ card }) => {
 
   return (
     <StyledCard>
-      <CardContent>
+      <CardContent sx={{ width: 1 }}>
         {icon}
         <Stack spacing={1}>
           <H5 color="text.secondary">{t(`stats.${title}`)}</H5>

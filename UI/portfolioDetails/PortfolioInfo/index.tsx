@@ -50,12 +50,12 @@ const PortfolioInfo: FCC = ({ children }) => {
       <CardContent>
         <Stack spacing={3}>
           <Stack spacing={2}>
-            <FlexBetween>
+            <FlexBetween flexDirection={{ xs: 'column', sm: 'row' }}>
               <Stack spacing={1} direction="row" alignItems="center">
                 <TokenIcon symbol={symbol} sx={{ width: 24, height: 24 }} />
                 <H2>{portfolioName}</H2>
               </Stack>
-              <Stack spacing={2} direction="row">
+              <Stack spacing={2} direction="row" margin={{ xs: 2, sm: 0 }}>
                 <Button
                   variant="contained"
                   disabled={!isOpen}
@@ -79,7 +79,7 @@ const PortfolioInfo: FCC = ({ children }) => {
               </Stack>
             </FlexBetween>
 
-            <Stack spacing={6} direction="row" alignItems="center">
+            <Stack spacing={{ xs: 2, sm: 6 }} direction={{ xs:'column', sm: 'row' }} alignItems={{ xs: "start", sm: "center" }}>
               <Span color="text.secondary">
                 <span>{t('info.status')}: </span>
                 <ProjectStatus status={status} />
@@ -93,7 +93,7 @@ const PortfolioInfo: FCC = ({ children }) => {
                 {t('info.standard')}: {symbol}
               </Span>
             </Stack>
-            <Stack spacing={2} direction="row" alignItems="center">
+            <Stack spacing={2} direction={{ xs:'column', sm: 'row' }} alignItems={{ xs: "start", sm: "center" }}>
               <H5 color="text.secondary">
                 <span>{t('info.yourEquity')}: </span>
                 <Span color="text.primary">

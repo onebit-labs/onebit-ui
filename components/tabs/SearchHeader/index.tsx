@@ -7,7 +7,7 @@ import { useSearchHeader } from './Provider'
 const SearchHeader: FCC<SearchInputProps> = ({ children, ...props }) => {
   const { value, onChange } = useSearchHeader()
   return (
-    <FlexBetween>
+    <FlexBetween flexDirection={{ xs: 'column', sm: 'row' }}>
       {children}
       <SearchInput
         {...{
