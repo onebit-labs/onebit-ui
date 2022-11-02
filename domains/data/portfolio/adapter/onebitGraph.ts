@@ -41,7 +41,7 @@ export const getPortfolioTermGraph = (lendingPoolAddress: string, { portfolioTer
   const data = portfolioTerm.filter((i) => i.lendingPool === lendingPoolAddress)
   if (!data) return { portfolioTerm: [] } as undefined
   const returnValue = data.map((portfolioTerm) => {
-    const timestamps = getNumber(portfolioTerm, ['purchaseBeginTimestamp', 'purchaseEndTimestamp', 'createTimestamp'])
+    const timestamps = getNumber(portfolioTerm, ['redemptionBeginTimestamp', 'purchaseBeginTimestamp', 'purchaseEndTimestamp', 'createTimestamp'])
     const returnValue: PortfolioTermGraph = {
       ...portfolioTerm,
       ...timestamps,

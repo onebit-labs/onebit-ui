@@ -9,7 +9,7 @@ export const request = (props: Props) => {
   const promises: Array<Promise<void>> = []
   const returnValue: Record<string, string> = {}
 
-  tokens.forEach((token) => {
+  tokens.filter(i => i).forEach((token) => {
     promises.push(
       erc20Service.totalSupply(token).then((value) => {
         returnValue[token] = value.toString()

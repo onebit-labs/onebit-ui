@@ -21,12 +21,12 @@ const Policies: FC = () => {
           {/* <Stack spacing={1}>
             <Paragraph color="text.secondary">{t('policies.openPeriod')}</Paragraph>
             <H4>7 Day</H4>
-            <TimePeriod color="text.secondary" start={data.purchaseBeginTimestamp} end={data.purchaseEndTimestamp} />
+            <TimePeriod color="text.secondary" start={data.purchaseEndTimestamp} end={data.redemptionBeginTimestamp} />
           </Stack> */}
           <Stack spacing={1}>
             <Paragraph color="text.primary">{t('policies.lockUpPeriod')}</Paragraph>
             <H4>{portfolio.lockTime} Day</H4>
-            <TimePeriod color="text.secondary" start={data.purchaseBeginTimestamp} end={data.purchaseEndTimestamp} />
+            <TimePeriod color="text.secondary" start={data.purchaseEndTimestamp} end={data.redemptionBeginTimestamp} />
           </Stack>
           <Stack spacing={1}>
             <Paragraph color="text.primary">{t('policies.fundraisingCap')}</Paragraph>

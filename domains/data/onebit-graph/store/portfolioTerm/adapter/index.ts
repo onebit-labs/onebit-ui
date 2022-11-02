@@ -20,6 +20,7 @@ export const request = () => {
     value
     term
     createTimestamp
+    redemptionBeginTimestamp
     purchaseBeginTimestamp
     purchaseEndTimestamp
     previousLiquidityIndex
@@ -42,6 +43,7 @@ export type SliceState = Array<{
   value: BN
   term: number
   createTimestamp: number
+  redemptionBeginTimestamp: number
   purchaseBeginTimestamp: number
   purchaseEndTimestamp: number
   previousLiquidityIndex: BN

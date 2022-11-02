@@ -21,7 +21,7 @@ const Stats: FC = () => {
     let assetsUnderManagement = toBN(0)
     let totalProfit = toBN(0)
     portfolioData.map(({ depositors, totalSupplyInUSD, liquidityIndex }) => {
-      totalDepositors = totalDepositors.plus(depositors)
+      totalDepositors = totalDepositors.plus(depositors || 0)
       const assets = totalSupplyInUSD.multipliedBy(liquidityIndex)
       assetsUnderManagement = assetsUnderManagement.plus(assets)
       totalProfit = totalProfit.plus(assets.minus(totalSupplyInUSD))

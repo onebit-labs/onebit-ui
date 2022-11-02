@@ -4,9 +4,9 @@ import type { ReserveData } from './reserveData'
 export type PortfolioStatus = 'open' | 'lockedUp'
 export const getPortfolioStatus = (reserve: ReserveData): PortfolioStatus => {
   const portfolioStatus = safeGet(() => {
-    const { purchaseBeginTimestamp, purchaseEndTimestamp } = reserve
+    const { redemptionBeginTimestamp, purchaseEndTimestamp } = reserve
     const now = Date.now()
-    if (purchaseBeginTimestamp < now && now < purchaseEndTimestamp) return 'lockedUp'
+    if (purchaseEndTimestamp < now && now < redemptionBeginTimestamp) return 'lockedUp'
     return 'open'
   })
 

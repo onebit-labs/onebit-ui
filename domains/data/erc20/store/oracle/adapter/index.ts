@@ -11,7 +11,7 @@ export const request = (props: Props) => {
   const promises: Array<Promise<void>> = []
   const returnValue: Record<string, string> = {}
 
-  symbols.forEach((symbol) => {
+  symbols.filter(i => i).forEach((symbol) => {
     const token = getChainlinkAddress(symbol)
     promises.push(
       chainlinkService.getAnswer({ token }).then((value) => {

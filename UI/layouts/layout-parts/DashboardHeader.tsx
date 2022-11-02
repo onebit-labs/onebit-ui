@@ -69,9 +69,11 @@ const DashboardHeader: FC<React.PropsWithChildren<DashboardHeaderProps>> = (prop
             <ToggleIcon width={9} />
           </Box>
         )}
-        {!downSm && <Box marginLeft={{ xs: 1, lg: 0 }}>
-          <H3>{title}</H3>
-        </Box>}
+        {!downSm && (
+          <Box marginLeft={{ xs: 1, lg: 0 }}>
+            <H3>{title}</H3>
+          </Box>
+        )}
 
         <Box flexGrow={1} ml={1} />
         <ThemeButton />

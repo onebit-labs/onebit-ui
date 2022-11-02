@@ -33,7 +33,7 @@ const DepositDialog: FC = () => {
   }, [deposit.id, portfolioData])
   const { networkAccount } = useWallet()
 
-  const { walletBalance, lockTime, purchaseBeginTimestamp, purchaseEndTimestamp, address } = portfolio
+  const { walletBalance, lockTime, purchaseEndTimestamp, redemptionBeginTimestamp, address } = portfolio
 
   const { input } = useInputSlider({ balance: walletBalance })
   const {
@@ -71,7 +71,7 @@ const DepositDialog: FC = () => {
             <H5>Lock-Up Period</H5>
             <Paragraph color="text.secondary">{lockTime} Days</Paragraph>
             <Paragraph color="text.secondary">
-              <TimePeriod start={purchaseBeginTimestamp} end={purchaseEndTimestamp} />
+              <TimePeriod start={purchaseEndTimestamp} end={redemptionBeginTimestamp} />
             </Paragraph>
           </Stack>
         </Stack>

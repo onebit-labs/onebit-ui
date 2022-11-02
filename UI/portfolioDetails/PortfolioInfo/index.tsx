@@ -36,8 +36,8 @@ const PortfolioInfo: FCC = ({ children }) => {
     status,
     portfolioName,
     symbol,
-    purchaseBeginTimestamp,
     purchaseEndTimestamp,
+    redemptionBeginTimestamp,
     lockTime,
     description,
     yourEquity,
@@ -79,21 +79,25 @@ const PortfolioInfo: FCC = ({ children }) => {
               </Stack>
             </FlexBetween>
 
-            <Stack spacing={{ xs: 2, sm: 6 }} direction={{ xs:'column', sm: 'row' }} alignItems={{ xs: "start", sm: "center" }}>
+            <Stack
+              spacing={{ xs: 2, sm: 6 }}
+              direction={{ xs: 'column', sm: 'row' }}
+              alignItems={{ xs: 'start', sm: 'center' }}
+            >
               <Span color="text.secondary">
                 <span>{t('info.status')}: </span>
                 <ProjectStatus status={status} />
               </Span>
               <Span color="text.secondary">
                 <span>{t('info.term')}: </span>
-                <TimePeriod start={purchaseBeginTimestamp} end={purchaseEndTimestamp} />
+                <TimePeriod start={purchaseEndTimestamp} end={redemptionBeginTimestamp} />
               </Span>
               <Span color="text.secondary">{`${t('info.lockUpPeriod')}: ${lockTime} ${t('info.days')}`}</Span>
               <Span color="text.secondary">
                 {t('info.standard')}: {symbol}
               </Span>
             </Stack>
-            <Stack spacing={2} direction={{ xs:'column', sm: 'row' }} alignItems={{ xs: "start", sm: "center" }}>
+            <Stack spacing={2} direction={{ xs: 'column', sm: 'row' }} alignItems={{ xs: 'start', sm: 'center' }}>
               <H5 color="text.secondary">
                 <span>{t('info.yourEquity')}: </span>
                 <Span color="text.primary">

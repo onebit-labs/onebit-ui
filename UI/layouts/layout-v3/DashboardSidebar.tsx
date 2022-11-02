@@ -28,7 +28,7 @@ const SidebarWrapper = styled(Box)<{ compact: any }>(({ theme, compact }) => ({
 
 const StyledLogo = styled(Image)(() => ({
   borderRadius: 30,
-}));
+}))
 
 const NavWrapper = styled(Box)(() => ({
   paddingLeft: 16,
@@ -89,7 +89,7 @@ const DashboardSidebar: FC<React.PropsWithChildren<DashboardSidebarProps>> = (pr
           {/* eslint-disable-next-line @next/next/no-img-element */}
           {!!COMPACT && <StyledLogo src={LogoImageSquare.src} alt="Onebit logo" width={40} height={40} />}
           {!COMPACT && <Image src={LogoImage.src} alt="Onebit logo" width={100} height={100} />}
-          </FlexBox>
+        </FlexBox>
         <Box mx={'auto'}></Box>
 
         {/* SIDEBAR COLLAPSE BUTTON */}

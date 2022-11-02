@@ -8,7 +8,7 @@ export const request = (props: IsApprovedProps) => {
   const { erc20Service, keys } = props
   const promises: Array<Promise<boolean>> = []
 
-  keys.forEach((key) => {
+  keys.filter(i => i).forEach((key) => {
     const [spender, token] = key.split('-')
     promises.push(
       erc20Service.isApproved({

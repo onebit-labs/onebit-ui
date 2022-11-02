@@ -16,14 +16,14 @@ type TableCellProps = {
   rowIndex: number
 }
 export const lockUpPeriodCellRenderer = ({
-  rowData: { lockTime, purchaseBeginTimestamp, purchaseEndTimestamp },
+  rowData: { lockTime, purchaseEndTimestamp, redemptionBeginTimestamp },
 }: TableCellProps) => {
   return (
     <TableCell align="center" component="div">
       <Stack spacing={1}>
         <Paragraph color="text.secondary">{lockTime} Days</Paragraph>
         <Paragraph color="text.secondary">
-          <TimePeriod start={purchaseBeginTimestamp} end={purchaseEndTimestamp} />
+          <TimePeriod start={purchaseEndTimestamp} end={redemptionBeginTimestamp} />
         </Paragraph>
       </Stack>
     </TableCell>

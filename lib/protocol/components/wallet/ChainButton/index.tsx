@@ -66,7 +66,7 @@ export const ChainButton: FC = () => {
     theme.palette.error.light,
     theme.palette.error.main,
     theme.palette.text.secondary,
-    downSm
+    downSm,
   ])
 
   return content || null

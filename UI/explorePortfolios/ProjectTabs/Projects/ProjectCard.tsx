@@ -29,7 +29,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 type ProjectCardProps = Portfolio
 
 const ProjectCard: FC<React.PropsWithChildren<ProjectCardProps>> = (props) => {
-  const { status, portfolioName, symbol, purchaseBeginTimestamp, purchaseEndTimestamp, lockTime } = props
+  const { status, portfolioName, symbol, purchaseEndTimestamp, redemptionBeginTimestamp, lockTime } = props
   const { t } = useTranslation('explorePortfolios')
 
   const isOpen = status === 'open'
@@ -47,7 +47,7 @@ const ProjectCard: FC<React.PropsWithChildren<ProjectCardProps>> = (props) => {
             <FlexBetween alignItems="start">
               <Stack spacing={1}>
                 <Small>{`${t('projectCard.lockUpPeriod')}: ${lockTime} ${t('projectCard.days')}`}</Small>
-                <TimePeriod start={purchaseBeginTimestamp} end={purchaseEndTimestamp} color="text.secondary" />
+                <TimePeriod start={purchaseEndTimestamp} end={redemptionBeginTimestamp} color="text.secondary" />
               </Stack>
               <ProjectStatus status={status} />
             </FlexBetween>
