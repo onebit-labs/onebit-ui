@@ -55,8 +55,10 @@ export const createUseRequestController = <SliceState extends RequestSliceState,
     const { setStatus, getStatus } = useStatus()
     const abortFnRef = useRef<() => void>()
     const timerRef = useRef<ReturnType<typeof setTimeout>>()
+    const propsRef = useRef({} as any)
     const run = useCallback(
       (props: ThunkArg, ms = 5000) => {
+        propsRef.current = { ms, props }
         const status = getStatus()
         if (status !== REQUEST_STATUS.ready) return Promise.reject({ name: 'RunningError', message: 'Running' })
 
@@ -87,11 +89,11 @@ export const createUseRequestController = <SliceState extends RequestSliceState,
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch])
 
-    const restart = useCallback((props: ThunkArg) => {
+    const restart = useCallback((props?: ThunkArg, ms?: number) => {
       const status = getStatus()
       if (status !== REQUEST_STATUS.polling) return
       stop()
-      run(props)
+      run(props || propsRef.current.props, ms || propsRef.current.ms || 5000)
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

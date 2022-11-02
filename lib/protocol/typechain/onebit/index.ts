@@ -86,7 +86,7 @@ export class LendingPoolService extends BaseService<LendingPool> {
     const { decimalsOf } = erc20Service
     const decimals = await decimalsOf(reserve)
 
-    const convertedAmount = amount === '-1' ? constants.MaxUint256.toString() : normalize(amount, decimals).toFixed(0)
+    const convertedAmount = amount === '-1' ? constants.MaxUint256.toString() : normalize(amount, -decimals).toFixed(0)
     const lendingPool = this.getContractInstance(pool)
 
     const txCallback = this.generateTxCallback({

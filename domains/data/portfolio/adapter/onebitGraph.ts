@@ -76,6 +76,7 @@ export type TransactionGraph = {
   lendingPool: string
   type: 'deposit' | 'withdrawal'
   portfolio: Portfolio
+  symbol: string
 }
 const getTransactionType = (type: number) => {
   switch (type) {
@@ -88,7 +89,8 @@ const getTransactionType = (type: number) => {
 export const getTransactionGraph = ({ transaction }: OnebitGraphData, portfolioData: Portfolio[]) => {
   if (!transaction) return [] as undefined
   const returnValue = transaction.map((t) => {
-    const portfolio = portfolioData.find((p) => p.address.LendingPool === t.lendingPool)
+    const portfolio = portfolioData.find((p) => p.address.LendingPool === t.lendingPool) || {} as undefined
+    const { symbol } = portfolio
     const timestamps = getNumber(t, ['createTimestamp'])
     const returnValue: TransactionGraph = {
       ...t,
@@ -96,6 +98,7 @@ export const getTransactionGraph = ({ transaction }: OnebitGraphData, portfolioD
       ...getBigNumber(t, ['amount'], 18),
       type: getTransactionType(t.type),
       portfolio,
+      symbol
     }
     return returnValue
   })

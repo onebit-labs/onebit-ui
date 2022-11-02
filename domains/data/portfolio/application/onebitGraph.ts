@@ -23,7 +23,7 @@ const useGraphInitEffect = () => {
 const useTransactionEffect = () => {
   const { networkAccount } = useWallet()
   const {
-    onebitGraph: { transaction: transactionSingle },
+    onebitGraph: { transaction: transactionPolling },
   } = useControllers()
 
   const query = useMemo(
@@ -34,12 +34,12 @@ const useTransactionEffect = () => {
   )
 
   useEffect(() => {
-    if (!query.account || !transactionSingle) return
-    transactionSingle.run(query)
+    if (!query.account || !transactionPolling) return
+    transactionPolling.run(query, 30000)
     return () => {
-      transactionSingle.stop()
+      transactionPolling.stop()
     }
-  }, [query, transactionSingle])
+  }, [query, transactionPolling])
 }
 
 export const useOnebitGraphData = () => {

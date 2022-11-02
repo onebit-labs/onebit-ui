@@ -5,7 +5,7 @@ import { useTransactionController } from '../../store/transaction'
 export const useOnebitGraphController = () => {
   const { single: lendingPool } = useLendingPoolController()
   const { single: portfolioTerm } = usePortfolioTermController()
-  const { single: transaction } = useTransactionController()
+  const { polling: transaction } = useTransactionController()
 
   return { lendingPool, portfolioTerm, transaction }
 }

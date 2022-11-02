@@ -5,6 +5,7 @@ import { useLendingPoolController } from 'domains/data/lendingPool/application/c
 import { useOnebitAPIController } from 'domains/data/onebit-api/application/controllers'
 import { useOnebitGraphController } from 'domains/data/onebit-graph/application/controllers'
 import { usePageProgressController } from 'lib/nprogress/store/nprogress'
+import { useCallback } from 'react'
 
 export const useControllersService = () => {
   const erc20 = useERC20Controller()
@@ -13,7 +14,16 @@ export const useControllersService = () => {
   const onebitAPI = useOnebitAPIController()
   const onebitGraph = useOnebitGraphController()
 
-  return { erc20, lendingPool, pageProcess, onebitAPI, onebitGraph }
+  const updateData = useCallback(() => {
+    erc20.balanceOf.restart()
+    erc20.totalSupply.restart()
+    lendingPool.reserveData.restart()
+    onebitGraph.transaction.restart()
+    onebitGraph.lendingPool.run()
+    onebitGraph.portfolioTerm.run()
+  }, [erc20.balanceOf, erc20.totalSupply, lendingPool.reserveData, onebitGraph.lendingPool, onebitGraph.portfolioTerm, onebitGraph.transaction])
+
+  return { erc20, lendingPool, pageProcess, onebitAPI, onebitGraph, updateData }
 }
 
 const { Provider: ControllersProvider, createUseContext } = createContext(useControllersService)

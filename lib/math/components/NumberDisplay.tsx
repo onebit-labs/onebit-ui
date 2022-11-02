@@ -30,7 +30,7 @@ const NumberDisplay: FC<NumberDisplayProps> = ({ value, options, abbreviate, num
       )
     }
 
-    if (abbreviate) {
+    if (abbreviate && v.gt(1)) {
       const {
         sign,
         scaledValue,

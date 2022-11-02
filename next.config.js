@@ -54,6 +54,10 @@ const nextConfig = {
           source: '/onebit-api/:path*',
           destination: 'https://broker.onebit.com/api/:path*',
         },
+        {
+          source: '/onebit-thegraph/:path*',
+          destination: 'https://api.thegraph.com/:path*',
+        },
       ],
     }
   },

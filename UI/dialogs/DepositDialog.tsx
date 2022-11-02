@@ -15,7 +15,7 @@ import Stack from '@mui/material/Stack'
 import DialogActions from '@mui/material/DialogActions'
 import TimePeriod from 'components/date/TimePeriod'
 import Button from '@mui/material/Button'
-import { useWallet } from 'domains'
+import { useControllers, useWallet } from 'domains'
 import { transaction } from 'domains/controllers/adapter/transaction'
 import { useSendTransaction } from 'lib/protocol/hooks/sendTransaction'
 import { usePost } from 'app/hooks/request'
@@ -39,6 +39,7 @@ const DepositDialog: FC = () => {
   const {
     contracts: { lendingPool, erc20Service },
   } = useNetwork()
+  const { updateData } = useControllers()
 
   const sendTransaction = useSendTransaction()
 
@@ -87,6 +88,9 @@ const DepositDialog: FC = () => {
               reserve: address.symbol,
               user: networkAccount,
               amount: input.value,
+            }).then(() => {
+              updateData()
+              deposit.close()
             })
           }}
         >

@@ -15,17 +15,8 @@ const LinkToAddress: FC<LinkToAddressProps> = ({ address }) => {
     return safeGet(() => `${network.explorerUrl}/search?f=0&q=${address}`) || '#'
   }, [address, network?.explorerUrl])
   return (
-    <Button
-      variant="text"
-      href={linkTo}
-      target="_blank"
-      sx={{
-        color: 'primary',
-      }}
-    >
-      <a href="" style={{ pointerEvents: 'none' }}>
-        {textCenterEllipsis(address)}
-      </a>
+    <Button variant="text" href={linkTo} target="_blank" color="primary">
+      {textCenterEllipsis(address)}
     </Button>
   )
 }
