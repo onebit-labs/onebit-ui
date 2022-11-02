@@ -55,8 +55,8 @@ const nextConfig = {
           destination: 'https://broker.onebit.com/api/:path*',
         },
         {
-          source: '/onebit-thegraph/:path*',
-          destination: 'https://api.thegraph.com/:path*',
+          source: '/onebit-thegraph',
+          destination: 'https://api.thegraph.com/subgraphs/name/rockgold0911/onebit',
         },
       ],
     }

@@ -86,9 +86,9 @@ const getTransactionType = (type: number) => {
       return 'withdrawal'
   }
 }
-export const getTransactionGraph = ({ transaction }: OnebitGraphData, portfolioData: Portfolio[]) => {
+export const getUserGraph = ({ transaction, depositors: depositorsGraph }: OnebitGraphData, portfolioData: Portfolio[]) => {
   if (!transaction) return [] as undefined
-  const returnValue = transaction.map((t) => {
+  const transactions = transaction.map((t) => {
     const portfolio = portfolioData.find((p) => p.address.LendingPool === t.lendingPool) || {} as undefined
     const { symbol } = portfolio
     const timestamps = getNumber(t, ['createTimestamp'])
@@ -102,6 +102,20 @@ export const getTransactionGraph = ({ transaction }: OnebitGraphData, portfolioD
     }
     return returnValue
   })
+  const depositors = depositorsGraph.map((depositor) => {
+    const portfolio = portfolioData.find((p) => p.address.LendingPool === depositor.lendingPool) || {} as undefined
+    const { id } = portfolio
+    const returnValue = {
+      ...depositor,
+      ...getBigNumber(depositor, ['balanceOf'], 18),
+      id
+    }
+    return returnValue
+  })
 
-  return returnValue
+
+  return {
+    transactions,
+    depositors
+  }
 }

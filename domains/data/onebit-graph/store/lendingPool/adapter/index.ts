@@ -1,5 +1,5 @@
 export const request = () => {
-  return fetch('/onebit-thegraph/subgraphs/name/rockgold0911/onebit', {
+  return fetch('/onebit-thegraph', {
     headers: {
       accept: '*/*',
       'accept-language': 'zh-CN,zh;q=0.9',

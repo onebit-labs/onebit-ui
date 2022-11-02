@@ -20,10 +20,10 @@ const useGraphInitEffect = () => {
   }, [portfolioDailySingle, portfolioTermSingle])
 }
 
-const useTransactionEffect = () => {
+const useUserEffect = () => {
   const { networkAccount } = useWallet()
   const {
-    onebitGraph: { transaction: transactionPolling },
+    onebitGraph: { transaction: transactionPolling, depositor: depositorPolling },
   } = useControllers()
 
   const query = useMemo(
@@ -34,28 +34,31 @@ const useTransactionEffect = () => {
   )
 
   useEffect(() => {
-    if (!query.account || !transactionPolling) return
+    if (!query.account || !transactionPolling || !depositorPolling) return
     transactionPolling.run(query, 30000)
+    depositorPolling.run(query, 30000)
     return () => {
       transactionPolling.stop()
+      depositorPolling.stop()
     }
-  }, [query, transactionPolling])
+  }, [depositorPolling, query, transactionPolling])
 }
 
 export const useOnebitGraphData = () => {
   useGraphInitEffect()
-  useTransactionEffect()
-  const { lendingPool, portfolioTerm, transaction } = useOnebitGraph()
+  useUserEffect()
+  const { lendingPool, portfolioTerm, transaction, depositors } = useOnebitGraph()
 
   const returnValue = useMemo(() => {
     const returnValue = {
       lendingPool,
       portfolioTerm,
       transaction,
+      depositors,
     }
     log('[portfolio] [OnebitGraphData]', returnValue)
     return returnValue
-  }, [lendingPool, portfolioTerm, transaction])
+  }, [depositors, lendingPool, portfolioTerm, transaction])
 
   return returnValue
 }

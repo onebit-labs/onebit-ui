@@ -1,4 +1,7 @@
-export const request = () => {
+type Props = {
+  account: string
+}
+export const request = (props: Props) => {
   return fetch('/onebit-thegraph', {
     headers: {
       accept: '*/*',
@@ -10,23 +13,18 @@ export const request = () => {
     },
     body: JSON.stringify({
       query: `{
-  portfolioTerms(
+  depositors(
     first: 1000
+    where: { account: ${JSON.stringify(props.account)} }
     orderBy: createTimestamp
     orderDirection: desc
   ) {
     id
+    account
     lendingPool
-    value
-    term
+    balanceOf
     createTimestamp
-    redemptionBeginTimestamp
-    purchaseBeginTimestamp
-    purchaseEndTimestamp
-    previousLiquidityIndex
-    managementFeeRate
-    performanceFeeRate
-    previousDepositors
+    lastUpdateTimestamp
   }
 }`,
     }),
@@ -35,19 +33,13 @@ export const request = () => {
     credentials: 'omit',
   })
     .then((data) => data.json())
-    .then(({ data: { portfolioTerms } }) => portfolioTerms)
+    .then(({ data: { depositors } }) => depositors)
 }
 export type SliceState = Array<{
   id: string
+  account: string
   lendingPool: string
-  value: BN
-  term: number
+  balanceOf: BN
   createTimestamp: number
-  redemptionBeginTimestamp: number
-  purchaseBeginTimestamp: number
-  purchaseEndTimestamp: number
-  previousLiquidityIndex: BN
-  managementFeeRate: number
-  performanceFeeRate: number
-  previousDepositors: number
+  lastUpdateTimestamp: number
 }>
