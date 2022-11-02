@@ -16,6 +16,12 @@ export const networks: Record<ChainId, NetworkConfig> = {
     symbol: 'ETH',
     publicJsonRPCUrl: [`https://mainnet.infura.io/v3/${infuraId}`],
   },
+  [ChainId.bsc_testnet]: {
+    name: 'BSC Testnet',
+    fullName: 'Binance Smart Chain Testnet',
+    symbol: 'tBNB',
+    publicJsonRPCUrl: ['https://data-seed-prebsc-1-s1.binance.org:8545'],
+  },
 }
 
 export function getNetwork(chainId: ChainId): NetworkConfig {

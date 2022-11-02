@@ -1,6 +1,6 @@
 import type { AddressData } from 'lib/protocol/market'
 
-type MarketId = 'Onebit-USDT-1' | 'Onebit-USDT-2'
+type MarketId = 'Onebit-USDT-1' | 'Onebit-USDT-2' | 'Onebit-USDT-3'
 
 const getMarketInfo = (id: MarketId) => {
   switch (id) {
@@ -17,6 +17,13 @@ const getMarketInfo = (id: MarketId) => {
         series: 'USDT跟单',
         symbol: 'USDT',
         description: 'description 跟单1号',
+      }
+    case 'Onebit-USDT-3':
+      return {
+        portfolioName: 'onebit套利1号',
+        series: 'USDT跟单',
+        symbol: 'USDT',
+        description: 'description onebit套利1号',
       }
   }
 }
