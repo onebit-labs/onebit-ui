@@ -61,6 +61,7 @@ export const createUseRequestController = <SliceState extends RequestSliceState,
         propsRef.current = { ms, props }
         const status = getStatus()
         if (status !== REQUEST_STATUS.ready) return Promise.reject({ name: 'RunningError', message: 'Running' })
+        setStatus(REQUEST_STATUS.polling)
 
         const fn = () => {
           const promise = dispatch(request(props))
