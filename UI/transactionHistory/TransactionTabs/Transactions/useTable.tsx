@@ -7,24 +7,9 @@ import { symbolCellRenderer } from 'components/table/renderer/portfolio'
 import type { Transaction } from 'domains/data/onebit-graph/adapter/transaction'
 
 import { dateCellRenderer, txIDCellRenderer } from './renderer'
-import { usePortfolio } from 'domains/data'
 
-export const useTable = (dataSource: Transaction[]): BasicTableProps => {
+export const useTable = (data: Transaction[]): BasicTableProps => {
   const { t } = useTranslation('transactionHistory')
-  const { portfolioData } = usePortfolio()
-  const data = useMemo(() => {
-    return dataSource.map((i) => {
-      const portfolio = portfolioData.find((portfolio) => portfolio.address.LendingPool === i.lendingPool)
-      if (!portfolio) return i
-      const { portfolioName, symbol } = portfolio
-
-      return {
-        ...i,
-        portfolio: portfolioName,
-        symbol,
-      }
-    })
-  }, [dataSource, portfolioData])
 
   const columns = useMemo(
     () =>

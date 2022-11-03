@@ -16,14 +16,24 @@ import Transactions from './Transactions'
 const TransactionTabs: FC = () => {
   const { t } = useTranslation('transactionHistory')
   const searchHeader = useSearchHeader()
-  const { portfolioUserData } = usePortfolio()
+  const { portfolioData, portfolioUserData } = usePortfolio()
 
   const tabs = useMemo(() => {
     const reg = new RegExp(searchHeader.value)
     if (!portfolioUserData.transactions) return []
-    const data = portfolioUserData.transactions.filter(
-      (i) => !searchHeader.value || reg.test(i.portfolio.portfolioName)
-    )
+    const data = portfolioUserData.transactions
+      .map((i) => {
+        const portfolio = portfolioData.find((portfolio) => portfolio.address.LendingPool === i.lendingPool)
+        if (!portfolio) return i as undefined
+        const { portfolioName, symbol } = portfolio
+
+        return {
+          ...i,
+          portfolio: portfolioName,
+          symbol,
+        }
+      })
+      .filter((i) => !searchHeader.value || reg.test(i.portfolio))
 
     const returnValue: TabsProps['tabs'] = [
       {
@@ -58,7 +68,7 @@ const TransactionTabs: FC = () => {
       i.title = t(`tabs.${i.title}`)
       return i
     })
-  }, [searchHeader.value, portfolioUserData.transactions, t])
+  }, [searchHeader.value, portfolioUserData.transactions, portfolioData, t])
 
   const Header: FCC = useCallback(
     ({ children }) => <SearchHeader placeholder="Search by portfolio">{children}</SearchHeader>,
