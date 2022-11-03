@@ -44,5 +44,8 @@
       "title": "Fundraising Progress",
       "max": "Max"
     }
+  },
+  "table": {
+    "noData": "No data yet."
   }
 }

@@ -26,10 +26,10 @@ import { useWallet } from 'domains'
 
 export type Portfolio = Partial<
   ReserveData &
-    UserReserveData &
-    LendingPool & {
-      portfolioTerm: PortfolioTerm[]
-    }
+  UserReserveData &
+  LendingPool & {
+    portfolioTerm: PortfolioTerm[]
+  }
 > & {
   id: string
   portfolioName: string
@@ -124,7 +124,7 @@ const usePortfolioService = () => {
     const totalPNL = toBN(0)
     const APY = toBN(0)
     const portfolioUserData = portfolioData
-      .filter((portfolio) => !portfolio.yourEquity.isZero())
+      .filter((portfolio) => !safeGet(() => portfolio.yourEquity.isZero()))
       .map((portfolio) => {
         totalEquityValue = totalEquityValue.plus(portfolio.yourEquity)
         return portfolio
