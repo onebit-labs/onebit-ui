@@ -8,10 +8,18 @@ import TableCell from '@mui/material/TableCell'
 import { cellRenderer, headerRenderer } from 'components/table/renderer'
 import type { TableColumnsProps, BasicTableProps } from 'components/table/BasicTable/types'
 import { useRouter } from 'next/router'
+import { usePortfolio } from 'domains/data'
+import { lockedUntilCellRenderer, statusCellRenderer } from './renderer'
+import { numberCellRenderer, percentCellRenderer, symbolCellRenderer } from 'components/table/renderer/portfolio'
 
 export const useTable = (): BasicTableProps => {
   const { t } = useTranslation('dashboard')
   const router = useRouter()
+  const {
+    portfolioUserData: {
+      dashboard: { portfolioUserData },
+    },
+  } = usePortfolio()
 
   const ActionCellRenderer: TableCellRenderer = useCallback(
     ({ rowData }) => {
@@ -48,31 +56,31 @@ export const useTable = (): BasicTableProps => {
             dataKey: 'lockedUntil',
             width: 200,
             headerRenderer,
-            cellRenderer,
+            cellRenderer: lockedUntilCellRenderer,
           },
           {
             dataKey: 'netValue',
             width: 200,
             headerRenderer,
-            cellRenderer,
+            cellRenderer: numberCellRenderer,
           },
           {
             dataKey: 'yourEquity',
             width: 200,
             headerRenderer,
-            cellRenderer,
+            cellRenderer: symbolCellRenderer,
           },
           {
             dataKey: 'PNL',
             width: 200,
             headerRenderer,
-            cellRenderer,
+            cellRenderer: percentCellRenderer,
           },
           {
             dataKey: 'status',
             width: 200,
             headerRenderer,
-            cellRenderer,
+            cellRenderer: statusCellRenderer,
           },
           {
             dataKey: 'action',
@@ -91,25 +99,6 @@ export const useTable = (): BasicTableProps => {
 
   return {
     columns,
-    data: [
-      {
-        id: 'Onebit-USDT-2',
-        portfolioName: 'Onebit跟单1号',
-        lockedUntil: '1234',
-        netValue: 1.2,
-        yourEquity: '123',
-        PNL: '0.12',
-        status: 'open',
-      },
-      {
-        id: 'Onebit-USDT-1',
-        portfolioName: 'Onebit主观1号',
-        lockedUntil: '1234',
-        netValue: 1.2,
-        yourEquity: '123',
-        PNL: '0.12',
-        status: 'open',
-      },
-    ],
+    data: portfolioUserData,
   }
 }

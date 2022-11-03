@@ -22,6 +22,7 @@ import { usePortfolioDetails } from 'domains/data'
 import { useMemo } from 'react'
 import NumberDisplay from 'lib/math/components/NumberDisplay'
 import { useDialogs } from 'UI/dialogs'
+import { useWallet } from 'domains'
 
 const StyledCard = styled(Card)(() => ({
   position: 'relative',
@@ -43,6 +44,7 @@ const PortfolioInfo: FCC = ({ children }) => {
     yourEquity,
   } = data
   const { t } = useTranslation('portfolioDetails')
+  const { networkAccount } = useWallet()
   const isOpen = status === 'open'
 
   return (
@@ -97,21 +99,23 @@ const PortfolioInfo: FCC = ({ children }) => {
                 {t('info.standard')}: {symbol}
               </Span>
             </Stack>
-            <Stack spacing={2} direction={{ xs: 'column', sm: 'row' }} alignItems={{ xs: 'start', sm: 'center' }}>
-              <H5 color="text.secondary">
-                <span>{t('info.yourEquity')}: </span>
-                <Span color="text.primary">
-                  <NumberDisplay value={yourEquity} options="number" /> {symbol}
-                </Span>
-              </H5>
-              <H5 color="text.secondary">
-                <Stack spacing={1} direction="row" alignItems="center">
-                  <span>{t('info.PNL')}:</span>
-                  <PNL {...data} />
-                  {/* display="flex" justifyContent="center" alignItems="center" */}
-                </Stack>
-              </H5>
-            </Stack>
+            {networkAccount && (
+              <Stack spacing={2} direction={{ xs: 'column', sm: 'row' }} alignItems={{ xs: 'start', sm: 'center' }}>
+                <H5 color="text.secondary">
+                  <span>{t('info.yourEquity')}: </span>
+                  <Span color="text.primary">
+                    <NumberDisplay value={yourEquity} options="number" /> {symbol}
+                  </Span>
+                </H5>
+                <H5 color="text.secondary">
+                  <Stack spacing={1} direction="row" alignItems="center">
+                    <span>{t('info.PNL')}:</span>
+                    <PNL {...data} />
+                    {/* display="flex" justifyContent="center" alignItems="center" */}
+                  </Stack>
+                </H5>
+              </Stack>
+            )}
           </Stack>
           {description && <Paragraph color="text.secondary">{description}</Paragraph>}
           <FundraisingProgress {...data} />

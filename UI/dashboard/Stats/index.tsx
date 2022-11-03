@@ -1,38 +1,48 @@
 import { Grid } from '@mui/material'
+import { usePortfolio } from 'domains/data'
 import NumberDisplay from 'lib/math/components/NumberDisplay'
 import RiseOrFall from 'lib/math/components/RiseOrFall'
 import type { FC } from 'react'
+import { useMemo } from 'react'
 
 import StatsCard from './StatsCard'
 
 const Stats: FC = () => {
-  const cardList = [
-    {
-      price: <NumberDisplay value={571234.3123} options="USD" abbreviate={{}} />,
-      title: 'totalEquityValue',
+  const {
+    portfolioUserData: {
+      dashboard: { totalEquityValue, totalPNL, totalPortfolioDeposited, APY },
     },
-    {
-      price: (
-        <RiseOrFall value={98762.123} sx={{ fontSize: 24, fontWeight: 600 }}>
-          <NumberDisplay
-            value={98762.123}
-            options="USD"
-            abbreviate={{}}
-            numberFormatOptions={{ signDisplay: 'always' }}
-          />
-        </RiseOrFall>
-      ),
-      title: 'totalPNL',
-    },
-    {
-      price: <NumberDisplay value={4} options="number" />,
-      title: 'totalPortfolioDeposited',
-    },
-    {
-      price: <NumberDisplay value={0.3123} options="percent" />,
-      title: 'APY',
-    },
-  ]
+  } = usePortfolio()
+  const cardList = useMemo(
+    () => [
+      {
+        price: <NumberDisplay value={totalEquityValue} options="USD" abbreviate={{}} />,
+        title: 'totalEquityValue',
+      },
+      {
+        price: (
+          <RiseOrFall value={totalPNL} sx={{ fontSize: 24, fontWeight: 600 }}>
+            <NumberDisplay
+              value={totalPNL}
+              options="USD"
+              abbreviate={{}}
+              numberFormatOptions={{ signDisplay: 'always' }}
+            />
+          </RiseOrFall>
+        ),
+        title: 'totalPNL',
+      },
+      {
+        price: <NumberDisplay value={totalPortfolioDeposited} options="number" />,
+        title: 'totalPortfolioDeposited',
+      },
+      {
+        price: <NumberDisplay value={APY} options="percent" />,
+        title: 'APY',
+      },
+    ],
+    [APY, totalEquityValue, totalPNL, totalPortfolioDeposited]
+  )
 
   return (
     <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>

@@ -22,13 +22,14 @@ import { getPortfolioTerm } from './adapter/portfolioTerm'
 import type { LendingPool } from '../onebit-graph/adapter/lendingPool'
 import type { PortfolioTerm } from '../onebit-graph/adapter/portfolioTerm'
 import type { Transaction } from '../onebit-graph/adapter/transaction'
+import { useWallet } from 'domains'
 
 export type Portfolio = Partial<
   ReserveData &
-  UserReserveData &
-  LendingPool & {
-    portfolioTerm: PortfolioTerm[]
-  }
+    UserReserveData &
+    LendingPool & {
+      portfolioTerm: PortfolioTerm[]
+    }
 > & {
   id: string
   portfolioName: string
@@ -64,6 +65,7 @@ const usePortfolioService = () => {
   const erc20Data = useERC20()
   const onebitGraphData = useOnebitGraphData()
   const { seriesDaily, portfolioDaily } = useOnebitAPIData()
+  const { networkAccount } = useWallet()
 
   const portfolioData = useMemo(() => {
     const returnValue = markets.map((market) => {
@@ -92,7 +94,7 @@ const usePortfolioService = () => {
 
         estimatedAPY: toBN(0),
         currentAPY: toBN(0),
-        yourEquity: toBN(0),
+        yourEquity: safeGet(() => userReserve.balanceOf),
         PNL: toBN(0),
         previousPNL: toBN(0),
 
@@ -117,13 +119,30 @@ const usePortfolioService = () => {
   ])
 
   const portfolioUserData = useMemo(() => {
-    const dashboard = {}
+    if (!networkAccount) return { transactions: [], dashboard: {} } as undefined
+    let totalEquityValue = toBN(0)
+    const totalPNL = toBN(0)
+    const APY = toBN(0)
+    const portfolioUserData = portfolioData
+      .filter((portfolio) => !portfolio.yourEquity.isZero())
+      .map((portfolio) => {
+        totalEquityValue = totalEquityValue.plus(portfolio.yourEquity)
+        return portfolio
+      })
+    const dashboard = {
+      totalEquityValue,
+      totalPNL,
+      totalPortfolioDeposited: portfolioUserData.length,
+      APY,
+      portfolioUserData,
+    }
     const returnValue = {
       transactions: onebitGraphData.transaction,
+      dashboard,
     }
     log('[portfolio] [portfolioUserData]', returnValue)
     return returnValue
-  }, [onebitGraphData.transaction])
+  }, [networkAccount, onebitGraphData.transaction, portfolioData])
 
   return {
     portfolioData,
