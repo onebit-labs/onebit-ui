@@ -47,18 +47,18 @@ const useUserEffect = () => {
 export const useOnebitGraphData = () => {
   useGraphInitEffect()
   useUserEffect()
-  const { lendingPool, portfolioTerm, transaction, depositors } = useOnebitGraph()
+  const { lendingPool, portfolioTerm, transaction, depositor } = useOnebitGraph()
 
   const returnValue = useMemo(() => {
     const returnValue = {
       lendingPool,
       portfolioTerm,
       transaction,
-      depositors,
+      depositor,
     }
     log('[portfolio] [OnebitGraphData]', returnValue)
     return returnValue
-  }, [depositors, lendingPool, portfolioTerm, transaction])
+  }, [depositor, lendingPool, portfolioTerm, transaction])
 
   return returnValue
 }

@@ -2,10 +2,10 @@ import type { FC } from 'react'
 
 import BasicTable from 'components/table/BasicTable'
 import { useTable } from './useTable'
-import type { TransactionGraph } from 'domains/data/portfolio/adapter/onebitGraph'
+import type { Transaction } from 'domains/data/onebit-graph/adapter/transaction'
 
 type TransactionsProps = {
-  data: TransactionGraph[]
+  data: Transaction[]
 }
 const Transactions: FC<TransactionsProps> = ({ data }) => {
   const table = useTable(data)

@@ -1,7 +1,11 @@
 import TableCell from '@mui/material/TableCell'
-import type { TransactionGraph } from 'domains/data/portfolio/adapter/onebitGraph'
 import { format } from 'date-fns'
 import LinkToAddress from 'components/button/LinkToAddress'
+import type { Transaction } from 'domains/data/onebit-graph/adapter/transaction'
+
+export type TransactionTableData = Transaction & {
+  portfolioName: string
+}
 
 type TableCellProps = {
   cellData?: any
@@ -10,7 +14,7 @@ type TableCellProps = {
   dataKey: string
   isScrolling: boolean
   parent?: any
-  rowData: TransactionGraph
+  rowData: TransactionTableData
   rowIndex: number
 }
 
@@ -18,13 +22,6 @@ export const txIDCellRenderer = ({ rowData: { id } }: TableCellProps) => {
   return (
     <TableCell align="center" component="div">
       <LinkToAddress address={id} />
-    </TableCell>
-  )
-}
-export const portfolioCellRenderer = ({ rowData: { portfolio } }: TableCellProps) => {
-  return (
-    <TableCell align="center" component="div">
-      {portfolio.portfolioName || '-'}
     </TableCell>
   )
 }

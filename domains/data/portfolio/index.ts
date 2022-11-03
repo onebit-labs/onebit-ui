@@ -18,17 +18,17 @@ import { useUserReserveData } from './application/userReserveData'
 import { useOnebitAPIData } from './application/onebitAPI'
 import { useOnebitGraphData } from './application/onebitGraph'
 import type { ContractsAddress } from '../network/adapter/markets'
-import type { LendingPoolGraph, PortfolioTermGraph, TransactionGraph } from './adapter/onebitGraph'
-import { getUserGraph } from './adapter/onebitGraph'
-import { getPortfolioTermGraph } from './adapter/onebitGraph'
-import { getLendingPoolGraph } from './adapter/onebitGraph'
+import { getPortfolioTerm } from './adapter/portfolioTerm'
+import type { LendingPool } from '../onebit-graph/adapter/lendingPool'
+import type { PortfolioTerm } from '../onebit-graph/adapter/portfolioTerm'
+import type { Transaction } from '../onebit-graph/adapter/transaction'
 
 export type Portfolio = Partial<
   ReserveData &
-    UserReserveData &
-    LendingPoolGraph & {
-      portfolioTerm: PortfolioTermGraph[]
-    }
+  UserReserveData &
+  LendingPool & {
+    portfolioTerm: PortfolioTerm[]
+  }
 > & {
   id: string
   portfolioName: string
@@ -54,7 +54,7 @@ export type Portfolio = Partial<
 }
 
 export type UserPortfolio = {
-  transactions: TransactionGraph[]
+  transactions: Transaction[]
 }
 
 const usePortfolioService = () => {
@@ -62,8 +62,8 @@ const usePortfolioService = () => {
   const { userReserveData } = useUserReserveData({ reserveData })
   const { markets } = useNetwork()
   const erc20Data = useERC20()
-  const { seriesDaily, portfolioDaily } = useOnebitAPIData()
   const onebitGraphData = useOnebitGraphData()
+  const { seriesDaily, portfolioDaily } = useOnebitAPIData()
 
   const portfolioData = useMemo(() => {
     const returnValue = markets.map((market) => {
@@ -71,17 +71,21 @@ const usePortfolioService = () => {
       const lendingPoolAddress = address.LendingPool
       const oracle = toBN(safeGet(() => erc20Data.oracle[info.symbol]) || 0)
       const reserve = reserveData[lendingPoolAddress]
+      const userReserve = userReserveData[lendingPoolAddress]
+      const lendingPool = onebitGraphData.lendingPool.find((i) => i.id === lendingPoolAddress)
+      const portfolioTerm = onebitGraphData.portfolioTerm.filter((i) => i.lendingPool === lendingPoolAddress)
 
       const totalSupply = toBN(safeGet(() => erc20Data.totalSupply[address.OToken]) || 0)
 
       return {
-        id,
-        address,
+        ...lendingPool,
+        ...userReserve,
         ...info,
         ...reserve,
-        ...userReserveData[lendingPoolAddress],
+        portfolioTerm: getPortfolioTerm(portfolioTerm),
         status: getPortfolioStatus(reserve),
         lockTime: getPortfolioLockTime(reserve),
+
         oracle,
         totalSupply,
         totalSupplyInUSD: totalSupply.multipliedBy(oracle),
@@ -94,9 +98,8 @@ const usePortfolioService = () => {
 
         portfolioDaily: safeGet(() => portfolioDaily[info.portfolioName]) || [],
         seriesDaily: safeGet(() => seriesDaily[info.portfolioName]) || [],
-
-        ...getLendingPoolGraph(lendingPoolAddress, onebitGraphData),
-        ...getPortfolioTermGraph(lendingPoolAddress, onebitGraphData),
+        id,
+        address,
       } as Portfolio
     })
     log('[portfolio] [portfolioData]', returnValue)
@@ -105,7 +108,8 @@ const usePortfolioService = () => {
     erc20Data.oracle,
     erc20Data.totalSupply,
     markets,
-    onebitGraphData,
+    onebitGraphData.lendingPool,
+    onebitGraphData.portfolioTerm,
     portfolioDaily,
     reserveData,
     seriesDaily,
@@ -113,14 +117,13 @@ const usePortfolioService = () => {
   ])
 
   const portfolioUserData = useMemo(() => {
-    const { transactions, depositors } = getUserGraph(onebitGraphData, portfolioData)
     const dashboard = {}
     const returnValue = {
-      transactions,
+      transactions: onebitGraphData.transaction,
     }
     log('[portfolio] [portfolioUserData]', returnValue)
     return returnValue
-  }, [onebitGraphData, portfolioData])
+  }, [onebitGraphData.transaction])
 
   return {
     portfolioData,

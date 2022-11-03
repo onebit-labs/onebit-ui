@@ -3,12 +3,28 @@ import { useTranslation } from 'react-i18next'
 
 import { cellRenderer, headerRenderer } from 'components/table/renderer'
 import type { TableColumnsProps, BasicTableProps } from 'components/table/BasicTable/types'
-import type { TransactionGraph } from 'domains/data/portfolio/adapter/onebitGraph'
-import { dateCellRenderer, portfolioCellRenderer, txIDCellRenderer } from './renderer'
 import { symbolCellRenderer } from 'components/table/renderer/portfolio'
+import type { Transaction } from 'domains/data/onebit-graph/adapter/transaction'
 
-export const useTable = (data: TransactionGraph[]): BasicTableProps => {
+import { dateCellRenderer, txIDCellRenderer } from './renderer'
+import { usePortfolio } from 'domains/data'
+
+export const useTable = (dataSource: Transaction[]): BasicTableProps => {
   const { t } = useTranslation('transactionHistory')
+  const { portfolioData } = usePortfolio()
+  const data = useMemo(() => {
+    return dataSource.map((i) => {
+      const portfolio = portfolioData.find((portfolio) => portfolio.address.LendingPool === i.lendingPool)
+      if (!portfolio) return i
+      const { portfolioName, symbol } = portfolio
+
+      return {
+        ...i,
+        portfolio: portfolioName,
+        symbol,
+      }
+    })
+  }, [dataSource, portfolioData])
 
   const columns = useMemo(
     () =>
@@ -30,7 +46,7 @@ export const useTable = (data: TransactionGraph[]): BasicTableProps => {
             dataKey: 'portfolio',
             width: 250,
             headerRenderer,
-            cellRenderer: portfolioCellRenderer,
+            cellRenderer,
           },
           {
             dataKey: 'amount',

@@ -1,4 +1,4 @@
-import { getAddress, getNumber } from 'app/utils/get'
+import { getAddress, getBigNumber, getNumber } from 'app/utils/get'
 import type { SliceState } from '../store/depositor/adapter'
 
 export type Depositor = {
@@ -11,11 +11,13 @@ export type Depositor = {
 }
 export const getDepositor = (sliceState: SliceState) => {
   if (!sliceState) return []
-  return sliceState.map((i) => {
+  const returnValue = sliceState.map((i) => {
     return {
       ...i,
+      ...getBigNumber(i, ['balanceOf'], 18),
       ...getAddress(i, ['lendingPool', 'account']),
       ...getNumber(i, ['createTimestamp', 'lastUpdateTimestamp']),
     } as Depositor
   })
+  return returnValue
 }

@@ -1,15 +1,16 @@
-
 const getWhere = (props: any) => {
-  const returnValue = Object.keys(props).reduce((array, key) => {
-    const value = props[key]
-    switch (typeof value) {
-      case 'string':
-      case 'number':
-        array.push(`${key}: ${JSON.stringify(value)}`)
-        break
-    }
-    return array
-  }, []).join(',')
+  const returnValue = Object.keys(props)
+    .reduce((array, key) => {
+      const value = props[key]
+      switch (typeof value) {
+        case 'string':
+        case 'number':
+          array.push(`${key}: ${JSON.stringify(value)}`)
+          break
+      }
+      return array
+    }, [])
+    .join(',')
 
   return `{${returnValue}}`
 }

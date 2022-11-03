@@ -4,8 +4,8 @@ import { useAppSelector } from 'store'
 import { getDepositor } from '../adapter/depositor'
 import { select } from '../store/depositor'
 
-export const useDepositors = () => {
+export const useDepositor = () => {
   const sliceState = useAppSelector(select.selectData)
-  const depositors = useMemo(() => getDepositor(sliceState), [sliceState])
-  return { depositors }
+  const returnValue = useMemo(() => getDepositor(sliceState), [sliceState])
+  return returnValue
 }
