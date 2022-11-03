@@ -1,5 +1,22 @@
+
+const getWhere = (props: any) => {
+  const returnValue = Object.keys(props).reduce((array, key) => {
+    const value = props[key]
+    switch (typeof value) {
+      case 'string':
+      case 'number':
+        array.push(`${key}: ${JSON.stringify(value)}`)
+        break
+    }
+    return array
+  }, []).join(',')
+
+  return `{${returnValue}}`
+}
+
 type Props = {
   account: string
+  lendingPool?: string
 }
 export const request = (props: Props): Promise<SliceState> => {
   return fetch('/onebit-thegraph', {
@@ -15,7 +32,7 @@ export const request = (props: Props): Promise<SliceState> => {
       query: `{
   depositors(
     first: 1000
-    where: { account: ${JSON.stringify(props.account)} }
+    where: ${getWhere(props)}
     orderBy: createTimestamp
     orderDirection: desc
   ) {

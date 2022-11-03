@@ -14,8 +14,8 @@ export const useTable = (): BasicTableProps => {
   const { t } = useTranslation('portfolioDetails')
   const { portfolio } = usePortfolioDetails()
   const dataFetcher = useCallback(
-    ({ depositors: account, totalSupply, symbol }: any) =>
-      request({ account }).then((data) => {
+    ({ depositors: account, totalSupply, symbol, lendingPool }: any) =>
+      request({ account, lendingPool }).then((data) => {
         if (!data[0]) return { depositors: account }
         const { createTimestamp, balanceOf } = data[0]
         const equity = normalize(balanceOf, 18)
@@ -32,11 +32,16 @@ export const useTable = (): BasicTableProps => {
   )
   const data = useMemo(() => {
     if (!portfolio.depositorList) return []
-    const { totalSupply, symbol } = portfolio
+    const {
+      totalSupply,
+      symbol,
+      address: { LendingPool },
+    } = portfolio
     return portfolio.depositorList.map((account) => ({
       depositors: account,
       totalSupply,
       symbol,
+      lendingPool: LendingPool,
     }))
   }, [portfolio])
 
