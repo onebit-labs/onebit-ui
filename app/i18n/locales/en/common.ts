@@ -45,6 +45,9 @@ const locale = {
       max: 'Max',
     },
   },
+  table: {
+    noData: 'No data yet.',
+  },
 }
 
 export default locale

@@ -132,11 +132,11 @@ const components = (theme: Theme): any => {
         },
       ],
     },
-    MuiCardHeader: {
-      defaultProps: {
-        titleTypographyProps: { variant: 'h6' },
-      },
-    },
+    // MuiCardHeader: {
+    //   defaultProps: {
+    //     titleTypographyProps: { variant: 'h6' },
+    //   },
+    // },
     MuiCard: {
       styleOverrides: {
         root: {
@@ -144,6 +144,13 @@ const components = (theme: Theme): any => {
           boxShadow: shadows[1],
           // border: "1px solid #E5EAF2",
           borderRadius: 8,
+        },
+      },
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          padding: 24,
         },
       },
     },

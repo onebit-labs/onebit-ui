@@ -17,6 +17,8 @@ import Card from '@mui/material/Card'
 
 import type { BasicTableProps } from './types'
 import { getCellData } from './utils'
+import { H6 } from 'components/Typography'
+import { useTranslation } from 'next-i18next'
 
 const EXPAND_WIDTH = '60px'
 const columnsPrimaryNumber = 2
@@ -153,25 +155,31 @@ const CollapsibleRow: FC<CollapsibleRowProps> = (props) => {
 
 const MobileTable: FC<BasicTableProps> = (props) => {
   const { columns, data } = props
+  const { t } = useTranslation()
 
   const table = useMemo(() => {
     return {
       head: <CollapsibleHead columns={columns} />,
       body:
-        data &&
-        data.map((row, rowIndex) => (
-          <CollapsibleRow
-            key={rowIndex}
-            {...{
-              data,
-              row,
-              rowIndex,
-              columns,
-            }}
-          />
-        )),
+        data && data.length ? (
+          data.map((row, rowIndex) => (
+            <CollapsibleRow
+              key={rowIndex}
+              {...{
+                data,
+                row,
+                rowIndex,
+                columns,
+              }}
+            />
+          ))
+        ) : (
+          <Box display="flex" justifyContent="center" alignItems="center" height={100}>
+            <H6 color="text.disabled">{t('table.noData')}</H6>
+          </Box>
+        ),
     }
-  }, [columns, data])
+  }, [columns, data, t])
 
   return (
     <ROOT className="table basic-table">
