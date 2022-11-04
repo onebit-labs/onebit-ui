@@ -62,7 +62,7 @@ export const useChart = () => {
   }, [data])
 
   const lineColor = useMemo(() => {
-    if (changeAllTime == 0) {
+    if (changeAllTime === 0 || changeAllTime.eq(0)) {
       return theme.palette.grey[500]
     } else if (changeAllTime.gt(0)) {
       return theme.palette.success.main

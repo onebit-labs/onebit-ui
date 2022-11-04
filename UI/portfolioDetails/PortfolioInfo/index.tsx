@@ -118,7 +118,7 @@ const PortfolioInfo: FCC = ({ children }) => {
             )}
           </Stack>
           {description && <Paragraph color="text.secondary">{description}</Paragraph>}
-          <FundraisingProgress {...data} />
+          {status === 'open' && <FundraisingProgress {...data} />}
           <Stats {...data} />
         </Stack>
       </CardContent>

@@ -51,7 +51,7 @@ const locale = {
     perfomance: {
       title: 'Perfomance Fee',
       description:
-        'A performance fee is an annualized percentage-based fee depositors pay to the Portfolio Manager out of the positive returns made over a pre-defined period. The pre-defined period is referred to as a Locked-up period (typically a year or a quarter). The returns are benchmarked against the denomination asset. ',
+        'A performance fee is a percentage-based fee depositors pay to the Portfolio Manager out of the positive returns made over a pre-defined period. The pre-defined period is referred to as a Locked-up period (typically a year or a quarter). The returns are benchmarked against the denomination asset. ',
     },
     entrance: {
       title: 'Entrance Fee',
