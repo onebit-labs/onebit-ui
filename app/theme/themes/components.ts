@@ -327,6 +327,14 @@ const components = (theme: Theme): any => {
     MuiSvgIcon: {
       styleOverrides: { root: { '& .secondary': { opacity: 0.4 } } },
     },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          textDecoration: 'none',
+          cursor: 'pointer',
+        },
+      },
+    }
   }
 }
 
