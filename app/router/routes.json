@@ -1,5 +1,6 @@
 [
   "/404",
+  "/api",
   "/api/i18n/generate",
   "/api/protocol/generate",
   "/dashboard",

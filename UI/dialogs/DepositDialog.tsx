@@ -20,6 +20,7 @@ import { transaction } from 'domains/controllers/adapter/transaction'
 import { useSendTransaction } from 'lib/protocol/hooks/sendTransaction'
 import { usePost } from 'app/hooks/request'
 import type { depositProps } from 'lib/protocol/typechain/onebit'
+import { createPromise } from 'app/utils/promise'
 
 const DepositDialog: FC = () => {
   const { deposit } = useDialogs()
@@ -31,7 +32,7 @@ const DepositDialog: FC = () => {
     const returnValue = portfolioData.find((i) => i.id === id) || ({} as undefined)
     return returnValue
   }, [deposit.id, portfolioData])
-  const { networkAccount } = useWallet()
+  const { networkAccount, signature } = useWallet()
 
   const { walletBalance, lockTime, purchaseEndTimestamp, redemptionBeginTimestamp, address } = portfolio
 
@@ -82,16 +83,27 @@ const DepositDialog: FC = () => {
           variant="contained"
           disabled={loading || !networkAccount || !input.value}
           onClick={() => {
-            post({
-              pool: address.LendingPool,
-              erc20Service,
-              reserve: address.symbol,
-              user: networkAccount,
-              amount: input.value,
-            }).then(() => {
-              updateData()
-              deposit.close()
-            })
+            const { promise, reslove } = createPromise()
+            if (!signature.hasUserAgreement) {
+              signature.userAgreement().then(reslove)
+            } else {
+              reslove()
+            }
+
+            return promise
+              .then(() =>
+                post({
+                  pool: address.LendingPool,
+                  erc20Service,
+                  reserve: address.symbol,
+                  user: networkAccount,
+                  amount: input.value,
+                })
+              )
+              .then(() => {
+                updateData()
+                deposit.close()
+              })
           }}
         >
           {t('common:wallet.btn.deposit')}

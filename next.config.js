@@ -1,6 +1,5 @@
 const path = require('path')
 const { i18n } = require('./next-i18next.config')
-const { withRoutes } = require('./scripts/next-router-config.js')
 const i18nWebpack = require('./app/i18n/dev/hmr/webpack.js')
 
 /** @type {import('next').NextConfig} */
@@ -63,4 +62,4 @@ const nextConfig = {
   },
 }
 
-module.exports = withRoutes(nextConfig)
+module.exports = nextConfig
