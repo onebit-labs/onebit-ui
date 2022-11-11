@@ -8,14 +8,16 @@ const ChainDialogActions: FC = () => {
     signature: { dialog, userAgreement },
   } = useWallet()
   return (
-    <DialogActions>
-      <Button onClick={() => dialog.close()}>Cancel</Button>
+    <DialogActions sx={{ padding: 2, justifyContent: 'center' }}>
+      <Button variant="GreyOutlined" size="large" onClick={() => dialog.close()}>Cancel</Button>
       <Button
+        variant="contained"
+        size="large"
         onClick={() => {
           userAgreement().then(() => dialog.close('success'))
         }}
       >
-        Subscribe
+        Accept
       </Button>
     </DialogActions>
   )
