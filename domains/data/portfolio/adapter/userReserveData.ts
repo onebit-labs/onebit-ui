@@ -1,6 +1,6 @@
 import { safeGet } from 'app/utils/get'
 import { toBN } from 'lib/math'
-import type { ReserveData } from './reserveData'
+import type { MarketReserve } from '..'
 
 export type UserReserveData = {
   balanceOf: BN
@@ -8,15 +8,16 @@ export type UserReserveData = {
 }
 
 type UserReserveDataProps = {
-  reserveData: Record<string, ReserveData>
+  marketReserveData: MarketReserve[]
   balanceOf: Record<string, string>
 }
-export const getUserReserveData = ({ reserveData, balanceOf }: UserReserveDataProps) => {
+export const getUserReserveData = ({ marketReserveData, balanceOf }: UserReserveDataProps) => {
   const returnValue: Record<string, UserReserveData> = {}
-  Object.keys(reserveData || {}).forEach((key) => {
-    const balanceOfValue = safeGet(() => balanceOf[reserveData[key].oTokenAddress] || 0)
-    const walletBalance = safeGet(() => balanceOf['0x5c674632e44e5b42b17c4344d6d5bc4b6dc5a8a9'] || 0)
-    returnValue[key] = {
+  marketReserveData.forEach((marketReserve) => {
+    const { address } = marketReserve
+    const balanceOfValue = safeGet(() => balanceOf[address.OToken] || 0)
+    const walletBalance = safeGet(() => balanceOf[address.symbol] || 0)
+    returnValue[address.LendingPool] = {
       balanceOf: toBN(balanceOfValue),
       walletBalance: toBN(walletBalance),
     }

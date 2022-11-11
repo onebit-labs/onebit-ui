@@ -4,7 +4,7 @@ import { useEffect, useMemo } from 'react'
 
 import { log } from 'app/utils/dev'
 import { getUserReserveData } from '../adapter/userReserveData'
-import type { ReserveData } from '../adapter/reserveData'
+import type { MarketReserve } from '..'
 
 const useLendingPoolEffect = () => {
   const { networkAccount } = useWallet()
@@ -18,8 +18,8 @@ const useLendingPoolEffect = () => {
   } = useControllers()
 
   const tokens = useMemo(
-    () => markets.map((market) => market.address.OToken).concat([address.USDT]) || [],
-    [address.USDT, markets]
+    () => markets.map((market) => market.address.OToken).concat([address.USDT, address.WBTC]) || [],
+    [address.USDT, address.WBTC, markets]
   )
   const query = useMemo(
     () => ({
@@ -44,17 +44,17 @@ const useLendingPoolEffect = () => {
 }
 
 type UserReserveDataProps = {
-  reserveData: Record<string, ReserveData>
+  marketReserveData: MarketReserve[]
 }
-export const useUserReserveData = ({ reserveData }: UserReserveDataProps) => {
+export const useUserReserveData = ({ marketReserveData }: UserReserveDataProps) => {
   const { networkAccount } = useLendingPoolEffect()
   const { balanceOf } = useERC20()
   const userReserveData = useMemo(() => {
     if (!networkAccount) return {} as undefined
-    const returnValue = getUserReserveData({ balanceOf, reserveData })
+    const returnValue = getUserReserveData({ balanceOf, marketReserveData })
     log('[portfolio] [userReserveData]', returnValue)
     return returnValue
-  }, [balanceOf, networkAccount, reserveData])
+  }, [balanceOf, marketReserveData, networkAccount])
 
   return { userReserveData }
 }

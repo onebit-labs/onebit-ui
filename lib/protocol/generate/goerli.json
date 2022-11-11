@@ -5,7 +5,7 @@
   "LendingPoolImpl": "0x3df1ddb582f89616544a4a060da4328191d30ff7",
   "LendingPool": "0x6af769f986d87851c68e6f7ebf90e265619c6c8f",
   "USDT": "0x5c674632e44e5b42b17c4344d6d5bc4b6dc5a8a9",
-  "BTC": "0x097aae0c41b15683376f4de4d0cf353a69a5cf41",
+  "WBTC": "0x097aae0c41b15683376f4de4d0cf353a69a5cf41",
   "OToken": "0x8a41a474de4b2f62f279be51d291330366387e6c",
   "LendingPoolConfiguratorImpl": "0x4d544f28228ddafbf20058644ccf13ff9e6631b1",
   "markets": {

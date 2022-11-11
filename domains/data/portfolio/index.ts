@@ -74,7 +74,7 @@ const usePortfolioService = () => {
     log('[portfolio] [marketReserveData]', returnValue)
     return returnValue
   }, [markets, reserveData])
-  const { userReserveData } = useUserReserveData({ reserveData })
+  const { userReserveData } = useUserReserveData({ marketReserveData })
   const erc20Data = useERC20()
   const onebitGraphData = useOnebitGraphData()
   const { seriesDaily, portfolioDaily } = useOnebitAPIData()
