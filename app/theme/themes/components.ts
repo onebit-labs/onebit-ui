@@ -334,7 +334,7 @@ const components = (theme: Theme): any => {
           cursor: 'pointer',
         },
       },
-    }
+    },
   }
 }
 

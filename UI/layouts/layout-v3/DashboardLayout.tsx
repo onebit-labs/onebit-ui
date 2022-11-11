@@ -48,10 +48,14 @@ const DashboardLayout: FC<React.PropsWithChildren<unknown>> = ({ children }) => 
         </Box>
         <Stack pt={2} pb={4} direction={{ sm: 'row' }} justifyContent="space-between" alignItems="center">
           <Stack direction="row" spacing={2}>
-            <Link color="text.disabled" fontSize={14} onClick={() => router.push('/terms')}>Terms of Use</Link>
-            <Link color="text.disabled" fontSize={14} onClick={() => router.push('/privacy')}>Privacy Policy</Link>
+            <Link color="text.disabled" fontSize={14} onClick={() => router.push('/terms')}>
+              Terms of Use
+            </Link>
+            <Link color="text.disabled" fontSize={14} onClick={() => router.push('/privacy')}>
+              Privacy Policy
+            </Link>
           </Stack>
-          <Span color='text.disabled'>© 2022 Onebit. All Rights Reserved.</Span>
+          <Span color="text.disabled">© 2022 Onebit. All Rights Reserved.</Span>
         </Stack>
       </LayoutBodyWrapper>
     </Fragment>
