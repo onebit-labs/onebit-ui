@@ -42,7 +42,6 @@ export type Portfolio = Partial<
     status: PortfolioStatus
     lockTime: number
 
-    estimatedAPY: BN
     currentAPY: BN
     depositors: BN
     yourEquity: BN
@@ -106,7 +105,6 @@ const usePortfolioService = () => {
         totalSupply,
         totalSupplyInUSD: totalSupply.multipliedBy(oracle),
 
-        estimatedAPY: toBN(0),
         currentAPY: toBN(0),
         yourEquity: safeGet(() => userReserve.balanceOf),
         PNL: toBN(0),

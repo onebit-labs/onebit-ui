@@ -28,9 +28,7 @@ const Footer: FC<FooterProps> = ({ totalSupply, symbol, estimatedAPY, depositors
         {isOpen ? (
           <Grid item lg={4} xs={12}>
             <Tiny>{t('projectCard.estimatedAPY')}</Tiny>
-            <H5>
-              <NumberDisplay value={estimatedAPY} options="percent" />
-            </H5>
+            <H5>{estimatedAPY}</H5>
           </Grid>
         ) : (
           <Grid item lg={4} xs={12}>

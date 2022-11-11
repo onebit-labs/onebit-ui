@@ -27,7 +27,7 @@ const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, curr
     },
     isOpen
       ? {
-          price: <NumberDisplay value={estimatedAPY} options="percent" />,
+          price: { estimatedAPY },
           title: 'estimatedAPY',
           icon: <Image src={Revenue} alt="Revenue" width={40} height={40} />,
         }
