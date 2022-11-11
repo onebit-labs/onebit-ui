@@ -15,7 +15,7 @@ const Footer: FC<FooterProps> = ({ totalSupply, symbol, estimatedAPY, depositors
   const { t } = useTranslation('explorePortfolios')
   return (
     <Box>
-      <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
+      <Grid container>
         <Grid item lg={4} xs={12}>
           <Tiny>{t('projectCard.AUM')}</Tiny>
           <H5>
