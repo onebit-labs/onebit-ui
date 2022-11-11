@@ -12,10 +12,10 @@ const ChainDialogContent: FC = () => {
       <Stack spacing={2}>
         <Stack spacing={1}>
           <H4>{t('dialog.signature.thingsToKnowTitle')}</H4>
-          <Paragraph>{t('dialog.signature.thingsToKnowContent')}</Paragraph>
+          <Paragraph color="text.secondary">{t('dialog.signature.thingsToKnowContent')}</Paragraph>
         </Stack>
         <Stack spacing={1}>
-          <Paragraph>
+          <Paragraph color="text.secondary">
             {t('dialog.signature.tip')}
             <Link href="/terms" target="_blank">{t('pages.terms')}</Link>
             {t('dialog.signature.and')}

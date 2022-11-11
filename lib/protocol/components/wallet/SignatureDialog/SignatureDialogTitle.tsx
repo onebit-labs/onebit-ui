@@ -21,7 +21,7 @@ const ChainDialogTitle: FC = () => {
       <ROOT>
         <Stack alignItems="center">
           <Image src={LogoImage.src} alt="Onebit logo" width={100} height={50} />
-          <H2>{t('dialog.signature.title')}</H2>
+          <H2>{t('dialog.signature.title')} Onebit!</H2>
         </Stack>
       </ROOT>
     </DialogTitle>
