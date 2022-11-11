@@ -19,6 +19,37 @@ const locale = {
       estimatedAPY: 'Estimated APY',
       depositors: 'Depositors',
     },
+    description: {
+      'Onebit-Lightning-Hunter-USDT': {
+        main: 'The High-frequency trading is a microstructure strategy to capture the market spread by executing a large number of pending orders in a very short period of time while taking the advantages of co-location servers, low-latency channels, and low trading fees accounts.',
+        investmentRationale: {
+          0: 'Suitable for risk averse investors seeking high annual returns.',
+          1: 'Investors have no risk exposure, but the product capacity is low.',
+        },
+      },
+      'Onebit-Smart-Trend-USDT': {
+        main: 'The strategy aims to predict current price trends through risk preference for the macro environment, reasonable valuation levels of currencies, and the momentum of market trends. The investment process is a topdown multi-layer combination of macro, value, and trend.',
+        investmentRationale: {
+          0: 'Suitable for risk seeking investors expecting a high annual return.',
+          1: 'Investor has a long-term long bias of the crypto market.',
+        },
+      },
+      'Onebit-Smart-Trend-BTC': {
+        main: 'The strategy aims to predict current price trends through risk preference for the macro environment, reasonable valuation levels of currencies, and the momentum of market trends. The investment process is a topdown multi-layer combination of macro, value, and trend.',
+        investmentRationale: {
+          0: 'Suitable for risk seeking investors expecting a high annual return.',
+          1: 'Investor has a long-term long bias of the crypto market.',
+        },
+      },
+      'Onebit-Smart-Trend-USDT-Demo': {
+        main: 'The strategy aims to predict current price trends through risk preference for the macro environment, reasonable valuation levels of currencies, and the momentum of market trends. The investment process is a topdown multi-layer combination of macro, value, and trend.',
+        investmentRationale: {
+          0: 'Suitable for risk seeking investors expecting a high annual return.',
+          1: 'Investor has a long-term long bias of the crypto market.',
+        },
+      },
+      investmentRationale: 'Investment Rationale:',
+    },
   },
   overview: {
     netValue: {
@@ -64,7 +95,8 @@ const locale = {
     title: 'Policies',
     openPeriod: 'Open Period',
     lockUpPeriod: 'Lock-Up Period',
-    fundraisingCap: 'Fundraising Cap',
+    fundraisingCap: 'Fundraising Hard Cap',
+    softUpperLimit: 'Fundraising Soft Cap',
     minimumDeposit: 'Minimum Deposit',
     reInvestment: 'Re-investment',
     description:

@@ -32,17 +32,8 @@ const PortfolioInfo: FCC = ({ children }) => {
   const { deposit, withdraw } = useDialogs()
   const { portfolio } = usePortfolioDetails()
   const data = useMemo(() => portfolio, [portfolio])
-  const {
-    id,
-    status,
-    portfolioName,
-    symbol,
-    purchaseEndTimestamp,
-    redemptionBeginTimestamp,
-    lockTime,
-    description,
-    yourEquity,
-  } = data
+  const { id, status, portfolioName, symbol, purchaseEndTimestamp, redemptionBeginTimestamp, lockTime, yourEquity } =
+    data
   const { t } = useTranslation('portfolioDetails')
   const { networkAccount } = useWallet()
   const isOpen = status === 'open'
@@ -117,7 +108,12 @@ const PortfolioInfo: FCC = ({ children }) => {
               </Stack>
             )}
           </Stack>
-          {description && <Paragraph color="text.secondary">{description}</Paragraph>}
+          <Stack spacing={1}>
+            <Paragraph color="text.secondary">{t('info.description.' + id + '.main')}</Paragraph>
+            <Paragraph color="text.secondary">{t('info.description.investmentRationale')}</Paragraph>
+            <Paragraph color="text.secondary">{t('info.description.' + id + '.investmentRationale.0')}</Paragraph>
+            <Paragraph color="text.secondary">{t('info.description.' + id + '.investmentRationale.1')}</Paragraph>
+          </Stack>
           {status === 'open' && <FundraisingProgress {...data} />}
           <Stats {...data} />
         </Stack>

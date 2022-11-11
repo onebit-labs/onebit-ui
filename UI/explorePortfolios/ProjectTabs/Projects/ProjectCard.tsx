@@ -41,7 +41,7 @@ const ProjectCard: FC<React.PropsWithChildren<ProjectCardProps>> = (props) => {
           <Stack spacing={1}>
             <Stack spacing={1} direction="row" alignItems="center">
               <TokenIcon symbol={symbol} sx={{ width: 24, height: 24 }} />
-              <H3>{portfolioName}</H3>
+              <H3 ellipsis>{portfolioName}</H3>
             </Stack>
 
             <FlexBetween alignItems="start">

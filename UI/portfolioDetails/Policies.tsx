@@ -29,7 +29,7 @@ const Policies: FC = () => {
             <TimePeriod color="text.secondary" start={data.purchaseEndTimestamp} end={data.redemptionBeginTimestamp} />
           </Stack>
           <Stack spacing={1}>
-            <Paragraph color="text.primary">{t('policies.fundraisingCap')}</Paragraph>
+            <Paragraph color="text.primary">{t('policies.softUpperLimit')}</Paragraph>
             <H4>
               <NumberDisplay value={portfolio.softUpperLimit} abbreviate={{}} />
               <span> {portfolio.symbol}</span>

@@ -37,6 +37,12 @@ export const getReserveDataSource = (reserve: DataTypes.ReserveDataStructOutput)
     managementFeeRate,
     performanceFeeRate,
     ...getAddress(reserve, ['oTokenAddress', 'fundAddress']),
-    ...getString(reserve, ['liquidityIndex', 'currentLiquidityRate', 'previousLiquidityIndex', 'purchaseUpperLimit', 'softUpperLimit']),
+    ...getString(reserve, [
+      'liquidityIndex',
+      'currentLiquidityRate',
+      'previousLiquidityIndex',
+      'purchaseUpperLimit',
+      'softUpperLimit',
+    ]),
   }
 }
