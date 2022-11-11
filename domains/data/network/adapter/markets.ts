@@ -1,27 +1,45 @@
 import type { AddressData } from 'lib/protocol/market'
 
-type MarketId = 'Onebit-USDT-1' | 'Onebit-USDT-2' | 'Onebit-USDT-3'
+export type MarketId =
+  | 'Onebit-Lightning-Hunter-USDT'
+  | 'Onebit-Smart-Trend-USDT'
+  | 'Onebit-Smart-Trend-BTC'
+  | 'Onebit-Smart-Trend-USDT-Demo'
 
-const getMarketInfo = (id: MarketId) => {
+export type MarketInfo = {
+  portfolioName: string
+  series: string
+  symbol: string
+  description: string
+}
+
+const getMarketInfo = (id: MarketId): MarketInfo => {
   switch (id) {
-    case 'Onebit-USDT-1':
+    case 'Onebit-Lightning-Hunter-USDT':
       return {
-        portfolioName: 'Onebit主观1号',
-        series: 'USDT主观',
+        portfolioName: 'Onebit Lightning Hunter-USDT (Nov-22)',
+        series: 'Onebit Lightning Hunter-USDT',
         symbol: 'USDT',
         description: 'description 主观1号',
       }
-    case 'Onebit-USDT-2':
+    case 'Onebit-Smart-Trend-USDT':
       return {
-        portfolioName: 'Onebit跟单1号',
-        series: 'USDT跟单',
+        portfolioName: 'Onebit Smart Trend-USDT (Nov-22)',
+        series: 'Onebit Smart Trend-USDT',
         symbol: 'USDT',
         description: 'description 跟单1号',
       }
-    case 'Onebit-USDT-3':
+    case 'Onebit-Smart-Trend-BTC':
       return {
-        portfolioName: 'onebit套利1号',
-        series: 'USDT跟单',
+        portfolioName: 'Onebit Smart Trend-BTC (Nov-22)',
+        series: 'Onebit Smart Trend-BTC',
+        symbol: 'WBTC',
+        description: 'description onebit套利1号',
+      }
+    case 'Onebit-Smart-Trend-USDT-Demo':
+      return {
+        portfolioName: 'Onebit Smart Trend-USDT (Nov-22) Demo',
+        series: 'Onebit Smart Trend-USDT',
         symbol: 'USDT',
         description: 'description onebit套利1号',
       }

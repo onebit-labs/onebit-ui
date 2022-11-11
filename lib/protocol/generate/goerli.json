@@ -1,29 +1,37 @@
 {
   "LendingPoolAddressesProviderRegistry": "0x092f2d94e31ac359a060a9929f1062aca761a308",
   "LendingPoolAddressesProvider": "0x8586a3e55a43e46e59df02b7494b7fa2e46f2848",
-  "ReserveLogic": "0xfb1bf2f6837bf7d5d11968ce22040cea8b09a2c5",
-  "LendingPoolImpl": "0xe6345062a8dcdbf9c7aced9bdbb7262377b20a63",
+  "ReserveLogic": "0x691a99bbaf8003b5d0201ee54e7be546e27e9816",
+  "LendingPoolImpl": "0x3df1ddb582f89616544a4a060da4328191d30ff7",
   "LendingPool": "0x6af769f986d87851c68e6f7ebf90e265619c6c8f",
-  "USDT": "0xe3666662730808c69b235f1f6dd8d32315c1769b",
+  "USDT": "0x5c674632e44e5b42b17c4344d6d5bc4b6dc5a8a9",
+  "BTC": "0x097aae0c41b15683376f4de4d0cf353a69a5cf41",
   "OToken": "0x8a41a474de4b2f62f279be51d291330366387e6c",
-  "LendingPoolConfiguratorImpl": "0x449f792b82afa695517a8df56ddac2f21246245b",
+  "LendingPoolConfiguratorImpl": "0x4d544f28228ddafbf20058644ccf13ff9e6631b1",
   "markets": {
-    "Onebit-USDT-1": {
-      "LendingPoolAddressesProvider": "0x754819146536d247b228b6a251d49ba2f139dc7a",
-      "LendingPool": "0x7fa6222bc44d575f750f3cedc43c7224cc08b82b",
-      "LendingPoolConfigurator": "0xef68be202346507375f87c466ab12c3d46ed183a",
-      "OToken": "0xec5d20887706f3db4efa86949000a53f96f6c3b1"
+    "Onebit-Lightning-Hunter-USDT": {
+      "LendingPoolAddressesProvider": "0xe69c92c3508c6dc3fa552ca848da3fd16ea72ec5",
+      "LendingPool": "0x5c68a39b3fb66ca4e09aa94310b41368cad50768",
+      "LendingPoolConfigurator": "0x378b47b807e0f310e2823c850ffc2c48abce5dfa",
+      "OToken": "0x894ebe36cd815fd32862d4f3d595bfa38f1646d4"
     },
-    "Onebit-USDT-2": {
-      "LendingPoolAddressesProvider": "0x74fc2baf5eb17fb9343bf903926fd510e6e53896",
-      "LendingPool": "0x6bafba601ad936081de5b67b9c39ba2bff539dd6",
-      "LendingPoolConfigurator": "0xc728c79acb2b9be6b9238a1fdc4aa260088128b1",
-      "OToken": "0x11157633d159a0fbb421f54bc6d8b4cd77d44af2"
+    "Onebit-Smart-Trend-USDT": {
+      "LendingPoolAddressesProvider": "0x37e574b7ad45c47bca87fe46a57de0ce40be4461",
+      "LendingPool": "0xfd3b332c59c6638c7f31de4f4a5879b432ee9391",
+      "LendingPoolConfigurator": "0xc3bca8f66b7e96474623acd6b6feca3d96969f0d",
+      "OToken": "0xd7c7c17d5932b4d17b57755fc53ab95dd55319d8"
     },
-    "Onebit-USDT-3": {
-      "LendingPoolAddressesProvider": "0xd617314aefc7e787f02b2090cc8b3e4224b8a69a",
-      "LendingPool": "0x9eee6e40d8fa90c47bc22c15fd3dc1f7aa301970",
-      "LendingPoolConfigurator": "0xf87900b3efd57e1d6caccbbf2b7aaf8de3cf7c9d"
+    "Onebit-Smart-Trend-BTC": {
+      "LendingPoolAddressesProvider": "0x1ac832ade012a6a2cfd0abfe4597da1c8f77584f",
+      "LendingPool": "0xe0203aae0254715a090f103b24ce715429a94342",
+      "LendingPoolConfigurator": "0xeb497b1d5e66b5c726e7448066e167f2fba04a81",
+      "OToken": "0x37450525b2d399d39543d33123c745d3c354cc39"
+    },
+    "Onebit-Smart-Trend-USDT-Demo": {
+      "LendingPoolAddressesProvider": "0x8b10782fdeac0db3d9ef7e04ce6a6e5515ffa1c4",
+      "LendingPool": "0xfb1b2e81068c7f2dbabfb83253c89d81bf34b27e",
+      "LendingPoolConfigurator": "0xd8fc7aab9b6b3d414796dc63cf1be252eba06fcf",
+      "OToken": "0x4a34a721644a1b3037c2455c7aa567b166a311aa"
     }
   }
 }

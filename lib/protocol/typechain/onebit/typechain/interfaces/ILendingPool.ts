@@ -40,6 +40,7 @@ export declare namespace DataTypes {
     performanceFeeRate: PromiseOrValue<BigNumberish>
     oTokenAddress: PromiseOrValue<string>
     fundAddress: PromiseOrValue<string>
+    softUpperLimit: PromiseOrValue<BigNumberish>
   }
 
   export type ReserveDataStructOutput = [
@@ -55,7 +56,8 @@ export declare namespace DataTypes {
     number,
     number,
     string,
-    string
+    string,
+    BigNumber
   ] & {
     configuration: DataTypes.ReserveConfigurationMapStructOutput
     liquidityIndex: BigNumber
@@ -70,6 +72,7 @@ export declare namespace DataTypes {
     performanceFeeRate: number
     oTokenAddress: string
     fundAddress: string
+    softUpperLimit: BigNumber
   }
 }
 
@@ -146,9 +149,11 @@ export interface ILendingPoolInterface extends utils.Interface {
     'FundAddressUpdated(address)': EventFragment
     'FundDeposit(address,uint256)': EventFragment
     'FundWithdraw(address,uint256)': EventFragment
-    'NetValueUpdated(uint256,uint256,uint256,uint256,uint256)': EventFragment
+    'NetValueUpdated(uint256,uint256,uint256,uint256,int256)': EventFragment
     'Paused()': EventFragment
     'PeriodInitialized(uint256,uint40,uint40,uint40,uint16,uint16)': EventFragment
+    'PurchaseEndTimestampMoved(uint40,uint40)': EventFragment
+    'RedemptionBeginTimestampMoved(uint40,uint40)': EventFragment
     'Unpaused()': EventFragment
     'Withdraw(address,address,uint256)': EventFragment
   }
@@ -160,6 +165,8 @@ export interface ILendingPoolInterface extends utils.Interface {
   getEvent(nameOrSignatureOrTopic: 'NetValueUpdated'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'Paused'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'PeriodInitialized'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'PurchaseEndTimestampMoved'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'RedemptionBeginTimestampMoved'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'Unpaused'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'Withdraw'): EventFragment
 }
@@ -230,6 +237,22 @@ export type PeriodInitializedEvent = TypedEvent<
 >
 
 export type PeriodInitializedEventFilter = TypedEventFilter<PeriodInitializedEvent>
+
+export interface PurchaseEndTimestampMovedEventObject {
+  previousTimestamp: number
+  newTimetamp: number
+}
+export type PurchaseEndTimestampMovedEvent = TypedEvent<[number, number], PurchaseEndTimestampMovedEventObject>
+
+export type PurchaseEndTimestampMovedEventFilter = TypedEventFilter<PurchaseEndTimestampMovedEvent>
+
+export interface RedemptionBeginTimestampMovedEventObject {
+  previousTimestamp: number
+  newTimetamp: number
+}
+export type RedemptionBeginTimestampMovedEvent = TypedEvent<[number, number], RedemptionBeginTimestampMovedEventObject>
+
+export type RedemptionBeginTimestampMovedEventFilter = TypedEventFilter<RedemptionBeginTimestampMovedEvent>
 
 export interface UnpausedEventObject {}
 export type UnpausedEvent = TypedEvent<[], UnpausedEventObject>
@@ -441,7 +464,7 @@ export interface ILendingPool extends BaseContract {
     'FundWithdraw(address,uint256)'(to?: PromiseOrValue<string> | null, amount?: null): FundWithdrawEventFilter
     FundWithdraw(to?: PromiseOrValue<string> | null, amount?: null): FundWithdrawEventFilter
 
-    'NetValueUpdated(uint256,uint256,uint256,uint256,uint256)'(
+    'NetValueUpdated(uint256,uint256,uint256,uint256,int256)'(
       previousNetValue?: null,
       newNetValue?: null,
       previousLiquidityIndex?: null,
@@ -475,6 +498,21 @@ export interface ILendingPool extends BaseContract {
       managementFeeRate?: null,
       performanceFeeRate?: null
     ): PeriodInitializedEventFilter
+
+    'PurchaseEndTimestampMoved(uint40,uint40)'(
+      previousTimestamp?: null,
+      newTimetamp?: null
+    ): PurchaseEndTimestampMovedEventFilter
+    PurchaseEndTimestampMoved(previousTimestamp?: null, newTimetamp?: null): PurchaseEndTimestampMovedEventFilter
+
+    'RedemptionBeginTimestampMoved(uint40,uint40)'(
+      previousTimestamp?: null,
+      newTimetamp?: null
+    ): RedemptionBeginTimestampMovedEventFilter
+    RedemptionBeginTimestampMoved(
+      previousTimestamp?: null,
+      newTimetamp?: null
+    ): RedemptionBeginTimestampMovedEventFilter
 
     'Unpaused()'(): UnpausedEventFilter
     Unpaused(): UnpausedEventFilter

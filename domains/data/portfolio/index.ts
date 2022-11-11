@@ -17,42 +17,41 @@ import { useReserveData } from './application/reserveData'
 import { useUserReserveData } from './application/userReserveData'
 import { useOnebitAPIData } from './application/onebitAPI'
 import { useOnebitGraphData } from './application/onebitGraph'
-import type { ContractsAddress } from '../network/adapter/markets'
+import type { ContractsAddress, MarketInfo } from '../network/adapter/markets'
 import { getPortfolioTerm } from './adapter/portfolioTerm'
 import type { LendingPool } from '../onebit-graph/adapter/lendingPool'
 import type { PortfolioTerm } from '../onebit-graph/adapter/portfolioTerm'
 import type { Transaction } from '../onebit-graph/adapter/transaction'
 import { useWallet } from 'domains'
 
-export type Portfolio = Partial<
-  ReserveData &
-  UserReserveData &
-  LendingPool & {
-    portfolioTerm: PortfolioTerm[]
+export type MarketReserve = Partial<ReserveData> &
+  MarketInfo & {
+    id: string
+    address: ContractsAddress
   }
-> & {
-  id: string
-  portfolioName: string
-  symbol: string
-  description: string
-  oracle?: BN
-  totalSupply?: BN
-  totalSupplyInUSD?: BN
-  status: PortfolioStatus
-  lockTime: number
+export type Portfolio = Partial<
+  UserReserveData &
+    LendingPool & {
+      portfolioTerm: PortfolioTerm[]
+    }
+> &
+  MarketReserve & {
+    oracle?: BN
+    totalSupply?: BN
+    totalSupplyInUSD?: BN
+    status: PortfolioStatus
+    lockTime: number
 
-  estimatedAPY: BN
-  currentAPY: BN
-  depositors: BN
-  yourEquity: BN
-  PNL: BN
-  previousPNL: BN
+    estimatedAPY: BN
+    currentAPY: BN
+    depositors: BN
+    yourEquity: BN
+    PNL: BN
+    previousPNL: BN
 
-  portfolioDaily: Record<'x' | 'y', number>[]
-  seriesDaily: Record<'x' | 'y', number>[]
-
-  address: ContractsAddress
-}
+    portfolioDaily: Record<'x' | 'y', number>[]
+    seriesDaily: Record<'x' | 'y', number>[]
+  }
 
 export type UserPortfolio = {
   transactions: Transaction[]
@@ -60,18 +59,33 @@ export type UserPortfolio = {
 
 const usePortfolioService = () => {
   const { reserveData } = useReserveData()
-  const { userReserveData } = useUserReserveData({ reserveData })
   const { markets } = useNetwork()
+  const marketReserveData = useMemo(() => {
+    const returnValue = markets.map((market) => {
+      const { id, info, address } = market
+      const lendingPoolAddress = address.LendingPool
+      const reserve = reserveData[lendingPoolAddress]
+      return {
+        ...info,
+        ...reserve,
+        id,
+        address,
+      } as MarketReserve
+    })
+    log('[portfolio] [marketReserveData]', returnValue)
+    return returnValue
+  }, [markets, reserveData])
+  const { userReserveData } = useUserReserveData({ reserveData })
   const erc20Data = useERC20()
   const onebitGraphData = useOnebitGraphData()
   const { seriesDaily, portfolioDaily } = useOnebitAPIData()
   const { networkAccount } = useWallet()
 
   const portfolioData = useMemo(() => {
-    const returnValue = markets.map((market) => {
-      const { id, info, address } = market
+    const returnValue = marketReserveData.map((market) => {
+      const { id, address, symbol, portfolioName } = market
       const lendingPoolAddress = address.LendingPool
-      const oracle = toBN(safeGet(() => erc20Data.oracle[info.symbol]) || 0)
+      const oracle = toBN(safeGet(() => erc20Data.oracle[symbol]) || 0)
       const reserve = reserveData[lendingPoolAddress]
       const userReserve = userReserveData[lendingPoolAddress]
       const lendingPool = onebitGraphData.lendingPool.find((i) => i.id === lendingPoolAddress)
@@ -80,9 +94,9 @@ const usePortfolioService = () => {
       const totalSupply = toBN(safeGet(() => erc20Data.totalSupply[address.OToken]) || 0)
 
       return {
+        ...market,
         ...lendingPool,
         ...userReserve,
-        ...info,
         ...reserve,
         portfolioTerm: getPortfolioTerm(portfolioTerm),
         status: getPortfolioStatus(reserve),
@@ -98,10 +112,9 @@ const usePortfolioService = () => {
         PNL: toBN(0),
         previousPNL: toBN(0),
 
-        portfolioDaily: safeGet(() => portfolioDaily[info.portfolioName]) || [],
-        seriesDaily: safeGet(() => seriesDaily[info.portfolioName]) || [],
+        portfolioDaily: safeGet(() => portfolioDaily[portfolioName]) || [],
+        seriesDaily: safeGet(() => seriesDaily[portfolioName]) || [],
         id,
-        address,
       } as Portfolio
     })
     log('[portfolio] [portfolioData]', returnValue)
@@ -109,7 +122,7 @@ const usePortfolioService = () => {
   }, [
     erc20Data.oracle,
     erc20Data.totalSupply,
-    markets,
+    marketReserveData,
     onebitGraphData.lendingPool,
     onebitGraphData.portfolioTerm,
     portfolioDaily,

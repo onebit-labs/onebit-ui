@@ -118,9 +118,9 @@ const _abi = [
       },
       {
         indexed: false,
-        internalType: 'uint256',
+        internalType: 'int256',
         name: 'currentLiquidityRate',
-        type: 'uint256',
+        type: 'int256',
       },
     ],
     name: 'NetValueUpdated',
@@ -173,6 +173,44 @@ const _abi = [
       },
     ],
     name: 'PeriodInitialized',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: 'uint40',
+        name: 'previousTimestamp',
+        type: 'uint40',
+      },
+      {
+        indexed: false,
+        internalType: 'uint40',
+        name: 'newTimetamp',
+        type: 'uint40',
+      },
+    ],
+    name: 'PurchaseEndTimestampMoved',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: 'uint40',
+        name: 'previousTimestamp',
+        type: 'uint40',
+      },
+      {
+        indexed: false,
+        internalType: 'uint40',
+        name: 'newTimetamp',
+        type: 'uint40',
+      },
+    ],
+    name: 'RedemptionBeginTimestampMoved',
     type: 'event',
   },
   {
@@ -305,9 +343,9 @@ const _abi = [
             type: 'uint128',
           },
           {
-            internalType: 'uint128',
+            internalType: 'int128',
             name: 'currentLiquidityRate',
-            type: 'uint128',
+            type: 'int128',
           },
           {
             internalType: 'uint128',
@@ -358,6 +396,11 @@ const _abi = [
             internalType: 'address',
             name: 'fundAddress',
             type: 'address',
+          },
+          {
+            internalType: 'uint128',
+            name: 'softUpperLimit',
+            type: 'uint128',
           },
         ],
         internalType: 'struct DataTypes.ReserveData',

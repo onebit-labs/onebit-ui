@@ -15,7 +15,7 @@ export const getUserReserveData = ({ reserveData, balanceOf }: UserReserveDataPr
   const returnValue: Record<string, UserReserveData> = {}
   Object.keys(reserveData || {}).forEach((key) => {
     const balanceOfValue = safeGet(() => balanceOf[reserveData[key].oTokenAddress] || 0)
-    const walletBalance = safeGet(() => balanceOf['0xe3666662730808c69b235f1f6dd8d32315c1769b'] || 0)
+    const walletBalance = safeGet(() => balanceOf['0x5c674632e44e5b42b17c4344d6d5bc4b6dc5a8a9'] || 0)
     returnValue[key] = {
       balanceOf: toBN(balanceOfValue),
       walletBalance: toBN(walletBalance),
