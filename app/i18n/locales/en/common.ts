@@ -48,6 +48,21 @@ const locale = {
   table: {
     noData: 'No data yet.',
   },
+  dialog: {
+    signature: {
+      title: 'Welcome to ',
+      thingsToKnowTitle: 'Things you should know',
+      thingsToKnowContent: 'You are not guaranteed to make money by following any portfolios offered on Onebit. Past performance is not an indication of future results. You alone are responsible for the safety of your funds. Your capital is at risk.',
+      accept: 'Accept',
+      decline: 'Decline',
+      tip: 'By clicking "Accept" below, I acknowledge the above, the ',
+      and: ', and '
+    }
+  },
+  pages: {
+    terms: 'Terms of Service',
+    privacy: 'Privacy Policy',
+  }
 }
 
 export default locale

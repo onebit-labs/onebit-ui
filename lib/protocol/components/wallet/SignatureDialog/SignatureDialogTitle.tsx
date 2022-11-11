@@ -6,6 +6,7 @@ import { H2 } from 'components/Typography'
 import LogoImage from 'public/logo.svg'
 import Image from 'next/image'
 import Stack from '@mui/material/Stack'
+import { useTranslation } from 'next-i18next'
 
 const ROOT = styled('div')`
   ${({ theme }) => ({
@@ -14,12 +15,13 @@ const ROOT = styled('div')`
 `
 
 const ChainDialogTitle: FC = () => {
+  const { t } = useTranslation('common')
   return (
     <DialogTitle>
       <ROOT>
         <Stack alignItems="center">
           <Image src={LogoImage.src} alt="Onebit logo" width={100} height={50} />
-          <H2>Welcome to Onebit!</H2>
+          <H2>{t('dialog.signature.title')}</H2>
         </Stack>
       </ROOT>
     </DialogTitle>

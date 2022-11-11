@@ -41,7 +41,7 @@ const WalletConnected: FC = () => {
         '&:hover': { backgroundColor: theme.palette.action.hover },
         color: theme.palette.text.secondary,
       }}
-      startIcon={<AccountAvatar />}
+      endIcon={<AccountAvatar />}
     >
       <Account />
     </Button>
