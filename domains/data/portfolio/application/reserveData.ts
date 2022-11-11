@@ -4,6 +4,7 @@ import { useEffect, useMemo } from 'react'
 
 import { log } from 'app/utils/dev'
 import { getReserveData } from '../adapter/reserveData'
+import { safeGet } from 'app/utils/get'
 
 const useLendingPoolEffect = () => {
   const {
@@ -59,6 +60,7 @@ const useERC20TotalSupplyEffect = () => {
 }
 const useERC20oracleEffect = () => {
   const {
+    address,
     markets,
     contracts: { chainlinkService },
   } = useNetwork()
@@ -66,21 +68,30 @@ const useERC20oracleEffect = () => {
     erc20: { oracle: oracleSingle },
   } = useControllers()
 
-  const symbols = useMemo(() => {
+  const data = useMemo(() => {
     const set = new Set<string>()
     markets.forEach((market) => set.add(market.info.symbol))
-    return Array.from(set)
-  }, [markets])
+
+    const symbols = Array.from(set)
+
+    return symbols.map((symbol) => {
+      return {
+        symbol,
+        oracleChainlinkAddress: safeGet(() => address.oracleChainlinkAddress[symbol]),
+      }
+    })
+  }, [address.oracleChainlinkAddress, markets])
+
   const query = useMemo(
     () => ({
       chainlinkService,
-      symbols,
+      data,
     }),
-    [chainlinkService, symbols]
+    [chainlinkService, data]
   )
 
   useEffect(() => {
-    if (!query.symbols.length || !oracleSingle) return
+    if (!query.data.length || !oracleSingle) return
     oracleSingle.run(query)
     return () => {
       oracleSingle.stop()

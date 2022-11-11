@@ -1,22 +1,22 @@
 import type { ChainlinkService } from 'lib/protocol/typechain/chainlink'
 
-import { getChainlinkAddress } from './chainlinkAddress'
-
 export type Props = {
   chainlinkService: ChainlinkService
-  symbols: string[]
+  data: Array<{
+    symbol: string
+    oracleChainlinkAddress: string
+  }>
 }
 export const request = (props: Props) => {
-  const { chainlinkService, symbols } = props
+  const { chainlinkService, data } = props
   const promises: Array<Promise<void>> = []
   const returnValue: Record<string, string> = {}
 
-  symbols
-    .filter((i) => i)
-    .forEach((symbol) => {
-      const token = getChainlinkAddress(symbol)
+  data
+    .filter((i) => i && i.oracleChainlinkAddress)
+    .forEach(({ symbol, oracleChainlinkAddress }) => {
       promises.push(
-        chainlinkService.getAnswer({ token }).then((value) => {
+        chainlinkService.getAnswer({ token: oracleChainlinkAddress }).then((value) => {
           returnValue[symbol] = value.toString()
         })
       )
