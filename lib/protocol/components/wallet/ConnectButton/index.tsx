@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import Button from '@mui/material/Button'
 import { useTheme } from '@mui/material/styles'
 
-import Account from '../Account'
+import Account, { AccountAvatar } from '../Account'
 import { useConnectButton } from './useConnectButton'
 
 export const ConnectButton: FC = () => {
@@ -41,6 +41,7 @@ const WalletConnected: FC = () => {
         '&:hover': { backgroundColor: theme.palette.action.hover },
         color: theme.palette.text.secondary,
       }}
+      startIcon={<AccountAvatar />}
     >
       <Account />
     </Button>
