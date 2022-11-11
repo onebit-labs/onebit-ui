@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Web3Provider } from '@ethersproject/providers'
 import { safeGet } from 'app/utils/get'
+import { useDialog } from 'app/hooks/useDialog'
 
 const signMessage = async (message: string) => {
   if (!window.ethereum) throw new Error('No crypto wallet found. Please install it.')
@@ -18,21 +19,38 @@ const signMessage = async (message: string) => {
   }
 }
 
+export function useSignatureDialog() {
+  const ref = useRef<() => void>()
+  const { visible, open, close } = useDialog({
+    onOpen: (callback) => {
+      ref.current = callback
+    },
+    onClose: (type) => {
+      if (type === 'success' && ref.current) ref.current()
+    },
+  })
+  return { visible, open, close }
+}
+
 export const useSignature = (account: string) => {
+  const dialog = useSignatureDialog()
   const [hasUserAgreement, setUserAgreement] = useState(false)
   useEffect(() => {
     if (!account) return
-    fetch(`/onebit-api/user_agreement?req_id=8b20dd8819bc7569f4994b1080646713&eoa=${account}`, {
-      body: null,
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'omit',
-    })
-      .then((data) => data.json())
-      .then((data) => {
-        const hasUserAgreement = !!safeGet(() => data.data.memo)
-        setUserAgreement(hasUserAgreement)
-      })
+    dialog.open()
+    // fetch(`/onebit-api/user_agreement?req_id=8b20dd8819bc7569f4994b1080646713&eoa=${account}`, {
+    //   body: null,
+    //   method: 'GET',
+    //   mode: 'cors',
+    //   credentials: 'omit',
+    // })
+    //   .then((data) => data.json())
+    //   .then((data) => {
+    //     const hasUserAgreement = !!safeGet(() => data.data.memo)
+    //     setUserAgreement(hasUserAgreement)
+    //   })
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account])
 
   const userAgreement = useCallback(() => {
@@ -48,14 +66,12 @@ export const useSignature = (account: string) => {
         }
       )
         .then((data) => data.json())
-        .then((data) => {
-          console.log(data)
-          setUserAgreement(true)
-        })
+        .then(() => setUserAgreement(true))
     )
   }, [account])
 
   return {
+    dialog,
     hasUserAgreement,
     userAgreement,
   }

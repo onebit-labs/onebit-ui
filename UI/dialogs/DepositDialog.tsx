@@ -85,7 +85,7 @@ const DepositDialog: FC = () => {
           onClick={() => {
             const { promise, reslove } = createPromise()
             if (!signature.hasUserAgreement) {
-              signature.userAgreement().then(reslove)
+              signature.dialog.open(reslove)
             } else {
               reslove()
             }
