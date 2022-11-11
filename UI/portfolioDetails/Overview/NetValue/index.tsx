@@ -14,14 +14,18 @@ import { H5, H3 } from 'components/Typography'
 import FlexBetween from 'components/flexbox/FlexBetween'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import ToggleButton from '@mui/material/ToggleButton'
+import { usePortfolioDetails } from 'domains/data'
 
 const Left = styled(Stack)``
 const Change24h = styled(Stack)``
 const Right = styled(Stack)``
 
 const NetValue = () => {
+  const { portfolio } = usePortfolioDetails()
   const { t } = useTranslation('portfolioDetails')
   const chart = useChart()
+
+  if (portfolio.status === 'open') return null
 
   return (
     <Card>

@@ -82,7 +82,7 @@ const usePortfolioService = () => {
 
   const portfolioData = useMemo(() => {
     const returnValue = marketReserveData.map((market) => {
-      const { id, address, symbol, portfolioName } = market
+      const { id, address, symbol, portfolioName, series } = market
       const lendingPoolAddress = address.LendingPool
       const oracle = toBN(safeGet(() => erc20Data.oracle[symbol]) || 0)
       const reserve = reserveData[lendingPoolAddress]
@@ -111,7 +111,7 @@ const usePortfolioService = () => {
         previousPNL: toBN(0),
 
         portfolioDaily: safeGet(() => portfolioDaily[portfolioName]) || [],
-        seriesDaily: safeGet(() => seriesDaily[portfolioName]) || [],
+        seriesDaily: safeGet(() => seriesDaily[series]) || [],
         id,
       } as Portfolio
     })

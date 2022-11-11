@@ -1,18 +1,18 @@
 export type Props = {
   start: number
   end: number
-  portfolios: string[]
+  series: string[]
 }
 export const request = (props: Props) => {
-  const { start, end, portfolios } = props
+  const { start, end, series } = props
   const promises: Array<Promise<void>> = []
   const returnValue: Record<string, string> = {}
 
-  portfolios.forEach((portfolio) => {
+  series.forEach((item) => {
     promises.push(
       fetch(
-        `/onebit-api/series_daily?req_id=8b20dd8819bc7569f4994b1080646713&portfolio=${encodeURIComponent(
-          portfolio
+        `/onebit-api/series_daily?req_id=8b20dd8819bc7569f4994b1080646713&series=${encodeURIComponent(
+          item
         )}&start=${start}&end=${end}`,
         {
           body: null,
@@ -23,7 +23,7 @@ export const request = (props: Props) => {
       )
         .then((data) => data.json())
         .then(({ data }) => {
-          returnValue[portfolio] = data.map(({ ts, nav }: any) => ({ x: ts * 1000, y: nav }))
+          returnValue[item] = data.map(({ ts, nav }: any) => ({ x: ts * 1000, y: nav }))
         })
     )
   })

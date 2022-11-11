@@ -39,20 +39,23 @@ const useSeriesDailyEffect = () => {
     onebitAPI: { seriesDaily: seriesDailySingle },
   } = useControllers()
 
-  const portfolios = useMemo(() => {
-    return markets.map((market) => market.info.portfolioName)
+  const series = useMemo(() => {
+    const seriesSet = new Set<string>()
+    markets.forEach((market) => seriesSet.add(market.info.series))
+    return Array.from(seriesSet)
   }, [markets])
+
   const query = useMemo(
     () => ({
-      portfolios,
+      series,
       start,
       end,
     }),
-    [portfolios]
+    [series]
   )
 
   useEffect(() => {
-    if (!query.portfolios.length || !seriesDailySingle) return
+    if (!query.series.length || !seriesDailySingle) return
     seriesDailySingle.run(query)
     return () => {
       seriesDailySingle.stop()
