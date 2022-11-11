@@ -17,18 +17,18 @@ const Stats: FC = () => {
   const { portfolioData } = usePortfolio()
 
   const { depositors, portfolios, assetsUnderManagement, totalProfit } = useMemo(() => {
-    let totalDepositors = toBN(0)
+    const totalDepositors = new Set<string>()
     let assetsUnderManagement = toBN(0)
     let totalProfit = toBN(0)
-    portfolioData.map(({ depositors, totalSupplyInUSD, liquidityIndex }) => {
-      totalDepositors = totalDepositors.plus(depositors || 0)
+    portfolioData.map(({ depositorList, totalSupplyInUSD, liquidityIndex }) => {
+      if (depositorList) depositorList.forEach((depositor) => totalDepositors.add(depositor))
       const assets = totalSupplyInUSD.multipliedBy(liquidityIndex)
       assetsUnderManagement = assetsUnderManagement.plus(assets)
       totalProfit = totalProfit.plus(assets.minus(totalSupplyInUSD))
     })
 
     const returnValue = {
-      depositors: totalDepositors,
+      depositors: totalDepositors.size,
       portfolios: portfolioData.length,
       assetsUnderManagement,
       totalProfit,
