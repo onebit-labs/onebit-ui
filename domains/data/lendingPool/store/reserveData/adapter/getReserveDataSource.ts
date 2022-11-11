@@ -6,6 +6,7 @@ export type ReserveDataSource = {
   currentLiquidityRate: string
   previousLiquidityIndex: string
   purchaseUpperLimit: string
+  softUpperLimit: string
 
   lastUpdateTimestamp: number
   purchaseBeginTimestamp: number
@@ -36,6 +37,6 @@ export const getReserveDataSource = (reserve: DataTypes.ReserveDataStructOutput)
     managementFeeRate,
     performanceFeeRate,
     ...getAddress(reserve, ['oTokenAddress', 'fundAddress']),
-    ...getString(reserve, ['liquidityIndex', 'currentLiquidityRate', 'previousLiquidityIndex', 'purchaseUpperLimit']),
+    ...getString(reserve, ['liquidityIndex', 'currentLiquidityRate', 'previousLiquidityIndex', 'purchaseUpperLimit', 'softUpperLimit']),
   }
 }

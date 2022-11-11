@@ -8,12 +8,12 @@ import type { Portfolio } from 'domains/data/portfolio'
 import { safeGet } from 'app/utils/get'
 import { toBN } from 'lib/math'
 
-type FundraisingProgressProps = Pick<Portfolio, 'purchaseUpperLimit' | 'totalSupply' | 'symbol'>
+type FundraisingProgressProps = Pick<Portfolio, 'softUpperLimit' | 'totalSupply' | 'symbol'>
 
-const FundraisingProgress: FC<FundraisingProgressProps> = ({ totalSupply, purchaseUpperLimit, symbol }) => {
+const FundraisingProgress: FC<FundraisingProgressProps> = ({ totalSupply, softUpperLimit, symbol }) => {
   const { t } = useTranslation()
   const { NF } = useMath()
-  const value = safeGet(() => totalSupply.div(purchaseUpperLimit)) || toBN(0)
+  const value = safeGet(() => totalSupply.div(softUpperLimit)) || toBN(0)
   return (
     <Stack spacing={1}>
       <H5>{t('project.fundraisingProgress.title')}</H5>
@@ -24,7 +24,7 @@ const FundraisingProgress: FC<FundraisingProgressProps> = ({ totalSupply, purcha
       />
       <H5 display="flex" justifyContent="space-between">
         <NumberDisplay value={value} options="percent" />
-        <span>{`${t('project.fundraisingProgress.max')} ${NF.abbreviate(purchaseUpperLimit)} ${symbol}`}</span>
+        <span>{`${t('project.fundraisingProgress.max')} ${NF.abbreviate(softUpperLimit)} ${symbol}`}</span>
       </H5>
     </Stack>
   )

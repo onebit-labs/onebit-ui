@@ -6,6 +6,7 @@ export type ReserveData = {
   currentLiquidityRate: BN
   previousLiquidityIndex: BN
   purchaseUpperLimit: BN
+  softUpperLimit: BN
 
   lastUpdateTimestamp: number
   purchaseBeginTimestamp: number
@@ -25,7 +26,7 @@ export const getReserveData = (reserveDataSource: Record<string, ReserveDataSour
     const reserveData = reserveDataSource[key]
     returnValue[key] = {
       ...reserveData,
-      ...getBigNumber(reserveDataSource[key], ['purchaseUpperLimit'], 18),
+      ...getBigNumber(reserveDataSource[key], ['purchaseUpperLimit', 'softUpperLimit'], 18),
       ...getBigNumber(reserveDataSource[key], ['liquidityIndex', 'currentLiquidityRate', 'previousLiquidityIndex'], 27),
       ...getBigNumber(reserveDataSource[key], ['managementFeeRate', 'performanceFeeRate'], 4),
       ...getNumber(reserveDataSource[key], [
