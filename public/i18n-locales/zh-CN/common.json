@@ -33,6 +33,15 @@
       "title": "选择您的网络",
       "subTitle": "您当前的网络：",
       "error": "不支持的网络"
+    },
+    "signature": {
+      "title": "欢迎来到",
+      "thingsToKnowTitle": "你应该知道的事情",
+      "thingsToKnowContent": "您不能保证通过投资 Onebit 上提供的任何投资组合来赚钱。过去的表现并不代表未来的结果。您独自对您的资金安全负责。您的资金处于危险之中。",
+      "accept": "接受",
+      "decline": "衰退",
+      "tip": "点击下方的“接受”，即表示我承认上述内容，",
+      "and": "， 和"
     }
   },
   "project": {

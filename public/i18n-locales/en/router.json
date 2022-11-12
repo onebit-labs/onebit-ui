@@ -3,5 +3,7 @@
   "dashboard": "Dashboard",
   "explorePortfolios": "Explore Portfolios",
   "transactionHistory": "Transaction History",
-  "portfolioDetails": "Portfolio Details"
+  "portfolioDetails": "Portfolio Details",
+  "terms": "Terms of Service",
+  "privacy": "Privacy Policy"
 }
