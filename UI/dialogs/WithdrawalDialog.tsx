@@ -19,6 +19,7 @@ import { transaction } from 'domains/controllers/adapter/transaction'
 import { useSendTransaction } from 'lib/protocol/hooks/sendTransaction'
 import { usePost } from 'app/hooks/request'
 import type { withdrawProps } from 'lib/protocol/typechain/onebit'
+import { createPromise } from 'app/utils/promise'
 
 const WithdrawDialog: FC = () => {
   const { withdraw } = useDialogs()
@@ -30,7 +31,7 @@ const WithdrawDialog: FC = () => {
     const returnValue = portfolioData.find((i) => i.id === id) || ({} as undefined)
     return returnValue
   }, [withdraw.id, portfolioData])
-  const { networkAccount } = useWallet()
+  const { networkAccount, signature } = useWallet()
 
   const { balanceOf, address } = portfolio
 
@@ -74,16 +75,27 @@ const WithdrawDialog: FC = () => {
           variant="contained"
           disabled={loading || !networkAccount || !input.value}
           onClick={() => {
-            post({
-              pool: address.LendingPool,
-              erc20Service,
-              reserve: address.symbol,
-              user: networkAccount,
-              amount: input.value,
-            }).then(() => {
-              updateData()
-              withdraw.close()
-            })
+            const { promise, reslove } = createPromise()
+            if (!signature.hasUserAgreement) {
+              signature.dialog.open(reslove)
+            } else {
+              reslove()
+            }
+
+            return promise
+              .then(() =>
+                post({
+                  pool: address.LendingPool,
+                  erc20Service,
+                  reserve: address.symbol,
+                  user: networkAccount,
+                  amount: input.value,
+                })
+              )
+              .then(() => {
+                updateData()
+                withdraw.close()
+              })
           }}
         >
           {t('common:wallet.btn.withdraw')}

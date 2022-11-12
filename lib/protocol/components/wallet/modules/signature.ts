@@ -37,24 +37,24 @@ export const useSignature = (account: string) => {
   const [hasUserAgreement, setUserAgreement] = useState(false)
   useEffect(() => {
     if (!account) return
-    dialog.open()
-    // fetch(`/onebit-api/user_agreement?req_id=8b20dd8819bc7569f4994b1080646713&eoa=${account}`, {
-    //   body: null,
-    //   method: 'GET',
-    //   mode: 'cors',
-    //   credentials: 'omit',
-    // })
-    //   .then((data) => data.json())
-    //   .then((data) => {
-    //     const hasUserAgreement = !!safeGet(() => data.data.memo)
-    //     setUserAgreement(hasUserAgreement)
-    //   })
+    fetch(`/onebit-api/user_agreement?req_id=8b20dd8819bc7569f4994b1080646713&eoa=${account}`, {
+      body: null,
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'omit',
+    })
+      .then((data) => data.json())
+      .then((data) => {
+        const hasUserAgreement = !!safeGet(() => data.data.memo)
+        setUserAgreement(hasUserAgreement)
+        if (!hasUserAgreement) dialog.open()
+      })
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account])
 
   const userAgreement = useCallback(() => {
-    const message = `${account}`
+    const message = 'I acknowledge Onebit’s Terms of Services and Privacy Policy.'
     return signMessage(message).then(({ signature }) =>
       fetch(
         `/onebit-api/user_agreement?req_id=8b20dd8819bc7569f4994b1080646713&eoa=${account}&signature=${signature}&memo=userAgreement`,
