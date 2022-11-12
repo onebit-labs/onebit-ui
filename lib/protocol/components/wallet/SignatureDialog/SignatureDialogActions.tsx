@@ -12,7 +12,9 @@ const ChainDialogActions: FC = () => {
 
   return (
     <DialogActions sx={{ padding: 2, justifyContent: 'center' }}>
-      <Button variant="GreyOutlined" size="large" onClick={() => dialog.close()}>{t('dialog.signature.decline')}</Button>
+      <Button variant="GreyOutlined" size="large" onClick={() => dialog.close()}>
+        {t('wallet.signature.decline')}
+      </Button>
       <Button
         variant="contained"
         size="large"
@@ -20,7 +22,7 @@ const ChainDialogActions: FC = () => {
           userAgreement().then(() => dialog.close('success'))
         }}
       >
-        {t('dialog.signature.accept')}
+        {t('wallet.signature.accept')}
       </Button>
     </DialogActions>
   )
