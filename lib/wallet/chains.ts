@@ -14,18 +14,18 @@ const ETH: Currency = {
 // }
 
 const CHAIN_INFORMATION = new Map<number, ChainInformation | ChainType>([
-  [
-    ChainId.ethereum,
-    {
-      id: ChainId.ethereum,
-      nativeCurrency: ETH,
-      type: 'main',
-      fullName: 'Ethereum Mainnet',
-      shortName: 'Ethereum',
-      explorerUrl: `https://etherscan.io`,
-      testnet: false,
-    },
-  ],
+  // [
+  //   ChainId.ethereum,
+  //   {
+  //     id: ChainId.ethereum,
+  //     nativeCurrency: ETH,
+  //     type: 'main',
+  //     fullName: 'Ethereum Mainnet',
+  //     shortName: 'Ethereum',
+  //     explorerUrl: `https://etherscan.io`,
+  //     testnet: false,
+  //   },
+  // ],
   [
     ChainId.goerli,
     {
