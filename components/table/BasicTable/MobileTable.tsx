@@ -41,6 +41,7 @@ const CollapsibleHead: FC<CollapsibleHeadProps> = (props) => {
         style={{
           overflow: 'hidden',
           flex: `0 1 ${EXPAND_WIDTH}`,
+          minWidth: 50,
         }}
       >
         <TableCell align="center" component="div" variant="head">
@@ -79,6 +80,7 @@ const CollapsibleRow: FC<CollapsibleRowProps> = (props) => {
           style={{
             overflow: 'hidden',
             flex: `0 1 ${EXPAND_WIDTH}`,
+            minWidth: 50,
           }}
         >
           <TableCell align="center" component="div">
