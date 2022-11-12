@@ -7,11 +7,11 @@ const ETH: Currency = {
   symbol: 'ETH',
   decimals: 18,
 }
-const BNB: Currency = {
-  name: 'BNB',
-  symbol: 'ETH',
-  decimals: 18,
-}
+// const BNB: Currency = {
+//   name: 'BNB',
+//   symbol: 'ETH',
+//   decimals: 18,
+// }
 
 const CHAIN_INFORMATION = new Map<number, ChainInformation | ChainType>([
   [
@@ -38,18 +38,18 @@ const CHAIN_INFORMATION = new Map<number, ChainInformation | ChainType>([
       testnet: true,
     },
   ],
-  [
-    ChainId.bsc_testnet,
-    {
-      id: ChainId.bsc_testnet,
-      nativeCurrency: BNB,
-      type: 'BSC Testnet',
-      fullName: 'BSC Testnet',
-      shortName: 'BSC Testnet',
-      explorerUrl: `https://testnet.bscscan.com/`,
-      testnet: true,
-    },
-  ],
+  // [
+  //   ChainId.bsc_testnet,
+  //   {
+  //     id: ChainId.bsc_testnet,
+  //     nativeCurrency: BNB,
+  //     type: 'BSC Testnet',
+  //     fullName: 'BSC Testnet',
+  //     shortName: 'BSC Testnet',
+  //     explorerUrl: `https://testnet.bscscan.com/`,
+  //     testnet: true,
+  //   },
+  // ],
 ])
 
 /**
