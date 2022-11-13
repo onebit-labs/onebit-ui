@@ -33,7 +33,7 @@ const WithdrawDialog: FC = () => {
   }, [withdraw.id, portfolioData])
   const { networkAccount, signature } = useWallet()
 
-  const { balanceOf, address } = portfolio
+  const { balanceOf, address, symbol } = portfolio
 
   const { input } = useInputSlider({ balance: balanceOf })
   const {
@@ -64,7 +64,7 @@ const WithdrawDialog: FC = () => {
           <FlexBetween>
             <H5>Amount</H5>
             <Paragraph color="text.secondary">
-              Wallet Balance: <NumberDisplay value={balanceOf} options="number" /> USDT
+              Wallet Balance: <NumberDisplay value={balanceOf} options="number" /> {symbol}
             </Paragraph>
           </FlexBetween>
           <NumberInput value={input.value} disabled={input.disabled} onChange={input.onChange} onMax={input.onMax} />

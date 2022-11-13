@@ -34,7 +34,7 @@ const DepositDialog: FC = () => {
   }, [deposit.id, portfolioData])
   const { networkAccount, signature } = useWallet()
 
-  const { walletBalance, lockTime, purchaseEndTimestamp, redemptionBeginTimestamp, address } = portfolio
+  const { walletBalance, lockTime, purchaseEndTimestamp, redemptionBeginTimestamp, address, symbol } = portfolio
 
   const { input } = useInputSlider({ balance: walletBalance })
   const {
@@ -65,7 +65,7 @@ const DepositDialog: FC = () => {
           <FlexBetween>
             <H5>Amount</H5>
             <Paragraph color="text.secondary">
-              Wallet Balance: <NumberDisplay value={walletBalance} options="number" /> USDT
+              Wallet Balance: <NumberDisplay value={walletBalance} options="number" /> {symbol}
             </Paragraph>
           </FlexBetween>
           <NumberInput value={input.value} disabled={input.disabled} onChange={input.onChange} onMax={input.onMax} />
