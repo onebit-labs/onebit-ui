@@ -42,6 +42,18 @@
       "decline": "衰退",
       "tip": "点击下方的“接受”，即表示我承认上述内容，",
       "and": "， 和"
+    },
+    "deposit": {
+      "amount": "数量",
+      "walletBalance": "钱包余额",
+      "lockUpPeriod": "锁定期",
+      "days": "天",
+      "tip": "该投资组合的年度管理费为 <managementFee>管理费</managementFee>，绩效费为 <performanceFee>演出费</performanceFee>。"
+    },
+    "withdrawal": {
+      "amount": "数量",
+      "walletBalance": "钱包余额",
+      "tip": "已扣除管理费和绩效费。"
     }
   },
   "project": {
