@@ -1,0 +1,17 @@
+{
+  "search": {
+    "name": "Buscar por nombre"
+  },
+  "tabs": {
+    "all": "Todos",
+    "deposit": "Depósito",
+    "withdrawal": "Retiro"
+  },
+  "transactions": {
+    "txId": "Tx ID",
+    "type": "Escribe",
+    "portfolio": "portafolio",
+    "amount": "Monto",
+    "date": "Fecha"
+  }
+}

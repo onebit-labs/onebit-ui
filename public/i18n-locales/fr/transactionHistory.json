@@ -1,0 +1,17 @@
+{
+  "search": {
+    "name": "Rechercher par nom"
+  },
+  "tabs": {
+    "all": "Tout",
+    "deposit": "Verser",
+    "withdrawal": "Retrait"
+  },
+  "transactions": {
+    "txId": "TxID",
+    "type": "Taper",
+    "portfolio": "Portefeuille",
+    "amount": "Montant",
+    "date": "Date"
+  }
+}

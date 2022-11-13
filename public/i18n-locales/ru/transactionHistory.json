@@ -1,0 +1,17 @@
+{
+  "search": {
+    "name": "Поиск по имени"
+  },
+  "tabs": {
+    "all": "Все",
+    "deposit": "Депозит",
+    "withdrawal": "Вывод"
+  },
+  "transactions": {
+    "txId": "TxID",
+    "type": "Тип",
+    "portfolio": "портфолио",
+    "amount": "Количество",
+    "date": "Свидание"
+  }
+}

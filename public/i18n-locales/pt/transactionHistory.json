@@ -1,0 +1,17 @@
+{
+  "search": {
+    "name": "Procura por nome"
+  },
+  "tabs": {
+    "all": "Tudo",
+    "deposit": "Depósito",
+    "withdrawal": "Cancelamento"
+  },
+  "transactions": {
+    "txId": "TxID",
+    "type": "Modelo",
+    "portfolio": "Portfólio",
+    "amount": "Quantia",
+    "date": "Encontro"
+  }
+}

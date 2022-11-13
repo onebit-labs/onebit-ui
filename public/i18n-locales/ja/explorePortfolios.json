@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "assetsUnderManagement": "運用資産",
+    "totalProfitSinceInception": "創業以来の総利益",
+    "portfolios": "ポートフォリオ",
+    "depositors": "預金者"
+  },
+  "tabs": {
+    "placeholder": "ポートフォリオを探す",
+    "all": "全て",
+    "open": "開ける",
+    "lockedUp": "閉じ込められた"
+  },
+  "actions": {
+    "deposit": "デポジット",
+    "withdraw": "撤退"
+  },
+  "projectCard": {
+    "lockUpPeriod": "ロックアップ期間",
+    "days": "日々",
+    "netValue": "正味価値",
+    "past7D": "過去7D",
+    "AUM": "運用資産",
+    "estimatedAPY": "推定APY",
+    "currentAPY": "現在のAPY",
+    "depositors": "預金者"
+  }
+}

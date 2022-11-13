@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "totalEquityValue": "Toplam Özkaynak Değeri",
+    "totalPNL": "Toplam PNL",
+    "totalPortfolioDeposited": "Yatırılan Toplam Portföy",
+    "APY": "APY"
+  },
+  "totalEquityValue": {
+    "title": "Toplam Özkaynak Değeri",
+    "change24h": "1D geçmiş"
+  },
+  "portfolioTable": {
+    "portfolioName": "Portföy Adı",
+    "lockedUntil": "Kilitlenene Kadar",
+    "netValue": "Net değer",
+    "yourEquity": "Sermayeniz",
+    "PNL": "PNL",
+    "status": "Durum",
+    "action": "Eylem"
+  }
+}

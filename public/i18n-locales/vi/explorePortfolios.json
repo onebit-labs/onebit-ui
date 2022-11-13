@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "assetsUnderManagement": "Tài sản đang quản lý",
+    "totalProfitSinceInception": "Tổng lợi nhuận kể từ khi thành lập",
+    "portfolios": "Danh mục đầu tư",
+    "depositors": "Người gửi tiền"
+  },
+  "tabs": {
+    "placeholder": "Tìm danh mục đầu tư",
+    "all": "Tất cả các",
+    "open": "Mở",
+    "lockedUp": "Nhốt"
+  },
+  "actions": {
+    "deposit": "Tiền gửi",
+    "withdraw": "Rút"
+  },
+  "projectCard": {
+    "lockUpPeriod": "Thời gian khóa máy",
+    "days": "Ngày",
+    "netValue": "Giá trị ròng",
+    "past7D": "7D trước",
+    "AUM": "AUM",
+    "estimatedAPY": "APY ước tính",
+    "currentAPY": "APY hiện tại",
+    "depositors": "Người gửi tiền"
+  }
+}

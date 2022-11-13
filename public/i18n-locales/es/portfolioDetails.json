@@ -1,0 +1,108 @@
+{
+  "tabs": {
+    "overview": "Visión general",
+    "fees": "Tarifa",
+    "policies": "Políticas",
+    "depositors": "depositantes"
+  },
+  "info": {
+    "status": "Estado",
+    "term": "Término",
+    "lockUpPeriod": "Período de bloqueo",
+    "days": "Días",
+    "standard": "Estándar",
+    "yourEquity": "su patrimonio",
+    "PNL": "PNL",
+    "stats": {
+      "assetsUnderManagement": "Los activos bajo gestión",
+      "currentAPY": "APY actual",
+      "estimatedAPY": "APY estimado",
+      "depositors": "depositantes"
+    },
+    "description": {
+      "Onebit-Lightning-Hunter-USDT": {
+        "main": "El comercio de alta frecuencia es una estrategia de microestructura para capturar el diferencial del mercado mediante la ejecución de una gran cantidad de órdenes pendientes en un período de tiempo muy corto mientras se aprovechan las ventajas de los servidores de ubicación conjunta, los canales de baja latencia y las cuentas de tarifas comerciales bajas.",
+        "investmentRationale": [
+          "Adecuado para inversores con aversión al riesgo que buscan altos rendimientos anuales.",
+          "Los inversores no tienen exposición al riesgo, pero la capacidad del producto es baja."
+        ]
+      },
+      "Onebit-Smart-Trend-USDT": {
+        "main": "La estrategia tiene como objetivo predecir las tendencias de precios actuales a través de la preferencia de riesgo por el entorno macro, niveles de valoración razonables de las monedas y el impulso de las tendencias del mercado. El proceso de inversión es una combinación de múltiples capas de arriba hacia abajo de macro, valor y tendencia.",
+        "investmentRationale": [
+          "Adecuado para inversores que buscan riesgos y esperan un alto rendimiento anual.",
+          "El inversor tiene un sesgo largo a largo plazo del mercado criptográfico."
+        ]
+      },
+      "Onebit-Smart-Trend-BTC": {
+        "main": "La estrategia tiene como objetivo predecir las tendencias de precios actuales a través de la preferencia de riesgo por el entorno macro, niveles de valoración razonables de las monedas y el impulso de las tendencias del mercado. El proceso de inversión es una combinación de múltiples capas de arriba hacia abajo de macro, valor y tendencia.",
+        "investmentRationale": [
+          "Adecuado para inversores que buscan riesgos y esperan un alto rendimiento anual.",
+          "El inversor tiene un sesgo largo a largo plazo del mercado criptográfico."
+        ]
+      },
+      "Onebit-Smart-Trend-USDT-Demo": {
+        "main": "La estrategia tiene como objetivo predecir las tendencias de precios actuales a través de la preferencia de riesgo por el entorno macro, niveles de valoración razonables de las monedas y el impulso de las tendencias del mercado. El proceso de inversión es una combinación de múltiples capas de arriba hacia abajo de macro, valor y tendencia.",
+        "investmentRationale": [
+          "Adecuado para inversores que buscan riesgos y esperan un alto rendimiento anual.",
+          "El inversor tiene un sesgo largo a largo plazo del mercado criptográfico."
+        ]
+      },
+      "investmentRationale": "Justificación de la inversión:"
+    }
+  },
+  "overview": {
+    "netValue": {
+      "title": "Valor neto actual",
+      "change24h": "Pasado 1D"
+    },
+    "historicalAccumulativeNetValue": {
+      "title": "Valor neto acumulado histórico",
+      "change24h": "Pasado 1D"
+    },
+    "historicalPerformance": {
+      "title": "Desempeño histórico",
+      "term": "Término",
+      "lockUpPeriod": "Período de bloqueo",
+      "AUM": "AUM",
+      "depositors": "depositantes",
+      "finalNetValue": "Valor neto final",
+      "return": "Devolver",
+      "APY": "APY"
+    }
+  },
+  "fees": {
+    "title": "Tarifa",
+    "management": {
+      "title": "Comisión de gestión",
+      "tip": "2% si la rentabilidad acumulada es superior al 20%",
+      "description": "Una comisión de gestión es un pago periódico que pagan los depositantes al Gestor de cartera. La tarifa se calcula como un porcentaje anualizado de los activos administrados y es independiente de los rendimientos de Vault."
+    },
+    "perfomance": {
+      "title": "Tarifa de rendimiento",
+      "description": "Una comisión de rendimiento es una comisión basada en un porcentaje que los depositantes pagan al Gestor de la cartera sobre los rendimientos positivos obtenidos durante un período predefinido. El período predefinido se denomina período bloqueado (normalmente, un año o un trimestre). Los rendimientos se comparan con el activo de denominación."
+    },
+    "entrance": {
+      "title": "Precio de la entrada"
+    },
+    "exit": {
+      "title": "Tarifa de salida"
+    }
+  },
+  "policies": {
+    "title": "Políticas",
+    "openPeriod": "Período abierto",
+    "lockUpPeriod": "Período de bloqueo",
+    "fundraisingCap": "Límite máximo de recaudación de fondos",
+    "softUpperLimit": "Gorra suave de recaudación de fondos",
+    "minimumDeposit": "Depósito mínimo",
+    "reInvestment": "Reinversión",
+    "description": "Si los depositantes no retiran los fondos al final del período bloqueado, los fondos se reinvertirán en la cartera para el próximo período."
+  },
+  "depositors": {
+    "depositors": "depositantes",
+    "since": "Ya que",
+    "equity": "Equidad",
+    "percentage": "Porcentaje"
+  }
+}

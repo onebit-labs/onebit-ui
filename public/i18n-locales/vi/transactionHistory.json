@@ -1,0 +1,17 @@
+{
+  "search": {
+    "name": "Tìm kiếm theo tên"
+  },
+  "tabs": {
+    "all": "Tất cả các",
+    "deposit": "Tiền gửi",
+    "withdrawal": "Rút tiền"
+  },
+  "transactions": {
+    "txId": "TxID",
+    "type": "Loại hình",
+    "portfolio": "Danh mục đầu tư",
+    "amount": "Số lượng",
+    "date": "Ngày"
+  }
+}

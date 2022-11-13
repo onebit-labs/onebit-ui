@@ -1,0 +1,72 @@
+{
+  "wallet": {
+    "btn": {
+      "cancel": "İptal",
+      "disconnected": "bağlantıyı kes",
+      "deposit": "Depozito",
+      "withdraw": "Geri çekilmek",
+      "details": "Detaylar",
+      "approve": "Onaylamak"
+    },
+    "disconnected": {
+      "title": "Cüzdanı Bağla",
+      "subTitle": "Onebit'i kullanmaya başlamak için"
+    },
+    "connected": {
+      "title": "bağlı",
+      "subTitle": "ile bağlantılı"
+    },
+    "connecting": {
+      "title": "Cüzdan Kilidini Aç",
+      "subTitle": "Uzantıyı tıklamanız gerekebilir."
+    },
+    "error": {
+      "title": "Cüzdanı Bağla",
+      "subTitle": "Onebit'i kullanmaya başlamak için",
+      "ChainUnknownError": "Ağ Değiştir"
+    },
+    "tips": {
+      "accept": "Bağlanarak kabul ediyorum",
+      "term": "Onebit'in Hizmet Şartları"
+    },
+    "chain": {
+      "title": "Ağınızı Seçin",
+      "subTitle": "Mevcut ağınız:",
+      "error": "Desteklenmeyen ağ"
+    },
+    "signature": {
+      "title": "Hoşgeldiniz",
+      "thingsToKnowTitle": "Bilmen gereken şeyler",
+      "thingsToKnowContent": "Onebit'te sunulan portföylere yatırım yaparak para kazanmanız garanti edilmez. Geçmişteki performans gelecekteki sonuçların bir göstergesi değildir. Fonlarınızın güvenliğinden yalnızca siz sorumlusunuz. Sermayeniz risk altında.",
+      "accept": "Kabul",
+      "decline": "Reddetmek",
+      "tip": "Aşağıdaki \"Kabul Et\"i tıklayarak yukarıdakileri kabul ediyorum,",
+      "and": ", ve"
+    },
+    "deposit": {
+      "amount": "Tutar",
+      "walletBalance": "Cüzdan Bakiyesi",
+      "lockUpPeriod": "Kilitleme Süresi",
+      "days": "Günler",
+      "tip": "Bu portföyün yıllık yönetim ücreti <managementFee>yönetim ücreti</managementFee> ve performans ücreti <performanceFee>performans ücreti</performanceFee>."
+    },
+    "withdrawal": {
+      "amount": "Tutar",
+      "walletBalance": "Cüzdan Bakiyesi",
+      "tip": "Yönetim ücreti ve performans ücreti mahsup edilmiştir."
+    }
+  },
+  "project": {
+    "status": {
+      "open": "Açık",
+      "lockedUp": "Kilitli"
+    },
+    "fundraisingProgress": {
+      "title": "Kaynak Yaratma İlerlemesi",
+      "max": "Maks."
+    }
+  },
+  "table": {
+    "noData": "Henüz veri yok."
+  }
+}

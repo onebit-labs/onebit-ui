@@ -1,0 +1,17 @@
+{
+  "search": {
+    "name": "名前で検索"
+  },
+  "tabs": {
+    "all": "全て",
+    "deposit": "デポジット",
+    "withdrawal": "出金"
+  },
+  "transactions": {
+    "txId": "送信ID",
+    "type": "タイプ",
+    "portfolio": "ポートフォリオ",
+    "amount": "額",
+    "date": "日にち"
+  }
+}

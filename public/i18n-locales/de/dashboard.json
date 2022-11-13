@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "totalEquityValue": "Gesamtkapitalwert",
+    "totalPNL": "Gesamt-PNL",
+    "totalPortfolioDeposited": "Gesamtportfolio eingezahlt",
+    "APY": "APY"
+  },
+  "totalEquityValue": {
+    "title": "Gesamtkapitalwert",
+    "change24h": "Nach 1D"
+  },
+  "portfolioTable": {
+    "portfolioName": "Portfolioname",
+    "lockedUntil": "Gesperrt bis",
+    "netValue": "Nettowert",
+    "yourEquity": "Ihr Eigenkapital",
+    "PNL": "PNL",
+    "status": "Status",
+    "action": "Aktion"
+  }
+}

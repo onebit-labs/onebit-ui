@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "totalEquityValue": "Tổng giá trị vốn chủ sở hữu",
+    "totalPNL": "Tổng PNL",
+    "totalPortfolioDeposited": "Tổng danh mục đầu tư đã ký gửi",
+    "APY": "APY"
+  },
+  "totalEquityValue": {
+    "title": "Tổng giá trị vốn chủ sở hữu",
+    "change24h": "1D trước"
+  },
+  "portfolioTable": {
+    "portfolioName": "Tên danh mục đầu tư",
+    "lockedUntil": "Đã khóa cho đến khi",
+    "netValue": "Giá trị ròng",
+    "yourEquity": "Vốn chủ sở hữu của bạn",
+    "PNL": "PNL",
+    "status": "Trạng thái",
+    "action": "Hoạt động"
+  }
+}

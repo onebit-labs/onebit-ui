@@ -1,0 +1,17 @@
+{
+  "search": {
+    "name": "Suche mit Name"
+  },
+  "tabs": {
+    "all": "Alle",
+    "deposit": "Kaution",
+    "withdrawal": "Rückzug"
+  },
+  "transactions": {
+    "txId": "TxID",
+    "type": "Typ",
+    "portfolio": "Portfolio",
+    "amount": "Menge",
+    "date": "Datum"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "wallet": {
+    "btn": {
+      "cancel": "Cancelar",
+      "disconnected": "desconectar",
+      "deposit": "Depósito",
+      "withdraw": "Retirar",
+      "details": "Detalhes",
+      "approve": "Aprovar"
+    },
+    "disconnected": {
+      "title": "Conectar Carteira",
+      "subTitle": "Para começar a usar o Onebit"
+    },
+    "connected": {
+      "title": "Conectado",
+      "subTitle": "Conectado com"
+    },
+    "connecting": {
+      "title": "Desbloquear carteira",
+      "subTitle": "Pode ser necessário clicar na extensão."
+    },
+    "error": {
+      "title": "Conectar Carteira",
+      "subTitle": "Para começar a usar o Onebit",
+      "ChainUnknownError": "Mudar de rede"
+    },
+    "tips": {
+      "accept": "Ao conectar, eu aceito",
+      "term": "Termos de serviço da Onebit"
+    },
+    "chain": {
+      "title": "Selecione sua rede",
+      "subTitle": "Sua rede atual:",
+      "error": "Rede sem suporte"
+    },
+    "signature": {
+      "title": "Bem-vindo ao",
+      "thingsToKnowTitle": "Coisas que você deve saber",
+      "thingsToKnowContent": "Você não tem garantia de ganhar dinheiro investindo qualquer carteira oferecida na Onebit. O desempenho passado não é uma indicação de resultados futuros. Você é o único responsável pela segurança de seus fundos. Seu capital está em risco.",
+      "accept": "Aceitar",
+      "decline": "Declínio",
+      "tip": "Ao clicar em \"Aceitar\" abaixo, reconheço o acima, a",
+      "and": ", e"
+    },
+    "deposit": {
+      "amount": "Quantia",
+      "walletBalance": "Saldo da carteira",
+      "lockUpPeriod": "Período de bloqueio",
+      "days": "Dias",
+      "tip": "Esta carteira tem uma taxa de administração anual de <managementFee>a taxa de administração</managementFee> e uma taxa de desempenho de <performanceFee>a taxa de desempenho</performanceFee>."
+    },
+    "withdrawal": {
+      "amount": "Quantia",
+      "walletBalance": "Saldo da carteira",
+      "tip": "A taxa de administração e a taxa de performance foram deduzidas."
+    }
+  },
+  "project": {
+    "status": {
+      "open": "Abrir",
+      "lockedUp": "Trancado"
+    },
+    "fundraisingProgress": {
+      "title": "Progresso da arrecadação de fundos",
+      "max": "Máx."
+    }
+  },
+  "table": {
+    "noData": "Ainda não há dados."
+  }
+}

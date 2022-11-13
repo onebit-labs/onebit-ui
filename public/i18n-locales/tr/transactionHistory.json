@@ -1,0 +1,17 @@
+{
+  "search": {
+    "name": "Ada göre ara"
+  },
+  "tabs": {
+    "all": "Herşey",
+    "deposit": "Depozito",
+    "withdrawal": "Para çekme"
+  },
+  "transactions": {
+    "txId": "TxID",
+    "type": "Tip",
+    "portfolio": "portföy",
+    "amount": "Tutar",
+    "date": "Tarih"
+  }
+}

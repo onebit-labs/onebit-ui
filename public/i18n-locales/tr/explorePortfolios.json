@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "assetsUnderManagement": "Yönetim Altındaki Varlıklar",
+    "totalProfitSinceInception": "Kuruluştan Beri Toplam Kâr",
+    "portfolios": "portföyler",
+    "depositors": "Mevduat sahipleri"
+  },
+  "tabs": {
+    "placeholder": "Portföy Bul",
+    "all": "Herşey",
+    "open": "Açık",
+    "lockedUp": "Kilitli"
+  },
+  "actions": {
+    "deposit": "Depozito",
+    "withdraw": "Geri çekilmek"
+  },
+  "projectCard": {
+    "lockUpPeriod": "Kilitleme Süresi",
+    "days": "Günler",
+    "netValue": "Net değer",
+    "past7D": "7D geçmiş",
+    "AUM": "AUM",
+    "estimatedAPY": "Tahmini APY",
+    "currentAPY": "Mevcut APY",
+    "depositors": "Mevduat sahipleri"
+  }
+}

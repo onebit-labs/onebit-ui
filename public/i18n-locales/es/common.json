@@ -1,0 +1,72 @@
+{
+  "wallet": {
+    "btn": {
+      "cancel": "Cancelar",
+      "disconnected": "Desconectar",
+      "deposit": "Depósito",
+      "withdraw": "Retirar",
+      "details": "Detalles",
+      "approve": "Aprobar"
+    },
+    "disconnected": {
+      "title": "Conectar billetera",
+      "subTitle": "Para empezar a usar Onebit"
+    },
+    "connected": {
+      "title": "Conectado",
+      "subTitle": "Conectado con"
+    },
+    "connecting": {
+      "title": "Desbloquear billetera",
+      "subTitle": "Es posible que deba hacer clic en la extensión."
+    },
+    "error": {
+      "title": "Conectar billetera",
+      "subTitle": "Para empezar a usar Onebit",
+      "ChainUnknownError": "Cambiar red"
+    },
+    "tips": {
+      "accept": "Al conectarme, acepto",
+      "term": "Condiciones de servicio de Onebit"
+    },
+    "chain": {
+      "title": "Seleccione su red",
+      "subTitle": "Su red actual:",
+      "error": "Red no compatible"
+    },
+    "signature": {
+      "title": "Bienvenido a",
+      "thingsToKnowTitle": "cosas que debes saber",
+      "thingsToKnowContent": "No se garantiza que gane dinero invirtiendo en las carteras que se ofrecen en Onebit. El rendimiento pasado no es una indicación de los resultados futuros. Solo usted es responsable de la seguridad de sus fondos. Su capital está en riesgo.",
+      "accept": "Aceptar",
+      "decline": "Rechazar",
+      "tip": "Al hacer clic en \"Aceptar\" a continuación, reconozco lo anterior, la",
+      "and": ", y"
+    },
+    "deposit": {
+      "amount": "Monto",
+      "walletBalance": "Saldo de la cartera",
+      "lockUpPeriod": "Período de bloqueo",
+      "days": "Días",
+      "tip": "Esta cartera tiene una comisión de gestión anual de <managementFee>la comisión de gestión</managementFee> y una comisión de rendimiento de <performanceFee>la tasa de rendimiento</performanceFee>."
+    },
+    "withdrawal": {
+      "amount": "Monto",
+      "walletBalance": "Saldo de la cartera",
+      "tip": "Se han deducido la comisión de gestión y la comisión de rendimiento."
+    }
+  },
+  "project": {
+    "status": {
+      "open": "Abierto",
+      "lockedUp": "Bloqueado"
+    },
+    "fundraisingProgress": {
+      "title": "Progreso de recaudación de fondos",
+      "max": "máx."
+    }
+  },
+  "table": {
+    "noData": "No hay datos todavía."
+  }
+}

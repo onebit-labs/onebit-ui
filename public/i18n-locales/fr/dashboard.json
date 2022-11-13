@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "totalEquityValue": "Valeur totale des capitaux propres",
+    "totalPNL": "PNL total",
+    "totalPortfolioDeposited": "Portefeuille total déposé",
+    "APY": "APY"
+  },
+  "totalEquityValue": {
+    "title": "Valeur totale des capitaux propres",
+    "change24h": "Passé 1D"
+  },
+  "portfolioTable": {
+    "portfolioName": "Nom du portefeuille",
+    "lockedUntil": "Verrouillé jusqu'à",
+    "netValue": "Valeur nette",
+    "yourEquity": "Votre capital",
+    "PNL": "PNL",
+    "status": "Statut",
+    "action": "Action"
+  }
+}

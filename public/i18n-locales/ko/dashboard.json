@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "totalEquityValue": "총 자기자본 가치",
+    "totalPNL": "총 PNL",
+    "totalPortfolioDeposited": "예치된 총 포트폴리오",
+    "APY": "APY"
+  },
+  "totalEquityValue": {
+    "title": "총 자기자본 가치",
+    "change24h": "과거 1D"
+  },
+  "portfolioTable": {
+    "portfolioName": "포트폴리오 이름",
+    "lockedUntil": "까지 잠김",
+    "netValue": "순 가치",
+    "yourEquity": "귀하의 자산",
+    "PNL": "PNL",
+    "status": "상태",
+    "action": "동작"
+  }
+}

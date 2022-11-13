@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "assetsUnderManagement": "ممتلكات تحت اشراف الإدارة",
+    "totalProfitSinceInception": "إجمالي الربح منذ التأسيس",
+    "portfolios": "المحافظ",
+    "depositors": "المودعين"
+  },
+  "tabs": {
+    "placeholder": "البحث عن المحافظ",
+    "all": "الجميع",
+    "open": "فتح",
+    "lockedUp": "مغلق"
+  },
+  "actions": {
+    "deposit": "إيداع",
+    "withdraw": "ينسحب"
+  },
+  "projectCard": {
+    "lockUpPeriod": "فترة القفل",
+    "days": "أيام",
+    "netValue": "صافي القيمة",
+    "past7D": "الماضي 7D",
+    "AUM": "AUM",
+    "estimatedAPY": "يقدر APY",
+    "currentAPY": "APY الحالي",
+    "depositors": "المودعين"
+  }
+}

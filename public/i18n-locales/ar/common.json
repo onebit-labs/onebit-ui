@@ -1,0 +1,72 @@
+{
+  "wallet": {
+    "btn": {
+      "cancel": "يلغي",
+      "disconnected": "قطع الاتصال",
+      "deposit": "إيداع",
+      "withdraw": "ينسحب",
+      "details": "تفاصيل",
+      "approve": "يوافق"
+    },
+    "disconnected": {
+      "title": "ربط المحفظة",
+      "subTitle": "لبدء استخدام Onebit"
+    },
+    "connected": {
+      "title": "متصل",
+      "subTitle": "متصل مع"
+    },
+    "connecting": {
+      "title": "افتح المحفظة",
+      "subTitle": "قد تحتاج إلى النقر فوق الامتداد."
+    },
+    "error": {
+      "title": "ربط المحفظة",
+      "subTitle": "لبدء استخدام Onebit",
+      "ChainUnknownError": "تبديل الشبكة"
+    },
+    "tips": {
+      "accept": "عن طريق الاتصال ، أوافق",
+      "term": "شروط خدمة Onebit"
+    },
+    "chain": {
+      "title": "حدد شبكتك",
+      "subTitle": "شبكتك الحالية:",
+      "error": "شبكة غير مدعومة"
+    },
+    "signature": {
+      "title": "مرحبا بك في",
+      "thingsToKnowTitle": "أشياء يجب أن تعرفها",
+      "thingsToKnowContent": "لا يمكنك ضمان جني الأموال من خلال استثمار أي محافظ معروضة على Onebit. الأداء السابق ليس مؤشرا على النتائج المستقبلية. أنت وحدك المسؤول عن سلامة أموالك. رأس مالك في خطر.",
+      "accept": "قبول",
+      "decline": "انخفاض",
+      "tip": "بالنقر فوق \"قبول\" أدناه ، أقر بما ورد أعلاه ،",
+      "and": "، و"
+    },
+    "deposit": {
+      "amount": "مقدار",
+      "walletBalance": "رصيد المحفظة",
+      "lockUpPeriod": "فترة القفل",
+      "days": "أيام",
+      "tip": "هذه المحفظة لها رسم إدارة سنوي قدره <managementFee>رسوم الإدارة</managementFee> ورسم أداء قدره <performanceFee>رسوم الأداء</performanceFee>."
+    },
+    "withdrawal": {
+      "amount": "مقدار",
+      "walletBalance": "رصيد المحفظة",
+      "tip": "تم خصم رسوم الإدارة ورسوم الأداء."
+    }
+  },
+  "project": {
+    "status": {
+      "open": "فتح",
+      "lockedUp": "مغلق"
+    },
+    "fundraisingProgress": {
+      "title": "التقدم في جمع التبرعات",
+      "max": "الأعلى"
+    }
+  },
+  "table": {
+    "noData": "لا توجد بيانات حتى الآن."
+  }
+}

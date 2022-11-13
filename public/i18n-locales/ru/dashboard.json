@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "totalEquityValue": "Общая стоимость собственного капитала",
+    "totalPNL": "Общий ПНЛ",
+    "totalPortfolioDeposited": "Общий депонированный портфель",
+    "APY": "APY"
+  },
+  "totalEquityValue": {
+    "title": "Общая стоимость собственного капитала",
+    "change24h": "Прошлое 1D"
+  },
+  "portfolioTable": {
+    "portfolioName": "Название портфеля",
+    "lockedUntil": "Заблокировано до",
+    "netValue": "Чистая стоимость",
+    "yourEquity": "Ваш капитал",
+    "PNL": "ПНЛ",
+    "status": "Статус",
+    "action": "Действие"
+  }
+}

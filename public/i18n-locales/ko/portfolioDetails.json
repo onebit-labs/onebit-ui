@@ -1,0 +1,108 @@
+{
+  "tabs": {
+    "overview": "개요",
+    "fees": "수수료",
+    "policies": "정책",
+    "depositors": "예금자"
+  },
+  "info": {
+    "status": "상태",
+    "term": "용어",
+    "lockUpPeriod": "락업 기간",
+    "days": "날",
+    "standard": "기준",
+    "yourEquity": "귀하의 자산",
+    "PNL": "PNL",
+    "stats": {
+      "assetsUnderManagement": "관리 중인 자산",
+      "currentAPY": "현재 APY",
+      "estimatedAPY": "예상 APY",
+      "depositors": "예금자"
+    },
+    "description": {
+      "Onebit-Lightning-Hunter-USDT": {
+        "main": "고주파 거래는 코로케이션 서버, 저지연 채널, 낮은 거래 수수료 계정의 장점을 활용하면서 매우 짧은 시간에 많은 수의 보류 주문을 실행하여 시장 스프레드를 포착하는 미세 구조 전략입니다.",
+        "investmentRationale": [
+          "높은 연간 수익을 추구하는 위험 회피 투자자에게 적합합니다.",
+          "투자자는 위험 노출이 없지만 제품 용량은 낮습니다."
+        ]
+      },
+      "Onebit-Smart-Trend-USDT": {
+        "main": "거시적 환경에 대한 리스크 선호도, 통화의 합리적인 밸류에이션 수준, 시장 추세의 모멘텀을 통해 현재 가격 추세를 예측하는 전략입니다. 투자 프로세스는 매크로, 가치 및 추세의 하향식 다층 조합입니다.",
+        "investmentRationale": [
+          "높은 연간 수익을 기대하는 위험을 추구하는 투자자에게 적합합니다.",
+          "투자자는 암호화폐 시장에 대해 장기적으로 편향되어 있습니다."
+        ]
+      },
+      "Onebit-Smart-Trend-BTC": {
+        "main": "거시적 환경에 대한 리스크 선호도, 통화의 합리적인 밸류에이션 수준, 시장 추세의 모멘텀을 통해 현재 가격 추세를 예측하는 전략입니다. 투자 프로세스는 매크로, 가치 및 추세의 하향식 다층 조합입니다.",
+        "investmentRationale": [
+          "높은 연간 수익을 기대하는 위험을 추구하는 투자자에게 적합합니다.",
+          "투자자는 암호화폐 시장에 대해 장기적으로 편향되어 있습니다."
+        ]
+      },
+      "Onebit-Smart-Trend-USDT-Demo": {
+        "main": "거시적 환경에 대한 리스크 선호도, 통화의 합리적인 밸류에이션 수준, 시장 추세의 모멘텀을 통해 현재 가격 추세를 예측하는 전략입니다. 투자 프로세스는 매크로, 가치 및 추세의 하향식 다층 조합입니다.",
+        "investmentRationale": [
+          "높은 연간 수익을 기대하는 위험을 추구하는 투자자에게 적합합니다.",
+          "투자자는 암호화폐 시장에 대해 장기적으로 편향되어 있습니다."
+        ]
+      },
+      "investmentRationale": "투자 근거:"
+    }
+  },
+  "overview": {
+    "netValue": {
+      "title": "현재 순 가치",
+      "change24h": "과거 1D"
+    },
+    "historicalAccumulativeNetValue": {
+      "title": "역사적 누적 순 가치",
+      "change24h": "과거 1D"
+    },
+    "historicalPerformance": {
+      "title": "역사적 성과",
+      "term": "용어",
+      "lockUpPeriod": "락업 기간",
+      "AUM": "AUM",
+      "depositors": "예금자",
+      "finalNetValue": "최종 순 가치",
+      "return": "반품",
+      "APY": "APY"
+    }
+  },
+  "fees": {
+    "title": "수수료",
+    "management": {
+      "title": "관리비",
+      "tip": "누적수익률이 20% 이상일 경우 2%",
+      "description": "관리 수수료는 예금자가 Porfolio Manager에게 정기적으로 지불하는 금액입니다. 수수료는 관리 중인 자산의 연간 백분율로 계산되며 Vault 수익과 무관합니다."
+    },
+    "perfomance": {
+      "title": "공연비",
+      "description": "성과 수수료는 사전 정의된 기간 동안 발생한 긍정적인 수익 중에서 예금자가 포트폴리오 관리자에게 지불하는 백분율 기반 수수료입니다. 미리 정의된 기간을 잠긴 기간(일반적으로 1년 또는 1분기)이라고 합니다. 수익은 표시 자산에 대해 벤치마킹됩니다."
+    },
+    "entrance": {
+      "title": "입장료"
+    },
+    "exit": {
+      "title": "퇴장료"
+    }
+  },
+  "policies": {
+    "title": "정책",
+    "openPeriod": "오픈 기간",
+    "lockUpPeriod": "락업 기간",
+    "fundraisingCap": "모금 하드 캡",
+    "softUpperLimit": "모금 소프트 캡",
+    "minimumDeposit": "최소 보증금",
+    "reInvestment": "재투자",
+    "description": "락업 기간이 끝날 때 예금자가 자금을 인출하지 않으면 해당 자금은 다음 기간 동안 포트폴리오에 재투자됩니다."
+  },
+  "depositors": {
+    "depositors": "예금자",
+    "since": "부터",
+    "equity": "형평성",
+    "percentage": "백분율"
+  }
+}

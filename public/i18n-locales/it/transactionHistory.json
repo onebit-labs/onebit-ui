@@ -1,0 +1,17 @@
+{
+  "search": {
+    "name": "Ricerca per nome"
+  },
+  "tabs": {
+    "all": "Tutto",
+    "deposit": "Depositare",
+    "withdrawal": "Ritiro"
+  },
+  "transactions": {
+    "txId": "TxID",
+    "type": "Tipo",
+    "portfolio": "Portafoglio",
+    "amount": "Quantità",
+    "date": "Data"
+  }
+}

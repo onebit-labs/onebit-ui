@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "assetsUnderManagement": "Activos sob gestão",
+    "totalProfitSinceInception": "Lucro total desde o início",
+    "portfolios": "Portfólios",
+    "depositors": "Depositantes"
+  },
+  "tabs": {
+    "placeholder": "Encontrar portfólios",
+    "all": "Tudo",
+    "open": "Abrir",
+    "lockedUp": "Trancado"
+  },
+  "actions": {
+    "deposit": "Depósito",
+    "withdraw": "Retirar"
+  },
+  "projectCard": {
+    "lockUpPeriod": "Período de bloqueio",
+    "days": "Dias",
+    "netValue": "Valor líquido",
+    "past7D": "7D passado",
+    "AUM": "AUM",
+    "estimatedAPY": "APY estimado",
+    "currentAPY": "APY atual",
+    "depositors": "Depositantes"
+  }
+}

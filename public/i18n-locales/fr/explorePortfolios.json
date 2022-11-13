@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "assetsUnderManagement": "Actifs sous gestion",
+    "totalProfitSinceInception": "Bénéfice total depuis la création",
+    "portfolios": "Portefeuilles",
+    "depositors": "Déposants"
+  },
+  "tabs": {
+    "placeholder": "Trouver des portefeuilles",
+    "all": "Tout",
+    "open": "Ouvert",
+    "lockedUp": "Verrouillé"
+  },
+  "actions": {
+    "deposit": "Verser",
+    "withdraw": "Se désister"
+  },
+  "projectCard": {
+    "lockUpPeriod": "Période de blocage",
+    "days": "Journées",
+    "netValue": "Valeur nette",
+    "past7D": "Passé 7D",
+    "AUM": "AUM",
+    "estimatedAPY": "APY estimé",
+    "currentAPY": "APY actuel",
+    "depositors": "Déposants"
+  }
+}

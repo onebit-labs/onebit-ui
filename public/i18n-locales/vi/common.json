@@ -1,0 +1,72 @@
+{
+  "wallet": {
+    "btn": {
+      "cancel": "Hủy bỏ",
+      "disconnected": "Ngắt kết nối",
+      "deposit": "Tiền gửi",
+      "withdraw": "Rút",
+      "details": "Thông tin chi tiết",
+      "approve": "Chấp thuận"
+    },
+    "disconnected": {
+      "title": "Kết nối ví",
+      "subTitle": "Để bắt đầu sử dụng Onebit"
+    },
+    "connected": {
+      "title": "Đã kết nối",
+      "subTitle": "Kết nối với"
+    },
+    "connecting": {
+      "title": "Mở khóa ví",
+      "subTitle": "Bạn có thể cần phải nhấp vào tiện ích mở rộng."
+    },
+    "error": {
+      "title": "Kết nối ví",
+      "subTitle": "Để bắt đầu sử dụng Onebit",
+      "ChainUnknownError": "Chuyển mạng"
+    },
+    "tips": {
+      "accept": "Bằng cách kết nối, tôi chấp nhận",
+      "term": "Điều khoản dịch vụ của Onebit"
+    },
+    "chain": {
+      "title": "Chọn mạng của bạn",
+      "subTitle": "Mạng hiện tại của bạn:",
+      "error": "Mạng không được hỗ trợ"
+    },
+    "signature": {
+      "title": "Chào mừng bạn đến",
+      "thingsToKnowTitle": "Những điều bạn nên biết",
+      "thingsToKnowContent": "Bạn không được đảm bảo kiếm tiền bằng cách đầu tư bất kỳ danh mục đầu tư nào được cung cấp trên Onebit. hiệu suất trong quá khứ không phải là một dấu hiệu cho thấy các kết quả trong tương lai. Một mình bạn chịu trách nhiệm cho sự an toàn của tiền của bạn. Vốn của bạn đang gặp rủi ro.",
+      "accept": "Chấp nhận",
+      "decline": "Từ chối",
+      "tip": "Bằng cách nhấp vào \"Chấp nhận\" bên dưới, tôi xác nhận ở trên,",
+      "and": ", và"
+    },
+    "deposit": {
+      "amount": "Số lượng",
+      "walletBalance": "Số dư trên Wallet",
+      "lockUpPeriod": "Thời gian khóa máy",
+      "days": "Ngày",
+      "tip": "Danh mục đầu tư này có phí quản lý hàng năm là <managementFee>phí quản lý</managementFee> và phí hiệu suất là <performanceFee>phí biểu diễn</performanceFee>."
+    },
+    "withdrawal": {
+      "amount": "Số lượng",
+      "walletBalance": "Số dư trên Wallet",
+      "tip": "Phí quản lý và phí biểu diễn đã được khấu trừ."
+    }
+  },
+  "project": {
+    "status": {
+      "open": "Mở",
+      "lockedUp": "Nhốt"
+    },
+    "fundraisingProgress": {
+      "title": "Tiến độ gây quỹ",
+      "max": "Max"
+    }
+  },
+  "table": {
+    "noData": "Chưa có dữ liệu."
+  }
+}

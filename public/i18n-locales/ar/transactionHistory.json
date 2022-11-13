@@ -1,0 +1,17 @@
+{
+  "search": {
+    "name": "البحث عن طريق الإسم"
+  },
+  "tabs": {
+    "all": "الجميع",
+    "deposit": "إيداع",
+    "withdrawal": "انسحاب"
+  },
+  "transactions": {
+    "txId": "TxID",
+    "type": "يكتب",
+    "portfolio": "مَلَفّ",
+    "amount": "مقدار",
+    "date": "تاريخ"
+  }
+}

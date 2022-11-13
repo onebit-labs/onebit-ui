@@ -1,0 +1,72 @@
+{
+  "wallet": {
+    "btn": {
+      "cancel": "Annuler",
+      "disconnected": "Déconnecter",
+      "deposit": "Verser",
+      "withdraw": "Se désister",
+      "details": "Détails",
+      "approve": "Approuver"
+    },
+    "disconnected": {
+      "title": "Connecter le portefeuille",
+      "subTitle": "Pour commencer à utiliser Onebit"
+    },
+    "connected": {
+      "title": "Lié",
+      "subTitle": "Connecté avec"
+    },
+    "connecting": {
+      "title": "Déverrouiller le portefeuille",
+      "subTitle": "Vous devrez peut-être cliquer sur l'extension."
+    },
+    "error": {
+      "title": "Connecter le portefeuille",
+      "subTitle": "Pour commencer à utiliser Onebit",
+      "ChainUnknownError": "Changer de réseau"
+    },
+    "tips": {
+      "accept": "En me connectant, j'accepte",
+      "term": "Conditions d'utilisation d'Onebit"
+    },
+    "chain": {
+      "title": "Sélectionnez votre réseau",
+      "subTitle": "Votre réseau actuel :",
+      "error": "Réseau non pris en charge"
+    },
+    "signature": {
+      "title": "Bienvenue à",
+      "thingsToKnowTitle": "Ce que vous devez savoir",
+      "thingsToKnowContent": "Vous n'êtes pas assuré de gagner de l'argent en investissant dans les portefeuilles proposés sur Onebit. Les performances passées ne préjugent pas des résultats futurs. Vous êtes seul responsable de la sécurité de vos fonds. Votre capital est en danger.",
+      "accept": "Accepter",
+      "decline": "Déclin",
+      "tip": "En cliquant sur \"Accepter\" ci-dessous, je reconnais ce qui précède, le",
+      "and": ", et"
+    },
+    "deposit": {
+      "amount": "Montant",
+      "walletBalance": "Solde du portefeuille",
+      "lockUpPeriod": "Période de blocage",
+      "days": "Journées",
+      "tip": "Ce portefeuille a des frais de gestion annuels de <managementFee>les frais de gestion</managementFee> et une commission de performance de <performanceFee>la commission de performance</performanceFee>."
+    },
+    "withdrawal": {
+      "amount": "Montant",
+      "walletBalance": "Solde du portefeuille",
+      "tip": "La commission de gestion et la commission de performance ont été déduites."
+    }
+  },
+  "project": {
+    "status": {
+      "open": "Ouvert",
+      "lockedUp": "Verrouillé"
+    },
+    "fundraisingProgress": {
+      "title": "Progression de la collecte de fonds",
+      "max": "Max"
+    }
+  },
+  "table": {
+    "noData": "Pas encore de données."
+  }
+}

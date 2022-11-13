@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "totalEquityValue": "إجمالي قيمة حقوق الملكية",
+    "totalPNL": "مجموع PNL",
+    "totalPortfolioDeposited": "إجمالي المحفظة المودعة",
+    "APY": "APY"
+  },
+  "totalEquityValue": {
+    "title": "إجمالي قيمة حقوق الملكية",
+    "change24h": "الماضي 1D"
+  },
+  "portfolioTable": {
+    "portfolioName": "اسم المحفظة",
+    "lockedUntil": "مغلق حتى",
+    "netValue": "صافي القيمة",
+    "yourEquity": "حقوق الملكية الخاصة بك",
+    "PNL": "PNL",
+    "status": "حالة",
+    "action": "عمل"
+  }
+}

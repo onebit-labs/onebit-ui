@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "totalEquityValue": "มูลค่าหุ้นทั้งหมด",
+    "totalPNL": "รวม PNL",
+    "totalPortfolioDeposited": "ฝากผลงานทั้งหมด",
+    "APY": "APY"
+  },
+  "totalEquityValue": {
+    "title": "มูลค่าหุ้นทั้งหมด",
+    "change24h": "1 วันที่ผ่านมา"
+  },
+  "portfolioTable": {
+    "portfolioName": "ชื่อผลงาน",
+    "lockedUntil": "ล็อคจน",
+    "netValue": "มูลค่าสุทธิ",
+    "yourEquity": "ทุนของคุณ",
+    "PNL": "PNL",
+    "status": "สถานะ",
+    "action": "การกระทำ"
+  }
+}

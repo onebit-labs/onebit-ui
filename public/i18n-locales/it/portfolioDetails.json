@@ -1,0 +1,108 @@
+{
+  "tabs": {
+    "overview": "Panoramica",
+    "fees": "Commissioni",
+    "policies": "Politiche",
+    "depositors": "Depositanti"
+  },
+  "info": {
+    "status": "Stato",
+    "term": "Termine",
+    "lockUpPeriod": "Periodo di blocco",
+    "days": "Giorni",
+    "standard": "Standard",
+    "yourEquity": "Il tuo patrimonio",
+    "PNL": "PNL",
+    "stats": {
+      "assetsUnderManagement": "Risparmio gestito",
+      "currentAPY": "APY attuale",
+      "estimatedAPY": "APY stimato",
+      "depositors": "Depositanti"
+    },
+    "description": {
+      "Onebit-Lightning-Hunter-USDT": {
+        "main": "Il trading ad alta frequenza è una strategia di microstruttura per catturare lo spread di mercato eseguendo un gran numero di ordini in sospeso in un periodo di tempo molto breve sfruttando i vantaggi di server di co-localizzazione, canali a bassa latenza e conti con commissioni di trading basse.",
+        "investmentRationale": [
+          "Adatto per investitori avversi al rischio che cercano rendimenti annuali elevati.",
+          "Gli investitori non sono esposti al rischio, ma la capacità del prodotto è bassa."
+        ]
+      },
+      "Onebit-Smart-Trend-USDT": {
+        "main": "La strategia mira a prevedere le tendenze attuali dei prezzi attraverso la preferenza per il rischio per l'ambiente macro, livelli di valutazione ragionevoli delle valute e lo slancio delle tendenze del mercato. Il processo di investimento è una combinazione top-down multistrato di macro, valore e trend.",
+        "investmentRationale": [
+          "Adatto per investitori in cerca di rischio che si aspettano un elevato rendimento annuo.",
+          "L'investitore ha una propensione a lungo termine per il mercato delle criptovalute."
+        ]
+      },
+      "Onebit-Smart-Trend-BTC": {
+        "main": "La strategia mira a prevedere le tendenze attuali dei prezzi attraverso la preferenza per il rischio per l'ambiente macro, livelli di valutazione ragionevoli delle valute e lo slancio delle tendenze del mercato. Il processo di investimento è una combinazione top-down multistrato di macro, valore e trend.",
+        "investmentRationale": [
+          "Adatto per investitori in cerca di rischio che si aspettano un elevato rendimento annuo.",
+          "L'investitore ha una propensione a lungo termine per il mercato delle criptovalute."
+        ]
+      },
+      "Onebit-Smart-Trend-USDT-Demo": {
+        "main": "La strategia mira a prevedere le tendenze attuali dei prezzi attraverso la preferenza per il rischio per l'ambiente macro, livelli di valutazione ragionevoli delle valute e lo slancio delle tendenze del mercato. Il processo di investimento è una combinazione top-down multistrato di macro, valore e trend.",
+        "investmentRationale": [
+          "Adatto per investitori in cerca di rischio che si aspettano un elevato rendimento annuo.",
+          "L'investitore ha una propensione a lungo termine per il mercato delle criptovalute."
+        ]
+      },
+      "investmentRationale": "Razionale di investimento:"
+    }
+  },
+  "overview": {
+    "netValue": {
+      "title": "Valore netto attuale",
+      "change24h": "Passato 1D"
+    },
+    "historicalAccumulativeNetValue": {
+      "title": "Valore netto accumulato storico",
+      "change24h": "Passato 1D"
+    },
+    "historicalPerformance": {
+      "title": "Performance storica",
+      "term": "Termine",
+      "lockUpPeriod": "Periodo di blocco",
+      "AUM": "AUM",
+      "depositors": "Depositanti",
+      "finalNetValue": "Valore netto finale",
+      "return": "Ritorno",
+      "APY": "APY"
+    }
+  },
+  "fees": {
+    "title": "Commissioni",
+    "management": {
+      "title": "Commissione di gestione",
+      "tip": "2% se il rendimento cumulativo è superiore al 20%",
+      "description": "Una commissione di gestione è un pagamento periodico che viene pagato dai depositanti al Gestore del portafoglio. La commissione è calcolata come percentuale annualizzata del patrimonio in gestione ed è indipendente dai rendimenti del Vault."
+    },
+    "perfomance": {
+      "title": "Commissione di prestazione",
+      "description": "Una commissione di performance è una commissione percentuale che i depositanti pagano al Gestore di portafoglio in base ai rendimenti positivi realizzati in un periodo predefinito. Il periodo predefinito è indicato come un periodo di blocco (in genere un anno o un trimestre). I rendimenti sono confrontati con l'attività di denominazione."
+    },
+    "entrance": {
+      "title": "Biglietto d'ingresso"
+    },
+    "exit": {
+      "title": "Tariffa di uscita"
+    }
+  },
+  "policies": {
+    "title": "Politiche",
+    "openPeriod": "Periodo aperto",
+    "lockUpPeriod": "Periodo di blocco",
+    "fundraisingCap": "Hard cap per la raccolta fondi",
+    "softUpperLimit": "Soft cap per la raccolta fondi",
+    "minimumDeposit": "Deposito minimo",
+    "reInvestment": "Reinvestimento",
+    "description": "Se i depositanti non ritirano i fondi alla fine del periodo di blocco, i fondi verranno reinvestiti nel portafoglio per il periodo successivo."
+  },
+  "depositors": {
+    "depositors": "Depositanti",
+    "since": "Da",
+    "equity": "Equità",
+    "percentage": "Percentuale"
+  }
+}

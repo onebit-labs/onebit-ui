@@ -1,0 +1,72 @@
+{
+  "wallet": {
+    "btn": {
+      "cancel": "キャンセル",
+      "disconnected": "切断する",
+      "deposit": "デポジット",
+      "withdraw": "撤退",
+      "details": "詳細",
+      "approve": "承認"
+    },
+    "disconnected": {
+      "title": "ウォレットを接続",
+      "subTitle": "ワンビットを使い始めるには"
+    },
+    "connected": {
+      "title": "接続済み",
+      "subTitle": "つながっている"
+    },
+    "connecting": {
+      "title": "ウォレットのロックを解除",
+      "subTitle": "拡張機能をクリックする必要がある場合があります。"
+    },
+    "error": {
+      "title": "ウォレットを接続",
+      "subTitle": "ワンビットを使い始めるには",
+      "ChainUnknownError": "スイッチ ネットワーク"
+    },
+    "tips": {
+      "accept": "接続することで、同意します",
+      "term": "Onebitの利用規約"
+    },
+    "chain": {
+      "title": "ネットワークを選択",
+      "subTitle": "現在のネットワーク:",
+      "error": "サポートされていないネットワーク"
+    },
+    "signature": {
+      "title": "へようこそ",
+      "thingsToKnowTitle": "知っておくべきこと",
+      "thingsToKnowContent": "Onebit で提供されているポートフォリオに投資することで、お金を稼ぐことが保証されるわけではありません。過去のパフォーマンスは、将来の結果を示すものではありません。あなただけがあなたの資金の安全性に責任があります。あなたの資本は危険にさらされています。",
+      "accept": "承認",
+      "decline": "却下",
+      "tip": "以下の「同意する」をクリックすることにより、上記の内容に同意します。",
+      "and": "、 と"
+    },
+    "deposit": {
+      "amount": "額",
+      "walletBalance": "ウォレットの残高",
+      "lockUpPeriod": "ロックアップ期間",
+      "days": "日々",
+      "tip": "このポートフォリオには、<managementFee>管理費</managementFee> の年間管理費と <performanceFee>パフォーマンス料金</performanceFee> の成功報酬があります。"
+    },
+    "withdrawal": {
+      "amount": "額",
+      "walletBalance": "ウォレットの残高",
+      "tip": "管理費、成功報酬は差し引かれております。"
+    }
+  },
+  "project": {
+    "status": {
+      "open": "開ける",
+      "lockedUp": "閉じ込められた"
+    },
+    "fundraisingProgress": {
+      "title": "募金の進捗",
+      "max": "マックス"
+    }
+  },
+  "table": {
+    "noData": "まだデータがありません。"
+  }
+}

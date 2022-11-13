@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "assetsUnderManagement": "Verwaltetes Vermögen",
+    "totalProfitSinceInception": "Gesamtgewinn seit Gründung",
+    "portfolios": "Portfolios",
+    "depositors": "Einleger"
+  },
+  "tabs": {
+    "placeholder": "Portfolios finden",
+    "all": "Alle",
+    "open": "Offen",
+    "lockedUp": "Eingesperrt"
+  },
+  "actions": {
+    "deposit": "Kaution",
+    "withdraw": "Abheben"
+  },
+  "projectCard": {
+    "lockUpPeriod": "Sperrfrist",
+    "days": "Tage",
+    "netValue": "Nettowert",
+    "past7D": "Nach 7D",
+    "AUM": "AUM",
+    "estimatedAPY": "Geschätzter APY",
+    "currentAPY": "Aktuelle APY",
+    "depositors": "Einleger"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "wallet": {
+    "btn": {
+      "cancel": "Annulla",
+      "disconnected": "Disconnetti",
+      "deposit": "Depositare",
+      "withdraw": "Ritirare",
+      "details": "Particolari",
+      "approve": "Approvare"
+    },
+    "disconnected": {
+      "title": "Collega il portafoglio",
+      "subTitle": "Per iniziare a usare Onebit"
+    },
+    "connected": {
+      "title": "Collegato",
+      "subTitle": "Connesso con"
+    },
+    "connecting": {
+      "title": "Sblocca il portafoglio",
+      "subTitle": "Potrebbe essere necessario fare clic sull'estensione."
+    },
+    "error": {
+      "title": "Collega il portafoglio",
+      "subTitle": "Per iniziare a usare Onebit",
+      "ChainUnknownError": "Cambia rete"
+    },
+    "tips": {
+      "accept": "Collegandomi, accetto",
+      "term": "Termini di servizio di Onebit"
+    },
+    "chain": {
+      "title": "Seleziona la tua rete",
+      "subTitle": "La tua rete attuale:",
+      "error": "Rete non supportata"
+    },
+    "signature": {
+      "title": "Benvenuto a",
+      "thingsToKnowTitle": "Cose che dovresti sapere",
+      "thingsToKnowContent": "Non hai la garanzia di guadagnare investendo i portafogli offerti su Onebit. La performance passata non è un'indicazione dei risultati futuri. Tu solo sei responsabile della sicurezza dei tuoi fondi. Il tuo capitale è a rischio.",
+      "accept": "Accettare",
+      "decline": "Declino",
+      "tip": "Facendo clic su \"Accetta\" di seguito, prendo atto di quanto sopra, il",
+      "and": ", e"
+    },
+    "deposit": {
+      "amount": "Quantità",
+      "walletBalance": "Saldo del portafoglio",
+      "lockUpPeriod": "Periodo di blocco",
+      "days": "Giorni",
+      "tip": "Questo portafoglio ha una commissione di gestione annuale di <managementFee>la commissione di gestione</managementFee> e una commissione di performance di <performanceFee>la commissione di performance</performanceFee>."
+    },
+    "withdrawal": {
+      "amount": "Quantità",
+      "walletBalance": "Saldo del portafoglio",
+      "tip": "La commissione di gestione e la commissione di performance sono state detratte."
+    }
+  },
+  "project": {
+    "status": {
+      "open": "Aprire",
+      "lockedUp": "Rinchiuso"
+    },
+    "fundraisingProgress": {
+      "title": "Progressi nella raccolta fondi",
+      "max": "Massimo"
+    }
+  },
+  "table": {
+    "noData": "Nessun dato ancora."
+  }
+}

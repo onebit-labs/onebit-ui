@@ -1,0 +1,72 @@
+{
+  "wallet": {
+    "btn": {
+      "cancel": "Absagen",
+      "disconnected": "Trennen",
+      "deposit": "Kaution",
+      "withdraw": "Abheben",
+      "details": "Einzelheiten",
+      "approve": "Genehmigen"
+    },
+    "disconnected": {
+      "title": "Brieftasche verbinden",
+      "subTitle": "So beginnen Sie mit der Verwendung von Onebit"
+    },
+    "connected": {
+      "title": "In Verbindung gebracht",
+      "subTitle": "Verbunden mit"
+    },
+    "connecting": {
+      "title": "Geldbörse entsperren",
+      "subTitle": "Möglicherweise müssen Sie auf die Erweiterung klicken."
+    },
+    "error": {
+      "title": "Brieftasche verbinden",
+      "subTitle": "So beginnen Sie mit der Verwendung von Onebit",
+      "ChainUnknownError": "Netzwerk wechseln"
+    },
+    "tips": {
+      "accept": "Indem ich mich verbinde, akzeptiere ich",
+      "term": "Nutzungsbedingungen von Onebit"
+    },
+    "chain": {
+      "title": "Wählen Sie Ihr Netzwerk aus",
+      "subTitle": "Ihr aktuelles Netzwerk:",
+      "error": "Nicht unterstütztes Netzwerk"
+    },
+    "signature": {
+      "title": "Willkommen zu",
+      "thingsToKnowTitle": "Dinge, die Sie wissen sollten",
+      "thingsToKnowContent": "Es ist nicht garantiert, dass Sie Geld verdienen, indem Sie Portfolios investieren, die auf Onebit angeboten werden. Die Wertentwicklung in der Vergangenheit ist kein Hinweis auf zukünftige Ergebnisse. Sie allein sind für die Sicherheit Ihrer Gelder verantwortlich. Ihr Kapital ist gefährdet.",
+      "accept": "Annehmen",
+      "decline": "Abfall",
+      "tip": "Indem ich unten auf „Akzeptieren“ klicke, erkenne ich das Vorstehende an",
+      "and": ", und"
+    },
+    "deposit": {
+      "amount": "Menge",
+      "walletBalance": "Wallet-Guthaben",
+      "lockUpPeriod": "Sperrfrist",
+      "days": "Tage",
+      "tip": "Dieses Portfolio hat eine jährliche Verwaltungsgebühr von <managementFee>die Verwaltungsgebühr</managementFee> und eine Performancegebühr von <performanceFee>das Leistungshonorar</performanceFee>."
+    },
+    "withdrawal": {
+      "amount": "Menge",
+      "walletBalance": "Wallet-Guthaben",
+      "tip": "Die Verwaltungsgebühr und die Performancegebühr wurden abgezogen."
+    }
+  },
+  "project": {
+    "status": {
+      "open": "Offen",
+      "lockedUp": "Eingesperrt"
+    },
+    "fundraisingProgress": {
+      "title": "Fundraising-Fortschritt",
+      "max": "max"
+    }
+  },
+  "table": {
+    "noData": "Noch keine Daten."
+  }
+}

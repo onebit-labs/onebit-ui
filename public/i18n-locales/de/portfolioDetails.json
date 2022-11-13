@@ -1,0 +1,108 @@
+{
+  "tabs": {
+    "overview": "Überblick",
+    "fees": "Honorare",
+    "policies": "Richtlinien",
+    "depositors": "Einleger"
+  },
+  "info": {
+    "status": "Status",
+    "term": "Begriff",
+    "lockUpPeriod": "Sperrfrist",
+    "days": "Tage",
+    "standard": "Standard",
+    "yourEquity": "Ihr Eigenkapital",
+    "PNL": "PNL",
+    "stats": {
+      "assetsUnderManagement": "Verwaltetes Vermögen",
+      "currentAPY": "Aktuelle APY",
+      "estimatedAPY": "Geschätzter APY",
+      "depositors": "Einleger"
+    },
+    "description": {
+      "Onebit-Lightning-Hunter-USDT": {
+        "main": "Der Hochfrequenzhandel ist eine Mikrostrukturstrategie, um den Marktspread zu erfassen, indem eine große Anzahl ausstehender Aufträge in sehr kurzer Zeit ausgeführt wird, während die Vorteile von Co-Location-Servern, Kanälen mit geringer Latenz und Konten mit niedrigen Handelsgebühren genutzt werden.",
+        "investmentRationale": [
+          "Geeignet für risikoscheue Anleger, die hohe jährliche Renditen anstreben.",
+          "Anleger sind keinem Risiko ausgesetzt, aber die Produktkapazität ist gering."
+        ]
+      },
+      "Onebit-Smart-Trend-USDT": {
+        "main": "Die Strategie zielt darauf ab, aktuelle Preistrends durch Risikopräferenz für das Makroumfeld, angemessene Bewertungsniveaus von Währungen und die Dynamik von Markttrends vorherzusagen. Der Anlageprozess ist eine mehrschichtige Top-down-Kombination aus Makro, Wert und Trend.",
+        "investmentRationale": [
+          "Geeignet für risikofreudige Anleger, die eine hohe jährliche Rendite erwarten.",
+          "Der Investor hat eine langfristige Long-Tendenz des Kryptomarktes."
+        ]
+      },
+      "Onebit-Smart-Trend-BTC": {
+        "main": "Die Strategie zielt darauf ab, aktuelle Preistrends durch Risikopräferenz für das Makroumfeld, angemessene Bewertungsniveaus von Währungen und die Dynamik von Markttrends vorherzusagen. Der Anlageprozess ist eine mehrschichtige Top-down-Kombination aus Makro, Wert und Trend.",
+        "investmentRationale": [
+          "Geeignet für risikofreudige Anleger, die eine hohe jährliche Rendite erwarten.",
+          "Der Investor hat eine langfristige Long-Tendenz des Kryptomarktes."
+        ]
+      },
+      "Onebit-Smart-Trend-USDT-Demo": {
+        "main": "Die Strategie zielt darauf ab, aktuelle Preistrends durch Risikopräferenz für das Makroumfeld, angemessene Bewertungsniveaus von Währungen und die Dynamik von Markttrends vorherzusagen. Der Anlageprozess ist eine mehrschichtige Top-down-Kombination aus Makro, Wert und Trend.",
+        "investmentRationale": [
+          "Geeignet für risikofreudige Anleger, die eine hohe jährliche Rendite erwarten.",
+          "Der Investor hat eine langfristige Long-Tendenz des Kryptomarktes."
+        ]
+      },
+      "investmentRationale": "Begründung der Investition:"
+    }
+  },
+  "overview": {
+    "netValue": {
+      "title": "Aktueller Nettowert",
+      "change24h": "Nach 1D"
+    },
+    "historicalAccumulativeNetValue": {
+      "title": "Historischer kumulativer Nettowert",
+      "change24h": "Nach 1D"
+    },
+    "historicalPerformance": {
+      "title": "Historische Leistung",
+      "term": "Begriff",
+      "lockUpPeriod": "Sperrfrist",
+      "AUM": "AUM",
+      "depositors": "Einleger",
+      "finalNetValue": "Endgültiger Nettowert",
+      "return": "Zurückkehren",
+      "APY": "APY"
+    }
+  },
+  "fees": {
+    "title": "Honorare",
+    "management": {
+      "title": "Verwaltungsgebühr",
+      "tip": "2 %, wenn die kumulierte Rendite über 20 % liegt",
+      "description": "Eine Verwaltungsgebühr ist eine regelmäßige Zahlung, die von Einlegern an den Portfolio-Manager gezahlt wird. Die Gebühr wird als annualisierter Prozentsatz des verwalteten Vermögens berechnet und ist unabhängig von den Vault-Erträgen."
+    },
+    "perfomance": {
+      "title": "Leistungsgebühr",
+      "description": "Eine Performancegebühr ist eine prozentuale Gebühr, die Einleger aus den positiven Renditen über einen vordefinierten Zeitraum an den Portfoliomanager zahlen. Der vordefinierte Zeitraum wird als Sperrzeit bezeichnet (normalerweise ein Jahr oder ein Quartal). Die Renditen werden mit dem Denominationsvermögenswert verglichen."
+    },
+    "entrance": {
+      "title": "Eintrittspreis"
+    },
+    "exit": {
+      "title": "Austrittsgebühr"
+    }
+  },
+  "policies": {
+    "title": "Richtlinien",
+    "openPeriod": "Offene Periode",
+    "lockUpPeriod": "Sperrfrist",
+    "fundraisingCap": "Fundraising Hard Cap",
+    "softUpperLimit": "Fundraising-Soft-Cap",
+    "minimumDeposit": "Mindesteinzahlung",
+    "reInvestment": "Reinvestition",
+    "description": "Wenn Einleger die Gelder am Ende der Sperrfrist nicht abheben, werden die Gelder für die nächste Periode wieder in das Portfolio investiert."
+  },
+  "depositors": {
+    "depositors": "Einleger",
+    "since": "Seit",
+    "equity": "Eigenkapital",
+    "percentage": "Prozentsatz"
+  }
+}

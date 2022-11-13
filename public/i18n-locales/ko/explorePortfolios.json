@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "assetsUnderManagement": "관리 중인 자산",
+    "totalProfitSinceInception": "설립 이후 총 이익",
+    "portfolios": "포트폴리오",
+    "depositors": "예금자"
+  },
+  "tabs": {
+    "placeholder": "포트폴리오 찾기",
+    "all": "모두",
+    "open": "열려 있는",
+    "lockedUp": "갇힌"
+  },
+  "actions": {
+    "deposit": "보증금",
+    "withdraw": "철회하다"
+  },
+  "projectCard": {
+    "lockUpPeriod": "락업 기간",
+    "days": "날",
+    "netValue": "순 가치",
+    "past7D": "과거 7D",
+    "AUM": "AUM",
+    "estimatedAPY": "예상 APY",
+    "currentAPY": "현재 APY",
+    "depositors": "예금자"
+  }
+}
