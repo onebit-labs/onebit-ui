@@ -20,7 +20,7 @@ type Props = {
   lendingPool?: string
 }
 export const request = (props: Props): Promise<SliceState> => {
-  return fetch('/onebit-thegraph', {
+  return fetch('https://api.thegraph.com/subgraphs/name/rockgold0911/onebit', {
     headers: {
       accept: '*/*',
       'accept-language': 'zh-CN,zh;q=0.9',
