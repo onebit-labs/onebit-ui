@@ -44,6 +44,18 @@ const locale = {
       tip: 'By clicking "Accept" below, I acknowledge the above, the ',
       and: ', and ',
     },
+    deposit: {
+      amount: 'Amount',
+      walletBalance: 'Wallet Balance',
+      lockUpPeriod: 'Lock-Up Period',
+      days: 'Days',
+      tip: 'This portfolio has an annual management fee of <managementFee>the management fee</managementFee> and a performance fee of <performanceFee>the performance fee</performanceFee>.',
+    },
+    withdrawal: {
+      amount: 'Amount',
+      walletBalance: 'Wallet Balance',
+      tip: 'The management fee and performance fee have been deducted.',
+    },
   },
   project: {
     status: {

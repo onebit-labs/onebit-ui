@@ -20,6 +20,7 @@ import { useSendTransaction } from 'lib/protocol/hooks/sendTransaction'
 import { usePost } from 'app/hooks/request'
 import type { withdrawProps } from 'lib/protocol/typechain/onebit'
 import { createPromise } from 'app/utils/promise'
+import Alert from '@mui/material/Alert'
 
 const WithdrawDialog: FC = () => {
   const { withdraw } = useDialogs()
@@ -62,12 +63,13 @@ const WithdrawDialog: FC = () => {
       <ROOT>
         <Stack spacing={2}>
           <FlexBetween>
-            <H5>Amount</H5>
+            <H5>{t('wallet.withdrawal.amount')}</H5>
             <Paragraph color="text.secondary">
-              Wallet Balance: <NumberDisplay value={balanceOf} options="number" /> {symbol}
+              {t('wallet.withdrawal.walletBalance')}: <NumberDisplay value={balanceOf} options="number" /> {symbol}
             </Paragraph>
           </FlexBetween>
           <NumberInput value={input.value} disabled={input.disabled} onChange={input.onChange} onMax={input.onMax} />
+          <Alert severity="info">{t('wallet.withdrawal.tip')}</Alert>
         </Stack>
       </ROOT>
       <DialogActions>

@@ -1,5 +1,5 @@
 import Dialog from 'components/dialog/Dialog'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import type { FC } from 'react'
 import { useCallback } from 'react'
 import { useMemo } from 'react'
@@ -21,6 +21,7 @@ import { useSendTransaction } from 'lib/protocol/hooks/sendTransaction'
 import { usePost } from 'app/hooks/request'
 import type { depositProps } from 'lib/protocol/typechain/onebit'
 import { createPromise } from 'app/utils/promise'
+import Alert from '@mui/material/Alert'
 
 const DepositDialog: FC = () => {
   const { deposit } = useDialogs()
@@ -34,7 +35,16 @@ const DepositDialog: FC = () => {
   }, [deposit.id, portfolioData])
   const { networkAccount, signature } = useWallet()
 
-  const { walletBalance, lockTime, purchaseEndTimestamp, redemptionBeginTimestamp, address, symbol } = portfolio
+  const {
+    walletBalance,
+    lockTime,
+    purchaseEndTimestamp,
+    redemptionBeginTimestamp,
+    address,
+    symbol,
+    managementFeeRate,
+    performanceFeeRate,
+  } = portfolio
 
   const { input } = useInputSlider({ balance: walletBalance })
   const {
@@ -63,19 +73,43 @@ const DepositDialog: FC = () => {
       <ROOT>
         <Stack spacing={2}>
           <FlexBetween>
-            <H5>Amount</H5>
+            <H5>{t('wallet.deposit.amount')}</H5>
             <Paragraph color="text.secondary">
-              Wallet Balance: <NumberDisplay value={walletBalance} options="number" /> {symbol}
+              {t('wallet.deposit.walletBalance')}: <NumberDisplay value={walletBalance} options="number" /> {symbol}
             </Paragraph>
           </FlexBetween>
           <NumberInput value={input.value} disabled={input.disabled} onChange={input.onChange} onMax={input.onMax} />
           <Stack spacing={1}>
-            <H5>Lock-Up Period</H5>
-            <Paragraph color="text.secondary">{lockTime} Days</Paragraph>
+            <H5>{t('wallet.deposit.lockUpPeriod')}</H5>
+            <Paragraph color="text.secondary">
+              {lockTime} {t('wallet.deposit.days')}
+            </Paragraph>
             <Paragraph color="text.secondary">
               <TimePeriod start={purchaseEndTimestamp} end={redemptionBeginTimestamp} />
             </Paragraph>
           </Stack>
+          <Alert severity="info">
+            <Trans
+              i18nKey="wallet.deposit.tip"
+              t={t}
+              components={{
+                managementFee: (
+                  <NumberDisplay
+                    value={managementFeeRate}
+                    options="percent"
+                    numberFormatOptions={{ minimumFractionDigits: 0 }}
+                  />
+                ),
+                performanceFee: (
+                  <NumberDisplay
+                    value={performanceFeeRate}
+                    options="percent"
+                    numberFormatOptions={{ minimumFractionDigits: 0 }}
+                  />
+                ),
+              }}
+            />
+          </Alert>
         </Stack>
       </ROOT>
       <DialogActions>
@@ -106,7 +140,7 @@ const DepositDialog: FC = () => {
               })
           }}
         >
-          {t('common:wallet.btn.deposit')}
+          {t('wallet.btn.deposit')}
         </Button>
       </DialogActions>
     </Dialog>
