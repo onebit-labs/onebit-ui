@@ -49,7 +49,6 @@ export const ChainButton: FC = () => {
           border: `1px solid ${theme.palette.divider}`,
           '&:hover': {
             backgroundColor: theme.palette.action.hover,
-            border: `1px solid ${theme.palette.divider}`,
           },
           color: theme.palette.text.secondary,
         }}

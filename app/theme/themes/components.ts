@@ -110,7 +110,7 @@ const components = (theme: Theme): any => {
           props: { variant: 'white' },
           style: {
             padding: '12px 24px',
-            backgroundColor: 'white',
+            backgroundColor: theme.palette.background.paper,
             color: text.disabled,
           },
         },
