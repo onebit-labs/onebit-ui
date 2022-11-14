@@ -1,3 +1,4 @@
+import { getItem, setItem } from 'app/utils/cache/localStorage'
 const getWhere = (props: any) => {
   const returnValue = Object.keys(props)
     .reduce((array, key) => {
@@ -20,6 +21,9 @@ type Props = {
   lendingPool?: string
 }
 export const request = (props: Props): Promise<SliceState> => {
+  const key = props.lendingPool ? `getDepositor_${props.account}_${props.lendingPool || ''}` : ''
+  const cacheValue = getItem(key)
+  if (key && cacheValue) return Promise.resolve(cacheValue)
   return fetch('https://api.thegraph.com/subgraphs/name/rockgold0911/onebit', {
     headers: {
       accept: '*/*',
@@ -40,9 +44,9 @@ export const request = (props: Props): Promise<SliceState> => {
     id
     account
     lendingPool
-    balanceOf
     createTimestamp
     lastUpdateTimestamp
+    oTokenAddress
   }
 }`,
     }),
@@ -51,13 +55,16 @@ export const request = (props: Props): Promise<SliceState> => {
     credentials: 'omit',
   })
     .then((data) => data.json())
-    .then(({ data: { depositors } }) => depositors)
+    .then(({ data: { depositors } }) => {
+      if (key) setItem(key, depositors)
+      return depositors
+    })
 }
 export type SliceState = Array<{
   id: string
   account: string
   lendingPool: string
-  balanceOf: BN
+  oTokenAddress: string
   createTimestamp: number
   lastUpdateTimestamp: number
 }>

@@ -25,7 +25,9 @@ export const getBigNumber = <T, K extends keyof T>(obj: T, keys: K[], decimals: 
 
 export const getAddress = <T, K extends keyof T>(obj: T, keys: K[]) => {
   return keys.reduce((o, k) => {
-    o[k] = (obj[k] as any).toLowerCase()
+    if (obj[k]) {
+      o[k] = (obj[k] as any).toLowerCase()
+    }
     return o
   }, {} as Record<K, string>)
 }
