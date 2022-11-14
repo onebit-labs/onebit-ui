@@ -51,6 +51,16 @@ export const useChart = () => {
     )
   }, [data])
 
+  const change7d = useMemo(() => {
+    return (
+      safeGet(() =>
+        toBN(data[data.length - 1].y)
+          .div(data[0].y)
+          .minus(1)
+      ) || 0
+    )
+  }, [data])
+
   const changeAllTime = useMemo(() => {
     return (
       safeGet(() =>
@@ -152,5 +162,5 @@ export const useChart = () => {
     [NF, data, lineColor, theme.palette.text.secondary]
   )
 
-  return { props, dayButton, change24, currentNetValue }
+  return { props, dayButton, change24, change7d, currentNetValue }
 }

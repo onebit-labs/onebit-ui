@@ -38,14 +38,14 @@ const NetValue = () => {
                 <NumberDisplay value={chart.currentNetValue} options="number" />
               </Typography>
               <Change24h spacing={1} direction="row" alignItems="center">
-                <RiseOrFall variant="subtitle1" value={chart.change24} displayIcon>
+                <RiseOrFall variant="subtitle1" value={chart.change7d} displayIcon>
                   <NumberDisplay
-                    value={chart.change24}
+                    value={chart.change7d}
                     options="percent"
                     numberFormatOptions={{ signDisplay: 'always' }}
                   />
                 </RiseOrFall>
-                <H5 color="text.secondary">{t('overview.netValue.change24h')}</H5>
+                <H5 color="text.secondary">{t('overview.netValue.past7D')}</H5>
               </Change24h>
             </Stack>
           </Left>
