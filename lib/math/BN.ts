@@ -27,3 +27,11 @@ export function normalize(n: BNValue, decimals: number): BigNumber {
 
 export const BN = BigNumber
 export { BigNumber as EthersBN } from '@ethersproject/bignumber'
+
+export const BigNumberZeroDecimal = BigNumber.clone({
+  DECIMAL_PLACES: 0,
+  ROUNDING_MODE: BigNumber.ROUND_DOWN,
+})
+export function toZDBN(amount: BNValue): BigNumber {
+  return new BigNumberZeroDecimal(toBN(amount))
+}

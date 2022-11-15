@@ -7,6 +7,7 @@ import OneBit101306 from './images/OneBit-1013-06.svg'
 import OneBit101307 from './images/OneBit-1013-07.svg'
 import OneBit101308 from './images/OneBit-1013-08.svg'
 import OneBit101309 from './images/OneBit-1013-09.svg'
+import { toBN } from 'lib/math'
 
 export const DEFAULT_AVATARS = [
   OneBit101301.src,
@@ -19,3 +20,11 @@ export const DEFAULT_AVATARS = [
   OneBit101308.src,
   OneBit101309.src,
 ]
+
+export const SECONDS_PER_YEAR = toBN('31536000')
+export const USD_DECIMALS = 8
+export const WEI_DECIMALS = 18
+export const RAY_DECIMALS = 27
+export const LTV_PRECISION = 4
+
+export const getCurrentTimestamp = () => Math.floor(Date.now() / 1000)
