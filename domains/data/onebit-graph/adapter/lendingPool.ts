@@ -5,18 +5,16 @@ export type LendingPool = {
   id: string
   term: number
   depositors: BN
-  liquidityRate: string
   depositorList: string[]
 }
 export const getLendingPool = (sliceState: SliceState) => {
   if (!sliceState) return []
-  const returnValue = sliceState.map(({ id, term, depositors, liquidityRate }) => {
+  const returnValue = sliceState.map(({ id, term, depositors }) => {
     return {
       id,
       term,
       depositors: toBN(depositors.length),
       depositorList: depositors,
-      liquidityRate,
     } as LendingPool
   })
   return returnValue

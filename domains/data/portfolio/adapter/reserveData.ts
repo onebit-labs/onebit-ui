@@ -32,7 +32,8 @@ export const getReserveData = (
     returnValue[key] = {
       ...reserveData,
       ...getBigNumber(reserveDataSource[key], ['purchaseUpperLimit', 'softUpperLimit'], 18),
-      ...getBigNumber(reserveDataSource[key], ['liquidityIndex', 'currentLiquidityRate', 'previousLiquidityIndex'], 27),
+      ...getBigNumber(reserveDataSource[key], ['liquidityIndex', 'previousLiquidityIndex'], 27),
+      ...getBigNumber(reserveDataSource[key], ['currentLiquidityRate'], 0),
       ...getBigNumber(reserveDataSource[key], ['managementFeeRate', 'performanceFeeRate'], 4),
       ...getNumber(reserveDataSource[key], [
         'lastUpdateTimestamp',

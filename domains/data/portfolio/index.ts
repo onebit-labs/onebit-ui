@@ -103,7 +103,9 @@ const usePortfolioService = () => {
 
       if (status === 'lockedUp') {
         currentAPY = normalize(
-          rayPow(toZDBN(lendingPool.liquidityRate).dividedBy(SECONDS_PER_YEAR).plus(RAY), SECONDS_PER_YEAR).minus(RAY),
+          rayPow(toZDBN(reserve.currentLiquidityRate).dividedBy(SECONDS_PER_YEAR).plus(RAY), SECONDS_PER_YEAR).minus(
+            RAY
+          ),
           RAY_DECIMALS
         )
       }
