@@ -12,7 +12,7 @@ const useLendingPoolEffect = () => {
     contracts: { lendingPool },
   } = useNetwork()
   const {
-    lendingPool: { reserveData: reserveDataPolling },
+    lendingPool: { reserveData: reserveDataPolling, reserveNormalizedIncome: reserveNormalizedIncomeSingle },
   } = useControllers()
 
   const lendingPoolAddresses = useMemo(() => markets.map((market) => market.address.LendingPool) || [], [markets])
@@ -27,10 +27,11 @@ const useLendingPoolEffect = () => {
   useEffect(() => {
     if (!query.lendingPools.length || !reserveDataPolling) return
     reserveDataPolling.run(query, 600000)
+    reserveNormalizedIncomeSingle.run(query)
     return () => {
       reserveDataPolling.stop()
     }
-  }, [query, reserveDataPolling])
+  }, [query, reserveDataPolling, reserveNormalizedIncomeSingle])
 }
 const useERC20TotalSupplyEffect = () => {
   const {
@@ -103,13 +104,13 @@ export const useReserveData = () => {
   useLendingPoolEffect()
   useERC20TotalSupplyEffect()
   useERC20oracleEffect()
-  const { reserveDataSource } = useLendingPool()
+  const { reserveDataSource, reserveNormalizedIncomeSource } = useLendingPool()
 
   const reserveData = useMemo(() => {
-    const returnValue = getReserveData(reserveDataSource)
+    const returnValue = getReserveData(reserveDataSource, reserveNormalizedIncomeSource)
     log('[portfolio] [reserveData]', returnValue)
     return returnValue
-  }, [reserveDataSource])
+  }, [reserveDataSource, reserveNormalizedIncomeSource])
 
   return { reserveData }
 }

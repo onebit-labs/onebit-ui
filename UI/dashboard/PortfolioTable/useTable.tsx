@@ -10,7 +10,7 @@ import type { TableColumnsProps, BasicTableProps } from 'components/table/BasicT
 import { useRouter } from 'next/router'
 import { usePortfolio } from 'domains/data'
 import { lockedUntilCellRenderer, statusCellRenderer } from './renderer'
-import { numberCellRenderer, percentCellRenderer, symbolCellRenderer } from 'components/table/renderer/portfolio'
+import { numberCellRenderer, PNLCellRenderer, symbolCellRenderer } from 'components/table/renderer/portfolio'
 
 export const useTable = (): BasicTableProps => {
   const { t } = useTranslation('dashboard')
@@ -74,7 +74,7 @@ export const useTable = (): BasicTableProps => {
             dataKey: 'PNL',
             width: 200,
             headerRenderer,
-            cellRenderer: percentCellRenderer,
+            cellRenderer: PNLCellRenderer,
           },
           {
             dataKey: 'status',

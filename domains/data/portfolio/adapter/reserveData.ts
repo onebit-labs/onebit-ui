@@ -1,5 +1,6 @@
 import type { ReserveDataSource } from 'domains/data/lendingPool/store/reserveData/adapter/getReserveDataSource'
 import { getBigNumber, getNumber } from 'app/utils/get'
+import { normalize } from 'lib/math'
 
 export type ReserveData = {
   liquidityIndex: BN
@@ -7,6 +8,7 @@ export type ReserveData = {
   previousLiquidityIndex: BN
   purchaseUpperLimit: BN
   softUpperLimit: BN
+  normalizedIncome: BN
 
   lastUpdateTimestamp: number
   purchaseBeginTimestamp: number
@@ -20,7 +22,10 @@ export type ReserveData = {
   fundAddress: string
 }
 
-export const getReserveData = (reserveDataSource: Record<string, ReserveDataSource>) => {
+export const getReserveData = (
+  reserveDataSource: Record<string, ReserveDataSource>,
+  reserveNormalizedIncomeSource: Record<string, BN>
+) => {
   const returnValue: Record<string, ReserveData> = {}
   Object.keys(reserveDataSource || {}).forEach((key) => {
     const reserveData = reserveDataSource[key]
@@ -35,6 +40,7 @@ export const getReserveData = (reserveDataSource: Record<string, ReserveDataSour
         'purchaseEndTimestamp',
         'redemptionBeginTimestamp',
       ]),
+      normalizedIncome: normalize(reserveNormalizedIncomeSource[key], 27),
     }
   })
 

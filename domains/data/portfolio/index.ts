@@ -47,8 +47,10 @@ export type Portfolio = Partial<
     currentAPY: BN
     depositors: BN
     yourEquity: BN
+    yourEquityInUSD: BN
     PNL: BN
-    previousPNL: BN
+    PNLInUSD: BN
+    netValue: BN
 
     portfolioDaily: Record<'x' | 'y', number>[]
     seriesDaily: Record<'x' | 'y', number>[]
@@ -103,6 +105,15 @@ const usePortfolioService = () => {
         )
       }
 
+      const yourEquity = safeGet(() => userReserve.balanceOf) || toBN(0)
+      const netValue = safeGet(() => reserve.normalizedIncome) || toBN(0)
+      let PNL = toBN(0)
+      if (!yourEquity.isZero()) {
+        PNL = yourEquity.multipliedBy(netValue.minus(1))
+      }
+      const yourEquityInUSD = yourEquity.multipliedBy(oracle)
+      const PNLInUSD = PNL.multipliedBy(oracle)
+
       return {
         ...market,
         ...lendingPool,
@@ -117,9 +128,11 @@ const usePortfolioService = () => {
         totalSupplyInUSD: totalSupply.multipliedBy(oracle),
 
         currentAPY,
-        yourEquity: safeGet(() => userReserve.balanceOf),
-        PNL: toBN(0),
-        previousPNL: toBN(0),
+        yourEquity,
+        yourEquityInUSD,
+        netValue,
+        PNL,
+        PNLInUSD,
 
         portfolioDaily: safeGet(() => portfolioDaily[portfolioName]) || [],
         seriesDaily: safeGet(() => seriesDaily[series]) || [],
@@ -143,19 +156,23 @@ const usePortfolioService = () => {
   const portfolioUserData = useMemo(() => {
     if (!networkAccount) return { transactions: [], dashboard: {} } as undefined
     let totalEquityValue = toBN(0)
-    const totalPNL = toBN(0)
-    const APY = toBN(0)
+    let totalPNL = toBN(0)
+    let APYSumA = toBN(0)
+    let APYSumB = toBN(0)
     const portfolioUserData = portfolioData
       .filter((portfolio) => !safeGet(() => portfolio.yourEquity.isZero()))
       .map((portfolio) => {
-        totalEquityValue = totalEquityValue.plus(portfolio.yourEquity)
+        totalEquityValue = totalEquityValue.plus(portfolio.yourEquityInUSD)
+        totalPNL = totalPNL.plus(portfolio.PNLInUSD)
+        APYSumA = APYSumA.plus(portfolio.currentAPY.multipliedBy(portfolio.yourEquity))
+        APYSumB = APYSumA.plus(portfolio.currentAPY)
         return portfolio
       })
     const dashboard = {
       totalEquityValue,
       totalPNL,
       totalPortfolioDeposited: portfolioUserData.length,
-      APY,
+      APY: APYSumB.isZero() ? 0 : APYSumA.div(APYSumB),
       portfolioUserData,
     }
     const returnValue = {

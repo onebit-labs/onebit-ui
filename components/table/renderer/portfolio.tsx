@@ -4,6 +4,7 @@ import TimePeriod from 'components/date/TimePeriod'
 import { Paragraph } from 'components/Typography'
 import type { Portfolio } from 'domains/data/portfolio'
 import NumberDisplay from 'lib/math/components/NumberDisplay'
+import RiseOrFall from 'lib/math/components/RiseOrFall'
 
 type TableCellProps = {
   cellData?: any
@@ -52,6 +53,27 @@ export const percentCellRenderer = ({ cellData }: TableCellProps) => {
   return (
     <TableCell align="center" component="div">
       <NumberDisplay value={cellData} options="percent" />
+    </TableCell>
+  )
+}
+
+export const PNLCellRenderer = ({ rowData: { netValue, yourEquityInUSD } }: TableCellProps) => {
+  const percentValue = netValue.minus(1)
+  return (
+    <TableCell align="center" component="div">
+      <Stack spacing={1}>
+        <RiseOrFall value={yourEquityInUSD}>
+          <NumberDisplay
+            value={yourEquityInUSD}
+            options="USD"
+            abbreviate={{}}
+            numberFormatOptions={{ signDisplay: 'always' }}
+          />
+        </RiseOrFall>
+        <RiseOrFall value={percentValue}>
+          <NumberDisplay value={percentValue} options="percent" numberFormatOptions={{ signDisplay: 'always' }} />
+        </RiseOrFall>
+      </Stack>
     </TableCell>
   )
 }

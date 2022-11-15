@@ -42,6 +42,11 @@ export class LendingPoolService extends BaseService<LendingPool> {
     return lendingPool.getReserveData()
   }
 
+  public getReserveNormalizedIncome({ pool }: getReserveDataProps) {
+    const lendingPool = this.getContractInstance(pool)
+    return lendingPool.getReserveNormalizedIncome()
+  }
+
   public async deposit({ pool, erc20Service, reserve, user, amount }: depositProps) {
     const txs: EthereumTransactionTypeExtended[] = []
     const { isApproved, approve, decimalsOf } = erc20Service
