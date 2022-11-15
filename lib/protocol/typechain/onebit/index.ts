@@ -6,21 +6,23 @@ import type { EthereumTransactionTypeExtended, tEthereumAddress } from '../commo
 import { eEthereumTxType, ProtocolAction } from '../commons/types'
 import type { LendingPool } from './typechain/LendingPool'
 import { LendingPool__factory } from './typechain/factories/LendingPool__factory'
+import type { OToken } from './typechain/OToken'
+import { OToken__factory } from './typechain/factories/OToken__factory'
 import type { ERC20Service } from '../erc20'
 import { normalize } from 'lib/math'
-import { DEFAULT_APPROVE_AMOUNT, getTxValue } from '../commons/utils'
-type baseProps = {
+import { API_ETH_MOCK_ADDRESS, DEFAULT_APPROVE_AMOUNT, getTxValue } from '../commons/utils'
+type baseLendingPoolProps = {
   pool: tEthereumAddress
 }
 
-export type getReserveDataProps = baseProps
-export type depositProps = baseProps & {
+export type getReserveDataProps = baseLendingPoolProps
+export type depositProps = baseLendingPoolProps & {
   erc20Service: ERC20Service
   reserve: tEthereumAddress
   user: tEthereumAddress
   amount: string
 }
-export type withdrawProps = baseProps & {
+export type withdrawProps = baseLendingPoolProps & {
   erc20Service: ERC20Service
   reserve: tEthereumAddress
   user: tEthereumAddress
@@ -35,6 +37,9 @@ export class LendingPoolService extends BaseService<LendingPool> {
     this.provider = provider
 
     this.getReserveData = this.getReserveData.bind(this)
+    this.getReserveNormalizedIncome = this.getReserveNormalizedIncome.bind(this)
+    this.deposit = this.deposit.bind(this)
+    this.withdraw = this.withdraw.bind(this)
   }
 
   public getReserveData({ pool }: getReserveDataProps) {
@@ -107,5 +112,49 @@ export class LendingPoolService extends BaseService<LendingPool> {
     })
 
     return txs
+  }
+}
+
+type baseOTokenProps = {
+  oTokenAddress: tEthereumAddress
+}
+type getScaledBalanceOfProps = baseOTokenProps & {
+  user: tEthereumAddress
+}
+export class OTokenService extends BaseService<OToken> {
+  provider: any
+  readonly tokenDecimals: Record<string, number>
+
+  constructor(provider: providers.Provider) {
+    super(provider, OToken__factory)
+    this.provider = provider
+
+    this.decimalsOf = this.decimalsOf.bind(this)
+    this.getScaledBalanceOf = this.getScaledBalanceOf.bind(this)
+    this.getScaledTotalSupply = this.getScaledTotalSupply.bind(this)
+  }
+
+  public async decimalsOf(token: tEthereumAddress): Promise<number> {
+    if (token.toLowerCase() === API_ETH_MOCK_ADDRESS) return 18
+    if (!this.tokenDecimals[token]) {
+      const oTokenContract = this.getContractInstance(token)
+      this.tokenDecimals[token] = await oTokenContract.decimals()
+    }
+
+    return this.tokenDecimals[token]
+  }
+
+  public async getScaledBalanceOf({ oTokenAddress, user }: getScaledBalanceOfProps) {
+    const decimals = await this.decimalsOf(oTokenAddress)
+    const oTokenContract = this.getContractInstance(oTokenAddress)
+    const balance = await oTokenContract.scaledBalanceOf(user)
+    return normalize(balance, decimals)
+  }
+
+  public async getScaledTotalSupply({ oTokenAddress }: baseOTokenProps) {
+    const decimals = await this.decimalsOf(oTokenAddress)
+    const oTokenContract = this.getContractInstance(oTokenAddress)
+    const totalSupply = await oTokenContract.scaledTotalSupply()
+    return normalize(totalSupply, decimals)
   }
 }
