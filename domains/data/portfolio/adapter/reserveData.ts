@@ -1,6 +1,6 @@
 import type { ReserveDataSource } from 'domains/data/lendingPool/store/reserveData/adapter/getReserveDataSource'
-import { getBigNumber, getNumber } from 'app/utils/get'
-import { normalize } from 'lib/math'
+import { getBigNumber, getNumber, safeGet } from 'app/utils/get'
+import { normalize, toBN } from 'lib/math'
 
 export type ReserveData = {
   liquidityIndex: BN
@@ -40,7 +40,7 @@ export const getReserveData = (
         'purchaseEndTimestamp',
         'redemptionBeginTimestamp',
       ]),
-      normalizedIncome: normalize(reserveNormalizedIncomeSource[key], 27),
+      normalizedIncome: safeGet(() => normalize(reserveNormalizedIncomeSource[key], 27)) || toBN(0),
     }
   })
 

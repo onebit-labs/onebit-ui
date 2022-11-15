@@ -3,21 +3,29 @@ import { useOnebitGraph } from 'domains/data'
 import { useEffect, useMemo } from 'react'
 
 import { log } from 'app/utils/dev'
+import { getCurrentTimestamp } from 'app/constant'
 
 const useGraphInitEffect = () => {
   const {
-    onebitGraph: { lendingPool: portfolioDailySingle, portfolioTerm: portfolioTermSingle },
+    onebitGraph: { lendingPool: portfolioDailySingle, portfolioTerm: portfolioTermSingle, netValue: netValueSingle },
   } = useControllers()
 
   useEffect(() => {
     if (!portfolioDailySingle || !portfolioDailySingle) return
     portfolioDailySingle.run()
     portfolioTermSingle.run()
+
+    const endTimestamp = getCurrentTimestamp()
+    netValueSingle.run({
+      startTimestamp: endTimestamp - 90 * 24 * 60 * 60,
+      endTimestamp,
+    })
     return () => {
       portfolioDailySingle.stop()
       portfolioTermSingle.stop()
+      netValueSingle.stop()
     }
-  }, [portfolioDailySingle, portfolioTermSingle])
+  }, [netValueSingle, portfolioDailySingle, portfolioTermSingle])
 }
 
 const useUserEffect = () => {
@@ -47,7 +55,7 @@ const useUserEffect = () => {
 export const useOnebitGraphData = () => {
   useGraphInitEffect()
   useUserEffect()
-  const { lendingPool, portfolioTerm, transaction, depositor } = useOnebitGraph()
+  const { lendingPool, portfolioTerm, transaction, depositor, netValue } = useOnebitGraph()
 
   const returnValue = useMemo(() => {
     const returnValue = {
@@ -55,6 +63,7 @@ export const useOnebitGraphData = () => {
       portfolioTerm,
       transaction,
       depositor,
+      netValue,
     }
     log('[portfolio] [OnebitGraphData]', returnValue)
     return returnValue
