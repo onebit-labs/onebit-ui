@@ -164,7 +164,7 @@ const usePortfolioService = () => {
       .map((portfolio) => {
         totalEquityValue = totalEquityValue.plus(portfolio.yourEquityInUSD)
         totalPNL = totalPNL.plus(portfolio.PNLInUSD)
-        APYSumA = APYSumA.plus(portfolio.currentAPY.multipliedBy(portfolio.yourEquity))
+        APYSumA = APYSumA.plus(portfolio.currentAPY.multipliedBy(portfolio.yourEquityInUSD))
         APYSumB = APYSumA.plus(portfolio.currentAPY)
         return portfolio
       })
