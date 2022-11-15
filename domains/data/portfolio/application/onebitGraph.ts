@@ -3,7 +3,7 @@ import { useOnebitGraph } from 'domains/data'
 import { useEffect, useMemo } from 'react'
 
 import { log } from 'app/utils/dev'
-import { getCurrentTimestamp } from 'app/constant'
+import { DAY, getCurrentTimestamp, getTimestamp } from 'app/constant'
 
 const useGraphInitEffect = () => {
   const {
@@ -17,7 +17,7 @@ const useGraphInitEffect = () => {
 
     const endTimestamp = getCurrentTimestamp()
     netValueSingle.run({
-      startTimestamp: endTimestamp - 90 * 24 * 60 * 60,
+      startTimestamp: endTimestamp - getTimestamp(90 * DAY),
       endTimestamp,
     })
     return () => {
@@ -67,7 +67,7 @@ export const useOnebitGraphData = () => {
     }
     log('[portfolio] [OnebitGraphData]', returnValue)
     return returnValue
-  }, [depositor, lendingPool, portfolioTerm, transaction])
+  }, [depositor, lendingPool, netValue, portfolioTerm, transaction])
 
   return returnValue
 }

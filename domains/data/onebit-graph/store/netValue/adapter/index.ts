@@ -22,7 +22,7 @@ export const request = ({ startTimestamp, endTimestamp }: Props): Promise<SliceS
       createTimestamp_lte: ${endTimestamp}
     }
     orderBy: createTimestamp
-    orderDirection: desc
+    orderDirection: asc
   ) {
     id
     lendingPool

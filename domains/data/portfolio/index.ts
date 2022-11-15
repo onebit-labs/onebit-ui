@@ -22,6 +22,7 @@ import { getPortfolioTerm } from './adapter/portfolioTerm'
 import type { LendingPool } from '../onebit-graph/adapter/lendingPool'
 import type { PortfolioTerm } from '../onebit-graph/adapter/portfolioTerm'
 import type { NetValue } from '../onebit-graph/adapter/netValue'
+import { getFixedNetValues } from '../onebit-graph/adapter/netValue'
 import type { Transaction } from '../onebit-graph/adapter/transaction'
 import { useWallet } from 'domains'
 import { RAY_DECIMALS, SECONDS_PER_YEAR } from 'app/constant'
@@ -95,7 +96,7 @@ const usePortfolioService = () => {
       const userReserve = userReserveData[lendingPoolAddress]
       const lendingPool = onebitGraphData.lendingPool.find((i) => i.id === lendingPoolAddress)
       const portfolioTerm = onebitGraphData.portfolioTerm.filter((i) => i.lendingPool === lendingPoolAddress)
-      const netValues = onebitGraphData.netValue.filter((i) => i.lendingPool === lendingPoolAddress)
+      const netValues = getFixedNetValues(onebitGraphData.netValue.filter((i) => i.lendingPool === lendingPoolAddress))
 
       const totalSupply = toBN(safeGet(() => erc20Data.totalSupply[address.OToken]) || 0)
       const status = getPortfolioStatus(reserve)
@@ -152,6 +153,7 @@ const usePortfolioService = () => {
     erc20Data.totalSupply,
     marketReserveData,
     onebitGraphData.lendingPool,
+    onebitGraphData.netValue,
     onebitGraphData.portfolioTerm,
     portfolioDaily,
     reserveData,
