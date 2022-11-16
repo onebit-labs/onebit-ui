@@ -19,7 +19,7 @@ export const useTable = (): BasicTableProps => {
     contracts: { oTokenService },
   } = useNetwork()
   const dataFetcher = useCallback(
-    ({ depositors: account, scaledTotalSupply, symbol, lendingPool }: any) => {
+    ({ depositors: account, totalSupply, symbol, lendingPool }: any) => {
       const returnValue = {
         depositors: account,
         since: 0,
@@ -43,7 +43,7 @@ export const useTable = (): BasicTableProps => {
           }).then((data) => {
             if (!data[oTokenAddress]) return
             returnValue.equity = toBN(data[oTokenAddress])
-            returnValue.percentage = returnValue.equity.div(scaledTotalSupply)
+            returnValue.percentage = returnValue.equity.div(totalSupply)
           })
         )
         .finally(() => reslove(returnValue))
@@ -54,13 +54,13 @@ export const useTable = (): BasicTableProps => {
   const data = useMemo(() => {
     if (!portfolio.depositorList) return []
     const {
-      scaledTotalSupply,
+      totalSupply,
       symbol,
       address: { LendingPool },
     } = portfolio
     return portfolio.depositorList.map((account) => ({
       depositors: account,
-      scaledTotalSupply,
+      totalSupply,
       symbol,
       lendingPool: LendingPool,
     }))

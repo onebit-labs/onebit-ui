@@ -11,7 +11,7 @@ type FooterProps = Portfolio & {
   isOpen: boolean
 }
 
-const Footer: FC<FooterProps> = ({ scaledTotalSupply, symbol, estimatedAPY, depositors, currentAPY, isOpen }) => {
+const Footer: FC<FooterProps> = ({ totalSupply, symbol, estimatedAPY, depositors, currentAPY, isOpen }) => {
   const { t } = useTranslation('explorePortfolios')
   return (
     <Box>
@@ -20,7 +20,7 @@ const Footer: FC<FooterProps> = ({ scaledTotalSupply, symbol, estimatedAPY, depo
           <Tiny>{t('projectCard.AUM')}</Tiny>
           <H5>
             <Stack spacing={1} direction="row">
-              <NumberDisplay value={scaledTotalSupply} options="number" abbreviate={{}} />
+              <NumberDisplay value={totalSupply} options="number" abbreviate={{}} />
               <span>{symbol}</span>
             </Stack>
           </H5>
