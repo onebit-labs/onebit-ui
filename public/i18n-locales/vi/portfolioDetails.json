@@ -1,48 +1,48 @@
 {
   "tabs": {
     "overview": "Tổng quan",
-    "fees": "Phí",
-    "policies": "Chính sách",
+    "fees": "lệ phí",
+    "policies": "chính sách",
     "depositors": "Người gửi tiền"
   },
   "info": {
     "status": "Trạng thái",
     "term": "Kỳ hạn",
-    "lockUpPeriod": "Thời gian khóa máy",
-    "days": "Ngày",
+    "lockUpPeriod": "Thời gian khóa",
+    "days": "ngày",
     "standard": "Tiêu chuẩn",
     "yourEquity": "Vốn chủ sở hữu của bạn",
     "PNL": "PNL",
     "stats": {
-      "assetsUnderManagement": "Tài sản đang quản lý",
+      "assetsUnderManagement": "Tài sản được quản lý",
       "currentAPY": "APY hiện tại",
       "estimatedAPY": "APY ước tính",
       "depositors": "Người gửi tiền"
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
-        "main": "Giao dịch tần suất cao là một chiến lược vi cấu trúc để nắm bắt mức chênh lệch thị trường bằng cách thực hiện một số lượng lớn các lệnh chờ xử lý trong một khoảng thời gian rất ngắn đồng thời tận dụng lợi thế của các máy chủ cùng vị trí, các kênh có độ trễ thấp và tài khoản phí giao dịch thấp.",
+        "main": "Giao dịch cao tần là một chiến lược cấu trúc vi mô để nắm bắt sự lan rộng của thị trường bằng cách thực hiện một số lượng lớn các lệnh đang chờ xử lý trong một khoảng thời gian rất ngắn đồng thời tận dụng lợi thế của các máy chủ đặt cùng vị trí, các kênh có độ trễ thấp và các tài khoản có phí giao dịch thấp.",
         "investmentRationale": [
           "Thích hợp cho các nhà đầu tư không thích rủi ro tìm kiếm lợi nhuận hàng năm cao.",
-          "Các nhà đầu tư không có rủi ro, nhưng năng lực sản phẩm thấp."
+          "Nhà đầu tư không gặp rủi ro nhưng công suất sản phẩm thấp."
         ]
       },
       "Onebit-Smart-Trend-USDT": {
-        "main": "Chiến lược nhằm dự đoán xu hướng giá hiện tại thông qua mức độ ưa thích rủi ro đối với môi trường vĩ mô, mức định giá hợp lý của tiền tệ và động lượng của xu hướng thị trường. Quá trình đầu tư là sự kết hợp nhiều lớp từ trên xuống của vĩ mô, giá trị và xu hướng.",
+        "main": "Chiến lược này nhằm mục đích dự đoán xu hướng giá hiện tại thông qua ưu tiên rủi ro đối với môi trường vĩ mô, mức định giá hợp lý của tiền tệ và động lực của xu hướng thị trường. Quá trình đầu tư là sự kết hợp nhiều lớp từ trên xuống của vĩ mô, giá trị và xu hướng.",
         "investmentRationale": [
           "Thích hợp cho các nhà đầu tư tìm kiếm rủi ro mong đợi lợi nhuận hàng năm cao.",
           "Nhà đầu tư có xu hướng dài hạn đối với thị trường tiền điện tử."
         ]
       },
       "Onebit-Smart-Trend-BTC": {
-        "main": "Chiến lược nhằm dự đoán xu hướng giá hiện tại thông qua mức độ ưa thích rủi ro đối với môi trường vĩ mô, mức định giá hợp lý của tiền tệ và động lượng của xu hướng thị trường. Quá trình đầu tư là sự kết hợp nhiều lớp từ trên xuống của vĩ mô, giá trị và xu hướng.",
+        "main": "Chiến lược này nhằm mục đích dự đoán xu hướng giá hiện tại thông qua ưu tiên rủi ro đối với môi trường vĩ mô, mức định giá hợp lý của tiền tệ và động lực của xu hướng thị trường. Quá trình đầu tư là sự kết hợp nhiều lớp từ trên xuống của vĩ mô, giá trị và xu hướng.",
         "investmentRationale": [
           "Thích hợp cho các nhà đầu tư tìm kiếm rủi ro mong đợi lợi nhuận hàng năm cao.",
           "Nhà đầu tư có xu hướng dài hạn đối với thị trường tiền điện tử."
         ]
       },
       "Onebit-Smart-Trend-USDT-Demo": {
-        "main": "Chiến lược nhằm dự đoán xu hướng giá hiện tại thông qua mức độ ưa thích rủi ro đối với môi trường vĩ mô, mức định giá hợp lý của tiền tệ và động lượng của xu hướng thị trường. Quá trình đầu tư là sự kết hợp nhiều lớp từ trên xuống của vĩ mô, giá trị và xu hướng.",
+        "main": "Chiến lược này nhằm mục đích dự đoán xu hướng giá hiện tại thông qua ưu tiên rủi ro đối với môi trường vĩ mô, mức định giá hợp lý của tiền tệ và động lực của xu hướng thị trường. Quá trình đầu tư là sự kết hợp nhiều lớp từ trên xuống của vĩ mô, giá trị và xu hướng.",
         "investmentRationale": [
           "Thích hợp cho các nhà đầu tư tìm kiếm rủi ro mong đợi lợi nhuận hàng năm cao.",
           "Nhà đầu tư có xu hướng dài hạn đối với thị trường tiền điện tử."
@@ -54,16 +54,17 @@
   "overview": {
     "netValue": {
       "title": "Giá trị ròng hiện tại",
-      "change24h": "1D trước"
+      "change24h": "Quá khứ 1D",
+      "past7D": "7D qua"
     },
     "historicalAccumulativeNetValue": {
       "title": "Giá trị ròng tích lũy lịch sử",
-      "change24h": "1D trước"
+      "change24h": "Quá khứ 1D"
     },
     "historicalPerformance": {
       "title": "Hiệu suất lịch sử",
       "term": "Kỳ hạn",
-      "lockUpPeriod": "Thời gian khóa máy",
+      "lockUpPeriod": "Thời gian khóa",
       "AUM": "AUM",
       "depositors": "Người gửi tiền",
       "finalNetValue": "Giá trị ròng cuối cùng",
@@ -72,15 +73,15 @@
     }
   },
   "fees": {
-    "title": "Phí",
+    "title": "lệ phí",
     "management": {
       "title": "Phí quản lý",
-      "tip": "2% nếu lợi tức tích lũy trên 20%",
-      "description": "Phí quản lý là khoản thanh toán định kỳ do người gửi tiền trả cho Người quản lý danh mục đầu tư. Phí được tính theo tỷ lệ phần trăm hàng năm của tài sản được quản lý và không phụ thuộc vào lợi nhuận của Vault."
+      "tip": "2% nếu lợi nhuận tích lũy trên 20%",
+      "description": "Phí quản lý là khoản thanh toán định kỳ do người gửi tiền trả cho Trình quản lý danh mục đầu tư. Phí được tính theo tỷ lệ phần trăm hàng năm của tài sản được quản lý và không phụ thuộc vào lợi nhuận của Vault."
     },
     "perfomance": {
-      "title": "Phí hoàn hảo",
-      "description": "Phí thực hiện là một khoản phí dựa trên tỷ lệ phần trăm mà người gửi tiền trả cho Người quản lý danh mục đầu tư từ các khoản lợi nhuận dương được thực hiện trong một khoảng thời gian xác định trước. Khoảng thời gian xác định trước được gọi là Khoảng thời gian bị khóa (thường là một năm hoặc một quý). Lợi nhuận được so sánh với tài sản mệnh giá."
+      "title": "Phí thực hiện",
+      "description": "Phí thực hiện là khoản phí dựa trên tỷ lệ phần trăm mà người gửi tiền phải trả cho Người quản lý danh mục đầu tư dựa trên lợi nhuận dương được thực hiện trong một khoảng thời gian xác định trước. Khoảng thời gian được xác định trước được gọi là Khoảng thời gian khóa (thường là một năm hoặc một quý). Lợi nhuận được so sánh với tài sản mệnh giá."
     },
     "entrance": {
       "title": "Phí vào cửa"
@@ -90,19 +91,19 @@
     }
   },
   "policies": {
-    "title": "Chính sách",
+    "title": "chính sách",
     "openPeriod": "Thời gian mở",
-    "lockUpPeriod": "Thời gian khóa máy",
+    "lockUpPeriod": "Thời gian khóa",
     "fundraisingCap": "Gây quỹ Hard Cap",
-    "softUpperLimit": "Gây quỹ Soft Cap",
+    "softUpperLimit": "Soft Cap gây quỹ",
     "minimumDeposit": "Tiền gửi tối thiểu",
-    "reInvestment": "Tái đầu tư",
-    "description": "Nếu người gửi tiền không rút tiền vào cuối thời gian bị khóa, số tiền sẽ được tái đầu tư vào danh mục đầu tư cho kỳ tiếp theo."
+    "reInvestment": "tái đầu tư",
+    "description": "Nếu người gửi tiền không rút tiền vào cuối thời hạn khóa, tiền sẽ được tái đầu tư vào danh mục đầu tư cho giai đoạn tiếp theo."
   },
   "depositors": {
     "depositors": "Người gửi tiền",
     "since": "Từ",
     "equity": "Vốn chủ sở hữu",
-    "percentage": "Phần trăm"
+    "percentage": "tỷ lệ phần trăm"
   }
 }

@@ -21,7 +21,7 @@
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
-        "main": "Der Hochfrequenzhandel ist eine Mikrostrukturstrategie, um den Marktspread zu erfassen, indem eine große Anzahl ausstehender Aufträge in sehr kurzer Zeit ausgeführt wird, während die Vorteile von Co-Location-Servern, Kanälen mit geringer Latenz und Konten mit niedrigen Handelsgebühren genutzt werden.",
+        "main": "Der Hochfrequenzhandel ist eine Mikrostrukturstrategie, um die Marktspreizung zu erfassen, indem eine große Anzahl ausstehender Aufträge in sehr kurzer Zeit ausgeführt wird, während die Vorteile von Co-Location-Servern, Kanälen mit geringer Latenz und Konten mit niedrigen Handelsgebühren genutzt werden.",
         "investmentRationale": [
           "Geeignet für risikoscheue Anleger, die hohe jährliche Renditen anstreben.",
           "Anleger sind keinem Risiko ausgesetzt, aber die Produktkapazität ist gering."
@@ -54,7 +54,8 @@
   "overview": {
     "netValue": {
       "title": "Aktueller Nettowert",
-      "change24h": "Nach 1D"
+      "change24h": "Nach 1D",
+      "past7D": "Nach 7D"
     },
     "historicalAccumulativeNetValue": {
       "title": "Historischer kumulativer Nettowert",

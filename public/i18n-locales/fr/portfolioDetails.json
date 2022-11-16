@@ -54,7 +54,8 @@
   "overview": {
     "netValue": {
       "title": "Valeur nette actuelle",
-      "change24h": "Passé 1D"
+      "change24h": "Passé 1D",
+      "past7D": "Passé 7D"
     },
     "historicalAccumulativeNetValue": {
       "title": "Valeur nette cumulée historique",

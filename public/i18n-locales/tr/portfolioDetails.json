@@ -1,86 +1,87 @@
 {
   "tabs": {
     "overview": "genel bakış",
-    "fees": "Ücretler",
-    "policies": "Politikalar",
-    "depositors": "Mevduat sahipleri"
+    "fees": "ücretler",
+    "policies": "politikalar",
+    "depositors": "mevduat sahipleri"
   },
   "info": {
     "status": "Durum",
     "term": "Terim",
-    "lockUpPeriod": "Kilitleme Süresi",
-    "days": "Günler",
+    "lockUpPeriod": "Kilitlenme Süresi",
+    "days": "gün",
     "standard": "Standart",
-    "yourEquity": "Sermayeniz",
+    "yourEquity": "öz sermayeniz",
     "PNL": "PNL",
     "stats": {
       "assetsUnderManagement": "Yönetim Altındaki Varlıklar",
       "currentAPY": "Mevcut APY",
       "estimatedAPY": "Tahmini APY",
-      "depositors": "Mevduat sahipleri"
+      "depositors": "mevduat sahipleri"
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
-        "main": "Yüksek frekanslı ticaret, ortak konumlu sunucuların, düşük gecikmeli kanalların ve düşük ticaret ücreti hesaplarının avantajlarından yararlanırken çok sayıda bekleyen siparişi çok kısa bir süre içinde yürüterek piyasa yayılımını yakalamak için bir mikro yapı stratejisidir.",
+        "main": "Yüksek frekanslı ticaret, ortak yerleşim sunucuları, düşük gecikmeli kanallar ve düşük işlem ücreti hesaplarının avantajlarından yararlanırken çok kısa bir süre içinde çok sayıda bekleyen emri gerçekleştirerek piyasa yayılmasını yakalamaya yönelik bir mikro yapı stratejisidir.",
         "investmentRationale": [
           "Yüksek yıllık getiri arayan riskten kaçınan yatırımcılar için uygundur.",
-          "Yatırımcıların riske maruz kalmaları yoktur, ancak ürün kapasitesi düşüktür."
+          "Yatırımcıların riske maruz kalma durumu yoktur, ancak ürün kapasitesi düşüktür."
         ]
       },
       "Onebit-Smart-Trend-USDT": {
-        "main": "Strateji, makro çevre için risk tercihi, para birimlerinin makul değerleme seviyeleri ve piyasa trendlerinin momentumu yoluyla mevcut fiyat trendlerini tahmin etmeyi amaçlar. Yatırım süreci, makro, değer ve trendin yukarıdan aşağıya çok katmanlı bir birleşimidir.",
+        "main": "Strateji, makro ortam için risk tercihi, para birimlerinin makul değerleme seviyeleri ve piyasa eğilimlerinin ivmesi aracılığıyla mevcut fiyat eğilimlerini tahmin etmeyi amaçlar. Yatırım süreci, makro, değer ve trendin yukarıdan aşağıya çok katmanlı bir kombinasyonudur.",
         "investmentRationale": [
-          "Yüksek bir yıllık getiri bekleyen risk arayan yatırımcılar için uygundur.",
-          "Yatırımcının kripto piyasasına karşı uzun vadeli uzun bir önyargısı var."
+          "Yüksek yıllık getiri bekleyen risk arayan yatırımcılar için uygundur.",
+          "Yatırımcı, kripto piyasasına ilişkin uzun vadeli bir önyargıya sahiptir."
         ]
       },
       "Onebit-Smart-Trend-BTC": {
-        "main": "Strateji, makro çevre için risk tercihi, para birimlerinin makul değerleme seviyeleri ve piyasa trendlerinin momentumu yoluyla mevcut fiyat trendlerini tahmin etmeyi amaçlar. Yatırım süreci, makro, değer ve trendin yukarıdan aşağıya çok katmanlı bir birleşimidir.",
+        "main": "Strateji, makro ortam için risk tercihi, para birimlerinin makul değerleme seviyeleri ve piyasa eğilimlerinin ivmesi aracılığıyla mevcut fiyat eğilimlerini tahmin etmeyi amaçlar. Yatırım süreci, makro, değer ve trendin yukarıdan aşağıya çok katmanlı bir kombinasyonudur.",
         "investmentRationale": [
-          "Yüksek bir yıllık getiri bekleyen risk arayan yatırımcılar için uygundur.",
-          "Yatırımcının kripto piyasasına karşı uzun vadeli uzun bir önyargısı var."
+          "Yüksek yıllık getiri bekleyen risk arayan yatırımcılar için uygundur.",
+          "Yatırımcı, kripto piyasasına ilişkin uzun vadeli bir önyargıya sahiptir."
         ]
       },
       "Onebit-Smart-Trend-USDT-Demo": {
-        "main": "Strateji, makro çevre için risk tercihi, para birimlerinin makul değerleme seviyeleri ve piyasa trendlerinin momentumu yoluyla mevcut fiyat trendlerini tahmin etmeyi amaçlar. Yatırım süreci, makro, değer ve trendin yukarıdan aşağıya çok katmanlı bir birleşimidir.",
+        "main": "Strateji, makro ortam için risk tercihi, para birimlerinin makul değerleme seviyeleri ve piyasa eğilimlerinin ivmesi aracılığıyla mevcut fiyat eğilimlerini tahmin etmeyi amaçlar. Yatırım süreci, makro, değer ve trendin yukarıdan aşağıya çok katmanlı bir kombinasyonudur.",
         "investmentRationale": [
-          "Yüksek bir yıllık getiri bekleyen risk arayan yatırımcılar için uygundur.",
-          "Yatırımcının kripto piyasasına karşı uzun vadeli uzun bir önyargısı var."
+          "Yüksek yıllık getiri bekleyen risk arayan yatırımcılar için uygundur.",
+          "Yatırımcı, kripto piyasasına ilişkin uzun vadeli bir önyargıya sahiptir."
         ]
       },
-      "investmentRationale": "Yatırım Gerekçesi:"
+      "investmentRationale": "Yatırım Mantığı:"
     }
   },
   "overview": {
     "netValue": {
-      "title": "Mevcut Net Değer",
-      "change24h": "1D geçmiş"
+      "title": "Geçerli Net Değer",
+      "change24h": "Geçmiş 1D",
+      "past7D": "Geçmiş 7D"
     },
     "historicalAccumulativeNetValue": {
-      "title": "Tarihsel Birikmiş Net Değer",
-      "change24h": "1D geçmiş"
+      "title": "Tarihsel Birikimli Net Değer",
+      "change24h": "Geçmiş 1D"
     },
     "historicalPerformance": {
       "title": "Tarihsel Performans",
       "term": "Terim",
-      "lockUpPeriod": "Kilitleme Süresi",
+      "lockUpPeriod": "Kilitlenme Süresi",
       "AUM": "AUM",
-      "depositors": "Mevduat sahipleri",
+      "depositors": "mevduat sahipleri",
       "finalNetValue": "Nihai Net Değer",
       "return": "Dönüş",
       "APY": "APY"
     }
   },
   "fees": {
-    "title": "Ücretler",
+    "title": "ücretler",
     "management": {
       "title": "Yönetim ücreti",
-      "tip": "Toplam getiri %20'nin üzerindeyse %2",
-      "description": "Yönetim ücreti, mevduat sahipleri tarafından Portföy Yöneticisine ödenen dönemsel bir ödemedir. Ücret, yönetim altındaki varlıkların yıllık yüzdesi olarak hesaplanır ve Apps Kasası getirilerinden bağımsızdır."
+      "tip": "Kümülatif getiri %20'nin üzerinde ise %2",
+      "description": "Yönetim ücreti, mevduat sahipleri tarafından Portföy Yöneticisine ödenen periyodik bir ödemedir. Ücret, yönetilen varlıkların yıllık yüzdesi olarak hesaplanır ve Apps Kasası getirilerinden bağımsızdır."
     },
     "perfomance": {
       "title": "Performans Ücreti",
-      "description": "Performans ücreti, mevduat sahiplerinin önceden belirlenmiş bir süre boyunca yapılan olumlu getiriler üzerinden Portföy Yöneticisine ödediği yüzdeye dayalı ücrettir. Önceden tanımlanmış süre, Kilitli dönem olarak adlandırılır (tipik olarak bir yıl veya çeyrek). Getiriler, mezhep varlığına göre kıyaslanır."
+      "description": "Performans ücreti, mevduat sahiplerinin önceden tanımlanmış bir süre boyunca elde edilen olumlu getirilerden Portföy Yöneticisine ödediği yüzdeye dayalı bir ücrettir. Önceden tanımlanmış dönem, Kilitli dönem olarak adlandırılır (tipik olarak bir yıl veya üç aylık dönem). Getiriler, mezhep varlığına göre kıyaslanır."
     },
     "entrance": {
       "title": "Giriş ücreti"
@@ -90,17 +91,17 @@
     }
   },
   "policies": {
-    "title": "Politikalar",
+    "title": "politikalar",
     "openPeriod": "Açık Dönem",
-    "lockUpPeriod": "Kilitleme Süresi",
-    "fundraisingCap": "Bağış Toplama Sınırı",
-    "softUpperLimit": "Bağış Toplama Yumuşak Kapak",
+    "lockUpPeriod": "Kilitlenme Süresi",
+    "fundraisingCap": "Bağış Toplama Hard Cap",
+    "softUpperLimit": "Bağış Toplama Soft Cap",
     "minimumDeposit": "Minimum Depozito",
     "reInvestment": "Yeniden yatırım",
-    "description": "Mevduat sahipleri, bloke döneminin sonunda fonları geri çekmezlerse, fonlar bir sonraki dönem için portföye yeniden yatırılacaktır."
+    "description": "Mudiler bloke süresi sonunda fonlarını çekmezlerse, fonlar bir sonraki dönem için portföye yeniden yatırılacaktır."
   },
   "depositors": {
-    "depositors": "Mevduat sahipleri",
+    "depositors": "mevduat sahipleri",
     "since": "Dan beri",
     "equity": "Eşitlik",
     "percentage": "Yüzde"

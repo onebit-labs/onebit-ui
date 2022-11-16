@@ -15,7 +15,7 @@
     "PNL": "損益",
     "stats": {
       "assetsUnderManagement": "運用資産",
-      "currentAPY": "現在のAPY",
+      "currentAPY": "現在の APY",
       "estimatedAPY": "推定APY",
       "depositors": "預金者"
     },
@@ -54,7 +54,8 @@
   "overview": {
     "netValue": {
       "title": "現在の正味価値",
-      "change24h": "過去1D"
+      "change24h": "過去1D",
+      "past7D": "過去7D"
     },
     "historicalAccumulativeNetValue": {
       "title": "過去の累積正味価値",

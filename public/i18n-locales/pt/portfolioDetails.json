@@ -8,10 +8,10 @@
   "info": {
     "status": "Status",
     "term": "Prazo",
-    "lockUpPeriod": "Período de bloqueio",
+    "lockUpPeriod": "Período de Bloqueio",
     "days": "Dias",
     "standard": "Padrão",
-    "yourEquity": "Seu patrimônio",
+    "yourEquity": "seu patrimônio",
     "PNL": "PNL",
     "stats": {
       "assetsUnderManagement": "Activos sob gestão",
@@ -21,49 +21,50 @@
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
-        "main": "A negociação de alta frequência é uma estratégia de microestrutura para capturar o spread do mercado executando um grande número de ordens pendentes em um período muito curto de tempo, aproveitando as vantagens de servidores de co-location, canais de baixa latência e contas de baixas taxas de negociação.",
+        "main": "A negociação de alta frequência é uma estratégia de microestrutura para capturar o spread do mercado executando um grande número de ordens pendentes em um período muito curto de tempo, aproveitando as vantagens de servidores de co-localização, canais de baixa latência e contas de taxas de negociação baixas.",
         "investmentRationale": [
           "Adequado para investidores avessos ao risco que buscam altos retornos anuais.",
           "Os investidores não têm exposição ao risco, mas a capacidade do produto é baixa."
         ]
       },
       "Onebit-Smart-Trend-USDT": {
-        "main": "A estratégia visa prever as tendências atuais dos preços por meio da preferência de risco para o ambiente macro, níveis razoáveis de valorização das moedas e o impulso das tendências do mercado. O processo de investimento é uma combinação de várias camadas de macro, valor e tendência.",
+        "main": "A estratégia visa prever as tendências atuais de preços por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
         "investmentRationale": [
           "Adequado para investidores que buscam risco e esperam um alto retorno anual.",
           "O investidor tem um viés de longo prazo do mercado de criptomoedas."
         ]
       },
       "Onebit-Smart-Trend-BTC": {
-        "main": "A estratégia visa prever as tendências atuais dos preços por meio da preferência de risco para o ambiente macro, níveis razoáveis de valorização das moedas e o impulso das tendências do mercado. O processo de investimento é uma combinação de várias camadas de macro, valor e tendência.",
+        "main": "A estratégia visa prever as tendências atuais de preços por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
         "investmentRationale": [
           "Adequado para investidores que buscam risco e esperam um alto retorno anual.",
           "O investidor tem um viés de longo prazo do mercado de criptomoedas."
         ]
       },
       "Onebit-Smart-Trend-USDT-Demo": {
-        "main": "A estratégia visa prever as tendências atuais dos preços por meio da preferência de risco para o ambiente macro, níveis razoáveis de valorização das moedas e o impulso das tendências do mercado. O processo de investimento é uma combinação de várias camadas de macro, valor e tendência.",
+        "main": "A estratégia visa prever as tendências atuais de preços por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
         "investmentRationale": [
           "Adequado para investidores que buscam risco e esperam um alto retorno anual.",
           "O investidor tem um viés de longo prazo do mercado de criptomoedas."
         ]
       },
-      "investmentRationale": "Razão do Investimento:"
+      "investmentRationale": "Justificativa do Investimento:"
     }
   },
   "overview": {
     "netValue": {
       "title": "Valor líquido atual",
-      "change24h": "1D passado"
+      "change24h": "Passado 1D",
+      "past7D": "Passado 7D"
     },
     "historicalAccumulativeNetValue": {
       "title": "Valor Líquido Acumulado Histórico",
-      "change24h": "1D passado"
+      "change24h": "Passado 1D"
     },
     "historicalPerformance": {
       "title": "Desempenho histórico",
       "term": "Prazo",
-      "lockUpPeriod": "Período de bloqueio",
+      "lockUpPeriod": "Período de Bloqueio",
       "AUM": "AUM",
       "depositors": "Depositantes",
       "finalNetValue": "Valor líquido final",
@@ -79,8 +80,8 @@
       "description": "Uma comissão de gestão é um pagamento periódico que é pago pelos depositantes ao Gestor da Carteira. A taxa é calculada como uma porcentagem anualizada dos ativos sob gestão e é independente dos retornos do Vault."
     },
     "perfomance": {
-      "title": "Taxa de Desempenho",
-      "description": "Uma comissão de desempenho é uma comissão baseada numa percentagem que os depositantes pagam ao Gestor da Carteira com base nos retornos positivos obtidos durante um período pré-definido. O período predefinido é referido como um período bloqueado (normalmente um ano ou um trimestre). Os retornos são comparados com o ativo de denominação."
+      "title": "Taxa de desempenho",
+      "description": "Uma taxa de desempenho é uma taxa baseada em porcentagem que os depositantes pagam ao Gestor de Carteira com base nos retornos positivos obtidos durante um período predefinido. O período predefinido é referido como um período bloqueado (normalmente um ano ou um trimestre). Os retornos são comparados com o ativo de denominação."
     },
     "entrance": {
       "title": "Taxa de entrada"
@@ -91,11 +92,11 @@
   },
   "policies": {
     "title": "Políticas",
-    "openPeriod": "Período aberto",
-    "lockUpPeriod": "Período de bloqueio",
-    "fundraisingCap": "Limite rígido de angariação de fundos",
-    "softUpperLimit": "Soft Cap de Arrecadação de Fundos",
-    "minimumDeposit": "Depósito mínimo",
+    "openPeriod": "Período Aberto",
+    "lockUpPeriod": "Período de Bloqueio",
+    "fundraisingCap": "Limite rígido de arrecadação de fundos",
+    "softUpperLimit": "Capa flexível de arrecadação de fundos",
+    "minimumDeposit": "Depósito Mínimo",
     "reInvestment": "Reinvestimento",
     "description": "Se os depositantes não retirarem os fundos no final do período de bloqueio, os fundos serão reinvestidos na carteira para o próximo período."
   },

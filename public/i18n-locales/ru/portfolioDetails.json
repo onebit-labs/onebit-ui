@@ -9,7 +9,7 @@
     "status": "Статус",
     "term": "Срок",
     "lockUpPeriod": "Период блокировки",
-    "days": "Дней",
+    "days": "Дни",
     "standard": "Стандарт",
     "yourEquity": "Ваш капитал",
     "PNL": "ПНЛ",
@@ -54,7 +54,8 @@
   "overview": {
     "netValue": {
       "title": "Текущая чистая стоимость",
-      "change24h": "Прошлое 1D"
+      "change24h": "Прошлое 1D",
+      "past7D": "Прошлое 7D"
     },
     "historicalAccumulativeNetValue": {
       "title": "Историческая накопленная чистая стоимость",
