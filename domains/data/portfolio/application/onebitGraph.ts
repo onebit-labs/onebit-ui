@@ -7,12 +7,12 @@ import { DAY, getCurrentTimestamp, getTimestamp } from 'app/constant'
 
 const useGraphInitEffect = () => {
   const {
-    onebitGraph: { lendingPool: portfolioDailySingle, portfolioTerm: portfolioTermSingle, netValue: netValueSingle },
+    onebitGraph: { lendingPool: lendingPoolSingle, portfolioTerm: portfolioTermSingle, netValue: netValueSingle },
   } = useControllers()
 
   useEffect(() => {
-    if (!portfolioDailySingle || !portfolioDailySingle) return
-    portfolioDailySingle.run()
+    if (!lendingPoolSingle || !lendingPoolSingle) return
+    lendingPoolSingle.run()
     portfolioTermSingle.run()
 
     const endTimestamp = getCurrentTimestamp()
@@ -21,11 +21,11 @@ const useGraphInitEffect = () => {
       endTimestamp,
     })
     return () => {
-      portfolioDailySingle.stop()
+      lendingPoolSingle.stop()
       portfolioTermSingle.stop()
       netValueSingle.stop()
     }
-  }, [netValueSingle, portfolioDailySingle, portfolioTermSingle])
+  }, [netValueSingle, lendingPoolSingle, portfolioTermSingle])
 }
 
 const useUserEffect = () => {
