@@ -19,7 +19,7 @@ export const useTable = (): BasicTableProps => {
     contracts: { erc20Service },
   } = useNetwork()
   const dataFetcher = useCallback(
-    ({ depositors: account, totalSupply, symbol, lendingPool }: any) => {
+    ({ depositors: account, scaledTotalSupply, symbol, lendingPool }: any) => {
       const returnValue = {
         depositors: account,
         since: 0,
@@ -43,7 +43,7 @@ export const useTable = (): BasicTableProps => {
           }).then((data) => {
             if (!data[oTokenAddress]) return
             returnValue.equity = toBN(data[oTokenAddress])
-            returnValue.percentage = returnValue.equity.div(totalSupply)
+            returnValue.percentage = returnValue.equity.div(scaledTotalSupply)
           })
         )
         .finally(() => reslove(returnValue))
@@ -54,13 +54,13 @@ export const useTable = (): BasicTableProps => {
   const data = useMemo(() => {
     if (!portfolio.depositorList) return []
     const {
-      totalSupply,
+      scaledTotalSupply,
       symbol,
       address: { LendingPool },
     } = portfolio
     return portfolio.depositorList.map((account) => ({
       depositors: account,
-      totalSupply,
+      scaledTotalSupply,
       symbol,
       lendingPool: LendingPool,
     }))
