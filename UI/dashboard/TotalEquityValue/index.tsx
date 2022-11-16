@@ -36,7 +36,7 @@ const TotalEquityValue: FC = () => {
                 <H3>{t('totalEquityValue.title')}</H3>
                 <Stack spacing={2} direction="row" alignItems="center">
                   <Typography variant="h5" fontWeight="600">
-                    <NumberDisplay value={chart.currentTotalEquity} options="number" />
+                    <NumberDisplay value={chart.currentTotalEquity} options="USD" />
                   </Typography>
                   <Change24h spacing={1} direction="row" alignItems="center">
                     <RiseOrFall variant="subtitle1" value={chart.change24} displayIcon>

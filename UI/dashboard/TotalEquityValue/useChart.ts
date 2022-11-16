@@ -3,12 +3,12 @@ import { useState, useMemo, useRef } from 'react'
 import { format } from 'date-fns'
 import { useTheme, alpha } from '@mui/material/styles'
 
+import { usePortfolio } from 'domains/data'
 import { useMath } from 'domains/utils'
 import { toBN } from 'lib/math'
 import { safeGet } from 'app/utils/get'
 
 import type { TotalEquityValueChartProps } from './types'
-
 const DayButtonList = [7, 14, 30, 90]
 const useDayButton = () => {
   const [value, setValue] = useState(7)
@@ -26,21 +26,30 @@ export const useChart = () => {
   const { NF } = useMath()
   const lineChart = useRef({ width: 0, height: 0, gradient: undefined })
   const theme = useTheme()
-  // const { nft } = useContractNFT()
-  // const { oracleRecords } = useThegraph()
+  const {
+    portfolioUserData: {
+      dashboard: { portfolioUserData, totalEquityValue },
+    },
+  } = usePortfolio()
   const dayButton = useDayButton()
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const data: any = [
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 7, y: 100000 },
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 6, y: 200000 },
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 5, y: 300000 },
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 4, y: 400000 },
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 3, y: 600000 },
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 2, y: 500000 },
-    { x: 1666844009432 - 1000 * 60 * 60 * 24 * 1, y: 700000 },
-    { x: 1666844009432, y: 800000 },
-  ]
+  const data = useMemo(() => {
+    if (!portfolioUserData) return []
+    const map = {} as Record<number, BN>
+    portfolioUserData.forEach(({ netValues, scaledBalanceOf, oracle }) => {
+      const scaledBalanceOfInUSD = scaledBalanceOf.multipliedBy(oracle)
+      netValues.forEach(({ createTimestamp, reserveNormalizedIncome }) => {
+        const value = scaledBalanceOfInUSD.multipliedBy(reserveNormalizedIncome)
+        if (!map[createTimestamp]) map[createTimestamp] = toBN(0)
+        map[createTimestamp] = map[createTimestamp].plus(value)
+      })
+    })
+    const returnValue = Object.entries(map)
+      .map(([x, y]) => ({ x: parseInt(x), y: y.toNumber() }))
+      .sort((a, b) => a.x - b.x)
+
+    return returnValue
+  }, [portfolioUserData])
 
   const change24 = useMemo(() => {
     return (
@@ -135,5 +144,5 @@ export const useChart = () => {
     [NF, data, lineColor, theme.palette.text.secondary]
   )
 
-  return { props, dayButton, change24, currentTotalEquity: 1234 }
+  return { props, dayButton, change24, currentTotalEquity: totalEquityValue }
 }
