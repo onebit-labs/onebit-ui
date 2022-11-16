@@ -1,6 +1,7 @@
 import type { ReserveDataSource } from 'domains/data/lendingPool/store/reserveData/adapter/getReserveDataSource'
 import { getBigNumber, getNumber, safeGet } from 'app/utils/get'
 import { normalize, toBN } from 'lib/math'
+import type { BNValue } from 'lib/math/types'
 
 export type ReserveData = {
   liquidityIndex: BN
@@ -24,7 +25,7 @@ export type ReserveData = {
 
 export const getReserveData = (
   reserveDataSource: Record<string, ReserveDataSource>,
-  reserveNormalizedIncomeSource: Record<string, BN>
+  reserveNormalizedIncomeSource: Record<string, BNValue>
 ) => {
   const returnValue: Record<string, ReserveData> = {}
   Object.keys(reserveDataSource || {}).forEach((key) => {

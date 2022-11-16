@@ -17,6 +17,8 @@ export const useControllersService = () => {
   const updateData = useCallback(() => {
     erc20.balanceOf.restart()
     erc20.totalSupply.restart()
+    erc20.scaledBalanceOf.restart()
+    erc20.scaledTotalSupply.restart()
     lendingPool.reserveData.restart()
     onebitGraph.transaction.restart()
     onebitGraph.depositor.restart()
@@ -24,6 +26,8 @@ export const useControllersService = () => {
     onebitGraph.portfolioTerm.run()
   }, [
     erc20.balanceOf,
+    erc20.scaledBalanceOf,
+    erc20.scaledTotalSupply,
     erc20.totalSupply,
     lendingPool.reserveData,
     onebitGraph.depositor,

@@ -128,6 +128,7 @@ export class OTokenService extends BaseService<OToken> {
   constructor(provider: providers.Provider) {
     super(provider, OToken__factory)
     this.provider = provider
+    this.tokenDecimals = {}
 
     this.decimalsOf = this.decimalsOf.bind(this)
     this.getScaledBalanceOf = this.getScaledBalanceOf.bind(this)

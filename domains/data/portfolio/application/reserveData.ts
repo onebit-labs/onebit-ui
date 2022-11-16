@@ -36,10 +36,10 @@ const useLendingPoolEffect = () => {
 const useERC20TotalSupplyEffect = () => {
   const {
     markets,
-    contracts: { erc20Service },
+    contracts: { erc20Service, oTokenService },
   } = useNetwork()
   const {
-    erc20: { totalSupply: totalSupplyPolling },
+    erc20: { totalSupply: totalSupplyPolling, scaledTotalSupply: scaledTotalSupplyPolling },
   } = useControllers()
 
   const oTokenAddresses = useMemo(() => markets.map((market) => market.address.OToken) || [], [markets])
@@ -50,6 +50,13 @@ const useERC20TotalSupplyEffect = () => {
     }),
     [erc20Service, oTokenAddresses]
   )
+  const oTokenQuery = useMemo(
+    () => ({
+      tokens: oTokenAddresses,
+      oTokenService,
+    }),
+    [oTokenService, oTokenAddresses]
+  )
 
   useEffect(() => {
     if (!query.tokens.length || !totalSupplyPolling) return
@@ -58,6 +65,14 @@ const useERC20TotalSupplyEffect = () => {
       totalSupplyPolling.stop()
     }
   }, [query, totalSupplyPolling])
+
+  useEffect(() => {
+    if (!oTokenQuery.tokens.length || !scaledTotalSupplyPolling) return
+    scaledTotalSupplyPolling.run(oTokenQuery, 600000)
+    return () => {
+      scaledTotalSupplyPolling.stop()
+    }
+  }, [oTokenQuery, scaledTotalSupplyPolling])
 }
 const useERC20oracleEffect = () => {
   const {

@@ -44,6 +44,8 @@ export type Portfolio = Partial<
     oracle?: BN
     totalSupply?: BN
     totalSupplyInUSD?: BN
+    scaledTotalSupply?: BN
+    scaledTotalSupplyInUSD?: BN
     status: PortfolioStatus
     lockTime: number
 
@@ -99,6 +101,7 @@ const usePortfolioService = () => {
       const netValues = getFixedNetValues(onebitGraphData.netValue.filter((i) => i.lendingPool === lendingPoolAddress))
 
       const totalSupply = toBN(safeGet(() => erc20Data.totalSupply[address.OToken]) || 0)
+      const scaledTotalSupply = toBN(safeGet(() => erc20Data.scaledTotalSupply[address.OToken]) || 0)
       const status = getPortfolioStatus(reserve)
       let currentAPY = toBN(0)
 
@@ -111,7 +114,7 @@ const usePortfolioService = () => {
         )
       }
 
-      const yourEquity = safeGet(() => userReserve.balanceOf) || toBN(0)
+      const yourEquity = safeGet(() => userReserve.scaledBalanceOf) || toBN(0)
       const netValue = safeGet(() => reserve.normalizedIncome) || toBN(0)
       let PNL = toBN(0)
       if (!yourEquity.isZero()) {
@@ -132,6 +135,8 @@ const usePortfolioService = () => {
         oracle,
         totalSupply,
         totalSupplyInUSD: totalSupply.multipliedBy(oracle),
+        scaledTotalSupply,
+        scaledTotalSupplyInUSD: scaledTotalSupply.multipliedBy(oracle),
 
         currentAPY,
         yourEquity,
@@ -150,6 +155,7 @@ const usePortfolioService = () => {
     return returnValue
   }, [
     erc20Data.oracle,
+    erc20Data.scaledTotalSupply,
     erc20Data.totalSupply,
     marketReserveData,
     onebitGraphData.lendingPool,

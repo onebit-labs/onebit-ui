@@ -11,15 +11,17 @@ const useLendingPoolEffect = () => {
   const {
     address,
     markets,
-    contracts: { erc20Service },
+    contracts: { erc20Service, oTokenService },
   } = useNetwork()
   const {
-    erc20: { balanceOf: balanceOfPolling },
+    erc20: { balanceOf: balanceOfPolling, scaledBalanceOf: scaledBalanceOfPolling },
   } = useControllers()
 
+  const oTokens = useMemo(() => markets.map((market) => market.address.OToken) || [], [markets])
+
   const tokens = useMemo(
-    () => markets.map((market) => market.address.OToken).concat([address.USDT, address.WBTC]) || [],
-    [address.USDT, address.WBTC, markets]
+    () => oTokens.concat([address.USDT, address.WBTC]) || [],
+    [address.USDT, address.WBTC, oTokens]
   )
   const query = useMemo(
     () => ({
@@ -29,6 +31,14 @@ const useLendingPoolEffect = () => {
     }),
     [erc20Service, networkAccount, tokens]
   )
+  const oTokenQuery = useMemo(
+    () => ({
+      oTokenService,
+      user: networkAccount,
+      tokens: oTokens,
+    }),
+    [networkAccount, oTokenService, oTokens]
+  )
 
   useEffect(() => {
     if (!query.tokens.length || !query.user || !balanceOfPolling) return
@@ -37,6 +47,14 @@ const useLendingPoolEffect = () => {
       balanceOfPolling.stop()
     }
   }, [query, balanceOfPolling])
+
+  useEffect(() => {
+    if (!oTokenQuery.tokens.length || !oTokenQuery.user || !scaledBalanceOfPolling) return
+    scaledBalanceOfPolling.run(oTokenQuery, 600000)
+    return () => {
+      scaledBalanceOfPolling.stop()
+    }
+  }, [oTokenQuery, scaledBalanceOfPolling])
 
   return {
     networkAccount,
@@ -48,13 +66,13 @@ type UserReserveDataProps = {
 }
 export const useUserReserveData = ({ marketReserveData }: UserReserveDataProps) => {
   const { networkAccount } = useLendingPoolEffect()
-  const { balanceOf } = useERC20()
+  const { balanceOf, scaledBalanceOf } = useERC20()
   const userReserveData = useMemo(() => {
     if (!networkAccount) return {} as undefined
-    const returnValue = getUserReserveData({ balanceOf, marketReserveData })
+    const returnValue = getUserReserveData({ balanceOf, scaledBalanceOf, marketReserveData })
     log('[portfolio] [userReserveData]', returnValue)
     return returnValue
-  }, [balanceOf, marketReserveData, networkAccount])
+  }, [balanceOf, marketReserveData, networkAccount, scaledBalanceOf])
 
   return { userReserveData }
 }
