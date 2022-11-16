@@ -6,7 +6,7 @@ import type { TableColumnsProps, BasicTableProps } from 'components/table/BasicT
 import { percentCellRenderer, symbolCellRenderer } from 'components/table/renderer/portfolio'
 import { useNetwork, usePortfolioDetails } from 'domains/data'
 import { request as depositorRequest } from 'domains/data/onebit-graph/store/depositor/adapter'
-import { request as erc20ScaledBalanceOfRequest } from 'domains/data/erc20/store/scaledBalanceOf/adapter'
+import { request as erc20BalanceOfRequest } from 'domains/data/erc20/store/balanceOf/adapter'
 import { toBN } from 'lib/math'
 
 import { depositorsCellRenderer, sinceCellRenderer } from './renderer'
@@ -16,7 +16,7 @@ export const useTable = (): BasicTableProps => {
   const { t } = useTranslation('portfolioDetails')
   const { portfolio } = usePortfolioDetails()
   const {
-    contracts: { oTokenService },
+    contracts: { erc20Service },
   } = useNetwork()
   const dataFetcher = useCallback(
     ({ depositors: account, totalSupply, symbol, lendingPool }: any) => {
@@ -36,8 +36,8 @@ export const useTable = (): BasicTableProps => {
           return data[0]
         })
         .then(({ oTokenAddress }) =>
-          erc20ScaledBalanceOfRequest({
-            oTokenService,
+          erc20BalanceOfRequest({
+            erc20Service,
             user: account,
             tokens: [oTokenAddress],
           }).then((data) => {
@@ -49,7 +49,7 @@ export const useTable = (): BasicTableProps => {
         .finally(() => reslove(returnValue))
       return promise
     },
-    [oTokenService]
+    [erc20Service]
   )
   const data = useMemo(() => {
     if (!portfolio.depositorList) return []
