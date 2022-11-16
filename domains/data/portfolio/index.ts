@@ -54,6 +54,7 @@ export type Portfolio = Partial<
     yourEquity: BN
     yourEquityInUSD: BN
     PNL: BN
+    PNLRate: BN
     PNLInUSD: BN
     netValue: BN
 
@@ -114,11 +115,12 @@ const usePortfolioService = () => {
         )
       }
 
-      const yourEquity = safeGet(() => userReserve.scaledBalanceOf) || toBN(0)
+      const yourEquity = safeGet(() => userReserve.balanceOf) || toBN(0)
       const netValue = safeGet(() => reserve.normalizedIncome) || toBN(0)
+      const PNLRate = safeGet(() => netValue.minus(reserve.previousLiquidityIndex)) || toBN(0)
       let PNL = toBN(0)
-      if (!yourEquity.isZero()) {
-        PNL = yourEquity.multipliedBy(netValue.minus(1))
+      if (safeGet(() => !userReserve.scaledBalanceOf.isZero())) {
+        PNL = userReserve.scaledBalanceOf.multipliedBy(PNLRate)
       }
       const yourEquityInUSD = yourEquity.multipliedBy(oracle)
       const PNLInUSD = PNL.multipliedBy(oracle)
@@ -144,6 +146,7 @@ const usePortfolioService = () => {
         netValue,
         netValues,
         PNL,
+        PNLRate,
         PNLInUSD,
 
         portfolioDaily: safeGet(() => portfolioDaily[portfolioName]) || [],

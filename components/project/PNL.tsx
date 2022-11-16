@@ -8,7 +8,7 @@ import type { FC } from 'react'
 import { useMemo } from 'react'
 
 type PNLProps = Portfolio
-const PNL: FC<PNLProps> = ({ PNL, netValue }) => {
+const PNL: FC<PNLProps> = ({ PNL, PNLRate }) => {
   const value = useMemo(() => safeGet(() => PNL) || toBN(0), [PNL])
   if (value.isNaN() || value.isZero()) return <span>-</span>
   return (
@@ -16,7 +16,7 @@ const PNL: FC<PNLProps> = ({ PNL, netValue }) => {
       <Box>
         <NumberDisplay value={value} options="number" numberFormatOptions={{ signDisplay: 'always' }} />
         <span>(</span>
-        <NumberDisplay value={netValue.minus(1)} options="percent" numberFormatOptions={{ signDisplay: 'always' }} />
+        <NumberDisplay value={PNLRate} options="percent" numberFormatOptions={{ signDisplay: 'always' }} />
         <span>)</span>
       </Box>
     </RiseOrFall>

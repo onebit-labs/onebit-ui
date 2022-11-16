@@ -57,21 +57,20 @@ export const percentCellRenderer = ({ cellData }: TableCellProps) => {
   )
 }
 
-export const PNLCellRenderer = ({ rowData: { netValue, yourEquityInUSD } }: TableCellProps) => {
-  const percentValue = netValue.minus(1)
+export const PNLCellRenderer = ({ rowData: { PNLInUSD, PNLRate } }: TableCellProps) => {
   return (
     <TableCell align="center" component="div">
       <Stack spacing={1}>
-        <RiseOrFall value={yourEquityInUSD}>
+        <RiseOrFall value={PNLInUSD}>
           <NumberDisplay
-            value={yourEquityInUSD}
+            value={PNLInUSD}
             options="USD"
             abbreviate={{}}
             numberFormatOptions={{ signDisplay: 'always' }}
           />
         </RiseOrFall>
-        <RiseOrFall value={percentValue}>
-          <NumberDisplay value={percentValue} options="percent" numberFormatOptions={{ signDisplay: 'always' }} />
+        <RiseOrFall value={PNLRate}>
+          <NumberDisplay value={PNLRate} options="percent" numberFormatOptions={{ signDisplay: 'always' }} />
         </RiseOrFall>
       </Stack>
     </TableCell>
