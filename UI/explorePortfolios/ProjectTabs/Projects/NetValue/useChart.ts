@@ -45,10 +45,11 @@ export const useChart = (portfolio: ChartProps) => {
   }, [data])
 
   const change7d = useMemo(() => {
+    const length7d = data.length > 7 ? 6 : data.length
     return (
       safeGet(() =>
         toBN(data[data.length - 1].y)
-          .div(data[0].y)
+          .div(data[data.length - length7d].y)
           .minus(1)
       ) || 0
     )
