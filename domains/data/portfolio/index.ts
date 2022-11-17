@@ -2,7 +2,7 @@ import { createContext } from 'app/utils/createContext'
 import { log } from 'app/utils/dev'
 import { useMemo } from 'react'
 
-import { normalize, toBN, toZDBN } from 'lib/math'
+import { toBN } from 'lib/math'
 import { safeGet } from 'app/utils/get'
 
 import { useERC20, useNetwork } from '..'
@@ -26,8 +26,7 @@ import { getPortfolioDaily } from '../onebit-graph/adapter/netValue'
 import { getFixedNetValues } from '../onebit-graph/adapter/netValue'
 import type { Transaction } from '../onebit-graph/adapter/transaction'
 import { useWallet } from 'domains'
-import { RAY_DECIMALS, SECONDS_PER_YEAR } from 'app/constant'
-import { RAY, rayPow } from 'lib/math/ray'
+import { SECONDS_PER_YEAR } from 'app/constant'
 
 export type MarketReserve = Partial<ReserveData> &
   MarketInfo & {
@@ -108,12 +107,13 @@ const usePortfolioService = () => {
       let currentAPY = toBN(0)
 
       if (status === 'lockedUp') {
-        currentAPY = normalize(
-          rayPow(toZDBN(reserve.currentLiquidityRate).dividedBy(SECONDS_PER_YEAR).plus(RAY), SECONDS_PER_YEAR).minus(
-            RAY
-          ),
-          RAY_DECIMALS
-        )
+        currentAPY = reserve.liquidityIndex
+          .div(reserve.previousLiquidityIndex)
+          .minus(1)
+          .multipliedBy(SECONDS_PER_YEAR)
+          .multipliedBy(1000)
+          .div(Date.now() - reserve.purchaseEndTimestamp)
+        currentAPY = currentAPY.lt(-1) ? toBN(-1) : currentAPY
       }
 
       const yourEquity = safeGet(() => userReserve.balanceOf) || toBN(0)
@@ -182,7 +182,7 @@ const usePortfolioService = () => {
         totalEquityValue = totalEquityValue.plus(portfolio.yourEquityInUSD)
         totalPNL = totalPNL.plus(portfolio.PNLInUSD)
         APYSumA = APYSumA.plus(portfolio.currentAPY.multipliedBy(portfolio.yourEquityInUSD))
-        APYSumB = APYSumA.plus(portfolio.currentAPY)
+        APYSumB = APYSumB.plus(portfolio.yourEquityInUSD)
         return portfolio
       })
     const dashboard = {

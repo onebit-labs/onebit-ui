@@ -3,7 +3,11 @@ import type { SliceState } from './adapter'
 import { request } from './adapter'
 
 const key = 'lendingPool.reserveNormalizedIncome'
-const { reducer, select, useRequestController: useReserveNormalizedIncomeController } = createStoreRequest<SliceState>(key)(request)
+const {
+  reducer,
+  select,
+  useRequestController: useReserveNormalizedIncomeController,
+} = createStoreRequest<SliceState>(key)(request)
 
 export default reducer
 export { select, useReserveNormalizedIncomeController }
