@@ -91,8 +91,12 @@ const DashboardSidebar: FC<React.PropsWithChildren<DashboardSidebarProps>> = (pr
         <FlexBox>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           {!!COMPACT && <StyledLogo src={LogoImageSquare.src} alt="Onebit logo" width={40} height={40} />}
-          {!COMPACT && theme.palette.mode === 'light' && <Image src={LogoImage.src} alt="Onebit logo" width={100} height={100} />}
-          {!COMPACT && theme.palette.mode === 'dark' && <Image src={LogoWhiteImage.src} alt="Onebit logo" width={100} height={100} />}
+          {!COMPACT && theme.palette.mode === 'light' && (
+            <Image src={LogoImage.src} alt="Onebit logo" width={100} height={100} />
+          )}
+          {!COMPACT && theme.palette.mode === 'dark' && (
+            <Image src={LogoWhiteImage.src} alt="Onebit logo" width={100} height={100} />
+          )}
         </FlexBox>
         <Box mx={'auto'}></Box>
 

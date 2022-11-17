@@ -1,3 +1,4 @@
+import { safeGet } from 'app/utils/get'
 import type { PortfolioTerm } from 'domains/data/onebit-graph/adapter/portfolioTerm'
 import type { Portfolio } from '..'
 import { getCurrentAPY } from './currentAPY'
@@ -17,7 +18,7 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
     }
   }
   const currentTerm = data[data.length - 1]
-  currentTerm.depositors = portfolio.depositors.toNumber()
+  currentTerm.depositors = safeGet(() => portfolio.depositors.toNumber()) || 0
   currentTerm.netValue = portfolio.netValue
   currentTerm.APY = portfolio.currentAPY
   currentTerm.assetsUnderManagement = portfolio.totalSupply
