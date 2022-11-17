@@ -37,7 +37,7 @@ const Stats: FC = () => {
         title: 'totalPortfolioDeposited',
       },
       {
-        price: <NumberDisplay value={APY} options="percent" />,
+        price: <NumberDisplay value={APY} options="percent" min={0} />,
         title: 'APY',
       },
     ],

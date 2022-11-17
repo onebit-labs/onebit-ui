@@ -9,13 +9,36 @@ import { safeGet } from 'app/utils/get'
 
 type NumberDisplayProps = {
   value: BNValue
+  min?: BNValue
+  max?: BNValue
   options?: 'number' | 'USD' | 'percent'
   abbreviate?: AbbreviateOptions
   numberFormatOptions?: Intl.NumberFormatOptions
 }
 
-const NumberDisplay: FC<NumberDisplayProps> = ({ value, options, abbreviate, numberFormatOptions }) => {
+const NumberDisplay: FC<NumberDisplayProps> = ({
+  value: source,
+  min,
+  max,
+  options,
+  abbreviate,
+  numberFormatOptions,
+}) => {
   const { NF } = useMath()
+
+  const value = useMemo(() => {
+    const v = toBN(source)
+    if (!v || v.isNaN() || v.eq(0)) return toBN(0)
+    if (typeof min != 'undefined') {
+      const minValue = toBN(min)
+      if (!minValue.isNaN() && v.lt(minValue)) return minValue
+    }
+    if (typeof max != 'undefined') {
+      const maxValue = toBN(max)
+      if (!maxValue.isNaN() && v.gt(maxValue)) return maxValue
+    }
+    return v
+  }, [max, min, source])
 
   const data = useMemo(() => {
     const v = toBN(value)
