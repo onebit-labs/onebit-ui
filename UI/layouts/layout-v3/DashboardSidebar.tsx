@@ -8,11 +8,13 @@ import { useState } from 'react'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import LogoImage from 'public/logo.svg'
+import LogoWhiteImage from 'public/logo-white.svg'
 import LogoImageSquare from 'public/logo-square.svg'
 import Image from 'next/image'
 
 import MultiLevelMenu from './MultiLevelMenu'
 import MobileSidebar from './MobileSidebar'
+import { useTheme } from '@mui/material/styles'
 
 const TOP_HEADER_AREA = 70
 
@@ -65,6 +67,7 @@ const DashboardSidebar: FC<React.PropsWithChildren<DashboardSidebarProps>> = (pr
 
   // Activate compact when toggle button clicked and not on hover state
   const COMPACT = sidebarCompact && !onHover ? 1 : 0
+  const theme = useTheme()
 
   //   IF MOBILE
   if (downLg) {
@@ -88,7 +91,8 @@ const DashboardSidebar: FC<React.PropsWithChildren<DashboardSidebarProps>> = (pr
         <FlexBox>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           {!!COMPACT && <StyledLogo src={LogoImageSquare.src} alt="Onebit logo" width={40} height={40} />}
-          {!COMPACT && <Image src={LogoImage.src} alt="Onebit logo" width={100} height={100} />}
+          {!COMPACT && theme.palette.mode === 'light' && <Image src={LogoImage.src} alt="Onebit logo" width={100} height={100} />}
+          {!COMPACT && theme.palette.mode === 'dark' && <Image src={LogoWhiteImage.src} alt="Onebit logo" width={100} height={100} />}
         </FlexBox>
         <Box mx={'auto'}></Box>
 
