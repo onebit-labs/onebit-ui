@@ -57,6 +57,14 @@ export const percentCellRenderer = ({ cellData }: TableCellProps) => {
   )
 }
 
+export const APYCellRenderer = ({ cellData }: TableCellProps) => {
+  return (
+    <TableCell align="center" component="div">
+      <NumberDisplay value={cellData} options="percent" min={0} />
+    </TableCell>
+  )
+}
+
 export const PNLCellRenderer = ({ rowData: { PNLInUSD, PNLRate } }: TableCellProps) => {
   return (
     <TableCell align="center" component="div">

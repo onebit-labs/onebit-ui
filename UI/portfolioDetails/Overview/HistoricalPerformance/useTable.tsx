@@ -4,8 +4,13 @@ import { useTranslation } from 'react-i18next'
 import { cellRenderer, headerRenderer } from 'components/table/renderer'
 import type { TableColumnsProps, BasicTableProps } from 'components/table/BasicTable/types'
 import { usePortfolioDetails } from 'domains/data'
-import { symbolCellRenderer, lockUpPeriodCellRenderer, numberCellRenderer } from 'components/table/renderer/portfolio'
-import { getBigNumber } from 'app/utils/get'
+import {
+  symbolCellRenderer,
+  lockUpPeriodCellRenderer,
+  numberCellRenderer,
+  APYCellRenderer,
+} from 'components/table/renderer/portfolio'
+import { returnCellRenderer } from './renderer'
 
 export const useTable = (): BasicTableProps => {
   const { portfolio } = usePortfolioDetails()
@@ -14,13 +19,13 @@ export const useTable = (): BasicTableProps => {
     if (!portfolio.portfolioTerm) return []
     const { symbol } = portfolio
     return portfolio.portfolioTerm.map((portfolioTerm) => {
-      const { liquidityIndex } = portfolioTerm
-      const { value: AUM } = getBigNumber(portfolioTerm, ['value'], 18)
+      const { netValue: finalNetValue, assetsUnderManagement: AUM } = portfolioTerm
       return {
         ...portfolioTerm,
         AUM,
         symbol,
-        finalNetValue: liquidityIndex,
+        finalNetValue,
+        return: finalNetValue.minus(1),
       }
     })
   }, [portfolio])
@@ -63,13 +68,13 @@ export const useTable = (): BasicTableProps => {
             dataKey: 'return',
             width: 150,
             headerRenderer,
-            cellRenderer,
+            cellRenderer: returnCellRenderer,
           },
           {
             dataKey: 'APY',
             width: 120,
             headerRenderer,
-            cellRenderer,
+            cellRenderer: APYCellRenderer,
           },
         ] as TableColumnsProps[]
       ).map((column) => {
