@@ -17,7 +17,11 @@ export type PortfolioTerm = {
   previousDepositors: number
   liquidityIndex: BN
   previousLiquidityIndex: BN
-  value: BN
+  previousNetValue: BN
+  previousAssetsUnderManagement: BN
+  APY: BN
+  netValue: BN
+  assetsUnderManagement: BN
 }
 export const getPortfolioTerm = (sliceState: SliceState) => {
   if (!sliceState) return []
@@ -32,12 +36,16 @@ export const getPortfolioTerm = (sliceState: SliceState) => {
       ...portfolioTerm,
       ...timestamps,
       ...getAddress(portfolioTerm, ['lendingPool']),
-      ...getBigNumber(portfolioTerm, ['value'], 18),
+      ...getBigNumber(portfolioTerm, ['previousNetValue'], 0),
+      ...getBigNumber(portfolioTerm, ['previousAssetsUnderManagement'], 18),
       ...getBigNumber(portfolioTerm, ['previousLiquidityIndex'], 27),
       ...getBigNumber(portfolioTerm, ['managementFeeRate', 'performanceFeeRate'], 4),
       lockTime: getPortfolioLockTime(timestamps),
       liquidityIndex: toBN(0),
       depositors: 0,
+      APY: toBN(0),
+      netValue: toBN(0),
+      assetsUnderManagement: toBN(0),
     }
 
     return returnValue

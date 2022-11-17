@@ -26,7 +26,7 @@ import { getPortfolioDaily } from '../onebit-graph/adapter/netValue'
 import { getFixedNetValues } from '../onebit-graph/adapter/netValue'
 import type { Transaction } from '../onebit-graph/adapter/transaction'
 import { useWallet } from 'domains'
-import { SECONDS_PER_YEAR } from 'app/constant'
+import { getCurrentAPY } from './adapter/currentAPY'
 
 export type MarketReserve = Partial<ReserveData> &
   MarketInfo & {
@@ -59,7 +59,7 @@ export type Portfolio = Partial<
     netValue: BN
 
     portfolioDaily: Record<'x' | 'y', number>[]
-    seriesDaily: Record<'x' | 'y', number>[]
+    seriesDaily: Record<'x' | 'y', string>[]
   }
 
 export type UserPortfolio = {
@@ -107,13 +107,7 @@ const usePortfolioService = () => {
       let currentAPY = toBN(0)
 
       if (status === 'lockedUp') {
-        currentAPY = reserve.liquidityIndex
-          .div(reserve.previousLiquidityIndex)
-          .minus(1)
-          .multipliedBy(SECONDS_PER_YEAR)
-          .multipliedBy(1000)
-          .div(Date.now() - reserve.purchaseEndTimestamp)
-        currentAPY = currentAPY.lt(-1) ? toBN(-1) : currentAPY
+        currentAPY = getCurrentAPY(reserve)
       }
 
       const yourEquity = safeGet(() => userReserve.balanceOf) || toBN(0)
@@ -126,12 +120,12 @@ const usePortfolioService = () => {
       const yourEquityInUSD = yourEquity.multipliedBy(oracle)
       const PNLInUSD = PNL.multipliedBy(oracle)
 
-      return {
+      const returnValue: Portfolio = {
         ...market,
         ...lendingPool,
         ...userReserve,
         ...reserve,
-        portfolioTerm: getPortfolioTerm(portfolioTerm),
+        portfolioTerm: [],
         status,
         lockTime: getPortfolioLockTime(reserve),
 
@@ -151,9 +145,13 @@ const usePortfolioService = () => {
         PNLInUSD,
 
         portfolioDaily: getPortfolioDaily(netValues),
-        seriesDaily: safeGet(() => seriesDaily[series]) || [],
+        seriesDaily: safeGet(() => seriesDaily[series]) || ([] as undefined),
         id,
-      } as Portfolio
+      }
+
+      returnValue.portfolioTerm = getPortfolioTerm(returnValue, portfolioTerm)
+
+      return returnValue
     })
     log('[portfolio] [portfolioData]', returnValue)
     return returnValue

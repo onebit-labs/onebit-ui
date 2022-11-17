@@ -6,7 +6,7 @@ export type Props = {
 export const request = (props: Props) => {
   const { start, end, series } = props
   const promises: Array<Promise<void>> = []
-  const returnValue: Record<string, string> = {}
+  const returnValue: Record<string, Array<Record<string, string>>> = {}
 
   series.forEach((item) => {
     promises.push(

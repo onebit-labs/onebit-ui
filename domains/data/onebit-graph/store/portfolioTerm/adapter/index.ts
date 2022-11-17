@@ -17,7 +17,8 @@ export const request = () => {
   ) {
     id
     lendingPool
-    value
+    previousNetValue
+    previousAssetsUnderManagement
     term
     createTimestamp
     redemptionBeginTimestamp
@@ -40,7 +41,8 @@ export const request = () => {
 export type SliceState = Array<{
   id: string
   lendingPool: string
-  value: BN
+  previousNetValue: BN
+  previousAssetsUnderManagement: BN
   term: number
   createTimestamp: number
   redemptionBeginTimestamp: number
