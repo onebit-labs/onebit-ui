@@ -7,11 +7,13 @@ export const createRequestSelect = <SliceState extends RequestSliceState>(path: 
   const selectStatus = (state: any): REQUEST_STATUS => select(state).status
   const selectData = (state: any): SliceState['data'] => select(state).data
   const selectError = (state: any): SliceState['error'] => select(state).error
+  const selectLoading = (state: any): SliceState['loading'] => select(state).loading
 
   return {
     selectStatus,
     selectData,
     selectError,
+    selectLoading,
   }
 }
 

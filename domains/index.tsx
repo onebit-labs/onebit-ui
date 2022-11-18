@@ -4,6 +4,7 @@ import WalletProvider, { createWalletContext } from 'lib/protocol/components/wal
 
 import UtilsProvider from './utils'
 import DataProvider from './data'
+import LoadingProvider, { createLoadingContext } from './loading'
 import ControllersProvider, { createControllersContext } from './controllers'
 
 const Provider: FCC = ({ children }) => {
@@ -11,7 +12,9 @@ const Provider: FCC = ({ children }) => {
     <WalletProvider>
       <UtilsProvider>
         <ControllersProvider>
-          <DataProvider>{children}</DataProvider>
+          <DataProvider>
+            <LoadingProvider>{children}</LoadingProvider>
+          </DataProvider>
         </ControllersProvider>
       </UtilsProvider>
     </WalletProvider>
@@ -22,3 +25,4 @@ export default Provider
 
 export const useWallet = createWalletContext()
 export const useControllers = createControllersContext()
+export const useLoading = createLoadingContext()
