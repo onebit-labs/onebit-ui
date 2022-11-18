@@ -32,7 +32,7 @@ const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, curr
           icon: <Image src={Revenue} alt="Revenue" width={40} height={40} />,
         }
       : {
-          price: <NumberDisplay value={currentAPY} options="percent" />,
+          price: <NumberDisplay value={currentAPY} options="percent" min={0} />,
           title: 'currentAPY',
           icon: <Image src={Revenue} alt="Revenue" width={40} height={40} />,
         },
