@@ -19,10 +19,8 @@ type TableCellProps = {
 }
 const now = new Date()
 
-export const lockedUntilCellRenderer = ({
-  rowData: { purchaseEndTimestamp, redemptionBeginTimestamp },
-}: TableCellProps) => {
-  const daysleft = differenceInDays(now, purchaseEndTimestamp)
+export const lockedUntilCellRenderer = ({ rowData: { redemptionBeginTimestamp } }: TableCellProps) => {
+  const daysleft = differenceInDays(redemptionBeginTimestamp, now)
   return (
     <TableCell align="center" component="div">
       <Stack spacing={1}>
