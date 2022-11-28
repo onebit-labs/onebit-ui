@@ -37,7 +37,6 @@ const PortfolioInfo: FCC = ({ children }) => {
     data
   const { t } = useTranslation('portfolioDetails')
   const { networkAccount } = useWallet()
-  const isOpen = status === 'open'
 
   return (
     <StyledCard>
@@ -52,7 +51,7 @@ const PortfolioInfo: FCC = ({ children }) => {
               <Stack spacing={2} direction="row" margin={{ xs: 2, sm: 0 }}>
                 <Button
                   variant="contained"
-                  disabled={!isOpen}
+                  disabled={status === 'lockedUp' || status === 'close'}
                   startIcon={<FileDownloadOutlinedIcon />}
                   onClick={() => {
                     deposit.open(id)
@@ -62,7 +61,7 @@ const PortfolioInfo: FCC = ({ children }) => {
                 </Button>
                 <Button
                   variant="contained"
-                  disabled={!isOpen}
+                  disabled={status === 'lockedUp'}
                   startIcon={<FileUploadOutlinedIcon />}
                   onClick={() => {
                     withdraw.open(id)
