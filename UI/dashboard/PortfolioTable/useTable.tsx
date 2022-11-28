@@ -11,6 +11,8 @@ import { useRouter } from 'next/router'
 import { usePortfolio } from 'domains/data'
 import { lockedUntilCellRenderer, statusCellRenderer } from './renderer'
 import { numberCellRenderer, PNLCellRenderer, symbolCellRenderer } from 'components/table/renderer/portfolio'
+import HelpOutlinedIcon from '@mui/icons-material/HelpOutlined'
+import Tooltip from '@mui/material/Tooltip'
 
 export const useTable = (): BasicTableProps => {
   const { t } = useTranslation('dashboard')
@@ -91,6 +93,16 @@ export const useTable = (): BasicTableProps => {
         ] as TableColumnsProps[]
       ).map((column) => {
         column.label = t('portfolioTable.' + column.dataKey)
+        if (column.dataKey === 'netValue') {
+          column.label = (
+            <Tooltip title={t('portfolioTable.netValueTip')}>
+              <Stack direction='row' alignItems='center' spacing={1}>
+                <span>{t('portfolioTable.' + column.dataKey)}</span>
+                <HelpOutlinedIcon fontSize='inherit' />
+              </Stack>
+            </Tooltip>
+          )
+        }
         return column
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps

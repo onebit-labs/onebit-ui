@@ -17,6 +17,7 @@ const locale = {
     PNL: 'PNL',
     status: 'Status',
     action: 'Action',
+    netValueTip: 'The management and performance fees have been deducted from the net value shown here.'
   },
 }
 

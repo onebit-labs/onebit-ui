@@ -32,7 +32,7 @@ const Footer: FC<FooterProps> = ({ totalSupply, symbol, estimatedAPY, depositors
           </Grid>
         ) : (
           <Grid item lg={4} xs={12}>
-            <Tiny>{t('projectCard.currentAPY')}</Tiny>
+            <Tiny>{t('projectCard.estimatedAPY')}</Tiny>
             <H5>
               <NumberDisplay value={currentAPY} min={0} options="percent" />
             </H5>

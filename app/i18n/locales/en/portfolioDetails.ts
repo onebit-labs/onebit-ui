@@ -11,6 +11,7 @@ const locale = {
     lockUpPeriod: 'Lock-Up Period',
     days: 'Days',
     standard: 'Standard',
+    contract: 'Contract Address',
     yourEquity: 'Your Equity',
     PNL: 'PNL',
     stats: {

@@ -57,7 +57,7 @@ const locale = {
     withdrawal: {
       amount: 'Amount',
       walletBalance: 'Wallet Balance',
-      tip: 'The management fee and performance fee have been deducted.',
+      tip: 'The management and performance fees have been deducted.',
     },
   },
   project: {

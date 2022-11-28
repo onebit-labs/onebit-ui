@@ -13,7 +13,7 @@ const PNL: FC<PNLProps> = ({ PNL, PNLRate }) => {
   if (value.isNaN() || value.isZero()) return <span>-</span>
   return (
     <RiseOrFall value={value}>
-      <Box>
+      <Box fontWeight={600}>
         <NumberDisplay value={value} options="number" numberFormatOptions={{ signDisplay: 'always' }} />
         <span>(</span>
         <NumberDisplay value={PNLRate} options="percent" numberFormatOptions={{ signDisplay: 'always' }} />

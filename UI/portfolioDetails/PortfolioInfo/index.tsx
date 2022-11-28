@@ -23,6 +23,7 @@ import { useMemo } from 'react'
 import NumberDisplay from 'lib/math/components/NumberDisplay'
 import { useDialogs } from 'UI/dialogs'
 import { useWallet } from 'domains'
+import LinkToAddress from 'components/button/LinkToAddress'
 
 const StyledCard = styled(Card)(() => ({
   position: 'relative',
@@ -89,14 +90,19 @@ const PortfolioInfo: FCC = ({ children }) => {
               <Span color="text.secondary">
                 {t('info.standard')}: {symbol}
               </Span>
+              {portfolio && portfolio.address && <Span color="text.secondary">
+                {t('info.contract')}: {<LinkToAddress address={portfolio.address.LendingPool} />}
+              </Span>}
             </Stack>
             {networkAccount && (
-              <Stack spacing={2} direction={{ xs: 'column', sm: 'row' }} alignItems={{ xs: 'start', sm: 'center' }}>
+              <Stack spacing={2} direction={{ xs: 'column', sm: 'row' }} alignItems={{ xs: 'start', sm: 'center' }} bgcolor='grey.100' padding={2}>
                 <H5 color="text.secondary">
-                  <span>{t('info.yourEquity')}: </span>
-                  <Span color="text.primary">
-                    <NumberDisplay value={yourEquity} options="number" /> {symbol}
-                  </Span>
+                  <Stack spacing={1} direction="row" alignItems="center">
+                    <span>{t('info.yourEquity')}: </span>
+                    <Span color="text.primary" fontSize={16}>
+                      <NumberDisplay value={yourEquity} options="number" /> {symbol}
+                    </Span>
+                  </Stack>
                 </H5>
                 <H5 color="text.secondary">
                   <Stack spacing={1} direction="row" alignItems="center">
