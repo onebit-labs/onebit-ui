@@ -13,6 +13,8 @@ const ProjectStatus: FC<ProjectStatusProps> = ({ status }) => {
     switch (status) {
       case 'open':
         return 'success'
+      case 'close':
+        return 'info'
       default:
         return 'error'
     }

@@ -105,7 +105,7 @@ const usePortfolioService = () => {
       const status = getPortfolioStatus(reserve)
       let currentAPY = toBN(0)
 
-      if (status === 'lockedUp') {
+      if (status != 'open') {
         currentAPY = getCurrentAPY(reserve)
       }
 

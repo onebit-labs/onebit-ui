@@ -64,6 +64,7 @@ const locale = {
     status: {
       open: 'Open',
       lockedUp: 'Locked-Up',
+      colse: 'Colse',
     },
     fundraisingProgress: {
       title: 'Fundraising Progress',
