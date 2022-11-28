@@ -110,6 +110,12 @@ const DepositDialog: FC = () => {
               }}
             />
           </Alert>
+          <Alert severity="warning">
+            <Stack spacing={1}>
+              <H5>{t('wallet.deposit.reInvestment')}</H5>
+              <Paragraph color="text.secondary">{t('wallet.deposit.description')}</Paragraph>
+            </Stack>
+          </Alert>
         </Stack>
       </ROOT>
       <DialogActions>

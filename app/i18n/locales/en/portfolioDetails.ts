@@ -101,7 +101,8 @@ const locale = {
     minimumDeposit: 'Minimum Deposit',
     reInvestment: 'Re-investment',
     description:
-      'If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the portfolio for the next period.',
+      'If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the portfolio for the next lock-up period.',
+    auto: 'Auto',
   },
   depositors: {
     depositors: 'Depositors',

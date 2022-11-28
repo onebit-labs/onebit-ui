@@ -50,6 +50,9 @@ const locale = {
       lockUpPeriod: 'Lock-Up Period',
       days: 'Days',
       tip: 'This portfolio has an annual management fee of <managementFee>the management fee</managementFee> and a performance fee of <performanceFee>the performance fee</performanceFee>.',
+      reInvestment: 'Auto re-investment',
+      description:
+        'If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the portfolio for the next lock-up period.',
     },
     withdrawal: {
       amount: 'Amount',
