@@ -4,6 +4,8 @@ import { useRouter } from 'next/router'
 import type { FC } from 'react'
 
 import ProjectCard from './ProjectCard'
+import CircularProgress from '@mui/material/CircularProgress'
+import Box from '@mui/material/Box'
 
 type ProjectsProps = {
   data: any[]
@@ -14,7 +16,11 @@ const Projects: FC<ProjectsProps> = ({ data }) => {
     portfolio: { init },
   } = useLoading()
 
-  if (!init) return <p>loading</p>
+  if (!init) return (
+    <Box display="flex" justifyContent="center" alignItems="center" height={400}>
+      <CircularProgress />
+    </Box>
+  )
 
   return (
     <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
