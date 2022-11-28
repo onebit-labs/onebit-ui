@@ -64,10 +64,3 @@ export const getFixedNetValues = (netValues: NetValue[]) => {
 
   return fixed
 }
-
-export const getPortfolioDaily = (netValues: NetValue[]): Record<'x' | 'y', number>[] => {
-  return netValues.map((i) => ({
-    x: i.createTimestamp,
-    y: i.reserveNormalizedIncome.toNumber(),
-  }))
-}

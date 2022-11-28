@@ -8,6 +8,7 @@ export type MarketId =
 
 export type MarketInfo = {
   portfolioName: string
+  portfolioAPIName: string
   series: string
   symbol: string
   estimatedAPY: string
@@ -17,28 +18,32 @@ const getMarketInfo = (id: MarketId): MarketInfo => {
   switch (id) {
     case 'Onebit-Lightning-Hunter-USDT':
       return {
-        portfolioName: 'Onebit Lightning Hunter-USDT (Nov-22)',
+        portfolioAPIName: 'Onebit Lightning Hunter-USDT (Nov-22)',
+        portfolioName: 'Onebit Lightning Hunter-USDT',
         series: 'Onebit Lightning Hunter-USDT',
         symbol: 'USDT',
         estimatedAPY: '60.5% - 81.2%',
       }
     case 'Onebit-Smart-Trend-USDT':
       return {
-        portfolioName: 'Onebit Smart Trend-USDT (Nov-22)',
+        portfolioAPIName: 'Onebit Smart Trend-USDT (Nov-22)',
+        portfolioName: 'Onebit Smart Trend-USDT',
         series: 'Onebit Smart Trend-USDT',
         symbol: 'USDT',
         estimatedAPY: '50% - 150%',
       }
     case 'Onebit-Smart-Trend-BTC':
       return {
-        portfolioName: 'Onebit Smart Trend-BTC (Nov-22)',
+        portfolioAPIName: 'Onebit Smart Trend-BTC (Nov-22)',
+        portfolioName: 'Onebit Smart Trend-BTC',
         series: 'Onebit Smart Trend-BTC',
         symbol: 'WBTC',
         estimatedAPY: '20% - 50%',
       }
     case 'Onebit-Smart-Trend-USDT-Demo':
       return {
-        portfolioName: 'Onebit Smart Trend-USDT (Nov-22) Demo',
+        portfolioAPIName: 'Onebit Smart Trend-USDT (Nov-22) Demo',
+        portfolioName: 'Onebit Smart Trend-USDT Demo',
         series: 'Onebit Smart Trend-USDT',
         symbol: 'USDT',
         estimatedAPY: '60.5% - 81.2%',

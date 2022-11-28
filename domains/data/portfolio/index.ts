@@ -22,7 +22,6 @@ import { getPortfolioTerm } from './adapter/portfolioTerm'
 import type { LendingPool } from '../onebit-graph/adapter/lendingPool'
 import type { PortfolioTerm } from '../onebit-graph/adapter/portfolioTerm'
 import type { NetValue } from '../onebit-graph/adapter/netValue'
-import { getPortfolioDaily } from '../onebit-graph/adapter/netValue'
 import { getFixedNetValues } from '../onebit-graph/adapter/netValue'
 import type { Transaction } from '../onebit-graph/adapter/transaction'
 import { useWallet } from 'domains'
@@ -58,7 +57,7 @@ export type Portfolio = Partial<
     PNLInUSD: BN
     netValue: BN
 
-    portfolioDaily: Record<'x' | 'y', number>[]
+    portfolioDaily: Record<'x' | 'y', string>[]
     seriesDaily: Record<'x' | 'y', string>[]
   }
 
@@ -87,12 +86,12 @@ const usePortfolioService = () => {
   const { userReserveData } = useUserReserveData({ marketReserveData })
   const erc20Data = useERC20()
   const onebitGraphData = useOnebitGraphData()
-  const { seriesDaily } = useOnebitAPIData()
+  const { seriesDaily, portfolioDaily } = useOnebitAPIData()
   const { networkAccount } = useWallet()
 
   const portfolioData = useMemo(() => {
     const returnValue = marketReserveData.map((market) => {
-      const { id, address, symbol, series } = market
+      const { id, address, symbol, portfolioAPIName, series } = market
       const lendingPoolAddress = address.LendingPool
       const oracle = toBN(safeGet(() => erc20Data.oracle[symbol]) || 0)
       const reserve = reserveData[lendingPoolAddress]
@@ -144,7 +143,7 @@ const usePortfolioService = () => {
         PNLRate,
         PNLInUSD,
 
-        portfolioDaily: getPortfolioDaily(netValues),
+        portfolioDaily: safeGet(() => portfolioDaily[portfolioAPIName]) || ([] as undefined),
         seriesDaily: safeGet(() => seriesDaily[series]) || ([] as undefined),
         id,
       }
@@ -163,6 +162,7 @@ const usePortfolioService = () => {
     onebitGraphData.lendingPool,
     onebitGraphData.netValue,
     onebitGraphData.portfolioTerm,
+    portfolioDaily,
     reserveData,
     seriesDaily,
     userReserveData,
