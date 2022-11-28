@@ -24,6 +24,7 @@ const locale = {
     estimatedAPY: 'Estimated APY',
     currentAPY: 'Current APY',
     depositors: 'Depositors',
+    yourEquity: 'Your Equity',
   },
 }
 
