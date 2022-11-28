@@ -4,6 +4,7 @@ const locale = {
     fees: 'Fees',
     policies: 'Policies',
     depositors: 'Depositors',
+    activities: 'Activities',
   },
   info: {
     status: 'Status',
@@ -110,6 +111,14 @@ const locale = {
     since: 'Since',
     equity: 'Equity',
     percentage: 'Percentage',
+  },
+  activities: {
+    id: 'TxID',
+    type: 'Type',
+    from: 'From',
+    to: 'To',
+    amount: 'Amount',
+    date: 'Date',
   },
 }
 

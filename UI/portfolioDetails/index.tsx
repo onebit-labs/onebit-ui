@@ -12,6 +12,7 @@ import Overview from './Overview'
 import Fees from './Fees'
 import Policies from './Policies'
 import Depositors from './Depositors'
+import Activities from './Activities'
 
 const PortfolioDetails: FC = () => {
   const { t } = useTranslation('portfolioDetails')
@@ -40,6 +41,12 @@ const PortfolioDetails: FC = () => {
         title: 'depositors',
         children: {
           component: Depositors,
+        },
+      },
+      {
+        title: 'activities',
+        children: {
+          component: Activities,
         },
       },
     ]

@@ -1,21 +1,25 @@
 import { getAddress, getBigNumber, getNumber } from 'app/utils/get'
 import type { SliceState } from '../store/transaction/adapter'
 
-const getTransactionType = (type: number) => {
+export const getTransactionType = (type: number) => {
   switch (type) {
     case 1:
       return 'deposit'
     case 2:
       return 'withdrawal'
+    case 3:
+      return 'Fund Transfer'
   }
 }
+
+export type TransactionType = ReturnType<typeof getTransactionType>
 
 export type Transaction = {
   id: string
   createTimestamp: number
   amount: BN
   lendingPool: string
-  type: 'deposit' | 'withdrawal'
+  type: TransactionType
 }
 export const getTransaction = (transaction: SliceState) => {
   if (!transaction) return []

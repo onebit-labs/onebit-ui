@@ -14,6 +14,11 @@ export interface BasicTableProps<D = any> {
     onPageChange: (event: unknown, newPage: number) => void
     onRowsPerPageChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   }
+  loadMore?: {
+    end: boolean
+    disabled: boolean
+    onLoadMore: (event: unknown) => void
+  }
 }
 
 export type TableColumnsProps = ColumnProps & {
