@@ -1,3 +1,4 @@
+import { useUnmount } from 'app/hooks/useUnmount'
 import { usePortfolioDetails } from 'domains/data'
 import { useEffect, useState } from 'react'
 
@@ -7,6 +8,10 @@ export const usePagePropsEffect = (props: any) => {
   useEffect(() => {
     portfolioId.set(props.id)
   }, [portfolioId, props.id])
+
+  useUnmount(() => {
+    portfolioId.set(undefined)
+  })
 }
 
 export const usePortfolioId = () => {
