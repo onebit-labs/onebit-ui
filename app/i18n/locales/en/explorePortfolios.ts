@@ -18,7 +18,7 @@ const locale = {
   projectCard: {
     lockUpPeriod: 'Lock-Up Period',
     days: 'Days',
-    netValue: 'Net Value',
+    netValue: 'Cumulative Net Value',
     past7D: 'Past 7D',
     AUM: 'AUM',
     estimatedAPY: 'Estimated APY',

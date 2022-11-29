@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import { useTranslation } from 'next-i18next'
-import { Stack, Card, styled, CardContent, Box, Paper } from '@mui/material'
+import { Stack, Card, styled, CardContent, Box } from '@mui/material'
 import { H3, Paragraph, Small } from 'components/Typography'
 import type { Portfolio } from 'domains/data/portfolio'
 import TokenIcon from 'lib/protocol/components/TokenIcon'

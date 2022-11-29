@@ -28,9 +28,9 @@ export const useChart = (portfolio: ChartProps) => {
   const dayButton = useDayButton()
 
   const data = useMemo(() => {
-    if (portfolio.portfolioDaily.length <= 7) return portfolio.portfolioDaily
-    return portfolio.portfolioDaily.slice(portfolio.portfolioDaily.length - 7, portfolio.portfolioDaily.length)
-  }, [portfolio.portfolioDaily])
+    if (portfolio.seriesDaily.length <= 7) return portfolio.seriesDaily
+    return portfolio.seriesDaily.slice(portfolio.seriesDaily.length - 7, portfolio.seriesDaily.length)
+  }, [portfolio.seriesDaily])
 
   const currentNetValue = useMemo(() => safeGet(() => data[data.length - 1].y) || 0, [data])
 
