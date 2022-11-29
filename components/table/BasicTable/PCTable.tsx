@@ -26,8 +26,12 @@ const DataFetcher: FC<{
 }> = ({ rowIndex, onRowClick, dataFetcher, row, columns }) => {
   const [rowData, setRowData] = useState(row)
   useEffect(() => {
-    if (!dataFetcher) return
-    dataFetcher(row).then((data) => setRowData(data))
+    if (!dataFetcher) {
+      setRowData(row)
+      return
+    } else {
+      dataFetcher(row).then((data) => setRowData(data))
+    }
   }, [dataFetcher, row])
 
   return (
