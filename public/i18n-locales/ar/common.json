@@ -48,18 +48,21 @@
       "walletBalance": "رصيد المحفظة",
       "lockUpPeriod": "فترة القفل",
       "days": "أيام",
-      "tip": "هذه المحفظة لها رسم إدارة سنوي قدره <managementFee>رسوم الإدارة</managementFee> ورسم أداء قدره <performanceFee>رسوم الأداء</performanceFee>."
+      "tip": "هذه المحفظة لها رسم إدارة سنوي قدره <managementFee>رسوم الإدارة</managementFee> ورسم أداء قدره <performanceFee>رسوم الأداء</performanceFee>.",
+      "reInvestment": "إعادة الاستثمار التلقائي",
+      "description": "إذا لم يسحب المودعون الأموال في نهاية فترة الإغلاق ، فسيتم إعادة استثمار الأموال في المحفظة لفترة الإغلاق التالية."
     },
     "withdrawal": {
       "amount": "مقدار",
       "walletBalance": "رصيد المحفظة",
-      "tip": "تم خصم رسوم الإدارة ورسوم الأداء."
+      "tip": "تم خصم رسوم الإدارة والأداء."
     }
   },
   "project": {
     "status": {
       "open": "فتح",
-      "lockedUp": "مغلق"
+      "lockedUp": "مغلق",
+      "colse": "كولس"
     },
     "fundraisingProgress": {
       "title": "التقدم في جمع التبرعات",
@@ -67,6 +70,8 @@
     }
   },
   "table": {
-    "noData": "لا توجد بيانات حتى الآن."
+    "noData": "لا توجد بيانات حتى الآن.",
+    "loadMore": "تحميل المزيد",
+    "noMoreData": "لا مزيد من البيانات."
   }
 }

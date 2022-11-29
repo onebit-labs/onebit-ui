@@ -48,18 +48,21 @@
       "walletBalance": "Wallet Balance",
       "lockUpPeriod": "Lock-Up Period",
       "days": "Days",
-      "tip": "This portfolio has an annual management fee of <managementFee>the management fee</managementFee> and a performance fee of <performanceFee>the performance fee</performanceFee>."
+      "tip": "This portfolio has an annual management fee of <managementFee>the management fee</managementFee> and a performance fee of <performanceFee>the performance fee</performanceFee>.",
+      "reInvestment": "Auto re-investment",
+      "description": "If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the portfolio for the next lock-up period."
     },
     "withdrawal": {
       "amount": "Amount",
       "walletBalance": "Wallet Balance",
-      "tip": "The management fee and performance fee have been deducted."
+      "tip": "The management and performance fees have been deducted."
     }
   },
   "project": {
     "status": {
       "open": "Open",
-      "lockedUp": "Locked-Up"
+      "lockedUp": "Locked-Up",
+      "colse": "Colse"
     },
     "fundraisingProgress": {
       "title": "Fundraising Progress",
@@ -67,6 +70,8 @@
     }
   },
   "table": {
-    "noData": "No data yet."
+    "noData": "No data yet.",
+    "loadMore": "Load more",
+    "noMoreData": "No more data."
   }
 }

@@ -48,18 +48,21 @@
       "walletBalance": "Wallet-Guthaben",
       "lockUpPeriod": "Sperrfrist",
       "days": "Tage",
-      "tip": "Dieses Portfolio hat eine jährliche Verwaltungsgebühr von <managementFee>die Verwaltungsgebühr</managementFee> und eine Performancegebühr von <performanceFee>das Leistungshonorar</performanceFee>."
+      "tip": "Dieses Portfolio hat eine jährliche Verwaltungsgebühr von <managementFee>die Verwaltungsgebühr</managementFee> und eine Performancegebühr von <performanceFee>das Leistungshonorar</performanceFee>.",
+      "reInvestment": "Automatische Wiederanlage",
+      "description": "Wenn Einleger die Gelder am Ende der Sperrfrist nicht abheben, werden die Gelder für die nächste Sperrfrist wieder in das Portfolio investiert."
     },
     "withdrawal": {
       "amount": "Menge",
       "walletBalance": "Wallet-Guthaben",
-      "tip": "Die Verwaltungsgebühr und die Performancegebühr wurden abgezogen."
+      "tip": "Die Verwaltungs- und Performancegebühren wurden abgezogen."
     }
   },
   "project": {
     "status": {
       "open": "Offen",
-      "lockedUp": "Eingesperrt"
+      "lockedUp": "Eingesperrt",
+      "colse": "Cole"
     },
     "fundraisingProgress": {
       "title": "Fundraising-Fortschritt",
@@ -67,6 +70,8 @@
     }
   },
   "table": {
-    "noData": "Noch keine Daten."
+    "noData": "Noch keine Daten.",
+    "loadMore": "Mehr laden",
+    "noMoreData": "Keine Daten mehr."
   }
 }

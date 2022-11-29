@@ -16,6 +16,7 @@
     "yourEquity": "Votre capital",
     "PNL": "PNL",
     "status": "Statut",
-    "action": "Action"
+    "action": "Action",
+    "netValueTip": "Les commissions de gestion et de performance ont été déduites de la valeur nette indiquée ici."
   }
 }

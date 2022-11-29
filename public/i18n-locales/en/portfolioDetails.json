@@ -3,7 +3,8 @@
     "overview": "Overview",
     "fees": "Fees",
     "policies": "Policies",
-    "depositors": "Depositors"
+    "depositors": "Depositors",
+    "activities": "Activities"
   },
   "info": {
     "status": "Status",
@@ -11,6 +12,7 @@
     "lockUpPeriod": "Lock-Up Period",
     "days": "Days",
     "standard": "Standard",
+    "contract": "Contract Address",
     "yourEquity": "Your Equity",
     "PNL": "PNL",
     "stats": {
@@ -98,12 +100,21 @@
     "softUpperLimit": "Fundraising Soft Cap",
     "minimumDeposit": "Minimum Deposit",
     "reInvestment": "Re-investment",
-    "description": "If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the portfolio for the next period."
+    "description": "If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the portfolio for the next lock-up period.",
+    "auto": "Auto"
   },
   "depositors": {
     "depositors": "Depositors",
     "since": "Since",
     "equity": "Equity",
     "percentage": "Percentage"
+  },
+  "activities": {
+    "id": "TxID",
+    "type": "Type",
+    "from": "From",
+    "to": "To",
+    "amount": "Amount",
+    "date": "Date"
   }
 }

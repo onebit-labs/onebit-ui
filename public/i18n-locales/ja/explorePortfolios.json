@@ -18,11 +18,12 @@
   "projectCard": {
     "lockUpPeriod": "ロックアップ期間",
     "days": "日々",
-    "netValue": "正味価値",
+    "netValue": "累積正味額",
     "past7D": "過去7D",
     "AUM": "運用資産",
     "estimatedAPY": "推定APY",
     "currentAPY": "現在のAPY",
-    "depositors": "預金者"
+    "depositors": "預金者",
+    "yourEquity": "あなたの資産"
   }
 }

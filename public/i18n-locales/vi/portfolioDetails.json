@@ -3,7 +3,8 @@
     "overview": "Tổng quan",
     "fees": "lệ phí",
     "policies": "chính sách",
-    "depositors": "Người gửi tiền"
+    "depositors": "Người gửi tiền",
+    "activities": "Các hoạt động"
   },
   "info": {
     "status": "Trạng thái",
@@ -11,6 +12,7 @@
     "lockUpPeriod": "Thời gian khóa",
     "days": "ngày",
     "standard": "Tiêu chuẩn",
+    "contract": "Địa chỉ hợp đồng",
     "yourEquity": "Vốn chủ sở hữu của bạn",
     "PNL": "PNL",
     "stats": {
@@ -98,12 +100,21 @@
     "softUpperLimit": "Soft Cap gây quỹ",
     "minimumDeposit": "Tiền gửi tối thiểu",
     "reInvestment": "tái đầu tư",
-    "description": "Nếu người gửi tiền không rút tiền vào cuối thời hạn khóa, tiền sẽ được tái đầu tư vào danh mục đầu tư cho giai đoạn tiếp theo."
+    "description": "Nếu người gửi tiền không rút tiền vào cuối thời gian khóa, tiền sẽ được tái đầu tư vào danh mục đầu tư cho thời gian khóa tiếp theo.",
+    "auto": "Tự động"
   },
   "depositors": {
     "depositors": "Người gửi tiền",
     "since": "Từ",
     "equity": "Vốn chủ sở hữu",
     "percentage": "tỷ lệ phần trăm"
+  },
+  "activities": {
+    "id": "TxID",
+    "type": "Loại hình",
+    "from": "Từ",
+    "to": "Đến",
+    "amount": "Số lượng",
+    "date": "Ngày"
   }
 }

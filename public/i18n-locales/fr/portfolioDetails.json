@@ -3,7 +3,8 @@
     "overview": "Aperçu",
     "fees": "Frais",
     "policies": "Stratégies",
-    "depositors": "Déposants"
+    "depositors": "Déposants",
+    "activities": "Activités"
   },
   "info": {
     "status": "Statut",
@@ -11,6 +12,7 @@
     "lockUpPeriod": "Période de blocage",
     "days": "Journées",
     "standard": "Standard",
+    "contract": "Adresse du contrat",
     "yourEquity": "Votre capital",
     "PNL": "PNL",
     "stats": {
@@ -98,12 +100,21 @@
     "softUpperLimit": "Cap souple de collecte de fonds",
     "minimumDeposit": "Dépôt minimal",
     "reInvestment": "Réinvestissement",
-    "description": "Si les déposants ne retirent pas les fonds à la fin de la période de blocage, les fonds seront réinvestis dans le portefeuille pour la période suivante."
+    "description": "Si les déposants ne retirent pas les fonds à la fin de la période de blocage, les fonds seront réinvestis dans le portefeuille pour la prochaine période de blocage.",
+    "auto": "Auto"
   },
   "depositors": {
     "depositors": "Déposants",
     "since": "Depuis",
     "equity": "Équité",
     "percentage": "Pourcentage"
+  },
+  "activities": {
+    "id": "TxID",
+    "type": "Taper",
+    "from": "De",
+    "to": "À",
+    "amount": "Montant",
+    "date": "Date"
   }
 }

@@ -17,12 +17,13 @@
   },
   "projectCard": {
     "lockUpPeriod": "Период блокировки",
-    "days": "Дней",
-    "netValue": "Чистая стоимость",
+    "days": "Дни",
+    "netValue": "Совокупная чистая стоимость",
     "past7D": "Прошлое 7D",
     "AUM": "АУМ",
     "estimatedAPY": "Расчетный APY",
     "currentAPY": "Текущий APY",
-    "depositors": "Вкладчики"
+    "depositors": "Вкладчики",
+    "yourEquity": "Ваш капитал"
   }
 }

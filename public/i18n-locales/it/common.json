@@ -9,8 +9,8 @@
       "approve": "Approvare"
     },
     "disconnected": {
-      "title": "Collega il portafoglio",
-      "subTitle": "Per iniziare a usare Onebit"
+      "title": "Connetti Portafoglio",
+      "subTitle": "Per iniziare a utilizzare Onebit"
     },
     "connected": {
       "title": "Collegato",
@@ -21,8 +21,8 @@
       "subTitle": "Potrebbe essere necessario fare clic sull'estensione."
     },
     "error": {
-      "title": "Collega il portafoglio",
-      "subTitle": "Per iniziare a usare Onebit",
+      "title": "Connetti Portafoglio",
+      "subTitle": "Per iniziare a utilizzare Onebit",
       "ChainUnknownError": "Cambia rete"
     },
     "tips": {
@@ -37,10 +37,10 @@
     "signature": {
       "title": "Benvenuto a",
       "thingsToKnowTitle": "Cose che dovresti sapere",
-      "thingsToKnowContent": "Non hai la garanzia di guadagnare investendo i portafogli offerti su Onebit. La performance passata non è un'indicazione dei risultati futuri. Tu solo sei responsabile della sicurezza dei tuoi fondi. Il tuo capitale è a rischio.",
+      "thingsToKnowContent": "Non hai la garanzia di guadagnare investendo i portafogli offerti su Onebit. Le performance passate non sono indicative di risultati futuri. Solo tu sei responsabile della sicurezza dei tuoi fondi. Il tuo capitale è a rischio.",
       "accept": "Accettare",
       "decline": "Declino",
-      "tip": "Facendo clic su \"Accetta\" di seguito, prendo atto di quanto sopra, il",
+      "tip": "Facendo clic su \"Accetto\" di seguito, riconosco quanto sopra, il",
       "and": ", e"
     },
     "deposit": {
@@ -48,25 +48,30 @@
       "walletBalance": "Saldo del portafoglio",
       "lockUpPeriod": "Periodo di blocco",
       "days": "Giorni",
-      "tip": "Questo portafoglio ha una commissione di gestione annuale di <managementFee>la commissione di gestione</managementFee> e una commissione di performance di <performanceFee>la commissione di performance</performanceFee>."
+      "tip": "Questo portafoglio ha una commissione di gestione annuale di <managementFee>la commissione di gestione</managementFee> e una commissione di performance di <performanceFee>la commissione di performance</performanceFee>.",
+      "reInvestment": "Reinvestimento automatico",
+      "description": "Se i depositanti non ritirano i fondi alla fine del periodo di blocco, i fondi saranno reinvestiti nel portafoglio per il successivo periodo di blocco."
     },
     "withdrawal": {
       "amount": "Quantità",
       "walletBalance": "Saldo del portafoglio",
-      "tip": "La commissione di gestione e la commissione di performance sono state detratte."
+      "tip": "Le commissioni di gestione e di performance sono state detratte."
     }
   },
   "project": {
     "status": {
       "open": "Aprire",
-      "lockedUp": "Rinchiuso"
+      "lockedUp": "Rinchiuso",
+      "colse": "Colse"
     },
     "fundraisingProgress": {
-      "title": "Progressi nella raccolta fondi",
+      "title": "Progresso della raccolta fondi",
       "max": "Massimo"
     }
   },
   "table": {
-    "noData": "Nessun dato ancora."
+    "noData": "Nessun dato ancora.",
+    "loadMore": "Carica di più",
+    "noMoreData": "Niente più dati."
   }
 }

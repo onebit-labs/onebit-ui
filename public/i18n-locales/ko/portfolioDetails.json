@@ -3,7 +3,8 @@
     "overview": "개요",
     "fees": "수수료",
     "policies": "정책",
-    "depositors": "예금자"
+    "depositors": "예금자",
+    "activities": "활동"
   },
   "info": {
     "status": "상태",
@@ -11,6 +12,7 @@
     "lockUpPeriod": "락업 기간",
     "days": "날",
     "standard": "기준",
+    "contract": "계약 주소",
     "yourEquity": "당신의 자산",
     "PNL": "손익",
     "stats": {
@@ -81,7 +83,7 @@
     },
     "perfomance": {
       "title": "성과보수",
-      "description": "성과 수수료는 사전 정의된 기간 동안 발생한 긍정적인 수익 중에서 예금자가 포트폴리오 관리자에게 지불하는 백분율 기반 수수료입니다. 미리 정의된 기간을 잠금 기간(일반적으로 1년 또는 1분기)이라고 합니다. 수익은 액면가 자산에 대해 벤치마킹됩니다."
+      "description": "성과 수수료는 사전 정의된 기간 동안 발생한 긍정적인 수익 중에서 예금자가 포트폴리오 관리자에게 지불하는 백분율 기반 수수료입니다. 사전 정의된 기간을 잠금 기간(일반적으로 1년 또는 1분기)이라고 합니다. 수익은 액면가 자산에 대해 벤치마킹됩니다."
     },
     "entrance": {
       "title": "입장료"
@@ -98,12 +100,21 @@
     "softUpperLimit": "모금 소프트 캡",
     "minimumDeposit": "최소 보증금",
     "reInvestment": "재투자",
-    "description": "예탁자가 락업 기간 종료 시 자금을 인출하지 않으면 자금은 다음 기간 동안 포트폴리오에 재투자됩니다."
+    "description": "예치 기간이 끝날 때 예금자가 자금을 인출하지 않으면 자금은 다음 예치 기간 동안 포트폴리오에 재투자됩니다.",
+    "auto": "자동"
   },
   "depositors": {
     "depositors": "예금자",
     "since": "부터",
     "equity": "형평성",
     "percentage": "백분율"
+  },
+  "activities": {
+    "id": "TxID",
+    "type": "유형",
+    "from": "에서",
+    "to": "에게",
+    "amount": "양",
+    "date": "날짜"
   }
 }

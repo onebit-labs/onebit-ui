@@ -3,14 +3,16 @@
     "overview": "genel bakış",
     "fees": "ücretler",
     "policies": "politikalar",
-    "depositors": "mevduat sahipleri"
+    "depositors": "mevduat sahipleri",
+    "activities": "aktiviteler"
   },
   "info": {
     "status": "Durum",
     "term": "Terim",
-    "lockUpPeriod": "Kilitlenme Süresi",
+    "lockUpPeriod": "Kilitlenme Dönemi",
     "days": "gün",
     "standard": "Standart",
+    "contract": "Sözleşme Adresi",
     "yourEquity": "öz sermayeniz",
     "PNL": "PNL",
     "stats": {
@@ -98,12 +100,21 @@
     "softUpperLimit": "Bağış Toplama Soft Cap",
     "minimumDeposit": "Minimum Depozito",
     "reInvestment": "Yeniden yatırım",
-    "description": "Mudiler bloke süresi sonunda fonlarını çekmezlerse, fonlar bir sonraki dönem için portföye yeniden yatırılacaktır."
+    "description": "Mudilerin bloke süresi sonunda fonlarını çekmemesi durumunda, fonlar bir sonraki bloke süresi için portföye yeniden yatırılır.",
+    "auto": "Oto"
   },
   "depositors": {
     "depositors": "mevduat sahipleri",
     "since": "Dan beri",
     "equity": "Eşitlik",
     "percentage": "Yüzde"
+  },
+  "activities": {
+    "id": "TxID",
+    "type": "Tip",
+    "from": "İtibaren",
+    "to": "İle",
+    "amount": "Tutar",
+    "date": "Tarih"
   }
 }

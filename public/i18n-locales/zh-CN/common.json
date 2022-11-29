@@ -14,7 +14,7 @@
     },
     "connected": {
       "title": "连接的",
-      "subTitle": "与"
+      "subTitle": "连接到"
     },
     "connecting": {
       "title": "解锁钱包",
@@ -23,11 +23,11 @@
     "error": {
       "title": "连接钱包",
       "subTitle": "开始使用 Onebit",
-      "ChainUnknownError": "交换网络"
+      "ChainUnknownError": "切换网络"
     },
     "tips": {
       "accept": "通过连接，我接受",
-      "term": "Onebit 的服务条款"
+      "term": "Onebit的服务条款"
     },
     "chain": {
       "title": "选择您的网络",
@@ -36,11 +36,11 @@
     },
     "signature": {
       "title": "欢迎来到",
-      "thingsToKnowTitle": "你应该知道的事情",
-      "thingsToKnowContent": "您不能保证通过投资 Onebit 上提供的任何投资组合来赚钱。过去的表现并不代表未来的结果。您独自对您的资金安全负责。您的资金处于危险之中。",
+      "thingsToKnowTitle": "你应该知道的事",
+      "thingsToKnowContent": "不能保证您通过投资 Onebit 上提供的任何投资组合来赚钱。过去的表现并不代表未来的结果。您独自负责您的资金安全。您的资金有风险。",
       "accept": "接受",
       "decline": "衰退",
-      "tip": "点击下方的“接受”，即表示我承认上述内容，",
+      "tip": "单击下面的“接受”，即表示我承认以上内容，",
       "and": "， 和"
     },
     "deposit": {
@@ -48,7 +48,9 @@
       "walletBalance": "钱包余额",
       "lockUpPeriod": "锁定期",
       "days": "天",
-      "tip": "该投资组合的年度管理费为 <managementFee>管理费</managementFee>，绩效费为 <performanceFee>演出费</performanceFee>。"
+      "tip": "该投资组合的年管理费为 <managementFee>管理费</managementFee>，绩效费为 <performanceFee>绩效费</performanceFee>。",
+      "reInvestment": "汽车再投资",
+      "description": "如果存款人在锁定期结束时未提取资金，则资金将重新投入到下一个锁定期的投资组合中。"
     },
     "withdrawal": {
       "amount": "数量",
@@ -59,7 +61,8 @@
   "project": {
     "status": {
       "open": "打开",
-      "lockedUp": "锁上"
+      "lockedUp": "锁上",
+      "colse": "科尔斯"
     },
     "fundraisingProgress": {
       "title": "筹款进度",
@@ -67,6 +70,8 @@
     }
   },
   "table": {
-    "noData": "还没有数据。"
+    "noData": "还没有数据。",
+    "loadMore": "装载更多",
+    "noMoreData": "没有更多数据。"
   }
 }

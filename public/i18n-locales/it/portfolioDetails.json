@@ -3,7 +3,8 @@
     "overview": "Panoramica",
     "fees": "Commissioni",
     "policies": "Politiche",
-    "depositors": "Depositanti"
+    "depositors": "Depositanti",
+    "activities": "Attività"
   },
   "info": {
     "status": "Stato",
@@ -11,6 +12,7 @@
     "lockUpPeriod": "Periodo di blocco",
     "days": "Giorni",
     "standard": "Standard",
+    "contract": "Indirizzo del contratto",
     "yourEquity": "La tua equità",
     "PNL": "PNL",
     "stats": {
@@ -98,12 +100,21 @@
     "softUpperLimit": "Cappellino morbido per raccolta fondi",
     "minimumDeposit": "Deposito minimo",
     "reInvestment": "Reinvestimento",
-    "description": "Se i depositanti non ritirano i fondi alla fine del periodo di blocco, i fondi saranno reinvestiti nel portafoglio per il periodo successivo."
+    "description": "Se i depositanti non ritirano i fondi alla fine del periodo di blocco, i fondi saranno reinvestiti nel portafoglio per il successivo periodo di blocco.",
+    "auto": "Auto"
   },
   "depositors": {
     "depositors": "Depositanti",
     "since": "Da",
     "equity": "Equità",
     "percentage": "Percentuale"
+  },
+  "activities": {
+    "id": "TxID",
+    "type": "Tipo",
+    "from": "Da",
+    "to": "Per",
+    "amount": "Quantità",
+    "date": "Data"
   }
 }

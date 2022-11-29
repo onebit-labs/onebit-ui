@@ -1,21 +1,22 @@
 {
   "stats": {
-    "totalEquityValue": "총 자기자본 가치",
-    "totalPNL": "총 PNL",
-    "totalPortfolioDeposited": "예치된 총 포트폴리오",
+    "totalEquityValue": "총자본가치",
+    "totalPNL": "총손익",
+    "totalPortfolioDeposited": "입금된 총 포트폴리오",
     "APY": "APY"
   },
   "totalEquityValue": {
-    "title": "총 자기자본 가치",
-    "change24h": "과거 1D"
+    "title": "총자본가치",
+    "change24h": "지난 1D"
   },
   "portfolioTable": {
     "portfolioName": "포트폴리오 이름",
-    "lockedUntil": "까지 잠김",
+    "lockedUntil": "잠김 기한",
     "netValue": "순 가치",
-    "yourEquity": "귀하의 자산",
-    "PNL": "PNL",
+    "yourEquity": "당신의 자산",
+    "PNL": "손익",
     "status": "상태",
-    "action": "동작"
+    "action": "동작",
+    "netValueTip": "여기에 표시된 순 가치에서 관리 및 성과 수수료가 공제되었습니다."
   }
 }

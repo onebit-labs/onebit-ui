@@ -16,6 +16,7 @@
     "yourEquity": "su patrimonio",
     "PNL": "PNL",
     "status": "Estado",
-    "action": "Acción"
+    "action": "Acción",
+    "netValueTip": "Las comisiones de gestión y rendimiento se han deducido del valor neto que se muestra aquí."
   }
 }

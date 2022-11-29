@@ -18,11 +18,12 @@
   "projectCard": {
     "lockUpPeriod": "Período de bloqueo",
     "days": "Días",
-    "netValue": "Valor neto",
+    "netValue": "Valor neto acumulado",
     "past7D": "Pasado 7D",
     "AUM": "AUM",
     "estimatedAPY": "APY estimado",
     "currentAPY": "APY actual",
-    "depositors": "depositantes"
+    "depositors": "depositantes",
+    "yourEquity": "su patrimonio"
   }
 }

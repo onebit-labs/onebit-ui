@@ -18,11 +18,12 @@
   "projectCard": {
     "lockUpPeriod": "Sperrfrist",
     "days": "Tage",
-    "netValue": "Nettowert",
+    "netValue": "Kumulierter Nettowert",
     "past7D": "Nach 7D",
     "AUM": "AUM",
     "estimatedAPY": "Geschätzter APY",
     "currentAPY": "Aktuelle APY",
-    "depositors": "Einleger"
+    "depositors": "Einleger",
+    "yourEquity": "Ihr Eigenkapital"
   }
 }

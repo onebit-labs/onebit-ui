@@ -3,7 +3,8 @@
     "overview": "概述",
     "fees": "费用",
     "policies": "政策",
-    "depositors": "储户"
+    "depositors": "储户",
+    "activities": "活动"
   },
   "info": {
     "status": "地位",
@@ -11,6 +12,7 @@
     "lockUpPeriod": "锁定期",
     "days": "天",
     "standard": "标准",
+    "contract": "合约地址",
     "yourEquity": "您的股权",
     "PNL": "损益表",
     "stats": {
@@ -77,7 +79,7 @@
     "management": {
       "title": "管理费",
       "tip": "累计回报率超过20%则为2%",
-      "description": "管理费是存款人定期支付给投资组合经理的费用。该费用按管理资产的年化百分比计算，与 Vault 回报无关。"
+      "description": "管理费是存款人定期支付给投资组合经理的款项。该费用按管理资产的年化百分比计算，与 Vault 回报无关。"
     },
     "perfomance": {
       "title": "表演费",
@@ -98,12 +100,21 @@
     "softUpperLimit": "筹款软顶",
     "minimumDeposit": "最低存款",
     "reInvestment": "再投资",
-    "description": "如果存款人在锁定期结束时不提取资金，则资金将重新投入到下一期的投资组合中。"
+    "description": "如果存款人在锁定期结束时未提取资金，则资金将重新投入到下一个锁定期的投资组合中。",
+    "auto": "汽车"
   },
   "depositors": {
     "depositors": "储户",
     "since": "自从",
     "equity": "公平",
     "percentage": "百分比"
+  },
+  "activities": {
+    "id": "发送ID",
+    "type": "类型",
+    "from": "从",
+    "to": "至",
+    "amount": "数量",
+    "date": "日期"
   }
 }

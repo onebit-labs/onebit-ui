@@ -3,7 +3,8 @@
     "overview": "Visión general",
     "fees": "Tarifa",
     "policies": "Políticas",
-    "depositors": "depositantes"
+    "depositors": "depositantes",
+    "activities": "Actividades"
   },
   "info": {
     "status": "Estado",
@@ -11,6 +12,7 @@
     "lockUpPeriod": "Período de bloqueo",
     "days": "Días",
     "standard": "Estándar",
+    "contract": "Dirección del contrato",
     "yourEquity": "su patrimonio",
     "PNL": "PNL",
     "stats": {
@@ -98,12 +100,21 @@
     "softUpperLimit": "Gorra suave de recaudación de fondos",
     "minimumDeposit": "Depósito mínimo",
     "reInvestment": "Reinversión",
-    "description": "Si los depositantes no retiran los fondos al final del período bloqueado, los fondos se reinvertirán en la cartera para el próximo período."
+    "description": "Si los depositantes no retiran los fondos al final del período de bloqueo, los fondos se reinvertirán en la cartera para el próximo período de bloqueo.",
+    "auto": "Auto"
   },
   "depositors": {
     "depositors": "depositantes",
     "since": "Ya que",
     "equity": "Equidad",
     "percentage": "Porcentaje"
+  },
+  "activities": {
+    "id": "Tx ID",
+    "type": "Escribe",
+    "from": "De",
+    "to": "A",
+    "amount": "Monto",
+    "date": "Fecha"
   }
 }

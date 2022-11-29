@@ -23,7 +23,7 @@
     "error": {
       "title": "Conectar Carteira",
       "subTitle": "Para começar a usar o Onebit",
-      "ChainUnknownError": "Mudar de rede"
+      "ChainUnknownError": "Alternar rede"
     },
     "tips": {
       "accept": "Ao conectar, eu aceito",
@@ -32,41 +32,46 @@
     "chain": {
       "title": "Selecione sua rede",
       "subTitle": "Sua rede atual:",
-      "error": "Rede sem suporte"
+      "error": "Rede não suportada"
     },
     "signature": {
       "title": "Bem-vindo ao",
       "thingsToKnowTitle": "Coisas que você deve saber",
-      "thingsToKnowContent": "Você não tem garantia de ganhar dinheiro investindo qualquer carteira oferecida na Onebit. O desempenho passado não é uma indicação de resultados futuros. Você é o único responsável pela segurança de seus fundos. Seu capital está em risco.",
+      "thingsToKnowContent": "Você não tem garantia de ganhar dinheiro investindo em qualquer carteira oferecida na Onebit. O desempenho passado não é uma indicação de resultados futuros. Você é o único responsável pela segurança de seus fundos. Seu capital está em risco.",
       "accept": "Aceitar",
       "decline": "Declínio",
-      "tip": "Ao clicar em \"Aceitar\" abaixo, reconheço o acima, a",
+      "tip": "Ao clicar em \"Aceitar\" abaixo, reconheço o acima, o",
       "and": ", e"
     },
     "deposit": {
       "amount": "Quantia",
-      "walletBalance": "Saldo da carteira",
-      "lockUpPeriod": "Período de bloqueio",
+      "walletBalance": "Saldo da Carteira",
+      "lockUpPeriod": "Período de Bloqueio",
       "days": "Dias",
-      "tip": "Esta carteira tem uma taxa de administração anual de <managementFee>a taxa de administração</managementFee> e uma taxa de desempenho de <performanceFee>a taxa de desempenho</performanceFee>."
+      "tip": "Esta carteira tem uma taxa de administração anual de <managementFee>a taxa de administração</managementFee> e uma taxa de performance de <performanceFee>a taxa de desempenho</performanceFee>.",
+      "reInvestment": "Reinvestimento automático",
+      "description": "Se os depositantes não retirarem os fundos no final do período de bloqueio, os fundos serão reinvestidos na carteira para o próximo período de bloqueio."
     },
     "withdrawal": {
       "amount": "Quantia",
-      "walletBalance": "Saldo da carteira",
-      "tip": "A taxa de administração e a taxa de performance foram deduzidas."
+      "walletBalance": "Saldo da Carteira",
+      "tip": "As taxas de administração e performance foram deduzidas."
     }
   },
   "project": {
     "status": {
       "open": "Abrir",
-      "lockedUp": "Trancado"
+      "lockedUp": "Trancado",
+      "colse": "colse"
     },
     "fundraisingProgress": {
-      "title": "Progresso da arrecadação de fundos",
-      "max": "Máx."
+      "title": "Progresso da captação de recursos",
+      "max": "máx."
     }
   },
   "table": {
-    "noData": "Ainda não há dados."
+    "noData": "Ainda não há dados.",
+    "loadMore": "Carregue mais",
+    "noMoreData": "Sem mais dados."
   }
 }

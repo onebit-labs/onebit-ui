@@ -3,7 +3,8 @@
     "overview": "Visão geral",
     "fees": "Honorários",
     "policies": "Políticas",
-    "depositors": "Depositantes"
+    "depositors": "Depositantes",
+    "activities": "Atividades"
   },
   "info": {
     "status": "Status",
@@ -11,6 +12,7 @@
     "lockUpPeriod": "Período de Bloqueio",
     "days": "Dias",
     "standard": "Padrão",
+    "contract": "Endereço do contrato",
     "yourEquity": "seu patrimônio",
     "PNL": "PNL",
     "stats": {
@@ -87,7 +89,7 @@
       "title": "Taxa de entrada"
     },
     "exit": {
-      "title": "Taxa de saída"
+      "title": "Taxa de Saída"
     }
   },
   "policies": {
@@ -98,12 +100,21 @@
     "softUpperLimit": "Capa flexível de arrecadação de fundos",
     "minimumDeposit": "Depósito Mínimo",
     "reInvestment": "Reinvestimento",
-    "description": "Se os depositantes não retirarem os fundos no final do período de bloqueio, os fundos serão reinvestidos na carteira para o próximo período."
+    "description": "Se os depositantes não retirarem os fundos no final do período de bloqueio, os fundos serão reinvestidos na carteira para o próximo período de bloqueio.",
+    "auto": "Auto"
   },
   "depositors": {
     "depositors": "Depositantes",
     "since": "Desde",
     "equity": "Equidade",
     "percentage": "Percentagem"
+  },
+  "activities": {
+    "id": "TxID",
+    "type": "Modelo",
+    "from": "A partir de",
+    "to": "Para",
+    "amount": "Quantia",
+    "date": "Encontro"
   }
 }

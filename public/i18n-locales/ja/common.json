@@ -48,18 +48,21 @@
       "walletBalance": "ウォレットの残高",
       "lockUpPeriod": "ロックアップ期間",
       "days": "日々",
-      "tip": "このポートフォリオには、<managementFee>管理費</managementFee> の年間管理費と <performanceFee>パフォーマンス料金</performanceFee> の成功報酬があります。"
+      "tip": "このポートフォリオには、<managementFee>管理費</managementFee> の年間管理費と <performanceFee>パフォーマンス料金</performanceFee> の成功報酬があります。",
+      "reInvestment": "自動再投資",
+      "description": "預金者がロックアップ期間の終了時に資金を引き出さない場合、資金は次のロックアップ期間のポートフォリオに再投資されます。"
     },
     "withdrawal": {
       "amount": "額",
       "walletBalance": "ウォレットの残高",
-      "tip": "管理費、成功報酬は差し引かれております。"
+      "tip": "管理費とパフォーマンス料金は差し引かれています。"
     }
   },
   "project": {
     "status": {
       "open": "開ける",
-      "lockedUp": "閉じ込められた"
+      "lockedUp": "閉じ込められた",
+      "colse": "コルセ"
     },
     "fundraisingProgress": {
       "title": "募金の進捗",
@@ -67,6 +70,8 @@
     }
   },
   "table": {
-    "noData": "まだデータがありません。"
+    "noData": "まだデータがありません。",
+    "loadMore": "もっと読み込む",
+    "noMoreData": "もうデータはありません。"
   }
 }

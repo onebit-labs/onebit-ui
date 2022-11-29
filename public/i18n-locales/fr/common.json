@@ -48,18 +48,21 @@
       "walletBalance": "Solde du portefeuille",
       "lockUpPeriod": "Période de blocage",
       "days": "Journées",
-      "tip": "Ce portefeuille a des frais de gestion annuels de <managementFee>les frais de gestion</managementFee> et une commission de performance de <performanceFee>la commission de performance</performanceFee>."
+      "tip": "Ce portefeuille a des frais de gestion annuels de <managementFee>les frais de gestion</managementFee> et une commission de performance de <performanceFee>la commission de performance</performanceFee>.",
+      "reInvestment": "Réinvestissement automatique",
+      "description": "Si les déposants ne retirent pas les fonds à la fin de la période de blocage, les fonds seront réinvestis dans le portefeuille pour la prochaine période de blocage."
     },
     "withdrawal": {
       "amount": "Montant",
       "walletBalance": "Solde du portefeuille",
-      "tip": "La commission de gestion et la commission de performance ont été déduites."
+      "tip": "Les frais de gestion et de performance ont été déduits."
     }
   },
   "project": {
     "status": {
       "open": "Ouvert",
-      "lockedUp": "Verrouillé"
+      "lockedUp": "Verrouillé",
+      "colse": "Colise"
     },
     "fundraisingProgress": {
       "title": "Progression de la collecte de fonds",
@@ -67,6 +70,8 @@
     }
   },
   "table": {
-    "noData": "Pas encore de données."
+    "noData": "Pas encore de données.",
+    "loadMore": "Charger plus",
+    "noMoreData": "Plus de données."
   }
 }

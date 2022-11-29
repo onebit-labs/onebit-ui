@@ -18,11 +18,12 @@
   "projectCard": {
     "lockUpPeriod": "فترة القفل",
     "days": "أيام",
-    "netValue": "صافي القيمة",
+    "netValue": "صافي القيمة التراكمية",
     "past7D": "الماضي 7D",
     "AUM": "AUM",
     "estimatedAPY": "يقدر APY",
     "currentAPY": "APY الحالي",
-    "depositors": "المودعين"
+    "depositors": "المودعين",
+    "yourEquity": "حقوق الملكية الخاصة بك"
   }
 }

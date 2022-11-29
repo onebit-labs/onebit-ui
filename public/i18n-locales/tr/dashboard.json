@@ -7,15 +7,16 @@
   },
   "totalEquityValue": {
     "title": "Toplam Özkaynak Değeri",
-    "change24h": "1D geçmiş"
+    "change24h": "Geçmiş 1D"
   },
   "portfolioTable": {
-    "portfolioName": "Portföy Adı",
-    "lockedUntil": "Kilitlenene Kadar",
+    "portfolioName": "portföy adı",
+    "lockedUntil": "Şuna Kadar Kilitli:",
     "netValue": "Net değer",
-    "yourEquity": "Sermayeniz",
+    "yourEquity": "öz sermayeniz",
     "PNL": "PNL",
     "status": "Durum",
-    "action": "Eylem"
+    "action": "Eylem",
+    "netValueTip": "Yönetim ve icra ücretleri burada gösterilen net değerden düşülmüştür."
   }
 }

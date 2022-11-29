@@ -1,21 +1,22 @@
 {
   "stats": {
-    "totalEquityValue": "Valore Patrimoniale Totale",
+    "totalEquityValue": "Valore totale del patrimonio netto",
     "totalPNL": "PNL totale",
     "totalPortfolioDeposited": "Portafoglio totale depositato",
     "APY": "APY"
   },
   "totalEquityValue": {
-    "title": "Valore Patrimoniale Totale",
+    "title": "Valore totale del patrimonio netto",
     "change24h": "Passato 1D"
   },
   "portfolioTable": {
     "portfolioName": "Nome portafoglio",
     "lockedUntil": "Bloccato fino a",
     "netValue": "Valore netto",
-    "yourEquity": "Il tuo patrimonio",
+    "yourEquity": "La tua equità",
     "PNL": "PNL",
     "status": "Stato",
-    "action": "Azione"
+    "action": "Azione",
+    "netValueTip": "Le commissioni di gestione e di performance sono state detratte dal valore netto qui indicato."
   }
 }

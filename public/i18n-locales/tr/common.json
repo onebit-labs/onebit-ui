@@ -17,7 +17,7 @@
       "subTitle": "ile bağlantılı"
     },
     "connecting": {
-      "title": "Cüzdan Kilidini Aç",
+      "title": "Cüzdanın kilidini aç",
       "subTitle": "Uzantıyı tıklamanız gerekebilir."
     },
     "error": {
@@ -32,41 +32,46 @@
     "chain": {
       "title": "Ağınızı Seçin",
       "subTitle": "Mevcut ağınız:",
-      "error": "Desteklenmeyen ağ"
+      "error": "desteklenmeyen ağ"
     },
     "signature": {
       "title": "Hoşgeldiniz",
-      "thingsToKnowTitle": "Bilmen gereken şeyler",
-      "thingsToKnowContent": "Onebit'te sunulan portföylere yatırım yaparak para kazanmanız garanti edilmez. Geçmişteki performans gelecekteki sonuçların bir göstergesi değildir. Fonlarınızın güvenliğinden yalnızca siz sorumlusunuz. Sermayeniz risk altında.",
+      "thingsToKnowTitle": "Bilmeniz gereken şeyler",
+      "thingsToKnowContent": "Onebit'te sunulan herhangi bir portföye yatırım yaparak para kazanmanız garanti edilmez. Geçmişteki performans gelecekteki sonuçların bir göstergesi değildir. Fonlarınızın güvenliğinden yalnızca siz sorumlusunuz. Sermayeniz risk altında.",
       "accept": "Kabul",
       "decline": "Reddetmek",
-      "tip": "Aşağıdaki \"Kabul Et\"i tıklayarak yukarıdakileri kabul ediyorum,",
+      "tip": "Aşağıdaki \"Kabul Et\"i tıklayarak, yukarıdakileri kabul ediyorum,",
       "and": ", ve"
     },
     "deposit": {
       "amount": "Tutar",
       "walletBalance": "Cüzdan Bakiyesi",
-      "lockUpPeriod": "Kilitleme Süresi",
-      "days": "Günler",
-      "tip": "Bu portföyün yıllık yönetim ücreti <managementFee>yönetim ücreti</managementFee> ve performans ücreti <performanceFee>performans ücreti</performanceFee>."
+      "lockUpPeriod": "Kilitlenme Dönemi",
+      "days": "gün",
+      "tip": "Bu portföyün yıllık <managementFee>yönetim ücreti</managementFee> yönetim ücreti ve <performanceFee>performans ücreti</performanceFee> performans ücreti vardır.",
+      "reInvestment": "Otomatik yeniden yatırım",
+      "description": "Mudilerin bloke süresi sonunda fonlarını çekmemesi durumunda, fonlar bir sonraki bloke süresi için portföye yeniden yatırılır."
     },
     "withdrawal": {
       "amount": "Tutar",
       "walletBalance": "Cüzdan Bakiyesi",
-      "tip": "Yönetim ücreti ve performans ücreti mahsup edilmiştir."
+      "tip": "Yönetim ve icra ücretleri mahsup edilmiştir."
     }
   },
   "project": {
     "status": {
       "open": "Açık",
-      "lockedUp": "Kilitli"
+      "lockedUp": "Kilitli",
+      "colse": "Colse"
     },
     "fundraisingProgress": {
-      "title": "Kaynak Yaratma İlerlemesi",
-      "max": "Maks."
+      "title": "Bağış Geliştirme İlerlemesi",
+      "max": "maks."
     }
   },
   "table": {
-    "noData": "Henüz veri yok."
+    "noData": "Henüz veri yok.",
+    "loadMore": "Daha fazla yükle",
+    "noMoreData": "Daha fazla veri yok."
   }
 }

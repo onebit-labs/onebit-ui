@@ -1,21 +1,22 @@
 {
   "stats": {
-    "totalEquityValue": "มูลค่าหุ้นทั้งหมด",
+    "totalEquityValue": "มูลค่าส่วนของผู้ถือหุ้นรวม",
     "totalPNL": "รวม PNL",
-    "totalPortfolioDeposited": "ฝากผลงานทั้งหมด",
-    "APY": "APY"
+    "totalPortfolioDeposited": "ผลงานรวมที่ฝาก",
+    "APY": "เอ.พี"
   },
   "totalEquityValue": {
-    "title": "มูลค่าหุ้นทั้งหมด",
-    "change24h": "1 วันที่ผ่านมา"
+    "title": "มูลค่าส่วนของผู้ถือหุ้นรวม",
+    "change24h": "1D ที่ผ่านมา"
   },
   "portfolioTable": {
     "portfolioName": "ชื่อผลงาน",
-    "lockedUntil": "ล็อคจน",
+    "lockedUntil": "ล็อคจนกระทั่ง",
     "netValue": "มูลค่าสุทธิ",
     "yourEquity": "ทุนของคุณ",
-    "PNL": "PNL",
+    "PNL": "พนง",
     "status": "สถานะ",
-    "action": "การกระทำ"
+    "action": "การกระทำ",
+    "netValueTip": "ค่าธรรมเนียมการจัดการและประสิทธิภาพถูกหักออกจากมูลค่าสุทธิที่แสดงไว้ที่นี่"
   }
 }

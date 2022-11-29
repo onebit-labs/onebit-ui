@@ -3,7 +3,8 @@
     "overview": "概要",
     "fees": "手数料",
     "policies": "ポリシー",
-    "depositors": "預金者"
+    "depositors": "預金者",
+    "activities": "活動内容"
   },
   "info": {
     "status": "状態",
@@ -11,6 +12,7 @@
     "lockUpPeriod": "ロックアップ期間",
     "days": "日々",
     "standard": "標準",
+    "contract": "契約住所",
     "yourEquity": "あなたの資産",
     "PNL": "損益",
     "stats": {
@@ -98,12 +100,21 @@
     "softUpperLimit": "募金ソフトキャップ",
     "minimumDeposit": "最低入金額",
     "reInvestment": "再投資",
-    "description": "預金者がロックアップ期間の終わりに資金を引き出さない場合、資金は次の期間のポートフォリオに再投資されます。"
+    "description": "預金者がロックアップ期間の終了時に資金を引き出さない場合、資金は次のロックアップ期間のポートフォリオに再投資されます。",
+    "auto": "自動"
   },
   "depositors": {
     "depositors": "預金者",
     "since": "以来",
     "equity": "株式",
     "percentage": "パーセンテージ"
+  },
+  "activities": {
+    "id": "送信ID",
+    "type": "タイプ",
+    "from": "から",
+    "to": "に",
+    "amount": "額",
+    "date": "日にち"
   }
 }

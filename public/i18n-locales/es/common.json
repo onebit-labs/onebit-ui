@@ -48,18 +48,21 @@
       "walletBalance": "Saldo de la cartera",
       "lockUpPeriod": "Período de bloqueo",
       "days": "Días",
-      "tip": "Esta cartera tiene una comisión de gestión anual de <managementFee>la comisión de gestión</managementFee> y una comisión de rendimiento de <performanceFee>la tasa de rendimiento</performanceFee>."
+      "tip": "Esta cartera tiene una comisión de gestión anual de <managementFee>la comisión de gestión</managementFee> y una comisión de rendimiento de <performanceFee>la tasa de rendimiento</performanceFee>.",
+      "reInvestment": "Reinversión automática",
+      "description": "Si los depositantes no retiran los fondos al final del período de bloqueo, los fondos se reinvertirán en la cartera para el próximo período de bloqueo."
     },
     "withdrawal": {
       "amount": "Monto",
       "walletBalance": "Saldo de la cartera",
-      "tip": "Se han deducido la comisión de gestión y la comisión de rendimiento."
+      "tip": "Se han deducido las comisiones de gestión y rendimiento."
     }
   },
   "project": {
     "status": {
       "open": "Abierto",
-      "lockedUp": "Bloqueado"
+      "lockedUp": "Bloqueado",
+      "colse": "Colse"
     },
     "fundraisingProgress": {
       "title": "Progreso de recaudación de fondos",
@@ -67,6 +70,8 @@
     }
   },
   "table": {
-    "noData": "No hay datos todavía."
+    "noData": "No hay datos todavía.",
+    "loadMore": "Carga más",
+    "noMoreData": "Sin más datos."
   }
 }

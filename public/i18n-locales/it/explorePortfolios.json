@@ -6,7 +6,7 @@
     "depositors": "Depositanti"
   },
   "tabs": {
-    "placeholder": "Trova portfolio",
+    "placeholder": "Trova portafogli",
     "all": "Tutto",
     "open": "Aprire",
     "lockedUp": "Rinchiuso"
@@ -18,11 +18,12 @@
   "projectCard": {
     "lockUpPeriod": "Periodo di blocco",
     "days": "Giorni",
-    "netValue": "Valore netto",
+    "netValue": "Valore netto cumulativo",
     "past7D": "Passato 7D",
     "AUM": "AUM",
     "estimatedAPY": "APY stimato",
     "currentAPY": "APY attuale",
-    "depositors": "Depositanti"
+    "depositors": "Depositanti",
+    "yourEquity": "La tua equità"
   }
 }

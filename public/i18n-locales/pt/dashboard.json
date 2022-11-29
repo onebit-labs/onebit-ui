@@ -1,21 +1,22 @@
 {
   "stats": {
-    "totalEquityValue": "Valor Patrimonial Total",
-    "totalPNL": "PNL total",
+    "totalEquityValue": "Valor total do patrimônio",
+    "totalPNL": "PNL Total",
     "totalPortfolioDeposited": "Carteira Total Depositada",
     "APY": "APY"
   },
   "totalEquityValue": {
-    "title": "Valor Patrimonial Total",
-    "change24h": "1D passado"
+    "title": "Valor total do patrimônio",
+    "change24h": "Passado 1D"
   },
   "portfolioTable": {
-    "portfolioName": "Nome do portfólio",
-    "lockedUntil": "Bloqueado até",
+    "portfolioName": "Nome do Portfólio",
+    "lockedUntil": "bloqueado até",
     "netValue": "Valor líquido",
-    "yourEquity": "Seu patrimônio",
+    "yourEquity": "seu patrimônio",
     "PNL": "PNL",
     "status": "Status",
-    "action": "Ação"
+    "action": "Ação",
+    "netValueTip": "As comissões de gestão e performance foram deduzidas ao valor líquido aqui apresentado."
   }
 }

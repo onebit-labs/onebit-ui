@@ -13,17 +13,17 @@
       "subTitle": "Để bắt đầu sử dụng Onebit"
     },
     "connected": {
-      "title": "Đã kết nối",
+      "title": "kết nối",
       "subTitle": "Kết nối với"
     },
     "connecting": {
       "title": "Mở khóa ví",
-      "subTitle": "Bạn có thể cần phải nhấp vào tiện ích mở rộng."
+      "subTitle": "Bạn có thể cần phải bấm vào phần mở rộng."
     },
     "error": {
       "title": "Kết nối ví",
       "subTitle": "Để bắt đầu sử dụng Onebit",
-      "ChainUnknownError": "Chuyển mạng"
+      "ChainUnknownError": "Chuyển đổi mạng"
     },
     "tips": {
       "accept": "Bằng cách kết nối, tôi chấp nhận",
@@ -37,36 +37,41 @@
     "signature": {
       "title": "Chào mừng bạn đến",
       "thingsToKnowTitle": "Những điều bạn nên biết",
-      "thingsToKnowContent": "Bạn không được đảm bảo kiếm tiền bằng cách đầu tư bất kỳ danh mục đầu tư nào được cung cấp trên Onebit. hiệu suất trong quá khứ không phải là một dấu hiệu cho thấy các kết quả trong tương lai. Một mình bạn chịu trách nhiệm cho sự an toàn của tiền của bạn. Vốn của bạn đang gặp rủi ro.",
+      "thingsToKnowContent": "Bạn không được đảm bảo kiếm tiền bằng cách đầu tư vào bất kỳ danh mục đầu tư nào được cung cấp trên Onebit. hiệu suất trong quá khứ không phải là một dấu hiệu cho thấy các kết quả trong tương lai. Bạn một mình chịu trách nhiệm về sự an toàn của tiền của bạn. Vốn của bạn đang gặp rủi ro.",
       "accept": "Chấp nhận",
       "decline": "Từ chối",
-      "tip": "Bằng cách nhấp vào \"Chấp nhận\" bên dưới, tôi xác nhận ở trên,",
+      "tip": "Bằng cách nhấp vào \"Chấp nhận\" bên dưới, tôi thừa nhận những điều trên,",
       "and": ", và"
     },
     "deposit": {
       "amount": "Số lượng",
-      "walletBalance": "Số dư trên Wallet",
-      "lockUpPeriod": "Thời gian khóa máy",
-      "days": "Ngày",
-      "tip": "Danh mục đầu tư này có phí quản lý hàng năm là <managementFee>phí quản lý</managementFee> và phí hiệu suất là <performanceFee>phí biểu diễn</performanceFee>."
+      "walletBalance": "Số dư trên Ví",
+      "lockUpPeriod": "Thời gian khóa",
+      "days": "ngày",
+      "tip": "Danh mục đầu tư này có phí quản lý hàng năm là <managementFee>phí quản lý</managementFee> và phí hiệu suất là <performanceFee>phí thực hiện</performanceFee>.",
+      "reInvestment": "Tự động tái đầu tư",
+      "description": "Nếu người gửi tiền không rút tiền vào cuối thời gian khóa, tiền sẽ được tái đầu tư vào danh mục đầu tư cho thời gian khóa tiếp theo."
     },
     "withdrawal": {
       "amount": "Số lượng",
-      "walletBalance": "Số dư trên Wallet",
-      "tip": "Phí quản lý và phí biểu diễn đã được khấu trừ."
+      "walletBalance": "Số dư trên Ví",
+      "tip": "Phí quản lý và hiệu suất đã được khấu trừ."
     }
   },
   "project": {
     "status": {
       "open": "Mở",
-      "lockedUp": "Nhốt"
+      "lockedUp": "Nhốt",
+      "colse": "Colse"
     },
     "fundraisingProgress": {
       "title": "Tiến độ gây quỹ",
-      "max": "Max"
+      "max": "tối đa"
     }
   },
   "table": {
-    "noData": "Chưa có dữ liệu."
+    "noData": "Chưa có dữ liệu.",
+    "loadMore": "Tải thêm",
+    "noMoreData": "Không còn dữ liệu nữa."
   }
 }

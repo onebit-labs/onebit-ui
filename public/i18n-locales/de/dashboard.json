@@ -16,6 +16,7 @@
     "yourEquity": "Ihr Eigenkapital",
     "PNL": "PNL",
     "status": "Status",
-    "action": "Aktion"
+    "action": "Aktion",
+    "netValueTip": "Von dem hier ausgewiesenen Nettowert wurden die Verwaltungs- und Performancegebühren abgezogen."
   }
 }

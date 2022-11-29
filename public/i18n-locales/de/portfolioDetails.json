@@ -3,7 +3,8 @@
     "overview": "Überblick",
     "fees": "Honorare",
     "policies": "Richtlinien",
-    "depositors": "Einleger"
+    "depositors": "Einleger",
+    "activities": "Aktivitäten"
   },
   "info": {
     "status": "Status",
@@ -11,6 +12,7 @@
     "lockUpPeriod": "Sperrfrist",
     "days": "Tage",
     "standard": "Standard",
+    "contract": "Vertragsadresse",
     "yourEquity": "Ihr Eigenkapital",
     "PNL": "PNL",
     "stats": {
@@ -21,7 +23,7 @@
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
-        "main": "Der Hochfrequenzhandel ist eine Mikrostrukturstrategie, um die Marktspreizung zu erfassen, indem eine große Anzahl ausstehender Aufträge in sehr kurzer Zeit ausgeführt wird, während die Vorteile von Co-Location-Servern, Kanälen mit geringer Latenz und Konten mit niedrigen Handelsgebühren genutzt werden.",
+        "main": "Der Hochfrequenzhandel ist eine Mikrostrukturstrategie, um den Marktspread zu erfassen, indem eine große Anzahl ausstehender Aufträge in sehr kurzer Zeit ausgeführt wird, während die Vorteile von Co-Location-Servern, Kanälen mit geringer Latenz und Konten mit niedrigen Handelsgebühren genutzt werden.",
         "investmentRationale": [
           "Geeignet für risikoscheue Anleger, die hohe jährliche Renditen anstreben.",
           "Anleger sind keinem Risiko ausgesetzt, aber die Produktkapazität ist gering."
@@ -98,12 +100,21 @@
     "softUpperLimit": "Fundraising-Soft-Cap",
     "minimumDeposit": "Mindesteinzahlung",
     "reInvestment": "Reinvestition",
-    "description": "Wenn Einleger die Gelder am Ende der Sperrfrist nicht abheben, werden die Gelder für die nächste Periode wieder in das Portfolio investiert."
+    "description": "Wenn Einleger die Gelder am Ende der Sperrfrist nicht abheben, werden die Gelder für die nächste Sperrfrist wieder in das Portfolio investiert.",
+    "auto": "Auto"
   },
   "depositors": {
     "depositors": "Einleger",
     "since": "Seit",
     "equity": "Eigenkapital",
     "percentage": "Prozentsatz"
+  },
+  "activities": {
+    "id": "TxID",
+    "type": "Typ",
+    "from": "Aus",
+    "to": "Zu",
+    "amount": "Menge",
+    "date": "Datum"
   }
 }

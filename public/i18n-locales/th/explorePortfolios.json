@@ -1,12 +1,12 @@
 {
   "stats": {
-    "assetsUnderManagement": "สินทรัพย์ภายใต้การบริหาร",
+    "assetsUnderManagement": "สินทรัพย์ภายใต้การจัดการ",
     "totalProfitSinceInception": "กำไรรวมตั้งแต่เริ่มก่อตั้ง",
     "portfolios": "ผลงาน",
     "depositors": "ผู้ฝากเงิน"
   },
   "tabs": {
-    "placeholder": "ค้นหาผลงาน",
+    "placeholder": "ค้นหาพอร์ตโฟลิโอ",
     "all": "ทั้งหมด",
     "open": "เปิด",
     "lockedUp": "ขังไว้"
@@ -16,13 +16,14 @@
     "withdraw": "ถอน"
   },
   "projectCard": {
-    "lockUpPeriod": "ช่วงกักตัว",
+    "lockUpPeriod": "ระยะเวลาล็อคอัพ",
     "days": "วัน",
-    "netValue": "มูลค่าสุทธิ",
-    "past7D": "7 วันที่ผ่านมา",
-    "AUM": "AUM",
-    "estimatedAPY": "APY . โดยประมาณ",
+    "netValue": "มูลค่าสุทธิสะสม",
+    "past7D": "7D ที่ผ่านมา",
+    "AUM": "อั้ม",
+    "estimatedAPY": "APY โดยประมาณ",
     "currentAPY": "APY ปัจจุบัน",
-    "depositors": "ผู้ฝากเงิน"
+    "depositors": "ผู้ฝากเงิน",
+    "yourEquity": "ทุนของคุณ"
   }
 }
