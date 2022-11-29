@@ -49,9 +49,9 @@ const NetValue: FC<NetValueProps> = (props) => {
         <Grid item xs={6}>
           <Right spacing={1}>
             <Change7d spacing={1} direction="row">
-              <RiseOrFall variant="body2" value={chart.change7d} displayIcon>
+              <RiseOrFall variant="body2" value={chart.currentPeriodNetValueFluctuation} displayIcon>
                 <NumberDisplay
-                  value={chart.change7d}
+                  value={chart.currentPeriodNetValueFluctuation}
                   options="percent"
                   numberFormatOptions={{ signDisplay: 'always' }}
                 />

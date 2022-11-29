@@ -41,25 +41,8 @@ export const useChart = () => {
   }, [dayButton.value, portfolio.portfolioDaily])
   const currentNetValue = useMemo(() => safeGet(() => data[data.length - 1].y) || 0, [data])
 
-  const change24 = useMemo(() => {
-    return (
-      safeGet(() =>
-        toBN(data[data.length - 1].y)
-          .div(data[data.length - 2].y)
-          .minus(1)
-      ) || 0
-    )
-  }, [data])
-
-  const change7d = useMemo(() => {
-    const length7d = data.length > 7 ? 6 : data.length
-    return (
-      safeGet(() =>
-        toBN(data[data.length - 1].y)
-          .div(data[data.length - length7d].y)
-          .minus(1)
-      ) || 0
-    )
+  const currentPeriodNetValueFluctuation = useMemo(() => {
+    return safeGet(() => toBN(data[data.length - 1].y).minus(1)) || 0
   }, [data])
 
   const changeAllTime = useMemo(() => {
@@ -163,5 +146,5 @@ export const useChart = () => {
     [NF, data, lineColor, theme.palette.text.secondary]
   )
 
-  return { props, dayButton, change24, change7d, currentNetValue }
+  return { props, dayButton, currentPeriodNetValueFluctuation, currentNetValue }
 }

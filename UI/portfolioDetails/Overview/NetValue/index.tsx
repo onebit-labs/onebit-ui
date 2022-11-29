@@ -38,9 +38,9 @@ const NetValue = () => {
                 <NumberDisplay value={chart.currentNetValue} options="number" />
               </Typography>
               <Change24h spacing={1} direction="row" alignItems="center">
-                <RiseOrFall variant="subtitle1" value={chart.change7d} displayIcon>
+                <RiseOrFall variant="subtitle1" value={chart.currentPeriodNetValueFluctuation} displayIcon>
                   <NumberDisplay
-                    value={chart.change7d}
+                    value={chart.currentPeriodNetValueFluctuation}
                     options="percent"
                     numberFormatOptions={{ signDisplay: 'always' }}
                   />

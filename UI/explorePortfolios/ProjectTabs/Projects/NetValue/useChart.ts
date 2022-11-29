@@ -34,36 +34,19 @@ export const useChart = (portfolio: ChartProps) => {
 
   const currentNetValue = useMemo(() => safeGet(() => data[data.length - 1].y) || 0, [data])
 
-  const change24 = useMemo(() => {
-    return (
-      safeGet(() =>
-        toBN(data[data.length - 1].y)
-          .div(data[data.length - 2].y)
-          .minus(1)
-      ) || 0
-    )
-  }, [data])
-
-  const change7d = useMemo(() => {
-    const length7d = data.length > 7 ? 6 : data.length
-    return (
-      safeGet(() =>
-        toBN(data[data.length - 1].y)
-          .div(data[data.length - length7d].y)
-          .minus(1)
-      ) || 0
-    )
+  const currentPeriodNetValueFluctuation = useMemo(() => {
+    return safeGet(() => toBN(data[data.length - 1].y).minus(1)) || 0
   }, [data])
 
   const lineColor = useMemo(() => {
-    if (change7d == 0) {
+    if (currentPeriodNetValueFluctuation == 0) {
       return theme.palette.grey[500]
-    } else if (change7d.gt(0)) {
+    } else if (currentPeriodNetValueFluctuation.gt(0)) {
       return theme.palette.success.main
     } else {
       return theme.palette.error.main
     }
-  }, [change7d, theme.palette.error.main, theme.palette.success.main, theme.palette.grey])
+  }, [currentPeriodNetValueFluctuation, theme.palette.error.main, theme.palette.success.main, theme.palette.grey])
 
   const props = useMemo(
     () =>
@@ -146,5 +129,5 @@ export const useChart = (portfolio: ChartProps) => {
     [data, lineColor]
   )
 
-  return { props, dayButton, change24, change7d, currentNetValue }
+  return { props, dayButton, currentPeriodNetValueFluctuation, currentNetValue }
 }
