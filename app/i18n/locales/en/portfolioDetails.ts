@@ -72,6 +72,7 @@ const locale = {
       finalNetValue: 'Final Net Value',
       return: 'Return',
       APY: 'APY',
+      netValueTip: 'The management and performance fees have been deducted from the net value shown here.',
     },
   },
   fees: {

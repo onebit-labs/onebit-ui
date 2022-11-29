@@ -11,6 +11,9 @@ import {
   APYCellRenderer,
 } from 'components/table/renderer/portfolio'
 import { returnCellRenderer } from './renderer'
+import HelpOutlinedIcon from '@mui/icons-material/HelpOutlined'
+import Tooltip from '@mui/material/Tooltip'
+import Stack from '@mui/material/Stack'
 
 export const useTable = (): BasicTableProps => {
   const { portfolio } = usePortfolioDetails()
@@ -79,6 +82,16 @@ export const useTable = (): BasicTableProps => {
         ] as TableColumnsProps[]
       ).map((column) => {
         column.label = t('overview.historicalPerformance.' + column.dataKey)
+        if (column.dataKey === 'finalNetValue') {
+          column.label = (
+            <Tooltip title={t('overview.historicalPerformance.netValueTip')}>
+              <Stack direction="row" alignItems="center" spacing={1}>
+                <span>{t('overview.historicalPerformance.' + column.dataKey)}</span>
+                <HelpOutlinedIcon fontSize="inherit" />
+              </Stack>
+            </Tooltip>
+          )
+        }
         return column
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps

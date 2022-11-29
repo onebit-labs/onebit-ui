@@ -4,9 +4,9 @@ import type { SliceState } from '../store/transaction/adapter'
 export const getTransactionType = (type: number) => {
   switch (type) {
     case 1:
-      return 'deposit'
+      return 'Deposit'
     case 2:
-      return 'withdrawal'
+      return 'Withdrawal'
     case 3:
       return 'Fund Transfer'
   }
