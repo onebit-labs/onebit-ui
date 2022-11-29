@@ -89,12 +89,20 @@ const PortfolioInfo: FCC = ({ children }) => {
               <Span color="text.secondary">
                 {t('info.standard')}: {symbol}
               </Span>
-              {portfolio && portfolio.address && <Span color="text.secondary">
-                {t('info.contract')}: {<LinkToAddress address={portfolio.address.LendingPool} />}
-              </Span>}
+              {portfolio && portfolio.address && (
+                <Span color="text.secondary">
+                  {t('info.contract')}: {<LinkToAddress address={portfolio.address.LendingPool} />}
+                </Span>
+              )}
             </Stack>
             {networkAccount && (
-              <Stack spacing={2} direction={{ xs: 'column', sm: 'row' }} alignItems={{ xs: 'start', sm: 'center' }} bgcolor='grey.100' padding={2}>
+              <Stack
+                spacing={2}
+                direction={{ xs: 'column', sm: 'row' }}
+                alignItems={{ xs: 'start', sm: 'center' }}
+                bgcolor="grey.100"
+                padding={2}
+              >
                 <H5 color="text.secondary">
                   <Stack spacing={1} direction="row" alignItems="center">
                     <span>{t('info.yourEquity')}: </span>

@@ -96,9 +96,9 @@ export const useTable = (): BasicTableProps => {
         if (column.dataKey === 'netValue') {
           column.label = (
             <Tooltip title={t('portfolioTable.netValueTip')}>
-              <Stack direction='row' alignItems='center' spacing={1}>
+              <Stack direction="row" alignItems="center" spacing={1}>
                 <span>{t('portfolioTable.' + column.dataKey)}</span>
-                <HelpOutlinedIcon fontSize='inherit' />
+                <HelpOutlinedIcon fontSize="inherit" />
               </Stack>
             </Tooltip>
           )

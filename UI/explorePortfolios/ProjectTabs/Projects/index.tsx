@@ -16,11 +16,12 @@ const Projects: FC<ProjectsProps> = ({ data }) => {
     portfolio: { init },
   } = useLoading()
 
-  if (!init) return (
-    <Box display="flex" justifyContent="center" alignItems="center" height={400}>
-      <CircularProgress />
-    </Box>
-  )
+  if (!init)
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center" height={400}>
+        <CircularProgress />
+      </Box>
+    )
 
   return (
     <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
