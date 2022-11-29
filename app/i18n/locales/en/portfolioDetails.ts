@@ -57,7 +57,7 @@ const locale = {
     netValue: {
       title: 'Current Net Value',
       change24h: 'Past 1D',
-      past7D: 'Past 7D',
+      currentNetValue: 'Current Net Value%',
     },
     historicalAccumulativeNetValue: {
       title: 'Historical Accumulative Net Value',

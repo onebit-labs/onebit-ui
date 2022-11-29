@@ -45,7 +45,7 @@ const NetValue = () => {
                     numberFormatOptions={{ signDisplay: 'always' }}
                   />
                 </RiseOrFall>
-                <H5 color="text.secondary">{t('overview.netValue.past7D')}</H5>
+                <H5 color="text.secondary">{t('overview.netValue.currentNetValue')}</H5>
               </Change24h>
             </Stack>
           </Left>

@@ -57,7 +57,7 @@ const NetValue: FC<NetValueProps> = (props) => {
                 />
               </RiseOrFall>
             </Change7d>
-            <Tiny color="text.secondary">{t('projectCard.past7D')}</Tiny>
+            <Tiny color="text.secondary">{t('projectCard.currentNetValue')}</Tiny>
           </Right>
         </Grid>
       </Grid>

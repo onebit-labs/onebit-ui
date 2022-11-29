@@ -58,6 +58,7 @@ export type Portfolio = Partial<
     netValue: BN
 
     portfolioDaily: Record<'x' | 'y', string>[]
+    currentNetValue: BN
     seriesDaily: Record<'x' | 'y', string>[]
   }
 
@@ -86,7 +87,7 @@ const usePortfolioService = () => {
   const { userReserveData } = useUserReserveData({ marketReserveData })
   const erc20Data = useERC20()
   const onebitGraphData = useOnebitGraphData()
-  const { seriesDaily, portfolioDaily } = useOnebitAPIData()
+  const { seriesDaily, portfolioDaily: portfolioDailyData } = useOnebitAPIData()
   const { networkAccount } = useWallet()
 
   const portfolioData = useMemo(() => {
@@ -118,6 +119,7 @@ const usePortfolioService = () => {
       }
       const yourEquityInUSD = yourEquity.multipliedBy(oracle)
       const PNLInUSD = PNL.multipliedBy(oracle)
+      const portfolioDaily = safeGet(() => portfolioDailyData[portfolioAPIName]) || ([] as undefined)
 
       const returnValue: Portfolio = {
         ...market,
@@ -143,7 +145,8 @@ const usePortfolioService = () => {
         PNLRate,
         PNLInUSD,
 
-        portfolioDaily: safeGet(() => portfolioDaily[portfolioAPIName]) || ([] as undefined),
+        portfolioDaily,
+        currentNetValue: safeGet(() => toBN(portfolioDaily[portfolioDaily.length - 1].y).minus(1)) || toBN(0),
         seriesDaily: safeGet(() => seriesDaily[series]) || ([] as undefined),
         id,
       }
@@ -162,7 +165,7 @@ const usePortfolioService = () => {
     onebitGraphData.lendingPool,
     onebitGraphData.netValue,
     onebitGraphData.portfolioTerm,
-    portfolioDaily,
+    portfolioDailyData,
     reserveData,
     seriesDaily,
     userReserveData,

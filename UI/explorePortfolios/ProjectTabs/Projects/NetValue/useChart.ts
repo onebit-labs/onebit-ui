@@ -2,7 +2,6 @@ import type { MouseEvent } from 'react'
 import { useState, useMemo, useRef } from 'react'
 import { useTheme, alpha } from '@mui/material/styles'
 
-import { toBN } from 'lib/math'
 import { safeGet } from 'app/utils/get'
 
 import type { NetValueChartProps } from './types'
@@ -23,7 +22,7 @@ const useDayButton = () => {
 
 type ChartProps = Portfolio
 export const useChart = (portfolio: ChartProps) => {
-  const lineChart = useRef({ width: 0, height: 0, gradient: undefined })
+  const lineChart = useRef({ width: 0, height: 0, gradient: undefined, lineColor: undefined })
   const theme = useTheme()
   const dayButton = useDayButton()
 
@@ -35,11 +34,11 @@ export const useChart = (portfolio: ChartProps) => {
   const currentNetValue = useMemo(() => safeGet(() => data[data.length - 1].y) || 0, [data])
 
   const currentPeriodNetValueFluctuation = useMemo(() => {
-    return safeGet(() => toBN(data[data.length - 1].y).minus(1)) || 0
-  }, [data])
+    return portfolio.currentNetValue
+  }, [portfolio.currentNetValue])
 
   const lineColor = useMemo(() => {
-    if (currentPeriodNetValueFluctuation == 0) {
+    if (currentPeriodNetValueFluctuation.isZero()) {
       return theme.palette.grey[500]
     } else if (currentPeriodNetValueFluctuation.gt(0)) {
       return theme.palette.success.main
@@ -65,9 +64,9 @@ export const useChart = (portfolio: ChartProps) => {
                 const chartWidth = chartArea.right - chartArea.left
                 const chartHeight = chartArea.bottom - chartArea.top
                 if (!chartWidth) return null
-                const { width, height } = lineChart.current
+                const { width, height, lineColor: chartLineColor } = lineChart.current
                 let { gradient } = lineChart.current
-                if (width !== chartWidth || height !== chartHeight) {
+                if (width !== chartWidth || height !== chartHeight || lineColor !== chartLineColor) {
                   gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top)
                   gradient.addColorStop(0, alpha(lineColor, 0))
                   gradient.addColorStop(1, alpha(lineColor, 0.12))
@@ -75,6 +74,7 @@ export const useChart = (portfolio: ChartProps) => {
                     width: chartWidth,
                     height: chartHeight,
                     gradient,
+                    lineColor,
                   }
                 }
                 return gradient

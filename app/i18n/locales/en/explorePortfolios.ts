@@ -19,7 +19,7 @@ const locale = {
     lockUpPeriod: 'Lock-Up Period',
     days: 'Days',
     netValue: 'Cumulative Net Value',
-    past7D: 'Past 7D',
+    currentNetValue: 'Current Net Value%',
     AUM: 'AUM',
     estimatedAPY: 'Estimated APY',
     currentAPY: 'Current APY',
