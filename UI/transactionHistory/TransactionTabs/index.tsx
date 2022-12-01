@@ -50,7 +50,7 @@ const TransactionTabs: FC = () => {
         children: {
           component: Transactions,
           props: {
-            data: data.filter((i) => i.type === 'deposit'),
+            data: data.filter((i) => i.type === 'Deposit'),
           },
         },
       },
@@ -59,7 +59,7 @@ const TransactionTabs: FC = () => {
         children: {
           component: Transactions,
           props: {
-            data: data.filter((i) => i.type === 'withdrawal'),
+            data: data.filter((i) => i.type === 'Withdrawal'),
           },
         },
       },

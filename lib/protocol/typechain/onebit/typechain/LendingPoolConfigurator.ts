@@ -58,50 +58,70 @@ export declare namespace ILendingPoolConfigurator {
 export interface LendingPoolConfiguratorInterface extends utils.Interface {
   functions: {
     'activateReserve()': FunctionFragment
+    'addToWhitelist(address)': FunctionFragment
+    'batchAddToWhitelist(address[])': FunctionFragment
+    'batchRemoveFromWhitelist(address[])': FunctionFragment
     'deactivateReserve()': FunctionFragment
     'freezeReserve()': FunctionFragment
     'initReserve((address,uint8,address,address,string,string,string,bytes))': FunctionFragment
     'initialize(address)': FunctionFragment
+    'removeFromWhitelist(address)': FunctionFragment
+    'setFundAddress(address)': FunctionFragment
     'setPoolPause(bool)': FunctionFragment
+    'setWhitelistExpiration(uint256)': FunctionFragment
     'unfreezeReserve()': FunctionFragment
-    'updateFundAddress(address)': FunctionFragment
     'updateOToken((string,string,address,bytes))': FunctionFragment
   }
 
   getFunction(
     nameOrSignatureOrTopic:
       | 'activateReserve'
+      | 'addToWhitelist'
+      | 'batchAddToWhitelist'
+      | 'batchRemoveFromWhitelist'
       | 'deactivateReserve'
       | 'freezeReserve'
       | 'initReserve'
       | 'initialize'
+      | 'removeFromWhitelist'
+      | 'setFundAddress'
       | 'setPoolPause'
+      | 'setWhitelistExpiration'
       | 'unfreezeReserve'
-      | 'updateFundAddress'
       | 'updateOToken'
   ): FunctionFragment
 
   encodeFunctionData(functionFragment: 'activateReserve', values?: undefined): string
+  encodeFunctionData(functionFragment: 'addToWhitelist', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'batchAddToWhitelist', values: [PromiseOrValue<string>[]]): string
+  encodeFunctionData(functionFragment: 'batchRemoveFromWhitelist', values: [PromiseOrValue<string>[]]): string
   encodeFunctionData(functionFragment: 'deactivateReserve', values?: undefined): string
   encodeFunctionData(functionFragment: 'freezeReserve', values?: undefined): string
   encodeFunctionData(functionFragment: 'initReserve', values: [ILendingPoolConfigurator.InitReserveInputStruct]): string
   encodeFunctionData(functionFragment: 'initialize', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'removeFromWhitelist', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'setFundAddress', values: [PromiseOrValue<string>]): string
   encodeFunctionData(functionFragment: 'setPoolPause', values: [PromiseOrValue<boolean>]): string
+  encodeFunctionData(functionFragment: 'setWhitelistExpiration', values: [PromiseOrValue<BigNumberish>]): string
   encodeFunctionData(functionFragment: 'unfreezeReserve', values?: undefined): string
-  encodeFunctionData(functionFragment: 'updateFundAddress', values: [PromiseOrValue<string>]): string
   encodeFunctionData(
     functionFragment: 'updateOToken',
     values: [ILendingPoolConfigurator.UpdateOTokenInputStruct]
   ): string
 
   decodeFunctionResult(functionFragment: 'activateReserve', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'addToWhitelist', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'batchAddToWhitelist', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'batchRemoveFromWhitelist', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'deactivateReserve', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'freezeReserve', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'initReserve', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'initialize', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'removeFromWhitelist', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setFundAddress', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'setPoolPause', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setWhitelistExpiration', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'unfreezeReserve', data: BytesLike): Result
-  decodeFunctionResult(functionFragment: 'updateFundAddress', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'updateOToken', data: BytesLike): Result
 
   events: {
@@ -192,6 +212,21 @@ export interface LendingPoolConfigurator extends BaseContract {
   functions: {
     activateReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
 
+    addToWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
+    batchAddToWhitelist(
+      users: PromiseOrValue<string>[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
+    batchRemoveFromWhitelist(
+      users: PromiseOrValue<string>[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
     deactivateReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
 
     freezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
@@ -206,17 +241,27 @@ export interface LendingPoolConfigurator extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
+    removeFromWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
+    setFundAddress(
+      fundAddress: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
     setPoolPause(
       val: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
-    unfreezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
-
-    updateFundAddress(
-      fundAddress: PromiseOrValue<string>,
+    setWhitelistExpiration(
+      expiration: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
+
+    unfreezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
 
     updateOToken(
       input: ILendingPoolConfigurator.UpdateOTokenInputStruct,
@@ -225,6 +270,21 @@ export interface LendingPoolConfigurator extends BaseContract {
   }
 
   activateReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
+
+  addToWhitelist(
+    user: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
+
+  batchAddToWhitelist(
+    users: PromiseOrValue<string>[],
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
+
+  batchRemoveFromWhitelist(
+    users: PromiseOrValue<string>[],
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
 
   deactivateReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
 
@@ -240,17 +300,27 @@ export interface LendingPoolConfigurator extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
+  removeFromWhitelist(
+    user: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
+
+  setFundAddress(
+    fundAddress: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
+
   setPoolPause(
     val: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
-  unfreezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
-
-  updateFundAddress(
-    fundAddress: PromiseOrValue<string>,
+  setWhitelistExpiration(
+    expiration: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
+
+  unfreezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
 
   updateOToken(
     input: ILendingPoolConfigurator.UpdateOTokenInputStruct,
@@ -260,6 +330,12 @@ export interface LendingPoolConfigurator extends BaseContract {
   callStatic: {
     activateReserve(overrides?: CallOverrides): Promise<void>
 
+    addToWhitelist(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
+
+    batchAddToWhitelist(users: PromiseOrValue<string>[], overrides?: CallOverrides): Promise<void>
+
+    batchRemoveFromWhitelist(users: PromiseOrValue<string>[], overrides?: CallOverrides): Promise<void>
+
     deactivateReserve(overrides?: CallOverrides): Promise<void>
 
     freezeReserve(overrides?: CallOverrides): Promise<void>
@@ -268,11 +344,15 @@ export interface LendingPoolConfigurator extends BaseContract {
 
     initialize(provider: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
 
+    removeFromWhitelist(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
+
+    setFundAddress(fundAddress: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
+
     setPoolPause(val: PromiseOrValue<boolean>, overrides?: CallOverrides): Promise<void>
 
-    unfreezeReserve(overrides?: CallOverrides): Promise<void>
+    setWhitelistExpiration(expiration: PromiseOrValue<BigNumberish>, overrides?: CallOverrides): Promise<void>
 
-    updateFundAddress(fundAddress: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
+    unfreezeReserve(overrides?: CallOverrides): Promise<void>
 
     updateOToken(input: ILendingPoolConfigurator.UpdateOTokenInputStruct, overrides?: CallOverrides): Promise<void>
   }
@@ -318,6 +398,21 @@ export interface LendingPoolConfigurator extends BaseContract {
   estimateGas: {
     activateReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>
 
+    addToWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
+    batchAddToWhitelist(
+      users: PromiseOrValue<string>[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
+    batchRemoveFromWhitelist(
+      users: PromiseOrValue<string>[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
     deactivateReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>
 
     freezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>
@@ -332,17 +427,27 @@ export interface LendingPoolConfigurator extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
+    removeFromWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
+    setFundAddress(
+      fundAddress: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
     setPoolPause(
       val: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
-    unfreezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>
-
-    updateFundAddress(
-      fundAddress: PromiseOrValue<string>,
+    setWhitelistExpiration(
+      expiration: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
+
+    unfreezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>
 
     updateOToken(
       input: ILendingPoolConfigurator.UpdateOTokenInputStruct,
@@ -352,6 +457,21 @@ export interface LendingPoolConfigurator extends BaseContract {
 
   populateTransaction: {
     activateReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>
+
+    addToWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
+    batchAddToWhitelist(
+      users: PromiseOrValue<string>[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
+    batchRemoveFromWhitelist(
+      users: PromiseOrValue<string>[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
 
     deactivateReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>
 
@@ -367,17 +487,27 @@ export interface LendingPoolConfigurator extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
+    removeFromWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
+    setFundAddress(
+      fundAddress: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
     setPoolPause(
       val: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
-    unfreezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>
-
-    updateFundAddress(
-      fundAddress: PromiseOrValue<string>,
+    setWhitelistExpiration(
+      expiration: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
+
+    unfreezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>
 
     updateOToken(
       input: ILendingPoolConfigurator.UpdateOTokenInputStruct,

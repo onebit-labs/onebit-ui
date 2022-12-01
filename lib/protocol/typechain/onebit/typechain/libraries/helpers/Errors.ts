@@ -22,6 +22,7 @@ export interface ErrorsInterface extends utils.Interface {
     'LPAPR_PROVIDER_NOT_REGISTERED()': FunctionFragment
     'LPCM_NO_ERRORS()': FunctionFragment
     'LPC_CALLER_NOT_EMERGENCY_ADMIN()': FunctionFragment
+    'LPC_CALLER_NOT_KYC_ADMIN()': FunctionFragment
     'LPC_INVALID_ADDRESSES_PROVIDER_ID()': FunctionFragment
     'LPC_INVALID_CONFIGURATION()': FunctionFragment
     'LPC_INVALID_OTOKEN_POOL_ADDRESS()': FunctionFragment
@@ -32,6 +33,7 @@ export interface ErrorsInterface extends utils.Interface {
     'LP_INCONSISTENT_PROTOCOL_ACTUAL_BALANCE()': FunctionFragment
     'LP_IS_PAUSED()': FunctionFragment
     'LP_NOT_CONTRACT()': FunctionFragment
+    'LP_NOT_IN_WHITELIST()': FunctionFragment
     'LP_NO_MORE_RESERVES_ALLOWED()': FunctionFragment
     'LP_REENTRANCY_NOT_ALLOWED()': FunctionFragment
     'MATH_ADDITION_OVERFLOW()': FunctionFragment
@@ -74,6 +76,7 @@ export interface ErrorsInterface extends utils.Interface {
       | 'LPAPR_PROVIDER_NOT_REGISTERED'
       | 'LPCM_NO_ERRORS'
       | 'LPC_CALLER_NOT_EMERGENCY_ADMIN'
+      | 'LPC_CALLER_NOT_KYC_ADMIN'
       | 'LPC_INVALID_ADDRESSES_PROVIDER_ID'
       | 'LPC_INVALID_CONFIGURATION'
       | 'LPC_INVALID_OTOKEN_POOL_ADDRESS'
@@ -84,6 +87,7 @@ export interface ErrorsInterface extends utils.Interface {
       | 'LP_INCONSISTENT_PROTOCOL_ACTUAL_BALANCE'
       | 'LP_IS_PAUSED'
       | 'LP_NOT_CONTRACT'
+      | 'LP_NOT_IN_WHITELIST'
       | 'LP_NO_MORE_RESERVES_ALLOWED'
       | 'LP_REENTRANCY_NOT_ALLOWED'
       | 'MATH_ADDITION_OVERFLOW'
@@ -124,6 +128,7 @@ export interface ErrorsInterface extends utils.Interface {
   encodeFunctionData(functionFragment: 'LPAPR_PROVIDER_NOT_REGISTERED', values?: undefined): string
   encodeFunctionData(functionFragment: 'LPCM_NO_ERRORS', values?: undefined): string
   encodeFunctionData(functionFragment: 'LPC_CALLER_NOT_EMERGENCY_ADMIN', values?: undefined): string
+  encodeFunctionData(functionFragment: 'LPC_CALLER_NOT_KYC_ADMIN', values?: undefined): string
   encodeFunctionData(functionFragment: 'LPC_INVALID_ADDRESSES_PROVIDER_ID', values?: undefined): string
   encodeFunctionData(functionFragment: 'LPC_INVALID_CONFIGURATION', values?: undefined): string
   encodeFunctionData(functionFragment: 'LPC_INVALID_OTOKEN_POOL_ADDRESS', values?: undefined): string
@@ -134,6 +139,7 @@ export interface ErrorsInterface extends utils.Interface {
   encodeFunctionData(functionFragment: 'LP_INCONSISTENT_PROTOCOL_ACTUAL_BALANCE', values?: undefined): string
   encodeFunctionData(functionFragment: 'LP_IS_PAUSED', values?: undefined): string
   encodeFunctionData(functionFragment: 'LP_NOT_CONTRACT', values?: undefined): string
+  encodeFunctionData(functionFragment: 'LP_NOT_IN_WHITELIST', values?: undefined): string
   encodeFunctionData(functionFragment: 'LP_NO_MORE_RESERVES_ALLOWED', values?: undefined): string
   encodeFunctionData(functionFragment: 'LP_REENTRANCY_NOT_ALLOWED', values?: undefined): string
   encodeFunctionData(functionFragment: 'MATH_ADDITION_OVERFLOW', values?: undefined): string
@@ -173,6 +179,7 @@ export interface ErrorsInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: 'LPAPR_PROVIDER_NOT_REGISTERED', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'LPCM_NO_ERRORS', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'LPC_CALLER_NOT_EMERGENCY_ADMIN', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'LPC_CALLER_NOT_KYC_ADMIN', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'LPC_INVALID_ADDRESSES_PROVIDER_ID', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'LPC_INVALID_CONFIGURATION', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'LPC_INVALID_OTOKEN_POOL_ADDRESS', data: BytesLike): Result
@@ -183,6 +190,7 @@ export interface ErrorsInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: 'LP_INCONSISTENT_PROTOCOL_ACTUAL_BALANCE', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'LP_IS_PAUSED', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'LP_NOT_CONTRACT', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'LP_NOT_IN_WHITELIST', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'LP_NO_MORE_RESERVES_ALLOWED', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'LP_REENTRANCY_NOT_ALLOWED', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'MATH_ADDITION_OVERFLOW', data: BytesLike): Result
@@ -262,6 +270,8 @@ export interface Errors extends BaseContract {
 
     LPC_CALLER_NOT_EMERGENCY_ADMIN(overrides?: CallOverrides): Promise<[string]>
 
+    LPC_CALLER_NOT_KYC_ADMIN(overrides?: CallOverrides): Promise<[string]>
+
     LPC_INVALID_ADDRESSES_PROVIDER_ID(overrides?: CallOverrides): Promise<[string]>
 
     LPC_INVALID_CONFIGURATION(overrides?: CallOverrides): Promise<[string]>
@@ -281,6 +291,8 @@ export interface Errors extends BaseContract {
     LP_IS_PAUSED(overrides?: CallOverrides): Promise<[string]>
 
     LP_NOT_CONTRACT(overrides?: CallOverrides): Promise<[string]>
+
+    LP_NOT_IN_WHITELIST(overrides?: CallOverrides): Promise<[string]>
 
     LP_NO_MORE_RESERVES_ALLOWED(overrides?: CallOverrides): Promise<[string]>
 
@@ -359,6 +371,8 @@ export interface Errors extends BaseContract {
 
   LPC_CALLER_NOT_EMERGENCY_ADMIN(overrides?: CallOverrides): Promise<string>
 
+  LPC_CALLER_NOT_KYC_ADMIN(overrides?: CallOverrides): Promise<string>
+
   LPC_INVALID_ADDRESSES_PROVIDER_ID(overrides?: CallOverrides): Promise<string>
 
   LPC_INVALID_CONFIGURATION(overrides?: CallOverrides): Promise<string>
@@ -378,6 +392,8 @@ export interface Errors extends BaseContract {
   LP_IS_PAUSED(overrides?: CallOverrides): Promise<string>
 
   LP_NOT_CONTRACT(overrides?: CallOverrides): Promise<string>
+
+  LP_NOT_IN_WHITELIST(overrides?: CallOverrides): Promise<string>
 
   LP_NO_MORE_RESERVES_ALLOWED(overrides?: CallOverrides): Promise<string>
 
@@ -456,6 +472,8 @@ export interface Errors extends BaseContract {
 
     LPC_CALLER_NOT_EMERGENCY_ADMIN(overrides?: CallOverrides): Promise<string>
 
+    LPC_CALLER_NOT_KYC_ADMIN(overrides?: CallOverrides): Promise<string>
+
     LPC_INVALID_ADDRESSES_PROVIDER_ID(overrides?: CallOverrides): Promise<string>
 
     LPC_INVALID_CONFIGURATION(overrides?: CallOverrides): Promise<string>
@@ -475,6 +493,8 @@ export interface Errors extends BaseContract {
     LP_IS_PAUSED(overrides?: CallOverrides): Promise<string>
 
     LP_NOT_CONTRACT(overrides?: CallOverrides): Promise<string>
+
+    LP_NOT_IN_WHITELIST(overrides?: CallOverrides): Promise<string>
 
     LP_NO_MORE_RESERVES_ALLOWED(overrides?: CallOverrides): Promise<string>
 
@@ -556,6 +576,8 @@ export interface Errors extends BaseContract {
 
     LPC_CALLER_NOT_EMERGENCY_ADMIN(overrides?: CallOverrides): Promise<BigNumber>
 
+    LPC_CALLER_NOT_KYC_ADMIN(overrides?: CallOverrides): Promise<BigNumber>
+
     LPC_INVALID_ADDRESSES_PROVIDER_ID(overrides?: CallOverrides): Promise<BigNumber>
 
     LPC_INVALID_CONFIGURATION(overrides?: CallOverrides): Promise<BigNumber>
@@ -575,6 +597,8 @@ export interface Errors extends BaseContract {
     LP_IS_PAUSED(overrides?: CallOverrides): Promise<BigNumber>
 
     LP_NOT_CONTRACT(overrides?: CallOverrides): Promise<BigNumber>
+
+    LP_NOT_IN_WHITELIST(overrides?: CallOverrides): Promise<BigNumber>
 
     LP_NO_MORE_RESERVES_ALLOWED(overrides?: CallOverrides): Promise<BigNumber>
 
@@ -654,6 +678,8 @@ export interface Errors extends BaseContract {
 
     LPC_CALLER_NOT_EMERGENCY_ADMIN(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
+    LPC_CALLER_NOT_KYC_ADMIN(overrides?: CallOverrides): Promise<PopulatedTransaction>
+
     LPC_INVALID_ADDRESSES_PROVIDER_ID(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     LPC_INVALID_CONFIGURATION(overrides?: CallOverrides): Promise<PopulatedTransaction>
@@ -673,6 +699,8 @@ export interface Errors extends BaseContract {
     LP_IS_PAUSED(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     LP_NOT_CONTRACT(overrides?: CallOverrides): Promise<PopulatedTransaction>
+
+    LP_NOT_IN_WHITELIST(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     LP_NO_MORE_RESERVES_ALLOWED(overrides?: CallOverrides): Promise<PopulatedTransaction>
 

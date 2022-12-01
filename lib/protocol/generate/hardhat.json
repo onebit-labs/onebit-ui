@@ -1,0 +1,17 @@
+{
+  "LendingPoolAddressesProviderRegistry": "0xf4e77e5da47ac3125140c470c71cbca77b5c638c",
+  "ReserveLogic": "0x038b86d9d8fafdd0a02ebd1a476432877b0107c8",
+  "LendingPoolImpl": "0x1a1fee7eed918bd762173e4dc5efdb8a78c924a8",
+  "USDT": "0x7c2c195cd6d34b8f845992d380aadb2730bb9c6f",
+  "OToken": "0x0078371bdede8aac7debfff451b74c5edb385af7",
+  "LendingPoolConfiguratorImpl": "0xc4905364b78a742ccce7b890a89514061e47068d",
+  "WBTC": "0x8858eeb3dfffa017d4bce9801d340d36cf895ccf",
+  "markets": {
+    "Test Pool": {
+      "LendingPoolAddressesProvider": "0xf784709d2317d872237c4bc22f867d1bae2913ab",
+      "LendingPool": "0x93892e7ef9ab548bcb7b00354a51a84a4fe94cd7",
+      "LendingPoolConfigurator": "0xcbc2b18ac2b34512881b0966460b92696a844621",
+      "OToken": "0x02f9390bbb41924225f6d5c621e5df56a3ad6e9a"
+    }
+  }
+}

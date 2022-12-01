@@ -17,6 +17,25 @@ const _abi = [
         type: 'address',
       },
       {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'expirationTime',
+        type: 'uint256',
+      },
+    ],
+    name: 'AddedToWhitelist',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'user',
+        type: 'address',
+      },
+      {
         indexed: true,
         internalType: 'address',
         name: 'onBehalfOf',
@@ -215,8 +234,34 @@ const _abi = [
   },
   {
     anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'user',
+        type: 'address',
+      },
+    ],
+    name: 'RemoveFromWhitelist',
+    type: 'event',
+  },
+  {
+    anonymous: false,
     inputs: [] as any,
     name: 'Unpaused',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'newExpiration',
+        type: 'uint256',
+      },
+    ],
+    name: 'WhitelistExpirationUpdated',
     type: 'event',
   },
   {
@@ -243,6 +288,45 @@ const _abi = [
     ],
     name: 'Withdraw',
     type: 'event',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'user',
+        type: 'address',
+      },
+    ],
+    name: 'addToWhitelist',
+    outputs: [] as any,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address[]',
+        name: 'users',
+        type: 'address[]',
+      },
+    ],
+    name: 'batchAddToWhitelist',
+    outputs: [] as any,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address[]',
+        name: 'users',
+        type: 'address[]',
+      },
+    ],
+    name: 'batchRemoveFromWhitelist',
+    outputs: [] as any,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
     inputs: [
@@ -428,6 +512,38 @@ const _abi = [
     inputs: [
       {
         internalType: 'address',
+        name: 'user',
+        type: 'address',
+      },
+    ],
+    name: 'getUserExpirationTimestamp',
+    outputs: [
+      {
+        internalType: 'uint256',
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [] as any,
+    name: 'getWhitelistExpiration',
+    outputs: [
+      {
+        internalType: 'uint256',
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
         name: 'oToken',
         type: 'address',
       },
@@ -439,6 +555,25 @@ const _abi = [
     ],
     name: 'initReserve',
     outputs: [] as any,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'user',
+        type: 'address',
+      },
+    ],
+    name: 'isInWhitelist',
+    outputs: [
+      {
+        internalType: 'bool',
+        name: '',
+        type: 'bool',
+      },
+    ],
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -458,12 +593,38 @@ const _abi = [
   {
     inputs: [
       {
+        internalType: 'address',
+        name: 'user',
+        type: 'address',
+      },
+    ],
+    name: 'removeFromWhitelist',
+    outputs: [] as any,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
         internalType: 'uint256',
         name: 'configuration',
         type: 'uint256',
       },
     ],
     name: 'setConfiguration',
+    outputs: [] as any,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'fundAddress',
+        type: 'address',
+      },
+    ],
+    name: 'setFuncAddress',
     outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
@@ -484,12 +645,12 @@ const _abi = [
   {
     inputs: [
       {
-        internalType: 'address',
-        name: 'fundAddress',
-        type: 'address',
+        internalType: 'uint256',
+        name: 'expiration',
+        type: 'uint256',
       },
     ],
-    name: 'updateFuncAddress',
+    name: 'setWhitelistExpiration',
     outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',

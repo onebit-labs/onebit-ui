@@ -20,6 +20,7 @@ export interface ILendingPoolAddressesProviderInterface extends utils.Interface 
   functions: {
     'getAddress(bytes32)': FunctionFragment
     'getEmergencyAdmin()': FunctionFragment
+    'getKYCAdmin()': FunctionFragment
     'getLendingPool()': FunctionFragment
     'getLendingPoolConfigurator()': FunctionFragment
     'getMarketId()': FunctionFragment
@@ -28,6 +29,7 @@ export interface ILendingPoolAddressesProviderInterface extends utils.Interface 
     'setAddress(bytes32,address)': FunctionFragment
     'setAddressAsProxy(bytes32,address)': FunctionFragment
     'setEmergencyAdmin(address)': FunctionFragment
+    'setKYCAdmin(address)': FunctionFragment
     'setLendingPoolConfiguratorImpl(address)': FunctionFragment
     'setLendingPoolImpl(address)': FunctionFragment
     'setMarketId(string)': FunctionFragment
@@ -39,6 +41,7 @@ export interface ILendingPoolAddressesProviderInterface extends utils.Interface 
     nameOrSignatureOrTopic:
       | 'getAddress'
       | 'getEmergencyAdmin'
+      | 'getKYCAdmin'
       | 'getLendingPool'
       | 'getLendingPoolConfigurator'
       | 'getMarketId'
@@ -47,6 +50,7 @@ export interface ILendingPoolAddressesProviderInterface extends utils.Interface 
       | 'setAddress'
       | 'setAddressAsProxy'
       | 'setEmergencyAdmin'
+      | 'setKYCAdmin'
       | 'setLendingPoolConfiguratorImpl'
       | 'setLendingPoolImpl'
       | 'setMarketId'
@@ -56,6 +60,7 @@ export interface ILendingPoolAddressesProviderInterface extends utils.Interface 
 
   encodeFunctionData(functionFragment: 'getAddress', values: [PromiseOrValue<BytesLike>]): string
   encodeFunctionData(functionFragment: 'getEmergencyAdmin', values?: undefined): string
+  encodeFunctionData(functionFragment: 'getKYCAdmin', values?: undefined): string
   encodeFunctionData(functionFragment: 'getLendingPool', values?: undefined): string
   encodeFunctionData(functionFragment: 'getLendingPoolConfigurator', values?: undefined): string
   encodeFunctionData(functionFragment: 'getMarketId', values?: undefined): string
@@ -70,6 +75,7 @@ export interface ILendingPoolAddressesProviderInterface extends utils.Interface 
     values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
   ): string
   encodeFunctionData(functionFragment: 'setEmergencyAdmin', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'setKYCAdmin', values: [PromiseOrValue<string>]): string
   encodeFunctionData(functionFragment: 'setLendingPoolConfiguratorImpl', values: [PromiseOrValue<string>]): string
   encodeFunctionData(functionFragment: 'setLendingPoolImpl', values: [PromiseOrValue<string>]): string
   encodeFunctionData(functionFragment: 'setMarketId', values: [PromiseOrValue<string>]): string
@@ -78,6 +84,7 @@ export interface ILendingPoolAddressesProviderInterface extends utils.Interface 
 
   decodeFunctionResult(functionFragment: 'getAddress', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'getEmergencyAdmin', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'getKYCAdmin', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'getLendingPool', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'getLendingPoolConfigurator', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'getMarketId', data: BytesLike): Result
@@ -86,6 +93,7 @@ export interface ILendingPoolAddressesProviderInterface extends utils.Interface 
   decodeFunctionResult(functionFragment: 'setAddress', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'setAddressAsProxy', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'setEmergencyAdmin', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setKYCAdmin', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'setLendingPoolConfiguratorImpl', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'setLendingPoolImpl', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'setMarketId', data: BytesLike): Result
@@ -96,6 +104,7 @@ export interface ILendingPoolAddressesProviderInterface extends utils.Interface 
     'AddressSet(bytes32,address,bool)': EventFragment
     'ConfigurationAdminUpdated(address)': EventFragment
     'EmergencyAdminUpdated(address)': EventFragment
+    'KYCAdminUpdated(address)': EventFragment
     'LendingPoolConfiguratorUpdated(address)': EventFragment
     'LendingPoolUpdated(address)': EventFragment
     'MarketIdSet(string)': EventFragment
@@ -106,6 +115,7 @@ export interface ILendingPoolAddressesProviderInterface extends utils.Interface 
   getEvent(nameOrSignatureOrTopic: 'AddressSet'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'ConfigurationAdminUpdated'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'EmergencyAdminUpdated'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'KYCAdminUpdated'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'LendingPoolConfiguratorUpdated'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'LendingPoolUpdated'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'MarketIdSet'): EventFragment
@@ -135,6 +145,13 @@ export interface EmergencyAdminUpdatedEventObject {
 export type EmergencyAdminUpdatedEvent = TypedEvent<[string], EmergencyAdminUpdatedEventObject>
 
 export type EmergencyAdminUpdatedEventFilter = TypedEventFilter<EmergencyAdminUpdatedEvent>
+
+export interface KYCAdminUpdatedEventObject {
+  newAddress: string
+}
+export type KYCAdminUpdatedEvent = TypedEvent<[string], KYCAdminUpdatedEventObject>
+
+export type KYCAdminUpdatedEventFilter = TypedEventFilter<KYCAdminUpdatedEvent>
 
 export interface LendingPoolConfiguratorUpdatedEventObject {
   newAddress: string
@@ -199,6 +216,8 @@ export interface ILendingPoolAddressesProvider extends BaseContract {
 
     getEmergencyAdmin(overrides?: CallOverrides): Promise<[string]>
 
+    getKYCAdmin(overrides?: CallOverrides): Promise<[string]>
+
     getLendingPool(overrides?: CallOverrides): Promise<[string]>
 
     getLendingPoolConfigurator(overrides?: CallOverrides): Promise<[string]>
@@ -222,6 +241,11 @@ export interface ILendingPoolAddressesProvider extends BaseContract {
     ): Promise<ContractTransaction>
 
     setEmergencyAdmin(
+      admin: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
+    setKYCAdmin(
       admin: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
@@ -256,6 +280,8 @@ export interface ILendingPoolAddressesProvider extends BaseContract {
 
   getEmergencyAdmin(overrides?: CallOverrides): Promise<string>
 
+  getKYCAdmin(overrides?: CallOverrides): Promise<string>
+
   getLendingPool(overrides?: CallOverrides): Promise<string>
 
   getLendingPoolConfigurator(overrides?: CallOverrides): Promise<string>
@@ -279,6 +305,11 @@ export interface ILendingPoolAddressesProvider extends BaseContract {
   ): Promise<ContractTransaction>
 
   setEmergencyAdmin(
+    admin: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
+
+  setKYCAdmin(
     admin: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
@@ -313,6 +344,8 @@ export interface ILendingPoolAddressesProvider extends BaseContract {
 
     getEmergencyAdmin(overrides?: CallOverrides): Promise<string>
 
+    getKYCAdmin(overrides?: CallOverrides): Promise<string>
+
     getLendingPool(overrides?: CallOverrides): Promise<string>
 
     getLendingPoolConfigurator(overrides?: CallOverrides): Promise<string>
@@ -336,6 +369,8 @@ export interface ILendingPoolAddressesProvider extends BaseContract {
     ): Promise<void>
 
     setEmergencyAdmin(admin: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
+
+    setKYCAdmin(admin: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
 
     setLendingPoolConfiguratorImpl(configurator: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
 
@@ -364,6 +399,9 @@ export interface ILendingPoolAddressesProvider extends BaseContract {
     'EmergencyAdminUpdated(address)'(newAddress?: PromiseOrValue<string> | null): EmergencyAdminUpdatedEventFilter
     EmergencyAdminUpdated(newAddress?: PromiseOrValue<string> | null): EmergencyAdminUpdatedEventFilter
 
+    'KYCAdminUpdated(address)'(newAddress?: PromiseOrValue<string> | null): KYCAdminUpdatedEventFilter
+    KYCAdminUpdated(newAddress?: PromiseOrValue<string> | null): KYCAdminUpdatedEventFilter
+
     'LendingPoolConfiguratorUpdated(address)'(
       newAddress?: PromiseOrValue<string> | null
     ): LendingPoolConfiguratorUpdatedEventFilter
@@ -389,6 +427,8 @@ export interface ILendingPoolAddressesProvider extends BaseContract {
 
     getEmergencyAdmin(overrides?: CallOverrides): Promise<BigNumber>
 
+    getKYCAdmin(overrides?: CallOverrides): Promise<BigNumber>
+
     getLendingPool(overrides?: CallOverrides): Promise<BigNumber>
 
     getLendingPoolConfigurator(overrides?: CallOverrides): Promise<BigNumber>
@@ -412,6 +452,11 @@ export interface ILendingPoolAddressesProvider extends BaseContract {
     ): Promise<BigNumber>
 
     setEmergencyAdmin(
+      admin: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
+    setKYCAdmin(
       admin: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
@@ -447,6 +492,8 @@ export interface ILendingPoolAddressesProvider extends BaseContract {
 
     getEmergencyAdmin(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
+    getKYCAdmin(overrides?: CallOverrides): Promise<PopulatedTransaction>
+
     getLendingPool(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     getLendingPoolConfigurator(overrides?: CallOverrides): Promise<PopulatedTransaction>
@@ -470,6 +517,11 @@ export interface ILendingPoolAddressesProvider extends BaseContract {
     ): Promise<PopulatedTransaction>
 
     setEmergencyAdmin(
+      admin: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
+    setKYCAdmin(
       admin: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>

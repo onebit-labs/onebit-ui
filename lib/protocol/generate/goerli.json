@@ -1,13 +1,13 @@
 {
   "LendingPoolAddressesProviderRegistry": "0x092f2d94e31ac359a060a9929f1062aca761a308",
   "LendingPoolAddressesProvider": "0x8586a3e55a43e46e59df02b7494b7fa2e46f2848",
-  "ReserveLogic": "0x691a99bbaf8003b5d0201ee54e7be546e27e9816",
-  "LendingPoolImpl": "0x3df1ddb582f89616544a4a060da4328191d30ff7",
+  "ReserveLogic": "0xe86b277aaa5112f8b37a56fdaf9462e14637a463",
+  "LendingPoolImpl": "0xcbabfcf5cbebb8b39557b544802d3aae98027a9a",
   "LendingPool": "0x6af769f986d87851c68e6f7ebf90e265619c6c8f",
   "USDT": "0x982284793466a001e4513e59668ec711a44e049e",
   "WBTC": "0x18a57ecbf7ff0aaa12476a60ae044ff34537969a",
   "OToken": "0x8a41a474de4b2f62f279be51d291330366387e6c",
-  "LendingPoolConfiguratorImpl": "0x4d544f28228ddafbf20058644ccf13ff9e6631b1",
+  "LendingPoolConfiguratorImpl": "0x7886b7f90499a3fc6af296ea5ec2e97c2a17e01c",
   "markets": {
     "Onebit-Lightning-Hunter-USDT": {
       "LendingPoolAddressesProvider": "0x5e83de1387360727adc92c097ee087d2c49e9394",
@@ -32,6 +32,12 @@
       "LendingPool": "0x6633665728737d3aebe62a257802c14cca3e1ce4",
       "LendingPoolConfigurator": "0xdcc3323e1627fa0f6d1f2f0b13fd879d841e0da7",
       "OToken": "0x3ef565f95da654d3196e6bc8961959da309efcf6"
+    },
+    "Onebit-Smart-Trend-USDT-Whitelist-Test": {
+      "LendingPoolAddressesProvider": "0x2c53ce792d6cc64c08379390c87387b83570b47f",
+      "LendingPool": "0x86117a8b09a90f82629def0e954cbc7a05811fe9",
+      "LendingPoolConfigurator": "0xd248959a407ed01046de33fbf69da3144992974d",
+      "OToken": "0xc470d401cd08133e3dda5d6965b7d53611ad240b"
     }
   }
 }

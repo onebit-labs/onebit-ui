@@ -78,38 +78,57 @@ export declare namespace DataTypes {
 
 export interface ILendingPoolInterface extends utils.Interface {
   functions: {
+    'addToWhitelist(address)': FunctionFragment
+    'batchAddToWhitelist(address[])': FunctionFragment
+    'batchRemoveFromWhitelist(address[])': FunctionFragment
     'deposit(uint256,address,uint16)': FunctionFragment
     'depositFund(uint256)': FunctionFragment
     'getAddressesProvider()': FunctionFragment
     'getConfiguration()': FunctionFragment
     'getReserveData()': FunctionFragment
     'getReserveNormalizedIncome()': FunctionFragment
+    'getUserExpirationTimestamp(address)': FunctionFragment
+    'getWhitelistExpiration()': FunctionFragment
     'initReserve(address,address)': FunctionFragment
+    'isInWhitelist(address)': FunctionFragment
     'paused()': FunctionFragment
+    'removeFromWhitelist(address)': FunctionFragment
     'setConfiguration(uint256)': FunctionFragment
+    'setFuncAddress(address)': FunctionFragment
     'setPause(bool)': FunctionFragment
-    'updateFuncAddress(address)': FunctionFragment
+    'setWhitelistExpiration(uint256)': FunctionFragment
     'withdraw(uint256,address)': FunctionFragment
     'withdrawFund(uint256)': FunctionFragment
   }
 
   getFunction(
     nameOrSignatureOrTopic:
+      | 'addToWhitelist'
+      | 'batchAddToWhitelist'
+      | 'batchRemoveFromWhitelist'
       | 'deposit'
       | 'depositFund'
       | 'getAddressesProvider'
       | 'getConfiguration'
       | 'getReserveData'
       | 'getReserveNormalizedIncome'
+      | 'getUserExpirationTimestamp'
+      | 'getWhitelistExpiration'
       | 'initReserve'
+      | 'isInWhitelist'
       | 'paused'
+      | 'removeFromWhitelist'
       | 'setConfiguration'
+      | 'setFuncAddress'
       | 'setPause'
-      | 'updateFuncAddress'
+      | 'setWhitelistExpiration'
       | 'withdraw'
       | 'withdrawFund'
   ): FunctionFragment
 
+  encodeFunctionData(functionFragment: 'addToWhitelist', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'batchAddToWhitelist', values: [PromiseOrValue<string>[]]): string
+  encodeFunctionData(functionFragment: 'batchRemoveFromWhitelist', values: [PromiseOrValue<string>[]]): string
   encodeFunctionData(
     functionFragment: 'deposit',
     values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>, PromiseOrValue<BigNumberish>]
@@ -119,32 +138,46 @@ export interface ILendingPoolInterface extends utils.Interface {
   encodeFunctionData(functionFragment: 'getConfiguration', values?: undefined): string
   encodeFunctionData(functionFragment: 'getReserveData', values?: undefined): string
   encodeFunctionData(functionFragment: 'getReserveNormalizedIncome', values?: undefined): string
+  encodeFunctionData(functionFragment: 'getUserExpirationTimestamp', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'getWhitelistExpiration', values?: undefined): string
   encodeFunctionData(functionFragment: 'initReserve', values: [PromiseOrValue<string>, PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'isInWhitelist', values: [PromiseOrValue<string>]): string
   encodeFunctionData(functionFragment: 'paused', values?: undefined): string
+  encodeFunctionData(functionFragment: 'removeFromWhitelist', values: [PromiseOrValue<string>]): string
   encodeFunctionData(functionFragment: 'setConfiguration', values: [PromiseOrValue<BigNumberish>]): string
+  encodeFunctionData(functionFragment: 'setFuncAddress', values: [PromiseOrValue<string>]): string
   encodeFunctionData(functionFragment: 'setPause', values: [PromiseOrValue<boolean>]): string
-  encodeFunctionData(functionFragment: 'updateFuncAddress', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(functionFragment: 'setWhitelistExpiration', values: [PromiseOrValue<BigNumberish>]): string
   encodeFunctionData(
     functionFragment: 'withdraw',
     values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>]
   ): string
   encodeFunctionData(functionFragment: 'withdrawFund', values: [PromiseOrValue<BigNumberish>]): string
 
+  decodeFunctionResult(functionFragment: 'addToWhitelist', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'batchAddToWhitelist', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'batchRemoveFromWhitelist', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'deposit', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'depositFund', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'getAddressesProvider', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'getConfiguration', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'getReserveData', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'getReserveNormalizedIncome', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'getUserExpirationTimestamp', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'getWhitelistExpiration', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'initReserve', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'isInWhitelist', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'paused', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'removeFromWhitelist', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'setConfiguration', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setFuncAddress', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'setPause', data: BytesLike): Result
-  decodeFunctionResult(functionFragment: 'updateFuncAddress', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setWhitelistExpiration', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'withdraw', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'withdrawFund', data: BytesLike): Result
 
   events: {
+    'AddedToWhitelist(address,uint256)': EventFragment
     'Deposit(address,address,uint256,uint16)': EventFragment
     'FundAddressUpdated(address)': EventFragment
     'FundDeposit(address,uint256)': EventFragment
@@ -154,10 +187,13 @@ export interface ILendingPoolInterface extends utils.Interface {
     'PeriodInitialized(uint256,uint40,uint40,uint40,uint16,uint16)': EventFragment
     'PurchaseEndTimestampMoved(uint40,uint40)': EventFragment
     'RedemptionBeginTimestampMoved(uint40,uint40)': EventFragment
+    'RemoveFromWhitelist(address)': EventFragment
     'Unpaused()': EventFragment
+    'WhitelistExpirationUpdated(uint256)': EventFragment
     'Withdraw(address,address,uint256)': EventFragment
   }
 
+  getEvent(nameOrSignatureOrTopic: 'AddedToWhitelist'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'Deposit'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'FundAddressUpdated'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'FundDeposit'): EventFragment
@@ -167,9 +203,19 @@ export interface ILendingPoolInterface extends utils.Interface {
   getEvent(nameOrSignatureOrTopic: 'PeriodInitialized'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'PurchaseEndTimestampMoved'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'RedemptionBeginTimestampMoved'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'RemoveFromWhitelist'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'Unpaused'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'WhitelistExpirationUpdated'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'Withdraw'): EventFragment
 }
+
+export interface AddedToWhitelistEventObject {
+  user: string
+  expirationTime: BigNumber
+}
+export type AddedToWhitelistEvent = TypedEvent<[string, BigNumber], AddedToWhitelistEventObject>
+
+export type AddedToWhitelistEventFilter = TypedEventFilter<AddedToWhitelistEvent>
 
 export interface DepositEventObject {
   user: string
@@ -254,10 +300,24 @@ export type RedemptionBeginTimestampMovedEvent = TypedEvent<[number, number], Re
 
 export type RedemptionBeginTimestampMovedEventFilter = TypedEventFilter<RedemptionBeginTimestampMovedEvent>
 
+export interface RemoveFromWhitelistEventObject {
+  user: string
+}
+export type RemoveFromWhitelistEvent = TypedEvent<[string], RemoveFromWhitelistEventObject>
+
+export type RemoveFromWhitelistEventFilter = TypedEventFilter<RemoveFromWhitelistEvent>
+
 export interface UnpausedEventObject {}
 export type UnpausedEvent = TypedEvent<[], UnpausedEventObject>
 
 export type UnpausedEventFilter = TypedEventFilter<UnpausedEvent>
+
+export interface WhitelistExpirationUpdatedEventObject {
+  newExpiration: BigNumber
+}
+export type WhitelistExpirationUpdatedEvent = TypedEvent<[BigNumber], WhitelistExpirationUpdatedEventObject>
+
+export type WhitelistExpirationUpdatedEventFilter = TypedEventFilter<WhitelistExpirationUpdatedEvent>
 
 export interface WithdrawEventObject {
   user: string
@@ -291,6 +351,21 @@ export interface ILendingPool extends BaseContract {
   removeListener: OnEvent<this>
 
   functions: {
+    addToWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
+    batchAddToWhitelist(
+      users: PromiseOrValue<string>[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
+    batchRemoveFromWhitelist(
+      users: PromiseOrValue<string>[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
     deposit(
       amount: PromiseOrValue<BigNumberish>,
       onBehalfOf: PromiseOrValue<string>,
@@ -311,16 +386,38 @@ export interface ILendingPool extends BaseContract {
 
     getReserveNormalizedIncome(overrides?: CallOverrides): Promise<[BigNumber]>
 
+    getUserExpirationTimestamp(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
+    getWhitelistExpiration(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
+
     initReserve(
       oToken: PromiseOrValue<string>,
       fundAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
+    isInWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
     paused(overrides?: CallOverrides): Promise<[boolean]>
+
+    removeFromWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
 
     setConfiguration(
       configuration: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
+    setFuncAddress(
+      fundAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
@@ -329,8 +426,8 @@ export interface ILendingPool extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
-    updateFuncAddress(
-      fundAddress: PromiseOrValue<string>,
+    setWhitelistExpiration(
+      expiration: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
@@ -345,6 +442,21 @@ export interface ILendingPool extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
   }
+
+  addToWhitelist(
+    user: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
+
+  batchAddToWhitelist(
+    users: PromiseOrValue<string>[],
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
+
+  batchRemoveFromWhitelist(
+    users: PromiseOrValue<string>[],
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
 
   deposit(
     amount: PromiseOrValue<BigNumberish>,
@@ -366,16 +478,38 @@ export interface ILendingPool extends BaseContract {
 
   getReserveNormalizedIncome(overrides?: CallOverrides): Promise<BigNumber>
 
+  getUserExpirationTimestamp(
+    user: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
+
+  getWhitelistExpiration(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
+
   initReserve(
     oToken: PromiseOrValue<string>,
     fundAddress: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
+  isInWhitelist(
+    user: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
+
   paused(overrides?: CallOverrides): Promise<boolean>
+
+  removeFromWhitelist(
+    user: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
 
   setConfiguration(
     configuration: PromiseOrValue<BigNumberish>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
+
+  setFuncAddress(
+    fundAddress: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
@@ -384,8 +518,8 @@ export interface ILendingPool extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
-  updateFuncAddress(
-    fundAddress: PromiseOrValue<string>,
+  setWhitelistExpiration(
+    expiration: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
@@ -401,6 +535,12 @@ export interface ILendingPool extends BaseContract {
   ): Promise<ContractTransaction>
 
   callStatic: {
+    addToWhitelist(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
+
+    batchAddToWhitelist(users: PromiseOrValue<string>[], overrides?: CallOverrides): Promise<void>
+
+    batchRemoveFromWhitelist(users: PromiseOrValue<string>[], overrides?: CallOverrides): Promise<void>
+
     deposit(
       amount: PromiseOrValue<BigNumberish>,
       onBehalfOf: PromiseOrValue<string>,
@@ -418,19 +558,29 @@ export interface ILendingPool extends BaseContract {
 
     getReserveNormalizedIncome(overrides?: CallOverrides): Promise<BigNumber>
 
+    getUserExpirationTimestamp(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<BigNumber>
+
+    getWhitelistExpiration(overrides?: CallOverrides): Promise<BigNumber>
+
     initReserve(
       oToken: PromiseOrValue<string>,
       fundAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>
 
+    isInWhitelist(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<boolean>
+
     paused(overrides?: CallOverrides): Promise<boolean>
+
+    removeFromWhitelist(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
 
     setConfiguration(configuration: PromiseOrValue<BigNumberish>, overrides?: CallOverrides): Promise<void>
 
+    setFuncAddress(fundAddress: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
+
     setPause(val: PromiseOrValue<boolean>, overrides?: CallOverrides): Promise<void>
 
-    updateFuncAddress(fundAddress: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
+    setWhitelistExpiration(expiration: PromiseOrValue<BigNumberish>, overrides?: CallOverrides): Promise<void>
 
     withdraw(
       amount: PromiseOrValue<BigNumberish>,
@@ -442,6 +592,12 @@ export interface ILendingPool extends BaseContract {
   }
 
   filters: {
+    'AddedToWhitelist(address,uint256)'(
+      user?: PromiseOrValue<string> | null,
+      expirationTime?: null
+    ): AddedToWhitelistEventFilter
+    AddedToWhitelist(user?: PromiseOrValue<string> | null, expirationTime?: null): AddedToWhitelistEventFilter
+
     'Deposit(address,address,uint256,uint16)'(
       user?: PromiseOrValue<string> | null,
       onBehalfOf?: PromiseOrValue<string> | null,
@@ -514,8 +670,14 @@ export interface ILendingPool extends BaseContract {
       newTimetamp?: null
     ): RedemptionBeginTimestampMovedEventFilter
 
+    'RemoveFromWhitelist(address)'(user?: PromiseOrValue<string> | null): RemoveFromWhitelistEventFilter
+    RemoveFromWhitelist(user?: PromiseOrValue<string> | null): RemoveFromWhitelistEventFilter
+
     'Unpaused()'(): UnpausedEventFilter
     Unpaused(): UnpausedEventFilter
+
+    'WhitelistExpirationUpdated(uint256)'(newExpiration?: null): WhitelistExpirationUpdatedEventFilter
+    WhitelistExpirationUpdated(newExpiration?: null): WhitelistExpirationUpdatedEventFilter
 
     'Withdraw(address,address,uint256)'(
       user?: PromiseOrValue<string> | null,
@@ -530,6 +692,21 @@ export interface ILendingPool extends BaseContract {
   }
 
   estimateGas: {
+    addToWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
+    batchAddToWhitelist(
+      users: PromiseOrValue<string>[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
+    batchRemoveFromWhitelist(
+      users: PromiseOrValue<string>[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
     deposit(
       amount: PromiseOrValue<BigNumberish>,
       onBehalfOf: PromiseOrValue<string>,
@@ -550,16 +727,38 @@ export interface ILendingPool extends BaseContract {
 
     getReserveNormalizedIncome(overrides?: CallOverrides): Promise<BigNumber>
 
+    getUserExpirationTimestamp(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
+    getWhitelistExpiration(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>
+
     initReserve(
       oToken: PromiseOrValue<string>,
       fundAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
+    isInWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
     paused(overrides?: CallOverrides): Promise<BigNumber>
+
+    removeFromWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
 
     setConfiguration(
       configuration: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
+    setFuncAddress(
+      fundAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
@@ -568,8 +767,8 @@ export interface ILendingPool extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
-    updateFuncAddress(
-      fundAddress: PromiseOrValue<string>,
+    setWhitelistExpiration(
+      expiration: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
@@ -586,6 +785,21 @@ export interface ILendingPool extends BaseContract {
   }
 
   populateTransaction: {
+    addToWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
+    batchAddToWhitelist(
+      users: PromiseOrValue<string>[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
+    batchRemoveFromWhitelist(
+      users: PromiseOrValue<string>[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
     deposit(
       amount: PromiseOrValue<BigNumberish>,
       onBehalfOf: PromiseOrValue<string>,
@@ -606,16 +820,38 @@ export interface ILendingPool extends BaseContract {
 
     getReserveNormalizedIncome(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
+    getUserExpirationTimestamp(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
+    getWhitelistExpiration(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>
+
     initReserve(
       oToken: PromiseOrValue<string>,
       fundAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
+    isInWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
     paused(overrides?: CallOverrides): Promise<PopulatedTransaction>
+
+    removeFromWhitelist(
+      user: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
 
     setConfiguration(
       configuration: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
+    setFuncAddress(
+      fundAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
@@ -624,8 +860,8 @@ export interface ILendingPool extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
-    updateFuncAddress(
-      fundAddress: PromiseOrValue<string>,
+    setWhitelistExpiration(
+      expiration: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
