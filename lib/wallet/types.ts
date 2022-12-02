@@ -1,4 +1,5 @@
 import type { AbstractConnector } from '@web3-react/abstract-connector'
+import type { Chain } from 'lib/openapi'
 import type { NetworkConfig } from 'lib/protocol/network/types'
 import type { ProviderId } from './providers/types'
 
@@ -35,6 +36,7 @@ export type Balance = string
 export type Wallet = {
   account: Account | null
   chainId: number | undefined
+  chainName: Chain | undefined
   /**
    * #### Wallet Connect
    *

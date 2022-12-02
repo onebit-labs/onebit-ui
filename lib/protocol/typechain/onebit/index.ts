@@ -57,7 +57,7 @@ export class LendingPoolService extends BaseService<LendingPool> {
 
   public getUserExpirationTimestamp({ pool, user }: GetUserExpirationTimestampProps) {
     const lendingPool = this.getContractInstance(pool)
-    return lendingPool.getUserExpirationTimestamp(user).then(({ data }) => data)
+    return lendingPool.getUserExpirationTimestamp(user)
   }
 
   public async deposit({ pool, erc20Service, reserve, user, amount }: DepositProps) {

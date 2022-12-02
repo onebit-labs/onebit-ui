@@ -70,9 +70,15 @@ export const useSignature = (account: string) => {
     )
   }, [account])
 
+  const userKYT = useCallback((walletAddress: string, poolAddress: string) => {
+    const message = `${walletAddress} requsts to be whitelisted for the ${poolAddress} portfolio.`
+    return signMessage(message).then(({ signature }) => signature)
+  }, [])
+
   return {
     dialog,
     hasUserAgreement,
     userAgreement,
+    userKYT,
   }
 }

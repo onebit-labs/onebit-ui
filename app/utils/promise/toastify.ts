@@ -5,7 +5,7 @@ import { safeGet } from '../get'
 
 type Options = {
   formikHelpers?: FormikHelpers<any>
-  serializeError?: (e: any) => { message: string; errors: any }
+  serializeError?: (e: any) => { message: string; errors?: any; autoClose?: false | number }
 }
 export function createToastifyPromise<T = void>(p: Promise<T>, options: Options = {}) {
   const { formikHelpers } = options
@@ -21,8 +21,13 @@ export function createToastifyPromise<T = void>(p: Promise<T>, options: Options 
     .catch((e) => {
       options.serializeError = options.serializeError || catchError
       const serializeError = safeGet(() => options.serializeError(e)) || ({} as undefined)
-      formikHelpers?.setErrors(serializeError.errors)
-      toast.update(toastId, { render: serializeError.message, type: 'error', isLoading: false, autoClose: 5000 })
+      if (serializeError.errors) formikHelpers?.setErrors(serializeError.errors)
+      toast.update(toastId, {
+        render: serializeError.message,
+        type: 'error',
+        isLoading: false,
+        autoClose: serializeError.autoClose,
+      })
       return serializeError
     })
     .finally(() => {

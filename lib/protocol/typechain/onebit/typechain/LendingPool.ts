@@ -423,10 +423,7 @@ export interface LendingPool extends BaseContract {
 
     getReserveNormalizedIncome(overrides?: CallOverrides): Promise<[BigNumber]>
 
-    getUserExpirationTimestamp(
-      user: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>
+    getUserExpirationTimestamp(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<[BigNumber]>
 
     getWhitelistExpiration(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
 
@@ -452,10 +449,7 @@ export interface LendingPool extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
-    isInWhitelist(
-      user: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>
+    isInWhitelist(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<[boolean]>
 
     moveTheLockPeriod(
       newPurchaseEndTimestamp: PromiseOrValue<BigNumberish>,
@@ -548,10 +542,7 @@ export interface LendingPool extends BaseContract {
 
   getReserveNormalizedIncome(overrides?: CallOverrides): Promise<BigNumber>
 
-  getUserExpirationTimestamp(
-    user: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>
+  getUserExpirationTimestamp(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<BigNumber>
 
   getWhitelistExpiration(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
 
@@ -577,10 +568,7 @@ export interface LendingPool extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
-  isInWhitelist(
-    user: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>
+  isInWhitelist(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<boolean>
 
   moveTheLockPeriod(
     newPurchaseEndTimestamp: PromiseOrValue<BigNumberish>,
@@ -854,10 +842,7 @@ export interface LendingPool extends BaseContract {
 
     getReserveNormalizedIncome(overrides?: CallOverrides): Promise<BigNumber>
 
-    getUserExpirationTimestamp(
-      user: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>
+    getUserExpirationTimestamp(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<BigNumber>
 
     getWhitelistExpiration(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>
 
@@ -883,10 +868,7 @@ export interface LendingPool extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
-    isInWhitelist(
-      user: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>
+    isInWhitelist(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<BigNumber>
 
     moveTheLockPeriod(
       newPurchaseEndTimestamp: PromiseOrValue<BigNumberish>,
@@ -980,10 +962,7 @@ export interface LendingPool extends BaseContract {
 
     getReserveNormalizedIncome(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    getUserExpirationTimestamp(
-      user: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>
+    getUserExpirationTimestamp(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     getWhitelistExpiration(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>
 
@@ -1009,10 +988,7 @@ export interface LendingPool extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
-    isInWhitelist(
-      user: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>
+    isInWhitelist(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     moveTheLockPeriod(
       newPurchaseEndTimestamp: PromiseOrValue<BigNumberish>,

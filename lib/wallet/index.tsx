@@ -22,6 +22,7 @@ import {
   getLastActiveAccount,
   getAccountIsContract,
 } from './utils'
+import { safeGet } from 'app/utils/get'
 
 type WalletContext = {
   wallet: Wallet
@@ -247,6 +248,7 @@ function UseWalletProvider({ children, autoConnect }: UseWalletProviderProps) {
     return {
       account: account || null,
       chainId,
+      chainName: safeGet(() => chainInfo.chainName),
       connect,
       connector,
       connectors,

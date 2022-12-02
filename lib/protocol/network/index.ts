@@ -1,10 +1,12 @@
 import type { NetworkConfig } from './types'
 import { ChainId } from '../chain/types'
+import { Chain } from 'lib/openapi'
 
 export const infuraId = 'dea011a2bebb451ba3602b02994145c1'
 
 export const networks: Record<ChainId, NetworkConfig> = {
   [ChainId.goerli]: {
+    chainName: Chain.GOERLI,
     name: 'Goerli',
     fullName: 'Goerli',
     symbol: 'ETH',
