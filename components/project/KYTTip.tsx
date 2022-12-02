@@ -10,7 +10,7 @@ const KYTTip: FC<KYTTipProps> = ({ portfolio: { useWhitelist, userInWhitelist } 
   const { t } = useTranslation('common', { keyPrefix: 'wallet.KYT' })
   if (!useWhitelist || userInWhitelist) return null
 
-  return <Alert severity="info">{t('getWhitelisted')}</Alert>
+  return <Alert severity="info">{t('tip')}</Alert>
 }
 
 export default KYTTip

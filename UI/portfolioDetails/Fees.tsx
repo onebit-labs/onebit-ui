@@ -31,7 +31,7 @@ const Fees: FC = () => {
           </Stack>
           <Stack spacing={2}>
             <Stack spacing={1}>
-              <Paragraph color="text.primary">{t('fees.perfomance.title')}</Paragraph>
+              <Paragraph color="text.primary">{t('fees.performance.title')}</Paragraph>
               <H4>
                 <NumberDisplay
                   value={portfolio.performanceFeeRate}
@@ -39,7 +39,7 @@ const Fees: FC = () => {
                   numberFormatOptions={{ minimumFractionDigits: 0 }}
                 />
               </H4>
-              <Paragraph color="text.secondary">{t('fees.perfomance.description')}</Paragraph>
+              <Paragraph color="text.secondary">{t('fees.performance.description')}</Paragraph>
             </Stack>
           </Stack>
           <Stack spacing={1}>

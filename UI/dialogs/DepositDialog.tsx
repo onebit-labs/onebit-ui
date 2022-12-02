@@ -24,6 +24,8 @@ import { createPromise } from 'app/utils/promise'
 import Alert from '@mui/material/Alert'
 import KYTButton from 'components/project/KYTButton'
 import KYTTip from 'components/project/KYTTip'
+import Tooltip from '@mui/material/Tooltip'
+import HelpOutlinedIcon from '@mui/icons-material/HelpOutlined'
 
 const DepositDialog: FC = () => {
   const { deposit } = useDialogs()
@@ -84,41 +86,50 @@ const DepositDialog: FC = () => {
           <Stack spacing={1}>
             <H5>{t('wallet.deposit.lockUpPeriod')}</H5>
             <Paragraph color="text.secondary">
-              {lockTime} {t('wallet.deposit.days')}
-            </Paragraph>
-            <Paragraph color="text.secondary">
-              <TimePeriod start={purchaseEndTimestamp} end={redemptionBeginTimestamp} />
+              {<TimePeriod start={purchaseEndTimestamp} end={redemptionBeginTimestamp} />} {'('}{lockTime} {t('wallet.deposit.days')}{')'}
             </Paragraph>
           </Stack>
-          <Alert severity="info">
-            <Trans
-              i18nKey="wallet.deposit.tip"
-              t={t}
-              components={{
-                managementFee: (
-                  <NumberDisplay
-                    value={managementFeeRate}
-                    options="percent"
-                    numberFormatOptions={{ minimumFractionDigits: 0 }}
-                  />
-                ),
-                performanceFee: (
-                  <NumberDisplay
-                    value={performanceFeeRate}
-                    options="percent"
-                    numberFormatOptions={{ minimumFractionDigits: 0 }}
-                  />
-                ),
-              }}
-            />
-          </Alert>
-          <KYTTip portfolio={portfolio} />
+          <Stack spacing={1}>
+            <Tooltip title={t('portfolioDetails:fees.management.description')}>
+              <Stack direction="row" alignItems="center" spacing={1}>
+                <H5>
+                  {t('portfolioDetails:fees.management.title')}
+                </H5>
+                <HelpOutlinedIcon fontSize="inherit" sx={{ color: 'text.secondary' }}/>
+              </Stack>
+            </Tooltip>
+            <Paragraph color="text.secondary">
+              <NumberDisplay
+                value={managementFeeRate}
+                options="percent"
+                numberFormatOptions={{ minimumFractionDigits: 0 }}
+              />            
+            </Paragraph>
+          </Stack>
+          <Stack spacing={1}>
+            <Tooltip title={t('portfolioDetails:fees.performance.description')}>
+              <Stack direction="row" alignItems="center" spacing={1}>
+                <H5>
+                  {t('portfolioDetails:fees.performance.title')}
+                </H5>
+                <HelpOutlinedIcon fontSize="inherit" sx={{ color: 'text.secondary' }}/>
+              </Stack>
+            </Tooltip>
+            <Paragraph color="text.secondary">
+              <NumberDisplay
+                value={performanceFeeRate}
+                options="percent"
+                numberFormatOptions={{ minimumFractionDigits: 0 }}
+              />            
+            </Paragraph>
+          </Stack>
           <Alert severity="warning">
             <Stack spacing={1}>
               <H5>{t('wallet.deposit.reInvestment')}</H5>
               <Paragraph color="text.secondary">{t('wallet.deposit.description')}</Paragraph>
             </Stack>
           </Alert>
+          <KYTTip portfolio={portfolio} />
         </Stack>
       </ROOT>
       <DialogActions>

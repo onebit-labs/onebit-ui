@@ -90,8 +90,8 @@ const locale = {
       description:
         'A management fee is a periodic payment that is paid by depositors to the Porfolio Manager. The fee is calculated as an annualized percentage of assets under management and is independent of Vault returns.',
     },
-    perfomance: {
-      title: 'Perfomance Fee',
+    performance: {
+      title: 'Performance Fee',
       description:
         'A performance fee is a percentage-based fee depositors pay to the Portfolio Manager out of the positive returns made over a pre-defined period. The pre-defined period is referred to as a Locked-up period (typically a year or a quarter). The returns are benchmarked against the denomination asset. ',
     },
