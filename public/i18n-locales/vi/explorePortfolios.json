@@ -19,7 +19,7 @@
     "lockUpPeriod": "Thời gian khóa",
     "days": "ngày",
     "netValue": "Giá trị ròng tích lũy",
-    "past7D": "7D qua",
+    "currentNetValue": "Giá trị ròng hiện tại%",
     "AUM": "AUM",
     "estimatedAPY": "APY ước tính",
     "currentAPY": "APY hiện tại",

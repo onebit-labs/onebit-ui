@@ -50,6 +50,13 @@
           "El inversor tiene un sesgo largo a largo plazo del mercado criptográfico."
         ]
       },
+      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
+        "main": "La estrategia tiene como objetivo predecir las tendencias de precios actuales a través de la preferencia de riesgo por el entorno macro, niveles de valoración razonables de las monedas y el impulso de las tendencias del mercado. El proceso de inversión es una combinación de múltiples capas de arriba hacia abajo de macro, valor y tendencia.",
+        "investmentRationale": [
+          "Adecuado para inversores que buscan riesgos y esperan un alto rendimiento anual.",
+          "El inversor tiene un sesgo largo a largo plazo del mercado criptográfico."
+        ]
+      },
       "investmentRationale": "Justificación de la inversión:"
     }
   },
@@ -57,7 +64,7 @@
     "netValue": {
       "title": "Valor neto actual",
       "change24h": "Pasado 1D",
-      "past7D": "Pasado 7D"
+      "currentNetValue": "Valor neto actual%"
     },
     "historicalAccumulativeNetValue": {
       "title": "Valor neto acumulado histórico",
@@ -71,7 +78,8 @@
       "depositors": "depositantes",
       "finalNetValue": "Valor neto final",
       "return": "Devolver",
-      "APY": "APY"
+      "APY": "APY",
+      "netValueTip": "Las comisiones de gestión y rendimiento se han deducido del valor neto que se muestra aquí."
     }
   },
   "fees": {
@@ -82,7 +90,7 @@
       "description": "Una comisión de gestión es un pago periódico que pagan los depositantes al Gestor de cartera. La tarifa se calcula como un porcentaje anualizado de los activos administrados y es independiente de los rendimientos de Vault."
     },
     "perfomance": {
-      "title": "Tarifa de desempeño",
+      "title": "Tarifa de rendimiento",
       "description": "Una comisión de rendimiento es una comisión basada en un porcentaje que los depositantes pagan al Gestor de la cartera sobre los rendimientos positivos obtenidos durante un período predefinido. El período predefinido se denomina período bloqueado (normalmente, un año o un trimestre). Los rendimientos se comparan con el activo de denominación."
     },
     "entrance": {

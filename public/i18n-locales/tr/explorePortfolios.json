@@ -16,10 +16,10 @@
     "withdraw": "Geri çekilmek"
   },
   "projectCard": {
-    "lockUpPeriod": "Kilitlenme Süresi",
+    "lockUpPeriod": "Kilitlenme Dönemi",
     "days": "gün",
     "netValue": "Kümülatif Net Değer",
-    "past7D": "Geçmiş 7D",
+    "currentNetValue": "Mevcut Net Değer %",
     "AUM": "AUM",
     "estimatedAPY": "Tahmini APY",
     "currentAPY": "Mevcut APY",

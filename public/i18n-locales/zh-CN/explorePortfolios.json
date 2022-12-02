@@ -19,7 +19,7 @@
     "lockUpPeriod": "锁定期",
     "days": "天",
     "netValue": "累计净值",
-    "past7D": "过去的7D",
+    "currentNetValue": "当前净值%",
     "AUM": "资产管理规模",
     "estimatedAPY": "预计每年",
     "currentAPY": "当前年度",

@@ -19,7 +19,7 @@
     "lockUpPeriod": "Период блокировки",
     "days": "Дни",
     "netValue": "Совокупная чистая стоимость",
-    "past7D": "Прошлое 7D",
+    "currentNetValue": "Текущая чистая стоимость%",
     "AUM": "АУМ",
     "estimatedAPY": "Расчетный APY",
     "currentAPY": "Текущий APY",

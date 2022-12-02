@@ -43,6 +43,12 @@
       "tip": "Bằng cách nhấp vào \"Chấp nhận\" bên dưới, tôi thừa nhận những điều trên,",
       "and": ", và"
     },
+    "KYT": {
+      "tip": "Danh mục đầu tư này yêu cầu địa chỉ ví của người dùng phải vượt qua kiểm tra KYT và được đưa vào danh sách trắng trước khi gửi tiền. Danh sách trắng có giá trị trong 3 tháng.",
+      "getWhitelisted": "Nhận danh sách trắng",
+      "conducting": "Tiến hành kiểm tra KYT",
+      "adding": "Thêm vào danh sách trắng"
+    },
     "deposit": {
       "amount": "Số lượng",
       "walletBalance": "Số dư trên Ví",

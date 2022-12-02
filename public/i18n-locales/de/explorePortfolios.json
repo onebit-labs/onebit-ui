@@ -19,7 +19,7 @@
     "lockUpPeriod": "Sperrfrist",
     "days": "Tage",
     "netValue": "Kumulierter Nettowert",
-    "past7D": "Nach 7D",
+    "currentNetValue": "Aktueller Nettowert %",
     "AUM": "AUM",
     "estimatedAPY": "Geschätzter APY",
     "currentAPY": "Aktuelle APY",

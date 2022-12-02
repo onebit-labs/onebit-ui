@@ -50,6 +50,13 @@
           "Der Investor hat eine langfristige Long-Tendenz des Kryptomarktes."
         ]
       },
+      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
+        "main": "Die Strategie zielt darauf ab, aktuelle Preistrends durch Risikopräferenz für das Makroumfeld, angemessene Bewertungsniveaus von Währungen und die Dynamik von Markttrends vorherzusagen. Der Anlageprozess ist eine mehrschichtige Top-down-Kombination aus Makro, Wert und Trend.",
+        "investmentRationale": [
+          "Geeignet für risikofreudige Anleger, die eine hohe jährliche Rendite erwarten.",
+          "Der Investor hat eine langfristige Long-Tendenz des Kryptomarktes."
+        ]
+      },
       "investmentRationale": "Begründung der Investition:"
     }
   },
@@ -57,7 +64,7 @@
     "netValue": {
       "title": "Aktueller Nettowert",
       "change24h": "Nach 1D",
-      "past7D": "Nach 7D"
+      "currentNetValue": "Aktueller Nettowert %"
     },
     "historicalAccumulativeNetValue": {
       "title": "Historischer kumulativer Nettowert",
@@ -71,7 +78,8 @@
       "depositors": "Einleger",
       "finalNetValue": "Endgültiger Nettowert",
       "return": "Zurückkehren",
-      "APY": "APY"
+      "APY": "APY",
+      "netValueTip": "Von dem hier ausgewiesenen Nettowert wurden die Verwaltungs- und Performancegebühren abgezogen."
     }
   },
   "fees": {

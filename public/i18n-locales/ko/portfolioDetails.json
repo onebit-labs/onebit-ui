@@ -50,6 +50,13 @@
           "투자자는 암호화폐 시장에 장기적으로 편향되어 있습니다."
         ]
       },
+      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
+        "main": "매크로 환경에 대한 위험 선호도, 통화의 합리적인 평가 수준, 시장 추세의 모멘텀을 통해 현재 가격 추세를 예측하는 것을 목표로 합니다. 투자 프로세스는 매크로, 가치 및 추세의 하향식 다층 조합입니다.",
+        "investmentRationale": [
+          "높은 연간 수익률을 기대하는 위험 추구 투자자에게 적합합니다.",
+          "투자자는 암호화폐 시장에 장기적으로 편향되어 있습니다."
+        ]
+      },
       "investmentRationale": "투자 근거:"
     }
   },
@@ -57,7 +64,7 @@
     "netValue": {
       "title": "현재 순 가치",
       "change24h": "지난 1D",
-      "past7D": "과거 7D"
+      "currentNetValue": "현재 순가치%"
     },
     "historicalAccumulativeNetValue": {
       "title": "역사적 누적 순 가치",
@@ -71,7 +78,8 @@
       "depositors": "예금자",
       "finalNetValue": "최종 순 가치",
       "return": "반품",
-      "APY": "APY"
+      "APY": "APY",
+      "netValueTip": "여기에 표시된 순 가치에서 관리 및 성과 수수료가 공제되었습니다."
     }
   },
   "fees": {

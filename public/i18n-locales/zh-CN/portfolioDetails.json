@@ -50,6 +50,13 @@
           "投资者对加密市场有长期的长期偏见。"
         ]
       },
+      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
+        "main": "该策略旨在通过对宏观环境的风险偏好、货币的合理估值水平和市场趋势的动能来预测当前的价格走势。投资过程是自上而下的多层次结合宏观、价值、趋势。",
+        "investmentRationale": [
+          "适合寻求高年回报的风险投资者。",
+          "投资者对加密市场有长期的长期偏见。"
+        ]
+      },
       "investmentRationale": "投资理由："
     }
   },
@@ -57,7 +64,7 @@
     "netValue": {
       "title": "当前净值",
       "change24h": "过去一维",
-      "past7D": "过去的7D"
+      "currentNetValue": "当前净值%"
     },
     "historicalAccumulativeNetValue": {
       "title": "历史累计净值",
@@ -71,7 +78,8 @@
       "depositors": "储户",
       "finalNetValue": "最终净值",
       "return": "返回",
-      "APY": "年度"
+      "APY": "年度",
+      "netValueTip": "此处显示的净值已扣除管理费和绩效费。"
     }
   },
   "fees": {

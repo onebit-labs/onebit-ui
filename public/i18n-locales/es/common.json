@@ -43,6 +43,12 @@
       "tip": "Al hacer clic en \"Aceptar\" a continuación, reconozco lo anterior, la",
       "and": ", y"
     },
+    "KYT": {
+      "tip": "Esta cartera requiere que las direcciones de billetera de los usuarios pasen los controles KYT y se incluyan en la lista blanca antes de depositar fondos. La lista blanca es válida por 3 meses.",
+      "getWhitelisted": "Obtener en la lista blanca",
+      "conducting": "Realización de verificaciones KYT",
+      "adding": "Agregar a la lista blanca"
+    },
     "deposit": {
       "amount": "Monto",
       "walletBalance": "Saldo de la cartera",

@@ -50,6 +50,13 @@
           "Nhà đầu tư có xu hướng dài hạn đối với thị trường tiền điện tử."
         ]
       },
+      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
+        "main": "Chiến lược này nhằm mục đích dự đoán xu hướng giá hiện tại thông qua ưu tiên rủi ro đối với môi trường vĩ mô, mức định giá hợp lý của tiền tệ và động lực của xu hướng thị trường. Quá trình đầu tư là sự kết hợp nhiều lớp từ trên xuống của vĩ mô, giá trị và xu hướng.",
+        "investmentRationale": [
+          "Thích hợp cho các nhà đầu tư tìm kiếm rủi ro mong đợi lợi nhuận hàng năm cao.",
+          "Nhà đầu tư có xu hướng dài hạn đối với thị trường tiền điện tử."
+        ]
+      },
       "investmentRationale": "Cơ sở đầu tư:"
     }
   },
@@ -57,7 +64,7 @@
     "netValue": {
       "title": "Giá trị ròng hiện tại",
       "change24h": "Quá khứ 1D",
-      "past7D": "7D qua"
+      "currentNetValue": "Giá trị ròng hiện tại%"
     },
     "historicalAccumulativeNetValue": {
       "title": "Giá trị ròng tích lũy lịch sử",
@@ -71,7 +78,8 @@
       "depositors": "Người gửi tiền",
       "finalNetValue": "Giá trị ròng cuối cùng",
       "return": "Trở về",
-      "APY": "APY"
+      "APY": "APY",
+      "netValueTip": "Phí quản lý và hiệu suất đã được khấu trừ khỏi giá trị thực được hiển thị ở đây."
     }
   },
   "fees": {

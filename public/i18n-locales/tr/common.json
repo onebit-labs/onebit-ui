@@ -43,10 +43,16 @@
       "tip": "Aşağıdaki \"Kabul Et\"i tıklayarak, yukarıdakileri kabul ediyorum,",
       "and": ", ve"
     },
+    "KYT": {
+      "tip": "Bu portföy, kullanıcı cüzdan adreslerinin KYT kontrollerinden geçmesini ve para yatırmadan önce beyaz listeye alınmasını gerektirir. Beyaz liste 3 ay geçerlidir.",
+      "getWhitelisted": "Beyaz Listeye Alın",
+      "conducting": "KYT Kontrollerinin Yapılması",
+      "adding": "Beyaz Listeye Ekleniyor"
+    },
     "deposit": {
       "amount": "Tutar",
       "walletBalance": "Cüzdan Bakiyesi",
-      "lockUpPeriod": "Kilitlenme Dönemi",
+      "lockUpPeriod": "Kilitlenme Süresi",
       "days": "gün",
       "tip": "Bu portföyün yıllık <managementFee>yönetim ücreti</managementFee> yönetim ücreti ve <performanceFee>performans ücreti</performanceFee> performans ücreti vardır.",
       "reInvestment": "Otomatik yeniden yatırım",

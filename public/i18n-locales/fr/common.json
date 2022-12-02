@@ -43,6 +43,12 @@
       "tip": "En cliquant sur \"Accepter\" ci-dessous, je reconnais ce qui précède, le",
       "and": ", et"
     },
+    "KYT": {
+      "tip": "Ce portefeuille nécessite que les adresses de portefeuille des utilisateurs passent les vérifications KYT et soient inscrites sur la liste blanche avant de déposer des fonds. La liste blanche est valable 3 mois.",
+      "getWhitelisted": "Obtenir la liste blanche",
+      "conducting": "Effectuer des vérifications KYT",
+      "adding": "Ajout à la liste blanche"
+    },
     "deposit": {
       "amount": "Montant",
       "walletBalance": "Solde du portefeuille",

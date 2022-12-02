@@ -19,7 +19,7 @@
     "lockUpPeriod": "Période de blocage",
     "days": "Journées",
     "netValue": "Valeur nette cumulée",
-    "past7D": "Passé 7D",
+    "currentNetValue": "Valeur nette actuelle %",
     "AUM": "AUM",
     "estimatedAPY": "APY estimé",
     "currentAPY": "APY actuel",

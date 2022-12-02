@@ -19,7 +19,7 @@
     "lockUpPeriod": "فترة القفل",
     "days": "أيام",
     "netValue": "صافي القيمة التراكمية",
-    "past7D": "الماضي 7D",
+    "currentNetValue": "القيمة الصافية الحالية٪",
     "AUM": "AUM",
     "estimatedAPY": "يقدر APY",
     "currentAPY": "APY الحالي",

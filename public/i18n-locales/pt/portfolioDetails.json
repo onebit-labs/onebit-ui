@@ -50,6 +50,13 @@
           "O investidor tem um viés de longo prazo do mercado de criptomoedas."
         ]
       },
+      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
+        "main": "A estratégia visa prever as tendências atuais de preços por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
+        "investmentRationale": [
+          "Adequado para investidores que buscam risco e esperam um alto retorno anual.",
+          "O investidor tem um viés de longo prazo do mercado de criptomoedas."
+        ]
+      },
       "investmentRationale": "Justificativa do Investimento:"
     }
   },
@@ -57,7 +64,7 @@
     "netValue": {
       "title": "Valor líquido atual",
       "change24h": "Passado 1D",
-      "past7D": "Passado 7D"
+      "currentNetValue": "Valor Líquido Atual%"
     },
     "historicalAccumulativeNetValue": {
       "title": "Valor Líquido Acumulado Histórico",
@@ -71,7 +78,8 @@
       "depositors": "Depositantes",
       "finalNetValue": "Valor líquido final",
       "return": "Retornar",
-      "APY": "APY"
+      "APY": "APY",
+      "netValueTip": "As comissões de gestão e performance foram deduzidas ao valor líquido aqui apresentado."
     }
   },
   "fees": {
@@ -89,7 +97,7 @@
       "title": "Taxa de entrada"
     },
     "exit": {
-      "title": "Taxa de Saída"
+      "title": "Taxa de saída"
     }
   },
   "policies": {

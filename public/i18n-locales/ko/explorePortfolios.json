@@ -19,7 +19,7 @@
     "lockUpPeriod": "락업 기간",
     "days": "날",
     "netValue": "누적 순 가치",
-    "past7D": "과거 7D",
+    "currentNetValue": "현재 순가치%",
     "AUM": "AUM",
     "estimatedAPY": "예상 연이율",
     "currentAPY": "현재 APY",

@@ -43,12 +43,18 @@
       "tip": "Ao clicar em \"Aceitar\" abaixo, reconheço o acima, o",
       "and": ", e"
     },
+    "KYT": {
+      "tip": "Este portfólio requer que os endereços de carteira do usuário passem nas verificações KYT e sejam incluídos na lista de permissões antes de depositar fundos. A lista branca é válida por 3 meses.",
+      "getWhitelisted": "Entrar na lista de permissões",
+      "conducting": "Realização de verificações KYT",
+      "adding": "Adicionando à lista de permissões"
+    },
     "deposit": {
       "amount": "Quantia",
       "walletBalance": "Saldo da Carteira",
       "lockUpPeriod": "Período de Bloqueio",
       "days": "Dias",
-      "tip": "Esta carteira tem uma taxa de administração anual de <managementFee>a taxa de administração</managementFee> e uma taxa de performance de <performanceFee>a taxa de desempenho</performanceFee>.",
+      "tip": "Esta carteira tem uma taxa de administração anual de <managementFee>a taxa de administração</managementFee> e uma taxa de performance de <performanceFee>a taxa de performance</performanceFee>.",
       "reInvestment": "Reinvestimento automático",
       "description": "Se os depositantes não retirarem os fundos no final do período de bloqueio, os fundos serão reinvestidos na carteira para o próximo período de bloqueio."
     },

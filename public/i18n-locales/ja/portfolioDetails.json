@@ -50,6 +50,13 @@
           "投資家は、暗号市場の長期的なバイアスを持っています。"
         ]
       },
+      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
+        "main": "この戦略は、マクロ環境に対するリスク選好、通貨の妥当な評価水準、および市場動向の勢いを通じて、現在の価格動向を予測することを目的としています。投資プロセスは、マクロ、バリュー、トレンドのトップダウンの多層的な組み合わせです。",
+        "investmentRationale": [
+          "高い年間リターンを期待するリスクを求める投資家に適しています。",
+          "投資家は、暗号市場の長期的なバイアスを持っています。"
+        ]
+      },
       "investmentRationale": "投資理由:"
     }
   },
@@ -57,7 +64,7 @@
     "netValue": {
       "title": "現在の正味価値",
       "change24h": "過去1D",
-      "past7D": "過去7D"
+      "currentNetValue": "現在の正味価値%"
     },
     "historicalAccumulativeNetValue": {
       "title": "過去の累積正味価値",
@@ -71,7 +78,8 @@
       "depositors": "預金者",
       "finalNetValue": "最終正味額",
       "return": "戻る",
-      "APY": "APY"
+      "APY": "APY",
+      "netValueTip": "管理費と成功報酬は、ここに表示されている正味額から差し引かれています。"
     }
   },
   "fees": {

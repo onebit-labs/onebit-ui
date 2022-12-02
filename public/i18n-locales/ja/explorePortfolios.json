@@ -19,7 +19,7 @@
     "lockUpPeriod": "ロックアップ期間",
     "days": "日々",
     "netValue": "累積正味額",
-    "past7D": "過去7D",
+    "currentNetValue": "現在の正味価値%",
     "AUM": "運用資産",
     "estimatedAPY": "推定APY",
     "currentAPY": "現在のAPY",

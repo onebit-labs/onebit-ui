@@ -1,7 +1,7 @@
 {
   "stats": {
     "assetsUnderManagement": "สินทรัพย์ภายใต้การจัดการ",
-    "totalProfitSinceInception": "กำไรรวมตั้งแต่เริ่มก่อตั้ง",
+    "totalProfitSinceInception": "กำไรรวมตั้งแต่ก่อตั้ง",
     "portfolios": "ผลงาน",
     "depositors": "ผู้ฝากเงิน"
   },
@@ -19,7 +19,7 @@
     "lockUpPeriod": "ระยะเวลาล็อคอัพ",
     "days": "วัน",
     "netValue": "มูลค่าสุทธิสะสม",
-    "past7D": "7D ที่ผ่านมา",
+    "currentNetValue": "มูลค่าสุทธิปัจจุบัน%",
     "AUM": "อั้ม",
     "estimatedAPY": "APY โดยประมาณ",
     "currentAPY": "APY ปัจจุบัน",

@@ -50,6 +50,13 @@
           "L'investisseur a un biais à long terme sur le marché de la cryptographie."
         ]
       },
+      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
+        "main": "La stratégie vise à prédire les tendances actuelles des prix en fonction de la préférence pour le risque pour l'environnement macroéconomique, des niveaux de valorisation raisonnables des devises et de la dynamique des tendances du marché. Le processus d'investissement est une combinaison multicouche descendante de macro, de valeur et de tendance.",
+        "investmentRationale": [
+          "Convient aux investisseurs à la recherche de risques qui s'attendent à un rendement annuel élevé.",
+          "L'investisseur a un biais à long terme sur le marché de la cryptographie."
+        ]
+      },
       "investmentRationale": "Justification de l'investissement :"
     }
   },
@@ -57,7 +64,7 @@
     "netValue": {
       "title": "Valeur nette actuelle",
       "change24h": "Passé 1D",
-      "past7D": "Passé 7D"
+      "currentNetValue": "Valeur nette actuelle %"
     },
     "historicalAccumulativeNetValue": {
       "title": "Valeur nette cumulée historique",
@@ -71,7 +78,8 @@
       "depositors": "Déposants",
       "finalNetValue": "Valeur nette finale",
       "return": "Revenir",
-      "APY": "APY"
+      "APY": "APY",
+      "netValueTip": "Les commissions de gestion et de performance ont été déduites de la valeur nette indiquée ici."
     }
   },
   "fees": {

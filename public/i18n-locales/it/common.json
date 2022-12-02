@@ -43,6 +43,12 @@
       "tip": "Facendo clic su \"Accetto\" di seguito, riconosco quanto sopra, il",
       "and": ", e"
     },
+    "KYT": {
+      "tip": "Questo portafoglio richiede che gli indirizzi del portafoglio utente superino i controlli KYT e siano inseriti nella whitelist prima di depositare fondi. La whitelist è valida per 3 mesi.",
+      "getWhitelisted": "Ottieni una lista bianca",
+      "conducting": "Conduzione di controlli KYT",
+      "adding": "Aggiunta alla lista bianca"
+    },
     "deposit": {
       "amount": "Quantità",
       "walletBalance": "Saldo del portafoglio",

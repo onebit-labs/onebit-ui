@@ -43,6 +43,12 @@
       "tip": "Indem ich unten auf „Akzeptieren“ klicke, erkenne ich das Vorstehende an",
       "and": ", und"
     },
+    "KYT": {
+      "tip": "Dieses Portfolio erfordert, dass Benutzer-Wallet-Adressen KYT-Prüfungen bestehen und vor der Einzahlung auf die Whitelist gesetzt werden. Die Whitelist ist 3 Monate gültig.",
+      "getWhitelisted": "Lassen Sie sich auf die Whitelist setzen",
+      "conducting": "Durchführung von KYT-Checks",
+      "adding": "Zur Whitelist hinzufügen"
+    },
     "deposit": {
       "amount": "Menge",
       "walletBalance": "Wallet-Guthaben",
