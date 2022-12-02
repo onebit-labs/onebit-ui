@@ -21,6 +21,8 @@ import { usePost } from 'app/hooks/request'
 import type { WithdrawProps } from 'lib/protocol/typechain/onebit'
 import { createPromise } from 'app/utils/promise'
 import Alert from '@mui/material/Alert'
+import KYTButton from 'components/project/KYTButton'
+import KYTTip from 'components/project/KYTTip'
 
 const WithdrawDialog: FC = () => {
   const { withdraw } = useDialogs()
@@ -70,38 +72,41 @@ const WithdrawDialog: FC = () => {
           </FlexBetween>
           <NumberInput value={input.value} disabled={input.disabled} onChange={input.onChange} onMax={input.onMax} />
           <Alert severity="info">{t('wallet.withdrawal.tip')}</Alert>
+          <KYTTip portfolio={portfolio} />
         </Stack>
       </ROOT>
       <DialogActions>
-        <Button
-          variant="contained"
-          disabled={loading || !networkAccount || !input.value}
-          onClick={() => {
-            const { promise, reslove } = createPromise()
-            if (!signature.hasUserAgreement) {
-              signature.dialog.open(reslove)
-            } else {
-              reslove()
-            }
+        <KYTButton portfolio={portfolio}>
+          <Button
+            variant="contained"
+            disabled={loading || !networkAccount || !input.value}
+            onClick={() => {
+              const { promise, reslove } = createPromise()
+              if (!signature.hasUserAgreement) {
+                signature.dialog.open(reslove)
+              } else {
+                reslove()
+              }
 
-            return promise
-              .then(() =>
-                post({
-                  pool: address.LendingPool,
-                  erc20Service,
-                  reserve: address.symbol,
-                  user: networkAccount,
-                  amount: input.value,
+              return promise
+                .then(() =>
+                  post({
+                    pool: address.LendingPool,
+                    erc20Service,
+                    reserve: address.symbol,
+                    user: networkAccount,
+                    amount: input.value,
+                  })
+                )
+                .then(() => {
+                  updateData()
+                  withdraw.close()
                 })
-              )
-              .then(() => {
-                updateData()
-                withdraw.close()
-              })
-          }}
-        >
-          {t('common:wallet.btn.withdraw')}
-        </Button>
+            }}
+          >
+            {t('common:wallet.btn.withdraw')}
+          </Button>
+        </KYTButton>
       </DialogActions>
     </Dialog>
   )

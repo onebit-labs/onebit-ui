@@ -44,6 +44,12 @@ const locale = {
       tip: 'By clicking "Accept" below, I acknowledge the above, the ',
       and: ', and ',
     },
+    KYT: {
+      tip: 'This portfolio requires user wallet addresses to pass KYT checks and be whitelisted before depositing funds. The whitelist is valid for 3 months.',
+      getWhitelisted: 'Get Whitelisted',
+      conducting: 'Conducting KYT Checks',
+      adding: 'Adding To Whitelist',
+    },
     deposit: {
       amount: 'Amount',
       walletBalance: 'Wallet Balance',

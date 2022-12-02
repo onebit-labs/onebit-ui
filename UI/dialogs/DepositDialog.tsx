@@ -22,6 +22,8 @@ import { usePost } from 'app/hooks/request'
 import type { DepositProps } from 'lib/protocol/typechain/onebit'
 import { createPromise } from 'app/utils/promise'
 import Alert from '@mui/material/Alert'
+import KYTButton from 'components/project/KYTButton'
+import KYTTip from 'components/project/KYTTip'
 
 const DepositDialog: FC = () => {
   const { deposit } = useDialogs()
@@ -110,6 +112,7 @@ const DepositDialog: FC = () => {
               }}
             />
           </Alert>
+          <KYTTip portfolio={portfolio} />
           <Alert severity="warning">
             <Stack spacing={1}>
               <H5>{t('wallet.deposit.reInvestment')}</H5>
@@ -119,35 +122,37 @@ const DepositDialog: FC = () => {
         </Stack>
       </ROOT>
       <DialogActions>
-        <Button
-          variant="contained"
-          disabled={loading || !networkAccount || !input.value}
-          onClick={() => {
-            const { promise, reslove } = createPromise()
-            if (!signature.hasUserAgreement) {
-              signature.dialog.open(reslove)
-            } else {
-              reslove()
-            }
+        <KYTButton portfolio={portfolio}>
+          <Button
+            variant="contained"
+            disabled={loading || !networkAccount || !input.value}
+            onClick={() => {
+              const { promise, reslove } = createPromise()
+              if (!signature.hasUserAgreement) {
+                signature.dialog.open(reslove)
+              } else {
+                reslove()
+              }
 
-            return promise
-              .then(() =>
-                post({
-                  pool: address.LendingPool,
-                  erc20Service,
-                  reserve: address.symbol,
-                  user: networkAccount,
-                  amount: input.value,
+              return promise
+                .then(() =>
+                  post({
+                    pool: address.LendingPool,
+                    erc20Service,
+                    reserve: address.symbol,
+                    user: networkAccount,
+                    amount: input.value,
+                  })
+                )
+                .then(() => {
+                  updateData()
+                  deposit.close()
                 })
-              )
-              .then(() => {
-                updateData()
-                deposit.close()
-              })
-          }}
-        >
-          {t('wallet.btn.deposit')}
-        </Button>
+            }}
+          >
+            {t('wallet.btn.deposit')}
+          </Button>
+        </KYTButton>
       </DialogActions>
     </Dialog>
   )

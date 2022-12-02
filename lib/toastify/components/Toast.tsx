@@ -60,7 +60,7 @@ export const Toast: React.FC<ToastProps> = (props) => {
         role={role}
       >
         <CardHeader
-          sx={{ width: '100%' }}
+          sx={{ width: '100%', wordBreak: 'break-all' }}
           avatar={Icon}
           action={closeButton !== false && <CloseButton closeToast={closeToast} type={type} />}
           title={children as any}
