@@ -15,14 +15,17 @@ type baseLendingPoolProps = {
   pool: tEthereumAddress
 }
 
-export type getReserveDataProps = baseLendingPoolProps
-export type depositProps = baseLendingPoolProps & {
+export type GetReserveDataProps = baseLendingPoolProps
+export type GetUserExpirationTimestampProps = baseLendingPoolProps & {
+  user: tEthereumAddress
+}
+export type DepositProps = baseLendingPoolProps & {
   erc20Service: ERC20Service
   reserve: tEthereumAddress
   user: tEthereumAddress
   amount: string
 }
-export type withdrawProps = baseLendingPoolProps & {
+export type WithdrawProps = baseLendingPoolProps & {
   erc20Service: ERC20Service
   reserve: tEthereumAddress
   user: tEthereumAddress
@@ -42,17 +45,22 @@ export class LendingPoolService extends BaseService<LendingPool> {
     this.withdraw = this.withdraw.bind(this)
   }
 
-  public getReserveData({ pool }: getReserveDataProps) {
+  public getReserveData({ pool }: GetReserveDataProps) {
     const lendingPool = this.getContractInstance(pool)
     return lendingPool.getReserveData()
   }
 
-  public getReserveNormalizedIncome({ pool }: getReserveDataProps) {
+  public getReserveNormalizedIncome({ pool }: GetReserveDataProps) {
     const lendingPool = this.getContractInstance(pool)
     return lendingPool.getReserveNormalizedIncome()
   }
 
-  public async deposit({ pool, erc20Service, reserve, user, amount }: depositProps) {
+  public getUserExpirationTimestamp({ pool, user }: GetUserExpirationTimestampProps) {
+    const lendingPool = this.getContractInstance(pool)
+    return lendingPool.getUserExpirationTimestamp(user).then(({ data }) => data)
+  }
+
+  public async deposit({ pool, erc20Service, reserve, user, amount }: DepositProps) {
     const txs: EthereumTransactionTypeExtended[] = []
     const { isApproved, approve, decimalsOf } = erc20Service
     const reserveDecimals = await decimalsOf(reserve)
@@ -91,7 +99,7 @@ export class LendingPoolService extends BaseService<LendingPool> {
     return txs
   }
 
-  public async withdraw({ pool, erc20Service, reserve, amount, user }: withdrawProps) {
+  public async withdraw({ pool, erc20Service, reserve, amount, user }: WithdrawProps) {
     const txs: EthereumTransactionTypeExtended[] = []
     const { decimalsOf } = erc20Service
     const decimals = await decimalsOf(reserve)

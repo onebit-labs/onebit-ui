@@ -1,5 +1,5 @@
 import { useControllers, useWallet } from 'domains'
-import { useERC20, useNetwork } from 'domains/data'
+import { useERC20, useNetwork, useLendingPool } from 'domains/data'
 import { useEffect, useMemo } from 'react'
 
 import { log } from 'app/utils/dev'
@@ -11,9 +11,10 @@ const useLendingPoolEffect = () => {
   const {
     address,
     markets,
-    contracts: { erc20Service, oTokenService },
+    contracts: { erc20Service, oTokenService, lendingPool },
   } = useNetwork()
   const {
+    lendingPool: { userExpirationTimestamp: userExpirationTimestampSingle },
     erc20: { balanceOf: balanceOfPolling, scaledBalanceOf: scaledBalanceOfPolling },
   } = useControllers()
 
@@ -31,14 +32,6 @@ const useLendingPoolEffect = () => {
     }),
     [erc20Service, networkAccount, tokens]
   )
-  const oTokenQuery = useMemo(
-    () => ({
-      oTokenService,
-      user: networkAccount,
-      tokens: oTokens,
-    }),
-    [networkAccount, oTokenService, oTokens]
-  )
 
   useEffect(() => {
     if (!query.tokens.length || !query.user || !balanceOfPolling) return
@@ -48,6 +41,14 @@ const useLendingPoolEffect = () => {
     }
   }, [query, balanceOfPolling])
 
+  const oTokenQuery = useMemo(
+    () => ({
+      oTokenService,
+      user: networkAccount,
+      tokens: oTokens,
+    }),
+    [networkAccount, oTokenService, oTokens]
+  )
   useEffect(() => {
     if (!oTokenQuery.tokens.length || !oTokenQuery.user || !scaledBalanceOfPolling) return
     scaledBalanceOfPolling.run(oTokenQuery, 600000)
@@ -55,6 +56,25 @@ const useLendingPoolEffect = () => {
       scaledBalanceOfPolling.stop()
     }
   }, [oTokenQuery, scaledBalanceOfPolling])
+
+  const userExpirationTimestampQuery = useMemo(() => {
+    return {
+      lendingPoolService: lendingPool,
+      account: networkAccount,
+      lendingPools: markets.filter((market) => market.info.useWhitelist).map((market) => market.address.LendingPool),
+    }
+  }, [lendingPool, markets, networkAccount])
+  useEffect(() => {
+    if (
+      !userExpirationTimestampQuery.lendingPools.length ||
+      !userExpirationTimestampQuery.account ||
+      !userExpirationTimestampSingle
+    ) {
+      return
+    }
+
+    userExpirationTimestampSingle.run(userExpirationTimestampQuery)
+  }, [userExpirationTimestampQuery, userExpirationTimestampSingle])
 
   return {
     networkAccount,
@@ -67,12 +87,18 @@ type UserReserveDataProps = {
 export const useUserReserveData = ({ marketReserveData }: UserReserveDataProps) => {
   const { networkAccount } = useLendingPoolEffect()
   const { balanceOf, scaledBalanceOf } = useERC20()
+  const { userExpirationTimestampSource } = useLendingPool()
   const userReserveData = useMemo(() => {
     if (!networkAccount) return {} as undefined
-    const returnValue = getUserReserveData({ balanceOf, scaledBalanceOf, marketReserveData })
+    const returnValue = getUserReserveData({
+      balanceOf,
+      scaledBalanceOf,
+      marketReserveData,
+      userExpirationTimestampSource,
+    })
     log('[portfolio] [userReserveData]', returnValue)
     return returnValue
-  }, [balanceOf, marketReserveData, networkAccount, scaledBalanceOf])
+  }, [balanceOf, marketReserveData, networkAccount, scaledBalanceOf, userExpirationTimestampSource])
 
   return { userReserveData }
 }

@@ -1,9 +1,11 @@
 import { useReserveDataController } from '../../store/reserveData'
 import { useReserveNormalizedIncomeController } from '../../store/reserveNormalizedIncome'
+import { useUserExpirationTimestampController } from '../../store/userExpirationTimestamp'
 
 export const useLendingPoolController = () => {
   const { polling: reserveData } = useReserveDataController()
   const { single: reserveNormalizedIncome } = useReserveNormalizedIncomeController()
+  const { single: userExpirationTimestamp } = useUserExpirationTimestampController()
 
-  return { reserveData, reserveNormalizedIncome }
+  return { reserveData, reserveNormalizedIncome, userExpirationTimestamp }
 }

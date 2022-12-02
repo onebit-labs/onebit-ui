@@ -13,6 +13,7 @@ export type MarketInfo = {
   series: string
   symbol: string
   estimatedAPY: string
+  useWhitelist?: boolean
 }
 
 const getMarketInfo = (id: MarketId): MarketInfo => {
@@ -56,6 +57,7 @@ const getMarketInfo = (id: MarketId): MarketInfo => {
         series: 'Onebit Smart Trend-USDT',
         symbol: 'USDT',
         estimatedAPY: '60.5% - 81.2%',
+        useWhitelist: true,
       }
   }
 }

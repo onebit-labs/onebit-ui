@@ -19,7 +19,7 @@ import { useControllers, useWallet } from 'domains'
 import { transaction } from 'domains/controllers/adapter/transaction'
 import { useSendTransaction } from 'lib/protocol/hooks/sendTransaction'
 import { usePost } from 'app/hooks/request'
-import type { depositProps } from 'lib/protocol/typechain/onebit'
+import type { DepositProps } from 'lib/protocol/typechain/onebit'
 import { createPromise } from 'app/utils/promise'
 import Alert from '@mui/material/Alert'
 
@@ -55,7 +55,7 @@ const DepositDialog: FC = () => {
   const sendTransaction = useSendTransaction()
 
   const fn = useCallback(
-    (props: depositProps) => {
+    (props: DepositProps) => {
       return transaction({
         createTransaction: lendingPool.deposit(props),
         setStatus: () => {},
