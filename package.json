@@ -13,7 +13,7 @@
     "typechain": "yarn typechain:chainlink",
     "typechain:chainlink": "typechain --target ethers-v5 --out-dir lib/protocol/typechain/chainlink/typechain './lib/protocol/typechain/chainlink/chainlink.json'",
     "codegen": "yarn codegen:openAPI && yarn fix",
-    "codegen:openAPI": "openapi --input http://35.177.189.244/api/openapi.json --output ./lib/openapi --client axios"
+    "codegen:openAPI": "openapi --input https://api.onebit.com/api/openapi.json --output ./lib/openapi --client axios"
   },
   "private": true,
   "sideEffects": false,

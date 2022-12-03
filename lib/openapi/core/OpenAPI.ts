@@ -19,7 +19,7 @@ export type OpenAPIConfig = {
 }
 
 export const OpenAPI: OpenAPIConfig = {
-  BASE: 'http://35.177.189.244',
+  BASE: 'https://api.onebit.com',
   VERSION: '0.0.1',
   WITH_CREDENTIALS: false,
   CREDENTIALS: 'include',

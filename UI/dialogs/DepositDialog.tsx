@@ -1,5 +1,5 @@
 import Dialog from 'components/dialog/Dialog'
-import { Trans, useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-i18next'
 import type { FC } from 'react'
 import { useCallback } from 'react'
 import { useMemo } from 'react'
@@ -86,16 +86,16 @@ const DepositDialog: FC = () => {
           <Stack spacing={1}>
             <H5>{t('wallet.deposit.lockUpPeriod')}</H5>
             <Paragraph color="text.secondary">
-              {<TimePeriod start={purchaseEndTimestamp} end={redemptionBeginTimestamp} />} {'('}{lockTime} {t('wallet.deposit.days')}{')'}
+              {<TimePeriod start={purchaseEndTimestamp} end={redemptionBeginTimestamp} />} {'('}
+              {lockTime} {t('wallet.deposit.days')}
+              {')'}
             </Paragraph>
           </Stack>
           <Stack spacing={1}>
             <Tooltip title={t('portfolioDetails:fees.management.description')}>
               <Stack direction="row" alignItems="center" spacing={1}>
-                <H5>
-                  {t('portfolioDetails:fees.management.title')}
-                </H5>
-                <HelpOutlinedIcon fontSize="inherit" sx={{ color: 'text.secondary' }}/>
+                <H5>{t('portfolioDetails:fees.management.title')}</H5>
+                <HelpOutlinedIcon fontSize="inherit" sx={{ color: 'text.secondary' }} />
               </Stack>
             </Tooltip>
             <Paragraph color="text.secondary">
@@ -103,16 +103,14 @@ const DepositDialog: FC = () => {
                 value={managementFeeRate}
                 options="percent"
                 numberFormatOptions={{ minimumFractionDigits: 0 }}
-              />            
+              />
             </Paragraph>
           </Stack>
           <Stack spacing={1}>
             <Tooltip title={t('portfolioDetails:fees.performance.description')}>
               <Stack direction="row" alignItems="center" spacing={1}>
-                <H5>
-                  {t('portfolioDetails:fees.performance.title')}
-                </H5>
-                <HelpOutlinedIcon fontSize="inherit" sx={{ color: 'text.secondary' }}/>
+                <H5>{t('portfolioDetails:fees.performance.title')}</H5>
+                <HelpOutlinedIcon fontSize="inherit" sx={{ color: 'text.secondary' }} />
               </Stack>
             </Tooltip>
             <Paragraph color="text.secondary">
@@ -120,7 +118,7 @@ const DepositDialog: FC = () => {
                 value={performanceFeeRate}
                 options="percent"
                 numberFormatOptions={{ minimumFractionDigits: 0 }}
-              />            
+              />
             </Paragraph>
           </Stack>
           <Alert severity="warning">
