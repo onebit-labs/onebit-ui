@@ -55,7 +55,7 @@
       "lockUpPeriod": "Sperrfrist",
       "days": "Tage",
       "tip": "Dieses Portfolio hat eine jährliche Verwaltungsgebühr von <managementFee>die Verwaltungsgebühr</managementFee> und eine Performancegebühr von <performanceFee>das Leistungshonorar</performanceFee>.",
-      "reInvestment": "Automatische Wiederanlage",
+      "reInvestment": "Automatische Reinvestition",
       "description": "Wenn Einleger die Gelder am Ende der Sperrfrist nicht abheben, werden die Gelder für die nächste Sperrfrist wieder in das Portfolio investiert."
     },
     "withdrawal": {

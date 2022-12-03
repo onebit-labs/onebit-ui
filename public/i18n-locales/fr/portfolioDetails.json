@@ -89,8 +89,8 @@
       "tip": "2 % si le rendement cumulé est supérieur à 20 %",
       "description": "Les frais de gestion sont un paiement périodique versé par les déposants au gestionnaire de portefeuille. Les frais sont calculés en pourcentage annualisé des actifs sous gestion et sont indépendants des rendements de Vault."
     },
-    "perfomance": {
-      "title": "Frais de performance",
+    "performance": {
+      "title": "Commission de performance",
       "description": "Une commission de performance est une commission basée sur un pourcentage que les déposants paient au gestionnaire de portefeuille sur les rendements positifs réalisés sur une période prédéfinie. La période prédéfinie est appelée période de blocage (généralement un an ou un trimestre). Les rendements sont comparés à l'actif de dénomination."
     },
     "entrance": {

@@ -55,7 +55,7 @@
       "lockUpPeriod": "Período de bloqueo",
       "days": "Días",
       "tip": "Esta cartera tiene una comisión de gestión anual de <managementFee>la comisión de gestión</managementFee> y una comisión de rendimiento de <performanceFee>la tasa de rendimiento</performanceFee>.",
-      "reInvestment": "Reinversión automática",
+      "reInvestment": "Reinversión de automóviles",
       "description": "Si los depositantes no retiran los fondos al final del período de bloqueo, los fondos se reinvertirán en la cartera para el próximo período de bloqueo."
     },
     "withdrawal": {

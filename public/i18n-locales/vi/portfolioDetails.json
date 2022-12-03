@@ -89,8 +89,8 @@
       "tip": "2% nếu lợi nhuận tích lũy trên 20%",
       "description": "Phí quản lý là khoản thanh toán định kỳ do người gửi tiền trả cho Trình quản lý danh mục đầu tư. Phí được tính theo tỷ lệ phần trăm hàng năm của tài sản được quản lý và không phụ thuộc vào lợi nhuận của Vault."
     },
-    "perfomance": {
-      "title": "Phí thực hiện",
+    "performance": {
+      "title": "Phí thi công",
       "description": "Phí thực hiện là khoản phí dựa trên tỷ lệ phần trăm mà người gửi tiền phải trả cho Người quản lý danh mục đầu tư dựa trên lợi nhuận dương được thực hiện trong một khoảng thời gian xác định trước. Khoảng thời gian được xác định trước được gọi là Khoảng thời gian khóa (thường là một năm hoặc một quý). Lợi nhuận được so sánh với tài sản mệnh giá."
     },
     "entrance": {

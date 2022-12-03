@@ -89,8 +89,8 @@
       "tip": "Kümülatif getiri %20'nin üzerinde ise %2",
       "description": "Yönetim ücreti, mevduat sahipleri tarafından Portföy Yöneticisine ödenen periyodik bir ödemedir. Ücret, yönetilen varlıkların yıllık yüzdesi olarak hesaplanır ve Apps Kasası getirilerinden bağımsızdır."
     },
-    "perfomance": {
-      "title": "Performans Ücreti",
+    "performance": {
+      "title": "Performans ücreti",
       "description": "Performans ücreti, mevduat sahiplerinin önceden tanımlanmış bir süre boyunca elde edilen olumlu getirilerden Portföy Yöneticisine ödediği yüzdeye dayalı bir ücrettir. Önceden tanımlanmış dönem, Kilitli dönem olarak adlandırılır (tipik olarak bir yıl veya üç aylık dönem). Getiriler, mezhep varlığına göre kıyaslanır."
     },
     "entrance": {

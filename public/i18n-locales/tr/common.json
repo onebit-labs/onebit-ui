@@ -55,7 +55,7 @@
       "lockUpPeriod": "Kilitlenme Süresi",
       "days": "gün",
       "tip": "Bu portföyün yıllık <managementFee>yönetim ücreti</managementFee> yönetim ücreti ve <performanceFee>performans ücreti</performanceFee> performans ücreti vardır.",
-      "reInvestment": "Otomatik yeniden yatırım",
+      "reInvestment": "Otomatik Yeniden Yatırım",
       "description": "Mudilerin bloke süresi sonunda fonlarını çekmemesi durumunda, fonlar bir sonraki bloke süresi için portföye yeniden yatırılır."
     },
     "withdrawal": {

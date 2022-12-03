@@ -89,7 +89,7 @@
       "tip": "2 %, wenn die kumulierte Rendite über 20 % liegt",
       "description": "Eine Verwaltungsgebühr ist eine regelmäßige Zahlung, die von Einlegern an den Portfolio-Manager gezahlt wird. Die Gebühr wird als annualisierter Prozentsatz des verwalteten Vermögens berechnet und ist unabhängig von den Vault-Erträgen."
     },
-    "perfomance": {
+    "performance": {
       "title": "Leistungsgebühr",
       "description": "Eine Performancegebühr ist eine prozentuale Gebühr, die Einleger aus den positiven Renditen über einen vordefinierten Zeitraum an den Portfoliomanager zahlen. Der vordefinierte Zeitraum wird als Sperrzeit bezeichnet (normalerweise ein Jahr oder ein Quartal). Die Renditen werden mit dem Denominationsvermögenswert verglichen."
     },

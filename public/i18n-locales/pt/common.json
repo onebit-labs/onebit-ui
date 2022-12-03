@@ -54,7 +54,7 @@
       "walletBalance": "Saldo da Carteira",
       "lockUpPeriod": "Período de Bloqueio",
       "days": "Dias",
-      "tip": "Esta carteira tem uma taxa de administração anual de <managementFee>a taxa de administração</managementFee> e uma taxa de performance de <performanceFee>a taxa de performance</performanceFee>.",
+      "tip": "Esta carteira tem uma taxa de administração anual de <managementFee>a taxa de administração</managementFee> e uma taxa de desempenho de <performanceFee>a taxa de performance</performanceFee>.",
       "reInvestment": "Reinvestimento automático",
       "description": "Se os depositantes não retirarem os fundos no final do período de bloqueio, os fundos serão reinvestidos na carteira para o próximo período de bloqueio."
     },

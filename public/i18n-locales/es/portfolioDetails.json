@@ -89,9 +89,9 @@
       "tip": "2% si la rentabilidad acumulada es superior al 20%",
       "description": "Una comisión de gestión es un pago periódico que pagan los depositantes al Gestor de cartera. La tarifa se calcula como un porcentaje anualizado de los activos administrados y es independiente de los rendimientos de Vault."
     },
-    "perfomance": {
-      "title": "Tarifa de rendimiento",
-      "description": "Una comisión de rendimiento es una comisión basada en un porcentaje que los depositantes pagan al Gestor de la cartera sobre los rendimientos positivos obtenidos durante un período predefinido. El período predefinido se denomina período bloqueado (normalmente, un año o un trimestre). Los rendimientos se comparan con el activo de denominación."
+    "performance": {
+      "title": "Comisión de rentabilidad",
+      "description": "Una comisión de rendimiento es una comisión basada en porcentajes que los depositantes pagan al Gestor de la cartera sobre los rendimientos positivos obtenidos durante un período predefinido. El período predefinido se denomina período bloqueado (normalmente un año o un trimestre). Los rendimientos se comparan con el activo de denominación."
     },
     "entrance": {
       "title": "Precio de la entrada"

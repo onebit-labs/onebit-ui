@@ -30,28 +30,28 @@
         ]
       },
       "Onebit-Smart-Trend-USDT": {
-        "main": "A estratégia visa prever as tendências atuais de preços por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
+        "main": "A estratégia visa prever as tendências de preços atuais por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
         "investmentRationale": [
           "Adequado para investidores que buscam risco e esperam um alto retorno anual.",
           "O investidor tem um viés de longo prazo do mercado de criptomoedas."
         ]
       },
       "Onebit-Smart-Trend-BTC": {
-        "main": "A estratégia visa prever as tendências atuais de preços por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
+        "main": "A estratégia visa prever as tendências de preços atuais por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
         "investmentRationale": [
           "Adequado para investidores que buscam risco e esperam um alto retorno anual.",
           "O investidor tem um viés de longo prazo do mercado de criptomoedas."
         ]
       },
       "Onebit-Smart-Trend-USDT-Demo": {
-        "main": "A estratégia visa prever as tendências atuais de preços por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
+        "main": "A estratégia visa prever as tendências de preços atuais por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
         "investmentRationale": [
           "Adequado para investidores que buscam risco e esperam um alto retorno anual.",
           "O investidor tem um viés de longo prazo do mercado de criptomoedas."
         ]
       },
       "Onebit-Smart-Trend-USDT-Whitelist-Test": {
-        "main": "A estratégia visa prever as tendências atuais de preços por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
+        "main": "A estratégia visa prever as tendências de preços atuais por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
         "investmentRationale": [
           "Adequado para investidores que buscam risco e esperam um alto retorno anual.",
           "O investidor tem um viés de longo prazo do mercado de criptomoedas."
@@ -71,7 +71,7 @@
       "change24h": "Passado 1D"
     },
     "historicalPerformance": {
-      "title": "Desempenho histórico",
+      "title": "Desempenho Histórico",
       "term": "Prazo",
       "lockUpPeriod": "Período de Bloqueio",
       "AUM": "AUM",
@@ -89,8 +89,8 @@
       "tip": "2% se o retorno acumulado for superior a 20%",
       "description": "Uma comissão de gestão é um pagamento periódico que é pago pelos depositantes ao Gestor da Carteira. A taxa é calculada como uma porcentagem anualizada dos ativos sob gestão e é independente dos retornos do Vault."
     },
-    "perfomance": {
-      "title": "Taxa de desempenho",
+    "performance": {
+      "title": "Taxa de performance",
       "description": "Uma taxa de desempenho é uma taxa baseada em porcentagem que os depositantes pagam ao Gestor de Carteira com base nos retornos positivos obtidos durante um período predefinido. O período predefinido é referido como um período bloqueado (normalmente um ano ou um trimestre). Os retornos são comparados com o ativo de denominação."
     },
     "entrance": {
