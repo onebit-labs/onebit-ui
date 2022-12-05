@@ -1,4 +1,4 @@
-import type { ColumnProps, TableProps } from 'react-virtualized'
+import type { ColumnProps, TableProps, TableHeaderProps } from 'react-virtualized'
 
 export interface BasicTableProps<D = any> {
   columns: TableColumnsProps[]
@@ -22,7 +22,14 @@ export interface BasicTableProps<D = any> {
 }
 
 export type TableColumnsProps = ColumnProps & {
+  tip?: string
   isSelect?: boolean
   selectOptions?: Record<any, string>
   filters?: Array<(...args: any[]) => any>
 }
+
+export type TableHeaderRenderer = (
+  props: TableHeaderProps & {
+    tip?: string
+  }
+) => React.ReactNode
