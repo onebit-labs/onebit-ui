@@ -18,6 +18,7 @@ const Stats: FC = () => {
       {
         price: <NumberDisplay value={totalEquityValue} options="USD" abbreviate={{}} />,
         title: 'totalEquityValue',
+        tip: true,
       },
       {
         price: (
@@ -31,6 +32,7 @@ const Stats: FC = () => {
           </RiseOrFall>
         ),
         title: 'totalPNL',
+        tip: true,
       },
       {
         price: <NumberDisplay value={totalPortfolioDeposited} options="number" />,
@@ -39,6 +41,7 @@ const Stats: FC = () => {
       {
         price: <NumberDisplay value={APY} options="percent" min={0} />,
         title: 'APY',
+        tip: true,
       },
     ],
     [APY, totalEquityValue, totalPNL, totalPortfolioDeposited]

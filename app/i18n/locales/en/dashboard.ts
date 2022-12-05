@@ -4,6 +4,7 @@ const locale = {
     totalPNL: 'Total PNL',
     totalPortfolioDeposited: 'Total Portfolio Deposited',
     APY: 'APY',
+    tip: 'The management and performance fees have been deducted from the data shown here.',
   },
   totalEquityValue: {
     title: 'Total Equity Value',
@@ -17,7 +18,7 @@ const locale = {
     PNL: 'PNL',
     status: 'Status',
     action: 'Action',
-    netValueTip: 'The management and performance fees have been deducted from the net value shown here.',
+    tip: 'The management and performance fees have been deducted from the data shown here.',
   },
 }
 

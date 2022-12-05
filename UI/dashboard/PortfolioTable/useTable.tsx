@@ -93,9 +93,9 @@ export const useTable = (): BasicTableProps => {
         ] as TableColumnsProps[]
       ).map((column) => {
         column.label = t('portfolioTable.' + column.dataKey)
-        if (column.dataKey === 'netValue') {
+        if (['netValue', 'yourEquity', 'PNL'].includes(column.dataKey)) {
           column.label = (
-            <Tooltip title={t('portfolioTable.netValueTip')}>
+            <Tooltip title={t('portfolioTable.tip')}>
               <Stack direction="row" alignItems="center" spacing={1}>
                 <span>{t('portfolioTable.' + column.dataKey)}</span>
                 <HelpOutlinedIcon fontSize="inherit" />
