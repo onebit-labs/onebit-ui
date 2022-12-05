@@ -145,7 +145,7 @@ export const ROOT = styled('div')`
   .ReactVirtualized__Table__row {
     display: flex;
     will-change: transform;
-    padding: 20px;
+    padding: 20px 0;
     &:hover {
       ${({ theme }) => ({
         backgroundColor: theme.palette.action.hover,
