@@ -37,16 +37,6 @@ export const useChart = (portfolio: ChartProps) => {
     return portfolio.currentNetValue
   }, [portfolio.currentNetValue])
 
-  // const lineColor = useMemo(() => {
-  //   if (currentPeriodNetValueFluctuation.isZero()) {
-  //     return theme.palette.grey[500]
-  //   } else if (currentPeriodNetValueFluctuation.gt(0)) {
-  //     return theme.palette.success.main
-  //   } else {
-  //     return theme.palette.error.main
-  //   }
-  // }, [currentPeriodNetValueFluctuation, theme.palette.error.main, theme.palette.success.main, theme.palette.grey])
-
   const lineColor = theme.palette.secondary.main
 
   const props = useMemo(

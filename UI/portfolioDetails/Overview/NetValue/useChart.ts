@@ -53,16 +53,6 @@ export const useChart = () => {
     )
   }, [data])
 
-  // const lineColor = useMemo(() => {
-  //   if (changeAllTime.isZero()) {
-  //     return theme.palette.grey[500]
-  //   } else if (changeAllTime.gt(0)) {
-  //     return theme.palette.success.main
-  //   } else {
-  //     return theme.palette.error.main
-  //   }
-  // }, [changeAllTime, theme.palette.error.main, theme.palette.success.main, theme.palette.grey])
-
   const lineColor = theme.palette.secondary.main
 
   const props = useMemo(
