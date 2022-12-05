@@ -2,7 +2,6 @@ import { useMemo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { TableCellRenderer } from 'react-virtualized'
 
-import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import TableCell from '@mui/material/TableCell'
 import { cellRenderer, headerRenderer } from 'components/table/renderer'
@@ -24,17 +23,15 @@ export const useTable = (): BasicTableProps => {
   const ActionCellRenderer: TableCellRenderer = useCallback(
     ({ rowData }) => {
       return (
-        <TableCell component="div">
-          <Stack spacing={1} direction="row">
-            <Button
-              variant="contained"
-              size="small"
-              onClick={() => router.push(`/portfolio/${encodeURIComponent(rowData.id)}`)}
-              sx={{ padding: '5px' }}
-            >
-              {t('common:wallet.btn.details')}
-            </Button>
-          </Stack>
+        <TableCell component="div" align="center">
+          <Button
+            variant="contained"
+            size="small"
+            onClick={() => router.push(`/portfolio/${encodeURIComponent(rowData.id)}`)}
+            sx={{ padding: '5px' }}
+          >
+            {t('common:wallet.btn.details')}
+          </Button>
         </TableCell>
       )
     },
@@ -48,7 +45,7 @@ export const useTable = (): BasicTableProps => {
         [
           {
             dataKey: 'portfolioName',
-            width: 200,
+            width: 250,
             headerRenderer,
             cellRenderer,
           },
@@ -81,13 +78,13 @@ export const useTable = (): BasicTableProps => {
           },
           {
             dataKey: 'status',
-            width: 200,
+            width: 150,
             headerRenderer,
             cellRenderer: statusCellRenderer,
           },
           {
             dataKey: 'action',
-            width: 200,
+            width: 150,
             headerRenderer,
             cellRenderer: ActionCellRenderer,
           },

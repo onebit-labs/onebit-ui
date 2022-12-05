@@ -33,7 +33,7 @@ export const useChart = () => {
   } = usePortfolio()
   const dayButton = useDayButton()
 
-  const data = useMemo(() => {
+  const dataSource = useMemo(() => {
     if (!portfolioUserData) return []
     const map = {} as Record<number, BN>
     portfolioUserData.forEach(({ netValues, scaledBalanceOf, oracle }) => {
@@ -47,9 +47,16 @@ export const useChart = () => {
     const returnValue = Object.entries(map)
       .map(([x, y]) => ({ x: parseInt(x), y: y.toNumber() }))
       .sort((a, b) => a.x - b.x)
-
     return returnValue
   }, [portfolioUserData])
+
+  const data = useMemo(() => {
+    const returnValue = dataSource || []
+    const { length } = returnValue
+    if (length < dayButton.value) return returnValue
+    const startIndex = length - dayButton.value
+    return returnValue.slice(startIndex, length)
+  }, [dataSource, dayButton.value])
 
   const change24 = useMemo(() => {
     return (
