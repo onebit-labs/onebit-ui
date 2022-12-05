@@ -17,7 +17,6 @@ const locale = {
     PNL: 'PNL',
     stats: {
       assetsUnderManagement: 'Assets Under Management',
-      currentAPY: 'Current APY',
       estimatedAPY: 'Estimated APY',
       depositors: 'Depositors',
     },

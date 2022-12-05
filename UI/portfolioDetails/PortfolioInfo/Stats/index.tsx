@@ -12,7 +12,7 @@ import type { Portfolio } from 'domains/data/portfolio'
 
 type StatsProps = Portfolio
 
-const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, currentAPY, depositors }) => {
+const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, currentAPYWithAPI, depositors }) => {
   const isOpen = status === 'open'
 
   const cardList = [
@@ -32,7 +32,7 @@ const Stats: FC<StatsProps> = ({ symbol, status, totalSupply, estimatedAPY, curr
           icon: <Image src={Revenue} alt="Revenue" width={40} height={40} />,
         }
       : {
-          price: <NumberDisplay value={currentAPY} options="percent" min={0} />,
+          price: <NumberDisplay value={currentAPYWithAPI} options="percent" min={0} />,
           title: 'estimatedAPY',
           icon: <Image src={Revenue} alt="Revenue" width={40} height={40} />,
         },

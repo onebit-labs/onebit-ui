@@ -6,6 +6,7 @@ import { safeGet } from 'app/utils/get'
 
 import type { NetValueChartProps } from './types'
 import type { Portfolio } from 'domains/data/portfolio'
+import { toBN } from 'lib/math'
 
 const DayButtonList = [7, 14, 30, 90]
 const useDayButton = () => {
@@ -34,8 +35,9 @@ export const useChart = (portfolio: ChartProps) => {
   const currentNetValue = useMemo(() => safeGet(() => data[data.length - 1].y) || 0, [data])
 
   const currentPeriodNetValueFluctuation = useMemo(() => {
-    return portfolio.currentNetValue
-  }, [portfolio.currentNetValue])
+    if (!portfolio.netValueWithAPI) return toBN(0)
+    return portfolio.netValueWithAPI.minus(1)
+  }, [portfolio.netValueWithAPI])
 
   const lineColor = theme.palette.secondary.main
 
@@ -76,7 +78,7 @@ export const useChart = (portfolio: ChartProps) => {
               borderWidth: 2,
               pointBorderWidth: 0,
               pointBackgroundColor: 'transparent',
-              pointHoverBackgroundColor : lineColor,
+              pointHoverBackgroundColor: lineColor,
             },
           ],
         },

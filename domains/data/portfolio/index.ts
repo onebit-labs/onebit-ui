@@ -7,7 +7,7 @@ import { safeGet } from 'app/utils/get'
 
 import { useERC20, useNetwork } from '..'
 
-import { getPortfolioLockTime } from './adapter/lockTime'
+import { getPortfolioDaysleft, getPortfolioLockDays, getPortfolioLockTime } from './adapter/lockTime'
 import type { ReserveData } from './adapter/reserveData'
 import type { PortfolioStatus } from './adapter/status'
 import { getPortfolioStatus } from './adapter/status'
@@ -47,8 +47,11 @@ export type Portfolio = Partial<
     scaledTotalSupplyInUSD?: BN
     status: PortfolioStatus
     lockTime: number
+    lockDays: number
+    daysleft: number
 
     currentAPY: BN
+    currentAPYWithAPI: BN
     depositors: BN
     yourEquity: BN
     yourEquityInUSD: BN
@@ -56,9 +59,9 @@ export type Portfolio = Partial<
     PNLRate: BN
     PNLInUSD: BN
     netValue: BN
+    netValueWithAPI: BN
 
     portfolioDaily: Record<'x' | 'y', string>[]
-    currentNetValue: BN
     seriesDaily: Record<'x' | 'y', string>[]
   }
 
@@ -105,9 +108,18 @@ const usePortfolioService = () => {
       const scaledTotalSupply = toBN(safeGet(() => erc20Data.scaledTotalSupply[address.OToken]) || 0)
       const status = getPortfolioStatus(reserve)
       let currentAPY = toBN(0)
+      let currentAPYWithAPI = toBN(0)
+      const portfolioDaily = safeGet(() => portfolioDailyData[portfolioAPIName]) || ([] as undefined)
+      const lockTime = getPortfolioLockTime(reserve)
+      let daysleft = 0
+      let lockDays = 0
+      const netValueWithAPI = safeGet(() => toBN(portfolioDaily[portfolioDaily.length - 1].y)) || toBN(0)
 
       if (status != 'open') {
+        daysleft = getPortfolioDaysleft(reserve)
+        lockDays = getPortfolioLockDays(reserve)
         currentAPY = getCurrentAPY(reserve)
+        currentAPYWithAPI = netValueWithAPI.minus(1).multipliedBy(toBN(365).div(lockDays))
       }
 
       const yourEquity = safeGet(() => userReserve.balanceOf) || toBN(0)
@@ -119,7 +131,6 @@ const usePortfolioService = () => {
       }
       const yourEquityInUSD = yourEquity.multipliedBy(oracle)
       const PNLInUSD = PNL.multipliedBy(oracle)
-      const portfolioDaily = safeGet(() => portfolioDailyData[portfolioAPIName]) || ([] as undefined)
 
       const returnValue: Portfolio = {
         ...market,
@@ -128,7 +139,9 @@ const usePortfolioService = () => {
         ...reserve,
         portfolioTerm: [],
         status,
-        lockTime: getPortfolioLockTime(reserve),
+        lockTime,
+        lockDays,
+        daysleft,
 
         oracle,
         totalSupply,
@@ -137,6 +150,7 @@ const usePortfolioService = () => {
         scaledTotalSupplyInUSD: scaledTotalSupply.multipliedBy(oracle),
 
         currentAPY,
+        currentAPYWithAPI,
         yourEquity,
         yourEquityInUSD,
         netValue,
@@ -146,7 +160,7 @@ const usePortfolioService = () => {
         PNLInUSD,
 
         portfolioDaily,
-        currentNetValue: safeGet(() => toBN(portfolioDaily[portfolioDaily.length - 1].y).minus(1)) || toBN(0),
+        netValueWithAPI,
         seriesDaily: safeGet(() => seriesDaily[series]) || ([] as undefined),
         id,
       }

@@ -22,7 +22,6 @@ const locale = {
     currentNetValue: 'Current Net Value%',
     AUM: 'AUM',
     estimatedAPY: 'Estimated APY',
-    currentAPY: 'Current APY',
     depositors: 'Depositors',
     yourEquity: 'Your Equity',
   },

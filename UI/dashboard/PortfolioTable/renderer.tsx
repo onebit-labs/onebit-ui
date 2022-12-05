@@ -1,5 +1,5 @@
 import TableCell from '@mui/material/TableCell'
-import { format, differenceInDays } from 'date-fns'
+import { format } from 'date-fns'
 import type { Portfolio } from 'domains/data/portfolio'
 import Stack from '@mui/material/Stack'
 import { Paragraph } from 'components/Typography'
@@ -17,10 +17,8 @@ type TableCellProps = {
   rowData: RowData
   rowIndex: number
 }
-const now = new Date()
 
-export const lockedUntilCellRenderer = ({ rowData: { redemptionBeginTimestamp } }: TableCellProps) => {
-  const daysleft = differenceInDays(redemptionBeginTimestamp, now)
+export const lockedUntilCellRenderer = ({ rowData: { redemptionBeginTimestamp, daysleft } }: TableCellProps) => {
   return (
     <TableCell align="center" component="div">
       <Stack spacing={1}>
