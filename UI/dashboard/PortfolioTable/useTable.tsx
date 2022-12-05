@@ -11,8 +11,6 @@ import { useRouter } from 'next/router'
 import { usePortfolio } from 'domains/data'
 import { lockedUntilCellRenderer, statusCellRenderer } from './renderer'
 import { numberCellRenderer, PNLCellRenderer, symbolCellRenderer } from 'components/table/renderer/portfolio'
-import HelpOutlinedIcon from '@mui/icons-material/HelpOutlined'
-import Tooltip from '@mui/material/Tooltip'
 
 export const useTable = (): BasicTableProps => {
   const { t } = useTranslation('dashboard')
@@ -63,18 +61,21 @@ export const useTable = (): BasicTableProps => {
           {
             dataKey: 'netValue',
             width: 200,
+            tip: 'tip',
             headerRenderer,
             cellRenderer: numberCellRenderer,
           },
           {
             dataKey: 'yourEquity',
             width: 200,
+            tip: 'tip',
             headerRenderer,
             cellRenderer: symbolCellRenderer,
           },
           {
             dataKey: 'PNL',
             width: 200,
+            tip: 'tip',
             headerRenderer,
             cellRenderer: PNLCellRenderer,
           },
@@ -93,16 +94,7 @@ export const useTable = (): BasicTableProps => {
         ] as TableColumnsProps[]
       ).map((column) => {
         column.label = t('portfolioTable.' + column.dataKey)
-        if (['netValue', 'yourEquity', 'PNL'].includes(column.dataKey)) {
-          column.label = (
-            <Tooltip title={t('portfolioTable.tip')}>
-              <Stack direction="row" alignItems="center" spacing={1}>
-                <span>{t('portfolioTable.' + column.dataKey)}</span>
-                <HelpOutlinedIcon fontSize="inherit" />
-              </Stack>
-            </Tooltip>
-          )
-        }
+        if (column.tip) column.tip = t('portfolioTable.' + column.tip)
         return column
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
