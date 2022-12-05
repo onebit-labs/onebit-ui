@@ -48,7 +48,7 @@ const KYTButton: FCC<KYTButtonProps> = ({ portfolio: { useWhitelist, userInWhite
       account,
     })
   }, [account, LendingPool, lendingPool, userExpirationTimestamp])
-  if (!useWhitelist || userInWhitelist) return <>{children}</>
+  if (!networkAccount || !useWhitelist || userInWhitelist) return <>{children}</>
   if (addWhitelist.loading) {
     return (
       <Button variant="contained" key="KYTButton" disabled>
