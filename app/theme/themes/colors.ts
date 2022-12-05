@@ -36,12 +36,10 @@ export const darkPrimary = {
   400: alpha(darkPrimaryMain, 0.4),
 }
 
-const secondaryMain = '#23C657'
+const secondaryMain = '#2499EF'
 
 export const secondary = {
-  light: '#E3F0FF',
   main: secondaryMain,
-  dark: '#011E3D',
   100: alpha(secondaryMain, 0.08),
   200: alpha(secondaryMain, 0.2),
   300: alpha(secondaryMain, 0.3),
