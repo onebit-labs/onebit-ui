@@ -3,7 +3,8 @@
     "totalEquityValue": "Toplam Özkaynak Değeri",
     "totalPNL": "Toplam PNL",
     "totalPortfolioDeposited": "Yatırılan Toplam Portföy",
-    "APY": "APY"
+    "APY": "APY",
+    "tip": "Yönetim ve performans ücretleri burada gösterilen verilerden düşülmüştür."
   },
   "totalEquityValue": {
     "title": "Toplam Özkaynak Değeri",
@@ -17,6 +18,6 @@
     "PNL": "PNL",
     "status": "Durum",
     "action": "Eylem",
-    "netValueTip": "Yönetim ve icra ücretleri burada gösterilen net değerden düşülmüştür."
+    "tip": "Yönetim ve performans ücretleri burada gösterilen verilerden düşülmüştür."
   }
 }

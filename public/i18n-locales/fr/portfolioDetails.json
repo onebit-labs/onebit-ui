@@ -17,7 +17,6 @@
     "PNL": "PNL",
     "stats": {
       "assetsUnderManagement": "Actifs sous gestion",
-      "currentAPY": "APY actuel",
       "estimatedAPY": "APY estimé",
       "depositors": "Déposants"
     },

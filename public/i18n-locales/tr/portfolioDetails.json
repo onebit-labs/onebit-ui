@@ -17,7 +17,6 @@
     "PNL": "PNL",
     "stats": {
       "assetsUnderManagement": "Yönetim Altındaki Varlıklar",
-      "currentAPY": "Mevcut APY",
       "estimatedAPY": "Tahmini APY",
       "depositors": "mevduat sahipleri"
     },
@@ -108,7 +107,7 @@
     "softUpperLimit": "Bağış Toplama Soft Cap",
     "minimumDeposit": "Minimum Depozito",
     "reInvestment": "Yeniden yatırım",
-    "description": "Mudilerin bloke süresi sonunda fonlarını çekmemesi durumunda, fonlar bir sonraki bloke süresi için portföye yeniden yatırılır.",
+    "description": "Mudilerin bloke süresi sonunda fonlarını çekmemesi durumunda, fonlar bir sonraki bloke süresi için portföye yeniden yatırılacaktır.",
     "auto": "Oto"
   },
   "depositors": {

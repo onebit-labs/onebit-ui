@@ -17,7 +17,6 @@
     "PNL": "PNL",
     "stats": {
       "assetsUnderManagement": "Verwaltetes Vermögen",
-      "currentAPY": "Aktuelle APY",
       "estimatedAPY": "Geschätzter APY",
       "depositors": "Einleger"
     },

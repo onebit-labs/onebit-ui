@@ -3,7 +3,8 @@
     "totalEquityValue": "Valeur totale des capitaux propres",
     "totalPNL": "PNL total",
     "totalPortfolioDeposited": "Portefeuille total déposé",
-    "APY": "APY"
+    "APY": "APY",
+    "tip": "Les commissions de gestion et de performance ont été déduites des données présentées ici."
   },
   "totalEquityValue": {
     "title": "Valeur totale des capitaux propres",
@@ -17,6 +18,6 @@
     "PNL": "PNL",
     "status": "Statut",
     "action": "Action",
-    "netValueTip": "Les commissions de gestion et de performance ont été déduites de la valeur nette indiquée ici."
+    "tip": "Les commissions de gestion et de performance ont été déduites des données présentées ici."
   }
 }

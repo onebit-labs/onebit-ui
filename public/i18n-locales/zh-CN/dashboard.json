@@ -3,7 +3,8 @@
     "totalEquityValue": "总股本价值",
     "totalPNL": "总盈亏",
     "totalPortfolioDeposited": "投资组合总存款",
-    "APY": "年度"
+    "APY": "年度",
+    "tip": "此处显示的数据已扣除管理费和绩效费。"
   },
   "totalEquityValue": {
     "title": "总股本价值",
@@ -17,6 +18,6 @@
     "PNL": "损益表",
     "status": "地位",
     "action": "行动",
-    "netValueTip": "此处显示的净值已扣除管理费和绩效费。"
+    "tip": "此处显示的数据已扣除管理费和绩效费。"
   }
 }

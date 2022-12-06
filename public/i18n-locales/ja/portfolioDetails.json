@@ -17,7 +17,6 @@
     "PNL": "損益",
     "stats": {
       "assetsUnderManagement": "運用資産",
-      "currentAPY": "現在の APY",
       "estimatedAPY": "推定APY",
       "depositors": "預金者"
     },

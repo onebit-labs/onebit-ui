@@ -17,7 +17,6 @@
     "PNL": "PNL",
     "stats": {
       "assetsUnderManagement": "Tài sản được quản lý",
-      "currentAPY": "APY hiện tại",
       "estimatedAPY": "APY ước tính",
       "depositors": "Người gửi tiền"
     },

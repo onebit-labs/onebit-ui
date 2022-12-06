@@ -3,7 +3,8 @@
     "totalEquityValue": "총자본가치",
     "totalPNL": "총손익",
     "totalPortfolioDeposited": "입금된 총 포트폴리오",
-    "APY": "APY"
+    "APY": "APY",
+    "tip": "여기에 표시된 데이터에서 관리 및 성과 수수료가 공제되었습니다."
   },
   "totalEquityValue": {
     "title": "총자본가치",
@@ -17,6 +18,6 @@
     "PNL": "손익",
     "status": "상태",
     "action": "동작",
-    "netValueTip": "여기에 표시된 순 가치에서 관리 및 성과 수수료가 공제되었습니다."
+    "tip": "여기에 표시된 데이터에서 관리 및 성과 수수료가 공제되었습니다."
   }
 }

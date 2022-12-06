@@ -17,7 +17,6 @@
     "PNL": "손익",
     "stats": {
       "assetsUnderManagement": "관리 중인 자산",
-      "currentAPY": "현재 APY",
       "estimatedAPY": "예상 연이율",
       "depositors": "예금자"
     },

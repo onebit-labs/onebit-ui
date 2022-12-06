@@ -3,7 +3,8 @@
     "totalEquityValue": "Tổng giá trị vốn chủ sở hữu",
     "totalPNL": "Tổng PNL",
     "totalPortfolioDeposited": "Tổng số danh mục đầu tư được ký gửi",
-    "APY": "APY"
+    "APY": "APY",
+    "tip": "Phí quản lý và hiệu suất đã được khấu trừ từ dữ liệu hiển thị ở đây."
   },
   "totalEquityValue": {
     "title": "Tổng giá trị vốn chủ sở hữu",
@@ -17,6 +18,6 @@
     "PNL": "PNL",
     "status": "Trạng thái",
     "action": "Hoạt động",
-    "netValueTip": "Phí quản lý và hiệu suất đã được khấu trừ khỏi giá trị thực được hiển thị ở đây."
+    "tip": "Phí quản lý và hiệu suất đã được khấu trừ từ dữ liệu hiển thị ở đây."
   }
 }

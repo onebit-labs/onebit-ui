@@ -3,7 +3,8 @@
     "totalEquityValue": "Valore totale del patrimonio netto",
     "totalPNL": "PNL totale",
     "totalPortfolioDeposited": "Portafoglio totale depositato",
-    "APY": "APY"
+    "APY": "APY",
+    "tip": "Le commissioni di gestione e di performance sono state detratte dai dati qui riportati."
   },
   "totalEquityValue": {
     "title": "Valore totale del patrimonio netto",
@@ -17,6 +18,6 @@
     "PNL": "PNL",
     "status": "Stato",
     "action": "Azione",
-    "netValueTip": "Le commissioni di gestione e di performance sono state detratte dal valore netto qui indicato."
+    "tip": "Le commissioni di gestione e di performance sono state detratte dai dati qui riportati."
   }
 }

@@ -17,7 +17,6 @@
     "PNL": "PNL",
     "stats": {
       "assetsUnderManagement": "Risparmio gestito",
-      "currentAPY": "APY attuale",
       "estimatedAPY": "APY stimato",
       "depositors": "Depositanti"
     },

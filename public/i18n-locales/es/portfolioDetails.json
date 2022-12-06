@@ -17,7 +17,6 @@
     "PNL": "PNL",
     "stats": {
       "assetsUnderManagement": "Los activos bajo gestión",
-      "currentAPY": "APY actual",
       "estimatedAPY": "APY estimado",
       "depositors": "depositantes"
     },
@@ -91,7 +90,7 @@
     },
     "performance": {
       "title": "Comisión de rentabilidad",
-      "description": "Una comisión de rendimiento es una comisión basada en porcentajes que los depositantes pagan al Gestor de la cartera sobre los rendimientos positivos obtenidos durante un período predefinido. El período predefinido se denomina período bloqueado (normalmente un año o un trimestre). Los rendimientos se comparan con el activo de denominación."
+      "description": "Una comisión de rendimiento es una comisión basada en un porcentaje que los depositantes pagan al Gestor de la cartera sobre los rendimientos positivos obtenidos durante un período predefinido. El período predefinido se denomina período bloqueado (normalmente, un año o un trimestre). Los rendimientos se comparan con el activo de denominación."
     },
     "entrance": {
       "title": "Precio de la entrada"

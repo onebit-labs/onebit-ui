@@ -3,7 +3,8 @@
     "totalEquityValue": "Gesamtkapitalwert",
     "totalPNL": "Gesamt-PNL",
     "totalPortfolioDeposited": "Gesamtportfolio eingezahlt",
-    "APY": "APY"
+    "APY": "APY",
+    "tip": "Die Verwaltungs- und Performancegebühren wurden von den hier gezeigten Daten abgezogen."
   },
   "totalEquityValue": {
     "title": "Gesamtkapitalwert",
@@ -17,6 +18,6 @@
     "PNL": "PNL",
     "status": "Status",
     "action": "Aktion",
-    "netValueTip": "Von dem hier ausgewiesenen Nettowert wurden die Verwaltungs- und Performancegebühren abgezogen."
+    "tip": "Die Verwaltungs- und Performancegebühren wurden von den hier gezeigten Daten abgezogen."
   }
 }

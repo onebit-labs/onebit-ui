@@ -17,7 +17,6 @@
     "PNL": "ПНЛ",
     "stats": {
       "assetsUnderManagement": "Активы под управлением",
-      "currentAPY": "Текущий APY",
       "estimatedAPY": "Расчетный APY",
       "depositors": "Вкладчики"
     },

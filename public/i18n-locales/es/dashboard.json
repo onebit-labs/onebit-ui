@@ -3,7 +3,8 @@
     "totalEquityValue": "Valor patrimonial total",
     "totalPNL": "NLP totales",
     "totalPortfolioDeposited": "Cartera Total Depositada",
-    "APY": "APY"
+    "APY": "APY",
+    "tip": "Las comisiones de gestión y rendimiento se han deducido de los datos que se muestran aquí."
   },
   "totalEquityValue": {
     "title": "Valor patrimonial total",
@@ -17,6 +18,6 @@
     "PNL": "PNL",
     "status": "Estado",
     "action": "Acción",
-    "netValueTip": "Las comisiones de gestión y rendimiento se han deducido del valor neto que se muestra aquí."
+    "tip": "Las comisiones de gestión y rendimiento se han deducido de los datos que se muestran aquí."
   }
 }

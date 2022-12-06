@@ -1,9 +1,10 @@
 {
   "stats": {
     "totalEquityValue": "Valor total do patrimônio",
-    "totalPNL": "PNL Total",
+    "totalPNL": "PNL total",
     "totalPortfolioDeposited": "Carteira Total Depositada",
-    "APY": "APY"
+    "APY": "APY",
+    "tip": "As taxas de administração e performance foram deduzidas dos dados aqui apresentados."
   },
   "totalEquityValue": {
     "title": "Valor total do patrimônio",
@@ -17,6 +18,6 @@
     "PNL": "PNL",
     "status": "Status",
     "action": "Ação",
-    "netValueTip": "As comissões de gestão e performance foram deduzidas ao valor líquido aqui apresentado."
+    "tip": "As taxas de administração e performance foram deduzidas dos dados aqui apresentados."
   }
 }

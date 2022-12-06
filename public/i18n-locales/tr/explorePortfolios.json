@@ -16,13 +16,12 @@
     "withdraw": "Geri çekilmek"
   },
   "projectCard": {
-    "lockUpPeriod": "Kilitlenme Dönemi",
+    "lockUpPeriod": "Kilitlenme Süresi",
     "days": "gün",
     "netValue": "Kümülatif Net Değer",
     "currentNetValue": "Mevcut Net Değer %",
     "AUM": "AUM",
     "estimatedAPY": "Tahmini APY",
-    "currentAPY": "Mevcut APY",
     "depositors": "mevduat sahipleri",
     "yourEquity": "öz sermayeniz"
   }
