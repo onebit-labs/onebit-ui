@@ -39,7 +39,7 @@ export const useChart = (portfolio: ChartProps) => {
     return portfolio.netValueWithAPI.minus(1)
   }, [portfolio.netValueWithAPI])
 
-  const lineColor = theme.palette.secondary.main
+  const lineColor = theme.palette.primary.main
 
   const props = useMemo(
     () =>

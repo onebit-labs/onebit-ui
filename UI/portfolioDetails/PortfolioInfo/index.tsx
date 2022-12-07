@@ -95,7 +95,7 @@ const PortfolioInfo: FCC = ({ children }) => {
                 </Span>
               )}
             </Stack>
-            {networkAccount && (
+            {networkAccount && yourEquity && yourEquity.gt(0) && (
               <Stack
                 spacing={2}
                 direction={{ xs: 'column', sm: 'row' }}

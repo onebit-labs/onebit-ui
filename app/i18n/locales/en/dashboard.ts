@@ -19,6 +19,9 @@ const locale = {
     status: 'Status',
     action: 'Action',
     tip: 'The management and performance fees have been deducted from the data shown here.',
+    withdrawableUntil: 'Withdrawable Until',
+    onlyForWithdrawal: 'Only For Withdrawal',
+    daysLeft: 'Days Left',
   },
 }
 

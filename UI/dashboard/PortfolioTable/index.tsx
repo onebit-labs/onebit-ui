@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid'
 import BasicTable from 'components/table/BasicTable'
 import { useTable } from './useTable'
 
-const HistoricalPerformance: FC = () => {
+const UserPortfolios: FC = () => {
   const table = useTable()
 
   return (
@@ -16,4 +16,4 @@ const HistoricalPerformance: FC = () => {
   )
 }
 
-export default HistoricalPerformance
+export default UserPortfolios
