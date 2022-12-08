@@ -77,6 +77,7 @@ const locale = {
       depositors: 'Depositors',
       finalNetValue: 'Final Net Value',
       return: 'Return',
+      totalFees: 'Total Fees',
       APY: 'APY',
       netValueTip: 'The management and performance fees have been deducted from the net value shown here.',
     },

@@ -31,6 +31,7 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
       managementFeeRate,
       performanceFeeRate,
       lockDays,
+      netValue,
     } = portfolioTerm
     const openingAssets = scaledAssetsUnderManagement.multipliedBy(previousLiquidityIndex)
     portfolioTerm.openingAssets = openingAssets
@@ -46,7 +47,7 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
     } else {
       portfolioTerm.netValueBeforeDeduction = assetsUnderManagementDivOpeningAssets.plus(managementFeeTimeValue)
     }
-    portfolioTerm.totalFees = assetsUnderManagement.multipliedBy(toBN(1).minus(portfolioTerm.netValueBeforeDeduction))
+    portfolioTerm.totalFees = openingAssets.multipliedBy(portfolioTerm.netValueBeforeDeduction.minus(netValue))
     portfolioTerm.APY = getAPYByNetValue(portfolioTerm.netValueBeforeDeduction, lockDays)
 
     return portfolioTerm

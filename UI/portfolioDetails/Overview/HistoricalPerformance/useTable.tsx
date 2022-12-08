@@ -72,6 +72,12 @@ export const useTable = (): BasicTableProps => {
             cellRenderer: returnCellRenderer,
           },
           {
+            dataKey: 'totalFees',
+            width: 150,
+            headerRenderer,
+            cellRenderer: symbolCellRenderer,
+          },
+          {
             dataKey: 'APY',
             width: 120,
             headerRenderer,
