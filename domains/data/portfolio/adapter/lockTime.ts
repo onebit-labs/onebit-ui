@@ -16,11 +16,14 @@ export const getPortfolioLockTime = (
   return portfolioLockTime || 0
 }
 
-export const getPortfolioDaysleft = (reserve: Pick<ReserveData, 'redemptionBeginTimestamp'>): PortfolioLockTime => {
+export const getPortfolioDaysleft = (
+  reserve: Pick<ReserveData, 'redemptionBeginTimestamp' | 'purchaseEndTimestamp'>
+): PortfolioLockTime => {
   const portfolioDaysleft = safeGet(() => {
     const { redemptionBeginTimestamp } = reserve
     const daysleft = differenceInDays(redemptionBeginTimestamp, now)
-    return daysleft
+    const lockTime = getPortfolioLockTime(reserve)
+    return Math.min(daysleft, lockTime)
   })
 
   return portfolioDaysleft || 0

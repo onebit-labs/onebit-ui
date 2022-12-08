@@ -14,3 +14,7 @@ export const getCurrentAPY = ({ liquidityIndex, previousLiquidityIndex, purchase
   currentAPY = currentAPY.lt(-1) ? toBN(-1) : currentAPY
   return currentAPY
 }
+
+export const getAPYByNetValue = (netValue: BN, lockDays: number) => {
+  return netValue.minus(1).multipliedBy(toBN(365).div(lockDays))
+}

@@ -25,7 +25,7 @@ import type { NetValue } from '../onebit-graph/adapter/netValue'
 import { getFixedNetValues } from '../onebit-graph/adapter/netValue'
 import type { Transaction } from '../onebit-graph/adapter/transaction'
 import { useWallet } from 'domains'
-import { getCurrentAPY } from './adapter/currentAPY'
+import { getAPYByNetValue, getCurrentAPY } from './adapter/currentAPY'
 
 export type MarketReserve = Partial<ReserveData> &
   MarketInfo & {
@@ -119,7 +119,7 @@ const usePortfolioService = () => {
         daysleft = getPortfolioDaysleft(reserve)
         lockDays = getPortfolioLockDays(reserve)
         currentAPY = getCurrentAPY(reserve)
-        currentAPYWithAPI = netValueWithAPI.minus(1).multipliedBy(toBN(365).div(lockDays))
+        currentAPYWithAPI = getAPYByNetValue(netValueWithAPI, lockDays)
       }
 
       const yourEquity = safeGet(() => userReserve.balanceOf) || toBN(0)

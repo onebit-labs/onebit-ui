@@ -1,5 +1,5 @@
 import { getAddress, getBigNumber, getNumber } from 'app/utils/get'
-import { getPortfolioLockTime } from 'domains/data/portfolio/adapter/lockTime'
+import { getPortfolioLockDays, getPortfolioLockTime } from 'domains/data/portfolio/adapter/lockTime'
 import { toBN } from 'lib/math'
 import type { SliceState } from '../store/portfolioTerm/adapter'
 
@@ -12,16 +12,21 @@ export type PortfolioTerm = {
   purchaseBeginTimestamp: number
   purchaseEndTimestamp: number
   lockTime: number
+  lockDays: number
   term: number
   depositors: number
   previousDepositors: number
-  liquidityIndex: BN
   previousLiquidityIndex: BN
   previousNetValue: BN
   previousAssetsUnderManagement: BN
+  previousScaledAssetsUnderManagement: BN
   APY: BN
   netValue: BN
+  netValueBeforeDeduction: BN
   assetsUnderManagement: BN
+  scaledAssetsUnderManagement: BN
+  openingAssets: BN
+  totalFees: BN
 }
 export const getPortfolioTerm = (sliceState: SliceState) => {
   if (!sliceState) return []
@@ -37,15 +42,19 @@ export const getPortfolioTerm = (sliceState: SliceState) => {
       ...timestamps,
       ...getAddress(portfolioTerm, ['lendingPool']),
       ...getBigNumber(portfolioTerm, ['previousNetValue'], 0),
-      ...getBigNumber(portfolioTerm, ['previousAssetsUnderManagement'], 18),
+      ...getBigNumber(portfolioTerm, ['previousAssetsUnderManagement', 'previousScaledAssetsUnderManagement'], 18),
       ...getBigNumber(portfolioTerm, ['previousLiquidityIndex'], 27),
       ...getBigNumber(portfolioTerm, ['managementFeeRate', 'performanceFeeRate'], 4),
       lockTime: getPortfolioLockTime(timestamps),
-      liquidityIndex: toBN(0),
+      lockDays: getPortfolioLockDays(timestamps),
       depositors: 0,
       APY: toBN(0),
       netValue: toBN(0),
+      netValueBeforeDeduction: toBN(0),
       assetsUnderManagement: toBN(0),
+      scaledAssetsUnderManagement: toBN(0),
+      openingAssets: toBN(0),
+      totalFees: toBN(0),
     }
 
     return returnValue
