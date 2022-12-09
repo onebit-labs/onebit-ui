@@ -1,10 +1,14 @@
 import type { FC } from 'react'
 import { Stack, Card, CardContent } from '@mui/material'
 import { H2, Paragraph } from 'components/Typography'
+import Head from 'next/head'
 
 const Terms: FC = () => {
   return (
     <Card>
+      <Head>
+        <title>Terms of Use | Onebit</title>
+      </Head>
       <CardContent>
         <Stack spacing={2}>
           <H2>Onebit Terms of Use</H2>

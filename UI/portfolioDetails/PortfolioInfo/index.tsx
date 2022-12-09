@@ -24,6 +24,7 @@ import NumberDisplay from 'lib/math/components/NumberDisplay'
 import { useDialogs } from 'UI/dialogs'
 import { useWallet } from 'domains'
 import LinkToAddress from 'components/button/LinkToAddress'
+import Head from 'next/head'
 
 const StyledCard = styled(Card)(() => ({
   position: 'relative',
@@ -40,6 +41,9 @@ const PortfolioInfo: FCC = ({ children }) => {
 
   return (
     <StyledCard>
+      <Head>
+        <title>{portfolioName} | Onebit</title>
+      </Head>
       <CardContent>
         <Stack spacing={3}>
           <Stack spacing={2}>

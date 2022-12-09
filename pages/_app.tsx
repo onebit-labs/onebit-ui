@@ -23,9 +23,21 @@ function MainApp(props: MyAppProps): JSX.Element {
       <StoreProvider store={store}>
         <DomainsProvider>
           <Head>
-            <title>Onebit</title>
+            <title>Onebit | Crypto Asset Management</title>
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
             <link rel="icon" href="/favicon.ico" />
+            <meta name="description" content="Onebit is a crypto asset management platform that connects DeFi users." />
+
+            <meta property="og:type" content="website" />
+            <meta key="og:site_name" property="og:site_name" content="Onebit | Crypto Asset Management" />
+            <meta key="og:image" property="og:image" content="https://app.onebit.com/logo-square.svg" />
+            <meta key="og:description" property="og:description" content="Onebit is a crypto asset management platform that connects DeFi users." />
+            <meta key="og:title" property="og:title" content="Onebit" />
+            <meta key="og:url" property="og:url" content="https://app.onebit.com/" />
+
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:title" content="Onebit | Crypto Asset Management" />
+            {/* <meta name="twitter:site" content="" /> */}
           </Head>
           <App {...props} />
         </DomainsProvider>
