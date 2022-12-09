@@ -9,6 +9,8 @@ export const getTransactionType = (type: number) => {
       return 'Withdrawal'
     case 3:
       return 'Fund Transfer'
+    case 4:
+      return 'Balance Transfer'
   }
 }
 
