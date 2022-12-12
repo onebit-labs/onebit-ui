@@ -63,6 +63,15 @@ const TransactionTabs: FC = () => {
           },
         },
       },
+      {
+        title: 'transfer',
+        children: {
+          component: Transactions,
+          props: {
+            data: data.filter((i) => i.type === 'Balance Transfer'),
+          },
+        },
+      },
     ]
     return returnValue.map((i) => {
       i.title = t(`tabs.${i.title}`)

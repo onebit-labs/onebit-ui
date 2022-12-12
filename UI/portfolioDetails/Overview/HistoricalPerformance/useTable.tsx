@@ -53,6 +53,12 @@ export const useTable = (): BasicTableProps => {
             cellRenderer: symbolCellRenderer,
           },
           {
+            dataKey: 'totalFees',
+            width: 150,
+            headerRenderer,
+            cellRenderer: symbolCellRenderer,
+          },
+          {
             dataKey: 'depositors',
             width: 150,
             headerRenderer,
@@ -60,7 +66,7 @@ export const useTable = (): BasicTableProps => {
           },
           {
             dataKey: 'finalNetValue',
-            tip: 'netValueTip',
+            // tip: 'netValueTip',
             width: 150,
             headerRenderer,
             cellRenderer: numberCellRenderer,
@@ -70,12 +76,6 @@ export const useTable = (): BasicTableProps => {
             width: 150,
             headerRenderer,
             cellRenderer: returnCellRenderer,
-          },
-          {
-            dataKey: 'totalFees',
-            width: 150,
-            headerRenderer,
-            cellRenderer: symbolCellRenderer,
           },
           {
             dataKey: 'APY',

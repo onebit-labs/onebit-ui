@@ -6,6 +6,7 @@ const locale = {
     all: 'All',
     deposit: 'Deposit',
     withdrawal: 'Withdrawal',
+    transfer: 'Balance Transfer',
   },
   transactions: {
     txId: 'TxID',
