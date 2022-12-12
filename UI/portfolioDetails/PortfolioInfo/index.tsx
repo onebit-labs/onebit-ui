@@ -38,11 +38,12 @@ const PortfolioInfo: FCC = ({ children }) => {
     data
   const { t } = useTranslation('portfolioDetails')
   const { networkAccount } = useWallet()
+  const title = `${portfolioName} | Onebit`
 
   return (
     <StyledCard>
       <Head>
-        <title>{portfolioName} | Onebit</title>
+        <title>{title}</title>
       </Head>
       <CardContent>
         <Stack spacing={3}>
