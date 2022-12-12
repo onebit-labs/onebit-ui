@@ -14,19 +14,20 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
       portfolioTerm.depositors = nextPortfolioTerm.previousDepositors
       portfolioTerm.netValue = nextPortfolioTerm.previousNetValue
       portfolioTerm.assetsUnderManagement = nextPortfolioTerm.previousAssetsUnderManagement
-      portfolioTerm.scaledAssetsUnderManagement = nextPortfolioTerm.previousScaledAssetsUnderManagement
+      portfolioTerm.scaledTotalSupply = nextPortfolioTerm.previousScaledAssetsUnderManagement
     }
   }
   const currentTerm = data[data.length - 1]
   currentTerm.depositors = safeGet(() => portfolio.depositors.toNumber()) || 0
   currentTerm.netValue = portfolio.netValue
   currentTerm.assetsUnderManagement = portfolio.totalSupplyWithAPI
-  currentTerm.scaledAssetsUnderManagement = portfolio.scaledTotalSupply
+  currentTerm.totalSupply = portfolio.totalSupply
+  currentTerm.scaledTotalSupply = portfolio.scaledTotalSupply
   currentTerm.previousLiquidityIndex = portfolio.previousLiquidityIndex
   return data.map((portfolioTerm) => {
     const {
-      assetsUnderManagement,
-      scaledAssetsUnderManagement,
+      totalSupply,
+      scaledTotalSupply: scaledAssetsUnderManagement,
       previousLiquidityIndex,
       managementFeeRate,
       performanceFeeRate,
@@ -39,7 +40,7 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
     const managementFeeTimeValue = managementFeeRate.multipliedBy(lockDays).div(365)
     const $managementFeeTimeValue = toBN(1).minus(managementFeeTimeValue)
 
-    const assetsUnderManagementDivOpeningAssets = assetsUnderManagement.div(openingAssets)
+    const assetsUnderManagementDivOpeningAssets = totalSupply.div(openingAssets)
     if (assetsUnderManagementDivOpeningAssets.gt($managementFeeTimeValue)) {
       portfolioTerm.netValueBeforeDeduction = assetsUnderManagementDivOpeningAssets
         .minus(performanceFeeRate)

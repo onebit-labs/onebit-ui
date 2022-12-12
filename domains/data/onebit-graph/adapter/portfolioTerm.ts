@@ -24,7 +24,8 @@ export type PortfolioTerm = {
   netValue: BN
   netValueBeforeDeduction: BN
   assetsUnderManagement: BN
-  scaledAssetsUnderManagement: BN
+  totalSupply: BN
+  scaledTotalSupply: BN
   openingAssets: BN
   totalFees: BN
 }
@@ -52,7 +53,8 @@ export const getPortfolioTerm = (sliceState: SliceState) => {
       netValue: toBN(0),
       netValueBeforeDeduction: toBN(0),
       assetsUnderManagement: toBN(0),
-      scaledAssetsUnderManagement: toBN(0),
+      totalSupply: toBN(0),
+      scaledTotalSupply: toBN(0),
       openingAssets: toBN(0),
       totalFees: toBN(0),
     }
