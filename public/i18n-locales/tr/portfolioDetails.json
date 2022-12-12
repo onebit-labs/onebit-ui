@@ -9,7 +9,7 @@
   "info": {
     "status": "Durum",
     "term": "Terim",
-    "lockUpPeriod": "Kilitlenme Süresi",
+    "lockUpPeriod": "Kilitlenme Dönemi",
     "days": "gün",
     "standard": "Standart",
     "contract": "Sözleşme Adresi",
@@ -77,6 +77,7 @@
       "depositors": "mevduat sahipleri",
       "finalNetValue": "Nihai Net Değer",
       "return": "Dönüş",
+      "totalFees": "Toplam ücretler",
       "APY": "APY",
       "netValueTip": "Yönetim ve icra ücretleri burada gösterilen net değerden düşülmüştür."
     }
@@ -102,7 +103,7 @@
   "policies": {
     "title": "politikalar",
     "openPeriod": "Açık Dönem",
-    "lockUpPeriod": "Kilitlenme Süresi",
+    "lockUpPeriod": "Kilitlenme Dönemi",
     "fundraisingCap": "Bağış Toplama Hard Cap",
     "softUpperLimit": "Bağış Toplama Soft Cap",
     "minimumDeposit": "Minimum Depozito",

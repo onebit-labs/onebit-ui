@@ -77,6 +77,7 @@
       "depositors": "Người gửi tiền",
       "finalNetValue": "Giá trị ròng cuối cùng",
       "return": "Trở về",
+      "totalFees": "Tổng các khoản phí",
       "APY": "APY",
       "netValueTip": "Phí quản lý và hiệu suất đã được khấu trừ khỏi giá trị thực được hiển thị ở đây."
     }

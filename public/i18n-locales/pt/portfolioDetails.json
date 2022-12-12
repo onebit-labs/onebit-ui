@@ -77,6 +77,7 @@
       "depositors": "Depositantes",
       "finalNetValue": "Valor líquido final",
       "return": "Retornar",
+      "totalFees": "Taxas totais",
       "APY": "APY",
       "netValueTip": "As comissões de gestão e performance foram deduzidas ao valor líquido aqui apresentado."
     }
@@ -96,7 +97,7 @@
       "title": "Taxa de entrada"
     },
     "exit": {
-      "title": "Taxa de saída"
+      "title": "Taxa de Saída"
     }
   },
   "policies": {
