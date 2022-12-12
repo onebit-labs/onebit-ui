@@ -43,6 +43,8 @@ export type Portfolio = Partial<
     oracle?: BN
     totalSupply?: BN
     totalSupplyInUSD?: BN
+    totalSupplyWithAPI?: BN
+    totalSupplyWithAPIInUSD?: BN
     scaledTotalSupply?: BN
     scaledTotalSupplyInUSD?: BN
     status: PortfolioStatus
@@ -114,6 +116,9 @@ const usePortfolioService = () => {
       let daysleft = 0
       let lockDays = 0
       const netValueWithAPI = safeGet(() => toBN(portfolioDaily[portfolioDaily.length - 1].y)) || toBN(0)
+      const totalSupplyWithAPI = toBN(
+        safeGet(() => scaledTotalSupply.multipliedBy(reserve.previousLiquidityIndex).multipliedBy(netValueWithAPI) || 0)
+      )
 
       if (status != 'open') {
         daysleft = getPortfolioDaysleft(reserve)
@@ -146,6 +151,9 @@ const usePortfolioService = () => {
         oracle,
         totalSupply,
         totalSupplyInUSD: totalSupply.multipliedBy(oracle),
+        totalSupplyWithAPI,
+        totalSupplyWithAPIInUSD: totalSupplyWithAPI.multipliedBy(oracle),
+
         scaledTotalSupply,
         scaledTotalSupplyInUSD: scaledTotalSupply.multipliedBy(oracle),
 

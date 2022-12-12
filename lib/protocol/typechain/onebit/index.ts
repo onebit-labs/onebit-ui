@@ -163,7 +163,7 @@ export class OTokenService extends BaseService<OToken> {
   public async getScaledTotalSupply({ oTokenAddress }: baseOTokenProps) {
     const decimals = await this.decimalsOf(oTokenAddress)
     const oTokenContract = this.getContractInstance(oTokenAddress)
-    const totalSupply = await oTokenContract.scaledTotalSupply()
-    return normalize(totalSupply, decimals)
+    const scaledTotalSupply = await oTokenContract.scaledTotalSupply()
+    return normalize(scaledTotalSupply, decimals)
   }
 }
