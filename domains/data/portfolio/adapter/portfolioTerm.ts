@@ -20,7 +20,7 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
   const currentTerm = data[data.length - 1]
   currentTerm.depositors = safeGet(() => portfolio.depositors.toNumber()) || 0
   currentTerm.netValue = portfolio.netValue
-  currentTerm.assetsUnderManagement = portfolio.totalSupply
+  currentTerm.assetsUnderManagement = portfolio.totalSupplyWithAPI
   currentTerm.scaledAssetsUnderManagement = portfolio.scaledTotalSupply
   currentTerm.previousLiquidityIndex = portfolio.previousLiquidityIndex
   return data.map((portfolioTerm) => {
