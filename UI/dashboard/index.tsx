@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 import type { FC } from 'react'
 import Head from 'next/head'
 
+import NeedAccount from 'components/auth/NeedAccount'
 import Stats from './Stats'
 const TotalEquityValue = dynamic(() => import('./TotalEquityValue'), { ssr: false })
 import Portfolios from './PortfolioTable'
@@ -12,9 +13,11 @@ const Dashboard: FC = () => {
       <Head>
         <title>Dashboard | Onebit</title>
       </Head>
-      <Stats />
-      <TotalEquityValue />
-      <Portfolios />
+      <NeedAccount>
+        <Stats />
+        <TotalEquityValue />
+        <Portfolios />
+      </NeedAccount>
     </>
   )
 }

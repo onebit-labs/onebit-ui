@@ -1,6 +1,7 @@
 import type { FC } from 'react'
 import Head from 'next/head'
 
+import NeedAccount from 'components/auth/NeedAccount'
 import TransactionTabs from './TransactionTabs'
 
 const TransactionHistory: FC = () => {
@@ -9,7 +10,9 @@ const TransactionHistory: FC = () => {
       <Head>
         <title>Transaction History | Onebit</title>
       </Head>
-      <TransactionTabs />
+      <NeedAccount>
+        <TransactionTabs />
+      </NeedAccount>
     </>
   )
 }

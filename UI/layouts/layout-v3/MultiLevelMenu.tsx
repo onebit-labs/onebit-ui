@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import { navigations } from '../layout-parts/navigation'
 import SidebarAccordion from './SidebarAccordion'
 import { useTranslation } from 'next-i18next'
-import { useWallet } from 'domains'
 
 const NavItemButton = styled(ButtonBase)<{ active: any }>(({ theme, active }) => ({
   height: 44,
@@ -96,7 +95,6 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
   const router = useRouter()
   const { t } = useTranslation('router')
   const { pathname } = router
-  const { account } = useWallet()
 
   // handle active current page
   const activeRoute = (path: string) => (pathname === path ? 1 : 0)
@@ -107,7 +105,6 @@ const MultiLevelMenu: FC<React.PropsWithChildren<MultiLevelMenuProps>> = (props)
   const renderLevels = (data: any[]) => {
     return data
       .filter((i) => !i.hide)
-      .filter((i) => account || !i.needAccount)
       .map((item, index) => {
         const name = t(item.name)
         if (item.type === 'label')
