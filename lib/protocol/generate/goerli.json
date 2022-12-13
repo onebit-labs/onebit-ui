@@ -1,42 +1,42 @@
 {
-  "LendingPoolAddressesProviderRegistry": "0x092f2d94e31ac359a060a9929f1062aca761a308",
-  "LendingPoolAddressesProvider": "0x8586a3e55a43e46e59df02b7494b7fa2e46f2848",
-  "ReserveLogic": "0xe86b277aaa5112f8b37a56fdaf9462e14637a463",
-  "LendingPoolImpl": "0xcbabfcf5cbebb8b39557b544802d3aae98027a9a",
-  "LendingPool": "0x6af769f986d87851c68e6f7ebf90e265619c6c8f",
+  "VaultAddressesProviderRegistry": "0x8441b8aacc9ab9f52ce3c306ac125f5f2b599f4e",
+  "VaultAddressesProvider": "0x8586a3e55a43e46e59df02b7494b7fa2e46f2848",
+  "ReserveLogic": "0x4519327d709b3a07effa3419eb4726ea992dbcad",
+  "VaultImpl": "0x33d23e71736abda5c3b9139e8933746a62b3f994",
+  "Vault": "0x6af769f986d87851c68e6f7ebf90e265619c6c8f",
   "USDT": "0x982284793466a001e4513e59668ec711a44e049e",
   "WBTC": "0x18a57ecbf7ff0aaa12476a60ae044ff34537969a",
-  "OToken": "0x8a41a474de4b2f62f279be51d291330366387e6c",
-  "LendingPoolConfiguratorImpl": "0x7886b7f90499a3fc6af296ea5ec2e97c2a17e01c",
+  "OToken": "0xa0b8b2bb7aac0c77b392b5a7a8f2143758b1ab4d",
+  "VaultConfiguratorImpl": "0xa9223cdf6df4667e8df61d8312c2c4b6f890dc6e",
   "markets": {
     "Onebit-Lightning-Hunter-USDT": {
-      "LendingPoolAddressesProvider": "0x5e83de1387360727adc92c097ee087d2c49e9394",
-      "LendingPool": "0x780de295a0f6529b46b3cf0d1ddaeeca1bcbcb5c",
-      "LendingPoolConfigurator": "0x5a2e924c5cde7fb3bd3c4d494416c4497f0df854",
-      "OToken": "0x590d59fbdbf9655b7f20b5fd4bb04b08466577ee"
+      "VaultAddressesProvider": "0x44b68b8efaad1df0f1053a0d1101490aac483263",
+      "Vault": "0x89d709719df2a1700e498007bac71e84f161a8d2",
+      "VaultConfigurator": "0x7ae31f6a9467d2a626072c28839c608d5561b8cc",
+      "OToken": "0xda11392488708f296b67cf20df2e06bb58acbab6"
     },
     "Onebit-Smart-Trend-USDT": {
-      "LendingPoolAddressesProvider": "0xe1f77c814af8731cece37e3455df427d36de709f",
-      "LendingPool": "0x45bebd42650e792eda35f02855113090cdcb2a79",
-      "LendingPoolConfigurator": "0x6bacb3639491c2753b714af913aa5c9b09dfb01b",
-      "OToken": "0x85f97d9d9b0f61aa9f4fdfd8cb320807110bb654"
+      "VaultAddressesProvider": "0x3d9be18dff0272c7598db1458cbadf9182223d6b",
+      "Vault": "0xf9e7586bb7cd16b4f05d2059430ff7e0745796bd",
+      "VaultConfigurator": "0xcdbbf91798dbd30c7485e1381d024d92cb27670e",
+      "OToken": "0x9cc6dfd95132d68719901e0531c084d1e5ada85b"
     },
     "Onebit-Smart-Trend-BTC": {
-      "LendingPoolAddressesProvider": "0xb94c4f47ff73832993745ffeb733cfd78a98e381",
-      "LendingPool": "0x237d0588c4b4f89498d03458ddb66373e1b89c87",
-      "LendingPoolConfigurator": "0xdff69477d11cd5a7fc19b72719f78d2df9a9b567",
-      "OToken": "0xa8e4ec8b4103c683c981f4b2306d416fef1dea4d"
+      "VaultAddressesProvider": "0x26fa9ddfc8a373e40ccee3c41456b5c61e0ad67a",
+      "Vault": "0xe52290f6e5d2a9eafef7b9e8bdf8642af776309d",
+      "VaultConfigurator": "0xde477f1c2e51fa9fce4f10d12211666f928e2491",
+      "OToken": "0x3cdbc4bc3eec850d30f7a676806ff18815331865"
     },
     "Onebit-Smart-Trend-USDT-Demo": {
-      "LendingPoolAddressesProvider": "0x2c9c9ec84f858c611004e0b2231c1b9d27164806",
-      "LendingPool": "0x6633665728737d3aebe62a257802c14cca3e1ce4",
-      "LendingPoolConfigurator": "0xdcc3323e1627fa0f6d1f2f0b13fd879d841e0da7",
-      "OToken": "0x3ef565f95da654d3196e6bc8961959da309efcf6"
+      "VaultAddressesProvider": "0x039c2eb08059d6813f0072222c79fcc2ec39985d",
+      "Vault": "0xbab469f8e4ce3c71f92586384824c2f6e1acdcbb",
+      "VaultConfigurator": "0x4821d0a83b24449fce71fb5e429197d0454df3ee",
+      "OToken": "0xdeeb326e5b4672548c58872207959d275bed5422"
     },
     "Onebit-Smart-Trend-USDT-Whitelist-Test": {
-      "LendingPoolAddressesProvider": "0x2c53ce792d6cc64c08379390c87387b83570b47f",
-      "LendingPool": "0x86117a8b09a90f82629def0e954cbc7a05811fe9",
-      "LendingPoolConfigurator": "0xd248959a407ed01046de33fbf69da3144992974d",
+      "VaultAddressesProvider": "0x2c53ce792d6cc64c08379390c87387b83570b47f",
+      "Vault": "0x86117a8b09a90f82629def0e954cbc7a05811fe9",
+      "VaultConfigurator": "0xd248959a407ed01046de33fbf69da3144992974d",
       "OToken": "0xc470d401cd08133e3dda5d6965b7d53611ad240b"
     }
   }
