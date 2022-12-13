@@ -2,12 +2,13 @@
 /* tslint:disable */
 /* eslint-disable */
 export * as dependencies from './dependencies'
+export * as governanace from './governanace'
 export * as interfaces from './interfaces'
 export * as libraries from './libraries'
 export { IncentivizedERC20__factory } from './IncentivizedERC20__factory'
-export { LendingPool__factory } from './LendingPool__factory'
-export { LendingPoolAddressesProvider__factory } from './LendingPoolAddressesProvider__factory'
-export { LendingPoolAddressesProviderRegistry__factory } from './LendingPoolAddressesProviderRegistry__factory'
-export { LendingPoolConfigurator__factory } from './LendingPoolConfigurator__factory'
 export { MintableERC20__factory } from './MintableERC20__factory'
 export { OToken__factory } from './OToken__factory'
+export { Vault__factory } from './Vault__factory'
+export { VaultAddressesProvider__factory } from './VaultAddressesProvider__factory'
+export { VaultAddressesProviderRegistry__factory } from './VaultAddressesProviderRegistry__factory'
+export { VaultConfigurator__factory } from './VaultConfigurator__factory'

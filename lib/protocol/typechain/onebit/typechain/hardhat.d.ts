@@ -82,6 +82,10 @@ declare module 'hardhat/types/runtime' {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.UpgradeabilityProxy__factory>
     getContractFactory(
+      name: 'TimelockedExecutor',
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.TimelockedExecutor__factory>
+    getContractFactory(
       name: 'IncentivizedERC20',
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IncentivizedERC20__factory>
@@ -89,22 +93,6 @@ declare module 'hardhat/types/runtime' {
       name: 'IInitializableOToken',
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IInitializableOToken__factory>
-    getContractFactory(
-      name: 'ILendingPool',
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ILendingPool__factory>
-    getContractFactory(
-      name: 'ILendingPoolAddressesProvider',
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ILendingPoolAddressesProvider__factory>
-    getContractFactory(
-      name: 'ILendingPoolAddressesProviderRegistry',
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ILendingPoolAddressesProviderRegistry__factory>
-    getContractFactory(
-      name: 'ILendingPoolConfigurator',
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ILendingPoolConfigurator__factory>
     getContractFactory(
       name: 'IOToken',
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -114,21 +102,25 @@ declare module 'hardhat/types/runtime' {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IScaledBalanceToken__factory>
     getContractFactory(
-      name: 'LendingPool',
+      name: 'ITimelockedExecutor',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.LendingPool__factory>
+    ): Promise<Contracts.ITimelockedExecutor__factory>
     getContractFactory(
-      name: 'LendingPoolAddressesProvider',
+      name: 'IVault',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.LendingPoolAddressesProvider__factory>
+    ): Promise<Contracts.IVault__factory>
     getContractFactory(
-      name: 'LendingPoolAddressesProviderRegistry',
+      name: 'IVaultAddressesProvider',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.LendingPoolAddressesProviderRegistry__factory>
+    ): Promise<Contracts.IVaultAddressesProvider__factory>
     getContractFactory(
-      name: 'LendingPoolConfigurator',
+      name: 'IVaultAddressesProviderRegistry',
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.LendingPoolConfigurator__factory>
+    ): Promise<Contracts.IVaultAddressesProviderRegistry__factory>
+    getContractFactory(
+      name: 'IVaultConfigurator',
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IVaultConfigurator__factory>
     getContractFactory(
       name: 'BaseImmutableAdminUpgradeabilityProxy',
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -149,6 +141,22 @@ declare module 'hardhat/types/runtime' {
       name: 'OToken',
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.OToken__factory>
+    getContractFactory(
+      name: 'Vault',
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Vault__factory>
+    getContractFactory(
+      name: 'VaultAddressesProvider',
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.VaultAddressesProvider__factory>
+    getContractFactory(
+      name: 'VaultAddressesProviderRegistry',
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.VaultAddressesProviderRegistry__factory>
+    getContractFactory(
+      name: 'VaultConfigurator',
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.VaultConfigurator__factory>
 
     getContractAt(name: 'ERC20', address: string, signer?: ethers.Signer): Promise<Contracts.ERC20>
     getContractAt(name: 'IAccessControl', address: string, signer?: ethers.Signer): Promise<Contracts.IAccessControl>
@@ -197,6 +205,11 @@ declare module 'hardhat/types/runtime' {
       signer?: ethers.Signer
     ): Promise<Contracts.UpgradeabilityProxy>
     getContractAt(
+      name: 'TimelockedExecutor',
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.TimelockedExecutor>
+    getContractAt(
       name: 'IncentivizedERC20',
       address: string,
       signer?: ethers.Signer
@@ -206,44 +219,33 @@ declare module 'hardhat/types/runtime' {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.IInitializableOToken>
-    getContractAt(name: 'ILendingPool', address: string, signer?: ethers.Signer): Promise<Contracts.ILendingPool>
-    getContractAt(
-      name: 'ILendingPoolAddressesProvider',
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ILendingPoolAddressesProvider>
-    getContractAt(
-      name: 'ILendingPoolAddressesProviderRegistry',
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ILendingPoolAddressesProviderRegistry>
-    getContractAt(
-      name: 'ILendingPoolConfigurator',
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ILendingPoolConfigurator>
     getContractAt(name: 'IOToken', address: string, signer?: ethers.Signer): Promise<Contracts.IOToken>
     getContractAt(
       name: 'IScaledBalanceToken',
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.IScaledBalanceToken>
-    getContractAt(name: 'LendingPool', address: string, signer?: ethers.Signer): Promise<Contracts.LendingPool>
     getContractAt(
-      name: 'LendingPoolAddressesProvider',
+      name: 'ITimelockedExecutor',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.LendingPoolAddressesProvider>
+    ): Promise<Contracts.ITimelockedExecutor>
+    getContractAt(name: 'IVault', address: string, signer?: ethers.Signer): Promise<Contracts.IVault>
     getContractAt(
-      name: 'LendingPoolAddressesProviderRegistry',
+      name: 'IVaultAddressesProvider',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.LendingPoolAddressesProviderRegistry>
+    ): Promise<Contracts.IVaultAddressesProvider>
     getContractAt(
-      name: 'LendingPoolConfigurator',
+      name: 'IVaultAddressesProviderRegistry',
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.LendingPoolConfigurator>
+    ): Promise<Contracts.IVaultAddressesProviderRegistry>
+    getContractAt(
+      name: 'IVaultConfigurator',
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IVaultConfigurator>
     getContractAt(
       name: 'BaseImmutableAdminUpgradeabilityProxy',
       address: string,
@@ -257,6 +259,22 @@ declare module 'hardhat/types/runtime' {
     getContractAt(name: 'Errors', address: string, signer?: ethers.Signer): Promise<Contracts.Errors>
     getContractAt(name: 'MintableERC20', address: string, signer?: ethers.Signer): Promise<Contracts.MintableERC20>
     getContractAt(name: 'OToken', address: string, signer?: ethers.Signer): Promise<Contracts.OToken>
+    getContractAt(name: 'Vault', address: string, signer?: ethers.Signer): Promise<Contracts.Vault>
+    getContractAt(
+      name: 'VaultAddressesProvider',
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.VaultAddressesProvider>
+    getContractAt(
+      name: 'VaultAddressesProviderRegistry',
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.VaultAddressesProviderRegistry>
+    getContractAt(
+      name: 'VaultConfigurator',
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.VaultConfigurator>
 
     // default types
     getContractFactory(name: string, signerOrOptions?: ethers.Signer | FactoryOptions): Promise<ethers.ContractFactory>

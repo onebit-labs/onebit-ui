@@ -6,7 +6,7 @@ import type { EventFragment } from '@ethersproject/abi'
 import type { Listener, Provider } from '@ethersproject/providers'
 import type { TypedEventFilter, TypedEvent, TypedListener, OnEvent, PromiseOrValue } from '../common'
 
-export interface ILendingPoolConfiguratorInterface extends utils.Interface {
+export interface IVaultConfiguratorInterface extends utils.Interface {
   functions: {}
 
   events: {
@@ -72,12 +72,12 @@ export type ReserveUnfrozenEvent = TypedEvent<[], ReserveUnfrozenEventObject>
 
 export type ReserveUnfrozenEventFilter = TypedEventFilter<ReserveUnfrozenEvent>
 
-export interface ILendingPoolConfigurator extends BaseContract {
+export interface IVaultConfigurator extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this
   attach(addressOrName: string): this
   deployed(): Promise<this>
 
-  interface: ILendingPoolConfiguratorInterface
+  interface: IVaultConfiguratorInterface
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,

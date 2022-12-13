@@ -5,9 +5,9 @@
 import { Contract, Signer, utils } from 'ethers'
 import type { Provider } from '@ethersproject/providers'
 import type {
-  ILendingPoolAddressesProviderRegistry,
-  ILendingPoolAddressesProviderRegistryInterface,
-} from '../../interfaces/ILendingPoolAddressesProviderRegistry'
+  IVaultAddressesProviderRegistry,
+  IVaultAddressesProviderRegistryInterface,
+} from '../../interfaces/IVaultAddressesProviderRegistry'
 
 const _abi = [
   {
@@ -101,12 +101,12 @@ const _abi = [
   },
 ]
 
-export class ILendingPoolAddressesProviderRegistry__factory {
+export class IVaultAddressesProviderRegistry__factory {
   static readonly abi = _abi
-  static createInterface(): ILendingPoolAddressesProviderRegistryInterface {
-    return new utils.Interface(_abi) as ILendingPoolAddressesProviderRegistryInterface
+  static createInterface(): IVaultAddressesProviderRegistryInterface {
+    return new utils.Interface(_abi) as IVaultAddressesProviderRegistryInterface
   }
-  static connect(address: string, signerOrProvider: Signer | Provider): ILendingPoolAddressesProviderRegistry {
-    return new Contract(address, _abi, signerOrProvider) as ILendingPoolAddressesProviderRegistry
+  static connect(address: string, signerOrProvider: Signer | Provider): IVaultAddressesProviderRegistry {
+    return new Contract(address, _abi, signerOrProvider) as IVaultAddressesProviderRegistry
   }
 }

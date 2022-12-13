@@ -159,7 +159,7 @@ export type BurnEventFilter = TypedEventFilter<BurnEvent>
 
 export interface InitializedEventObject {
   underlyingAsset: string
-  pool: string
+  vault: string
   oTokenDecimals: number
   oTokenName: string
   oTokenSymbol: string
@@ -240,7 +240,7 @@ export interface IOToken extends BaseContract {
     ): Promise<[BigNumber, BigNumber]>
 
     initialize(
-      pool: PromiseOrValue<string>,
+      vault: PromiseOrValue<string>,
       underlyingAsset: PromiseOrValue<string>,
       oTokenDecimals: PromiseOrValue<BigNumberish>,
       oTokenName: PromiseOrValue<string>,
@@ -312,7 +312,7 @@ export interface IOToken extends BaseContract {
   ): Promise<[BigNumber, BigNumber]>
 
   initialize(
-    pool: PromiseOrValue<string>,
+    vault: PromiseOrValue<string>,
     underlyingAsset: PromiseOrValue<string>,
     oTokenDecimals: PromiseOrValue<BigNumberish>,
     oTokenName: PromiseOrValue<string>,
@@ -384,7 +384,7 @@ export interface IOToken extends BaseContract {
     ): Promise<[BigNumber, BigNumber]>
 
     initialize(
-      pool: PromiseOrValue<string>,
+      vault: PromiseOrValue<string>,
       underlyingAsset: PromiseOrValue<string>,
       oTokenDecimals: PromiseOrValue<BigNumberish>,
       oTokenName: PromiseOrValue<string>,
@@ -466,7 +466,7 @@ export interface IOToken extends BaseContract {
 
     'Initialized(address,address,uint8,string,string,bytes)'(
       underlyingAsset?: PromiseOrValue<string> | null,
-      pool?: PromiseOrValue<string> | null,
+      vault?: PromiseOrValue<string> | null,
       oTokenDecimals?: null,
       oTokenName?: null,
       oTokenSymbol?: null,
@@ -474,7 +474,7 @@ export interface IOToken extends BaseContract {
     ): InitializedEventFilter
     Initialized(
       underlyingAsset?: PromiseOrValue<string> | null,
-      pool?: PromiseOrValue<string> | null,
+      vault?: PromiseOrValue<string> | null,
       oTokenDecimals?: null,
       oTokenName?: null,
       oTokenSymbol?: null,
@@ -524,7 +524,7 @@ export interface IOToken extends BaseContract {
     getScaledUserBalanceAndSupply(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<BigNumber>
 
     initialize(
-      pool: PromiseOrValue<string>,
+      vault: PromiseOrValue<string>,
       underlyingAsset: PromiseOrValue<string>,
       oTokenDecimals: PromiseOrValue<BigNumberish>,
       oTokenName: PromiseOrValue<string>,
@@ -597,7 +597,7 @@ export interface IOToken extends BaseContract {
     ): Promise<PopulatedTransaction>
 
     initialize(
-      pool: PromiseOrValue<string>,
+      vault: PromiseOrValue<string>,
       underlyingAsset: PromiseOrValue<string>,
       oTokenDecimals: PromiseOrValue<BigNumberish>,
       oTokenName: PromiseOrValue<string>,

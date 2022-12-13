@@ -17,7 +17,7 @@ import type { FunctionFragment, Result, EventFragment } from '@ethersproject/abi
 import type { Listener, Provider } from '@ethersproject/providers'
 import type { TypedEventFilter, TypedEvent, TypedListener, OnEvent, PromiseOrValue } from './common'
 
-export declare namespace ILendingPoolConfigurator {
+export declare namespace IVaultConfigurator {
   export type InitReserveInputStruct = {
     oTokenImpl: PromiseOrValue<string>
     underlyingAssetDecimals: PromiseOrValue<BigNumberish>
@@ -55,7 +55,7 @@ export declare namespace ILendingPoolConfigurator {
   }
 }
 
-export interface LendingPoolConfiguratorInterface extends utils.Interface {
+export interface VaultConfiguratorInterface extends utils.Interface {
   functions: {
     'activateReserve()': FunctionFragment
     'addToWhitelist(address)': FunctionFragment
@@ -65,9 +65,12 @@ export interface LendingPoolConfiguratorInterface extends utils.Interface {
     'freezeReserve()': FunctionFragment
     'initReserve((address,uint8,address,address,string,string,string,bytes))': FunctionFragment
     'initialize(address)': FunctionFragment
+    'initializeNextPeriod(uint16,uint16,uint128,uint128,uint40,uint40,uint40)': FunctionFragment
+    'moveTheLockPeriod(uint40)': FunctionFragment
+    'moveTheRedemptionPeriod(uint40)': FunctionFragment
     'removeFromWhitelist(address)': FunctionFragment
     'setFundAddress(address)': FunctionFragment
-    'setPoolPause(bool)': FunctionFragment
+    'setVaultPause(bool)': FunctionFragment
     'setWhitelistExpiration(uint256)': FunctionFragment
     'unfreezeReserve()': FunctionFragment
     'updateOToken((string,string,address,bytes))': FunctionFragment
@@ -83,9 +86,12 @@ export interface LendingPoolConfiguratorInterface extends utils.Interface {
       | 'freezeReserve'
       | 'initReserve'
       | 'initialize'
+      | 'initializeNextPeriod'
+      | 'moveTheLockPeriod'
+      | 'moveTheRedemptionPeriod'
       | 'removeFromWhitelist'
       | 'setFundAddress'
-      | 'setPoolPause'
+      | 'setVaultPause'
       | 'setWhitelistExpiration'
       | 'unfreezeReserve'
       | 'updateOToken'
@@ -97,17 +103,28 @@ export interface LendingPoolConfiguratorInterface extends utils.Interface {
   encodeFunctionData(functionFragment: 'batchRemoveFromWhitelist', values: [PromiseOrValue<string>[]]): string
   encodeFunctionData(functionFragment: 'deactivateReserve', values?: undefined): string
   encodeFunctionData(functionFragment: 'freezeReserve', values?: undefined): string
-  encodeFunctionData(functionFragment: 'initReserve', values: [ILendingPoolConfigurator.InitReserveInputStruct]): string
+  encodeFunctionData(functionFragment: 'initReserve', values: [IVaultConfigurator.InitReserveInputStruct]): string
   encodeFunctionData(functionFragment: 'initialize', values: [PromiseOrValue<string>]): string
+  encodeFunctionData(
+    functionFragment: 'initializeNextPeriod',
+    values: [
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>
+    ]
+  ): string
+  encodeFunctionData(functionFragment: 'moveTheLockPeriod', values: [PromiseOrValue<BigNumberish>]): string
+  encodeFunctionData(functionFragment: 'moveTheRedemptionPeriod', values: [PromiseOrValue<BigNumberish>]): string
   encodeFunctionData(functionFragment: 'removeFromWhitelist', values: [PromiseOrValue<string>]): string
   encodeFunctionData(functionFragment: 'setFundAddress', values: [PromiseOrValue<string>]): string
-  encodeFunctionData(functionFragment: 'setPoolPause', values: [PromiseOrValue<boolean>]): string
+  encodeFunctionData(functionFragment: 'setVaultPause', values: [PromiseOrValue<boolean>]): string
   encodeFunctionData(functionFragment: 'setWhitelistExpiration', values: [PromiseOrValue<BigNumberish>]): string
   encodeFunctionData(functionFragment: 'unfreezeReserve', values?: undefined): string
-  encodeFunctionData(
-    functionFragment: 'updateOToken',
-    values: [ILendingPoolConfigurator.UpdateOTokenInputStruct]
-  ): string
+  encodeFunctionData(functionFragment: 'updateOToken', values: [IVaultConfigurator.UpdateOTokenInputStruct]): string
 
   decodeFunctionResult(functionFragment: 'activateReserve', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'addToWhitelist', data: BytesLike): Result
@@ -117,9 +134,12 @@ export interface LendingPoolConfiguratorInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: 'freezeReserve', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'initReserve', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'initialize', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'initializeNextPeriod', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'moveTheLockPeriod', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'moveTheRedemptionPeriod', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'removeFromWhitelist', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'setFundAddress', data: BytesLike): Result
-  decodeFunctionResult(functionFragment: 'setPoolPause', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'setVaultPause', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'setWhitelistExpiration', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'unfreezeReserve', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'updateOToken', data: BytesLike): Result
@@ -187,12 +207,12 @@ export type ReserveUnfrozenEvent = TypedEvent<[], ReserveUnfrozenEventObject>
 
 export type ReserveUnfrozenEventFilter = TypedEventFilter<ReserveUnfrozenEvent>
 
-export interface LendingPoolConfigurator extends BaseContract {
+export interface VaultConfigurator extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this
   attach(addressOrName: string): this
   deployed(): Promise<this>
 
-  interface: LendingPoolConfiguratorInterface
+  interface: VaultConfiguratorInterface
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
@@ -232,12 +252,33 @@ export interface LendingPoolConfigurator extends BaseContract {
     freezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
 
     initReserve(
-      input: ILendingPoolConfigurator.InitReserveInputStruct,
+      input: IVaultConfigurator.InitReserveInputStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
     initialize(
       provider: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
+    initializeNextPeriod(
+      managementFeeRate: PromiseOrValue<BigNumberish>,
+      performanceFeeRate: PromiseOrValue<BigNumberish>,
+      purchaseUpperLimit: PromiseOrValue<BigNumberish>,
+      softUpperLimit: PromiseOrValue<BigNumberish>,
+      purchaseBeginTimestamp: PromiseOrValue<BigNumberish>,
+      purchaseEndTimestamp: PromiseOrValue<BigNumberish>,
+      redemptionBeginTimestamp: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
+    moveTheLockPeriod(
+      newPurchaseEndTimestamp: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
+
+    moveTheRedemptionPeriod(
+      newRedemptionBeginTimestamp: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
@@ -251,7 +292,7 @@ export interface LendingPoolConfigurator extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
-    setPoolPause(
+    setVaultPause(
       val: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
@@ -264,7 +305,7 @@ export interface LendingPoolConfigurator extends BaseContract {
     unfreezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
 
     updateOToken(
-      input: ILendingPoolConfigurator.UpdateOTokenInputStruct,
+      input: IVaultConfigurator.UpdateOTokenInputStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
   }
@@ -291,12 +332,33 @@ export interface LendingPoolConfigurator extends BaseContract {
   freezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
 
   initReserve(
-    input: ILendingPoolConfigurator.InitReserveInputStruct,
+    input: IVaultConfigurator.InitReserveInputStruct,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
   initialize(
     provider: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
+
+  initializeNextPeriod(
+    managementFeeRate: PromiseOrValue<BigNumberish>,
+    performanceFeeRate: PromiseOrValue<BigNumberish>,
+    purchaseUpperLimit: PromiseOrValue<BigNumberish>,
+    softUpperLimit: PromiseOrValue<BigNumberish>,
+    purchaseBeginTimestamp: PromiseOrValue<BigNumberish>,
+    purchaseEndTimestamp: PromiseOrValue<BigNumberish>,
+    redemptionBeginTimestamp: PromiseOrValue<BigNumberish>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
+
+  moveTheLockPeriod(
+    newPurchaseEndTimestamp: PromiseOrValue<BigNumberish>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
+
+  moveTheRedemptionPeriod(
+    newRedemptionBeginTimestamp: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
@@ -310,7 +372,7 @@ export interface LendingPoolConfigurator extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
-  setPoolPause(
+  setVaultPause(
     val: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
@@ -323,7 +385,7 @@ export interface LendingPoolConfigurator extends BaseContract {
   unfreezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>
 
   updateOToken(
-    input: ILendingPoolConfigurator.UpdateOTokenInputStruct,
+    input: IVaultConfigurator.UpdateOTokenInputStruct,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
@@ -340,21 +402,39 @@ export interface LendingPoolConfigurator extends BaseContract {
 
     freezeReserve(overrides?: CallOverrides): Promise<void>
 
-    initReserve(input: ILendingPoolConfigurator.InitReserveInputStruct, overrides?: CallOverrides): Promise<void>
+    initReserve(input: IVaultConfigurator.InitReserveInputStruct, overrides?: CallOverrides): Promise<void>
 
     initialize(provider: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
+
+    initializeNextPeriod(
+      managementFeeRate: PromiseOrValue<BigNumberish>,
+      performanceFeeRate: PromiseOrValue<BigNumberish>,
+      purchaseUpperLimit: PromiseOrValue<BigNumberish>,
+      softUpperLimit: PromiseOrValue<BigNumberish>,
+      purchaseBeginTimestamp: PromiseOrValue<BigNumberish>,
+      purchaseEndTimestamp: PromiseOrValue<BigNumberish>,
+      redemptionBeginTimestamp: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<void>
+
+    moveTheLockPeriod(newPurchaseEndTimestamp: PromiseOrValue<BigNumberish>, overrides?: CallOverrides): Promise<void>
+
+    moveTheRedemptionPeriod(
+      newRedemptionBeginTimestamp: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<void>
 
     removeFromWhitelist(user: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
 
     setFundAddress(fundAddress: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>
 
-    setPoolPause(val: PromiseOrValue<boolean>, overrides?: CallOverrides): Promise<void>
+    setVaultPause(val: PromiseOrValue<boolean>, overrides?: CallOverrides): Promise<void>
 
     setWhitelistExpiration(expiration: PromiseOrValue<BigNumberish>, overrides?: CallOverrides): Promise<void>
 
     unfreezeReserve(overrides?: CallOverrides): Promise<void>
 
-    updateOToken(input: ILendingPoolConfigurator.UpdateOTokenInputStruct, overrides?: CallOverrides): Promise<void>
+    updateOToken(input: IVaultConfigurator.UpdateOTokenInputStruct, overrides?: CallOverrides): Promise<void>
   }
 
   filters: {
@@ -418,12 +498,33 @@ export interface LendingPoolConfigurator extends BaseContract {
     freezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>
 
     initReserve(
-      input: ILendingPoolConfigurator.InitReserveInputStruct,
+      input: IVaultConfigurator.InitReserveInputStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
     initialize(
       provider: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
+    initializeNextPeriod(
+      managementFeeRate: PromiseOrValue<BigNumberish>,
+      performanceFeeRate: PromiseOrValue<BigNumberish>,
+      purchaseUpperLimit: PromiseOrValue<BigNumberish>,
+      softUpperLimit: PromiseOrValue<BigNumberish>,
+      purchaseBeginTimestamp: PromiseOrValue<BigNumberish>,
+      purchaseEndTimestamp: PromiseOrValue<BigNumberish>,
+      redemptionBeginTimestamp: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
+    moveTheLockPeriod(
+      newPurchaseEndTimestamp: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
+    moveTheRedemptionPeriod(
+      newRedemptionBeginTimestamp: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
@@ -437,7 +538,7 @@ export interface LendingPoolConfigurator extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
-    setPoolPause(
+    setVaultPause(
       val: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
@@ -450,7 +551,7 @@ export interface LendingPoolConfigurator extends BaseContract {
     unfreezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>
 
     updateOToken(
-      input: ILendingPoolConfigurator.UpdateOTokenInputStruct,
+      input: IVaultConfigurator.UpdateOTokenInputStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
   }
@@ -478,12 +579,33 @@ export interface LendingPoolConfigurator extends BaseContract {
     freezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>
 
     initReserve(
-      input: ILendingPoolConfigurator.InitReserveInputStruct,
+      input: IVaultConfigurator.InitReserveInputStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
     initialize(
       provider: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
+    initializeNextPeriod(
+      managementFeeRate: PromiseOrValue<BigNumberish>,
+      performanceFeeRate: PromiseOrValue<BigNumberish>,
+      purchaseUpperLimit: PromiseOrValue<BigNumberish>,
+      softUpperLimit: PromiseOrValue<BigNumberish>,
+      purchaseBeginTimestamp: PromiseOrValue<BigNumberish>,
+      purchaseEndTimestamp: PromiseOrValue<BigNumberish>,
+      redemptionBeginTimestamp: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
+    moveTheLockPeriod(
+      newPurchaseEndTimestamp: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
+    moveTheRedemptionPeriod(
+      newRedemptionBeginTimestamp: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
@@ -497,7 +619,7 @@ export interface LendingPoolConfigurator extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
-    setPoolPause(
+    setVaultPause(
       val: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
@@ -510,7 +632,7 @@ export interface LendingPoolConfigurator extends BaseContract {
     unfreezeReserve(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>
 
     updateOToken(
-      input: ILendingPoolConfigurator.UpdateOTokenInputStruct,
+      input: IVaultConfigurator.UpdateOTokenInputStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
   }

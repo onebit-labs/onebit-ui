@@ -4,10 +4,7 @@
 
 import { Contract, Signer, utils } from 'ethers'
 import type { Provider } from '@ethersproject/providers'
-import type {
-  ILendingPoolConfigurator,
-  ILendingPoolConfiguratorInterface,
-} from '../../interfaces/ILendingPoolConfigurator'
+import type { IVaultConfigurator, IVaultConfiguratorInterface } from '../../interfaces/IVaultConfigurator'
 
 const _abi = [
   {
@@ -93,12 +90,12 @@ const _abi = [
   },
 ]
 
-export class ILendingPoolConfigurator__factory {
+export class IVaultConfigurator__factory {
   static readonly abi = _abi
-  static createInterface(): ILendingPoolConfiguratorInterface {
-    return new utils.Interface(_abi) as ILendingPoolConfiguratorInterface
+  static createInterface(): IVaultConfiguratorInterface {
+    return new utils.Interface(_abi) as IVaultConfiguratorInterface
   }
-  static connect(address: string, signerOrProvider: Signer | Provider): ILendingPoolConfigurator {
-    return new Contract(address, _abi, signerOrProvider) as ILendingPoolConfigurator
+  static connect(address: string, signerOrProvider: Signer | Provider): IVaultConfigurator {
+    return new Contract(address, _abi, signerOrProvider) as IVaultConfigurator
   }
 }

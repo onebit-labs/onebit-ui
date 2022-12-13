@@ -4,7 +4,7 @@
 
 import { Contract, Signer, utils } from 'ethers'
 import type { Provider } from '@ethersproject/providers'
-import type { ILendingPool, ILendingPoolInterface } from '../../interfaces/ILendingPool'
+import type { IVault, IVaultInterface } from '../../interfaces/IVault'
 
 const _abi = [
   {
@@ -375,7 +375,7 @@ const _abi = [
     name: 'getAddressesProvider',
     outputs: [
       {
-        internalType: 'contract ILendingPoolAddressesProvider',
+        internalType: 'contract IVaultAddressesProvider',
         name: '',
         type: 'address',
       },
@@ -561,6 +561,49 @@ const _abi = [
   {
     inputs: [
       {
+        internalType: 'uint16',
+        name: 'managementFeeRate',
+        type: 'uint16',
+      },
+      {
+        internalType: 'uint16',
+        name: 'performanceFeeRate',
+        type: 'uint16',
+      },
+      {
+        internalType: 'uint128',
+        name: 'purchaseUpperLimit',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'softUpperLimit',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint40',
+        name: 'purchaseBeginTimestamp',
+        type: 'uint40',
+      },
+      {
+        internalType: 'uint40',
+        name: 'purchaseEndTimestamp',
+        type: 'uint40',
+      },
+      {
+        internalType: 'uint40',
+        name: 'redemptionBeginTimestamp',
+        type: 'uint40',
+      },
+    ],
+    name: 'initializeNextPeriod',
+    outputs: [] as any,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
         internalType: 'address',
         name: 'user',
         type: 'address',
@@ -574,6 +617,32 @@ const _abi = [
         type: 'bool',
       },
     ],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'uint40',
+        name: 'newPurchaseEndTimestamp',
+        type: 'uint40',
+      },
+    ],
+    name: 'moveTheLockPeriod',
+    outputs: [] as any,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'uint40',
+        name: 'newRedemptionBeginTimestamp',
+        type: 'uint40',
+      },
+    ],
+    name: 'moveTheRedemptionPeriod',
+    outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -700,12 +769,12 @@ const _abi = [
   },
 ]
 
-export class ILendingPool__factory {
+export class IVault__factory {
   static readonly abi = _abi
-  static createInterface(): ILendingPoolInterface {
-    return new utils.Interface(_abi) as ILendingPoolInterface
+  static createInterface(): IVaultInterface {
+    return new utils.Interface(_abi) as IVaultInterface
   }
-  static connect(address: string, signerOrProvider: Signer | Provider): ILendingPool {
-    return new Contract(address, _abi, signerOrProvider) as ILendingPool
+  static connect(address: string, signerOrProvider: Signer | Provider): IVault {
+    return new Contract(address, _abi, signerOrProvider) as IVault
   }
 }

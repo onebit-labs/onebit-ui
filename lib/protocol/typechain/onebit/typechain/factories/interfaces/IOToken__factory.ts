@@ -106,7 +106,7 @@ const _abi = [
       {
         indexed: true,
         internalType: 'address',
-        name: 'pool',
+        name: 'vault',
         type: 'address',
       },
       {
@@ -322,8 +322,8 @@ const _abi = [
   {
     inputs: [
       {
-        internalType: 'contract ILendingPool',
-        name: 'pool',
+        internalType: 'contract IVault',
+        name: 'vault',
         type: 'address',
       },
       {

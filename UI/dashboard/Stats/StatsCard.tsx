@@ -29,13 +29,16 @@ const StatsCard: FC<React.PropsWithChildren<StatsCardProps>> = ({ card }) => {
     <StyledCard>
       <CardContent sx={{ width: 1 }}>
         <Stack spacing={1}>
-          {!tip ? <H5 color="text.secondary">{t(`stats.${title}`)}</H5>
-            : <Tooltip title={t('stats.tip')} placement='top'>
+          {!tip ? (
+            <H5 color="text.secondary">{t(`stats.${title}`)}</H5>
+          ) : (
+            <Tooltip title={t('stats.tip')} placement="top">
               <Stack direction="row" alignItems="center" spacing={1} color="text.secondary">
                 <H5 color="text.secondary">{t(`stats.${title}`)}</H5>
                 <HelpOutlinedIcon fontSize="inherit" />
               </Stack>
-            </Tooltip>}
+            </Tooltip>
+          )}
           <H2>{price}</H2>
         </Stack>
       </CardContent>

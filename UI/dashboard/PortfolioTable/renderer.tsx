@@ -19,33 +19,35 @@ type TableCellProps = {
   rowIndex: number
 }
 
-export const lockedUntilCellRenderer = ({ rowData: { redemptionBeginTimestamp, daysleft, purchaseEndTimestamp, status } }: TableCellProps) => {
+export const lockedUntilCellRenderer = ({
+  rowData: { redemptionBeginTimestamp, daysleft, purchaseEndTimestamp, status },
+}: TableCellProps) => {
   const TimeTips = () => {
     const { t } = useTranslation('dashboard')
     if (status === 'lockedUp') {
       return (
         <>
           <Paragraph>{format(redemptionBeginTimestamp, 'MM/dd/yyyy')}</Paragraph>
-          <Paragraph color="error.main">{daysleft} {t('portfolioTable.daysLeft')}</Paragraph>
+          <Paragraph color="error.main">
+            {daysleft} {t('portfolioTable.daysLeft')}
+          </Paragraph>
         </>
       )
-    }
-    else if (status === 'open') {
+    } else if (status === 'open') {
       return (
         <>
           <Paragraph color="text.main">{t('portfolioTable.withdrawableUntil')}</Paragraph>
           <Paragraph color="success.main">{format(purchaseEndTimestamp, 'MM/dd/yyyy')}</Paragraph>
         </>
       )
-    }
-    else {
+    } else {
       return (
         <>
           <Paragraph color="info.main">{t('portfolioTable.onlyForWithdrawal')}</Paragraph>
         </>
       )
     }
-  } 
+  }
 
   return (
     <TableCell align="center" component="div">

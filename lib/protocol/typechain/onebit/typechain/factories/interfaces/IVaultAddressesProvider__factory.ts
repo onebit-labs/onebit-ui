@@ -5,9 +5,9 @@
 import { Contract, Signer, utils } from 'ethers'
 import type { Provider } from '@ethersproject/providers'
 import type {
-  ILendingPoolAddressesProvider,
-  ILendingPoolAddressesProviderInterface,
-} from '../../interfaces/ILendingPoolAddressesProvider'
+  IVaultAddressesProvider,
+  IVaultAddressesProviderInterface,
+} from '../../interfaces/IVaultAddressesProvider'
 
 const _abi = [
   {
@@ -78,32 +78,6 @@ const _abi = [
     anonymous: false,
     inputs: [
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'newAddress',
-        type: 'address',
-      },
-    ],
-    name: 'LendingPoolConfiguratorUpdated',
-    type: 'event',
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'newAddress',
-        type: 'address',
-      },
-    ],
-    name: 'LendingPoolUpdated',
-    type: 'event',
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
         indexed: false,
         internalType: 'string',
         name: 'newMarketId',
@@ -111,19 +85,6 @@ const _abi = [
       },
     ],
     name: 'MarketIdSet',
-    type: 'event',
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'newAddress',
-        type: 'address',
-      },
-    ],
-    name: 'PoolOperatorUpdated',
     type: 'event',
   },
   {
@@ -143,6 +104,45 @@ const _abi = [
       },
     ],
     name: 'ProxyCreated',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'newAddress',
+        type: 'address',
+      },
+    ],
+    name: 'VaultConfiguratorUpdated',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'newAddress',
+        type: 'address',
+      },
+    ],
+    name: 'VaultOperatorUpdated',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'newAddress',
+        type: 'address',
+      },
+    ],
+    name: 'VaultUpdated',
     type: 'event',
   },
   {
@@ -192,32 +192,6 @@ const _abi = [
   },
   {
     inputs: [] as any,
-    name: 'getLendingPool',
-    outputs: [
-      {
-        internalType: 'address',
-        name: '',
-        type: 'address',
-      },
-    ],
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    inputs: [] as any,
-    name: 'getLendingPoolConfigurator',
-    outputs: [
-      {
-        internalType: 'address',
-        name: '',
-        type: 'address',
-      },
-    ],
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    inputs: [] as any,
     name: 'getMarketId',
     outputs: [
       {
@@ -231,7 +205,7 @@ const _abi = [
   },
   {
     inputs: [] as any,
-    name: 'getPoolAdmin',
+    name: 'getVault',
     outputs: [
       {
         internalType: 'address',
@@ -244,7 +218,33 @@ const _abi = [
   },
   {
     inputs: [] as any,
-    name: 'getPoolOperator',
+    name: 'getVaultAdmin',
+    outputs: [
+      {
+        internalType: 'address',
+        name: '',
+        type: 'address',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [] as any,
+    name: 'getVaultConfigurator',
+    outputs: [
+      {
+        internalType: 'address',
+        name: '',
+        type: 'address',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [] as any,
+    name: 'getVaultOperator',
     outputs: [
       {
         internalType: 'address',
@@ -320,32 +320,6 @@ const _abi = [
   {
     inputs: [
       {
-        internalType: 'address',
-        name: 'configurator',
-        type: 'address',
-      },
-    ],
-    name: 'setLendingPoolConfiguratorImpl',
-    outputs: [] as any,
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    inputs: [
-      {
-        internalType: 'address',
-        name: 'pool',
-        type: 'address',
-      },
-    ],
-    name: 'setLendingPoolImpl',
-    outputs: [] as any,
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    inputs: [
-      {
         internalType: 'string',
         name: 'marketId',
         type: 'string',
@@ -364,7 +338,7 @@ const _abi = [
         type: 'address',
       },
     ],
-    name: 'setPoolAdmin',
+    name: 'setVaultAdmin',
     outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
@@ -377,19 +351,45 @@ const _abi = [
         type: 'address',
       },
     ],
-    name: 'setPoolOperator',
+    name: 'setVaultConfiguratorImpl',
+    outputs: [] as any,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'vault',
+        type: 'address',
+      },
+    ],
+    name: 'setVaultImpl',
+    outputs: [] as any,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'configurator',
+        type: 'address',
+      },
+    ],
+    name: 'setVaultOperator',
     outputs: [] as any,
     stateMutability: 'nonpayable',
     type: 'function',
   },
 ]
 
-export class ILendingPoolAddressesProvider__factory {
+export class IVaultAddressesProvider__factory {
   static readonly abi = _abi
-  static createInterface(): ILendingPoolAddressesProviderInterface {
-    return new utils.Interface(_abi) as ILendingPoolAddressesProviderInterface
+  static createInterface(): IVaultAddressesProviderInterface {
+    return new utils.Interface(_abi) as IVaultAddressesProviderInterface
   }
-  static connect(address: string, signerOrProvider: Signer | Provider): ILendingPoolAddressesProvider {
-    return new Contract(address, _abi, signerOrProvider) as ILendingPoolAddressesProvider
+  static connect(address: string, signerOrProvider: Signer | Provider): IVaultAddressesProvider {
+    return new Contract(address, _abi, signerOrProvider) as IVaultAddressesProvider
   }
 }
