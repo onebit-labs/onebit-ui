@@ -19,6 +19,7 @@ const locale = {
       assetsUnderManagement: 'Assets Under Management',
       estimatedAPY: 'Estimated APY',
       depositors: 'Depositors',
+      initDeposit: 'Initial Deposit',
     },
     description: {
       'Onebit-Lightning-Hunter-USDT': {

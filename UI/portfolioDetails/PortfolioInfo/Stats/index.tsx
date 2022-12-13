@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Money from './icons/money.svg'
 import Revenue from './icons/revenue.svg'
 import User from './icons/user.svg'
+import Deposit from './icons/deposit.svg'
 
 import StatsCard from './StatsCard'
 import NumberDisplay from 'lib/math/components/NumberDisplay'
@@ -12,7 +13,7 @@ import type { Portfolio } from 'domains/data/portfolio'
 
 type StatsProps = Portfolio
 
-const Stats: FC<StatsProps> = ({ symbol, status, totalSupplyWithAPI, estimatedAPY, currentAPYWithAPI, depositors }) => {
+const Stats: FC<StatsProps> = ({ symbol, status, totalSupplyWithAPI, estimatedAPY, currentAPYWithAPI, depositors, initialDeposit }) => {
   const isOpen = status === 'open'
 
   const cardList = [
@@ -41,13 +42,22 @@ const Stats: FC<StatsProps> = ({ symbol, status, totalSupplyWithAPI, estimatedAP
       title: 'depositors',
       icon: <Image src={User} alt="User" width={40} height={40} />,
     },
+    {
+      price: (
+        <div>
+          <NumberDisplay value={initialDeposit} options="number" /> {symbol}
+        </div>
+      ),
+      title: 'initDeposit',
+      icon: <Image src={Deposit} alt="User" width={40} height={40} />,
+    },
   ]
 
   return (
     <div>
       <Grid container spacing={2}>
         {cardList.map((card, index) => (
-          <Grid item lg={4} sm={6} xs={12} key={index}>
+          <Grid item lg={3} sm={6} xs={12} key={index}>
             <StatsCard card={card} />
           </Grid>
         ))}
