@@ -2,7 +2,7 @@
   "stats": {
     "totalEquityValue": "总股本价值",
     "totalPNL": "总盈亏",
-    "totalPortfolioDeposited": "投资组合总存款",
+    "totalPortfolioDeposited": "存入的总产品",
     "APY": "年度",
     "tip": "此处显示的数据已扣除管理费和绩效费。"
   },
@@ -11,13 +11,16 @@
     "change24h": "过去一维"
   },
   "portfolioTable": {
-    "portfolioName": "投资组合名称",
+    "portfolioName": "产品名称",
     "lockedUntil": "锁定至",
     "netValue": "净值",
     "yourEquity": "您的股权",
     "PNL": "损益表",
     "status": "地位",
     "action": "行动",
-    "tip": "此处显示的数据已扣除管理费和绩效费。"
+    "tip": "此处显示的数据已扣除管理费和绩效费。",
+    "withdrawableUntil": "提款至",
+    "onlyForWithdrawal": "仅供提款",
+    "daysLeft": "剩余天数"
   }
 }

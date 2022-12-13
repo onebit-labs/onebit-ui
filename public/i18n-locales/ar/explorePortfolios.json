@@ -2,11 +2,11 @@
   "stats": {
     "assetsUnderManagement": "ممتلكات تحت اشراف الإدارة",
     "totalProfitSinceInception": "إجمالي الربح منذ التأسيس",
-    "portfolios": "المحافظ",
+    "portfolios": "منتجات",
     "depositors": "المودعين"
   },
   "tabs": {
-    "placeholder": "البحث عن المحافظ",
+    "placeholder": "البحث عن المنتجات",
     "all": "الجميع",
     "open": "فتح",
     "lockedUp": "مغلق"

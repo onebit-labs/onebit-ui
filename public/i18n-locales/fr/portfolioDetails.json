@@ -18,7 +18,8 @@
     "stats": {
       "assetsUnderManagement": "Actifs sous gestion",
       "estimatedAPY": "APY estimé",
-      "depositors": "Déposants"
+      "depositors": "Déposants",
+      "initDeposit": "Dépôt initial"
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
@@ -43,13 +44,6 @@
         ]
       },
       "Onebit-Smart-Trend-USDT-Demo": {
-        "main": "La stratégie vise à prédire les tendances actuelles des prix en fonction de la préférence pour le risque pour l'environnement macroéconomique, des niveaux de valorisation raisonnables des devises et de la dynamique des tendances du marché. Le processus d'investissement est une combinaison multicouche descendante de macro, de valeur et de tendance.",
-        "investmentRationale": [
-          "Convient aux investisseurs à la recherche de risques qui s'attendent à un rendement annuel élevé.",
-          "L'investisseur a un biais à long terme sur le marché de la cryptographie."
-        ]
-      },
-      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
         "main": "La stratégie vise à prédire les tendances actuelles des prix en fonction de la préférence pour le risque pour l'environnement macroéconomique, des niveaux de valorisation raisonnables des devises et de la dynamique des tendances du marché. Le processus d'investissement est une combinaison multicouche descendante de macro, de valeur et de tendance.",
         "investmentRationale": [
           "Convient aux investisseurs à la recherche de risques qui s'attendent à un rendement annuel élevé.",
@@ -91,7 +85,7 @@
     },
     "performance": {
       "title": "Commission de performance",
-      "description": "Une commission de performance est une commission basée sur un pourcentage que les déposants paient au gestionnaire de portefeuille sur les rendements positifs réalisés sur une période prédéfinie. La période prédéfinie est appelée période de blocage (généralement un an ou un trimestre). Les rendements sont comparés à l'actif de dénomination."
+      "description": "Une commission de performance est une commission basée sur un pourcentage que les déposants paient au gestionnaire de produit sur les rendements positifs réalisés sur une période prédéfinie. La période prédéfinie est appelée période de blocage (généralement un an ou un trimestre). Les rendements sont comparés à l'actif de dénomination."
     },
     "entrance": {
       "title": "Frais d'entrée"
@@ -108,8 +102,13 @@
     "softUpperLimit": "Cap souple de collecte de fonds",
     "minimumDeposit": "Dépôt minimal",
     "reInvestment": "Réinvestissement",
-    "description": "Si les déposants ne retirent pas les fonds à la fin de la période de blocage, les fonds seront réinvestis dans le portefeuille pour la prochaine période de blocage.",
-    "auto": "Auto"
+    "reInvestmentTip": "Si les déposants ne retirent pas les fonds à la fin de la période de blocage, les fonds seront réinvestis dans le produit pour la prochaine période de blocage.",
+    "auto": "Auto",
+    "riskControlLine": "Avertissement de contrôle des risques",
+    "riskControlLineTip": "Si la valeur nette tombe en dessous de la ligne de contrôle du risque d'arrêt, le produit sera réglé immédiatement pour réduire les pertes supplémentaires pour tous les déposants et ouvert aux retraits.",
+    "redemption": "Rachat",
+    "redemptionTip": "Après la période de blocage, le remboursement est ouvert le jour ouvrable suivant, ou la valeur nette déclenche un avertissement de contrôle des risques et peut être remboursée par anticipation.",
+    "netValue": "Valeur nette"
   },
   "depositors": {
     "depositors": "Déposants",

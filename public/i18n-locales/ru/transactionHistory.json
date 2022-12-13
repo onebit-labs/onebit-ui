@@ -5,12 +5,13 @@
   "tabs": {
     "all": "Все",
     "deposit": "Депозит",
-    "withdrawal": "Вывод"
+    "withdrawal": "Вывод",
+    "transfer": "Перевод баланса"
   },
   "transactions": {
     "txId": "TxID",
     "type": "Тип",
-    "portfolio": "портфолио",
+    "portfolio": "Товар",
     "amount": "Количество",
     "date": "Свидание"
   }

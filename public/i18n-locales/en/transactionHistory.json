@@ -5,12 +5,13 @@
   "tabs": {
     "all": "All",
     "deposit": "Deposit",
-    "withdrawal": "Withdrawal"
+    "withdrawal": "Withdrawal",
+    "transfer": "Balance Transfer"
   },
   "transactions": {
     "txId": "TxID",
     "type": "Type",
-    "portfolio": "Portfolio",
+    "portfolio": "Product",
     "amount": "Amount",
     "date": "Date"
   }

@@ -2,7 +2,7 @@
   "stats": {
     "totalEquityValue": "Valeur totale des capitaux propres",
     "totalPNL": "PNL total",
-    "totalPortfolioDeposited": "Portefeuille total déposé",
+    "totalPortfolioDeposited": "Produit total déposé",
     "APY": "APY",
     "tip": "Les commissions de gestion et de performance ont été déduites des données présentées ici."
   },
@@ -11,13 +11,16 @@
     "change24h": "Passé 1D"
   },
   "portfolioTable": {
-    "portfolioName": "Nom du portefeuille",
+    "portfolioName": "Nom du produit",
     "lockedUntil": "Verrouillé jusqu'à",
     "netValue": "Valeur nette",
     "yourEquity": "Votre capital",
     "PNL": "PNL",
     "status": "Statut",
     "action": "Action",
-    "tip": "Les commissions de gestion et de performance ont été déduites des données présentées ici."
+    "tip": "Les commissions de gestion et de performance ont été déduites des données présentées ici.",
+    "withdrawableUntil": "Retirable jusqu'au",
+    "onlyForWithdrawal": "Uniquement pour le retrait",
+    "daysLeft": "Jours restants"
   }
 }

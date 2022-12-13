@@ -1,9 +1,9 @@
 {
   "menu": "Menu",
-  "dashboard": "Tableau de bord",
-  "explorePortfolios": "Explorer les portefeuilles",
+  "dashboard": "Postes",
+  "explorePortfolios": "Explorer les produits",
   "transactionHistory": "Historique des transactions",
-  "portfolioDetails": "Détails du portefeuille",
+  "portfolioDetails": "détails du produit",
   "terms": "Conditions d'utilisation",
   "privacy": "Politique de confidentialité"
 }

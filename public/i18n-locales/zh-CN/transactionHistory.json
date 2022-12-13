@@ -5,12 +5,13 @@
   "tabs": {
     "all": "全部",
     "deposit": "订金",
-    "withdrawal": "退出"
+    "withdrawal": "退出",
+    "transfer": "余额转介"
   },
   "transactions": {
-    "txId": "发送标识符",
+    "txId": "发送ID",
     "type": "类型",
-    "portfolio": "文件夹",
+    "portfolio": "产品",
     "amount": "数量",
     "date": "日期"
   }

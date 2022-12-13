@@ -37,14 +37,14 @@
     "signature": {
       "title": "Bienvenido a",
       "thingsToKnowTitle": "cosas que debes saber",
-      "thingsToKnowContent": "No se garantiza que gane dinero invirtiendo en las carteras que se ofrecen en Onebit. El rendimiento pasado no es una indicación de los resultados futuros. Solo usted es responsable de la seguridad de sus fondos. Su capital está en riesgo.",
+      "thingsToKnowContent": "No se garantiza que gane dinero invirtiendo en los productos ofrecidos en Onebit. El rendimiento pasado no es una indicación de los resultados futuros. Solo usted es responsable de la seguridad de sus fondos. Su capital está en riesgo.",
       "accept": "Aceptar",
       "decline": "Rechazar",
       "tip": "Al hacer clic en \"Aceptar\" a continuación, reconozco lo anterior, la",
       "and": ", y"
     },
     "KYT": {
-      "tip": "Esta cartera requiere que las direcciones de billetera de los usuarios pasen los controles KYT y se incluyan en la lista blanca antes de depositar fondos. La lista blanca es válida por 3 meses.",
+      "tip": "Este producto requiere direcciones de billetera de usuario para pasar los cheques KYT y estar en la lista blanca antes de depositar fondos. La lista blanca es válida por 3 meses.",
       "getWhitelisted": "Obtener en la lista blanca",
       "conducting": "Realización de verificaciones KYT",
       "adding": "Agregar a la lista blanca"
@@ -54,9 +54,9 @@
       "walletBalance": "Saldo de la cartera",
       "lockUpPeriod": "Período de bloqueo",
       "days": "Días",
-      "tip": "Esta cartera tiene una comisión de gestión anual de <managementFee>la comisión de gestión</managementFee> y una comisión de rendimiento de <performanceFee>la tasa de rendimiento</performanceFee>.",
+      "tip": "Este producto tiene una tarifa de gestión anual de <managementFee>la comisión de gestión</managementFee> y una tarifa de rendimiento de <performanceFee>la tasa de rendimiento</performanceFee>.",
       "reInvestment": "Reinversión de automóviles",
-      "description": "Si los depositantes no retiran los fondos al final del período de bloqueo, los fondos se reinvertirán en la cartera para el próximo período de bloqueo."
+      "description": "Si los depositantes no retiran los fondos al final del período de bloqueo, los fondos se reinvertirán en el producto para el próximo período de bloqueo."
     },
     "withdrawal": {
       "amount": "Monto",

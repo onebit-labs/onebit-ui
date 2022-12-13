@@ -1,9 +1,9 @@
 {
   "menu": "Меню",
-  "dashboard": "Приборная доска",
-  "explorePortfolios": "Исследуйте портфолио",
+  "dashboard": "Позиции",
+  "explorePortfolios": "Исследуйте продукты",
   "transactionHistory": "История транзакций",
-  "portfolioDetails": "Сведения о портфолио",
+  "portfolioDetails": "информация о продукте",
   "terms": "условия обслуживания",
   "privacy": "Политика конфиденциальности"
 }

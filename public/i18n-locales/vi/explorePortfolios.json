@@ -2,11 +2,11 @@
   "stats": {
     "assetsUnderManagement": "Tài sản được quản lý",
     "totalProfitSinceInception": "Tổng lợi nhuận kể từ khi thành lập",
-    "portfolios": "danh mục đầu tư",
+    "portfolios": "Các sản phẩm",
     "depositors": "Người gửi tiền"
   },
   "tabs": {
-    "placeholder": "Tìm danh mục đầu tư",
+    "placeholder": "Tìm sản phẩm",
     "all": "Tất cả các",
     "open": "Mở",
     "lockedUp": "Nhốt"

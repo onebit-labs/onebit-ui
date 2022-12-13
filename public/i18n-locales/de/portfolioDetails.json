@@ -18,7 +18,8 @@
     "stats": {
       "assetsUnderManagement": "Verwaltetes Vermögen",
       "estimatedAPY": "Geschätzter APY",
-      "depositors": "Einleger"
+      "depositors": "Einleger",
+      "initDeposit": "Ersteinzahlung"
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
@@ -43,13 +44,6 @@
         ]
       },
       "Onebit-Smart-Trend-USDT-Demo": {
-        "main": "Die Strategie zielt darauf ab, aktuelle Preistrends durch Risikopräferenz für das Makroumfeld, angemessene Bewertungsniveaus von Währungen und die Dynamik von Markttrends vorherzusagen. Der Anlageprozess ist eine mehrschichtige Top-down-Kombination aus Makro, Wert und Trend.",
-        "investmentRationale": [
-          "Geeignet für risikofreudige Anleger, die eine hohe jährliche Rendite erwarten.",
-          "Der Investor hat eine langfristige Long-Tendenz des Kryptomarktes."
-        ]
-      },
-      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
         "main": "Die Strategie zielt darauf ab, aktuelle Preistrends durch Risikopräferenz für das Makroumfeld, angemessene Bewertungsniveaus von Währungen und die Dynamik von Markttrends vorherzusagen. Der Anlageprozess ist eine mehrschichtige Top-down-Kombination aus Makro, Wert und Trend.",
         "investmentRationale": [
           "Geeignet für risikofreudige Anleger, die eine hohe jährliche Rendite erwarten.",
@@ -91,7 +85,7 @@
     },
     "performance": {
       "title": "Leistungsgebühr",
-      "description": "Eine Performancegebühr ist eine prozentuale Gebühr, die Einleger aus den positiven Renditen über einen vordefinierten Zeitraum an den Portfoliomanager zahlen. Der vordefinierte Zeitraum wird als Sperrzeit bezeichnet (normalerweise ein Jahr oder ein Quartal). Die Renditen werden mit dem Denominationsvermögenswert verglichen."
+      "description": "Eine Performancegebühr ist eine prozentuale Gebühr, die Einleger aus den positiven Renditen über einen vordefinierten Zeitraum an den Produktmanager zahlen. Der vordefinierte Zeitraum wird als Sperrzeit bezeichnet (normalerweise ein Jahr oder ein Quartal). Die Renditen werden mit dem Denominationsvermögenswert verglichen."
     },
     "entrance": {
       "title": "Eintrittspreis"
@@ -108,8 +102,13 @@
     "softUpperLimit": "Fundraising-Soft-Cap",
     "minimumDeposit": "Mindesteinzahlung",
     "reInvestment": "Reinvestition",
-    "description": "Wenn Einleger die Gelder am Ende der Sperrfrist nicht abheben, werden die Gelder für die nächste Sperrfrist wieder in das Portfolio investiert.",
-    "auto": "Auto"
+    "reInvestmentTip": "Wenn Einleger die Gelder am Ende der Sperrfrist nicht abheben, werden die Gelder für die nächste Sperrfrist wieder in das Produkt investiert.",
+    "auto": "Auto",
+    "riskControlLine": "Warnung zur Risikokontrolle",
+    "riskControlLineTip": "Wenn der Nettowert unter die Stop-Risikokontrolllinie fällt, wird das Produkt sofort abgerechnet, um weitere Verluste für alle Einleger zu reduzieren, und für Abhebungen geöffnet.",
+    "redemption": "Rückzahlung",
+    "redemptionTip": "Nach Ablauf der Sperrfrist ist die Rücknahme am nächsten Werktag möglich oder der Nettowert löst eine Risikokontrollwarnung aus und kann vorzeitig zurückgenommen werden.",
+    "netValue": "Nettowert"
   },
   "depositors": {
     "depositors": "Einleger",

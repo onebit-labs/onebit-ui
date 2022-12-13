@@ -1,16 +1,17 @@
 {
   "search": {
-    "name": "ค้นหาด้วยชื่อ"
+    "name": "ค้นหาตามชื่อ"
   },
   "tabs": {
     "all": "ทั้งหมด",
     "deposit": "เงินฝาก",
-    "withdrawal": "การถอนเงิน"
+    "withdrawal": "การถอนเงิน",
+    "transfer": "การโอนยอดคงเหลือ"
   },
   "transactions": {
-    "txId": "TxID",
+    "txId": "Tx ID",
     "type": "พิมพ์",
-    "portfolio": "ผลงาน",
+    "portfolio": "ผลิตภัณฑ์",
     "amount": "จำนวน",
     "date": "วันที่"
   }

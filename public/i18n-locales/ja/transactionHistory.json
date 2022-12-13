@@ -5,12 +5,13 @@
   "tabs": {
     "all": "全て",
     "deposit": "デポジット",
-    "withdrawal": "出金"
+    "withdrawal": "出金",
+    "transfer": "残高の移動"
   },
   "transactions": {
     "txId": "送信ID",
     "type": "タイプ",
-    "portfolio": "ポートフォリオ",
+    "portfolio": "製品",
     "amount": "額",
     "date": "日にち"
   }

@@ -1,9 +1,9 @@
 {
   "menu": "菜单",
-  "dashboard": "仪表板",
-  "explorePortfolios": "探索投资组合",
+  "dashboard": "职位",
+  "explorePortfolios": "探索产品",
   "transactionHistory": "交易记录",
-  "portfolioDetails": "投资组合详情",
+  "portfolioDetails": "产品详情",
   "terms": "服务条款",
   "privacy": "隐私政策"
 }

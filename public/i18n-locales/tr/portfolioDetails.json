@@ -18,7 +18,8 @@
     "stats": {
       "assetsUnderManagement": "Yönetim Altındaki Varlıklar",
       "estimatedAPY": "Tahmini APY",
-      "depositors": "mevduat sahipleri"
+      "depositors": "mevduat sahipleri",
+      "initDeposit": "İlk Depozito"
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
@@ -49,13 +50,6 @@
           "Yatırımcı, kripto piyasasına ilişkin uzun vadeli bir önyargıya sahiptir."
         ]
       },
-      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
-        "main": "Strateji, makro ortam için risk tercihi, para birimlerinin makul değerleme seviyeleri ve piyasa eğilimlerinin ivmesi aracılığıyla mevcut fiyat eğilimlerini tahmin etmeyi amaçlar. Yatırım süreci, makro, değer ve trendin yukarıdan aşağıya çok katmanlı bir kombinasyonudur.",
-        "investmentRationale": [
-          "Yüksek yıllık getiri bekleyen risk arayan yatırımcılar için uygundur.",
-          "Yatırımcı, kripto piyasasına ilişkin uzun vadeli bir önyargıya sahiptir."
-        ]
-      },
       "investmentRationale": "Yatırım Mantığı:"
     }
   },
@@ -72,7 +66,7 @@
     "historicalPerformance": {
       "title": "Tarihsel Performans",
       "term": "Terim",
-      "lockUpPeriod": "Kilitlenme Dönemi",
+      "lockUpPeriod": "Kilitlenme Süresi",
       "AUM": "AUM",
       "depositors": "mevduat sahipleri",
       "finalNetValue": "Nihai Net Değer",
@@ -91,7 +85,7 @@
     },
     "performance": {
       "title": "Performans ücreti",
-      "description": "Performans ücreti, mevduat sahiplerinin önceden tanımlanmış bir süre boyunca elde edilen olumlu getirilerden Portföy Yöneticisine ödediği yüzdeye dayalı bir ücrettir. Önceden tanımlanmış dönem, Kilitli dönem olarak adlandırılır (tipik olarak bir yıl veya üç aylık dönem). Getiriler, mezhep varlığına göre kıyaslanır."
+      "description": "Performans ücreti, mevduat sahiplerinin önceden tanımlanmış bir süre boyunca yapılan olumlu geri dönüşlerden Ürün Yöneticisine ödediği yüzdeye dayalı bir ücrettir. Önceden tanımlanmış dönem, Kilitli dönem olarak adlandırılır (tipik olarak bir yıl veya üç aylık dönem). Getiriler, mezhep varlığına göre kıyaslanır."
     },
     "entrance": {
       "title": "Giriş ücreti"
@@ -108,8 +102,13 @@
     "softUpperLimit": "Bağış Toplama Soft Cap",
     "minimumDeposit": "Minimum Depozito",
     "reInvestment": "Yeniden yatırım",
-    "description": "Mudilerin bloke süresi sonunda fonlarını çekmemesi durumunda, fonlar bir sonraki bloke süresi için portföye yeniden yatırılacaktır.",
-    "auto": "Oto"
+    "reInvestmentTip": "Mudiler bloke süresi sonunda fonlarını çekmezlerse, fonlar bir sonraki bloke süresi için ürüne yeniden yatırılacaktır.",
+    "auto": "Oto",
+    "riskControlLine": "Risk Kontrol Uyarısı",
+    "riskControlLineTip": "Net Değer, risk durdurma kontrol çizgisinin altına düşerse, tüm mevduat sahipleri için daha fazla zararı azaltmak için ürün derhal kapatılır ve para çekmeye açılır.",
+    "redemption": "Kefaret",
+    "redemptionTip": "Kilitleme süresinden sonra itfa bir sonraki iş gününde açılır veya net değer risk kontrol uyarısını tetikler ve peşin itfa edilebilir.",
+    "netValue": "Net değer"
   },
   "depositors": {
     "depositors": "mevduat sahipleri",

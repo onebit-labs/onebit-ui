@@ -2,7 +2,7 @@
   "stats": {
     "totalEquityValue": "Toplam Özkaynak Değeri",
     "totalPNL": "Toplam PNL",
-    "totalPortfolioDeposited": "Yatırılan Toplam Portföy",
+    "totalPortfolioDeposited": "Yatırılan Toplam Ürün",
     "APY": "APY",
     "tip": "Yönetim ve performans ücretleri burada gösterilen verilerden düşülmüştür."
   },
@@ -11,13 +11,16 @@
     "change24h": "Geçmiş 1D"
   },
   "portfolioTable": {
-    "portfolioName": "portföy adı",
+    "portfolioName": "Ürün adı",
     "lockedUntil": "Şuna Kadar Kilitli:",
     "netValue": "Net değer",
     "yourEquity": "öz sermayeniz",
     "PNL": "PNL",
     "status": "Durum",
     "action": "Eylem",
-    "tip": "Yönetim ve performans ücretleri burada gösterilen verilerden düşülmüştür."
+    "tip": "Yönetim ve performans ücretleri burada gösterilen verilerden düşülmüştür.",
+    "withdrawableUntil": "Kadar Çekilebilir",
+    "onlyForWithdrawal": "Sadece Para Çekme İçin",
+    "daysLeft": "Kalan günler"
   }
 }

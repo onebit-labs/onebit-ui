@@ -2,11 +2,11 @@
   "stats": {
     "assetsUnderManagement": "สินทรัพย์ภายใต้การจัดการ",
     "totalProfitSinceInception": "กำไรรวมตั้งแต่เริ่มก่อตั้ง",
-    "portfolios": "ผลงาน",
+    "portfolios": "สินค้า",
     "depositors": "ผู้ฝากเงิน"
   },
   "tabs": {
-    "placeholder": "ค้นหาพอร์ตโฟลิโอ",
+    "placeholder": "ค้นหาผลิตภัณฑ์",
     "all": "ทั้งหมด",
     "open": "เปิด",
     "lockedUp": "ขังไว้"

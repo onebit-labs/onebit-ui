@@ -1,9 +1,9 @@
 {
   "menu": "Cardápio",
-  "dashboard": "Painel",
-  "explorePortfolios": "Explorar portfólios",
+  "dashboard": "Posições",
+  "explorePortfolios": "Explorar produtos",
   "transactionHistory": "Histórico de transações",
-  "portfolioDetails": "Detalhes do portfólio",
+  "portfolioDetails": "Detalhes do produto",
   "terms": "Termos de serviço",
   "privacy": "Política de Privacidade"
 }

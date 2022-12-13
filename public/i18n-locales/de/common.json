@@ -37,14 +37,14 @@
     "signature": {
       "title": "Willkommen zu",
       "thingsToKnowTitle": "Dinge, die Sie wissen sollten",
-      "thingsToKnowContent": "Es ist nicht garantiert, dass Sie Geld verdienen, indem Sie Portfolios investieren, die auf Onebit angeboten werden. Die Wertentwicklung in der Vergangenheit ist kein Hinweis auf zukünftige Ergebnisse. Sie allein sind für die Sicherheit Ihrer Gelder verantwortlich. Ihr Kapital ist gefährdet.",
+      "thingsToKnowContent": "Es ist nicht garantiert, dass Sie Geld verdienen, indem Sie Produkte investieren, die auf Onebit angeboten werden. Die Wertentwicklung in der Vergangenheit ist kein Hinweis auf zukünftige Ergebnisse. Sie allein sind für die Sicherheit Ihrer Gelder verantwortlich. Ihr Kapital ist gefährdet.",
       "accept": "Annehmen",
       "decline": "Abfall",
       "tip": "Indem ich unten auf „Akzeptieren“ klicke, erkenne ich das Vorstehende an",
       "and": ", und"
     },
     "KYT": {
-      "tip": "Dieses Portfolio erfordert, dass Benutzer-Wallet-Adressen KYT-Prüfungen bestehen und vor der Einzahlung auf die Whitelist gesetzt werden. Die Whitelist ist 3 Monate gültig.",
+      "tip": "Für dieses Produkt müssen Benutzer-Wallet-Adressen KYT-Prüfungen bestehen und vor der Einzahlung auf die Whitelist gesetzt werden. Die Whitelist ist 3 Monate gültig.",
       "getWhitelisted": "Lassen Sie sich auf die Whitelist setzen",
       "conducting": "Durchführung von KYT-Checks",
       "adding": "Zur Whitelist hinzufügen"
@@ -54,9 +54,9 @@
       "walletBalance": "Wallet-Guthaben",
       "lockUpPeriod": "Sperrfrist",
       "days": "Tage",
-      "tip": "Dieses Portfolio hat eine jährliche Verwaltungsgebühr von <managementFee>die Verwaltungsgebühr</managementFee> und eine Performancegebühr von <performanceFee>das Leistungshonorar</performanceFee>.",
+      "tip": "Dieses Produkt hat eine jährliche Verwaltungsgebühr von <managementFee>die Verwaltungsgebühr</managementFee> und eine Performancegebühr von <performanceFee>das Leistungshonorar</performanceFee>.",
       "reInvestment": "Automatische Reinvestition",
-      "description": "Wenn Einleger die Gelder am Ende der Sperrfrist nicht abheben, werden die Gelder für die nächste Sperrfrist wieder in das Portfolio investiert."
+      "description": "Wenn Einleger die Gelder am Ende der Sperrfrist nicht abheben, werden die Gelder für die nächste Sperrfrist wieder in das Produkt investiert."
     },
     "withdrawal": {
       "amount": "Menge",

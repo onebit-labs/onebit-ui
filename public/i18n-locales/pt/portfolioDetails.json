@@ -18,7 +18,8 @@
     "stats": {
       "assetsUnderManagement": "Activos sob gestão",
       "estimatedAPY": "APY estimado",
-      "depositors": "Depositantes"
+      "depositors": "Depositantes",
+      "initDeposit": "Depósito inicial"
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
@@ -43,13 +44,6 @@
         ]
       },
       "Onebit-Smart-Trend-USDT-Demo": {
-        "main": "A estratégia visa prever as tendências atuais de preços por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
-        "investmentRationale": [
-          "Adequado para investidores que buscam risco e esperam um alto retorno anual.",
-          "O investidor tem um viés de longo prazo do mercado de criptomoedas."
-        ]
-      },
-      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
         "main": "A estratégia visa prever as tendências atuais de preços por meio da preferência de risco para o ambiente macro, níveis razoáveis de avaliação de moedas e o momento das tendências do mercado. O processo de investimento é uma combinação multicamadas de cima para baixo de macro, valor e tendência.",
         "investmentRationale": [
           "Adequado para investidores que buscam risco e esperam um alto retorno anual.",
@@ -91,13 +85,13 @@
     },
     "performance": {
       "title": "Taxa de performance",
-      "description": "Uma taxa de desempenho é uma taxa baseada em porcentagem que os depositantes pagam ao Gestor de Carteira com base nos retornos positivos obtidos durante um período predefinido. O período predefinido é referido como um período bloqueado (normalmente um ano ou um trimestre). Os retornos são comparados com o ativo de denominação."
+      "description": "Uma taxa de desempenho é uma taxa baseada em porcentagem que os depositantes pagam ao Gerente de Produto a partir dos retornos positivos obtidos em um período predefinido. O período predefinido é referido como um período bloqueado (normalmente um ano ou um trimestre). Os retornos são comparados com o ativo de denominação."
     },
     "entrance": {
       "title": "Taxa de entrada"
     },
     "exit": {
-      "title": "Taxa de Saída"
+      "title": "Taxa de saída"
     }
   },
   "policies": {
@@ -108,8 +102,13 @@
     "softUpperLimit": "Capa flexível de arrecadação de fundos",
     "minimumDeposit": "Depósito Mínimo",
     "reInvestment": "Reinvestimento",
-    "description": "Se os depositantes não retirarem os fundos no final do período de bloqueio, os fundos serão reinvestidos na carteira para o próximo período de bloqueio.",
-    "auto": "Auto"
+    "reInvestmentTip": "Se os depositantes não retirarem os fundos no final do período de bloqueio, os fundos serão reinvestidos no produto para o próximo período de bloqueio.",
+    "auto": "Auto",
+    "riskControlLine": "Aviso de controle de risco",
+    "riskControlLineTip": "Se o Valor Líquido cair abaixo da linha de controle de risco stop, o produto será liquidado imediatamente para reduzir perdas adicionais para todos os depositantes e aberto para saques.",
+    "redemption": "Redenção",
+    "redemptionTip": "Após o período de bloqueio, o resgate é aberto no próximo dia útil, ou o valor líquido aciona alerta de controle de risco e pode ser resgatado antecipadamente.",
+    "netValue": "Valor líquido"
   },
   "depositors": {
     "depositors": "Depositantes",

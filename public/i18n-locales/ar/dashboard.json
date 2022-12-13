@@ -2,7 +2,7 @@
   "stats": {
     "totalEquityValue": "إجمالي قيمة حقوق الملكية",
     "totalPNL": "مجموع PNL",
-    "totalPortfolioDeposited": "إجمالي المحفظة المودعة",
+    "totalPortfolioDeposited": "إجمالي المنتج المودع",
     "APY": "APY",
     "tip": "تم خصم رسوم الإدارة والأداء من البيانات الموضحة هنا."
   },
@@ -11,13 +11,16 @@
     "change24h": "الماضي 1D"
   },
   "portfolioTable": {
-    "portfolioName": "اسم المحفظة",
+    "portfolioName": "اسم المنتج",
     "lockedUntil": "مغلق حتى",
     "netValue": "صافي القيمة",
     "yourEquity": "حقوق الملكية الخاصة بك",
     "PNL": "PNL",
     "status": "حالة",
     "action": "عمل",
-    "tip": "تم خصم رسوم الإدارة والأداء من البيانات الموضحة هنا."
+    "tip": "تم خصم رسوم الإدارة والأداء من البيانات الموضحة هنا.",
+    "withdrawableUntil": "قابل للسحب حتى",
+    "onlyForWithdrawal": "فقط للانسحاب",
+    "daysLeft": "ايام متبقية"
   }
 }

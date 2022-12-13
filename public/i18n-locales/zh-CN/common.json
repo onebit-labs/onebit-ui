@@ -37,14 +37,14 @@
     "signature": {
       "title": "欢迎来到",
       "thingsToKnowTitle": "你应该知道的事",
-      "thingsToKnowContent": "不能保证您通过投资 Onebit 上提供的任何投资组合来赚钱。过去的表现并不代表未来的结果。您独自负责您的资金安全。您的资金有风险。",
+      "thingsToKnowContent": "不能保证您通过投资 Onebit 上提供的任何产品来赚钱。过去的表现并不代表未来的结果。您独自负责您的资金安全。您的资金有风险。",
       "accept": "接受",
       "decline": "衰退",
       "tip": "单击下面的“接受”，即表示我承认以上内容，",
       "and": "， 和"
     },
     "KYT": {
-      "tip": "该投资组合要求用户钱包地址通过 KYT 检查并在存入资金之前列入白名单。白名单有效期为3个月。",
+      "tip": "该产品要求用户钱包地址通过 KYT 检查并在存入资金之前列入白名单。白名单有效期为3个月。",
       "getWhitelisted": "获得白名单",
       "conducting": "进行 KYT 检查",
       "adding": "添加到白名单"
@@ -54,9 +54,9 @@
       "walletBalance": "钱包余额",
       "lockUpPeriod": "锁定期",
       "days": "天",
-      "tip": "该投资组合的年管理费为 <managementFee>管理费</managementFee>，绩效费为 <performanceFee>绩效费</performanceFee>。",
+      "tip": "该产品的年管理费为 <managementFee>管理费</managementFee>，绩效费为 <performanceFee>绩效费</performanceFee>。",
       "reInvestment": "汽车再投资",
-      "description": "如果存款人在锁定期结束时未提取资金，则资金将重新投入到下一个锁定期的投资组合中。"
+      "description": "如果存款人在锁定期结束时未提取资金，资金将重新投入到下一个锁定期的产品中。"
     },
     "withdrawal": {
       "amount": "数量",

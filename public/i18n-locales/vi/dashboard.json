@@ -2,7 +2,7 @@
   "stats": {
     "totalEquityValue": "Tổng giá trị vốn chủ sở hữu",
     "totalPNL": "Tổng PNL",
-    "totalPortfolioDeposited": "Tổng số danh mục đầu tư được ký gửi",
+    "totalPortfolioDeposited": "Tổng sản phẩm đã ký gửi",
     "APY": "APY",
     "tip": "Phí quản lý và hiệu suất đã được khấu trừ từ dữ liệu hiển thị ở đây."
   },
@@ -11,13 +11,16 @@
     "change24h": "Quá khứ 1D"
   },
   "portfolioTable": {
-    "portfolioName": "Tên danh mục đầu tư",
+    "portfolioName": "tên sản phẩm",
     "lockedUntil": "bị khóa cho đến khi",
     "netValue": "giá trị ròng",
     "yourEquity": "Vốn chủ sở hữu của bạn",
     "PNL": "PNL",
     "status": "Trạng thái",
     "action": "Hoạt động",
-    "tip": "Phí quản lý và hiệu suất đã được khấu trừ từ dữ liệu hiển thị ở đây."
+    "tip": "Phí quản lý và hiệu suất đã được khấu trừ từ dữ liệu hiển thị ở đây.",
+    "withdrawableUntil": "Có thể rút tiền cho đến khi",
+    "onlyForWithdrawal": "Chỉ để rút tiền",
+    "daysLeft": "Số ngày còn lại"
   }
 }

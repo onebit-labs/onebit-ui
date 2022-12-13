@@ -2,11 +2,11 @@
   "stats": {
     "assetsUnderManagement": "资产管理",
     "totalProfitSinceInception": "自成立以来的总利润",
-    "portfolios": "投资组合",
+    "portfolios": "产品",
     "depositors": "储户"
   },
   "tabs": {
-    "placeholder": "查找投资组合",
+    "placeholder": "查找产品",
     "all": "全部",
     "open": "打开",
     "lockedUp": "锁上"

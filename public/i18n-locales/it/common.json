@@ -37,14 +37,14 @@
     "signature": {
       "title": "Benvenuto a",
       "thingsToKnowTitle": "Cose che dovresti sapere",
-      "thingsToKnowContent": "Non hai la garanzia di guadagnare investendo i portafogli offerti su Onebit. Le performance passate non sono indicative di risultati futuri. Solo tu sei responsabile della sicurezza dei tuoi fondi. Il tuo capitale è a rischio.",
+      "thingsToKnowContent": "Non hai la garanzia di guadagnare investendo i prodotti offerti su Onebit. Le performance passate non sono indicative di risultati futuri. Solo tu sei responsabile della sicurezza dei tuoi fondi. Il tuo capitale è a rischio.",
       "accept": "Accettare",
       "decline": "Declino",
       "tip": "Facendo clic su \"Accetto\" di seguito, riconosco quanto sopra, il",
       "and": ", e"
     },
     "KYT": {
-      "tip": "Questo portafoglio richiede che gli indirizzi del portafoglio utente superino i controlli KYT e siano inseriti nella whitelist prima di depositare fondi. La whitelist è valida per 3 mesi.",
+      "tip": "Questo prodotto richiede che gli indirizzi del portafoglio utente superino i controlli KYT e siano inseriti nella whitelist prima di depositare fondi. La whitelist è valida per 3 mesi.",
       "getWhitelisted": "Ottieni una lista bianca",
       "conducting": "Conduzione di controlli KYT",
       "adding": "Aggiunta alla lista bianca"
@@ -54,9 +54,9 @@
       "walletBalance": "Saldo del portafoglio",
       "lockUpPeriod": "Periodo di blocco",
       "days": "Giorni",
-      "tip": "Questo portafoglio ha una commissione di gestione annuale di <managementFee>la commissione di gestione</managementFee> e una commissione di performance di <performanceFee>la commissione di performance</performanceFee>.",
+      "tip": "Questo prodotto ha una commissione di gestione annuale di <managementFee>la commissione di gestione</managementFee> e una commissione di performance di <performanceFee>la commissione di performance</performanceFee>.",
       "reInvestment": "Reinvestimento automatico",
-      "description": "Se i depositanti non ritirano i fondi alla fine del periodo di blocco, i fondi saranno reinvestiti nel portafoglio per il successivo periodo di blocco."
+      "description": "Se i depositanti non ritirano i fondi alla fine del periodo di blocco, i fondi verranno reinvestiti nel prodotto per il successivo periodo di blocco."
     },
     "withdrawal": {
       "amount": "Quantità",

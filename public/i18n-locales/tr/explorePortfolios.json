@@ -2,11 +2,11 @@
   "stats": {
     "assetsUnderManagement": "Yönetim Altındaki Varlıklar",
     "totalProfitSinceInception": "Başlangıcından Bu Yana Toplam Kâr",
-    "portfolios": "portföyler",
+    "portfolios": "Ürün:% s",
     "depositors": "mevduat sahipleri"
   },
   "tabs": {
-    "placeholder": "Portföy Bul",
+    "placeholder": "Ürün Bul",
     "all": "Herşey",
     "open": "Açık",
     "lockedUp": "Kilitli"

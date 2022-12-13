@@ -18,7 +18,8 @@
     "stats": {
       "assetsUnderManagement": "Risparmio gestito",
       "estimatedAPY": "APY stimato",
-      "depositors": "Depositanti"
+      "depositors": "Depositanti",
+      "initDeposit": "Deposito iniziale"
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
@@ -43,13 +44,6 @@
         ]
       },
       "Onebit-Smart-Trend-USDT-Demo": {
-        "main": "La strategia mira a prevedere le attuali tendenze dei prezzi attraverso la preferenza per il rischio per l'ambiente macro, livelli di valutazione ragionevoli delle valute e lo slancio delle tendenze del mercato. Il processo di investimento è una combinazione multistrato dall'alto verso il basso di macro, valore e tendenza.",
-        "investmentRationale": [
-          "Adatto a investitori alla ricerca del rischio che si aspettano un rendimento annuo elevato.",
-          "L'investitore ha una propensione a lungo termine del mercato delle criptovalute."
-        ]
-      },
-      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
         "main": "La strategia mira a prevedere le attuali tendenze dei prezzi attraverso la preferenza per il rischio per l'ambiente macro, livelli di valutazione ragionevoli delle valute e lo slancio delle tendenze del mercato. Il processo di investimento è una combinazione multistrato dall'alto verso il basso di macro, valore e tendenza.",
         "investmentRationale": [
           "Adatto a investitori alla ricerca del rischio che si aspettano un rendimento annuo elevato.",
@@ -91,7 +85,7 @@
     },
     "performance": {
       "title": "Commissione di performance",
-      "description": "Una commissione di performance è una commissione basata su una percentuale che i depositanti pagano al Gestore del Portafoglio sui rendimenti positivi realizzati in un periodo predefinito. Il periodo predefinito è denominato periodo di blocco (in genere un anno o un trimestre). I rendimenti sono confrontati con l'asset di denominazione."
+      "description": "Una commissione di performance è una commissione basata su una percentuale che i depositanti pagano al Product Manager sui rendimenti positivi realizzati in un periodo predefinito. Il periodo predefinito è denominato periodo di blocco (in genere un anno o un trimestre). I rendimenti sono confrontati con l'asset di denominazione."
     },
     "entrance": {
       "title": "Biglietto d'ingresso"
@@ -108,8 +102,13 @@
     "softUpperLimit": "Cappellino morbido per raccolta fondi",
     "minimumDeposit": "Deposito minimo",
     "reInvestment": "Reinvestimento",
-    "description": "Se i depositanti non ritirano i fondi alla fine del periodo di blocco, i fondi saranno reinvestiti nel portafoglio per il successivo periodo di blocco.",
-    "auto": "Auto"
+    "reInvestmentTip": "Se i depositanti non ritirano i fondi alla fine del periodo di blocco, i fondi verranno reinvestiti nel prodotto per il successivo periodo di blocco.",
+    "auto": "Auto",
+    "riskControlLine": "Avviso di controllo del rischio",
+    "riskControlLineTip": "Se il valore netto scende al di sotto della linea di controllo del rischio di arresto, il prodotto verrà regolato immediatamente per ridurre ulteriori perdite per tutti i depositanti e aperto ai prelievi.",
+    "redemption": "Redenzione",
+    "redemptionTip": "Dopo il periodo di blocco, il rimborso è aperto il giorno lavorativo successivo oppure il valore netto attiva un avviso di controllo del rischio e può essere rimborsato in anticipo.",
+    "netValue": "Valore netto"
   },
   "depositors": {
     "depositors": "Depositanti",

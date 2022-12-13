@@ -18,7 +18,8 @@
     "stats": {
       "assetsUnderManagement": "Tài sản được quản lý",
       "estimatedAPY": "APY ước tính",
-      "depositors": "Người gửi tiền"
+      "depositors": "Người gửi tiền",
+      "initDeposit": "Tiền gửi ban đầu"
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
@@ -43,13 +44,6 @@
         ]
       },
       "Onebit-Smart-Trend-USDT-Demo": {
-        "main": "Chiến lược này nhằm mục đích dự đoán xu hướng giá hiện tại thông qua ưu tiên rủi ro đối với môi trường vĩ mô, mức định giá hợp lý của tiền tệ và động lực của xu hướng thị trường. Quá trình đầu tư là sự kết hợp nhiều lớp từ trên xuống của vĩ mô, giá trị và xu hướng.",
-        "investmentRationale": [
-          "Thích hợp cho các nhà đầu tư tìm kiếm rủi ro mong đợi lợi nhuận hàng năm cao.",
-          "Nhà đầu tư có xu hướng dài hạn đối với thị trường tiền điện tử."
-        ]
-      },
-      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
         "main": "Chiến lược này nhằm mục đích dự đoán xu hướng giá hiện tại thông qua ưu tiên rủi ro đối với môi trường vĩ mô, mức định giá hợp lý của tiền tệ và động lực của xu hướng thị trường. Quá trình đầu tư là sự kết hợp nhiều lớp từ trên xuống của vĩ mô, giá trị và xu hướng.",
         "investmentRationale": [
           "Thích hợp cho các nhà đầu tư tìm kiếm rủi ro mong đợi lợi nhuận hàng năm cao.",
@@ -91,7 +85,7 @@
     },
     "performance": {
       "title": "Phí thi công",
-      "description": "Phí thực hiện là khoản phí dựa trên tỷ lệ phần trăm mà người gửi tiền phải trả cho Người quản lý danh mục đầu tư dựa trên lợi nhuận dương được thực hiện trong một khoảng thời gian xác định trước. Khoảng thời gian được xác định trước được gọi là Khoảng thời gian khóa (thường là một năm hoặc một quý). Lợi nhuận được so sánh với tài sản mệnh giá."
+      "description": "Phí hiệu suất là khoản phí dựa trên tỷ lệ phần trăm mà người gửi tiền phải trả cho Người quản lý sản phẩm từ lợi nhuận dương được thực hiện trong một khoảng thời gian xác định trước. Khoảng thời gian được xác định trước được gọi là Khoảng thời gian khóa (thường là một năm hoặc một quý). Lợi nhuận được so sánh với tài sản mệnh giá."
     },
     "entrance": {
       "title": "Phí vào cửa"
@@ -108,8 +102,13 @@
     "softUpperLimit": "Soft Cap gây quỹ",
     "minimumDeposit": "Tiền gửi tối thiểu",
     "reInvestment": "tái đầu tư",
-    "description": "Nếu người gửi tiền không rút tiền vào cuối thời gian khóa, tiền sẽ được tái đầu tư vào danh mục đầu tư cho thời gian khóa tiếp theo.",
-    "auto": "Tự động"
+    "reInvestmentTip": "Nếu người gửi tiền không rút tiền vào cuối thời gian khóa, tiền sẽ được tái đầu tư vào sản phẩm cho thời gian khóa tiếp theo.",
+    "auto": "Tự động",
+    "riskControlLine": "Cảnh báo kiểm soát rủi ro",
+    "riskControlLineTip": "Nếu Giá trị ròng giảm xuống dưới đường kiểm soát rủi ro dừng, sản phẩm sẽ được giải quyết ngay lập tức để giảm tổn thất thêm cho tất cả người gửi tiền và mở để rút tiền.",
+    "redemption": "chuộc lỗi",
+    "redemptionTip": "Sau thời gian khóa, quy đổi sẽ được mở vào ngày làm việc tiếp theo hoặc giá trị ròng kích hoạt cảnh báo kiểm soát rủi ro và có thể được quy đổi trước.",
+    "netValue": "giá trị ròng"
   },
   "depositors": {
     "depositors": "Người gửi tiền",

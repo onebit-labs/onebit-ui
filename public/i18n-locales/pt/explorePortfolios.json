@@ -2,11 +2,11 @@
   "stats": {
     "assetsUnderManagement": "Activos sob gestão",
     "totalProfitSinceInception": "Lucro total desde o início",
-    "portfolios": "Carteiras",
+    "portfolios": "Produtos",
     "depositors": "Depositantes"
   },
   "tabs": {
-    "placeholder": "Encontrar Portfólios",
+    "placeholder": "Encontrar produtos",
     "all": "Tudo",
     "open": "Abrir",
     "lockedUp": "Trancado"

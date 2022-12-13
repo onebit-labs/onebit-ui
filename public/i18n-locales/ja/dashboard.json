@@ -2,7 +2,7 @@
   "stats": {
     "totalEquityValue": "総資産価値",
     "totalPNL": "総損益",
-    "totalPortfolioDeposited": "預金されたポートフォリオの合計",
+    "totalPortfolioDeposited": "入金された製品の合計",
     "APY": "APY",
     "tip": "ここに表示されているデータから、管理手数料とパフォーマンス手数料が差し引かれています。"
   },
@@ -11,13 +11,16 @@
     "change24h": "過去1D"
   },
   "portfolioTable": {
-    "portfolioName": "ポートフォリオ名",
+    "portfolioName": "商品名",
     "lockedUntil": "ロックされるまで",
     "netValue": "正味価値",
     "yourEquity": "あなたの資産",
     "PNL": "損益",
     "status": "状態",
     "action": "アクション",
-    "tip": "ここに表示されているデータから、管理手数料とパフォーマンス手数料が差し引かれています。"
+    "tip": "ここに表示されているデータから、管理手数料とパフォーマンス手数料が差し引かれています。",
+    "withdrawableUntil": "まで引き出し可能",
+    "onlyForWithdrawal": "出金専用",
+    "daysLeft": "残りの日数"
   }
 }

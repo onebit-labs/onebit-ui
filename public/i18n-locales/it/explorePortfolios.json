@@ -2,11 +2,11 @@
   "stats": {
     "assetsUnderManagement": "Risparmio gestito",
     "totalProfitSinceInception": "Profitto totale dall'inizio",
-    "portfolios": "Portafogli",
+    "portfolios": "Prodotti",
     "depositors": "Depositanti"
   },
   "tabs": {
-    "placeholder": "Trova portafogli",
+    "placeholder": "Trova prodotti",
     "all": "Tutto",
     "open": "Aprire",
     "lockedUp": "Rinchiuso"

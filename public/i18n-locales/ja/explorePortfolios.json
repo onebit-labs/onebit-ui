@@ -2,11 +2,11 @@
   "stats": {
     "assetsUnderManagement": "運用資産",
     "totalProfitSinceInception": "創業以来の総利益",
-    "portfolios": "ポートフォリオ",
+    "portfolios": "製品",
     "depositors": "預金者"
   },
   "tabs": {
-    "placeholder": "ポートフォリオを探す",
+    "placeholder": "製品を探す",
     "all": "全て",
     "open": "開ける",
     "lockedUp": "閉じ込められた"

@@ -2,11 +2,11 @@
   "stats": {
     "assetsUnderManagement": "관리 중인 자산",
     "totalProfitSinceInception": "설립 이후 총 이익",
-    "portfolios": "포트폴리오",
+    "portfolios": "제품",
     "depositors": "예금자"
   },
   "tabs": {
-    "placeholder": "포트폴리오 찾기",
+    "placeholder": "제품 찾기",
     "all": "모두",
     "open": "열려 있는",
     "lockedUp": "감금"

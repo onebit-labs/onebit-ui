@@ -5,12 +5,13 @@
   "tabs": {
     "all": "모두",
     "deposit": "보증금",
-    "withdrawal": "철수"
+    "withdrawal": "철수",
+    "transfer": "잔액 이체"
   },
   "transactions": {
     "txId": "TxID",
     "type": "유형",
-    "portfolio": "포트폴리오",
+    "portfolio": "제품",
     "amount": "양",
     "date": "날짜"
   }

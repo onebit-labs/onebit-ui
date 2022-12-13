@@ -2,11 +2,11 @@
   "stats": {
     "assetsUnderManagement": "Активы под управлением",
     "totalProfitSinceInception": "Общая прибыль с момента создания",
-    "portfolios": "Портфолио",
+    "portfolios": "Товары",
     "depositors": "Вкладчики"
   },
   "tabs": {
-    "placeholder": "Найти портфолио",
+    "placeholder": "Найти продукты",
     "all": "Все",
     "open": "Открытым",
     "lockedUp": "Взаперти"
@@ -17,7 +17,7 @@
   },
   "projectCard": {
     "lockUpPeriod": "Период блокировки",
-    "days": "Дни",
+    "days": "Дней",
     "netValue": "Совокупная чистая стоимость",
     "currentNetValue": "Текущая чистая стоимость%",
     "AUM": "АУМ",

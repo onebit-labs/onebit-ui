@@ -37,14 +37,14 @@
     "signature": {
       "title": "Hoşgeldiniz",
       "thingsToKnowTitle": "Bilmeniz gereken şeyler",
-      "thingsToKnowContent": "Onebit'te sunulan herhangi bir portföye yatırım yaparak para kazanmanız garanti edilmez. Geçmişteki performans gelecekteki sonuçların bir göstergesi değildir. Fonlarınızın güvenliğinden yalnızca siz sorumlusunuz. Sermayeniz risk altında.",
+      "thingsToKnowContent": "Onebit'te sunulan herhangi bir ürüne yatırım yaparak para kazanmanız garanti edilmez. Geçmişteki performans gelecekteki sonuçların bir göstergesi değildir. Fonlarınızın güvenliğinden yalnızca siz sorumlusunuz. Sermayeniz risk altında.",
       "accept": "Kabul",
       "decline": "Reddetmek",
       "tip": "Aşağıdaki \"Kabul Et\"i tıklayarak, yukarıdakileri kabul ediyorum,",
       "and": ", ve"
     },
     "KYT": {
-      "tip": "Bu portföy, kullanıcı cüzdan adreslerinin KYT kontrollerinden geçmesini ve para yatırmadan önce beyaz listeye alınmasını gerektirir. Beyaz liste 3 ay geçerlidir.",
+      "tip": "Bu ürün, kullanıcı cüzdan adreslerinin KYT kontrollerinden geçmesini ve para yatırmadan önce beyaz listeye alınmasını gerektirir. Beyaz liste 3 ay geçerlidir.",
       "getWhitelisted": "Beyaz Listeye Alın",
       "conducting": "KYT Kontrollerinin Yapılması",
       "adding": "Beyaz Listeye Ekleniyor"
@@ -54,9 +54,9 @@
       "walletBalance": "Cüzdan Bakiyesi",
       "lockUpPeriod": "Kilitlenme Süresi",
       "days": "gün",
-      "tip": "Bu portföyün yıllık <managementFee>yönetim ücreti</managementFee> yönetim ücreti ve <performanceFee>performans ücreti</performanceFee> performans ücreti vardır.",
+      "tip": "Bu ürünün yıllık <managementFee>yönetim ücreti</managementFee> yönetim ücreti ve <performanceFee>performans ücreti</performanceFee> performans ücreti vardır.",
       "reInvestment": "Otomatik Yeniden Yatırım",
-      "description": "Mudilerin bloke süresi sonunda fonlarını çekmemesi durumunda, fonlar bir sonraki bloke süresi için portföye yeniden yatırılır."
+      "description": "Mudiler bloke süresi sonunda fonlarını çekmezlerse, fonlar bir sonraki bloke süresi için ürüne yeniden yatırılacaktır."
     },
     "withdrawal": {
       "amount": "Tutar",

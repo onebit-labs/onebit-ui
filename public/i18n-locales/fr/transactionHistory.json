@@ -5,12 +5,13 @@
   "tabs": {
     "all": "Tout",
     "deposit": "Verser",
-    "withdrawal": "Retrait"
+    "withdrawal": "Retrait",
+    "transfer": "Transfert de solde"
   },
   "transactions": {
     "txId": "TxID",
     "type": "Taper",
-    "portfolio": "Portefeuille",
+    "portfolio": "Produit",
     "amount": "Montant",
     "date": "Date"
   }

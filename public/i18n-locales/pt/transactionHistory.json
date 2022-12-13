@@ -5,12 +5,13 @@
   "tabs": {
     "all": "Tudo",
     "deposit": "Depósito",
-    "withdrawal": "Cancelamento"
+    "withdrawal": "Cancelamento",
+    "transfer": "Transferência de Saldo"
   },
   "transactions": {
     "txId": "TxID",
     "type": "Modelo",
-    "portfolio": "Portfólio",
+    "portfolio": "produtos",
     "amount": "Quantia",
     "date": "Encontro"
   }

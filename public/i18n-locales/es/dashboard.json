@@ -2,7 +2,7 @@
   "stats": {
     "totalEquityValue": "Valor patrimonial total",
     "totalPNL": "NLP totales",
-    "totalPortfolioDeposited": "Cartera Total Depositada",
+    "totalPortfolioDeposited": "Producto total depositado",
     "APY": "APY",
     "tip": "Las comisiones de gestión y rendimiento se han deducido de los datos que se muestran aquí."
   },
@@ -11,13 +11,16 @@
     "change24h": "Pasado 1D"
   },
   "portfolioTable": {
-    "portfolioName": "Nombre de la cartera",
+    "portfolioName": "nombre del producto",
     "lockedUntil": "Bloqueado hasta",
     "netValue": "Valor neto",
     "yourEquity": "su patrimonio",
     "PNL": "PNL",
     "status": "Estado",
     "action": "Acción",
-    "tip": "Las comisiones de gestión y rendimiento se han deducido de los datos que se muestran aquí."
+    "tip": "Las comisiones de gestión y rendimiento se han deducido de los datos que se muestran aquí.",
+    "withdrawableUntil": "Extraíble hasta",
+    "onlyForWithdrawal": "Solo para retiro",
+    "daysLeft": "Días restantes"
   }
 }

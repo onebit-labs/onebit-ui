@@ -5,12 +5,13 @@
   "tabs": {
     "all": "Tutto",
     "deposit": "Depositare",
-    "withdrawal": "Ritiro"
+    "withdrawal": "Ritiro",
+    "transfer": "Trasferimento del saldo"
   },
   "transactions": {
     "txId": "TxID",
     "type": "Tipo",
-    "portfolio": "Portafoglio",
+    "portfolio": "Prodotto",
     "amount": "Quantità",
     "date": "Data"
   }

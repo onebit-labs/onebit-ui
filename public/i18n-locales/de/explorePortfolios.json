@@ -2,11 +2,11 @@
   "stats": {
     "assetsUnderManagement": "Verwaltetes Vermögen",
     "totalProfitSinceInception": "Gesamtgewinn seit Gründung",
-    "portfolios": "Portfolios",
+    "portfolios": "Produkte",
     "depositors": "Einleger"
   },
   "tabs": {
-    "placeholder": "Portfolios finden",
+    "placeholder": "Produkte finden",
     "all": "Alle",
     "open": "Offen",
     "lockedUp": "Eingesperrt"

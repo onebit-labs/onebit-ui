@@ -2,7 +2,7 @@
   "stats": {
     "totalEquityValue": "Gesamtkapitalwert",
     "totalPNL": "Gesamt-PNL",
-    "totalPortfolioDeposited": "Gesamtportfolio eingezahlt",
+    "totalPortfolioDeposited": "Gesamtprodukt eingezahlt",
     "APY": "APY",
     "tip": "Die Verwaltungs- und Performancegebühren wurden von den hier gezeigten Daten abgezogen."
   },
@@ -11,13 +11,16 @@
     "change24h": "Nach 1D"
   },
   "portfolioTable": {
-    "portfolioName": "Portfolioname",
+    "portfolioName": "Produktname",
     "lockedUntil": "Gesperrt bis",
     "netValue": "Nettowert",
     "yourEquity": "Ihr Eigenkapital",
     "PNL": "PNL",
     "status": "Status",
     "action": "Aktion",
-    "tip": "Die Verwaltungs- und Performancegebühren wurden von den hier gezeigten Daten abgezogen."
+    "tip": "Die Verwaltungs- und Performancegebühren wurden von den hier gezeigten Daten abgezogen.",
+    "withdrawableUntil": "Auszahlbar bis",
+    "onlyForWithdrawal": "Nur für die Auszahlung",
+    "daysLeft": "Tage übrig"
   }
 }

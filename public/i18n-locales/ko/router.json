@@ -1,9 +1,9 @@
 {
   "menu": "메뉴",
-  "dashboard": "계기반",
-  "explorePortfolios": "포트폴리오 살펴보기",
+  "dashboard": "위치",
+  "explorePortfolios": "제품 살펴보기",
   "transactionHistory": "거래 내역",
-  "portfolioDetails": "포트폴리오 세부 정보",
+  "portfolioDetails": "제품 세부 정보",
   "terms": "서비스 약관",
   "privacy": "개인 정보 정책"
 }

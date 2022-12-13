@@ -1,9 +1,9 @@
 {
   "menu": "Thực đơn",
-  "dashboard": "bảng điều khiển",
-  "explorePortfolios": "Khám phá danh mục đầu tư",
+  "dashboard": "Vị trí",
+  "explorePortfolios": "Khám phá sản phẩm",
   "transactionHistory": "Lịch sử giao dịch",
-  "portfolioDetails": "Chi tiết danh mục đầu tư",
+  "portfolioDetails": "Thông tin chi tiết sản phẩm",
   "terms": "Điều khoản dịch vụ",
   "privacy": "Chính sách bảo mật"
 }

@@ -5,12 +5,13 @@
   "tabs": {
     "all": "Herşey",
     "deposit": "Depozito",
-    "withdrawal": "Para çekme"
+    "withdrawal": "Para çekme",
+    "transfer": "Bakiye transferi"
   },
   "transactions": {
     "txId": "TxID",
     "type": "Tip",
-    "portfolio": "portföy",
+    "portfolio": "Ürün",
     "amount": "Tutar",
     "date": "Tarih"
   }

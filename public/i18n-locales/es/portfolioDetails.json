@@ -18,7 +18,8 @@
     "stats": {
       "assetsUnderManagement": "Los activos bajo gestión",
       "estimatedAPY": "APY estimado",
-      "depositors": "depositantes"
+      "depositors": "depositantes",
+      "initDeposit": "Depósito inicial"
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
@@ -43,13 +44,6 @@
         ]
       },
       "Onebit-Smart-Trend-USDT-Demo": {
-        "main": "La estrategia tiene como objetivo predecir las tendencias de precios actuales a través de la preferencia de riesgo por el entorno macro, niveles de valoración razonables de las monedas y el impulso de las tendencias del mercado. El proceso de inversión es una combinación de múltiples capas de arriba hacia abajo de macro, valor y tendencia.",
-        "investmentRationale": [
-          "Adecuado para inversores que buscan riesgos y esperan un alto rendimiento anual.",
-          "El inversor tiene un sesgo largo a largo plazo del mercado criptográfico."
-        ]
-      },
-      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
         "main": "La estrategia tiene como objetivo predecir las tendencias de precios actuales a través de la preferencia de riesgo por el entorno macro, niveles de valoración razonables de las monedas y el impulso de las tendencias del mercado. El proceso de inversión es una combinación de múltiples capas de arriba hacia abajo de macro, valor y tendencia.",
         "investmentRationale": [
           "Adecuado para inversores que buscan riesgos y esperan un alto rendimiento anual.",
@@ -91,7 +85,7 @@
     },
     "performance": {
       "title": "Comisión de rentabilidad",
-      "description": "Una comisión de rendimiento es una comisión basada en un porcentaje que los depositantes pagan al Gestor de la cartera sobre los rendimientos positivos obtenidos durante un período predefinido. El período predefinido se denomina período bloqueado (normalmente, un año o un trimestre). Los rendimientos se comparan con el activo de denominación."
+      "description": "Una tarifa de rendimiento es una tarifa basada en un porcentaje que los depositantes pagan al Gerente de Producto de los rendimientos positivos obtenidos durante un período predefinido. El período predefinido se denomina período bloqueado (normalmente, un año o un trimestre). Los rendimientos se comparan con el activo de denominación."
     },
     "entrance": {
       "title": "Precio de la entrada"
@@ -108,8 +102,13 @@
     "softUpperLimit": "Gorra suave de recaudación de fondos",
     "minimumDeposit": "Depósito mínimo",
     "reInvestment": "Reinversión",
-    "description": "Si los depositantes no retiran los fondos al final del período de bloqueo, los fondos se reinvertirán en la cartera para el próximo período de bloqueo.",
-    "auto": "Auto"
+    "reInvestmentTip": "Si los depositantes no retiran los fondos al final del período de bloqueo, los fondos se reinvertirán en el producto para el próximo período de bloqueo.",
+    "auto": "Auto",
+    "riskControlLine": "Advertencia de control de riesgos",
+    "riskControlLineTip": "Si el valor neto cae por debajo de la línea de control de riesgo de detención, el producto se liquidará de inmediato para reducir más pérdidas para todos los depositantes y se abrirá para retiros.",
+    "redemption": "Redención",
+    "redemptionTip": "Después del período de bloqueo, el canje está abierto el siguiente día hábil, o el valor neto activa una advertencia de control de riesgo y puede canjearse por adelantado.",
+    "netValue": "Valor neto"
   },
   "depositors": {
     "depositors": "depositantes",

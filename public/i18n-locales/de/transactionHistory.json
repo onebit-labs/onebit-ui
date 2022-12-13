@@ -5,12 +5,13 @@
   "tabs": {
     "all": "Alle",
     "deposit": "Kaution",
-    "withdrawal": "Rückzug"
+    "withdrawal": "Rückzug",
+    "transfer": "Ausgleichsübertragung"
   },
   "transactions": {
     "txId": "TxID",
     "type": "Typ",
-    "portfolio": "Portfolio",
+    "portfolio": "Produkt",
     "amount": "Menge",
     "date": "Datum"
   }

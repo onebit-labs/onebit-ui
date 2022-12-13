@@ -2,7 +2,7 @@
   "stats": {
     "totalEquityValue": "총자본가치",
     "totalPNL": "총손익",
-    "totalPortfolioDeposited": "입금된 총 포트폴리오",
+    "totalPortfolioDeposited": "입금된 총 제품",
     "APY": "APY",
     "tip": "여기에 표시된 데이터에서 관리 및 성과 수수료가 공제되었습니다."
   },
@@ -11,13 +11,16 @@
     "change24h": "지난 1D"
   },
   "portfolioTable": {
-    "portfolioName": "포트폴리오 이름",
+    "portfolioName": "상품명",
     "lockedUntil": "잠김 기한",
     "netValue": "순 가치",
     "yourEquity": "당신의 자산",
     "PNL": "손익",
     "status": "상태",
     "action": "동작",
-    "tip": "여기에 표시된 데이터에서 관리 및 성과 수수료가 공제되었습니다."
+    "tip": "여기에 표시된 데이터에서 관리 및 성과 수수료가 공제되었습니다.",
+    "withdrawableUntil": "출금 가능 기한",
+    "onlyForWithdrawal": "출금 전용",
+    "daysLeft": "남은 일수"
   }
 }

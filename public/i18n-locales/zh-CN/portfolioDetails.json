@@ -18,7 +18,8 @@
     "stats": {
       "assetsUnderManagement": "资产管理",
       "estimatedAPY": "预计每年",
-      "depositors": "储户"
+      "depositors": "储户",
+      "initDeposit": "初始保证金"
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
@@ -43,13 +44,6 @@
         ]
       },
       "Onebit-Smart-Trend-USDT-Demo": {
-        "main": "该策略旨在通过对宏观环境的风险偏好、货币的合理估值水平和市场趋势的动能来预测当前的价格走势。投资过程是自上而下的多层次结合宏观、价值、趋势。",
-        "investmentRationale": [
-          "适合寻求高年回报的风险投资者。",
-          "投资者对加密市场有长期的长期偏见。"
-        ]
-      },
-      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
         "main": "该策略旨在通过对宏观环境的风险偏好、货币的合理估值水平和市场趋势的动能来预测当前的价格走势。投资过程是自上而下的多层次结合宏观、价值、趋势。",
         "investmentRationale": [
           "适合寻求高年回报的风险投资者。",
@@ -87,11 +81,11 @@
     "management": {
       "title": "管理费",
       "tip": "累计回报率超过20%则为2%",
-      "description": "管理费是存款人定期支付给投资组合经理的款项。该费用按管理资产的年化百分比计算，与 Vault 回报无关。"
+      "description": "管理费是存款人定期支付给投资组合经理的费用。该费用按管理资产的年化百分比计算，与 Vault 回报无关。"
     },
     "performance": {
       "title": "绩效费",
-      "description": "绩效费是存款人根据预定期限内的正回报向投资组合经理支付的基于百分比的费用。预定义的期限称为锁定期（通常为一年或一个季度）。回报以面额资产为基准。"
+      "description": "绩效费是存款人根据预定期限内的正回报向产品经理支付的基于百分比的费用。预定义的期限称为锁定期（通常为一年或一个季度）。回报以面额资产为基准。"
     },
     "entrance": {
       "title": "入场费"
@@ -108,8 +102,13 @@
     "softUpperLimit": "筹款软顶",
     "minimumDeposit": "最低存款",
     "reInvestment": "再投资",
-    "description": "如果存款人在锁定期结束时未提取资金，则资金将重新投入到下一个锁定期的投资组合中。",
-    "auto": "汽车"
+    "reInvestmentTip": "如果存款人在锁定期结束时未提取资金，资金将重新投入到下一个锁定期的产品中。",
+    "auto": "汽车",
+    "riskControlLine": "风险控制警告",
+    "riskControlLineTip": "如果净值跌破止损风控线，产品将立即结算，减少所有存款人的进一步损失，并开放提现。",
+    "redemption": "赎回",
+    "redemptionTip": "锁定期后次日开放赎回，或净值触发风控预警可提前赎回。",
+    "netValue": "净值"
   },
   "depositors": {
     "depositors": "储户",

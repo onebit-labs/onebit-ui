@@ -1,9 +1,9 @@
 {
   "menu": "Speisekarte",
-  "dashboard": "Armaturenbrett",
-  "explorePortfolios": "Entdecken Sie Portfolios",
+  "dashboard": "Positionen",
+  "explorePortfolios": "Entdecken Sie Produkte",
   "transactionHistory": "Verlauf der Transaktionen",
-  "portfolioDetails": "Portfolio-Details",
+  "portfolioDetails": "Produktdetails",
   "terms": "Nutzungsbedingungen",
   "privacy": "Datenschutz-Bestimmungen"
 }

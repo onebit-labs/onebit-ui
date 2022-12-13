@@ -18,7 +18,8 @@
     "stats": {
       "assetsUnderManagement": "Assets Under Management",
       "estimatedAPY": "Estimated APY",
-      "depositors": "Depositors"
+      "depositors": "Depositors",
+      "initDeposit": "Initial Deposit"
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
@@ -43,13 +44,6 @@
         }
       },
       "Onebit-Smart-Trend-USDT-Demo": {
-        "main": "The strategy aims to predict current price trends through risk preference for the macro environment, reasonable valuation levels of currencies, and the momentum of market trends. The investment process is a topdown multi-layer combination of macro, value, and trend.",
-        "investmentRationale": {
-          "0": "Suitable for risk seeking investors expecting a high annual return.",
-          "1": "Investor has a long-term long bias of the crypto market."
-        }
-      },
-      "Onebit-Smart-Trend-USDT-Whitelist-Test": {
         "main": "The strategy aims to predict current price trends through risk preference for the macro environment, reasonable valuation levels of currencies, and the momentum of market trends. The investment process is a topdown multi-layer combination of macro, value, and trend.",
         "investmentRationale": {
           "0": "Suitable for risk seeking investors expecting a high annual return.",
@@ -91,7 +85,7 @@
     },
     "performance": {
       "title": "Performance Fee",
-      "description": "A performance fee is a percentage-based fee depositors pay to the Portfolio Manager out of the positive returns made over a pre-defined period. The pre-defined period is referred to as a Locked-up period (typically a year or a quarter). The returns are benchmarked against the denomination asset. "
+      "description": "A performance fee is a percentage-based fee depositors pay to the Product Manager out of the positive returns made over a pre-defined period. The pre-defined period is referred to as a Locked-up period (typically a year or a quarter). The returns are benchmarked against the denomination asset. "
     },
     "entrance": {
       "title": "Entrance Fee"
@@ -108,8 +102,13 @@
     "softUpperLimit": "Fundraising Soft Cap",
     "minimumDeposit": "Minimum Deposit",
     "reInvestment": "Re-investment",
-    "description": "If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the portfolio for the next lock-up period.",
-    "auto": "Auto"
+    "reInvestmentTip": "If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the product for the next lock-up period.",
+    "auto": "Auto",
+    "riskControlLine": "Risk Control Warning",
+    "riskControlLineTip": "If the Net Value falls below the stop risk control line, the product will be settled immediately to reduce further losses for all depositors, and open for withdrawals.",
+    "redemption": "Redemption",
+    "redemptionTip": "After the lock-up period, redemption is open on the next working day, or the net value triggers risk control warning and can be redeemed in advance.",
+    "netValue": "Net Value"
   },
   "depositors": {
     "depositors": "Depositors",
