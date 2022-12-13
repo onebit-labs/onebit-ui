@@ -5,9 +5,13 @@
   "VaultImpl": "0x33d23e71736abda5c3b9139e8933746a62b3f994",
   "Vault": "0x6af769f986d87851c68e6f7ebf90e265619c6c8f",
   "USDT": "0x982284793466a001e4513e59668ec711a44e049e",
-  "WBTC": "0x18a57ecbf7ff0aaa12476a60ae044ff34537969a",
   "OToken": "0xa0b8b2bb7aac0c77b392b5a7a8f2143758b1ab4d",
   "VaultConfiguratorImpl": "0x511ebaa48387e8acab38a24ec50c6a2140e79dc2",
+  "WBTC": "0x18a57ecbf7ff0aaa12476a60ae044ff34537969a",
+  "TimelockedExecutor_Owner": "0x00521ccbb33acffdb42983ac0c00f640fe03dce2",
+  "TimelockedExecutor_VaultAdmin": "0xae63681a6d6b658d82d130f94ed55fcf97ff356b",
+  "TimelockedExecutor_VaultOperator": "0xa326750204e2133a661a8daea96fa5859b514c66",
+  "TimelockedExecutor_PortfolioManager": "0xcf9362b51b9b89571a5c0fd69a1f32264367769e",
   "markets": {
     "Onebit-Lightning-Hunter-USDT": {
       "VaultAddressesProvider": "0x1d4aab9e33f469528e589f3541c851ff0eae519e",
@@ -25,7 +29,7 @@
       "VaultAddressesProvider": "0xdb9c781371b5300eb3874447ce24d597312299dc",
       "Vault": "0x7a61b21cf175b60095f85eb66e34ffabf1c07fe9",
       "VaultConfigurator": "0x64cc17f542be65cf646fa9603f1a832f2715a6d1",
-      "OToken": "0x3cdbc4bc3eec850d30f7a676806ff18815331865"
+      "OToken": "0x08f1b879cdd56a429bdda41b42881d8226c15fad"
     },
     "Onebit-Smart-Trend-USDT-Demo": {
       "VaultAddressesProvider": "0x490b57998d412d2c961850abf740322bf9b5bce5",
