@@ -5,7 +5,6 @@ export type MarketId =
   | 'Onebit-Smart-Trend-USDT'
   | 'Onebit-Smart-Trend-BTC'
   | 'Onebit-Smart-Trend-USDT-Demo'
-  | 'Onebit-Smart-Trend-USDT-Whitelist-Test'
 
 export type MarketInfo = {
   portfolioName: string
@@ -55,16 +54,6 @@ const getMarketInfo = (id: MarketId): MarketInfo => {
         estimatedAPY: '60.5% - 81.2%',
         riskControlLine: 0.6,
       }
-    case 'Onebit-Smart-Trend-USDT-Whitelist-Test':
-      return {
-        portfolioAPIName: 'Onebit Lightning Hunter-USDT (Nov-22)',
-        portfolioName: 'Onebit Smart Trend-USDT Whitelist',
-        series: 'Onebit Smart Trend-USDT',
-        symbol: 'USDT',
-        estimatedAPY: '60.5% - 81.2%',
-        useWhitelist: true,
-        riskControlLine: 0.6,
-      }
   }
 }
 
@@ -80,6 +69,9 @@ export const getMarkets = (address: AddressData) => {
   return Object.keys(address.markets).map((key) => {
     const id: MarketId = key as any
     const info = getMarketInfo(id)
+
+    info.useWhitelist = true
+
     return {
       id,
       info,

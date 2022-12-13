@@ -32,12 +32,6 @@
       "Vault": "0xbab469f8e4ce3c71f92586384824c2f6e1acdcbb",
       "VaultConfigurator": "0x4821d0a83b24449fce71fb5e429197d0454df3ee",
       "OToken": "0xdeeb326e5b4672548c58872207959d275bed5422"
-    },
-    "Onebit-Smart-Trend-USDT-Whitelist-Test": {
-      "VaultAddressesProvider": "0x2c53ce792d6cc64c08379390c87387b83570b47f",
-      "Vault": "0x86117a8b09a90f82629def0e954cbc7a05811fe9",
-      "VaultConfigurator": "0xd248959a407ed01046de33fbf69da3144992974d",
-      "OToken": "0xc470d401cd08133e3dda5d6965b7d53611ad240b"
     }
   }
 }

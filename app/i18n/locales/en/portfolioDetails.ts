@@ -50,13 +50,6 @@ const locale = {
           1: 'Investor has a long-term long bias of the crypto market.',
         },
       },
-      'Onebit-Smart-Trend-USDT-Whitelist-Test': {
-        main: 'The strategy aims to predict current price trends through risk preference for the macro environment, reasonable valuation levels of currencies, and the momentum of market trends. The investment process is a topdown multi-layer combination of macro, value, and trend.',
-        investmentRationale: {
-          0: 'Suitable for risk seeking investors expecting a high annual return.',
-          1: 'Investor has a long-term long bias of the crypto market.',
-        },
-      },
       investmentRationale: 'Investment Rationale:',
     },
   },
