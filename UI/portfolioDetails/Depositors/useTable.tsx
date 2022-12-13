@@ -19,7 +19,7 @@ export const useTable = (): BasicTableProps => {
     contracts: { erc20Service },
   } = useNetwork()
   const dataFetcher = useCallback(
-    ({ depositors: account, totalSupply, symbol, lendingPool }: any) => {
+    ({ depositors: account, totalSupply, symbol, vault }: any) => {
       const returnValue = {
         depositors: account,
         since: 0,
@@ -28,7 +28,7 @@ export const useTable = (): BasicTableProps => {
         symbol,
       }
       const { promise, reslove } = createPromise<typeof returnValue>()
-      depositorRequest({ account, lendingPool })
+      depositorRequest({ account, vault })
         .then((data) => {
           if (!data[0]) return {} as undefined
           const { createTimestamp } = data[0]
@@ -62,7 +62,7 @@ export const useTable = (): BasicTableProps => {
       depositors: account,
       totalSupply,
       symbol,
-      lendingPool: Vault,
+      vault: Vault,
     }))
   }, [portfolio])
 

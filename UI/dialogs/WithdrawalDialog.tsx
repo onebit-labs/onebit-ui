@@ -40,7 +40,7 @@ const WithdrawDialog: FC = () => {
 
   const { input } = useInputSlider({ balance: balanceOf })
   const {
-    contracts: { lendingPool, erc20Service },
+    contracts: { vault, erc20Service },
   } = useNetwork()
   const { updateData } = useControllers()
 
@@ -49,13 +49,13 @@ const WithdrawDialog: FC = () => {
   const fn = useCallback(
     (props: WithdrawProps) => {
       return transaction({
-        createTransaction: lendingPool.withdraw(props),
+        createTransaction: vault.withdraw(props),
         setStatus: () => {},
         sendTransaction,
         isOnlyApprove: false,
       })
     },
-    [lendingPool, sendTransaction]
+    [vault, sendTransaction]
   )
 
   const { post, loading } = usePost(fn)

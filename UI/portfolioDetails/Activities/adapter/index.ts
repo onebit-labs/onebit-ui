@@ -5,7 +5,7 @@ import { getTransactionType } from 'domains/data/onebit-graph/adapter/transactio
 type Props = {
   skip: number
   first: number
-  lendingPool: string
+  vault: string
 }
 export type SliceState = Array<{
   id: string
@@ -30,7 +30,7 @@ export const request = (props: Props) => {
   transactions(
     first: ${props.first}
     skip: ${props.skip}
-    where: { lendingPool: ${JSON.stringify(props.lendingPool)} }
+    where: { vault: ${JSON.stringify(props.vault)} }
     orderBy: createTimestamp
     orderDirection: desc
   ) {

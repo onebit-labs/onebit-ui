@@ -3,18 +3,18 @@ import type { ReserveDataSource } from './getReserveDataSource'
 import { getReserveDataSource } from './getReserveDataSource'
 
 export type Props = {
-  lendingPoolService: VaultService
-  lendingPools: string[]
+  vaultService: VaultService
+  vaults: string[]
 }
 export const request = (props: Props) => {
-  const { lendingPoolService, lendingPools } = props
+  const { vaultService, vaults } = props
   const promises: Array<Promise<void>> = []
   const returnValue: Record<string, ReserveDataSource> = {}
 
-  lendingPools.forEach((lendingPool) => {
+  vaults.forEach((vault) => {
     promises.push(
-      lendingPoolService.getReserveData({ pool: lendingPool }).then((reserve) => {
-        returnValue[lendingPool] = getReserveDataSource(reserve)
+      vaultService.getReserveData({ pool: vault }).then((reserve) => {
+        returnValue[vault] = getReserveDataSource(reserve)
       })
     )
   })

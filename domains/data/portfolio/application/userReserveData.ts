@@ -11,10 +11,10 @@ const useVaultEffect = () => {
   const {
     address,
     markets,
-    contracts: { erc20Service, oTokenService, lendingPool },
+    contracts: { erc20Service, oTokenService, vault },
   } = useNetwork()
   const {
-    lendingPool: { userExpirationTimestamp: userExpirationTimestampSingle },
+    vault: { userExpirationTimestamp: userExpirationTimestampSingle },
     erc20: { balanceOf: balanceOfPolling, scaledBalanceOf: scaledBalanceOfPolling },
   } = useControllers()
 
@@ -59,14 +59,14 @@ const useVaultEffect = () => {
 
   const userExpirationTimestampQuery = useMemo(() => {
     return {
-      lendingPoolService: lendingPool,
+      vaultService: vault,
       account: networkAccount,
-      lendingPools: markets.filter((market) => market.info.useWhitelist).map((market) => market.address.Vault),
+      vaults: markets.filter((market) => market.info.useWhitelist).map((market) => market.address.Vault),
     }
-  }, [lendingPool, markets, networkAccount])
+  }, [vault, markets, networkAccount])
   useEffect(() => {
     if (
-      !userExpirationTimestampQuery.lendingPools.length ||
+      !userExpirationTimestampQuery.vaults.length ||
       !userExpirationTimestampQuery.account ||
       !userExpirationTimestampSingle
     ) {

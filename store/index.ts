@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import theme from 'app/theme/store'
 import erc20 from 'domains/data/erc20/store'
-import lendingPool from 'domains/data/lendingPool/store'
+import vault from 'domains/data/vault/store'
 import onebitAPI from 'domains/data/onebit-api/store'
 import onebitGraph from 'domains/data/onebit-graph/store'
 import nprogress from 'lib/nprogress/store/nprogress'
@@ -15,7 +15,7 @@ export function makeStore() {
     reducer: {
       theme,
       erc20,
-      lendingPool,
+      vault,
       onebitAPI,
       onebitGraph,
       nprogress,

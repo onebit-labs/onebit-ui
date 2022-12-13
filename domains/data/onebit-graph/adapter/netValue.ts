@@ -5,7 +5,7 @@ import type { SliceState } from '../store/netValue/adapter'
 
 export type NetValue = {
   id: string
-  lendingPool: string
+  vault: string
   reserveNormalizedIncome: BN
   // previousNetValue: BN
   // newNetValue: BN
@@ -19,7 +19,7 @@ export const getNetValue = (sliceState: SliceState) => {
   const returnValue = sliceState.map((i) => {
     return {
       ...i,
-      ...getAddress(i, ['lendingPool']),
+      ...getAddress(i, ['vault']),
       ...getBigNumber(i, ['reserveNormalizedIncome', 'previousLiquidityIndex', 'newLiquidityIndex'], 27),
       ...getNumber(i, ['createTimestamp']),
     } as NetValue

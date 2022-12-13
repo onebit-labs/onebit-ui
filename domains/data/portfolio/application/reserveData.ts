@@ -9,23 +9,23 @@ import { safeGet } from 'app/utils/get'
 const useVaultEffect = () => {
   const {
     markets,
-    contracts: { lendingPool },
+    contracts: { vault },
   } = useNetwork()
   const {
-    lendingPool: { reserveData: reserveDataPolling, reserveNormalizedIncome: reserveNormalizedIncomeSingle },
+    vault: { reserveData: reserveDataPolling, reserveNormalizedIncome: reserveNormalizedIncomeSingle },
   } = useControllers()
 
-  const lendingPoolAddresses = useMemo(() => markets.map((market) => market.address.Vault) || [], [markets])
+  const vaultAddresses = useMemo(() => markets.map((market) => market.address.Vault) || [], [markets])
   const query = useMemo(
     () => ({
-      lendingPoolService: lendingPool,
-      lendingPools: lendingPoolAddresses,
+      vaultService: vault,
+      vaults: vaultAddresses,
     }),
-    [lendingPool, lendingPoolAddresses]
+    [vault, vaultAddresses]
   )
 
   useEffect(() => {
-    if (!query.lendingPools.length || !reserveDataPolling) return
+    if (!query.vaults.length || !reserveDataPolling) return
     reserveDataPolling.run(query, 600000)
     reserveNormalizedIncomeSingle.run(query)
     return () => {

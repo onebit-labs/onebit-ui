@@ -16,7 +16,7 @@ export const request = () => {
     orderDirection: desc
   ) {
     id
-    lendingPool
+    vault
     previousNetValue
     previousAssetsUnderManagement
     previousScaledAssetsUnderManagement
@@ -41,7 +41,7 @@ export const request = () => {
 }
 export type SliceState = Array<{
   id: string
-  lendingPool: string
+  vault: string
   previousNetValue: BN
   previousAssetsUnderManagement: BN
   previousScaledAssetsUnderManagement: BN

@@ -1,5 +1,5 @@
 import { toBN } from 'lib/math'
-import type { SliceState } from '../store/lendingPool/adapter'
+import type { SliceState } from '../store/vault/adapter'
 
 export type Vault = {
   id: string

@@ -4,7 +4,7 @@ import type { SliceState } from '../store/depositor/adapter'
 export type Depositor = {
   id: string
   account: string
-  lendingPool: string
+  vault: string
   createTimestamp: number
   lastUpdateTimestamp: number
 }
@@ -13,7 +13,7 @@ export const getDepositor = (sliceState: SliceState) => {
   const returnValue = sliceState.map((i) => {
     return {
       ...i,
-      ...getAddress(i, ['lendingPool', 'account', 'oTokenAddress']),
+      ...getAddress(i, ['vault', 'account', 'oTokenAddress']),
       ...getNumber(i, ['createTimestamp', 'lastUpdateTimestamp']),
     } as Depositor
   })

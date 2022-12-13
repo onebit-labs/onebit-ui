@@ -20,7 +20,7 @@ export type Transaction = {
   id: string
   createTimestamp: number
   amount: BN
-  lendingPool: string
+  vault: string
   type: TransactionType
 }
 export const getTransaction = (transaction: SliceState) => {
@@ -30,7 +30,7 @@ export const getTransaction = (transaction: SliceState) => {
     const returnValue: Transaction = {
       ...t,
       ...timestamps,
-      ...getAddress(t, ['lendingPool']),
+      ...getAddress(t, ['vault']),
       ...getBigNumber(t, ['amount'], 18),
       type: getTransactionType(t.type),
     }

@@ -2,7 +2,7 @@ import { createContext } from 'app/utils/createContext'
 import { useMemo } from 'react'
 import { useAppSelector } from 'store'
 
-import { select as reserveDataSelect } from 'domains/data/lendingPool/store/reserveData'
+import { select as reserveDataSelect } from 'domains/data/vault/store/reserveData'
 
 export const useLoadingService = () => {
   const reserveDataSource = useAppSelector(reserveDataSelect.selectData)

@@ -5,7 +5,7 @@ import type { SliceState } from '../store/portfolioTerm/adapter'
 
 export type PortfolioTerm = {
   id: string
-  lendingPool: string
+  vault: string
   createTimestamp: number
   managementFeeRate: BN
   performanceFeeRate: BN
@@ -41,7 +41,7 @@ export const getPortfolioTerm = (sliceState: SliceState) => {
     const returnValue: PortfolioTerm = {
       ...portfolioTerm,
       ...timestamps,
-      ...getAddress(portfolioTerm, ['lendingPool']),
+      ...getAddress(portfolioTerm, ['vault']),
       ...getBigNumber(portfolioTerm, ['previousNetValue'], 0),
       ...getBigNumber(portfolioTerm, ['previousAssetsUnderManagement', 'previousScaledAssetsUnderManagement'], 18),
       ...getBigNumber(portfolioTerm, ['previousLiquidityIndex'], 27),

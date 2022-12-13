@@ -18,11 +18,11 @@ type KYTButtonProps = {
 const KYTButton: FCC<KYTButtonProps> = ({ portfolio: { useWhitelist, userInWhitelist, address }, children }) => {
   const { t } = useTranslation('common', { keyPrefix: 'wallet.KYT' })
   const {
-    lendingPool: { userExpirationTimestamp },
+    vault: { userExpirationTimestamp },
   } = useControllers()
   const {
     provider,
-    contracts: { lendingPool },
+    contracts: { vault },
   } = useNetwork()
   const {
     chainName,
@@ -43,11 +43,11 @@ const KYTButton: FCC<KYTButtonProps> = ({ portfolio: { useWhitelist, userInWhite
   const waitForTransaction = usePost((transactionHash: string) => provider.waitForTransaction(transactionHash))
   const updateUserExpirationTimestamp = useCallback(() => {
     return userExpirationTimestamp.run({
-      lendingPoolService: lendingPool,
-      lendingPools: [Vault],
+      vaultService: vault,
+      vaults: [Vault],
       account,
     })
-  }, [account, Vault, lendingPool, userExpirationTimestamp])
+  }, [account, Vault, vault, userExpirationTimestamp])
   if (!networkAccount || !useWhitelist || userInWhitelist) return <>{children}</>
   if (addWhitelist.loading) {
     return (

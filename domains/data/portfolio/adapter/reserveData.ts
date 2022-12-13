@@ -1,4 +1,4 @@
-import type { ReserveDataSource } from 'domains/data/lendingPool/store/reserveData/adapter/getReserveDataSource'
+import type { ReserveDataSource } from 'domains/data/vault/store/reserveData/adapter/getReserveDataSource'
 import { getBigNumber, getNumber, safeGet } from 'app/utils/get'
 import { normalize, toBN } from 'lib/math'
 import type { BNValue } from 'lib/math/types'

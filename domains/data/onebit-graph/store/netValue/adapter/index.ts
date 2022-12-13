@@ -25,7 +25,7 @@ export const request = ({ startTimestamp, endTimestamp }: Props): Promise<SliceS
     orderDirection: asc
   ) {
     id
-    lendingPool
+    vault
     reserveNormalizedIncome
     previousNetValue
     newNetValue
@@ -47,7 +47,7 @@ export const request = ({ startTimestamp, endTimestamp }: Props): Promise<SliceS
 }
 export type SliceState = Array<{
   id: string
-  lendingPool: string
+  vault: string
   reserveNormalizedIncome: string
   previousNetValue: string
   newNetValue: string

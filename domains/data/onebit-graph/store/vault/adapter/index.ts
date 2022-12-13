@@ -8,13 +8,13 @@ export const request = () => {
       'sec-fetch-mode': 'cors',
       'sec-fetch-site': 'same-site',
     },
-    body: '{"query":"{lendingPools(first: 1000) {id term depositors lastUpdateTimestamp}}","variables":null}',
+    body: '{"query":"{vaults(first: 1000) {id term depositors lastUpdateTimestamp}}","variables":null}',
     method: 'POST',
     mode: 'cors',
     credentials: 'omit',
   })
     .then((data) => data.json())
-    .then(({ data: { lendingPools } }) => lendingPools)
+    .then(({ data: { vaults } }) => vaults)
 }
 export type SliceState = Array<{
   id: string

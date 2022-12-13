@@ -20,7 +20,7 @@ export const request = (props: Props) => {
     orderDirection: desc
   ) {
     id
-    lendingPool
+    vault
     type
     account
     amount
@@ -37,7 +37,7 @@ export const request = (props: Props) => {
 }
 export type SliceState = Array<{
   id: string
-  lendingPool: string
+  vault: string
   type: number
   account: string
   amount: BN

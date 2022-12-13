@@ -77,20 +77,20 @@ export const useTable = (): BasicTableProps => {
       disabled: dataFetcher.loading,
       onLoadMore: () => {
         const skip = pageIndex * pageSize
-        const lendingPool = portfolio.address.Vault
+        const vault = portfolio.address.Vault
         setPageIndex(pageIndex + 1)
         return dataFetcher
           .post({
             skip,
             first: pageSize,
-            lendingPool,
+            vault,
           })
           .then((data) => {
             const { symbol } = portfolio
             const rowData = data.map((i) => ({
               ...i,
               symbol,
-              lendingPool,
+              vault,
             }))
 
             if (rowData.length < pageSize) setEnd(true)

@@ -2,18 +2,18 @@ import type { VaultService } from 'lib/protocol/typechain/onebit'
 import { getReserveNormalizedIncomeSource } from './getReserveNormalizedIncomeSource'
 
 export type Props = {
-  lendingPoolService: VaultService
-  lendingPools: string[]
+  vaultService: VaultService
+  vaults: string[]
 }
 export const request = (props: Props) => {
-  const { lendingPoolService, lendingPools } = props
+  const { vaultService, vaults } = props
   const promises: Array<Promise<void>> = []
   const returnValue: Record<string, string> = {}
 
-  lendingPools.forEach((lendingPool) => {
+  vaults.forEach((vault) => {
     promises.push(
-      lendingPoolService.getReserveNormalizedIncome({ pool: lendingPool }).then((reserve) => {
-        returnValue[lendingPool] = getReserveNormalizedIncomeSource(reserve)
+      vaultService.getReserveNormalizedIncome({ pool: vault }).then((reserve) => {
+        returnValue[vault] = getReserveNormalizedIncomeSource(reserve)
       })
     )
   })

@@ -23,7 +23,7 @@ const TransactionTabs: FC = () => {
     if (!portfolioUserData.transactions) return []
     const data = portfolioUserData.transactions
       .map((i) => {
-        const portfolio = portfolioData.find((portfolio) => portfolio.address.Vault === i.lendingPool)
+        const portfolio = portfolioData.find((portfolio) => portfolio.address.Vault === i.vault)
         if (!portfolio) return i as undefined
         const { portfolioName, symbol } = portfolio
 

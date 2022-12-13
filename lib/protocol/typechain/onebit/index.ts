@@ -46,18 +46,18 @@ export class VaultService extends BaseService<Vault> {
   }
 
   public getReserveData({ pool }: GetReserveDataProps) {
-    const lendingPool = this.getContractInstance(pool)
-    return lendingPool.getReserveData()
+    const vault = this.getContractInstance(pool)
+    return vault.getReserveData()
   }
 
   public getReserveNormalizedIncome({ pool }: GetReserveDataProps) {
-    const lendingPool = this.getContractInstance(pool)
-    return lendingPool.getReserveNormalizedIncome()
+    const vault = this.getContractInstance(pool)
+    return vault.getReserveNormalizedIncome()
   }
 
   public getUserExpirationTimestamp({ pool, user }: GetUserExpirationTimestampProps) {
-    const lendingPool = this.getContractInstance(pool)
-    return lendingPool.getUserExpirationTimestamp(user)
+    const vault = this.getContractInstance(pool)
+    return vault.getUserExpirationTimestamp(user)
   }
 
   public async deposit({ pool, erc20Service, reserve, user, amount }: DepositProps) {
@@ -83,9 +83,9 @@ export class VaultService extends BaseService<Vault> {
       txs.push(approveTx)
     }
 
-    const lendingPool = this.getContractInstance(pool)
+    const vault = this.getContractInstance(pool)
     const txCallback = this.generateTxCallback({
-      rawTxMethod: async () => lendingPool.populateTransaction.deposit(convertedAmount, user, '0'),
+      rawTxMethod: async () => vault.populateTransaction.deposit(convertedAmount, user, '0'),
       from: user,
       value: getTxValue(reserve, convertedAmount),
     })
@@ -105,10 +105,10 @@ export class VaultService extends BaseService<Vault> {
     const decimals = await decimalsOf(reserve)
 
     const convertedAmount = amount === '-1' ? constants.MaxUint256.toString() : normalize(amount, -decimals).toFixed(0)
-    const lendingPool = this.getContractInstance(pool)
+    const vault = this.getContractInstance(pool)
 
     const txCallback = this.generateTxCallback({
-      rawTxMethod: async () => lendingPool.populateTransaction.withdraw(convertedAmount, user),
+      rawTxMethod: async () => vault.populateTransaction.withdraw(convertedAmount, user),
       from: user,
       action: ProtocolAction.withdraw,
     })

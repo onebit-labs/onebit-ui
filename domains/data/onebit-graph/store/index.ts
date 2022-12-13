@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux'
 
 import depositor from './depositor'
-import lendingPool from './lendingPool'
+import vault from './vault'
 import netValue from './netValue'
 import portfolioTerm from './portfolioTerm'
 import transaction from './transaction'
 
 const reducer = combineReducers({
   depositor,
-  lendingPool,
+  vault,
   netValue,
   portfolioTerm,
   transaction,

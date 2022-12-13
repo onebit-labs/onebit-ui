@@ -2,7 +2,7 @@ import { createStoreRequest } from 'store/helpers/request'
 import type { SliceState } from './adapter'
 import { request } from './adapter'
 
-const key = 'lendingPool.reserveNormalizedIncome'
+const key = 'vault.reserveNormalizedIncome'
 const {
   reducer,
   select,

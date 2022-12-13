@@ -18,10 +18,10 @@ const getWhere = (props: any) => {
 
 type Props = {
   account: string
-  lendingPool?: string
+  vault?: string
 }
 export const request = (props: Props): Promise<SliceState> => {
-  const key = props.lendingPool ? `getDepositor_${props.account}_${props.lendingPool || ''}` : ''
+  const key = props.vault ? `getDepositor_${props.account}_${props.vault || ''}` : ''
   const cacheValue = getItem(key)
   if (key && cacheValue) return Promise.resolve(cacheValue)
   return fetch('https://api.thegraph.com/subgraphs/name/rockgold0911/onebit', {
@@ -43,7 +43,7 @@ export const request = (props: Props): Promise<SliceState> => {
   ) {
     id
     account
-    lendingPool
+    vault
     createTimestamp
     lastUpdateTimestamp
     oTokenAddress
@@ -63,7 +63,7 @@ export const request = (props: Props): Promise<SliceState> => {
 export type SliceState = Array<{
   id: string
   account: string
-  lendingPool: string
+  vault: string
   oTokenAddress: string
   createTimestamp: number
   lastUpdateTimestamp: number

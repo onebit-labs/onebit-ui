@@ -19,7 +19,7 @@ import { useOnebitAPIData } from './application/onebitAPI'
 import { useOnebitGraphData } from './application/onebitGraph'
 import type { ContractsAddress, MarketInfo } from '../network/adapter/markets'
 import { getPortfolioTerm } from './adapter/portfolioTerm'
-import type { Vault } from '../onebit-graph/adapter/lendingPool'
+import type { Vault } from '../onebit-graph/adapter/vault'
 import type { PortfolioTerm } from '../onebit-graph/adapter/portfolioTerm'
 import type { NetValue } from '../onebit-graph/adapter/netValue'
 import { getFixedNetValues } from '../onebit-graph/adapter/netValue'
@@ -79,8 +79,8 @@ const usePortfolioService = () => {
   const marketReserveData = useMemo(() => {
     const returnValue = markets.map((market) => {
       const { id, info, address } = market
-      const lendingPoolAddress = address.Vault
-      const reserve = reserveData[lendingPoolAddress]
+      const vaultAddress = address.Vault
+      const reserve = reserveData[vaultAddress]
       return {
         ...info,
         ...reserve,
@@ -100,13 +100,13 @@ const usePortfolioService = () => {
   const portfolioData = useMemo(() => {
     const returnValue = marketReserveData.map((market) => {
       const { id, address, symbol, portfolioAPIName, series } = market
-      const lendingPoolAddress = address.Vault
+      const vaultAddress = address.Vault
       const oracle = toBN(safeGet(() => erc20Data.oracle[symbol]) || 0)
-      const reserve = reserveData[lendingPoolAddress]
-      const userReserve = userReserveData[lendingPoolAddress]
-      const lendingPool = onebitGraphData.lendingPool.find((i) => i.id === lendingPoolAddress)
-      const portfolioTerm = onebitGraphData.portfolioTerm.filter((i) => i.lendingPool === lendingPoolAddress)
-      const netValues = getFixedNetValues(onebitGraphData.netValue.filter((i) => i.lendingPool === lendingPoolAddress))
+      const reserve = reserveData[vaultAddress]
+      const userReserve = userReserveData[vaultAddress]
+      const vault = onebitGraphData.vault.find((i) => i.id === vaultAddress)
+      const portfolioTerm = onebitGraphData.portfolioTerm.filter((i) => i.vault === vaultAddress)
+      const netValues = getFixedNetValues(onebitGraphData.netValue.filter((i) => i.vault === vaultAddress))
 
       const totalSupply = toBN(safeGet(() => erc20Data.totalSupply[address.OToken]) || 0)
       const scaledTotalSupply = toBN(safeGet(() => erc20Data.scaledTotalSupply[address.OToken]) || 0)
@@ -144,7 +144,7 @@ const usePortfolioService = () => {
 
       const returnValue: Portfolio = {
         ...market,
-        ...lendingPool,
+        ...vault,
         ...userReserve,
         ...reserve,
         portfolioTerm: [],
@@ -190,7 +190,7 @@ const usePortfolioService = () => {
     erc20Data.scaledTotalSupply,
     erc20Data.totalSupply,
     marketReserveData,
-    onebitGraphData.lendingPool,
+    onebitGraphData.vault,
     onebitGraphData.netValue,
     onebitGraphData.portfolioTerm,
     portfolioDailyData,

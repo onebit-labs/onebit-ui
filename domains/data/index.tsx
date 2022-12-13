@@ -2,7 +2,7 @@ import type { FCC } from 'app/types'
 
 import NetworkProvider, { createNetworkContext } from './network'
 import ERC20Provider, { createERC20Context } from './erc20'
-import VaultProvider, { createVaultContext } from './lendingPool'
+import VaultProvider, { createVaultContext } from './vault'
 import PortfolioProvider, { createPortfolioContext } from './portfolio'
 import PortfolioDetailsProvider, { createPortfolioDetailsContext } from './portfolioDetails'
 import OnebitAPIProvider, { createOnebitAPIContext } from './onebit-api'

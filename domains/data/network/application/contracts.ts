@@ -8,7 +8,7 @@ import { VaultService, OTokenService } from 'lib/protocol/typechain/onebit'
 export const useContracts = (provider: Provider) => {
   const contracts = useMemo(() => {
     return {
-      lendingPool: new VaultService(provider),
+      vault: new VaultService(provider),
       erc20Service: new ERC20Service(provider),
       oTokenService: new OTokenService(provider),
       chainlinkService: new ChainlinkService(provider),
