@@ -96,7 +96,7 @@ const PortfolioInfo: FCC = ({ children }) => {
               </Span>
               {portfolio && portfolio.address && (
                 <Span color="text.secondary">
-                  {t('info.contract')}: {<LinkToAddress address={portfolio.address.LendingPool} />}
+                  {t('info.contract')}: {<LinkToAddress address={portfolio.address.Vault} />}
                 </Span>
               )}
             </Stack>

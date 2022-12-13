@@ -69,9 +69,9 @@ const getMarketInfo = (id: MarketId): MarketInfo => {
 }
 
 export type ContractsAddress = {
-  LendingPoolAddressesProvider: string
-  LendingPool: string
-  LendingPoolConfigurator: string
+  VaultAddressesProvider: string
+  Vault: string
+  VaultConfigurator: string
   OToken: string
   symbol: string
 }

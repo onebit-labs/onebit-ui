@@ -1,12 +1,12 @@
 import { useControllers, useWallet } from 'domains'
-import { useERC20, useNetwork, useLendingPool } from 'domains/data'
+import { useERC20, useNetwork, useVault } from 'domains/data'
 import { useEffect, useMemo } from 'react'
 
 import { log } from 'app/utils/dev'
 import { getUserReserveData } from '../adapter/userReserveData'
 import type { MarketReserve } from '..'
 
-const useLendingPoolEffect = () => {
+const useVaultEffect = () => {
   const { networkAccount } = useWallet()
   const {
     address,
@@ -61,7 +61,7 @@ const useLendingPoolEffect = () => {
     return {
       lendingPoolService: lendingPool,
       account: networkAccount,
-      lendingPools: markets.filter((market) => market.info.useWhitelist).map((market) => market.address.LendingPool),
+      lendingPools: markets.filter((market) => market.info.useWhitelist).map((market) => market.address.Vault),
     }
   }, [lendingPool, markets, networkAccount])
   useEffect(() => {
@@ -85,9 +85,9 @@ type UserReserveDataProps = {
   marketReserveData: MarketReserve[]
 }
 export const useUserReserveData = ({ marketReserveData }: UserReserveDataProps) => {
-  const { networkAccount } = useLendingPoolEffect()
+  const { networkAccount } = useVaultEffect()
   const { balanceOf, scaledBalanceOf } = useERC20()
-  const { userExpirationTimestampSource } = useLendingPool()
+  const { userExpirationTimestampSource } = useVault()
   const userReserveData = useMemo(() => {
     if (!networkAccount) return {} as undefined
     const returnValue = getUserReserveData({

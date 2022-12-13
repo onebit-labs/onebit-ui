@@ -1,4 +1,4 @@
-import type { DataTypes } from 'lib/protocol/typechain/onebit/typechain/LendingPool'
+import type { DataTypes } from 'lib/protocol/typechain/onebit/typechain/Vault'
 import { getAddress, getString } from 'app/utils/get'
 
 export type ReserveDataSource = {

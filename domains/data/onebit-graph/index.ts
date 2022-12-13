@@ -3,11 +3,11 @@ import { createContext } from 'app/utils/createContext'
 import { useDepositor } from './application/depositor'
 import { useTransaction } from './application/transaction'
 import { usePortfolioTerm } from './application/portfolioTerm'
-import { useLendingPool } from './application/lendingPool'
+import { useVault } from './application/lendingPool'
 import { useNetValue } from './application/netValue'
 
 const useOnebitGraphService = () => {
-  const lendingPool = useLendingPool()
+  const lendingPool = useVault()
   const depositor = useDepositor()
   const transaction = useTransaction()
   const portfolioTerm = usePortfolioTerm()

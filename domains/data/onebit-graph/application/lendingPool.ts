@@ -1,11 +1,11 @@
 import { useMemo } from 'react'
 import { useAppSelector } from 'store'
 
-import { getLendingPool } from '../adapter/lendingPool'
+import { getVault } from '../adapter/lendingPool'
 import { select } from '../store/lendingPool'
 
-export const useLendingPool = () => {
+export const useVault = () => {
   const sliceState = useAppSelector(select.selectData)
-  const returnValue = useMemo(() => getLendingPool(sliceState), [sliceState])
+  const returnValue = useMemo(() => getVault(sliceState), [sliceState])
   return returnValue
 }

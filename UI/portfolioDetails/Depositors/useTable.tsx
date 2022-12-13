@@ -56,13 +56,13 @@ export const useTable = (): BasicTableProps => {
     const {
       totalSupply,
       symbol,
-      address: { LendingPool },
+      address: { Vault },
     } = portfolio
     return portfolio.depositorList.map((account) => ({
       depositors: account,
       totalSupply,
       symbol,
-      lendingPool: LendingPool,
+      lendingPool: Vault,
     }))
   }, [portfolio])
 

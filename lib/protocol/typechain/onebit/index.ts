@@ -4,39 +4,39 @@ import { constants } from 'ethers'
 import BaseService from '../commons/BaseService'
 import type { EthereumTransactionTypeExtended, tEthereumAddress } from '../commons/types'
 import { eEthereumTxType, ProtocolAction } from '../commons/types'
-import type { LendingPool } from './typechain/LendingPool'
-import { LendingPool__factory } from './typechain/factories/LendingPool__factory'
+import type { Vault } from './typechain/Vault'
+import { Vault__factory } from './typechain/factories/Vault__factory'
 import type { OToken } from './typechain/OToken'
 import { OToken__factory } from './typechain/factories/OToken__factory'
 import type { ERC20Service } from '../erc20'
 import { normalize } from 'lib/math'
 import { API_ETH_MOCK_ADDRESS, DEFAULT_APPROVE_AMOUNT, getTxValue } from '../commons/utils'
-type baseLendingPoolProps = {
+type baseVaultProps = {
   pool: tEthereumAddress
 }
 
-export type GetReserveDataProps = baseLendingPoolProps
-export type GetUserExpirationTimestampProps = baseLendingPoolProps & {
+export type GetReserveDataProps = baseVaultProps
+export type GetUserExpirationTimestampProps = baseVaultProps & {
   user: tEthereumAddress
 }
-export type DepositProps = baseLendingPoolProps & {
+export type DepositProps = baseVaultProps & {
   erc20Service: ERC20Service
   reserve: tEthereumAddress
   user: tEthereumAddress
   amount: string
 }
-export type WithdrawProps = baseLendingPoolProps & {
+export type WithdrawProps = baseVaultProps & {
   erc20Service: ERC20Service
   reserve: tEthereumAddress
   user: tEthereumAddress
   amount: string
 }
 
-export class LendingPoolService extends BaseService<LendingPool> {
+export class VaultService extends BaseService<Vault> {
   provider: any
 
   constructor(provider: providers.Provider) {
-    super(provider, LendingPool__factory)
+    super(provider, Vault__factory)
     this.provider = provider
 
     this.getReserveData = this.getReserveData.bind(this)

@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next'
 import { useNetwork } from 'domains/data'
 import { createToastifyPromise } from 'app/utils/promise/toastify'
 import { useControllers, useWallet } from 'domains'
-import { LendingPoolService } from 'lib/openapi'
+import { VaultService } from 'lib/openapi'
 import { catchError } from 'app/utils/catch/error'
 import { safeGet } from 'app/utils/get'
 import { useCallback } from 'react'
@@ -30,13 +30,13 @@ const KYTButton: FCC<KYTButtonProps> = ({ portfolio: { useWhitelist, userInWhite
     signature: { userKYT },
   } = useWallet()
   const account = networkAccount
-  const LendingPool = safeGet(() => address.LendingPool)
-  const LendingPoolAddress = safeGet(() => ethers.utils.getAddress(address.LendingPool))
+  const Vault = safeGet(() => address.Vault)
+  const VaultAddress = safeGet(() => ethers.utils.getAddress(address.Vault))
   const addWhitelist = usePost(() => {
-    return userKYT(account, LendingPoolAddress).then((signature) =>
-      LendingPoolService.addToWhitelistApiNetworkAccountsAddressWhitelistPost(chainName, account, {
+    return userKYT(account, VaultAddress).then((signature) =>
+      VaultService.addToWhitelistApiNetworkAccountsAddressWhitelistPost(chainName, account, {
         signature,
-        pool: LendingPoolAddress,
+        pool: VaultAddress,
       })
     )
   })
@@ -44,10 +44,10 @@ const KYTButton: FCC<KYTButtonProps> = ({ portfolio: { useWhitelist, userInWhite
   const updateUserExpirationTimestamp = useCallback(() => {
     return userExpirationTimestamp.run({
       lendingPoolService: lendingPool,
-      lendingPools: [LendingPool],
+      lendingPools: [Vault],
       account,
     })
-  }, [account, LendingPool, lendingPool, userExpirationTimestamp])
+  }, [account, Vault, lendingPool, userExpirationTimestamp])
   if (!networkAccount || !useWhitelist || userInWhitelist) return <>{children}</>
   if (addWhitelist.loading) {
     return (

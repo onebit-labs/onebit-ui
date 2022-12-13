@@ -12,4 +12,4 @@ export type { InputData } from './models/InputData'
 export type { Transaction } from './models/Transaction'
 export type { ValidationError } from './models/ValidationError'
 
-export { LendingPoolService } from './services/LendingPoolService'
+export { VaultService } from './services/VaultService'

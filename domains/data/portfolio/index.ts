@@ -19,7 +19,7 @@ import { useOnebitAPIData } from './application/onebitAPI'
 import { useOnebitGraphData } from './application/onebitGraph'
 import type { ContractsAddress, MarketInfo } from '../network/adapter/markets'
 import { getPortfolioTerm } from './adapter/portfolioTerm'
-import type { LendingPool } from '../onebit-graph/adapter/lendingPool'
+import type { Vault } from '../onebit-graph/adapter/lendingPool'
 import type { PortfolioTerm } from '../onebit-graph/adapter/portfolioTerm'
 import type { NetValue } from '../onebit-graph/adapter/netValue'
 import { getFixedNetValues } from '../onebit-graph/adapter/netValue'
@@ -34,7 +34,7 @@ export type MarketReserve = Partial<ReserveData> &
   }
 export type Portfolio = Partial<
   UserReserveData &
-    LendingPool & {
+    Vault & {
       portfolioTerm: PortfolioTerm[]
       netValues: NetValue[]
     }
@@ -79,7 +79,7 @@ const usePortfolioService = () => {
   const marketReserveData = useMemo(() => {
     const returnValue = markets.map((market) => {
       const { id, info, address } = market
-      const lendingPoolAddress = address.LendingPool
+      const lendingPoolAddress = address.Vault
       const reserve = reserveData[lendingPoolAddress]
       return {
         ...info,
@@ -100,7 +100,7 @@ const usePortfolioService = () => {
   const portfolioData = useMemo(() => {
     const returnValue = marketReserveData.map((market) => {
       const { id, address, symbol, portfolioAPIName, series } = market
-      const lendingPoolAddress = address.LendingPool
+      const lendingPoolAddress = address.Vault
       const oracle = toBN(safeGet(() => erc20Data.oracle[symbol]) || 0)
       const reserve = reserveData[lendingPoolAddress]
       const userReserve = userReserveData[lendingPoolAddress]

@@ -1,8 +1,8 @@
 import { getNumber } from 'app/utils/get'
-import type { LendingPoolService } from 'lib/protocol/typechain/onebit'
+import type { VaultService } from 'lib/protocol/typechain/onebit'
 
 export type Props = {
-  lendingPoolService: LendingPoolService
+  lendingPoolService: VaultService
   account: string
   lendingPools: string[]
 }

@@ -91,7 +91,7 @@ const WithdrawDialog: FC = () => {
               return promise
                 .then(() =>
                   post({
-                    pool: address.LendingPool,
+                    pool: address.Vault,
                     erc20Service,
                     reserve: address.symbol,
                     user: networkAccount,

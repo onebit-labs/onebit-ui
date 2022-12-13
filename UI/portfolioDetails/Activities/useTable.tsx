@@ -77,7 +77,7 @@ export const useTable = (): BasicTableProps => {
       disabled: dataFetcher.loading,
       onLoadMore: () => {
         const skip = pageIndex * pageSize
-        const lendingPool = portfolio.address.LendingPool
+        const lendingPool = portfolio.address.Vault
         setPageIndex(pageIndex + 1)
         return dataFetcher
           .post({

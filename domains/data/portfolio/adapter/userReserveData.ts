@@ -29,8 +29,8 @@ export const getUserReserveData = ({
     const balanceOfValue = safeGet(() => balanceOf[address.OToken] || 0)
     const scaledBalanceOfValue = safeGet(() => scaledBalanceOf[address.OToken] || 0)
     const walletBalance = safeGet(() => balanceOf[address.symbol] || 0)
-    const userExpirationTime = safeGet(() => userExpirationTimestampSource[address.LendingPool] || 0)
-    returnValue[address.LendingPool] = {
+    const userExpirationTime = safeGet(() => userExpirationTimestampSource[address.Vault] || 0)
+    returnValue[address.Vault] = {
       balanceOf: toBN(balanceOfValue),
       scaledBalanceOf: toBN(scaledBalanceOfValue),
       walletBalance: toBN(walletBalance),

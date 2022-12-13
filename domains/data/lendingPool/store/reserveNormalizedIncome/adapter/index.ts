@@ -1,8 +1,8 @@
-import type { LendingPoolService } from 'lib/protocol/typechain/onebit'
+import type { VaultService } from 'lib/protocol/typechain/onebit'
 import { getReserveNormalizedIncomeSource } from './getReserveNormalizedIncomeSource'
 
 export type Props = {
-  lendingPoolService: LendingPoolService
+  lendingPoolService: VaultService
   lendingPools: string[]
 }
 export const request = (props: Props) => {

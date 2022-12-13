@@ -5,7 +5,7 @@ import { select as reserveDataSelect } from './store/reserveData'
 import { select as reserveNormalizedIncome } from './store/reserveNormalizedIncome'
 import { select as userExpirationTimestamp } from './store/userExpirationTimestamp'
 
-const useLendingPoolService = () => {
+const useVaultService = () => {
   const reserveDataSource = useAppSelector(reserveDataSelect.selectData)
   const reserveNormalizedIncomeSource = useAppSelector(reserveNormalizedIncome.selectData)
   const userExpirationTimestampSource = useAppSelector(userExpirationTimestamp.selectData)
@@ -16,7 +16,7 @@ const useLendingPoolService = () => {
     userExpirationTimestampSource,
   }
 }
-const { Provider: LendingPoolProvider, createUseContext } = createContext(useLendingPoolService)
-export const createLendingPoolContext = createUseContext
+const { Provider: VaultProvider, createUseContext } = createContext(useVaultService)
+export const createVaultContext = createUseContext
 
-export default LendingPoolProvider
+export default VaultProvider

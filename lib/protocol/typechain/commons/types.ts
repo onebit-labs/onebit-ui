@@ -31,7 +31,7 @@ export type MigratorConfig = {
   LEND_TO_AAVE_MIGRATOR: tEthereumAddress
 }
 
-export type LendingPoolMarketConfig = {
+export type VaultMarketConfig = {
   WETH_GATEWAY: tEthereumAddress
   WPUNKS_GATEWAY: tEthereumAddress
   FLASH_LIQUIDATION_ADAPTER?: tEthereumAddress
@@ -39,7 +39,7 @@ export type LendingPoolMarketConfig = {
   SWAP_COLLATERAL_ADAPTER?: tEthereumAddress
 }
 
-export type LendingPoolConfig = Record<string, Record<string, LendingPoolMarketConfig>>
+export type VaultConfig = Record<string, Record<string, VaultMarketConfig>>
 
 export enum eEthereumTxType {
   ERC20_APPROVAL = 'ERC20_APPROVAL',
@@ -201,7 +201,7 @@ export type StakingConfigType = Record<string, Record<string, tdistinctStakingAd
 
 export type CommonConfigType = Record<string, tCommonContractAddressBetweenMarkets>
 
-export type LendingPoolConfigType = Record<string, Record<string, tDistinctContractAddressBetweenMarketsV2>>
+export type VaultConfigType = Record<string, Record<string, tDistinctContractAddressBetweenMarketsV2>>
 
 export type PermitSignature = {
   amount: string

@@ -1,13 +1,13 @@
 import { toBN } from 'lib/math'
 import type { SliceState } from '../store/lendingPool/adapter'
 
-export type LendingPool = {
+export type Vault = {
   id: string
   term: number
   depositors: BN
   depositorList: string[]
 }
-export const getLendingPool = (sliceState: SliceState) => {
+export const getVault = (sliceState: SliceState) => {
   if (!sliceState) return []
   const returnValue = sliceState.map(({ id, term, depositors }) => {
     return {
@@ -15,7 +15,7 @@ export const getLendingPool = (sliceState: SliceState) => {
       term,
       depositors: toBN(depositors.length),
       depositorList: depositors,
-    } as LendingPool
+    } as Vault
   })
   return returnValue
 }

@@ -1,12 +1,12 @@
 import { useControllers } from 'domains'
-import { useLendingPool, useNetwork } from 'domains/data'
+import { useVault, useNetwork } from 'domains/data'
 import { useEffect, useMemo } from 'react'
 
 import { log } from 'app/utils/dev'
 import { getReserveData } from '../adapter/reserveData'
 import { safeGet } from 'app/utils/get'
 
-const useLendingPoolEffect = () => {
+const useVaultEffect = () => {
   const {
     markets,
     contracts: { lendingPool },
@@ -15,7 +15,7 @@ const useLendingPoolEffect = () => {
     lendingPool: { reserveData: reserveDataPolling, reserveNormalizedIncome: reserveNormalizedIncomeSingle },
   } = useControllers()
 
-  const lendingPoolAddresses = useMemo(() => markets.map((market) => market.address.LendingPool) || [], [markets])
+  const lendingPoolAddresses = useMemo(() => markets.map((market) => market.address.Vault) || [], [markets])
   const query = useMemo(
     () => ({
       lendingPoolService: lendingPool,
@@ -116,10 +116,10 @@ const useERC20oracleEffect = () => {
 }
 
 export const useReserveData = () => {
-  useLendingPoolEffect()
+  useVaultEffect()
   useERC20TotalSupplyEffect()
   useERC20oracleEffect()
-  const { reserveDataSource, reserveNormalizedIncomeSource } = useLendingPool()
+  const { reserveDataSource, reserveNormalizedIncomeSource } = useVault()
 
   const reserveData = useMemo(() => {
     const returnValue = getReserveData(reserveDataSource, reserveNormalizedIncomeSource)
