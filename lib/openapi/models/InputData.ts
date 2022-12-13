@@ -5,7 +5,7 @@
 export type InputData = {
   signature: string
   /**
-   * The address of lending pool.
+   * The address of vault.
    */
-  pool: string
+  vault: string
 }

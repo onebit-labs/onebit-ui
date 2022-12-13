@@ -13,7 +13,7 @@ export const request = (props: Props) => {
 
   vaults.forEach((vault) => {
     promises.push(
-      vaultService.getReserveData({ pool: vault }).then((reserve) => {
+      vaultService.getReserveData({ vault }).then((reserve) => {
         returnValue[vault] = getReserveDataSource(reserve)
       })
     )

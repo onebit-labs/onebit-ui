@@ -70,8 +70,8 @@ export const useSignature = (account: string) => {
     )
   }, [account])
 
-  const userKYT = useCallback((walletAddress: string, poolAddress: string) => {
-    const message = `${walletAddress} requsts to be whitelisted for the ${poolAddress} portfolio.`
+  const userKYT = useCallback((walletAddress: string, vaultAddress: string) => {
+    const message = `${walletAddress} requsts to be whitelisted for the ${vaultAddress} portfolio.`
     return signMessage(message).then(({ signature }) => signature)
   }, [])
 

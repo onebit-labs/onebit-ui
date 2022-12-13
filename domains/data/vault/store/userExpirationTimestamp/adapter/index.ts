@@ -12,7 +12,7 @@ export const request = (props: Props) => {
   const returnValue: Record<string, number> = {}
   vaults.forEach((vault) => {
     promises.push(
-      vaultService.getUserExpirationTimestamp({ pool: vault, user: account }).then((userExpirationTimestamp) => {
+      vaultService.getUserExpirationTimestamp({ vault, user: account }).then((userExpirationTimestamp) => {
         const time = getNumber({ userExpirationTimestamp }, ['userExpirationTimestamp']).userExpirationTimestamp
         returnValue[vault] = time
       })

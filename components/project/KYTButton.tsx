@@ -36,7 +36,7 @@ const KYTButton: FCC<KYTButtonProps> = ({ portfolio: { useWhitelist, userInWhite
     return userKYT(account, VaultAddress).then((signature) =>
       VaultService.addToWhitelistApiNetworkAccountsAddressWhitelistPost(chainName, account, {
         signature,
-        pool: VaultAddress,
+        vault: VaultAddress,
       })
     )
   })

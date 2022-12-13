@@ -12,4 +12,5 @@ export type { InputData } from './models/InputData'
 export type { Transaction } from './models/Transaction'
 export type { ValidationError } from './models/ValidationError'
 
+export { DefaultService } from './services/DefaultService'
 export { VaultService } from './services/VaultService'

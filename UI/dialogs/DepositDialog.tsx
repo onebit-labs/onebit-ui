@@ -146,7 +146,7 @@ const DepositDialog: FC = () => {
               return promise
                 .then(() =>
                   post({
-                    pool: address.Vault,
+                    vault: address.Vault,
                     erc20Service,
                     reserve: address.symbol,
                     user: networkAccount,

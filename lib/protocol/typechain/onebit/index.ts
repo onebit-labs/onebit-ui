@@ -12,7 +12,7 @@ import type { ERC20Service } from '../erc20'
 import { normalize } from 'lib/math'
 import { API_ETH_MOCK_ADDRESS, DEFAULT_APPROVE_AMOUNT, getTxValue } from '../commons/utils'
 type baseVaultProps = {
-  pool: tEthereumAddress
+  vault: tEthereumAddress
 }
 
 export type GetReserveDataProps = baseVaultProps
@@ -45,22 +45,22 @@ export class VaultService extends BaseService<Vault> {
     this.withdraw = this.withdraw.bind(this)
   }
 
-  public getReserveData({ pool }: GetReserveDataProps) {
-    const vault = this.getContractInstance(pool)
-    return vault.getReserveData()
+  public getReserveData({ vault }: GetReserveDataProps) {
+    const vaultContract = this.getContractInstance(vault)
+    return vaultContract.getReserveData()
   }
 
-  public getReserveNormalizedIncome({ pool }: GetReserveDataProps) {
-    const vault = this.getContractInstance(pool)
-    return vault.getReserveNormalizedIncome()
+  public getReserveNormalizedIncome({ vault }: GetReserveDataProps) {
+    const vaultContract = this.getContractInstance(vault)
+    return vaultContract.getReserveNormalizedIncome()
   }
 
-  public getUserExpirationTimestamp({ pool, user }: GetUserExpirationTimestampProps) {
-    const vault = this.getContractInstance(pool)
-    return vault.getUserExpirationTimestamp(user)
+  public getUserExpirationTimestamp({ vault, user }: GetUserExpirationTimestampProps) {
+    const vaultContract = this.getContractInstance(vault)
+    return vaultContract.getUserExpirationTimestamp(user)
   }
 
-  public async deposit({ pool, erc20Service, reserve, user, amount }: DepositProps) {
+  public async deposit({ vault, erc20Service, reserve, user, amount }: DepositProps) {
     const txs: EthereumTransactionTypeExtended[] = []
     const { isApproved, approve, decimalsOf } = erc20Service
     const reserveDecimals = await decimalsOf(reserve)
@@ -69,7 +69,7 @@ export class VaultService extends BaseService<Vault> {
     const approved = await isApproved({
       token: reserve,
       user,
-      spender: pool,
+      spender: vault,
       amount,
     })
 
@@ -77,15 +77,15 @@ export class VaultService extends BaseService<Vault> {
       const approveTx: EthereumTransactionTypeExtended = approve({
         user,
         token: reserve,
-        spender: pool,
+        spender: vault,
         amount: DEFAULT_APPROVE_AMOUNT,
       })
       txs.push(approveTx)
     }
 
-    const vault = this.getContractInstance(pool)
+    const vaultContract = this.getContractInstance(vault)
     const txCallback = this.generateTxCallback({
-      rawTxMethod: async () => vault.populateTransaction.deposit(convertedAmount, user, '0'),
+      rawTxMethod: async () => vaultContract.populateTransaction.deposit(convertedAmount, user, '0'),
       from: user,
       value: getTxValue(reserve, convertedAmount),
     })
@@ -99,16 +99,16 @@ export class VaultService extends BaseService<Vault> {
     return txs
   }
 
-  public async withdraw({ pool, erc20Service, reserve, amount, user }: WithdrawProps) {
+  public async withdraw({ vault, erc20Service, reserve, amount, user }: WithdrawProps) {
     const txs: EthereumTransactionTypeExtended[] = []
     const { decimalsOf } = erc20Service
     const decimals = await decimalsOf(reserve)
 
     const convertedAmount = amount === '-1' ? constants.MaxUint256.toString() : normalize(amount, -decimals).toFixed(0)
-    const vault = this.getContractInstance(pool)
+    const vaultContract = this.getContractInstance(vault)
 
     const txCallback = this.generateTxCallback({
-      rawTxMethod: async () => vault.populateTransaction.withdraw(convertedAmount, user),
+      rawTxMethod: async () => vaultContract.populateTransaction.withdraw(convertedAmount, user),
       from: user,
       action: ProtocolAction.withdraw,
     })
