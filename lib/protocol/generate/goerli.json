@@ -7,31 +7,31 @@
   "USDT": "0x982284793466a001e4513e59668ec711a44e049e",
   "WBTC": "0x18a57ecbf7ff0aaa12476a60ae044ff34537969a",
   "OToken": "0xa0b8b2bb7aac0c77b392b5a7a8f2143758b1ab4d",
-  "VaultConfiguratorImpl": "0xa9223cdf6df4667e8df61d8312c2c4b6f890dc6e",
+  "VaultConfiguratorImpl": "0x511ebaa48387e8acab38a24ec50c6a2140e79dc2",
   "markets": {
     "Onebit-Lightning-Hunter-USDT": {
-      "VaultAddressesProvider": "0x44b68b8efaad1df0f1053a0d1101490aac483263",
-      "Vault": "0x89d709719df2a1700e498007bac71e84f161a8d2",
-      "VaultConfigurator": "0x7ae31f6a9467d2a626072c28839c608d5561b8cc",
-      "OToken": "0xda11392488708f296b67cf20df2e06bb58acbab6"
+      "VaultAddressesProvider": "0x1d4aab9e33f469528e589f3541c851ff0eae519e",
+      "Vault": "0x249008409964a137ad50322bb03691b27347206c",
+      "VaultConfigurator": "0xeeec4d2ec01eb33630f201a36283dc18c8db15ac",
+      "OToken": "0xf2f46bc53f6239c620384632ec6a482386999964"
     },
     "Onebit-Smart-Trend-USDT": {
-      "VaultAddressesProvider": "0x3d9be18dff0272c7598db1458cbadf9182223d6b",
-      "Vault": "0xf9e7586bb7cd16b4f05d2059430ff7e0745796bd",
-      "VaultConfigurator": "0xcdbbf91798dbd30c7485e1381d024d92cb27670e",
-      "OToken": "0x9cc6dfd95132d68719901e0531c084d1e5ada85b"
+      "VaultAddressesProvider": "0x19399d59a3f3967aefa736f1ce691421df6e7ba2",
+      "Vault": "0xc097dc3a530c4a2dbcf9799487fefa6f6dd483a3",
+      "VaultConfigurator": "0xd70c87d59c0723473c4ab50f043423e698399559",
+      "OToken": "0x3979c568a0118dca44eef22396ac5d604ac73c46"
     },
     "Onebit-Smart-Trend-BTC": {
-      "VaultAddressesProvider": "0x26fa9ddfc8a373e40ccee3c41456b5c61e0ad67a",
-      "Vault": "0xe52290f6e5d2a9eafef7b9e8bdf8642af776309d",
-      "VaultConfigurator": "0xde477f1c2e51fa9fce4f10d12211666f928e2491",
+      "VaultAddressesProvider": "0xdb9c781371b5300eb3874447ce24d597312299dc",
+      "Vault": "0x7a61b21cf175b60095f85eb66e34ffabf1c07fe9",
+      "VaultConfigurator": "0x64cc17f542be65cf646fa9603f1a832f2715a6d1",
       "OToken": "0x3cdbc4bc3eec850d30f7a676806ff18815331865"
     },
     "Onebit-Smart-Trend-USDT-Demo": {
-      "VaultAddressesProvider": "0x039c2eb08059d6813f0072222c79fcc2ec39985d",
-      "Vault": "0xbab469f8e4ce3c71f92586384824c2f6e1acdcbb",
-      "VaultConfigurator": "0x4821d0a83b24449fce71fb5e429197d0454df3ee",
-      "OToken": "0xdeeb326e5b4672548c58872207959d275bed5422"
+      "VaultAddressesProvider": "0x490b57998d412d2c961850abf740322bf9b5bce5",
+      "Vault": "0xa0efcba5e7732c7552bd6a946de8857223c70f00",
+      "VaultConfigurator": "0x4940f95a41635b60b21cfa9a95e06bb699266093",
+      "OToken": "0xd8c962825476622d9a370b567c2d95c323f5b168"
     }
   }
 }

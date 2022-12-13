@@ -108,9 +108,11 @@ const locale = {
       'If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the product for the next lock-up period.',
     auto: 'Auto',
     riskControlLine: 'Risk Control Warning',
-    riskControlLineTip: 'If the Net Value falls below the stop risk control line, the product will be settled immediately to reduce further losses for all depositors, and open for withdrawals.',
+    riskControlLineTip:
+      'If the Net Value falls below the stop risk control line, the product will be settled immediately to reduce further losses for all depositors, and open for withdrawals.',
     redemption: 'Redemption',
-    redemptionTip: 'After the lock-up period, redemption is open on the next working day, or the net value triggers risk control warning and can be redeemed in advance.',
+    redemptionTip:
+      'After the lock-up period, redemption is open on the next working day, or the net value triggers risk control warning and can be redeemed in advance.',
     netValue: 'Net Value',
   },
   depositors: {

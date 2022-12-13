@@ -13,7 +13,15 @@ import type { Portfolio } from 'domains/data/portfolio'
 
 type StatsProps = Portfolio
 
-const Stats: FC<StatsProps> = ({ symbol, status, totalSupplyWithAPI, estimatedAPY, currentAPYWithAPI, depositors, initialDeposit }) => {
+const Stats: FC<StatsProps> = ({
+  symbol,
+  status,
+  totalSupplyWithAPI,
+  estimatedAPY,
+  currentAPYWithAPI,
+  depositors,
+  initialDeposit,
+}) => {
   const isOpen = status === 'open'
 
   const cardList = [
