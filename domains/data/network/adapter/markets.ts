@@ -14,6 +14,7 @@ export type MarketInfo = {
   symbol: string
   estimatedAPY: string
   useWhitelist?: boolean
+  riskControlLine: number
 }
 
 const getMarketInfo = (id: MarketId): MarketInfo => {
@@ -25,6 +26,7 @@ const getMarketInfo = (id: MarketId): MarketInfo => {
         series: 'Onebit Lightning Hunter-USDT',
         symbol: 'USDT',
         estimatedAPY: '60.5% - 81.2%',
+        riskControlLine: 0.9,
       }
     case 'Onebit-Smart-Trend-USDT':
       return {
@@ -33,6 +35,7 @@ const getMarketInfo = (id: MarketId): MarketInfo => {
         series: 'Onebit Smart Trend-USDT',
         symbol: 'USDT',
         estimatedAPY: '50% - 150%',
+        riskControlLine: 0.6,
       }
     case 'Onebit-Smart-Trend-BTC':
       return {
@@ -41,6 +44,7 @@ const getMarketInfo = (id: MarketId): MarketInfo => {
         series: 'Onebit Smart Trend-BTC',
         symbol: 'WBTC',
         estimatedAPY: '20% - 50%',
+        riskControlLine: 0.6,
       }
     case 'Onebit-Smart-Trend-USDT-Demo':
       return {
@@ -49,6 +53,7 @@ const getMarketInfo = (id: MarketId): MarketInfo => {
         series: 'Onebit Smart Trend-USDT',
         symbol: 'USDT',
         estimatedAPY: '60.5% - 81.2%',
+        riskControlLine: 0.6,
       }
     case 'Onebit-Smart-Trend-USDT-Whitelist-Test':
       return {
@@ -58,6 +63,7 @@ const getMarketInfo = (id: MarketId): MarketInfo => {
         symbol: 'USDT',
         estimatedAPY: '60.5% - 81.2%',
         useWhitelist: true,
+        riskControlLine: 0.6,
       }
   }
 }
