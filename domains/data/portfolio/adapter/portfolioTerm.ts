@@ -34,13 +34,13 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
       lockDays,
       netValue,
     } = portfolioTerm
-    const openingAssets = scaledAssetsUnderManagement.multipliedBy(previousLiquidityIndex)
-    portfolioTerm.openingAssets = openingAssets
+    const initialDeposit = scaledAssetsUnderManagement.multipliedBy(previousLiquidityIndex)
+    portfolioTerm.openingAssets = initialDeposit
 
     const managementFeeTimeValue = managementFeeRate.multipliedBy(lockDays).div(365)
     const $managementFeeTimeValue = toBN(1).minus(managementFeeTimeValue)
 
-    const assetsUnderManagementDivOpeningAssets = totalSupply.div(openingAssets)
+    const assetsUnderManagementDivOpeningAssets = totalSupply.div(initialDeposit)
     if (assetsUnderManagementDivOpeningAssets.gt($managementFeeTimeValue)) {
       portfolioTerm.netValueBeforeDeduction = assetsUnderManagementDivOpeningAssets
         .minus(performanceFeeRate)
@@ -48,7 +48,7 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
     } else {
       portfolioTerm.netValueBeforeDeduction = assetsUnderManagementDivOpeningAssets.plus(managementFeeTimeValue)
     }
-    portfolioTerm.totalFees = openingAssets.multipliedBy(portfolioTerm.netValueBeforeDeduction.minus(netValue))
+    portfolioTerm.totalFees = initialDeposit.multipliedBy(portfolioTerm.netValueBeforeDeduction.minus(netValue))
     portfolioTerm.APY = getAPYByNetValue(portfolioTerm.netValueBeforeDeduction, lockDays)
 
     return portfolioTerm

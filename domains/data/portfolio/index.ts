@@ -47,8 +47,8 @@ export type Portfolio = Partial<
     totalSupplyWithAPIInUSD?: BN
     scaledTotalSupply?: BN
     scaledTotalSupplyInUSD?: BN
-    initialDeposit?:BN
-    
+    initialDeposit?: BN
+
     status: PortfolioStatus
     lockTime: number
     lockDays: number
@@ -118,12 +118,8 @@ const usePortfolioService = () => {
       let daysleft = 0
       let lockDays = 0
       const netValueWithAPI = safeGet(() => toBN(portfolioDaily[portfolioDaily.length - 1].y)) || toBN(0)
-      const totalSupplyWithAPI = toBN(
-        safeGet(() => scaledTotalSupply.multipliedBy(reserve.previousLiquidityIndex).multipliedBy(netValueWithAPI) || 0)
-      )
-      const initialDeposit = toBN(
-        safeGet(() => scaledTotalSupply.multipliedBy(reserve.previousLiquidityIndex) || 0)
-      )
+      const initialDeposit = toBN(safeGet(() => scaledTotalSupply.multipliedBy(reserve.previousLiquidityIndex) || 0))
+      const totalSupplyWithAPI = toBN(safeGet(() => initialDeposit.multipliedBy(netValueWithAPI) || 0))
 
       if (status != 'open') {
         daysleft = getPortfolioDaysleft(reserve)
