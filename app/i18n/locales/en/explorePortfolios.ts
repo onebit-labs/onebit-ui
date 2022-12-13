@@ -2,11 +2,11 @@ const locale = {
   stats: {
     assetsUnderManagement: 'Assets Under Management',
     totalProfitSinceInception: 'Total Profit Since Inception',
-    portfolios: 'Portfolios',
+    portfolios: 'Products',
     depositors: 'Depositors',
   },
   tabs: {
-    placeholder: 'Find Portfolios',
+    placeholder: 'Find Products',
     all: 'All',
     open: 'Open',
     lockedUp: 'Locked-Up',

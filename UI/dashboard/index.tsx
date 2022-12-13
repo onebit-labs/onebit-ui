@@ -11,7 +11,7 @@ const Dashboard: FC = () => {
   return (
     <>
       <Head>
-        <title>Dashboard | Onebit</title>
+        <title>Positions | Onebit</title>
       </Head>
       <NeedAccount>
         <Stats />

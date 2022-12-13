@@ -38,14 +38,14 @@ const locale = {
       title: 'Welcome to ',
       thingsToKnowTitle: 'Things you should know',
       thingsToKnowContent:
-        'You are not guaranteed to make money by investing any portfolios offered on Onebit. Past performance is not an indication of future results. You alone are responsible for the safety of your funds. Your capital is at risk.',
+        'You are not guaranteed to make money by investing any products offered on Onebit. Past performance is not an indication of future results. You alone are responsible for the safety of your funds. Your capital is at risk.',
       accept: 'Accept',
       decline: 'Decline',
       tip: 'By clicking "Accept" below, I acknowledge the above, the ',
       and: ', and ',
     },
     KYT: {
-      tip: 'This portfolio requires user wallet addresses to pass KYT checks and be whitelisted before depositing funds. The whitelist is valid for 3 months.',
+      tip: 'This product requires user wallet addresses to pass KYT checks and be whitelisted before depositing funds. The whitelist is valid for 3 months.',
       getWhitelisted: 'Get Whitelisted',
       conducting: 'Conducting KYT Checks',
       adding: 'Adding To Whitelist',
@@ -55,10 +55,10 @@ const locale = {
       walletBalance: 'Wallet Balance',
       lockUpPeriod: 'Lock-Up Period',
       days: 'Days',
-      tip: 'This portfolio has an annual management fee of <managementFee>the management fee</managementFee> and a performance fee of <performanceFee>the performance fee</performanceFee>.',
+      tip: 'This product has an annual management fee of <managementFee>the management fee</managementFee> and a performance fee of <performanceFee>the performance fee</performanceFee>.',
       reInvestment: 'Auto Re-investment',
       description:
-        'If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the portfolio for the next lock-up period.',
+        'If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the product for the next lock-up period.',
     },
     withdrawal: {
       amount: 'Amount',

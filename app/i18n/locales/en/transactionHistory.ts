@@ -11,7 +11,7 @@ const locale = {
   transactions: {
     txId: 'TxID',
     type: 'Type',
-    portfolio: 'Portfolio',
+    portfolio: 'Product',
     amount: 'Amount',
     date: 'Date',
   },

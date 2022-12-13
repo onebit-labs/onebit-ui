@@ -1,9 +1,9 @@
 const locale = {
   menu: 'Menu',
-  dashboard: 'Dashboard',
-  explorePortfolios: 'Explore Portfolios',
+  dashboard: 'Positions',
+  explorePortfolios: 'Explore Products',
   transactionHistory: 'Transaction History',
-  portfolioDetails: 'Portfolio Details',
+  portfolioDetails: 'Product Details',
   terms: 'Terms of Service',
   privacy: 'Privacy Policy',
 }
