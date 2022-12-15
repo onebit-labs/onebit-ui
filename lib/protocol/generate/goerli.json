@@ -26,10 +26,10 @@
       "OToken": "0x3979c568a0118dca44eef22396ac5d604ac73c46"
     },
     "Onebit-Smart-Trend-BTC": {
-      "VaultAddressesProvider": "0xdb9c781371b5300eb3874447ce24d597312299dc",
-      "Vault": "0x7a61b21cf175b60095f85eb66e34ffabf1c07fe9",
-      "VaultConfigurator": "0x64cc17f542be65cf646fa9603f1a832f2715a6d1",
-      "OToken": "0x08f1b879cdd56a429bdda41b42881d8226c15fad"
+      "VaultAddressesProvider": "0x0210a6c275d38b6d79605179657b347999a8d2b3",
+      "Vault": "0x888f74feb0f41cf8ec24b230ad7b1b527312af42",
+      "VaultConfigurator": "0x5e10db197faf9d2d30b7f7ee6b00c9c87f0d9a02",
+      "OToken": "0x6bed7692fa0eaf88c94c14586f0d0c45872f0510"
     },
     "Onebit-Smart-Trend-USDT-Demo": {
       "VaultAddressesProvider": "0x490b57998d412d2c961850abf740322bf9b5bce5",
