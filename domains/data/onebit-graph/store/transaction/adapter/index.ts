@@ -1,8 +1,9 @@
 type Props = {
+  subgraphName: string
   account: string
 }
-export const request = (props: Props) => {
-  return fetch('https://api.thegraph.com/subgraphs/name/rockgold0911/onebit', {
+export const request = ({ subgraphName, account }: Props) => {
+  return fetch(`https://api.thegraph.com/subgraphs/name/${subgraphName}`, {
     headers: {
       accept: '*/*',
       'accept-language': 'zh-CN,zh;q=0.9',
@@ -15,7 +16,7 @@ export const request = (props: Props) => {
       query: `{
   transactions(
     first: 1000
-    where: { account: ${JSON.stringify(props.account)} }
+    where: { account: ${JSON.stringify(account)} }
     orderBy: createTimestamp
     orderDirection: desc
   ) {

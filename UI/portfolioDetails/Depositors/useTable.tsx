@@ -17,6 +17,7 @@ export const useTable = (): BasicTableProps => {
   const { portfolio } = usePortfolioDetails()
   const {
     contracts: { erc20Service },
+    subgraph: { name: subgraphName },
   } = useNetwork()
   const dataFetcher = useCallback(
     ({ depositors: account, totalSupply, symbol, vault }: any) => {
@@ -28,7 +29,7 @@ export const useTable = (): BasicTableProps => {
         symbol,
       }
       const { promise, reslove } = createPromise<typeof returnValue>()
-      depositorRequest({ account, vault })
+      depositorRequest({ account, vault, subgraphName })
         .then((data) => {
           if (!data[0]) return {} as undefined
           const { createTimestamp } = data[0]
@@ -49,7 +50,7 @@ export const useTable = (): BasicTableProps => {
         .finally(() => reslove(returnValue))
       return promise
     },
-    [erc20Service]
+    [erc20Service, subgraphName]
   )
   const data = useMemo(() => {
     if (!portfolio.depositorList) return []

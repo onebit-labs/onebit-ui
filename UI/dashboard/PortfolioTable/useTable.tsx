@@ -9,7 +9,7 @@ import type { TableColumnsProps, BasicTableProps } from 'components/table/BasicT
 import { useRouter } from 'next/router'
 import { usePortfolio } from 'domains/data'
 import { lockedUntilCellRenderer, statusCellRenderer } from './renderer'
-import { netValueCellRenderer, numberCellRenderer, PNLCellRenderer, symbolCellRenderer } from 'components/table/renderer/portfolio'
+import { netValueCellRenderer, PNLCellRenderer, symbolCellRenderer } from 'components/table/renderer/portfolio'
 
 export const useTable = (): BasicTableProps => {
   const { t } = useTranslation('dashboard')

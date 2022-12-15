@@ -1,10 +1,11 @@
 type Props = {
+  subgraphName: string
   startTimestamp: number
   endTimestamp: number
 }
 
-export const request = ({ startTimestamp, endTimestamp }: Props): Promise<SliceState> => {
-  return fetch('https://api.thegraph.com/subgraphs/name/rockgold0911/onebit', {
+export const request = ({ startTimestamp, endTimestamp, subgraphName }: Props): Promise<SliceState> => {
+  return fetch(`https://api.thegraph.com/subgraphs/name/${subgraphName}`, {
     headers: {
       accept: '*/*',
       'accept-language': 'zh-CN,zh;q=0.9',

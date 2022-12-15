@@ -1,5 +1,9 @@
-export const request = () => {
-  return fetch('https://api.thegraph.com/subgraphs/name/rockgold0911/onebit', {
+type Props = {
+  subgraphName: string
+}
+
+export const request = ({ subgraphName }: Props) => {
+  return fetch(`https://api.thegraph.com/subgraphs/name/${subgraphName}`, {
     headers: {
       accept: '*/*',
       'accept-language': 'zh-CN,zh;q=0.9',

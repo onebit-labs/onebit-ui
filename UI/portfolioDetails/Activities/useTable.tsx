@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { cellRenderer, headerRenderer } from 'components/table/renderer'
 import type { TableColumnsProps, BasicTableProps } from 'components/table/BasicTable/types'
 import { symbolCellRenderer } from 'components/table/renderer/portfolio'
-import { usePortfolioDetails } from 'domains/data'
+import { useNetwork, usePortfolioDetails } from 'domains/data'
 import { dateCellRenderer, txIDCellRenderer } from 'UI/transactionHistory/TransactionTabs/Transactions/renderer'
 import { usePost } from 'app/hooks/request'
 import { useMount } from 'app/hooks/useMount'
@@ -21,6 +21,9 @@ export const useTable = (): BasicTableProps => {
   const dataFetcher = usePost(request)
   const [end, setEnd] = useState(false)
   const [data, setData] = useState([])
+  const {
+    subgraph: { name: subgraphName },
+  } = useNetwork()
 
   const columns = useMemo(
     () =>
@@ -84,6 +87,7 @@ export const useTable = (): BasicTableProps => {
             skip,
             first: pageSize,
             vault,
+            subgraphName,
           })
           .then((data) => {
             const { symbol } = portfolio
@@ -98,7 +102,7 @@ export const useTable = (): BasicTableProps => {
           })
       },
     }
-  }, [dataFetcher, end, pageIndex, portfolio])
+  }, [dataFetcher, end, pageIndex, portfolio, subgraphName])
 
   useMount(() => {
     loadMore.onLoadMore()

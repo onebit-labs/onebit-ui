@@ -22,8 +22,8 @@ export const useControllersService = () => {
     vault.reserveData.restart()
     onebitGraph.transaction.restart()
     onebitGraph.depositor.restart()
-    onebitGraph.vault.run()
-    onebitGraph.portfolioTerm.run()
+    onebitGraph.vault.restart()
+    onebitGraph.portfolioTerm.restart()
   }, [
     erc20.balanceOf,
     erc20.scaledBalanceOf,

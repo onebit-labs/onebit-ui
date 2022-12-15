@@ -3,6 +3,7 @@ import type { TransactionType } from 'domains/data/onebit-graph/adapter/transact
 import { getTransactionType } from 'domains/data/onebit-graph/adapter/transaction'
 
 type Props = {
+  subgraphName: string
   skip: number
   first: number
   vault: string
@@ -15,8 +16,8 @@ export type SliceState = Array<{
   to: string
   createTimestamp: number
 }>
-export const request = (props: Props) => {
-  return fetch('https://api.thegraph.com/subgraphs/name/rockgold0911/onebit', {
+export const request = ({ subgraphName, skip, first, vault }: Props) => {
+  return fetch(`https://api.thegraph.com/subgraphs/name/${subgraphName}`, {
     headers: {
       accept: '*/*',
       'accept-language': 'zh-CN,zh;q=0.9',
@@ -28,9 +29,9 @@ export const request = (props: Props) => {
     body: JSON.stringify({
       query: `{
   transactions(
-    first: ${props.first}
-    skip: ${props.skip}
-    where: { vault: ${JSON.stringify(props.vault)} }
+    first: ${first}
+    skip: ${skip}
+    where: { vault: ${JSON.stringify(vault)} }
     orderBy: createTimestamp
     orderDirection: desc
   ) {

@@ -17,14 +17,17 @@ const getWhere = (props: any) => {
 }
 
 type Props = {
+  subgraphName: string
   account: string
   vault?: string
 }
 export const request = (props: Props): Promise<SliceState> => {
-  const key = props.vault ? `getDepositor_${props.account}_${props.vault || ''}` : ''
+  const { subgraphName, vault, account } = props
+  delete props.subgraphName
+  const key = vault ? `getDepositor_${account}_${vault || ''}` : ''
   const cacheValue = getItem(key)
   if (key && cacheValue) return Promise.resolve(cacheValue)
-  return fetch('https://api.thegraph.com/subgraphs/name/rockgold0911/onebit', {
+  return fetch(`https://api.thegraph.com/subgraphs/name/${subgraphName}`, {
     headers: {
       accept: '*/*',
       'accept-language': 'zh-CN,zh;q=0.9',

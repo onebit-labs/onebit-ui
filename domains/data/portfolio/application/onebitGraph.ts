@@ -1,31 +1,35 @@
 import { useControllers, useWallet } from 'domains'
-import { useOnebitGraph } from 'domains/data'
+import { useNetwork, useOnebitGraph } from 'domains/data'
 import { useEffect, useMemo } from 'react'
 
 import { log } from 'app/utils/dev'
-import { DAY, getCurrentTimestamp, getTimestamp } from 'app/constant'
+import { DAY, getCurrentTimestamp, getTimestamp, HalfDay } from 'app/constant'
 
 const useGraphInitEffect = () => {
   const {
-    onebitGraph: { vault: vaultSingle, portfolioTerm: portfolioTermSingle, netValue: netValueSingle },
+    onebitGraph: { vault: vaultPolling, portfolioTerm: portfolioTermPolling, netValue: netValueSingle },
   } = useControllers()
+  const {
+    subgraph: { name: subgraphName },
+  } = useNetwork()
 
   useEffect(() => {
-    if (!vaultSingle || !vaultSingle) return
-    vaultSingle.run()
-    portfolioTermSingle.run()
+    if (!vaultPolling || !vaultPolling) return
+    vaultPolling.run({ subgraphName }, HalfDay)
+    portfolioTermPolling.run({ subgraphName }, HalfDay)
 
     const endTimestamp = getCurrentTimestamp()
     netValueSingle.run({
       startTimestamp: endTimestamp - getTimestamp(90 * DAY),
       endTimestamp,
+      subgraphName,
     })
     return () => {
-      vaultSingle.stop()
-      portfolioTermSingle.stop()
+      vaultPolling.stop()
+      portfolioTermPolling.stop()
       netValueSingle.stop()
     }
-  }, [netValueSingle, vaultSingle, portfolioTermSingle])
+  }, [netValueSingle, vaultPolling, portfolioTermPolling, subgraphName])
 }
 
 const useUserEffect = () => {
@@ -33,12 +37,16 @@ const useUserEffect = () => {
   const {
     onebitGraph: { transaction: transactionPolling, depositor: depositorPolling },
   } = useControllers()
+  const {
+    subgraph: { name: subgraphName },
+  } = useNetwork()
 
   const query = useMemo(
     () => ({
       account: networkAccount,
+      subgraphName,
     }),
-    [networkAccount]
+    [networkAccount, subgraphName]
   )
 
   useEffect(() => {
