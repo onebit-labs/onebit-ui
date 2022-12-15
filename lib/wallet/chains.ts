@@ -7,11 +7,11 @@ const ETH: Currency = {
   symbol: 'ETH',
   decimals: 18,
 }
-// const BNB: Currency = {
-//   name: 'BNB',
-//   symbol: 'ETH',
-//   decimals: 18,
-// }
+const BNB: Currency = {
+  name: 'BNB',
+  symbol: 'ETH',
+  decimals: 18,
+}
 
 const CHAIN_INFORMATION = new Map<number, ChainInformation | ChainType>([
   // [
@@ -35,6 +35,18 @@ const CHAIN_INFORMATION = new Map<number, ChainInformation | ChainType>([
       fullName: 'Goerli',
       shortName: 'Goerli',
       explorerUrl: `https://goerli.etherscan.io`,
+      testnet: true,
+    },
+  ],
+  [
+    ChainId.bsc,
+    {
+      id: ChainId.bsc,
+      nativeCurrency: BNB,
+      type: 'BSC',
+      fullName: 'BSC',
+      shortName: 'BSC',
+      explorerUrl: `https://bscscan.com/`,
       testnet: true,
     },
   ],

@@ -8,4 +8,5 @@
 export enum Chain {
   ETH = 'eth',
   GOERLI = 'goerli',
+  BSC = 'bsc',
 }

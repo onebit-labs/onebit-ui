@@ -5,6 +5,17 @@ import { Chain } from 'lib/openapi'
 export const infuraId = 'dea011a2bebb451ba3602b02994145c1'
 
 export const networks: Record<ChainId, NetworkConfig> = {
+  [ChainId.bsc]: {
+    chainName: Chain.BSC,
+    name: 'BSC',
+    fullName: 'Binance Smart Chain',
+    symbol: 'BNB',
+    publicJsonRPCUrl: [
+      'https://bsc-dataseed1.binance.org',
+      'https://bsc-dataseed2.ninicoin.io',
+      'https://rpc.ankr.com/bsc',
+    ],
+  },
   [ChainId.goerli]: {
     chainName: Chain.GOERLI,
     name: 'Goerli',

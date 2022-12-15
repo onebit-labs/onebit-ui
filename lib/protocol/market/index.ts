@@ -1,3 +1,4 @@
+import bsc from 'lib/protocol/generate/bsc.json'
 import goerli from 'lib/protocol/generate/goerli.json'
 
 import { ChainId } from '../chain/types'
@@ -8,6 +9,13 @@ export type AddressData = {
 } & typeof goerli
 
 const list: Record<ChainId, AddressData> = {
+  [ChainId.bsc]: {
+    ...bsc,
+    oracleChainlinkAddress: {
+      WBTC: '0x264990fbd0A4796A3E3d8E37C4d5F87a3aCa5Ebf',
+      USDT: '0xB97Ad0E74fa7d920791E90258A6E2085088b4320',
+    },
+  },
   [ChainId.goerli]: {
     ...goerli,
     oracleChainlinkAddress: {
@@ -28,10 +36,10 @@ const getMarketsData = (chainId: ChainId): AddressData => {
 }
 
 const MARKETS: Record<number, AddressData> = {
-  // [ChainId.ethereum]: getMarketsData(ChainId.ethereum),
+  [ChainId.bsc]: getMarketsData(ChainId.bsc),
   [ChainId.goerli]: getMarketsData(ChainId.goerli),
 }
 
-export const defaultMarket = MARKETS[ChainId.goerli]
+export const defaultMarket = MARKETS[ChainId.bsc]
 export const getAddress = (chainId: ChainId) => MARKETS[chainId] || defaultMarket
 export const marktetIds = Object.keys(defaultMarket.markets)

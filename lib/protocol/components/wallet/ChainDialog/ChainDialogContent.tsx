@@ -19,7 +19,7 @@ const ChainDialogContent: FC = () => {
   const buttons = useMemo(
     () => (
       <Fragment>
-        {/* <ChainButton chainId={ChainId.ethereum} /> */}
+        <ChainButton chainId={ChainId.bsc} />
         <ChainButton chainId={ChainId.goerli} />
       </Fragment>
     ),
