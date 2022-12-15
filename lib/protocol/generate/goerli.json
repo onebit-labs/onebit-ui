@@ -2,7 +2,7 @@
   "VaultAddressesProviderRegistry": "0x8441b8aacc9ab9f52ce3c306ac125f5f2b599f4e",
   "VaultAddressesProvider": "0x8586a3e55a43e46e59df02b7494b7fa2e46f2848",
   "ReserveLogic": "0x4519327d709b3a07effa3419eb4726ea992dbcad",
-  "VaultImpl": "0x33d23e71736abda5c3b9139e8933746a62b3f994",
+  "VaultImpl": "0x13d9b7cc4e11efacf6cbbafffef29828c1f294c8",
   "Vault": "0x6af769f986d87851c68e6f7ebf90e265619c6c8f",
   "USDT": "0x982284793466a001e4513e59668ec711a44e049e",
   "OToken": "0xa0b8b2bb7aac0c77b392b5a7a8f2143758b1ab4d",
