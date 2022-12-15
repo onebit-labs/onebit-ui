@@ -68,7 +68,7 @@
     "status": {
       "open": "Offen",
       "lockedUp": "Eingesperrt",
-      "colse": "Cole"
+      "close": "Nah dran"
     },
     "fundraisingProgress": {
       "title": "Fundraising-Fortschritt",

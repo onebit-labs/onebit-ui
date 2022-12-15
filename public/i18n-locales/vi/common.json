@@ -68,7 +68,7 @@
     "status": {
       "open": "Mở",
       "lockedUp": "Nhốt",
-      "colse": "Colse"
+      "close": "Đóng"
     },
     "fundraisingProgress": {
       "title": "Tiến độ gây quỹ",

@@ -54,7 +54,7 @@
       "walletBalance": "Saldo da Carteira",
       "lockUpPeriod": "Período de Bloqueio",
       "days": "Dias",
-      "tip": "Este produto tem uma taxa de administração anual de <managementFee>a taxa de administração</managementFee> e uma taxa de desempenho de <performanceFee>a taxa de desempenho</performanceFee>.",
+      "tip": "Este produto tem uma taxa de administração anual de <managementFee>a taxa de administração</managementFee> e uma taxa de desempenho de <performanceFee>a taxa de performance</performanceFee>.",
       "reInvestment": "Reinvestimento automático",
       "description": "Se os depositantes não retirarem os fundos no final do período de bloqueio, os fundos serão reinvestidos no produto para o próximo período de bloqueio."
     },
@@ -68,7 +68,7 @@
     "status": {
       "open": "Abrir",
       "lockedUp": "Trancado",
-      "colse": "colse"
+      "close": "Perto"
     },
     "fundraisingProgress": {
       "title": "Progresso da captação de recursos",

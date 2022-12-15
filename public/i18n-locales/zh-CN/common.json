@@ -68,7 +68,7 @@
     "status": {
       "open": "打开",
       "lockedUp": "锁上",
-      "colse": "科尔斯"
+      "close": "关"
     },
     "fundraisingProgress": {
       "title": "筹款进度",

@@ -37,7 +37,7 @@
     "signature": {
       "title": "Bienvenue à",
       "thingsToKnowTitle": "Ce que vous devez savoir",
-      "thingsToKnowContent": "Vous n'êtes pas assuré de gagner de l'argent en investissant dans les produits proposés sur Onebit. Les performances passées ne préjugent pas des résultats futurs. Vous êtes seul responsable de la sécurité de vos fonds. Votre capital est en danger.",
+      "thingsToKnowContent": "Vous n'êtes pas assuré de gagner de l'argent en investissant dans les produits proposés sur Onebit. Les performances passées ne sont pas une indication des résultats futurs. Vous êtes seul responsable de la sécurité de vos fonds. Votre capital est en danger.",
       "accept": "Accepter",
       "decline": "Déclin",
       "tip": "En cliquant sur \"Accepter\" ci-dessous, je reconnais ce qui précède, le",
@@ -68,7 +68,7 @@
     "status": {
       "open": "Ouvert",
       "lockedUp": "Verrouillé",
-      "colse": "Colise"
+      "close": "proche"
     },
     "fundraisingProgress": {
       "title": "Progression de la collecte de fonds",

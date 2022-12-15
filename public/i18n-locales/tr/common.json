@@ -68,7 +68,7 @@
     "status": {
       "open": "Açık",
       "lockedUp": "Kilitli",
-      "colse": "Colse"
+      "close": "Kapat"
     },
     "fundraisingProgress": {
       "title": "Bağış Geliştirme İlerlemesi",

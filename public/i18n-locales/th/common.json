@@ -68,7 +68,7 @@
     "status": {
       "open": "เปิด",
       "lockedUp": "ขังไว้",
-      "colse": "โคลเซ่"
+      "close": "ปิด I"
     },
     "fundraisingProgress": {
       "title": "ความคืบหน้าการระดมทุน",

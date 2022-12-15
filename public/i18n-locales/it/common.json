@@ -68,7 +68,7 @@
     "status": {
       "open": "Aprire",
       "lockedUp": "Rinchiuso",
-      "colse": "Colse"
+      "close": "Chiudere"
     },
     "fundraisingProgress": {
       "title": "Progresso della raccolta fondi",

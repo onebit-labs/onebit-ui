@@ -68,7 +68,7 @@
     "status": {
       "open": "開ける",
       "lockedUp": "閉じ込められた",
-      "colse": "コルセ"
+      "close": "近い"
     },
     "fundraisingProgress": {
       "title": "募金の進捗",

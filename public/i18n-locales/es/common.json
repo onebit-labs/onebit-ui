@@ -44,7 +44,7 @@
       "and": ", y"
     },
     "KYT": {
-      "tip": "Este producto requiere direcciones de billetera de usuario para pasar los cheques KYT y estar en la lista blanca antes de depositar fondos. La lista blanca es válida por 3 meses.",
+      "tip": "Este producto requiere direcciones de billetera de usuario para pasar los controles KYT y estar en la lista blanca antes de depositar fondos. La lista blanca es válida por 3 meses.",
       "getWhitelisted": "Obtener en la lista blanca",
       "conducting": "Realización de verificaciones KYT",
       "adding": "Agregar a la lista blanca"
@@ -68,7 +68,7 @@
     "status": {
       "open": "Abierto",
       "lockedUp": "Bloqueado",
-      "colse": "Colse"
+      "close": "Cerca"
     },
     "fundraisingProgress": {
       "title": "Progreso de recaudación de fondos",
