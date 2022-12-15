@@ -70,7 +70,7 @@ const locale = {
     status: {
       open: 'Open',
       lockedUp: 'Locked-Up',
-      colse: 'Colse',
+      close: 'Close',
     },
     fundraisingProgress: {
       title: 'Fundraising Progress',

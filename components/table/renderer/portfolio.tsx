@@ -65,17 +65,19 @@ export const APYCellRenderer = ({ cellData }: TableCellProps) => {
   )
 }
 
-export const PNLCellRenderer = ({ rowData: { PNLInUSD, PNLRate } }: TableCellProps) => {
+export const PNLCellRenderer = ({ rowData: { PNL, PNLRate, symbol } }: TableCellProps) => {
   return (
     <TableCell align="center" component="div">
       <Stack spacing={1}>
-        <RiseOrFall value={PNLInUSD}>
-          <NumberDisplay
-            value={PNLInUSD}
-            options="USD"
-            abbreviate={{}}
-            numberFormatOptions={{ signDisplay: 'always' }}
-          />
+        <RiseOrFall value={PNL}>
+          <Stack spacing={0.5} direction="row">
+            <NumberDisplay
+              value={PNL}
+              abbreviate={{ maximumFractionDigits: 3 }}
+              numberFormatOptions={{ signDisplay: 'always' }}
+            />
+            <span> {symbol}</span>
+          </Stack>
         </RiseOrFall>
         <RiseOrFall value={PNLRate}>
           <NumberDisplay value={PNLRate} options="percent" numberFormatOptions={{ signDisplay: 'always' }} />
