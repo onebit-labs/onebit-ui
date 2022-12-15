@@ -17,6 +17,7 @@ export type SliceState = Array<{
   createTimestamp: number
 }>
 export const request = ({ subgraphName, skip, first, vault }: Props) => {
+  if (!subgraphName) return Promise.reject({ message: 'network error' })
   return fetch(`https://api.thegraph.com/subgraphs/name/${subgraphName}`, {
     headers: {
       accept: '*/*',

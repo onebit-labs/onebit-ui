@@ -23,6 +23,7 @@ type Props = {
 }
 export const request = (props: Props): Promise<SliceState> => {
   const { subgraphName, vault, account } = props
+  if (!subgraphName) return Promise.reject({ message: 'network error' })
   delete props.subgraphName
   const key = vault ? `getDepositor_${account}_${vault || ''}` : ''
   const cacheValue = getItem(key)

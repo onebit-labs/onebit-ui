@@ -3,6 +3,7 @@ type Props = {
 }
 
 export const request = ({ subgraphName }: Props) => {
+  if (!subgraphName) return Promise.reject({ message: 'network error' })
   return fetch(`https://api.thegraph.com/subgraphs/name/${subgraphName}`, {
     headers: {
       accept: '*/*',

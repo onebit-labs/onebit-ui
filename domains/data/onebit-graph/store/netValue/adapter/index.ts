@@ -5,6 +5,7 @@ type Props = {
 }
 
 export const request = ({ startTimestamp, endTimestamp, subgraphName }: Props): Promise<SliceState> => {
+  if (!subgraphName) return Promise.reject({ message: 'network error' })
   return fetch(`https://api.thegraph.com/subgraphs/name/${subgraphName}`, {
     headers: {
       accept: '*/*',
