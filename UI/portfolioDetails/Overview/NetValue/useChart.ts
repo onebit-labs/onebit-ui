@@ -3,12 +3,13 @@ import { useState, useMemo, useRef } from 'react'
 import { useTheme, alpha } from '@mui/material/styles'
 import { usePortfolioDetails } from 'domains/data'
 import { format } from 'date-fns'
+import { useMath } from 'domains/utils'
+import { NAV_DIGITS } from 'app/constant'
 
 import { toBN } from 'lib/math'
 import { safeGet } from 'app/utils/get'
 
 import type { NetValueChartProps } from './types'
-import { useMath } from 'domains/utils'
 
 const DayButtonList = [7, 14, 30, 90]
 const useDayButton = () => {
@@ -129,7 +130,7 @@ export const useChart = () => {
               },
               ticks: {
                 color: theme.palette.text.secondary,
-                callback: (value) => NF.format(value, NF.options('number', { maximumFractionDigits: 3 })),
+                callback: (value) => NF.format(value, NF.options('number', { maximumFractionDigits: NAV_DIGITS })),
               },
             },
           },

@@ -38,3 +38,5 @@ export const getUTCTime = (date: any): number => {
   date.setUTCHours(12, 0, 0, 0)
   return date.getTime()
 }
+
+export const NAV_DIGITS = 4

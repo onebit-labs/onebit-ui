@@ -4,17 +4,19 @@ import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
+import ToggleButton from '@mui/material/ToggleButton'
+
+import { NAV_DIGITS } from 'app/constant'
+import { H5, H3 } from 'components/Typography'
+import FlexBetween from 'components/flexbox/FlexBetween'
+import { usePortfolioDetails } from 'domains/data'
 
 import RiseOrFall from 'lib/math/components/RiseOrFall'
 import NumberDisplay from 'lib/math/components/NumberDisplay'
 
 import Chart from './Chart'
 import { useChart } from './useChart'
-import { H5, H3 } from 'components/Typography'
-import FlexBetween from 'components/flexbox/FlexBetween'
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-import ToggleButton from '@mui/material/ToggleButton'
-import { usePortfolioDetails } from 'domains/data'
 
 const Left = styled(Stack)``
 const Change24h = styled(Stack)``
@@ -35,7 +37,11 @@ const NetValue = () => {
             <H3>{t('overview.netValue.title')}</H3>
             <Stack spacing={2} direction="row" alignItems="center">
               <Typography variant="h5" fontWeight="600">
-                <NumberDisplay value={chart.currentNetValue} options="number" />
+                <NumberDisplay
+                  value={chart.currentNetValue}
+                  options="number"
+                  numberFormatOptions={{ maximumFractionDigits: NAV_DIGITS }}
+                />
               </Typography>
               <Change24h spacing={1} direction="row" alignItems="center">
                 <RiseOrFall variant="subtitle1" value={chart.currentPeriodNetValueFluctuation} displayIcon>

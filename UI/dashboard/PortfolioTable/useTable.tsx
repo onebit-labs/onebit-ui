@@ -9,7 +9,7 @@ import type { TableColumnsProps, BasicTableProps } from 'components/table/BasicT
 import { useRouter } from 'next/router'
 import { usePortfolio } from 'domains/data'
 import { lockedUntilCellRenderer, statusCellRenderer } from './renderer'
-import { numberCellRenderer, PNLCellRenderer, symbolCellRenderer } from 'components/table/renderer/portfolio'
+import { netValueCellRenderer, numberCellRenderer, PNLCellRenderer, symbolCellRenderer } from 'components/table/renderer/portfolio'
 
 export const useTable = (): BasicTableProps => {
   const { t } = useTranslation('dashboard')
@@ -60,7 +60,7 @@ export const useTable = (): BasicTableProps => {
             width: 200,
             tip: 'tip',
             headerRenderer,
-            cellRenderer: numberCellRenderer,
+            cellRenderer: netValueCellRenderer,
           },
           {
             dataKey: 'yourEquity',

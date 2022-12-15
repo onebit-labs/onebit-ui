@@ -1,5 +1,6 @@
 import Stack from '@mui/material/Stack'
 import TableCell from '@mui/material/TableCell'
+import { NAV_DIGITS } from 'app/constant'
 import TimePeriod from 'components/date/TimePeriod'
 import { Paragraph } from 'components/Typography'
 import type { Portfolio } from 'domains/data/portfolio'
@@ -34,7 +35,7 @@ export const symbolCellRenderer = ({ cellData, rowData }: TableCellProps) => {
   return (
     <TableCell align="center" component="div">
       <Stack spacing={0.5} direction="row">
-        <NumberDisplay value={cellData} abbreviate={{ maximumFractionDigits: 3 }} />
+        <NumberDisplay value={cellData} abbreviate={{ maximumFractionDigits: 2 }} />
         <span> {rowData.symbol}</span>
       </Stack>
     </TableCell>
@@ -45,6 +46,14 @@ export const numberCellRenderer = ({ cellData }: TableCellProps) => {
   return (
     <TableCell align="center" component="div">
       <NumberDisplay value={cellData} options="number" />
+    </TableCell>
+  )
+}
+
+export const netValueCellRenderer = ({ cellData }: TableCellProps) => {
+  return (
+    <TableCell align="center" component="div">
+      <NumberDisplay value={cellData} options="number" numberFormatOptions={{ maximumFractionDigits: NAV_DIGITS }} />
     </TableCell>
   )
 }
@@ -73,7 +82,7 @@ export const PNLCellRenderer = ({ rowData: { PNL, PNLRate, symbol } }: TableCell
           <Stack spacing={0.5} direction="row">
             <NumberDisplay
               value={PNL}
-              abbreviate={{ maximumFractionDigits: 3 }}
+              abbreviate={{ maximumFractionDigits: 2 }}
               numberFormatOptions={{ signDisplay: 'always' }}
             />
             <span> {symbol}</span>

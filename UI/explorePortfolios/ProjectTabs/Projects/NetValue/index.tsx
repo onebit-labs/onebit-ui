@@ -1,3 +1,4 @@
+import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { styled } from '@mui/material/styles'
 import Stack from '@mui/material/Stack'
@@ -5,6 +6,7 @@ import Typography from '@mui/material/Typography'
 
 import RiseOrFall from 'lib/math/components/RiseOrFall'
 import NumberDisplay from 'lib/math/components/NumberDisplay'
+import { NAV_DIGITS } from 'app/constant'
 
 import Chart from './Chart'
 import { useChart } from './useChart'
@@ -12,7 +14,6 @@ import { Tiny } from 'components/Typography'
 import Grid from '@mui/material/Grid'
 import { Box } from '@mui/material'
 import type { Portfolio } from 'domains/data/portfolio'
-import type { FC } from 'react'
 
 const Left = styled(Stack)``
 const Change7d = styled(Stack)`
@@ -39,7 +40,7 @@ const NetValue: FC<NetValueProps> = (props) => {
                 value={chart.currentNetValue}
                 options="number"
                 numberFormatOptions={{
-                  maximumFractionDigits: 4,
+                  maximumFractionDigits: NAV_DIGITS,
                 }}
               />
             </Typography>
