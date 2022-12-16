@@ -1,8 +1,8 @@
 import { safeGet } from 'app/utils/get'
 import type { PortfolioTerm } from 'domains/data/onebit-graph/adapter/portfolioTerm'
-import { toBN } from 'lib/math'
 import type { Portfolio } from '..'
 import { getAPYByNetValue } from './currentAPY'
+import { getNetValueBeforeDeduction } from './netvalue'
 
 export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): PortfolioTerm[] => {
   if (!data || !data.length) return data
@@ -25,29 +25,10 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
   currentTerm.scaledTotalSupply = portfolio.scaledTotalSupply
   currentTerm.previousLiquidityIndex = portfolio.previousLiquidityIndex
   return data.map((portfolioTerm) => {
-    const {
-      totalSupply,
-      scaledTotalSupply: scaledAssetsUnderManagement,
-      previousLiquidityIndex,
-      managementFeeRate,
-      performanceFeeRate,
-      lockDays,
-      netValue,
-    } = portfolioTerm
+    const { scaledTotalSupply: scaledAssetsUnderManagement, previousLiquidityIndex, lockDays, netValue } = portfolioTerm
     const initialDeposit = scaledAssetsUnderManagement.multipliedBy(previousLiquidityIndex)
     portfolioTerm.openingAssets = initialDeposit
-
-    const managementFeeTimeValue = managementFeeRate.multipliedBy(lockDays).div(365)
-    const $managementFeeTimeValue = toBN(1).minus(managementFeeTimeValue)
-
-    const assetsUnderManagementDivOpeningAssets = totalSupply.div(initialDeposit)
-    if (assetsUnderManagementDivOpeningAssets.gt($managementFeeTimeValue)) {
-      portfolioTerm.netValueBeforeDeduction = assetsUnderManagementDivOpeningAssets
-        .minus(performanceFeeRate)
-        .div($managementFeeTimeValue.minus(performanceFeeRate))
-    } else {
-      portfolioTerm.netValueBeforeDeduction = assetsUnderManagementDivOpeningAssets.plus(managementFeeTimeValue)
-    }
+    portfolioTerm.netValueBeforeDeduction = getNetValueBeforeDeduction(portfolioTerm)
     portfolioTerm.totalFees = initialDeposit.multipliedBy(portfolioTerm.netValueBeforeDeduction.minus(netValue))
     portfolioTerm.APY = getAPYByNetValue(portfolioTerm.netValueBeforeDeduction, lockDays)
 

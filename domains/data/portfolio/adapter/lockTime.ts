@@ -33,7 +33,7 @@ export const getPortfolioLockDays = (reserve: Pick<ReserveData, 'purchaseEndTime
   const portfolioLockDays = safeGet(() => {
     const { purchaseEndTimestamp } = reserve
     const lockDays = differenceInDays(now, purchaseEndTimestamp)
-    return lockDays
+    return lockDays < 0 ? 0 : lockDays
   })
 
   return portfolioLockDays || 0

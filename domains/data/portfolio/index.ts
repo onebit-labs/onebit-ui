@@ -26,6 +26,7 @@ import { getFixedNetValues } from '../onebit-graph/adapter/netValue'
 import type { Transaction } from '../onebit-graph/adapter/transaction'
 import { useWallet } from 'domains'
 import { getAPYByNetValue, getCurrentAPY } from './adapter/currentAPY'
+import { getNetValueBeforeDeduction } from './adapter/netvalue'
 
 export type MarketReserve = Partial<ReserveData> &
   MarketInfo & {
@@ -63,6 +64,7 @@ export type Portfolio = Partial<
     PNLRate: BN
     PNLInUSD: BN
     netValue: BN
+    netValueBeforeDeduction: BN
     netValueWithAPI: BN
 
     portfolioDaily: Record<'x' | 'y', string>[]
@@ -137,6 +139,12 @@ const usePortfolioService = () => {
       }
       const yourEquityInUSD = yourEquity.multipliedBy(oracle)
       const PNLInUSD = PNL.multipliedBy(oracle)
+      const netValueBeforeDeduction = getNetValueBeforeDeduction({
+        initialDeposit,
+        lockDays,
+        totalSupply,
+        ...reserve,
+      })
 
       const returnValue: Portfolio = {
         ...market,
@@ -164,6 +172,7 @@ const usePortfolioService = () => {
         yourEquity,
         yourEquityInUSD,
         netValue,
+        netValueBeforeDeduction,
         netValues,
         PNL,
         PNLRate,
