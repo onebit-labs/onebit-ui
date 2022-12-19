@@ -11,7 +11,7 @@ import { safeGet } from 'app/utils/get'
 
 import type { NetValueChartProps } from './types'
 
-const DayButtonList = [7, 14, 30, 90]
+const DayButtonList = [7, 30, 90, 365]
 const useDayButton = () => {
   const [value, setValue] = useState(7)
   return {

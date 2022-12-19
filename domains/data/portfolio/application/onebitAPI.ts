@@ -5,7 +5,7 @@ import { useEffect, useMemo } from 'react'
 import { log } from 'app/utils/dev'
 
 const end = Math.floor(Date.now() / 1000)
-const start = end - 60 * 60 * 24 * 90
+const start = end - 60 * 60 * 24 * 365
 
 const usePortfolioDailyEffect = () => {
   const { markets } = useNetwork()

@@ -20,7 +20,7 @@ const useGraphInitEffect = () => {
 
     const endTimestamp = getCurrentTimestamp()
     netValueSingle.run({
-      startTimestamp: endTimestamp - getTimestamp(90 * DAY),
+      startTimestamp: endTimestamp - getTimestamp(365 * DAY),
       endTimestamp,
       subgraphName,
     })
