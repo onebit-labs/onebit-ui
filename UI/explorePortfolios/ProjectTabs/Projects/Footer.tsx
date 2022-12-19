@@ -27,7 +27,13 @@ const Footer: FC<FooterProps> = ({
           <Tiny>{t('projectCard.AUM')}</Tiny>
           <H5>
             <Stack spacing={1} direction="row">
-              <NumberDisplay value={totalSupplyByCalculate} options="number" abbreviate={{}} />
+              <NumberDisplay
+                value={totalSupplyByCalculate}
+                options="number"
+                abbreviate={{
+                  maximumFractionDigits: 2,
+                }}
+              />
               <span>{symbol}</span>
             </Stack>
           </H5>

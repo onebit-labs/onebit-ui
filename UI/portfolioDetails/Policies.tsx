@@ -31,14 +31,24 @@ const Policies: FC = () => {
           <Stack spacing={1}>
             <Paragraph color="text.primary">{t('policies.softUpperLimit')}</Paragraph>
             <H4>
-              <NumberDisplay value={portfolio.softUpperLimit} abbreviate={{}} />
+              <NumberDisplay
+                value={portfolio.softUpperLimit}
+                abbreviate={{
+                  maximumFractionDigits: 2,
+                }}
+              />
               <span> {portfolio.symbol}</span>
             </H4>
           </Stack>
           <Stack spacing={1}>
             <Paragraph color="text.primary">{t('policies.fundraisingCap')}</Paragraph>
             <H4>
-              <NumberDisplay value={portfolio.purchaseUpperLimit} abbreviate={{}} />
+              <NumberDisplay
+                value={portfolio.purchaseUpperLimit}
+                abbreviate={{
+                  maximumFractionDigits: 2,
+                }}
+              />
               <span> {portfolio.symbol}</span>
             </H4>
           </Stack>
