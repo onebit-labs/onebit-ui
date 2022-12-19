@@ -20,14 +20,19 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
   const currentTerm = data[data.length - 1]
   currentTerm.depositors = safeGet(() => portfolio.depositors.toNumber()) || 0
   currentTerm.netValue = portfolio.netValue
-  currentTerm.assetsUnderManagement = portfolio.currentAPYByCalculate
+  currentTerm.assetsUnderManagement = portfolio.totalSupplyByCalculate
   currentTerm.totalSupply = portfolio.totalSupply
   currentTerm.scaledTotalSupply = portfolio.scaledTotalSupply
   currentTerm.previousLiquidityIndex = portfolio.previousLiquidityIndex
   return data.map((portfolioTerm) => {
-    const { scaledTotalSupply: scaledAssetsUnderManagement, previousLiquidityIndex, lockedTimeInSeconds, netValue } = portfolioTerm
+    const {
+      scaledTotalSupply: scaledAssetsUnderManagement,
+      previousLiquidityIndex,
+      lockedTimeInSeconds,
+      netValue,
+    } = portfolioTerm
     const initialDeposit = scaledAssetsUnderManagement.multipliedBy(previousLiquidityIndex)
-    portfolioTerm.openingAssets = initialDeposit
+    portfolioTerm.initialDeposit = initialDeposit
     portfolioTerm.netValueByCalculate = getNetValueByCalculate(portfolioTerm)
     portfolioTerm.totalFees = initialDeposit.multipliedBy(portfolioTerm.netValueByCalculate.minus(netValue))
     portfolioTerm.APY = getAPYByNetValue(portfolioTerm.netValueByCalculate, lockedTimeInSeconds)

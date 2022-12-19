@@ -26,7 +26,7 @@ export type PortfolioTerm = {
   assetsUnderManagement: BN
   totalSupply: BN
   scaledTotalSupply: BN
-  openingAssets: BN
+  initialDeposit: BN
   totalFees: BN
 }
 export const getPortfolioTerm = (sliceState: SliceState) => {
@@ -55,7 +55,7 @@ export const getPortfolioTerm = (sliceState: SliceState) => {
       assetsUnderManagement: toBN(0),
       totalSupply: toBN(0),
       scaledTotalSupply: toBN(0),
-      openingAssets: toBN(0),
+      initialDeposit: toBN(0),
       totalFees: toBN(0),
     }
 
