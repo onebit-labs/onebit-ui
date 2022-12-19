@@ -35,7 +35,7 @@ export const symbolCellRenderer = ({ cellData, rowData }: TableCellProps) => {
   return (
     <TableCell align="center" component="div">
       <Stack spacing={0.5} direction="row">
-        <NumberDisplay value={cellData} abbreviate={{ maximumFractionDigits: 2 }} />
+        <NumberDisplay value={cellData} abbreviate={{}} />
         <span> {rowData.symbol}</span>
       </Stack>
     </TableCell>
@@ -79,14 +79,7 @@ export const PNLCellRenderer = ({ rowData: { PNL, PNLRate, symbol } }: TableCell
     <TableCell align="center" component="div">
       <Stack spacing={1}>
         <RiseOrFall value={PNL}>
-          <Stack spacing={0.5} direction="row">
-            <NumberDisplay
-              value={PNL}
-              abbreviate={{ maximumFractionDigits: 2 }}
-              numberFormatOptions={{ signDisplay: 'always' }}
-            />
-            <span> {symbol}</span>
-          </Stack>
+          <NumberDisplay value={PNL} abbreviate={{}} symbol={symbol} numberFormatOptions={{ signDisplay: 'always' }} />
         </RiseOrFall>
         <RiseOrFall value={PNLRate}>
           <NumberDisplay value={PNLRate} options="percent" numberFormatOptions={{ signDisplay: 'always' }} />

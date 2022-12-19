@@ -67,7 +67,7 @@ const WithdrawDialog: FC = () => {
           <FlexBetween>
             <H5>{t('wallet.withdrawal.amount')}</H5>
             <Paragraph color="text.secondary">
-              {t('wallet.withdrawal.walletBalance')}: <NumberDisplay value={balanceOf} options="number" /> {symbol}
+              {t('wallet.withdrawal.walletBalance')}: <NumberDisplay value={balanceOf} options="number" symbol={symbol} />
             </Paragraph>
           </FlexBetween>
           <NumberInput value={input.value} disabled={input.disabled} onChange={input.onChange} onMax={input.onMax} />

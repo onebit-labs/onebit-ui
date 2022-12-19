@@ -28,14 +28,7 @@ const Stats: FC<StatsProps> = ({
     {
       price: (
         <div>
-          <NumberDisplay
-            value={totalSupplyByCalculate}
-            options="number"
-            abbreviate={{
-              maximumFractionDigits: 2,
-            }}
-          />{' '}
-          {symbol}
+          <NumberDisplay value={totalSupplyByCalculate} abbreviate={{}} symbol={symbol} />
         </div>
       ),
       title: 'assetsUnderManagement',
@@ -60,14 +53,7 @@ const Stats: FC<StatsProps> = ({
     {
       price: (
         <div>
-          <NumberDisplay
-            value={initialDeposit}
-            options="number"
-            abbreviate={{
-              maximumFractionDigits: 2,
-            }}
-          />{' '}
-          {symbol}
+          <NumberDisplay value={initialDeposit} abbreviate={{}} symbol={symbol} />
         </div>
       ),
       title: 'initDeposit',

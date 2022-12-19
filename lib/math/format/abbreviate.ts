@@ -11,7 +11,7 @@ export type AbbreviateOptions = {
 
 const defaultOptions = {
   symbols: defaultSymbols,
-  maximumFractionDigits: 1,
+  maximumFractionDigits: 2,
 }
 
 export function abbreviate(value: BNValue, options?: AbbreviateOptions) {

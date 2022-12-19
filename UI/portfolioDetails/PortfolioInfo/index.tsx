@@ -112,7 +112,7 @@ const PortfolioInfo: FCC = ({ children }) => {
                   <Stack spacing={1} direction="row" alignItems="center">
                     <span>{t('info.yourEquity')}: </span>
                     <Span color="text.primary" fontSize={16}>
-                      <NumberDisplay value={yourEquity} options="number" /> {symbol}
+                      <NumberDisplay value={yourEquity} symbol={symbol} />
                     </Span>
                   </Stack>
                 </H5>

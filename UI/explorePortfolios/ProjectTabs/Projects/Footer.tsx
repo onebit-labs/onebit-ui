@@ -26,16 +26,7 @@ const Footer: FC<FooterProps> = ({
         <Grid item lg={4} xs={12}>
           <Tiny>{t('projectCard.AUM')}</Tiny>
           <H5>
-            <Stack spacing={1} direction="row">
-              <NumberDisplay
-                value={totalSupplyByCalculate}
-                options="number"
-                abbreviate={{
-                  maximumFractionDigits: 2,
-                }}
-              />
-              <span>{symbol}</span>
-            </Stack>
+            <NumberDisplay value={totalSupplyByCalculate} abbreviate={{}} symbol={symbol} />
           </H5>
         </Grid>
         {isOpen ? (

@@ -67,7 +67,7 @@ const ProjectCard: FC<React.PropsWithChildren<ProjectCardProps>> = (props) => {
         <FlexBetween sx={({ palette }) => ({ background: palette.grey[50], padding: 2 })}>
           <Paragraph>{t('projectCard.yourEquity')}</Paragraph>
           <Paragraph fontWeight="700">
-            <NumberDisplay value={yourEquity} options="number" /> {symbol}
+            <NumberDisplay value={yourEquity} symbol={symbol} />
           </Paragraph>
         </FlexBetween>
       )}

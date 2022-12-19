@@ -79,7 +79,8 @@ const DepositDialog: FC = () => {
           <FlexBetween>
             <H5>{t('wallet.deposit.amount')}</H5>
             <Paragraph color="text.secondary">
-              {t('wallet.deposit.walletBalance')}: <NumberDisplay value={walletBalance} options="number" /> {symbol}
+              {t('wallet.deposit.walletBalance')}:{' '}
+              <NumberDisplay value={walletBalance} options="number" symbol={symbol} />
             </Paragraph>
           </FlexBetween>
           <NumberInput value={input.value} disabled={input.disabled} onChange={input.onChange} onMax={input.onMax} />
