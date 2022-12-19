@@ -9,7 +9,8 @@
     "placeholder": "Buscar productos",
     "all": "Todos",
     "open": "Abierto",
-    "lockedUp": "Bloqueado"
+    "lockedUp": "Bloqueado",
+    "close": "Cerrar"
   },
   "actions": {
     "deposit": "Depósito",
@@ -17,7 +18,7 @@
   },
   "projectCard": {
     "lockUpPeriod": "Período de bloqueo",
-    "days": "Días",
+    "days": "Dias",
     "netValue": "Valor neto acumulado",
     "currentNetValue": "Valor neto actual%",
     "AUM": "AUM",

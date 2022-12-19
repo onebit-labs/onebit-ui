@@ -7,13 +7,14 @@
   },
   "tabs": {
     "placeholder": "Produkte finden",
-    "all": "Alle",
+    "all": "Alles",
     "open": "Offen",
-    "lockedUp": "Eingesperrt"
+    "lockedUp": "Eingesperrt",
+    "close": "Nahe"
   },
   "actions": {
-    "deposit": "Kaution",
-    "withdraw": "Abheben"
+    "deposit": "Anzahlung",
+    "withdraw": "Zurückziehen"
   },
   "projectCard": {
     "lockUpPeriod": "Sperrfrist",

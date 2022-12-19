@@ -9,10 +9,11 @@
     "placeholder": "製品を探す",
     "all": "全て",
     "open": "開ける",
-    "lockedUp": "閉じ込められた"
+    "lockedUp": "閉じ込められた",
+    "close": "近い"
   },
   "actions": {
-    "deposit": "デポジット",
+    "deposit": "預り金",
     "withdraw": "撤退"
   },
   "projectCard": {

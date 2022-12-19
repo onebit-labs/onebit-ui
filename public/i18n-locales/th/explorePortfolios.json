@@ -9,7 +9,8 @@
     "placeholder": "ค้นหาผลิตภัณฑ์",
     "all": "ทั้งหมด",
     "open": "เปิด",
-    "lockedUp": "ขังไว้"
+    "lockedUp": "ขังไว้",
+    "close": "ปิด"
   },
   "actions": {
     "deposit": "เงินฝาก",

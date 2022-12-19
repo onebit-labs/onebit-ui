@@ -7,9 +7,10 @@
   },
   "tabs": {
     "placeholder": "Trova prodotti",
-    "all": "Tutto",
+    "all": "Tutti",
     "open": "Aprire",
-    "lockedUp": "Rinchiuso"
+    "lockedUp": "Rinchiuso",
+    "close": "Chiudere"
   },
   "actions": {
     "deposit": "Depositare",

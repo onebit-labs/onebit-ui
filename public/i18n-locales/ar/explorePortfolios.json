@@ -9,11 +9,12 @@
     "placeholder": "البحث عن المنتجات",
     "all": "الجميع",
     "open": "فتح",
-    "lockedUp": "مغلق"
+    "lockedUp": "مغلق",
+    "close": "قريب"
   },
   "actions": {
     "deposit": "إيداع",
-    "withdraw": "ينسحب"
+    "withdraw": "انسحب"
   },
   "projectCard": {
     "lockUpPeriod": "فترة القفل",

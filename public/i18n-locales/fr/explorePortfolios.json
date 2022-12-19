@@ -8,16 +8,17 @@
   "tabs": {
     "placeholder": "Trouver des produits",
     "all": "Tout",
-    "open": "Ouvert",
-    "lockedUp": "Verrouillé"
+    "open": "Ouvrir",
+    "lockedUp": "Verrouillé",
+    "close": "proche"
   },
   "actions": {
-    "deposit": "Verser",
-    "withdraw": "Se désister"
+    "deposit": "Dépôt",
+    "withdraw": "Retirer"
   },
   "projectCard": {
     "lockUpPeriod": "Période de blocage",
-    "days": "Journées",
+    "days": "Jours",
     "netValue": "Valeur nette cumulée",
     "currentNetValue": "Valeur nette actuelle %",
     "AUM": "AUM",

@@ -9,7 +9,8 @@
     "placeholder": "제품 찾기",
     "all": "모두",
     "open": "열려 있는",
-    "lockedUp": "감금"
+    "lockedUp": "감금",
+    "close": "닫다"
   },
   "actions": {
     "deposit": "보증금",
