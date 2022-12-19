@@ -50,6 +50,15 @@ const ProjectTabs: FC = () => {
           },
         },
       },
+      {
+        title: 'close',
+        children: {
+          component: Projects,
+          props: {
+            data: data.filter((i) => i.status === 'close'),
+          },
+        },
+      },
     ]
     return returnValue.map((i) => {
       i.title = t(`tabs.${i.title}`)

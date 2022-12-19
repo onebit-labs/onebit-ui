@@ -136,13 +136,7 @@ const usePortfolioService = () => {
 
       const yourEquity = safeGet(() => userReserve.balanceOf) || toBN(0)
       const netValue = safeGet(() => reserve.normalizedIncome) || toBN(0)
-      const PNLRate = safeGet(() => netValue.minus(reserve.previousLiquidityIndex)) || toBN(0)
-      let PNL = toBN(0)
-      if (safeGet(() => !userReserve.scaledBalanceOf.isZero())) {
-        PNL = userReserve.scaledBalanceOf.multipliedBy(PNLRate)
-      }
       const yourEquityInUSD = yourEquity.multipliedBy(oracle)
-      const PNLInUSD = PNL.multipliedBy(oracle)
       const netValueByCalculate = getNetValueByCalculate({
         initialDeposit,
         lockedTimeInSeconds,
@@ -153,6 +147,12 @@ const usePortfolioService = () => {
       if (status != 'open') {
         currentAPYByCalculate = getAPYByNetValue(netValueByAPI, lockedTimeInSeconds)
       }
+      const PNLRate = safeGet(() => netValue.minus(reserve.previousLiquidityIndex)) || toBN(0)
+      let PNL = toBN(0)
+      if (safeGet(() => !userReserve.scaledBalanceOf.isZero())) {
+        PNL = userReserve.scaledBalanceOf.multipliedBy(PNLRate)
+      }
+      const PNLInUSD = PNL.multipliedBy(oracle)
 
       const returnValue: Portfolio = {
         ...market,

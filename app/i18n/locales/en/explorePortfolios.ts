@@ -10,6 +10,7 @@ const locale = {
     all: 'All',
     open: 'Open',
     lockedUp: 'Locked-Up',
+    close: 'Close',
   },
   actions: {
     deposit: 'Deposit',
