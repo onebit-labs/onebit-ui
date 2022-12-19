@@ -16,9 +16,9 @@ type StatsProps = Portfolio
 const Stats: FC<StatsProps> = ({
   symbol,
   status,
-  totalSupplyByAPI,
+  totalSupplyByCalculate,
   estimatedAPY,
-  currentAPYByAPI,
+  currentAPYByCalculate,
   depositors,
   initialDeposit,
 }) => {
@@ -28,7 +28,7 @@ const Stats: FC<StatsProps> = ({
     {
       price: (
         <div>
-          <NumberDisplay value={totalSupplyByAPI} options="number" /> {symbol}
+          <NumberDisplay value={totalSupplyByCalculate} options="number" /> {symbol}
         </div>
       ),
       title: 'assetsUnderManagement',
@@ -41,7 +41,7 @@ const Stats: FC<StatsProps> = ({
           icon: <Image src={Revenue} alt="Revenue" width={40} height={40} />,
         }
       : {
-          price: <NumberDisplay value={currentAPYByAPI} options="percent" min={0} />,
+          price: <NumberDisplay value={currentAPYByCalculate} options="percent" min={0} />,
           title: 'estimatedAPY',
           icon: <Image src={Revenue} alt="Revenue" width={40} height={40} />,
         },

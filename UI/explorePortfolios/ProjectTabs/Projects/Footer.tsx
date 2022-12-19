@@ -12,11 +12,11 @@ type FooterProps = Portfolio & {
 }
 
 const Footer: FC<FooterProps> = ({
-  totalSupplyByAPI,
+  totalSupplyByCalculate,
   symbol,
   estimatedAPY,
   depositors,
-  currentAPYByAPI,
+  currentAPYByCalculate,
   isOpen,
 }) => {
   const { t } = useTranslation('explorePortfolios')
@@ -27,7 +27,7 @@ const Footer: FC<FooterProps> = ({
           <Tiny>{t('projectCard.AUM')}</Tiny>
           <H5>
             <Stack spacing={1} direction="row">
-              <NumberDisplay value={totalSupplyByAPI} options="number" abbreviate={{}} />
+              <NumberDisplay value={totalSupplyByCalculate} options="number" abbreviate={{}} />
               <span>{symbol}</span>
             </Stack>
           </H5>
@@ -41,7 +41,7 @@ const Footer: FC<FooterProps> = ({
           <Grid item lg={4} xs={12}>
             <Tiny>{t('projectCard.estimatedAPY')}</Tiny>
             <H5>
-              <NumberDisplay value={currentAPYByAPI} min={0} options="percent" />
+              <NumberDisplay value={currentAPYByCalculate} min={0} options="percent" />
             </H5>
           </Grid>
         )}

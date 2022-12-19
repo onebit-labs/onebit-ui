@@ -20,11 +20,11 @@ const Stats: FC = () => {
     const totalDepositors = new Set<string>()
     let assetsUnderManagement = toBN(0)
     let totalProfit = toBN(0)
-    portfolioData.map(({ depositorList, totalSupplyByAPIInUSD, netValueByAPI }) => {
+    portfolioData.map(({ depositorList, totalSupplyByCalculateInUSD, netValueByCalculate }) => {
       if (depositorList) depositorList.forEach((depositor) => totalDepositors.add(depositor))
-      const assets = totalSupplyByAPIInUSD
+      const assets = totalSupplyByCalculateInUSD
       assetsUnderManagement = assetsUnderManagement.plus(assets)
-      totalProfit = totalProfit.plus(assets.multipliedBy(netValueByAPI.minus(1)))
+      totalProfit = totalProfit.plus(assets.multipliedBy(netValueByCalculate.minus(1)))
     })
 
     const returnValue = {
