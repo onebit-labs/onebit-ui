@@ -1,6 +1,6 @@
 import { safeGet } from 'app/utils/get'
 import type { ReserveData } from './reserveData'
-import { differenceInDays } from 'date-fns'
+import { differenceInDays, differenceInSeconds } from 'date-fns'
 
 const now = new Date()
 export type PortfolioLockTime = number
@@ -29,12 +29,14 @@ export const getPortfolioDaysleft = (
   return portfolioDaysleft || 0
 }
 
-export const getPortfolioLockDays = (reserve: Pick<ReserveData, 'purchaseEndTimestamp'>): PortfolioLockTime => {
-  const portfolioLockDays = safeGet(() => {
+export const getPortfolioLockedTimeInSeconds = (
+  reserve: Pick<ReserveData, 'purchaseEndTimestamp'>
+): PortfolioLockTime => {
+  const portfolioLockedTimeInSeconds = safeGet(() => {
     const { purchaseEndTimestamp } = reserve
-    const lockDays = differenceInDays(now, purchaseEndTimestamp)
-    return lockDays < 0 ? 0 : lockDays
+    const lockedTimeInSeconds = differenceInSeconds(now, purchaseEndTimestamp)
+    return lockedTimeInSeconds < 0 ? 0 : lockedTimeInSeconds
   })
 
-  return portfolioLockDays || 0
+  return portfolioLockedTimeInSeconds || 0
 }

@@ -25,12 +25,12 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
   currentTerm.scaledTotalSupply = portfolio.scaledTotalSupply
   currentTerm.previousLiquidityIndex = portfolio.previousLiquidityIndex
   return data.map((portfolioTerm) => {
-    const { scaledTotalSupply: scaledAssetsUnderManagement, previousLiquidityIndex, lockDays, netValue } = portfolioTerm
+    const { scaledTotalSupply: scaledAssetsUnderManagement, previousLiquidityIndex, lockedTimeInSeconds, netValue } = portfolioTerm
     const initialDeposit = scaledAssetsUnderManagement.multipliedBy(previousLiquidityIndex)
     portfolioTerm.openingAssets = initialDeposit
     portfolioTerm.netValueByCalculate = getNetValueByCalculate(portfolioTerm)
     portfolioTerm.totalFees = initialDeposit.multipliedBy(portfolioTerm.netValueByCalculate.minus(netValue))
-    portfolioTerm.APY = getAPYByNetValue(portfolioTerm.netValueByCalculate, lockDays)
+    portfolioTerm.APY = getAPYByNetValue(portfolioTerm.netValueByCalculate, lockedTimeInSeconds)
 
     return portfolioTerm
   })

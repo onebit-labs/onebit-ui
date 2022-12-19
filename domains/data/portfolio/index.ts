@@ -7,7 +7,7 @@ import { safeGet } from 'app/utils/get'
 
 import { useERC20, useNetwork } from '..'
 
-import { getPortfolioDaysleft, getPortfolioLockDays, getPortfolioLockTime } from './adapter/lockTime'
+import { getPortfolioDaysleft, getPortfolioLockedTimeInSeconds, getPortfolioLockTime } from './adapter/lockTime'
 import type { ReserveData } from './adapter/reserveData'
 import type { PortfolioStatus } from './adapter/status'
 import { getPortfolioStatus } from './adapter/status'
@@ -26,7 +26,7 @@ import { getFixedNetValues } from '../onebit-graph/adapter/netValue'
 import type { Transaction } from '../onebit-graph/adapter/transaction'
 import { useWallet } from 'domains'
 import { getAPYByNetValue, getCurrentAPY } from './adapter/currentAPY'
-import { getNetValueByCalculate } from './adapter/netvalue'
+import { getNetValueByCalculate } from './adapter/netValue'
 
 export type MarketReserve = Partial<ReserveData> &
   MarketInfo & {
@@ -46,17 +46,20 @@ export type Portfolio = Partial<
     totalSupplyInUSD?: BN
     totalSupplyByAPI?: BN
     totalSupplyByAPIInUSD?: BN
+    totalSupplyByCalculate?: BN
+    totalSupplyByCalculateInUSD?: BN
     scaledTotalSupply?: BN
     scaledTotalSupplyInUSD?: BN
     initialDeposit?: BN
 
     status: PortfolioStatus
     lockTime: number
-    lockDays: number
+    lockedTimeInSeconds: number
     daysleft: number
 
     currentAPY: BN
     currentAPYByAPI: BN
+    currentAPYByCalculate: BN
     depositors: BN
     yourEquity: BN
     yourEquityInUSD: BN
@@ -115,19 +118,20 @@ const usePortfolioService = () => {
       const status = getPortfolioStatus(reserve)
       let currentAPY = toBN(0)
       let currentAPYByAPI = toBN(0)
+      let currentAPYByCalculate = toBN(0)
       const portfolioDaily = safeGet(() => portfolioDailyData[portfolioAPIName]) || ([] as undefined)
       const lockTime = getPortfolioLockTime(reserve)
       let daysleft = 0
-      let lockDays = 0
+      let lockedTimeInSeconds = 0
       const netValueByAPI = safeGet(() => toBN(portfolioDaily[portfolioDaily.length - 1].y)) || toBN(0)
       const initialDeposit = toBN(safeGet(() => scaledTotalSupply.multipliedBy(reserve.previousLiquidityIndex) || 0))
       const totalSupplyByAPI = toBN(safeGet(() => initialDeposit.multipliedBy(netValueByAPI) || 0))
 
       if (status != 'open') {
         daysleft = getPortfolioDaysleft(reserve)
-        lockDays = getPortfolioLockDays(reserve)
+        lockedTimeInSeconds = getPortfolioLockedTimeInSeconds(reserve)
         currentAPY = getCurrentAPY(reserve)
-        currentAPYByAPI = getAPYByNetValue(netValueByAPI, lockDays)
+        currentAPYByAPI = getAPYByNetValue(netValueByAPI, lockedTimeInSeconds)
       }
 
       const yourEquity = safeGet(() => userReserve.balanceOf) || toBN(0)
@@ -141,10 +145,14 @@ const usePortfolioService = () => {
       const PNLInUSD = PNL.multipliedBy(oracle)
       const netValueByCalculate = getNetValueByCalculate({
         initialDeposit,
-        lockDays,
+        lockedTimeInSeconds,
         totalSupply,
         ...reserve,
       })
+      const totalSupplyByCalculate = toBN(safeGet(() => initialDeposit.multipliedBy(netValueByCalculate) || 0))
+      if (status != 'open') {
+        currentAPYByCalculate = getAPYByNetValue(netValueByAPI, lockedTimeInSeconds)
+      }
 
       const returnValue: Portfolio = {
         ...market,
@@ -154,7 +162,7 @@ const usePortfolioService = () => {
         portfolioTerm: [],
         status,
         lockTime,
-        lockDays,
+        lockedTimeInSeconds,
         daysleft,
 
         oracle,
@@ -162,6 +170,8 @@ const usePortfolioService = () => {
         totalSupplyInUSD: totalSupply.multipliedBy(oracle),
         totalSupplyByAPI,
         totalSupplyByAPIInUSD: totalSupplyByAPI.multipliedBy(oracle),
+        totalSupplyByCalculate,
+        totalSupplyByCalculateInUSD: totalSupplyByCalculate.multipliedBy(oracle),
 
         scaledTotalSupply,
         scaledTotalSupplyInUSD: scaledTotalSupply.multipliedBy(oracle),
@@ -169,6 +179,7 @@ const usePortfolioService = () => {
 
         currentAPY,
         currentAPYByAPI,
+        currentAPYByCalculate,
         yourEquity,
         yourEquityInUSD,
         netValue,
