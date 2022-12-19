@@ -2,7 +2,7 @@ import { safeGet } from 'app/utils/get'
 import type { PortfolioTerm } from 'domains/data/onebit-graph/adapter/portfolioTerm'
 import type { Portfolio } from '..'
 import { getAPYByNetValue } from './currentAPY'
-import { getNetValueBeforeDeduction } from './netvalue'
+import { getNetValueByCalculate } from './netValue'
 
 export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): PortfolioTerm[] => {
   if (!data || !data.length) return data
@@ -20,7 +20,7 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
   const currentTerm = data[data.length - 1]
   currentTerm.depositors = safeGet(() => portfolio.depositors.toNumber()) || 0
   currentTerm.netValue = portfolio.netValue
-  currentTerm.assetsUnderManagement = portfolio.totalSupplyWithAPI
+  currentTerm.assetsUnderManagement = portfolio.totalSupplyByAPI
   currentTerm.totalSupply = portfolio.totalSupply
   currentTerm.scaledTotalSupply = portfolio.scaledTotalSupply
   currentTerm.previousLiquidityIndex = portfolio.previousLiquidityIndex
@@ -28,9 +28,9 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
     const { scaledTotalSupply: scaledAssetsUnderManagement, previousLiquidityIndex, lockDays, netValue } = portfolioTerm
     const initialDeposit = scaledAssetsUnderManagement.multipliedBy(previousLiquidityIndex)
     portfolioTerm.openingAssets = initialDeposit
-    portfolioTerm.netValueBeforeDeduction = getNetValueBeforeDeduction(portfolioTerm)
-    portfolioTerm.totalFees = initialDeposit.multipliedBy(portfolioTerm.netValueBeforeDeduction.minus(netValue))
-    portfolioTerm.APY = getAPYByNetValue(portfolioTerm.netValueBeforeDeduction, lockDays)
+    portfolioTerm.netValueByCalculate = getNetValueByCalculate(portfolioTerm)
+    portfolioTerm.totalFees = initialDeposit.multipliedBy(portfolioTerm.netValueByCalculate.minus(netValue))
+    portfolioTerm.APY = getAPYByNetValue(portfolioTerm.netValueByCalculate, lockDays)
 
     return portfolioTerm
   })

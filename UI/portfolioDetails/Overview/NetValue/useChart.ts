@@ -41,9 +41,9 @@ export const useChart = () => {
   const currentNetValue = useMemo(() => safeGet(() => data[data.length - 1].y) || 0, [data])
 
   const currentPeriodNetValueFluctuation = useMemo(() => {
-    if (!portfolio.netValueWithAPI) return toBN(0)
-    return portfolio.netValueWithAPI.minus(1)
-  }, [portfolio.netValueWithAPI])
+    if (!portfolio.netValueByAPI) return toBN(0)
+    return portfolio.netValueByAPI.minus(1)
+  }, [portfolio.netValueByAPI])
 
   const changeAllTime = useMemo(() => {
     return (

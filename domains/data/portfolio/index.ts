@@ -26,7 +26,7 @@ import { getFixedNetValues } from '../onebit-graph/adapter/netValue'
 import type { Transaction } from '../onebit-graph/adapter/transaction'
 import { useWallet } from 'domains'
 import { getAPYByNetValue, getCurrentAPY } from './adapter/currentAPY'
-import { getNetValueBeforeDeduction } from './adapter/netvalue'
+import { getNetValueByCalculate } from './adapter/netvalue'
 
 export type MarketReserve = Partial<ReserveData> &
   MarketInfo & {
@@ -44,8 +44,8 @@ export type Portfolio = Partial<
     oracle?: BN
     totalSupply?: BN
     totalSupplyInUSD?: BN
-    totalSupplyWithAPI?: BN
-    totalSupplyWithAPIInUSD?: BN
+    totalSupplyByAPI?: BN
+    totalSupplyByAPIInUSD?: BN
     scaledTotalSupply?: BN
     scaledTotalSupplyInUSD?: BN
     initialDeposit?: BN
@@ -56,7 +56,7 @@ export type Portfolio = Partial<
     daysleft: number
 
     currentAPY: BN
-    currentAPYWithAPI: BN
+    currentAPYByAPI: BN
     depositors: BN
     yourEquity: BN
     yourEquityInUSD: BN
@@ -64,8 +64,8 @@ export type Portfolio = Partial<
     PNLRate: BN
     PNLInUSD: BN
     netValue: BN
-    netValueBeforeDeduction: BN
-    netValueWithAPI: BN
+    netValueByCalculate: BN
+    netValueByAPI: BN
 
     portfolioDaily: Record<'x' | 'y', string>[]
     seriesDaily: Record<'x' | 'y', string>[]
@@ -114,20 +114,20 @@ const usePortfolioService = () => {
       const scaledTotalSupply = toBN(safeGet(() => erc20Data.scaledTotalSupply[address.OToken]) || 0)
       const status = getPortfolioStatus(reserve)
       let currentAPY = toBN(0)
-      let currentAPYWithAPI = toBN(0)
+      let currentAPYByAPI = toBN(0)
       const portfolioDaily = safeGet(() => portfolioDailyData[portfolioAPIName]) || ([] as undefined)
       const lockTime = getPortfolioLockTime(reserve)
       let daysleft = 0
       let lockDays = 0
-      const netValueWithAPI = safeGet(() => toBN(portfolioDaily[portfolioDaily.length - 1].y)) || toBN(0)
+      const netValueByAPI = safeGet(() => toBN(portfolioDaily[portfolioDaily.length - 1].y)) || toBN(0)
       const initialDeposit = toBN(safeGet(() => scaledTotalSupply.multipliedBy(reserve.previousLiquidityIndex) || 0))
-      const totalSupplyWithAPI = toBN(safeGet(() => initialDeposit.multipliedBy(netValueWithAPI) || 0))
+      const totalSupplyByAPI = toBN(safeGet(() => initialDeposit.multipliedBy(netValueByAPI) || 0))
 
       if (status != 'open') {
         daysleft = getPortfolioDaysleft(reserve)
         lockDays = getPortfolioLockDays(reserve)
         currentAPY = getCurrentAPY(reserve)
-        currentAPYWithAPI = getAPYByNetValue(netValueWithAPI, lockDays)
+        currentAPYByAPI = getAPYByNetValue(netValueByAPI, lockDays)
       }
 
       const yourEquity = safeGet(() => userReserve.balanceOf) || toBN(0)
@@ -139,7 +139,7 @@ const usePortfolioService = () => {
       }
       const yourEquityInUSD = yourEquity.multipliedBy(oracle)
       const PNLInUSD = PNL.multipliedBy(oracle)
-      const netValueBeforeDeduction = getNetValueBeforeDeduction({
+      const netValueByCalculate = getNetValueByCalculate({
         initialDeposit,
         lockDays,
         totalSupply,
@@ -160,26 +160,26 @@ const usePortfolioService = () => {
         oracle,
         totalSupply,
         totalSupplyInUSD: totalSupply.multipliedBy(oracle),
-        totalSupplyWithAPI,
-        totalSupplyWithAPIInUSD: totalSupplyWithAPI.multipliedBy(oracle),
+        totalSupplyByAPI,
+        totalSupplyByAPIInUSD: totalSupplyByAPI.multipliedBy(oracle),
 
         scaledTotalSupply,
         scaledTotalSupplyInUSD: scaledTotalSupply.multipliedBy(oracle),
         initialDeposit,
 
         currentAPY,
-        currentAPYWithAPI,
+        currentAPYByAPI,
         yourEquity,
         yourEquityInUSD,
         netValue,
-        netValueBeforeDeduction,
+        netValueByCalculate,
         netValues,
         PNL,
         PNLRate,
         PNLInUSD,
 
         portfolioDaily,
-        netValueWithAPI,
+        netValueByAPI,
         seriesDaily: safeGet(() => seriesDaily[series]) || ([] as undefined),
         id,
       }

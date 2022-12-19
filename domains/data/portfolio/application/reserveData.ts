@@ -30,6 +30,7 @@ const useVaultEffect = () => {
     reserveNormalizedIncomeSingle.run(query)
     return () => {
       reserveDataPolling.stop()
+      reserveNormalizedIncomeSingle.stop()
     }
   }, [query, reserveDataPolling, reserveNormalizedIncomeSingle])
 }
