@@ -1,7 +1,7 @@
 {
   "tabs": {
-    "overview": "Visión general",
-    "fees": "Tarifa",
+    "overview": "Descripción general",
+    "fees": "Honorarios",
     "policies": "Políticas",
     "depositors": "depositantes",
     "activities": "Actividades"
@@ -10,7 +10,7 @@
     "status": "Estado",
     "term": "Término",
     "lockUpPeriod": "Período de bloqueo",
-    "days": "Días",
+    "days": "Dias",
     "standard": "Estándar",
     "contract": "Dirección del contrato",
     "yourEquity": "su patrimonio",
@@ -77,7 +77,7 @@
     }
   },
   "fees": {
-    "title": "Tarifa",
+    "title": "Honorarios",
     "management": {
       "title": "Comisión de gestión",
       "tip": "2% si la rentabilidad acumulada es superior al 20%",
@@ -105,21 +105,21 @@
     "reInvestmentTip": "Si los depositantes no retiran los fondos al final del período de bloqueo, los fondos se reinvertirán en el producto para el próximo período de bloqueo.",
     "auto": "Auto",
     "riskControlLine": "Advertencia de control de riesgos",
-    "riskControlLineTip": "Si el valor neto cae por debajo de la línea de control de riesgo de detención, el producto se liquidará de inmediato para reducir más pérdidas para todos los depositantes y se abrirá para retiros.",
+    "riskControlLineTip": "Si el valor neto cae por debajo de la línea de control de riesgo, el producto se liquidará por adelantado para reducir pérdidas adicionales para todos los depositantes y se abrirá para retiros.",
     "redemption": "Redención",
     "redemptionTip": "Después del período de bloqueo, el canje está abierto el siguiente día hábil, o el valor neto activa una advertencia de control de riesgo y puede canjearse por adelantado.",
     "netValue": "Valor neto"
   },
   "depositors": {
     "depositors": "depositantes",
-    "since": "Ya que",
+    "since": "Desde",
     "equity": "Equidad",
     "percentage": "Porcentaje"
   },
   "activities": {
     "id": "Tx ID",
     "type": "Escribe",
-    "from": "De",
+    "from": "Desde",
     "to": "A",
     "amount": "Monto",
     "date": "Fecha"

@@ -10,7 +10,7 @@
     "status": "Statut",
     "term": "Terme",
     "lockUpPeriod": "Période de blocage",
-    "days": "Journées",
+    "days": "Jours",
     "standard": "Standard",
     "contract": "Adresse du contrat",
     "yourEquity": "Votre capital",
@@ -70,7 +70,7 @@
       "AUM": "AUM",
       "depositors": "Déposants",
       "finalNetValue": "Valeur nette finale",
-      "return": "Revenir",
+      "return": "Retour",
       "totalFees": "Total des frais",
       "APY": "APY",
       "netValueTip": "Les commissions de gestion et de performance ont été déduites de la valeur nette indiquée ici."
@@ -105,7 +105,7 @@
     "reInvestmentTip": "Si les déposants ne retirent pas les fonds à la fin de la période de blocage, les fonds seront réinvestis dans le produit pour la prochaine période de blocage.",
     "auto": "Auto",
     "riskControlLine": "Avertissement de contrôle des risques",
-    "riskControlLineTip": "Si la valeur nette tombe en dessous de la ligne de contrôle du risque d'arrêt, le produit sera réglé immédiatement pour réduire les pertes supplémentaires pour tous les déposants et ouvert aux retraits.",
+    "riskControlLineTip": "Si la valeur nette tombe en dessous de la ligne de contrôle des risques, le produit sera réglé à l'avance afin de réduire les pertes supplémentaires pour tous les déposants et ouvert aux retraits.",
     "redemption": "Rachat",
     "redemptionTip": "Après la période de blocage, le remboursement est ouvert le jour ouvrable suivant, ou la valeur nette déclenche un avertissement de contrôle des risques et peut être remboursée par anticipation.",
     "netValue": "Valeur nette"
@@ -121,7 +121,7 @@
     "type": "Taper",
     "from": "De",
     "to": "À",
-    "amount": "Montant",
+    "amount": "Quantité",
     "date": "Date"
   }
 }

@@ -105,15 +105,15 @@
     "reInvestmentTip": "Se os depositantes não retirarem os fundos no final do período de bloqueio, os fundos serão reinvestidos no produto para o próximo período de bloqueio.",
     "auto": "Auto",
     "riskControlLine": "Aviso de controle de risco",
-    "riskControlLineTip": "Se o Valor Líquido cair abaixo da linha de controle de risco stop, o produto será liquidado imediatamente para reduzir perdas adicionais para todos os depositantes e aberto para saques.",
+    "riskControlLineTip": "Se o Valor Líquido cair abaixo da linha de controle de risco, o produto será liquidado antecipadamente para reduzir perdas adicionais para todos os depositantes e aberto para saques.",
     "redemption": "Redenção",
     "redemptionTip": "Após o período de bloqueio, o resgate é aberto no próximo dia útil, ou o valor líquido aciona alerta de controle de risco e pode ser resgatado antecipadamente.",
     "netValue": "Valor líquido"
   },
   "depositors": {
     "depositors": "Depositantes",
-    "since": "Desde",
-    "equity": "Equidade",
+    "since": "Desde a",
+    "equity": "Capital próprio",
     "percentage": "Percentagem"
   },
   "activities": {
@@ -121,7 +121,7 @@
     "type": "Modelo",
     "from": "A partir de",
     "to": "Para",
-    "amount": "Quantia",
+    "amount": "Montante",
     "date": "Encontro"
   }
 }

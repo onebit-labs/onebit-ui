@@ -7,7 +7,7 @@
     "activities": "活动"
   },
   "info": {
-    "status": "地位",
+    "status": "状态",
     "term": "学期",
     "lockUpPeriod": "锁定期",
     "days": "天",
@@ -81,7 +81,7 @@
     "management": {
       "title": "管理费",
       "tip": "累计回报率超过20%则为2%",
-      "description": "管理费是存款人定期支付给投资组合经理的费用。该费用按管理资产的年化百分比计算，与 Vault 回报无关。"
+      "description": "管理费是存款人定期支付给投资组合经理的款项。该费用按管理资产的年化百分比计算，与 Vault 回报无关。"
     },
     "performance": {
       "title": "绩效费",
@@ -105,7 +105,7 @@
     "reInvestmentTip": "如果存款人在锁定期结束时未提取资金，资金将重新投入到下一个锁定期的产品中。",
     "auto": "汽车",
     "riskControlLine": "风险控制警告",
-    "riskControlLineTip": "如果净值跌破止损风控线，产品将立即结算，减少所有存款人的进一步损失，并开放提现。",
+    "riskControlLineTip": "若净值跌破风控线，产品将提前结算，减少所有存款人的进一步损失，并开放提现。",
     "redemption": "赎回",
     "redemptionTip": "锁定期后次日开放赎回，或净值触发风控预警可提前赎回。",
     "netValue": "净值"
@@ -120,7 +120,7 @@
     "id": "发送ID",
     "type": "类型",
     "from": "从",
-    "to": "至",
+    "to": "到",
     "amount": "数量",
     "date": "日期"
   }

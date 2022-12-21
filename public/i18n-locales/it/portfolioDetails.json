@@ -105,23 +105,23 @@
     "reInvestmentTip": "Se i depositanti non ritirano i fondi alla fine del periodo di blocco, i fondi verranno reinvestiti nel prodotto per il successivo periodo di blocco.",
     "auto": "Auto",
     "riskControlLine": "Avviso di controllo del rischio",
-    "riskControlLineTip": "Se il valore netto scende al di sotto della linea di controllo del rischio di arresto, il prodotto verrà regolato immediatamente per ridurre ulteriori perdite per tutti i depositanti e aperto ai prelievi.",
+    "riskControlLineTip": "Se il valore netto scende al di sotto della linea di controllo del rischio, il prodotto verrà regolato in anticipo per ridurre ulteriori perdite per tutti i depositanti e aperto ai prelievi.",
     "redemption": "Redenzione",
     "redemptionTip": "Dopo il periodo di blocco, il rimborso è aperto il giorno lavorativo successivo oppure il valore netto attiva un avviso di controllo del rischio e può essere rimborsato in anticipo.",
     "netValue": "Valore netto"
   },
   "depositors": {
     "depositors": "Depositanti",
-    "since": "Da",
+    "since": "Da quando",
     "equity": "Equità",
     "percentage": "Percentuale"
   },
   "activities": {
     "id": "TxID",
     "type": "Tipo",
-    "from": "Da",
-    "to": "Per",
-    "amount": "Quantità",
+    "from": "A partire dal",
+    "to": "A",
+    "amount": "Importo",
     "date": "Data"
   }
 }

@@ -70,7 +70,7 @@
       "AUM": "AUM",
       "depositors": "Người gửi tiền",
       "finalNetValue": "Giá trị ròng cuối cùng",
-      "return": "Trở về",
+      "return": "Trở lại",
       "totalFees": "Tổng các khoản phí",
       "APY": "APY",
       "netValueTip": "Phí quản lý và hiệu suất đã được khấu trừ khỏi giá trị thực được hiển thị ở đây."
@@ -105,7 +105,7 @@
     "reInvestmentTip": "Nếu người gửi tiền không rút tiền vào cuối thời gian khóa, tiền sẽ được tái đầu tư vào sản phẩm cho thời gian khóa tiếp theo.",
     "auto": "Tự động",
     "riskControlLine": "Cảnh báo kiểm soát rủi ro",
-    "riskControlLineTip": "Nếu Giá trị ròng giảm xuống dưới đường kiểm soát rủi ro dừng, sản phẩm sẽ được giải quyết ngay lập tức để giảm tổn thất thêm cho tất cả người gửi tiền và mở để rút tiền.",
+    "riskControlLineTip": "Nếu Giá trị ròng giảm xuống dưới mức kiểm soát rủi ro, sản phẩm sẽ được thanh toán trước để giảm tổn thất thêm cho tất cả người gửi tiền và mở để rút tiền.",
     "redemption": "chuộc lỗi",
     "redemptionTip": "Sau thời gian khóa, quy đổi sẽ được mở vào ngày làm việc tiếp theo hoặc giá trị ròng kích hoạt cảnh báo kiểm soát rủi ro và có thể được quy đổi trước.",
     "netValue": "giá trị ròng"
@@ -113,15 +113,15 @@
   "depositors": {
     "depositors": "Người gửi tiền",
     "since": "Từ",
-    "equity": "Vốn chủ sở hữu",
+    "equity": "Vốn",
     "percentage": "tỷ lệ phần trăm"
   },
   "activities": {
     "id": "TxID",
-    "type": "Loại hình",
+    "type": "Loại",
     "from": "Từ",
     "to": "Đến",
     "amount": "Số lượng",
-    "date": "Ngày"
+    "date": "Ngày tháng"
   }
 }

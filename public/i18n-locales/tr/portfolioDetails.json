@@ -70,7 +70,7 @@
       "AUM": "AUM",
       "depositors": "mevduat sahipleri",
       "finalNetValue": "Nihai Net Değer",
-      "return": "Dönüş",
+      "return": "Geri dönmek",
       "totalFees": "Toplam ücretler",
       "APY": "APY",
       "netValueTip": "Yönetim ve icra ücretleri burada gösterilen net değerden düşülmüştür."
@@ -105,7 +105,7 @@
     "reInvestmentTip": "Mudiler bloke süresi sonunda fonlarını çekmezlerse, fonlar bir sonraki bloke süresi için ürüne yeniden yatırılacaktır.",
     "auto": "Oto",
     "riskControlLine": "Risk Kontrol Uyarısı",
-    "riskControlLineTip": "Net Değer, risk durdurma kontrol çizgisinin altına düşerse, tüm mevduat sahipleri için daha fazla zararı azaltmak için ürün derhal kapatılır ve para çekmeye açılır.",
+    "riskControlLineTip": "Net Değer, risk kontrol çizgisinin altına düşerse, tüm mevduat sahipleri için daha fazla zararı azaltmak için ürün önceden kapatılacak ve para çekmeye açık olacaktır.",
     "redemption": "Kefaret",
     "redemptionTip": "Kilitleme süresinden sonra itfa bir sonraki iş gününde açılır veya net değer risk kontrol uyarısını tetikler ve peşin itfa edilebilir.",
     "netValue": "Net değer"
@@ -121,7 +121,7 @@
     "type": "Tip",
     "from": "İtibaren",
     "to": "İle",
-    "amount": "Tutar",
+    "amount": "Miktar",
     "date": "Tarih"
   }
 }
