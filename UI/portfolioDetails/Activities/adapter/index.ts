@@ -4,7 +4,12 @@ import { getTransactionType } from 'domains/data/onebit-graph/adapter/transactio
 
 const getERC20SubgraphName = (subgraphName: string) => {
   const list = subgraphName.split('-')
-  return safeGet(() => [list[0], 'erc20', list[1]].join('-'))
+  return (
+    safeGet(() => {
+      if (!list[1]) return [list[0], 'erc20']
+      return [list[0], 'erc20', list[1]]
+    }) || []
+  ).join('-')
 }
 
 type Props = {
