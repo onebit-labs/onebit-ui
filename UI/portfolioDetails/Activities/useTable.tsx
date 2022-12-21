@@ -12,15 +12,15 @@ import { useMount } from 'app/hooks/useMount'
 import { request } from './adapter'
 import { fromCellRenderer } from './renderer'
 
-const pageSize = 10
+const pageSize = 5
 
 export const useTable = (): BasicTableProps => {
   const { t } = useTranslation('portfolioDetails')
   const { portfolio } = usePortfolioDetails()
   const [pageIndex, setPageIndex] = useState(0)
   const dataFetcher = usePost(request)
-  const [end, setEnd] = useState(false)
-  const [data, setData] = useState([])
+  const [noMoreSourceData, setNoMoreSourceData] = useState(false)
+  const [sourceData, setSourceData] = useState([])
   const {
     subgraph: { name: subgraphName },
   } = useNetwork()
@@ -73,15 +73,24 @@ export const useTable = (): BasicTableProps => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [t]
   )
+  const skip = useMemo(() => pageIndex * pageSize, [pageIndex])
+  const data = useMemo(() => {
+    const returnValue = [...sourceData]
+    return returnValue.sort((a, b) => b.createTimestamp - a.createTimestamp).slice(0, skip)
+  }, [skip, sourceData])
+  const end = useMemo(() => {
+    if (!noMoreSourceData) return false
+    return skip > data.length
+  }, [data.length, noMoreSourceData, skip])
 
   const loadMore = useMemo(() => {
     return {
       end,
       disabled: dataFetcher.loading,
       onLoadMore: () => {
-        const skip = pageIndex * pageSize
         const vault = portfolio.address.Vault
         setPageIndex(pageIndex + 1)
+        if (noMoreSourceData) return Promise.resolve()
         return dataFetcher
           .post({
             skip,
@@ -97,12 +106,12 @@ export const useTable = (): BasicTableProps => {
               vault,
             }))
 
-            if (rowData.length < pageSize) setEnd(true)
-            setData((data) => data.concat(rowData))
+            if (!rowData.length) setNoMoreSourceData(true)
+            setSourceData((data) => data.concat(rowData))
           })
       },
     }
-  }, [dataFetcher, end, pageIndex, portfolio, subgraphName])
+  }, [dataFetcher, end, noMoreSourceData, pageIndex, portfolio, skip, subgraphName])
 
   useMount(() => {
     loadMore.onLoadMore()
