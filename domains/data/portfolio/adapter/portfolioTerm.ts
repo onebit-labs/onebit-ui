@@ -1,5 +1,6 @@
 import { safeGet } from 'app/utils/get'
 import type { PortfolioTerm } from 'domains/data/onebit-graph/adapter/portfolioTerm'
+import { toBN } from 'lib/math'
 import type { Portfolio } from '..'
 import { getAPYByNetValue } from './currentAPY'
 import { getNetValueByCalculate } from './netValue'
@@ -13,7 +14,7 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
       const nextPortfolioTerm = data[index + 1]
       portfolioTerm.depositors = nextPortfolioTerm.previousDepositors
       portfolioTerm.netValue = nextPortfolioTerm.previousNetValue
-      portfolioTerm.assetsUnderManagement = nextPortfolioTerm.previousAssetsUnderManagement
+      portfolioTerm.totalSupply = nextPortfolioTerm.previousAssetsUnderManagement
       portfolioTerm.scaledTotalSupply = nextPortfolioTerm.previousScaledAssetsUnderManagement
     }
   }
@@ -24,19 +25,24 @@ export const getPortfolioTerm = (portfolio: Portfolio, data: PortfolioTerm[]): P
   currentTerm.totalSupply = portfolio.totalSupply
   currentTerm.scaledTotalSupply = portfolio.scaledTotalSupply
   currentTerm.previousLiquidityIndex = portfolio.previousLiquidityIndex
-  return data.map((portfolioTerm) => {
-    const {
-      scaledTotalSupply: scaledAssetsUnderManagement,
-      previousLiquidityIndex,
-      lockedTimeInSeconds,
-      netValue,
-    } = portfolioTerm
-    const initialDeposit = scaledAssetsUnderManagement.multipliedBy(previousLiquidityIndex)
-    portfolioTerm.initialDeposit = initialDeposit
-    portfolioTerm.netValueByCalculate = getNetValueByCalculate(portfolioTerm)
-    portfolioTerm.totalFees = initialDeposit.multipliedBy(portfolioTerm.netValueByCalculate.minus(netValue))
-    portfolioTerm.APY = getAPYByNetValue(portfolioTerm.netValueByCalculate, lockedTimeInSeconds)
+  return data
+    .map((portfolioTerm) => {
+      const {
+        scaledTotalSupply: scaledAssetsUnderManagement,
+        previousLiquidityIndex,
+        lockedTimeInSeconds,
+        netValue,
+      } = portfolioTerm
+      const initialDeposit = scaledAssetsUnderManagement.multipliedBy(previousLiquidityIndex)
+      portfolioTerm.initialDeposit = initialDeposit
+      portfolioTerm.netValueByCalculate = getNetValueByCalculate(portfolioTerm)
+      portfolioTerm.assetsUnderManagement = toBN(
+        safeGet(() => initialDeposit.multipliedBy(portfolioTerm.netValueByCalculate) || 0)
+      )
+      portfolioTerm.totalFees = initialDeposit.multipliedBy(portfolioTerm.netValueByCalculate.minus(netValue))
+      portfolioTerm.APY = getAPYByNetValue(portfolioTerm.netValueByCalculate, lockedTimeInSeconds)
 
-    return portfolioTerm
-  })
+      return portfolioTerm
+    })
+    .reverse()
 }

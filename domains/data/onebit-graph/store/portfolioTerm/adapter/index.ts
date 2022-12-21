@@ -18,7 +18,7 @@ export const request = ({ subgraphName }: Props) => {
   portfolioTerms(
     first: 1000
     orderBy: createTimestamp
-    orderDirection: desc
+    orderDirection: asc
   ) {
     id
     vault
