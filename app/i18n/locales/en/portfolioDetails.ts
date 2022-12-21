@@ -109,7 +109,7 @@ const locale = {
     auto: 'Auto',
     riskControlLine: 'Risk Control Warning',
     riskControlLineTip:
-      'If the Net Value falls below the stop risk control line, the product will be settled immediately to reduce further losses for all depositors, and open for withdrawals.',
+      'If the Net Value falls below the risk control line, the product will be settled in advance to reduce further losses for all depositors, and open for withdrawals.',
     redemption: 'Redemption',
     redemptionTip:
       'After the lock-up period, redemption is open on the next working day, or the net value triggers risk control warning and can be redeemed in advance.',

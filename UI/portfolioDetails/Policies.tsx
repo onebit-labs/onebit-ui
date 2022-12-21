@@ -47,11 +47,6 @@ const Policies: FC = () => {
             <H4>100 USDT</H4>
           </Stack> */}
           <Stack spacing={1}>
-            <Paragraph color="text.primary">{t('policies.reInvestment')}</Paragraph>
-            <H4>{t('policies.auto')}</H4>
-            <Paragraph color="text.secondary">{t('policies.reInvestmentTip')}</Paragraph>
-          </Stack>
-          <Stack spacing={1}>
             <Paragraph color="text.primary">{t('policies.riskControlLine')}</Paragraph>
             <H4>{`${t('policies.netValue')} = ${portfolio.riskControlLine}`}</H4>
             <Paragraph color="text.secondary">{t('policies.riskControlLineTip')}</Paragraph>
@@ -59,6 +54,11 @@ const Policies: FC = () => {
           <Stack spacing={1}>
             <Paragraph color="text.primary">{t('policies.redemption')}</Paragraph>
             <Paragraph color="text.secondary">{t('policies.redemptionTip')}</Paragraph>
+          </Stack>
+          <Stack spacing={1}>
+            <Paragraph color="text.primary">{t('policies.reInvestment')}</Paragraph>
+            <H4>{t('policies.auto')}</H4>
+            <Paragraph color="text.secondary">{t('policies.reInvestmentTip')}</Paragraph>
           </Stack>
         </Stack>
       </CardContent>
