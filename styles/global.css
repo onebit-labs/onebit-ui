@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Stabil Grotesk';
+  src: url('./fonts/StabilGrotesk-Regular.woff2') format('woff2');
+}
+
 .rc-image-preview-root {
   position: absolute;
   top: 0;
