@@ -20,7 +20,7 @@ const getMarketInfo = (id: MarketId): MarketInfo => {
   switch (id) {
     case 'Onebit-Lightning-Hunter-USDT':
       return {
-        portfolioAPIName: 'Onebit Lightning Hunter-USDT (Nov-22)',
+        portfolioAPIName: 'Onebit Lightning Hunter-USDT (Dec-20)',
         portfolioName: 'Onebit Lightning Hunter-USDT',
         series: 'Onebit Lightning Hunter-USDT',
         symbol: 'USDT',
