@@ -76,7 +76,7 @@ export const APYCellRenderer = ({ cellData }: TableCellProps) => {
 
 export const PNLCellRenderer = ({ rowData: { PNL, PNLRate, symbol } }: TableCellProps) => {
   return (
-    <TableCell align="center" component="div">
+    <TableCell align="center" component="div" sx={{ 'span': { fontSize: 14 }}}>
       <Stack spacing={1}>
         <RiseOrFall value={PNL}>
           <NumberDisplay value={PNL} abbreviate={{}} symbol={symbol} numberFormatOptions={{ signDisplay: 'always' }} />

@@ -14,7 +14,7 @@ type TableCellProps = {
 }
 export const returnCellRenderer = ({ cellData }: TableCellProps) => {
   return (
-    <TableCell align="center" component="div">
+    <TableCell align="center" component="div" sx={{ 'span': { fontSize: 14 }}}>
       <RiseOrFall value={cellData}>
         <NumberDisplay value={cellData} options="percent" />
       </RiseOrFall>

@@ -19,13 +19,13 @@ export const useTable = (): BasicTableProps => {
     if (!portfolio.portfolioTerm) return []
     const { symbol } = portfolio
     return portfolio.portfolioTerm.map((portfolioTerm) => {
-      const { netValueByCalculate, netValue, assetsUnderManagement: AUM } = portfolioTerm
+      const { netValueByCalculate, assetsUnderManagement: AUM } = portfolioTerm
       return {
         ...portfolioTerm,
         AUM,
         symbol,
         finalNetValue: netValueByCalculate,
-        return: netValue.minus(1),
+        return: netValueByCalculate.minus(1),
       }
     })
   }, [portfolio])
