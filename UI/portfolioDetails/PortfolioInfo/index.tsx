@@ -134,6 +134,7 @@ const PortfolioInfo: FCC = ({ children }) => {
           </Stack>
           {status === 'open' && <FundraisingProgress {...data} />}
           <Stats {...data} />
+          <Span color='text.disabled' fontSize={10}>{t('info.tip')}</Span>
         </Stack>
       </CardContent>
       {children}

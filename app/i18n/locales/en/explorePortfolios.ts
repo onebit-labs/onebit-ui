@@ -9,8 +9,8 @@ const locale = {
     placeholder: 'Find Products',
     all: 'All',
     open: 'Open',
-    lockedUp: 'Locked-Up',
-    close: 'Close',
+    lockedUp: 'Lock-Up',
+    close: 'Closed',
   },
   actions: {
     deposit: 'Deposit',

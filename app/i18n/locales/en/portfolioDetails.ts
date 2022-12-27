@@ -15,6 +15,7 @@ const locale = {
     contract: 'Contract Address',
     yourEquity: 'Your Equity',
     PNL: 'PNL',
+    tip: '* The product data shown on this page doesn’t exclude the management fees and performance fees.',
     stats: {
       assetsUnderManagement: 'Assets Under Management',
       estimatedAPY: 'Estimated APY',
@@ -82,12 +83,12 @@ const locale = {
       title: 'Management Fee',
       tip: '2% if accumulative return is over 20%',
       description:
-        'A management fee is a periodic payment that is paid by depositors to the Porfolio Manager. The fee is calculated as an annualized percentage of assets under management and is independent of Vault returns.',
+        'The product will charge a management fee, calculated as an annual management fee rate of the initial deposit assets. The management fee will be charged per block by timestamp.',
     },
     performance: {
       title: 'Performance Fee',
       description:
-        'A performance fee is a percentage-based fee depositors pay to the Product Manager out of the positive returns made over a pre-defined period. The pre-defined period is referred to as a Locked-up period (typically a year or a quarter). The returns are benchmarked against the denomination asset. ',
+        'The product will charge a performance fee based on excess returns, calculated as a performance fee rate of the appreciation in the daily Net Asset Value above the high-water mark. The performance fee will be charged based on the Net Asset Value daily.',
     },
     entrance: {
       title: 'Entrance Fee',
@@ -100,19 +101,19 @@ const locale = {
     title: 'Policies',
     openPeriod: 'Open Period',
     lockUpPeriod: 'Lock-Up Period',
-    fundraisingCap: 'Fundraising Hard Cap',
-    softUpperLimit: 'Fundraising Soft Cap',
+    fundraisingCap: 'Capacity Hard Cap',
+    softUpperLimit: 'Capacity Soft Cap',
     minimumDeposit: 'Minimum Deposit',
     reInvestment: 'Re-investment',
     reInvestmentTip:
-      'If depositors do not withdraw the funds at the end of locked-up period, the funds will be re-invested into the product for the next lock-up period.',
+      'If depositors do not withdraw the funds at the end of lock-up period, the funds will be re-invested into the product for the next lock-up period.',
     auto: 'Auto',
     riskControlLine: 'Risk Control Warning',
     riskControlLineTip:
       'If the Net Value falls below the risk control line, the product will be settled in advance to reduce further losses for all depositors, and open for withdrawals.',
-    redemption: 'Redemption',
+    redemption: 'Withdrawal',
     redemptionTip:
-      'After the lock-up period, redemption is open on the next working day, or the net value triggers risk control warning and can be redeemed in advance.',
+      'After the lock-up period, withdrawal is open on the next working day, or the net value triggers risk control warning and can be redeemed in advance.',
     netValue: 'Net Value',
   },
   depositors: {
