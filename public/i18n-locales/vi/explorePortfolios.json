@@ -9,8 +9,8 @@
     "placeholder": "Tìm sản phẩm",
     "all": "Tất cả các",
     "open": "Mở",
-    "lockedUp": "Nhốt",
-    "close": "Gần"
+    "lockedUp": "Khóa",
+    "close": "đã đóng"
   },
   "actions": {
     "deposit": "Tiền gửi",

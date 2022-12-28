@@ -9,8 +9,8 @@
     "placeholder": "Найти продукты",
     "all": "Все",
     "open": "Открытым",
-    "lockedUp": "Взаперти",
-    "close": "Закрывать"
+    "lockedUp": "Блокировка",
+    "close": "Закрыто"
   },
   "actions": {
     "deposit": "Депозит",
@@ -18,7 +18,7 @@
   },
   "projectCard": {
     "lockUpPeriod": "Период блокировки",
-    "days": "Дни",
+    "days": "Дней",
     "netValue": "Совокупная чистая стоимость",
     "currentNetValue": "Текущая чистая стоимость%",
     "AUM": "АУМ",

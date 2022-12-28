@@ -15,6 +15,7 @@
     "contract": "Vertragsadresse",
     "yourEquity": "Ihr Eigenkapital",
     "PNL": "PNL",
+    "tip": "* Die auf dieser Seite angezeigten Produktdaten schließen die Verwaltungsgebühren und Performancegebühren nicht aus.",
     "stats": {
       "assetsUnderManagement": "Verwaltetes Vermögen",
       "estimatedAPY": "Geschätzter APY",
@@ -23,7 +24,7 @@
     },
     "description": {
       "Onebit-Lightning-Hunter-USDT": {
-        "main": "Der Hochfrequenzhandel ist eine Mikrostrukturstrategie, um den Marktspread zu erfassen, indem eine große Anzahl ausstehender Aufträge in sehr kurzer Zeit ausgeführt wird, während die Vorteile von Co-Location-Servern, Kanälen mit geringer Latenz und Konten mit niedrigen Handelsgebühren genutzt werden.",
+        "main": "Der Hochfrequenzhandel ist eine Mikrostrukturstrategie, um die Marktspreizung zu erfassen, indem eine große Anzahl ausstehender Aufträge in sehr kurzer Zeit ausgeführt wird, während die Vorteile von Co-Location-Servern, Kanälen mit geringer Latenz und Konten mit niedrigen Handelsgebühren genutzt werden.",
         "investmentRationale": [
           "Geeignet für risikoscheue Anleger, die hohe jährliche Renditen anstreben.",
           "Anleger sind keinem Risiko ausgesetzt, aber die Produktkapazität ist gering."
@@ -81,11 +82,11 @@
     "management": {
       "title": "Verwaltungsgebühr",
       "tip": "2 %, wenn die kumulierte Rendite über 20 % liegt",
-      "description": "Eine Verwaltungsgebühr ist eine regelmäßige Zahlung, die von Einlegern an den Portfolio-Manager gezahlt wird. Die Gebühr wird als annualisierter Prozentsatz des verwalteten Vermögens berechnet und ist unabhängig von den Vault-Erträgen."
+      "description": "Das Produkt erhebt eine Verwaltungsgebühr, die als jährlicher Verwaltungsgebührensatz des Ersteinzahlungsvermögens berechnet wird. Die Verwaltungsgebühr wird pro Block nach Zeitstempel berechnet."
     },
     "performance": {
       "title": "Leistungsgebühr",
-      "description": "Eine Performancegebühr ist eine prozentuale Gebühr, die Einleger aus den positiven Renditen über einen vordefinierten Zeitraum an den Produktmanager zahlen. Der vordefinierte Zeitraum wird als Sperrzeit bezeichnet (normalerweise ein Jahr oder ein Quartal). Die Renditen werden mit dem Denominationsvermögenswert verglichen."
+      "description": "Das Produkt erhebt eine Performancegebühr auf der Grundlage von Überrenditen, berechnet als Performancegebührensatz der Steigerung des täglichen Nettoinventarwerts über der High-Water-Mark. Die Performancegebühr wird täglich auf der Grundlage des Nettoinventarwerts berechnet."
     },
     "entrance": {
       "title": "Eintrittspreis"
@@ -98,16 +99,16 @@
     "title": "Richtlinien",
     "openPeriod": "Offene Periode",
     "lockUpPeriod": "Sperrfrist",
-    "fundraisingCap": "Fundraising Hard Cap",
-    "softUpperLimit": "Fundraising-Soft-Cap",
+    "fundraisingCap": "Kapazität Hardcap",
+    "softUpperLimit": "Kapazitäts-Soft-Cap",
     "minimumDeposit": "Mindesteinzahlung",
     "reInvestment": "Reinvestition",
     "reInvestmentTip": "Wenn Einleger die Gelder am Ende der Sperrfrist nicht abheben, werden die Gelder für die nächste Sperrfrist wieder in das Produkt investiert.",
     "auto": "Auto",
     "riskControlLine": "Warnung zur Risikokontrolle",
     "riskControlLineTip": "Wenn der Nettowert unter die Risikokontrolllinie fällt, wird das Produkt im Voraus abgerechnet, um weitere Verluste für alle Einleger zu reduzieren, und für Abhebungen geöffnet.",
-    "redemption": "Rückzahlung",
-    "redemptionTip": "Nach Ablauf der Sperrfrist ist die Rücknahme am nächsten Werktag möglich oder der Nettowert löst eine Risikokontrollwarnung aus und kann vorzeitig zurückgenommen werden.",
+    "redemption": "Rückzug",
+    "redemptionTip": "Nach Ablauf der Sperrfrist ist die Auszahlung am nächsten Werktag möglich, oder der Nettowert löst eine Risikokontrollwarnung aus und kann vorzeitig eingelöst werden.",
     "netValue": "Nettowert"
   },
   "depositors": {

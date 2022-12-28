@@ -9,8 +9,8 @@
     "placeholder": "Produkte finden",
     "all": "Alles",
     "open": "Offen",
-    "lockedUp": "Eingesperrt",
-    "close": "Nahe"
+    "lockedUp": "Sperre",
+    "close": "Geschlossen"
   },
   "actions": {
     "deposit": "Anzahlung",

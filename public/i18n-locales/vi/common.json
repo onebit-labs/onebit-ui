@@ -5,7 +5,7 @@
       "disconnected": "Ngắt kết nối",
       "deposit": "Tiền gửi",
       "withdraw": "Rút",
-      "details": "Thông tin chi tiết",
+      "details": "Chi tiết",
       "approve": "Chấp thuận"
     },
     "disconnected": {
@@ -37,14 +37,14 @@
     "signature": {
       "title": "Chào mừng bạn đến",
       "thingsToKnowTitle": "Những điều bạn nên biết",
-      "thingsToKnowContent": "Bạn không được đảm bảo kiếm tiền bằng cách đầu tư vào bất kỳ sản phẩm nào được cung cấp trên Onebit. hiệu suất trong quá khứ không phải là một dấu hiệu cho thấy các kết quả trong tương lai. Bạn một mình chịu trách nhiệm về sự an toàn của tiền của bạn. Vốn của bạn đang gặp rủi ro.",
+      "thingsToKnowContent": "Bạn không được đảm bảo kiếm tiền bằng cách đầu tư vào bất kỳ sản phẩm nào được cung cấp trên Onebit Defi (ở bản Beta). hiệu suất trong quá khứ không phải là một dấu hiệu cho thấy các kết quả trong tương lai. Bạn một mình chịu trách nhiệm về sự an toàn của tiền của bạn. Vốn của bạn đang gặp rủi ro.",
       "accept": "Chấp nhận",
       "decline": "Từ chối",
       "tip": "Bằng cách nhấp vào \"Chấp nhận\" bên dưới, tôi thừa nhận những điều trên,",
       "and": ", và"
     },
     "KYT": {
-      "tip": "Sản phẩm này yêu cầu địa chỉ ví của người dùng phải vượt qua kiểm tra KYT và được đưa vào danh sách trắng trước khi gửi tiền. Danh sách trắng có giá trị trong 3 tháng.",
+      "tip": "Sản phẩm này yêu cầu địa chỉ ví của người dùng phải vượt qua kiểm tra KYT và được đưa vào danh sách trắng trước khi gửi tiền.",
       "getWhitelisted": "Nhận danh sách trắng",
       "conducting": "Tiến hành kiểm tra KYT",
       "adding": "Thêm vào danh sách trắng"
@@ -67,11 +67,11 @@
   "project": {
     "status": {
       "open": "Mở",
-      "lockedUp": "Nhốt",
-      "close": "Đóng"
+      "lockedUp": "Khóa",
+      "close": "đã đóng"
     },
     "fundraisingProgress": {
-      "title": "Tiến độ gây quỹ",
+      "title": "Giới hạn dung lượng %",
       "max": "tối đa"
     }
   },

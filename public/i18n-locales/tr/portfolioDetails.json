@@ -9,12 +9,13 @@
   "info": {
     "status": "Durum",
     "term": "Terim",
-    "lockUpPeriod": "Kilitlenme Dönemi",
+    "lockUpPeriod": "Kilitlenme Süresi",
     "days": "gün",
     "standard": "Standart",
     "contract": "Sözleşme Adresi",
     "yourEquity": "öz sermayeniz",
     "PNL": "PNL",
+    "tip": "* Bu sayfada gösterilen ürün verileri, yönetim ücretlerini ve performans ücretlerini kapsamaz.",
     "stats": {
       "assetsUnderManagement": "Yönetim Altındaki Varlıklar",
       "estimatedAPY": "Tahmini APY",
@@ -81,11 +82,11 @@
     "management": {
       "title": "Yönetim ücreti",
       "tip": "Kümülatif getiri %20'nin üzerinde ise %2",
-      "description": "Yönetim ücreti, mevduat sahipleri tarafından Portföy Yöneticisine ödenen periyodik bir ödemedir. Ücret, yönetilen varlıkların yıllık yüzdesi olarak hesaplanır ve Apps Kasası getirilerinden bağımsızdır."
+      "description": "Ürün, ilk mevduat varlıklarının yıllık yönetim ücreti oranı olarak hesaplanan bir yönetim ücreti alacaktır. Yönetim ücreti blok başına zaman damgasına göre tahsil edilecektir."
     },
     "performance": {
       "title": "Performans ücreti",
-      "description": "Performans ücreti, mevduat sahiplerinin önceden tanımlanmış bir süre boyunca yapılan olumlu geri dönüşlerden Ürün Yöneticisine ödediği yüzdeye dayalı bir ücrettir. Önceden tanımlanmış dönem, Kilitli dönem olarak adlandırılır (tipik olarak bir yıl veya üç aylık dönem). Getiriler, mezhep varlığına göre kıyaslanır."
+      "description": "Ürün, günlük Net Varlık Değerinde yüksek su işaretinin üzerindeki değerlenmenin performans ücreti oranı olarak hesaplanan, fazla getiriye dayalı bir performans ücreti alacaktır. Performans ücreti, günlük Net Varlık Değeri üzerinden tahsil edilecektir."
     },
     "entrance": {
       "title": "Giriş ücreti"
@@ -97,17 +98,17 @@
   "policies": {
     "title": "politikalar",
     "openPeriod": "Açık Dönem",
-    "lockUpPeriod": "Kilitlenme Dönemi",
-    "fundraisingCap": "Bağış Toplama Hard Cap",
-    "softUpperLimit": "Bağış Toplama Soft Cap",
+    "lockUpPeriod": "Kilitlenme Süresi",
+    "fundraisingCap": "Kapasite Sabit Kapak",
+    "softUpperLimit": "Kapasite Yumuşak Kapak",
     "minimumDeposit": "Minimum Depozito",
     "reInvestment": "Yeniden yatırım",
-    "reInvestmentTip": "Mudiler bloke süresi sonunda fonlarını çekmezlerse, fonlar bir sonraki bloke süresi için ürüne yeniden yatırılacaktır.",
+    "reInvestmentTip": "Mudiler, bloke süresi sonunda fonlarını çekmezlerse, fonlar bir sonraki bloke süresi için ürüne yeniden yatırılacaktır.",
     "auto": "Oto",
     "riskControlLine": "Risk Kontrol Uyarısı",
     "riskControlLineTip": "Net Değer, risk kontrol çizgisinin altına düşerse, tüm mevduat sahipleri için daha fazla zararı azaltmak için ürün önceden kapatılacak ve para çekmeye açık olacaktır.",
-    "redemption": "Kefaret",
-    "redemptionTip": "Kilitleme süresinden sonra itfa bir sonraki iş gününde açılır veya net değer risk kontrol uyarısını tetikler ve peşin itfa edilebilir.",
+    "redemption": "Para çekme",
+    "redemptionTip": "Kilitleme süresinden sonra para çekme işlemi bir sonraki iş gününde açılır veya net değer risk kontrol uyarısını tetikler ve peşin itfa edilebilir.",
     "netValue": "Net değer"
   },
   "depositors": {

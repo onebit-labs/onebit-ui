@@ -15,6 +15,7 @@
     "contract": "Indirizzo del contratto",
     "yourEquity": "La tua equità",
     "PNL": "PNL",
+    "tip": "* I dati di prodotto mostrati in questa pagina non escludono le commissioni di gestione e le commissioni di performance.",
     "stats": {
       "assetsUnderManagement": "Risparmio gestito",
       "estimatedAPY": "APY stimato",
@@ -81,11 +82,11 @@
     "management": {
       "title": "Commissione di gestione",
       "tip": "2% se il rendimento cumulativo è superiore al 20%",
-      "description": "Una commissione di gestione è un pagamento periodico versato dai depositanti al gestore del portafoglio. La commissione è calcolata come percentuale annualizzata delle risorse gestite ed è indipendente dai rendimenti di Vault."
+      "description": "Il prodotto addebiterà una commissione di gestione, calcolata come tasso annuale della commissione di gestione delle attività del deposito iniziale. La commissione di gestione verrà addebitata per blocco tramite timestamp."
     },
     "performance": {
       "title": "Commissione di performance",
-      "description": "Una commissione di performance è una commissione basata su una percentuale che i depositanti pagano al Product Manager sui rendimenti positivi realizzati in un periodo predefinito. Il periodo predefinito è denominato periodo di blocco (in genere un anno o un trimestre). I rendimenti sono confrontati con l'asset di denominazione."
+      "description": "Il prodotto addebiterà una commissione di performance basata sui rendimenti in eccesso, calcolata come tasso della commissione di performance dell'apprezzamento del Valore Patrimoniale Netto giornaliero al di sopra dell'high water mark. La commissione di performance verrà addebitata giornalmente sulla base del Valore Patrimoniale Netto."
     },
     "entrance": {
       "title": "Biglietto d'ingresso"
@@ -98,16 +99,16 @@
     "title": "Politiche",
     "openPeriod": "Periodo aperto",
     "lockUpPeriod": "Periodo di blocco",
-    "fundraisingCap": "Cap duro per raccolta fondi",
-    "softUpperLimit": "Cappellino morbido per raccolta fondi",
+    "fundraisingCap": "Cappuccio rigido di capacità",
+    "softUpperLimit": "Cappuccio morbido di capacità",
     "minimumDeposit": "Deposito minimo",
     "reInvestment": "Reinvestimento",
     "reInvestmentTip": "Se i depositanti non ritirano i fondi alla fine del periodo di blocco, i fondi verranno reinvestiti nel prodotto per il successivo periodo di blocco.",
     "auto": "Auto",
     "riskControlLine": "Avviso di controllo del rischio",
     "riskControlLineTip": "Se il valore netto scende al di sotto della linea di controllo del rischio, il prodotto verrà regolato in anticipo per ridurre ulteriori perdite per tutti i depositanti e aperto ai prelievi.",
-    "redemption": "Redenzione",
-    "redemptionTip": "Dopo il periodo di blocco, il rimborso è aperto il giorno lavorativo successivo oppure il valore netto attiva un avviso di controllo del rischio e può essere rimborsato in anticipo.",
+    "redemption": "Ritiro",
+    "redemptionTip": "Dopo il periodo di blocco, il prelievo è aperto il giorno lavorativo successivo, oppure il valore netto attiva l'avviso di controllo del rischio e può essere rimborsato in anticipo.",
     "netValue": "Valore netto"
   },
   "depositors": {

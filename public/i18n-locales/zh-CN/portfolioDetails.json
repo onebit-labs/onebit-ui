@@ -15,6 +15,7 @@
     "contract": "合约地址",
     "yourEquity": "您的股权",
     "PNL": "损益表",
+    "tip": "* 本页显示的产品数据不包括管理费和绩效费。",
     "stats": {
       "assetsUnderManagement": "资产管理",
       "estimatedAPY": "预计每年",
@@ -81,11 +82,11 @@
     "management": {
       "title": "管理费",
       "tip": "累计回报率超过20%则为2%",
-      "description": "管理费是存款人定期支付给投资组合经理的款项。该费用按管理资产的年化百分比计算，与 Vault 回报无关。"
+      "description": "该产品将收取管理费，按初始存入资产的年管理费率计算。管理费将按时间戳按块收取。"
     },
     "performance": {
       "title": "绩效费",
-      "description": "绩效费是存款人根据预定期限内的正回报向产品经理支付的基于百分比的费用。预定义的期限称为锁定期（通常为一年或一个季度）。回报以面额资产为基准。"
+      "description": "产品将根据超额收益收取业绩费，按每日资产净值升值高于高水位线的业绩费率计算。业绩费按日按资产净值收取。"
     },
     "entrance": {
       "title": "入场费"
@@ -98,16 +99,16 @@
     "title": "政策",
     "openPeriod": "开放时间",
     "lockUpPeriod": "锁定期",
-    "fundraisingCap": "筹款硬顶",
-    "softUpperLimit": "筹款软顶",
+    "fundraisingCap": "容量硬顶",
+    "softUpperLimit": "容量软顶",
     "minimumDeposit": "最低存款",
     "reInvestment": "再投资",
-    "reInvestmentTip": "如果存款人在锁定期结束时未提取资金，资金将重新投入到下一个锁定期的产品中。",
+    "reInvestmentTip": "锁仓期满，存款人未提取资金的，资金将重新投入产品，进入下一个锁仓期。",
     "auto": "汽车",
     "riskControlLine": "风险控制警告",
     "riskControlLineTip": "若净值跌破风控线，产品将提前结算，减少所有存款人的进一步损失，并开放提现。",
-    "redemption": "赎回",
-    "redemptionTip": "锁定期后次日开放赎回，或净值触发风控预警可提前赎回。",
+    "redemption": "退出",
+    "redemptionTip": "锁仓期后次日开放提现，或净值触发风控预警可提前赎回。",
     "netValue": "净值"
   },
   "depositors": {

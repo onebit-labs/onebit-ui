@@ -9,8 +9,8 @@
     "placeholder": "البحث عن المنتجات",
     "all": "الجميع",
     "open": "فتح",
-    "lockedUp": "مغلق",
-    "close": "قريب"
+    "lockedUp": "اغلق",
+    "close": "مغلق"
   },
   "actions": {
     "deposit": "إيداع",

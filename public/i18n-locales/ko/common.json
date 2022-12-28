@@ -37,16 +37,16 @@
     "signature": {
       "title": "에 오신 것을 환영합니다",
       "thingsToKnowTitle": "당신이 알아야 할 것들",
-      "thingsToKnowContent": "Onebit에서 제공되는 제품을 투자하여 돈을 벌 수 있다는 보장은 없습니다. 과거 성과는 미래 결과를 나타내지 않습니다. 자금의 안전에 대한 책임은 전적으로 귀하에게 있습니다. 귀하의 자본이 위험에 처해 있습니다.",
+      "thingsToKnowContent": "Onebit Defi(베타)에서 제공되는 제품을 투자하여 돈을 벌 수 있다는 보장은 없습니다. 과거 성과는 미래 결과를 나타내지 않습니다. 자금의 안전에 대한 책임은 전적으로 귀하에게 있습니다. 귀하의 자본이 위험에 처해 있습니다.",
       "accept": "수용하다",
       "decline": "감소",
       "tip": "아래의 \"동의\"를 클릭함으로써 위의 내용을 인정합니다.",
       "and": ", 그리고"
     },
     "KYT": {
-      "tip": "이 제품은 자금을 입금하기 전에 사용자 지갑 주소가 KYT 확인을 통과하고 허용 목록에 있어야 합니다. 화이트리스트는 3개월간 유효합니다.",
+      "tip": "이 제품은 자금을 입금하기 전에 사용자 지갑 주소가 KYT 확인을 통과하고 허용 목록에 있어야 합니다.",
       "getWhitelisted": "화이트리스트에 추가",
-      "conducting": "KYT 확인 실시",
+      "conducting": "KYT 확인 수행",
       "adding": "화이트리스트에 추가"
     },
     "deposit": {
@@ -56,7 +56,7 @@
       "days": "날",
       "tip": "이 상품에는 <managementFee>관리비</managementFee>의 연간 관리 수수료와 <performanceFee>성능 수수료</performanceFee>의 이행 수수료가 있습니다.",
       "reInvestment": "자동 재투자",
-      "description": "락업 기간 종료 시 예치자가 자금을 인출하지 않으면 다음 락업 기간 동안 해당 자금을 상품에 재투자합니다."
+      "description": "락업 기간 종료 시 예치자가 자금을 인출하지 않으면 다음 락업 기간 동안 해당 상품에 자금이 재투자됩니다."
     },
     "withdrawal": {
       "amount": "양",
@@ -67,11 +67,11 @@
   "project": {
     "status": {
       "open": "열려 있는",
-      "lockedUp": "감금",
-      "close": "닫다"
+      "lockedUp": "잠그다",
+      "close": "닫은"
     },
     "fundraisingProgress": {
-      "title": "모금 진행",
+      "title": "용량 제한 %",
       "max": "최대"
     }
   },

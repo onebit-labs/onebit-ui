@@ -15,6 +15,7 @@
     "contract": "Địa chỉ hợp đồng",
     "yourEquity": "Vốn chủ sở hữu của bạn",
     "PNL": "PNL",
+    "tip": "* Dữ liệu sản phẩm hiển thị trên trang này không loại trừ phí quản lý và phí hiệu suất.",
     "stats": {
       "assetsUnderManagement": "Tài sản được quản lý",
       "estimatedAPY": "APY ước tính",
@@ -81,11 +82,11 @@
     "management": {
       "title": "Phí quản lý",
       "tip": "2% nếu lợi nhuận tích lũy trên 20%",
-      "description": "Phí quản lý là khoản thanh toán định kỳ do người gửi tiền trả cho Trình quản lý danh mục đầu tư. Phí được tính theo tỷ lệ phần trăm hàng năm của tài sản được quản lý và không phụ thuộc vào lợi nhuận của Vault."
+      "description": "Sản phẩm sẽ tính phí quản lý, được tính bằng tỷ lệ phí quản lý hàng năm của tài sản ký gửi ban đầu. Phí quản lý sẽ được tính cho mỗi khối theo dấu thời gian."
     },
     "performance": {
       "title": "Phí thi công",
-      "description": "Phí hiệu suất là khoản phí dựa trên tỷ lệ phần trăm mà người gửi tiền phải trả cho Người quản lý sản phẩm từ lợi nhuận dương được thực hiện trong một khoảng thời gian xác định trước. Khoảng thời gian được xác định trước được gọi là Khoảng thời gian khóa (thường là một năm hoặc một quý). Lợi nhuận được so sánh với tài sản mệnh giá."
+      "description": "Sản phẩm sẽ tính phí hiệu suất dựa trên lợi nhuận vượt mức, được tính bằng tỷ lệ phí hiệu suất của sự tăng giá trị trong Giá trị tài sản ròng hàng ngày trên mốc nước cao. Phí thực hiện sẽ được tính dựa trên Giá trị tài sản ròng hàng ngày."
     },
     "entrance": {
       "title": "Phí vào cửa"
@@ -98,16 +99,16 @@
     "title": "chính sách",
     "openPeriod": "Thời gian mở",
     "lockUpPeriod": "Thời gian khóa",
-    "fundraisingCap": "Gây quỹ Hard Cap",
-    "softUpperLimit": "Soft Cap gây quỹ",
+    "fundraisingCap": "Dung lượng nắp cứng",
+    "softUpperLimit": "Công suất nắp mềm",
     "minimumDeposit": "Tiền gửi tối thiểu",
     "reInvestment": "tái đầu tư",
     "reInvestmentTip": "Nếu người gửi tiền không rút tiền vào cuối thời gian khóa, tiền sẽ được tái đầu tư vào sản phẩm cho thời gian khóa tiếp theo.",
     "auto": "Tự động",
     "riskControlLine": "Cảnh báo kiểm soát rủi ro",
     "riskControlLineTip": "Nếu Giá trị ròng giảm xuống dưới mức kiểm soát rủi ro, sản phẩm sẽ được thanh toán trước để giảm tổn thất thêm cho tất cả người gửi tiền và mở để rút tiền.",
-    "redemption": "chuộc lỗi",
-    "redemptionTip": "Sau thời gian khóa, quy đổi sẽ được mở vào ngày làm việc tiếp theo hoặc giá trị ròng kích hoạt cảnh báo kiểm soát rủi ro và có thể được quy đổi trước.",
+    "redemption": "Rút tiền",
+    "redemptionTip": "Sau thời gian khóa, việc rút tiền sẽ được mở vào ngày làm việc tiếp theo hoặc giá trị ròng kích hoạt cảnh báo kiểm soát rủi ro và có thể được đổi trước.",
     "netValue": "giá trị ròng"
   },
   "depositors": {

@@ -9,7 +9,7 @@
     "placeholder": "Ürün Bul",
     "all": "Herşey",
     "open": "Açık",
-    "lockedUp": "Kilitli",
+    "lockedUp": "Kilitlemek",
     "close": "Kapalı"
   },
   "actions": {
@@ -17,7 +17,7 @@
     "withdraw": "Geri çekilmek"
   },
   "projectCard": {
-    "lockUpPeriod": "Kilitlenme Dönemi",
+    "lockUpPeriod": "Kilitlenme Süresi",
     "days": "gün",
     "netValue": "Kümülatif Net Değer",
     "currentNetValue": "Mevcut Net Değer %",

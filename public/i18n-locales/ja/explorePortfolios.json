@@ -9,8 +9,8 @@
     "placeholder": "製品を探す",
     "all": "全て",
     "open": "開ける",
-    "lockedUp": "閉じ込められた",
-    "close": "近い"
+    "lockedUp": "閉じ込める",
+    "close": "閉まっている"
   },
   "actions": {
     "deposit": "預り金",

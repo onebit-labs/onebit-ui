@@ -9,8 +9,8 @@
     "placeholder": "Encontrar produtos",
     "all": "Todo",
     "open": "Abrir",
-    "lockedUp": "Trancado",
-    "close": "Perto"
+    "lockedUp": "Trancar",
+    "close": "Fechadas"
   },
   "actions": {
     "deposit": "Depósito",

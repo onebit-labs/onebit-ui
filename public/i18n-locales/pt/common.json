@@ -37,20 +37,20 @@
     "signature": {
       "title": "Bem-vindo ao",
       "thingsToKnowTitle": "Coisas que você deve saber",
-      "thingsToKnowContent": "Você não tem garantia de ganhar dinheiro investindo em quaisquer produtos oferecidos na Onebit. O desempenho passado não é uma indicação de resultados futuros. Você é o único responsável pela segurança de seus fundos. Seu capital está em risco.",
+      "thingsToKnowContent": "Você não tem garantia de ganhar dinheiro investindo quaisquer produtos oferecidos no Onebit Defi (em Beta). O desempenho passado não é uma indicação de resultados futuros. Você é o único responsável pela segurança de seus fundos. Seu capital está em risco.",
       "accept": "Aceitar",
       "decline": "Declínio",
       "tip": "Ao clicar em \"Aceitar\" abaixo, reconheço o acima, o",
       "and": ", e"
     },
     "KYT": {
-      "tip": "Este produto requer que os endereços de carteira do usuário passem nas verificações KYT e sejam incluídos na lista de permissões antes de depositar fundos. A lista branca é válida por 3 meses.",
+      "tip": "Este produto requer que os endereços de carteira do usuário passem nas verificações KYT e sejam incluídos na lista de permissões antes de depositar fundos.",
       "getWhitelisted": "Entrar na lista de permissões",
       "conducting": "Realização de verificações KYT",
       "adding": "Adicionando à lista de permissões"
     },
     "deposit": {
-      "amount": "Quantia",
+      "amount": "Montante",
       "walletBalance": "Saldo da Carteira",
       "lockUpPeriod": "Período de Bloqueio",
       "days": "Dias",
@@ -59,7 +59,7 @@
       "description": "Se os depositantes não retirarem os fundos no final do período de bloqueio, os fundos serão reinvestidos no produto para o próximo período de bloqueio."
     },
     "withdrawal": {
-      "amount": "Quantia",
+      "amount": "Montante",
       "walletBalance": "Saldo da Carteira",
       "tip": "As taxas de administração e performance foram deduzidas."
     }
@@ -67,11 +67,11 @@
   "project": {
     "status": {
       "open": "Abrir",
-      "lockedUp": "Trancado",
-      "close": "Perto"
+      "lockedUp": "Trancar",
+      "close": "Fechadas"
     },
     "fundraisingProgress": {
-      "title": "Progresso da captação de recursos",
+      "title": "Limite de capacidade %",
       "max": "máx."
     }
   },

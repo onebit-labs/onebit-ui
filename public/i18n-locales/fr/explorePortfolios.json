@@ -9,8 +9,8 @@
     "placeholder": "Trouver des produits",
     "all": "Tout",
     "open": "Ouvrir",
-    "lockedUp": "Verrouillé",
-    "close": "proche"
+    "lockedUp": "Verrouillage",
+    "close": "Fermé"
   },
   "actions": {
     "deposit": "Dépôt",

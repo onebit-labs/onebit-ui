@@ -15,6 +15,7 @@
     "contract": "Adresse du contrat",
     "yourEquity": "Votre capital",
     "PNL": "PNL",
+    "tip": "* Les données produit présentées sur cette page n'excluent pas les frais de gestion et les commissions de performance.",
     "stats": {
       "assetsUnderManagement": "Actifs sous gestion",
       "estimatedAPY": "APY estimé",
@@ -81,11 +82,11 @@
     "management": {
       "title": "Frais de gestion",
       "tip": "2 % si le rendement cumulé est supérieur à 20 %",
-      "description": "Les frais de gestion sont un paiement périodique versé par les déposants au gestionnaire de portefeuille. Les frais sont calculés en pourcentage annualisé des actifs sous gestion et sont indépendants des rendements de Vault."
+      "description": "Le produit facturera des frais de gestion, calculés comme un taux de frais de gestion annuel des actifs du dépôt initial. Les frais de gestion seront facturés par bloc par horodatage."
     },
     "performance": {
       "title": "Commission de performance",
-      "description": "Une commission de performance est une commission basée sur un pourcentage que les déposants paient au gestionnaire de produit sur les rendements positifs réalisés sur une période prédéfinie. La période prédéfinie est appelée période de blocage (généralement un an ou un trimestre). Les rendements sont comparés à l'actif de dénomination."
+      "description": "Le produit facturera une commission de performance basée sur les rendements excédentaires, calculée comme un taux de commission de performance de l'appréciation de la valeur liquidative quotidienne au-dessus du point haut. La commission de performance sera facturée quotidiennement sur la base de la valeur nette d'inventaire."
     },
     "entrance": {
       "title": "Frais d'entrée"
@@ -98,16 +99,16 @@
     "title": "Stratégies",
     "openPeriod": "Période ouverte",
     "lockUpPeriod": "Période de blocage",
-    "fundraisingCap": "Plafond de collecte de fonds",
-    "softUpperLimit": "Cap souple de collecte de fonds",
+    "fundraisingCap": "Plafond dur de capacité",
+    "softUpperLimit": "Capuchon souple de capacité",
     "minimumDeposit": "Dépôt minimal",
     "reInvestment": "Réinvestissement",
     "reInvestmentTip": "Si les déposants ne retirent pas les fonds à la fin de la période de blocage, les fonds seront réinvestis dans le produit pour la prochaine période de blocage.",
     "auto": "Auto",
     "riskControlLine": "Avertissement de contrôle des risques",
     "riskControlLineTip": "Si la valeur nette tombe en dessous de la ligne de contrôle des risques, le produit sera réglé à l'avance afin de réduire les pertes supplémentaires pour tous les déposants et ouvert aux retraits.",
-    "redemption": "Rachat",
-    "redemptionTip": "Après la période de blocage, le remboursement est ouvert le jour ouvrable suivant, ou la valeur nette déclenche un avertissement de contrôle des risques et peut être remboursée par anticipation.",
+    "redemption": "Retrait",
+    "redemptionTip": "Après la période de blocage, le retrait est ouvert le jour ouvrable suivant, ou la valeur nette déclenche un avertissement de contrôle des risques et peut être remboursée par anticipation.",
     "netValue": "Valeur nette"
   },
   "depositors": {

@@ -3,8 +3,8 @@
     "btn": {
       "cancel": "Annuler",
       "disconnected": "Déconnecter",
-      "deposit": "Verser",
-      "withdraw": "Se désister",
+      "deposit": "Dépôt",
+      "withdraw": "Retirer",
       "details": "Détails",
       "approve": "Approuver"
     },
@@ -13,7 +13,7 @@
       "subTitle": "Pour commencer à utiliser Onebit"
     },
     "connected": {
-      "title": "Lié",
+      "title": "Connecté",
       "subTitle": "Connecté avec"
     },
     "connecting": {
@@ -37,41 +37,41 @@
     "signature": {
       "title": "Bienvenue à",
       "thingsToKnowTitle": "Ce que vous devez savoir",
-      "thingsToKnowContent": "Vous n'êtes pas assuré de gagner de l'argent en investissant dans les produits proposés sur Onebit. Les performances passées ne sont pas une indication des résultats futurs. Vous êtes seul responsable de la sécurité de vos fonds. Votre capital est en danger.",
+      "thingsToKnowContent": "Vous n'êtes pas assuré de gagner de l'argent en investissant dans les produits proposés sur Onebit Defi (en version bêta). Les performances passées ne préjugent pas des résultats futurs. Vous êtes seul responsable de la sécurité de vos fonds. Votre capital est en danger.",
       "accept": "Accepter",
       "decline": "Déclin",
       "tip": "En cliquant sur \"Accepter\" ci-dessous, je reconnais ce qui précède, le",
       "and": ", et"
     },
     "KYT": {
-      "tip": "Ce produit nécessite que les adresses de portefeuille des utilisateurs passent les vérifications KYT et soient inscrites sur la liste blanche avant de déposer des fonds. La liste blanche est valable 3 mois.",
+      "tip": "Ce produit nécessite que les adresses de portefeuille des utilisateurs passent les vérifications KYT et soient inscrites sur la liste blanche avant de déposer des fonds.",
       "getWhitelisted": "Obtenir la liste blanche",
       "conducting": "Effectuer des vérifications KYT",
       "adding": "Ajout à la liste blanche"
     },
     "deposit": {
-      "amount": "Montant",
+      "amount": "Quantité",
       "walletBalance": "Solde du portefeuille",
       "lockUpPeriod": "Période de blocage",
-      "days": "Journées",
+      "days": "Jours",
       "tip": "Ce produit a des frais de gestion annuels de <managementFee>les frais de gestion</managementFee> et des frais de performance de <performanceFee>la commission de performance</performanceFee>.",
       "reInvestment": "Réinvestissement automatique",
       "description": "Si les déposants ne retirent pas les fonds à la fin de la période de blocage, les fonds seront réinvestis dans le produit pour la prochaine période de blocage."
     },
     "withdrawal": {
-      "amount": "Montant",
+      "amount": "Quantité",
       "walletBalance": "Solde du portefeuille",
       "tip": "Les frais de gestion et de performance ont été déduits."
     }
   },
   "project": {
     "status": {
-      "open": "Ouvert",
-      "lockedUp": "Verrouillé",
-      "close": "proche"
+      "open": "Ouvrir",
+      "lockedUp": "Verrouillage",
+      "close": "Fermé"
     },
     "fundraisingProgress": {
-      "title": "Progression de la collecte de fonds",
+      "title": "Limite de capacité %",
       "max": "Max"
     }
   },

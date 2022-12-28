@@ -9,8 +9,8 @@
     "placeholder": "查找产品",
     "all": "全部",
     "open": "打开",
-    "lockedUp": "锁上",
-    "close": "关"
+    "lockedUp": "锁起来",
+    "close": "关闭"
   },
   "actions": {
     "deposit": "订金",

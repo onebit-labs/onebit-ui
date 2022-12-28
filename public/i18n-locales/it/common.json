@@ -5,7 +5,7 @@
       "disconnected": "Disconnetti",
       "deposit": "Depositare",
       "withdraw": "Ritirare",
-      "details": "Particolari",
+      "details": "Dettagli",
       "approve": "Approvare"
     },
     "disconnected": {
@@ -37,20 +37,20 @@
     "signature": {
       "title": "Benvenuto a",
       "thingsToKnowTitle": "Cose che dovresti sapere",
-      "thingsToKnowContent": "Non hai la garanzia di guadagnare investendo i prodotti offerti su Onebit. Le performance passate non sono indicative di risultati futuri. Solo tu sei responsabile della sicurezza dei tuoi fondi. Il tuo capitale è a rischio.",
+      "thingsToKnowContent": "Non hai la garanzia di guadagnare investendo i prodotti offerti su Onebit Defi (in Beta). Le performance passate non sono indicative di risultati futuri. Solo tu sei responsabile della sicurezza dei tuoi fondi. Il tuo capitale è a rischio.",
       "accept": "Accettare",
       "decline": "Declino",
       "tip": "Facendo clic su \"Accetto\" di seguito, riconosco quanto sopra, il",
       "and": ", e"
     },
     "KYT": {
-      "tip": "Questo prodotto richiede che gli indirizzi del portafoglio utente superino i controlli KYT e siano inseriti nella whitelist prima di depositare fondi. La whitelist è valida per 3 mesi.",
+      "tip": "Questo prodotto richiede che gli indirizzi del portafoglio utente superino i controlli KYT e siano inseriti nella whitelist prima di depositare fondi.",
       "getWhitelisted": "Ottieni una lista bianca",
       "conducting": "Conduzione di controlli KYT",
       "adding": "Aggiunta alla lista bianca"
     },
     "deposit": {
-      "amount": "Quantità",
+      "amount": "Importo",
       "walletBalance": "Saldo del portafoglio",
       "lockUpPeriod": "Periodo di blocco",
       "days": "Giorni",
@@ -59,7 +59,7 @@
       "description": "Se i depositanti non ritirano i fondi alla fine del periodo di blocco, i fondi verranno reinvestiti nel prodotto per il successivo periodo di blocco."
     },
     "withdrawal": {
-      "amount": "Quantità",
+      "amount": "Importo",
       "walletBalance": "Saldo del portafoglio",
       "tip": "Le commissioni di gestione e di performance sono state detratte."
     }
@@ -67,11 +67,11 @@
   "project": {
     "status": {
       "open": "Aprire",
-      "lockedUp": "Rinchiuso",
-      "close": "Chiudere"
+      "lockedUp": "Blocco",
+      "close": "Chiuso"
     },
     "fundraisingProgress": {
-      "title": "Progresso della raccolta fondi",
+      "title": "Limite capacità %",
       "max": "Massimo"
     }
   },

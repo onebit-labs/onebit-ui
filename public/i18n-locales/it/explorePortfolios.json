@@ -9,8 +9,8 @@
     "placeholder": "Trova prodotti",
     "all": "Tutti",
     "open": "Aprire",
-    "lockedUp": "Rinchiuso",
-    "close": "Chiudere"
+    "lockedUp": "Blocco",
+    "close": "Chiuso"
   },
   "actions": {
     "deposit": "Depositare",

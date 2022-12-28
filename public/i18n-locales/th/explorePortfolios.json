@@ -1,7 +1,7 @@
 {
   "stats": {
     "assetsUnderManagement": "สินทรัพย์ภายใต้การจัดการ",
-    "totalProfitSinceInception": "กำไรรวมตั้งแต่เริ่มก่อตั้ง",
+    "totalProfitSinceInception": "กำไรรวมตั้งแต่ก่อตั้ง",
     "portfolios": "สินค้า",
     "depositors": "ผู้ฝากเงิน"
   },
@@ -9,7 +9,7 @@
     "placeholder": "ค้นหาผลิตภัณฑ์",
     "all": "ทั้งหมด",
     "open": "เปิด",
-    "lockedUp": "ขังไว้",
+    "lockedUp": "คุก",
     "close": "ปิด"
   },
   "actions": {
