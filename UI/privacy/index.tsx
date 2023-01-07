@@ -14,7 +14,7 @@ const Privacy: FC = () => {
           <H2>Onebit Finance Privacy Policy</H2>
           <Paragraph>Last updated: November 05, 2022</Paragraph>
           <Paragraph>
-            participants who are visitors of https://onebit.com (the “Interface”). Onebit does it best to collect as minimum Personal Data as possible. Still, it’s quite a task not to collect it at all. That is why this Privacy Policy document contains types of data that is collected, used, and recorded by Interface. 
+            participants who are visitors of https://defi.onebit.com (the “Interface”). Onebit does it best to collect as minimum Personal Data as possible. Still, it’s quite a task not to collect it at all. That is why this Privacy Policy document contains types of data that is collected, used, and recorded by Interface. 
           </Paragraph>
           <Paragraph>
             Onebit Finance is the controller for your Personal Data within the scope of this Privacy Policy. The Onebit decides “why” and “how” your Personal Data is processed in connection with the Interface. If you have additional questions or require more information about this Privacy Policy, do not hesitate to contact info@onebit.com. 

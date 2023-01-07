@@ -14,7 +14,7 @@ const Terms: FC = () => {
           <H2>Onebit Terms of Use</H2>
           <Paragraph>Last updated: November 05, 2022</Paragraph>
           <Paragraph>
-            Welcome to Onebit Finance https://onebit.com, a user interface (the “Interface”) provided by Onebit Finance ("we", "our", or "us"). The interface provides users access to different trading strategies on blockchain.
+            Welcome to Onebit Finance https://defi.onebit.com, a user interface (the “Interface”) provided by Onebit Finance ("we", "our", or "us"). The interface provides users with a transparent on-chain asset management protocol to capture diversified revenue streams.
           </Paragraph>
           <Paragraph>
             These Terms of Use and any terms and conditions incorporated herein by reference (collectively, the “Terms”) govern your access to and use of the Interface. You must read the Terms carefully.

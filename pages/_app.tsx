@@ -30,14 +30,14 @@ function MainApp(props: MyAppProps): JSX.Element {
 
             <meta property="og:type" content="website" />
             <meta key="og:site_name" property="og:site_name" content="Onebit DeFi | Decentralized Asset Management Protocol" />
-            <meta key="og:image" property="og:image" content="https://app.onebit.com/logo-square.svg" />
+            <meta key="og:image" property="og:image" content="https://defi.onebit.com/logo-square.svg" />
             <meta
               key="og:description"
               property="og:description"
               content="Onebit DeFi is a decentralized asset management protocol that connects DeFi users."
             />
             <meta key="og:title" property="og:title" content="Onebit" />
-            <meta key="og:url" property="og:url" content="https://app.onebit.com/" />
+            <meta key="og:url" property="og:url" content="https://defi.onebit.com/" />
 
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:title" content="Onebit DeFi | Decentralized Asset Management Protocol" />
